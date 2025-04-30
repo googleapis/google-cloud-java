@@ -43,6 +43,7 @@ public interface AnswerQueryRequestOrBuilder
    * @return The servingConfig.
    */
   java.lang.String getServingConfig();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface AnswerQueryRequestOrBuilder
    * @return Whether the query field is set.
    */
   boolean hasQuery();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface AnswerQueryRequestOrBuilder
    * @return The query.
    */
   com.google.cloud.discoveryengine.v1.Query getQuery();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface AnswerQueryRequestOrBuilder
    * @return The session.
    */
   java.lang.String getSession();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface AnswerQueryRequestOrBuilder
    * @return Whether the safetySpec field is set.
    */
   boolean hasSafetySpec();
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public interface AnswerQueryRequestOrBuilder
    * @return The safetySpec.
    */
   com.google.cloud.discoveryengine.v1.AnswerQueryRequest.SafetySpec getSafetySpec();
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public interface AnswerQueryRequestOrBuilder
    * @return Whether the relatedQuestionsSpec field is set.
    */
   boolean hasRelatedQuestionsSpec();
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public interface AnswerQueryRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1.AnswerQueryRequest.RelatedQuestionsSpec
       getRelatedQuestionsSpec();
+
   /**
    *
    *
@@ -222,6 +230,50 @@ public interface AnswerQueryRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. Grounding specification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AnswerQueryRequest.GroundingSpec grounding_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the groundingSpec field is set.
+   */
+  boolean hasGroundingSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Grounding specification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AnswerQueryRequest.GroundingSpec grounding_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The groundingSpec.
+   */
+  com.google.cloud.discoveryengine.v1.AnswerQueryRequest.GroundingSpec getGroundingSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Grounding specification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AnswerQueryRequest.GroundingSpec grounding_spec = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.AnswerQueryRequest.GroundingSpecOrBuilder
+      getGroundingSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Answer generation specification.
    * </pre>
    *
@@ -232,6 +284,7 @@ public interface AnswerQueryRequestOrBuilder
    * @return Whether the answerGenerationSpec field is set.
    */
   boolean hasAnswerGenerationSpec();
+
   /**
    *
    *
@@ -247,6 +300,7 @@ public interface AnswerQueryRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1.AnswerQueryRequest.AnswerGenerationSpec
       getAnswerGenerationSpec();
+
   /**
    *
    *
@@ -273,6 +327,7 @@ public interface AnswerQueryRequestOrBuilder
    * @return Whether the searchSpec field is set.
    */
   boolean hasSearchSpec();
+
   /**
    *
    *
@@ -285,6 +340,7 @@ public interface AnswerQueryRequestOrBuilder
    * @return The searchSpec.
    */
   com.google.cloud.discoveryengine.v1.AnswerQueryRequest.SearchSpec getSearchSpec();
+
   /**
    *
    *
@@ -311,6 +367,7 @@ public interface AnswerQueryRequestOrBuilder
    * @return Whether the queryUnderstandingSpec field is set.
    */
   boolean hasQueryUnderstandingSpec();
+
   /**
    *
    *
@@ -326,6 +383,7 @@ public interface AnswerQueryRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1.AnswerQueryRequest.QueryUnderstandingSpec
       getQueryUnderstandingSpec();
+
   /**
    *
    *
@@ -361,7 +419,7 @@ public interface AnswerQueryRequestOrBuilder
    * <code>bool asynchronous_mode = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.discoveryengine.v1.AnswerQueryRequest.asynchronous_mode is deprecated.
-   *     See google/cloud/discoveryengine/v1/conversational_search_service.proto;l=821
+   *     See google/cloud/discoveryengine/v1/conversational_search_service.proto;l=975
    * @return The asynchronousMode.
    */
   @java.lang.Deprecated
@@ -387,6 +445,7 @@ public interface AnswerQueryRequestOrBuilder
    * @return The userPseudoId.
    */
   java.lang.String getUserPseudoId();
+
   /**
    *
    *
@@ -434,6 +493,7 @@ public interface AnswerQueryRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 13;</code>
    */
   int getUserLabelsCount();
+
   /**
    *
    *
@@ -460,9 +520,11 @@ public interface AnswerQueryRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 13;</code>
    */
   boolean containsUserLabels(java.lang.String key);
+
   /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getUserLabels();
+
   /**
    *
    *
@@ -489,6 +551,7 @@ public interface AnswerQueryRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 13;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap();
+
   /**
    *
    *
@@ -519,6 +582,7 @@ public interface AnswerQueryRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -545,4 +609,48 @@ public interface AnswerQueryRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 13;</code>
    */
   java.lang.String getUserLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. End user specification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AnswerQueryRequest.EndUserSpec end_user_spec = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the endUserSpec field is set.
+   */
+  boolean hasEndUserSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. End user specification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AnswerQueryRequest.EndUserSpec end_user_spec = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The endUserSpec.
+   */
+  com.google.cloud.discoveryengine.v1.AnswerQueryRequest.EndUserSpec getEndUserSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. End user specification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AnswerQueryRequest.EndUserSpec end_user_spec = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.AnswerQueryRequest.EndUserSpecOrBuilder
+      getEndUserSpecOrBuilder();
 }

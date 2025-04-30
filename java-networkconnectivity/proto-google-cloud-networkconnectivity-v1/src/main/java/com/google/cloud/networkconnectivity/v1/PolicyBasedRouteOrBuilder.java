@@ -28,7 +28,7 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Optional. VM instances to which this policy based route applies to.
+   * Optional. VM instances that this policy-based route applies to.
    * </pre>
    *
    * <code>
@@ -38,11 +38,12 @@ public interface PolicyBasedRouteOrBuilder
    * @return Whether the virtualMachine field is set.
    */
   boolean hasVirtualMachine();
+
   /**
    *
    *
    * <pre>
-   * Optional. VM instances to which this policy based route applies to.
+   * Optional. VM instances that this policy-based route applies to.
    * </pre>
    *
    * <code>
@@ -52,11 +53,12 @@ public interface PolicyBasedRouteOrBuilder
    * @return The virtualMachine.
    */
   com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.VirtualMachine getVirtualMachine();
+
   /**
    *
    *
    * <pre>
-   * Optional. VM instances to which this policy based route applies to.
+   * Optional. VM instances that this policy-based route applies to.
    * </pre>
    *
    * <code>
@@ -70,7 +72,8 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Optional. The interconnect attachments to which this route applies to.
+   * Optional. The interconnect attachments that this policy-based route
+   * applies to.
    * </pre>
    *
    * <code>
@@ -80,11 +83,13 @@ public interface PolicyBasedRouteOrBuilder
    * @return Whether the interconnectAttachment field is set.
    */
   boolean hasInterconnectAttachment();
+
   /**
    *
    *
    * <pre>
-   * Optional. The interconnect attachments to which this route applies to.
+   * Optional. The interconnect attachments that this policy-based route
+   * applies to.
    * </pre>
    *
    * <code>
@@ -95,11 +100,13 @@ public interface PolicyBasedRouteOrBuilder
    */
   com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.InterconnectAttachment
       getInterconnectAttachment();
+
   /**
    *
    *
    * <pre>
-   * Optional. The interconnect attachments to which this route applies to.
+   * Optional. The interconnect attachments that this policy-based route
+   * applies to.
    * </pre>
    *
    * <code>
@@ -113,9 +120,9 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Optional. The IP of a global access enabled L4 ILB that should be the
-   * next hop to handle matching packets. For this version, only
-   * next_hop_ilb_ip is supported.
+   * Optional. The IP address of a global-access-enabled L4 ILB that is the
+   * next hop for matching packets. For this version, only nextHopIlbIp is
+   * supported.
    * </pre>
    *
    * <code>string next_hop_ilb_ip = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -123,13 +130,14 @@ public interface PolicyBasedRouteOrBuilder
    * @return Whether the nextHopIlbIp field is set.
    */
   boolean hasNextHopIlbIp();
+
   /**
    *
    *
    * <pre>
-   * Optional. The IP of a global access enabled L4 ILB that should be the
-   * next hop to handle matching packets. For this version, only
-   * next_hop_ilb_ip is supported.
+   * Optional. The IP address of a global-access-enabled L4 ILB that is the
+   * next hop for matching packets. For this version, only nextHopIlbIp is
+   * supported.
    * </pre>
    *
    * <code>string next_hop_ilb_ip = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -137,13 +145,14 @@ public interface PolicyBasedRouteOrBuilder
    * @return The nextHopIlbIp.
    */
   java.lang.String getNextHopIlbIp();
+
   /**
    *
    *
    * <pre>
-   * Optional. The IP of a global access enabled L4 ILB that should be the
-   * next hop to handle matching packets. For this version, only
-   * next_hop_ilb_ip is supported.
+   * Optional. The IP address of a global-access-enabled L4 ILB that is the
+   * next hop for matching packets. For this version, only nextHopIlbIp is
+   * supported.
    * </pre>
    *
    * <code>string next_hop_ilb_ip = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -167,6 +176,7 @@ public interface PolicyBasedRouteOrBuilder
    * @return Whether the nextHopOtherRoutes field is set.
    */
   boolean hasNextHopOtherRoutes();
+
   /**
    *
    *
@@ -182,6 +192,7 @@ public interface PolicyBasedRouteOrBuilder
    * @return The enum numeric value on the wire for nextHopOtherRoutes.
    */
   int getNextHopOtherRoutesValue();
+
   /**
    *
    *
@@ -211,6 +222,7 @@ public interface PolicyBasedRouteOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -229,7 +241,7 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the PolicyBasedRoute was created.
+   * Output only. Time when the policy-based route was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -238,11 +250,12 @@ public interface PolicyBasedRouteOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
    * <pre>
-   * Output only. Time when the PolicyBasedRoute was created.
+   * Output only. Time when the policy-based route was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -251,11 +264,12 @@ public interface PolicyBasedRouteOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
    * <pre>
-   * Output only. Time when the PolicyBasedRoute was created.
+   * Output only. Time when the policy-based route was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -267,7 +281,7 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the PolicyBasedRoute was updated.
+   * Output only. Time when the policy-based route was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -276,11 +290,12 @@ public interface PolicyBasedRouteOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
    * <pre>
-   * Output only. Time when the PolicyBasedRoute was updated.
+   * Output only. Time when the policy-based route was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -289,11 +304,12 @@ public interface PolicyBasedRouteOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
    * <pre>
-   * Output only. Time when the PolicyBasedRoute was updated.
+   * Output only. Time when the policy-based route was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -311,6 +327,7 @@ public interface PolicyBasedRouteOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -321,9 +338,11 @@ public interface PolicyBasedRouteOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -334,6 +353,7 @@ public interface PolicyBasedRouteOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -348,6 +368,7 @@ public interface PolicyBasedRouteOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -372,6 +393,7 @@ public interface PolicyBasedRouteOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -390,8 +412,8 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Required. Fully-qualified URL of the network that this route applies to.
-   * e.g. projects/my-project/global/networks/my-network.
+   * Required. Fully-qualified URL of the network that this route applies to,
+   * for example: projects/my-project/global/networks/my-network.
    * </pre>
    *
    * <code>
@@ -401,12 +423,13 @@ public interface PolicyBasedRouteOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
    * <pre>
-   * Required. Fully-qualified URL of the network that this route applies to.
-   * e.g. projects/my-project/global/networks/my-network.
+   * Required. Fully-qualified URL of the network that this route applies to,
+   * for example: projects/my-project/global/networks/my-network.
    * </pre>
    *
    * <code>
@@ -431,6 +454,7 @@ public interface PolicyBasedRouteOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
+
   /**
    *
    *
@@ -445,6 +469,7 @@ public interface PolicyBasedRouteOrBuilder
    * @return The filter.
    */
   com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter getFilter();
+
   /**
    *
    *
@@ -462,9 +487,9 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Optional. The priority of this policy based route. Priority is used to
-   * break ties in cases where there are more than one matching policy based
-   * routes found. In cases where multiple policy based routes are matched, the
+   * Optional. The priority of this policy-based route. Priority is used to
+   * break ties in cases where there are more than one matching policy-based
+   * routes found. In cases where multiple policy-based routes are matched, the
    * one with the lowest-numbered priority value wins. The default value is
    * 1000. The priority value must be from 1 to 65535, inclusive.
    * </pre>
@@ -489,6 +514,7 @@ public interface PolicyBasedRouteOrBuilder
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings>
       getWarningsList();
+
   /**
    *
    *
@@ -502,6 +528,7 @@ public interface PolicyBasedRouteOrBuilder
    * </code>
    */
   com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings getWarnings(int index);
+
   /**
    *
    *
@@ -515,6 +542,7 @@ public interface PolicyBasedRouteOrBuilder
    * </code>
    */
   int getWarningsCount();
+
   /**
    *
    *
@@ -530,6 +558,7 @@ public interface PolicyBasedRouteOrBuilder
   java.util.List<
           ? extends com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.WarningsOrBuilder>
       getWarningsOrBuilderList();
+
   /**
    *
    *
@@ -557,6 +586,7 @@ public interface PolicyBasedRouteOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -575,7 +605,7 @@ public interface PolicyBasedRouteOrBuilder
    *
    * <pre>
    * Output only. Type of this resource. Always
-   * networkconnectivity#policyBasedRoute for Policy Based Route resources.
+   * networkconnectivity#policyBasedRoute for policy-based Route resources.
    * </pre>
    *
    * <code>string kind = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -583,12 +613,13 @@ public interface PolicyBasedRouteOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
    * <pre>
    * Output only. Type of this resource. Always
-   * networkconnectivity#policyBasedRoute for Policy Based Route resources.
+   * networkconnectivity#policyBasedRoute for policy-based Route resources.
    * </pre>
    *
    * <code>string kind = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

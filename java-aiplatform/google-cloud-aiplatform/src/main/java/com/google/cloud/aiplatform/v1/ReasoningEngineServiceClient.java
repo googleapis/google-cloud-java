@@ -1041,6 +1041,7 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
    *           .setName(
    *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
    *                   .toString())
+   *           .setForce(true)
    *           .build();
    *   reasoningEngineServiceClient.deleteReasoningEngineAsync(request).get();
    * }
@@ -1073,6 +1074,7 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
    *           .setName(
    *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
    *                   .toString())
+   *           .setForce(true)
    *           .build();
    *   OperationFuture<Empty, DeleteOperationMetadata> future =
    *       reasoningEngineServiceClient.deleteReasoningEngineOperationCallable().futureCall(request);
@@ -1105,6 +1107,7 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
    *           .setName(
    *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
    *                   .toString())
+   *           .setForce(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       reasoningEngineServiceClient.deleteReasoningEngineCallable().futureCall(request);

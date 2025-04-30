@@ -33,6 +33,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkProfilesListResponse)
     NetworkProfilesListResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkProfilesListResponse.newBuilder() to construct.
   private NetworkProfilesListResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -83,6 +85,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
   public boolean hasEtag() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -100,6 +103,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -122,6 +126,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
   public boolean hasId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NetworkProfile> items_;
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.compute.v1.NetworkProfile> getItemsList() {
     return items_;
   }
+
   /**
    *
    *
@@ -215,6 +224,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       getItemsOrBuilderList() {
     return items_;
   }
+
   /**
    *
    *
@@ -228,6 +238,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
   public int getItemsCount() {
     return items_.size();
   }
+
   /**
    *
    *
@@ -241,6 +252,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
   public com.google.cloud.compute.v1.NetworkProfile getItems(int index) {
     return items_.get(index);
   }
+
   /**
    *
    *
@@ -259,6 +271,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -274,6 +287,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
   public boolean hasKind() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -297,6 +311,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -325,6 +340,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -340,6 +356,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -363,6 +380,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -391,6 +409,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -406,6 +425,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -429,6 +449,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -458,6 +479,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachables_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -472,6 +494,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
   public com.google.protobuf.ProtocolStringList getUnreachablesList() {
     return unreachables_;
   }
+
   /**
    *
    *
@@ -486,6 +509,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
   public int getUnreachablesCount() {
     return unreachables_.size();
   }
+
   /**
    *
    *
@@ -501,6 +525,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
   public java.lang.String getUnreachables(int index) {
     return unreachables_.get(index);
   }
+
   /**
    *
    *
@@ -519,6 +544,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -534,6 +560,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -549,6 +576,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -826,6 +854,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1188,6 +1217,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object etag_ = "";
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1196,6 +1226,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
     public boolean hasEtag() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1212,6 +1243,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1228,6 +1260,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1243,6 +1276,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1254,6 +1288,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      * <code>optional string etag = 3123477;</code>
      *
@@ -1272,6 +1307,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1286,6 +1322,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
     public boolean hasId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1308,6 +1345,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1330,6 +1368,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1351,6 +1390,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1368,6 +1408,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1423,6 +1464,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
         return itemsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1439,6 +1481,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
         return itemsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1455,6 +1498,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
         return itemsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1477,6 +1521,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1497,6 +1542,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1519,6 +1565,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1541,6 +1588,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1560,6 +1608,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1580,6 +1629,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1600,6 +1650,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1619,6 +1670,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1638,6 +1690,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1650,6 +1703,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.NetworkProfile.Builder getItemsBuilder(int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1666,6 +1720,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1683,6 +1738,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(items_);
       }
     }
+
     /**
      *
      *
@@ -1696,6 +1752,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.NetworkProfile.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1709,6 +1766,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       return getItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.NetworkProfile.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1741,6 +1799,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -1755,6 +1814,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
     public boolean hasKind() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1777,6 +1837,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1799,6 +1860,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1820,6 +1882,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1837,6 +1900,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1861,6 +1925,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1875,6 +1940,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1897,6 +1963,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1919,6 +1986,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1940,6 +2008,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1957,6 +2026,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1981,6 +2051,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -1995,6 +2066,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2017,6 +2089,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2039,6 +2112,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2060,6 +2134,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2077,6 +2152,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2109,6 +2185,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       }
       bitField0_ |= 0x00000040;
     }
+
     /**
      *
      *
@@ -2124,6 +2201,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       unreachables_.makeImmutable();
       return unreachables_;
     }
+
     /**
      *
      *
@@ -2138,6 +2216,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
     public int getUnreachablesCount() {
       return unreachables_.size();
     }
+
     /**
      *
      *
@@ -2153,6 +2232,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
     public java.lang.String getUnreachables(int index) {
       return unreachables_.get(index);
     }
+
     /**
      *
      *
@@ -2168,6 +2248,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getUnreachablesBytes(int index) {
       return unreachables_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2191,6 +2272,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2213,6 +2295,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2232,6 +2315,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2250,6 +2334,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2280,6 +2365,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -2294,6 +2380,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2314,6 +2401,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2336,6 +2424,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2355,6 +2444,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2382,6 +2472,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2401,6 +2492,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2415,6 +2507,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2433,6 +2526,7 @@ public final class NetworkProfilesListResponse extends com.google.protobuf.Gener
             : warning_;
       }
     }
+
     /**
      *
      *

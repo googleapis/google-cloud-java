@@ -33,6 +33,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.TransferRun)
     TransferRunOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TransferRun.newBuilder() to construct.
   private TransferRun(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     private DestinationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,6 +120,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -173,6 +177,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCHEDULE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp scheduleTime_;
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasScheduleTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -205,6 +211,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : scheduleTime_;
   }
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RUN_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp runTime_;
+
   /**
    *
    *
@@ -239,6 +247,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRunTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -255,6 +264,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getRunTime() {
     return runTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : runTime_;
   }
+
   /**
    *
    *
@@ -272,6 +282,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ERROR_STATUS_FIELD_NUMBER = 21;
   private com.google.rpc.Status errorStatus_;
+
   /**
    *
    *
@@ -287,6 +298,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasErrorStatus() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -302,6 +314,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getErrorStatus() {
     return errorStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : errorStatus_;
   }
+
   /**
    *
    *
@@ -318,6 +331,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -335,6 +349,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -352,6 +367,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -370,6 +386,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -387,6 +404,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -404,6 +422,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -422,6 +441,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -438,6 +458,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -454,6 +475,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -471,6 +493,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PARAMS_FIELD_NUMBER = 9;
   private com.google.protobuf.Struct params_;
+
   /**
    *
    *
@@ -490,6 +513,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasParams() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -509,6 +533,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Struct getParams() {
     return params_ == null ? com.google.protobuf.Struct.getDefaultInstance() : params_;
   }
+
   /**
    *
    *
@@ -528,6 +553,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESTINATION_DATASET_ID_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -542,6 +568,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDestinationDatasetId() {
     return destinationCase_ == 2;
   }
+
   /**
    *
    *
@@ -569,6 +596,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -601,6 +629,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataSourceId_ = "";
+
   /**
    *
    *
@@ -624,6 +653,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -650,6 +680,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 8;
   private int state_ = 0;
+
   /**
    *
    *
@@ -665,6 +696,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -687,6 +719,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USER_ID_FIELD_NUMBER = 11;
   private long userId_ = 0L;
+
   /**
    *
    *
@@ -707,6 +740,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object schedule_ = "";
+
   /**
    *
    *
@@ -734,6 +768,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -766,6 +801,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object notificationPubsubTopic_ = "";
+
   /**
    *
    *
@@ -794,6 +830,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -825,6 +862,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EMAIL_PREFERENCES_FIELD_NUMBER = 25;
   private com.google.cloud.bigquery.datatransfer.v1.EmailPreferences emailPreferences_;
+
   /**
    *
    *
@@ -844,6 +882,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEmailPreferences() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -865,6 +904,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.bigquery.datatransfer.v1.EmailPreferences.getDefaultInstance()
         : emailPreferences_;
   }
+
   /**
    *
    *
@@ -1230,6 +1270,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1693,6 +1734,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1718,6 +1760,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1743,6 +1786,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1767,6 +1811,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1787,6 +1832,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1819,6 +1865,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         scheduleTimeBuilder_;
+
     /**
      *
      *
@@ -1833,6 +1880,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScheduleTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1853,6 +1901,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return scheduleTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1875,6 +1924,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1894,6 +1944,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1921,6 +1972,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1940,6 +1992,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1954,6 +2007,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getScheduleTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1972,6 +2026,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
             : scheduleTime_;
       }
     }
+
     /**
      *
      *
@@ -2004,6 +2059,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         runTimeBuilder_;
+
     /**
      *
      *
@@ -2019,6 +2075,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRunTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2038,6 +2095,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return runTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2061,6 +2119,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2081,6 +2140,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2109,6 +2169,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2129,6 +2190,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2144,6 +2206,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRunTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2161,6 +2224,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return runTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : runTime_;
       }
     }
+
     /**
      *
      *
@@ -2192,6 +2256,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorStatusBuilder_;
+
     /**
      *
      *
@@ -2206,6 +2271,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasErrorStatus() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2224,6 +2290,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return errorStatusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2246,6 +2313,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2265,6 +2333,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2292,6 +2361,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2311,6 +2381,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2325,6 +2396,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getErrorStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2341,6 +2413,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return errorStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : errorStatus_;
       }
     }
+
     /**
      *
      *
@@ -2371,6 +2444,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -2387,6 +2461,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2407,6 +2482,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2431,6 +2507,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2452,6 +2529,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2481,6 +2559,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2502,6 +2581,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2518,6 +2598,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2536,6 +2617,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -2570,6 +2652,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -2586,6 +2669,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2606,6 +2690,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2630,6 +2715,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2651,6 +2737,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2680,6 +2767,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2701,6 +2789,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2717,6 +2806,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2735,6 +2825,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -2769,6 +2860,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2785,6 +2877,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2807,6 +2900,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2831,6 +2925,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2852,6 +2947,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2881,6 +2977,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2902,6 +2999,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2918,6 +3016,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2938,6 +3037,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2972,6 +3072,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         paramsBuilder_;
+
     /**
      *
      *
@@ -2990,6 +3091,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasParams() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3012,6 +3114,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return paramsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3038,6 +3141,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3061,6 +3165,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3092,6 +3197,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3115,6 +3221,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3133,6 +3240,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getParamsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3153,6 +3261,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return params_ == null ? com.google.protobuf.Struct.getDefaultInstance() : params_;
       }
     }
+
     /**
      *
      *
@@ -3198,6 +3307,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDestinationDatasetId() {
       return destinationCase_ == 2;
     }
+
     /**
      *
      *
@@ -3226,6 +3336,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3254,6 +3365,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3275,6 +3387,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3294,6 +3407,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3318,6 +3432,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object dataSourceId_ = "";
+
     /**
      *
      *
@@ -3340,6 +3455,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3362,6 +3478,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3383,6 +3500,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3400,6 +3518,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3424,6 +3543,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -3439,6 +3559,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -3457,6 +3578,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3476,6 +3598,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.bigquery.datatransfer.v1.TransferState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3497,6 +3620,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3516,6 +3640,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long userId_;
+
     /**
      *
      *
@@ -3531,6 +3656,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     public long getUserId() {
       return userId_;
     }
+
     /**
      *
      *
@@ -3550,6 +3676,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3569,6 +3696,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object schedule_ = "";
+
     /**
      *
      *
@@ -3595,6 +3723,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3621,6 +3750,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3646,6 +3776,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3667,6 +3798,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3695,6 +3827,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object notificationPubsubTopic_ = "";
+
     /**
      *
      *
@@ -3722,6 +3855,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3749,6 +3883,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3775,6 +3910,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3797,6 +3933,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3831,6 +3968,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.datatransfer.v1.EmailPreferences.Builder,
             com.google.cloud.bigquery.datatransfer.v1.EmailPreferencesOrBuilder>
         emailPreferencesBuilder_;
+
     /**
      *
      *
@@ -3849,6 +3987,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEmailPreferences() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -3873,6 +4012,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
         return emailPreferencesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3900,6 +4040,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3924,6 +4065,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3958,6 +4100,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3981,6 +4124,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4000,6 +4144,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEmailPreferencesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4023,6 +4168,7 @@ public final class TransferRun extends com.google.protobuf.GeneratedMessageV3
             : emailPreferences_;
       }
     }
+
     /**
      *
      *

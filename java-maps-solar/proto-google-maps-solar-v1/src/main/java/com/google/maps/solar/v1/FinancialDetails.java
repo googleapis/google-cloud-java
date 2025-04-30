@@ -44,6 +44,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.maps.solar.v1.FinancialDetails)
     FinancialDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FinancialDetails.newBuilder() to construct.
   private FinancialDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,6 +76,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int INITIAL_AC_KWH_PER_YEAR_FIELD_NUMBER = 1;
   private float initialAcKwhPerYear_ = 0F;
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
 
   public static final int REMAINING_LIFETIME_UTILITY_BILL_FIELD_NUMBER = 2;
   private com.google.type.Money remainingLifetimeUtilityBill_;
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
   public boolean hasRemainingLifetimeUtilityBill() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
         ? com.google.type.Money.getDefaultInstance()
         : remainingLifetimeUtilityBill_;
   }
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
 
   public static final int FEDERAL_INCENTIVE_FIELD_NUMBER = 3;
   private com.google.type.Money federalIncentive_;
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
   public boolean hasFederalIncentive() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
         ? com.google.type.Money.getDefaultInstance()
         : federalIncentive_;
   }
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
 
   public static final int STATE_INCENTIVE_FIELD_NUMBER = 4;
   private com.google.type.Money stateIncentive_;
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
   public boolean hasStateIncentive() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -232,6 +242,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
   public com.google.type.Money getStateIncentive() {
     return stateIncentive_ == null ? com.google.type.Money.getDefaultInstance() : stateIncentive_;
   }
+
   /**
    *
    *
@@ -249,6 +260,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
 
   public static final int UTILITY_INCENTIVE_FIELD_NUMBER = 5;
   private com.google.type.Money utilityIncentive_;
+
   /**
    *
    *
@@ -265,6 +277,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
   public boolean hasUtilityIncentive() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -283,6 +296,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
         ? com.google.type.Money.getDefaultInstance()
         : utilityIncentive_;
   }
+
   /**
    *
    *
@@ -302,6 +316,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
 
   public static final int LIFETIME_SREC_TOTAL_FIELD_NUMBER = 6;
   private com.google.type.Money lifetimeSrecTotal_;
+
   /**
    *
    *
@@ -319,6 +334,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
   public boolean hasLifetimeSrecTotal() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -338,6 +354,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
         ? com.google.type.Money.getDefaultInstance()
         : lifetimeSrecTotal_;
   }
+
   /**
    *
    *
@@ -358,6 +375,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
 
   public static final int COST_OF_ELECTRICITY_WITHOUT_SOLAR_FIELD_NUMBER = 7;
   private com.google.type.Money costOfElectricityWithoutSolar_;
+
   /**
    *
    *
@@ -374,6 +392,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
   public boolean hasCostOfElectricityWithoutSolar() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -392,6 +411,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
         ? com.google.type.Money.getDefaultInstance()
         : costOfElectricityWithoutSolar_;
   }
+
   /**
    *
    *
@@ -411,6 +431,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
 
   public static final int NET_METERING_ALLOWED_FIELD_NUMBER = 8;
   private boolean netMeteringAllowed_ = false;
+
   /**
    *
    *
@@ -429,6 +450,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
 
   public static final int SOLAR_PERCENTAGE_FIELD_NUMBER = 9;
   private float solarPercentage_ = 0F;
+
   /**
    *
    *
@@ -445,6 +467,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
   public boolean hasSolarPercentage() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -464,6 +487,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
 
   public static final int PERCENTAGE_EXPORTED_TO_GRID_FIELD_NUMBER = 10;
   private float percentageExportedToGrid_ = 0F;
+
   /**
    *
    *
@@ -481,6 +505,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
   public boolean hasPercentageExportedToGrid() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -789,6 +814,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1163,6 +1189,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private float initialAcKwhPerYear_;
+
     /**
      *
      *
@@ -1179,6 +1206,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     public float getInitialAcKwhPerYear() {
       return initialAcKwhPerYear_;
     }
+
     /**
      *
      *
@@ -1199,6 +1227,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1222,6 +1251,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         remainingLifetimeUtilityBillBuilder_;
+
     /**
      *
      *
@@ -1237,6 +1267,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     public boolean hasRemainingLifetimeUtilityBill() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1258,6 +1289,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
         return remainingLifetimeUtilityBillBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1281,6 +1313,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1301,6 +1334,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1329,6 +1363,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1349,6 +1384,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1364,6 +1400,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getRemainingLifetimeUtilityBillFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1383,6 +1420,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
             : remainingLifetimeUtilityBill_;
       }
     }
+
     /**
      *
      *
@@ -1412,6 +1450,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         federalIncentiveBuilder_;
+
     /**
      *
      *
@@ -1427,6 +1466,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     public boolean hasFederalIncentive() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1448,6 +1488,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
         return federalIncentiveBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1471,6 +1512,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1491,6 +1533,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1519,6 +1562,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1539,6 +1583,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1554,6 +1599,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getFederalIncentiveFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1573,6 +1619,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
             : federalIncentive_;
       }
     }
+
     /**
      *
      *
@@ -1602,6 +1649,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         stateIncentiveBuilder_;
+
     /**
      *
      *
@@ -1617,6 +1665,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     public boolean hasStateIncentive() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1638,6 +1687,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
         return stateIncentiveBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1661,6 +1711,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1681,6 +1732,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1709,6 +1761,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1729,6 +1782,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1744,6 +1798,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getStateIncentiveFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1763,6 +1818,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
             : stateIncentive_;
       }
     }
+
     /**
      *
      *
@@ -1792,6 +1848,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         utilityIncentiveBuilder_;
+
     /**
      *
      *
@@ -1807,6 +1864,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     public boolean hasUtilityIncentive() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1828,6 +1886,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
         return utilityIncentiveBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1851,6 +1910,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1871,6 +1931,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1899,6 +1960,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1919,6 +1981,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1934,6 +1997,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getUtilityIncentiveFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1953,6 +2017,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
             : utilityIncentive_;
       }
     }
+
     /**
      *
      *
@@ -1982,6 +2047,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         lifetimeSrecTotalBuilder_;
+
     /**
      *
      *
@@ -1998,6 +2064,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     public boolean hasLifetimeSrecTotal() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2020,6 +2087,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
         return lifetimeSrecTotalBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2044,6 +2112,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2065,6 +2134,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2094,6 +2164,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2115,6 +2186,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2131,6 +2203,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getLifetimeSrecTotalFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2151,6 +2224,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
             : lifetimeSrecTotal_;
       }
     }
+
     /**
      *
      *
@@ -2181,6 +2255,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         costOfElectricityWithoutSolarBuilder_;
+
     /**
      *
      *
@@ -2196,6 +2271,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     public boolean hasCostOfElectricityWithoutSolar() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2217,6 +2293,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
         return costOfElectricityWithoutSolarBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2240,6 +2317,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2260,6 +2338,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2288,6 +2367,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2308,6 +2388,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2323,6 +2404,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getCostOfElectricityWithoutSolarFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2342,6 +2424,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
             : costOfElectricityWithoutSolar_;
       }
     }
+
     /**
      *
      *
@@ -2368,6 +2451,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean netMeteringAllowed_;
+
     /**
      *
      *
@@ -2383,6 +2467,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     public boolean getNetMeteringAllowed() {
       return netMeteringAllowed_;
     }
+
     /**
      *
      *
@@ -2402,6 +2487,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2421,6 +2507,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     }
 
     private float solarPercentage_;
+
     /**
      *
      *
@@ -2437,6 +2524,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     public boolean hasSolarPercentage() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2453,6 +2541,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     public float getSolarPercentage() {
       return solarPercentage_;
     }
+
     /**
      *
      *
@@ -2473,6 +2562,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2493,6 +2583,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     }
 
     private float percentageExportedToGrid_;
+
     /**
      *
      *
@@ -2510,6 +2601,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     public boolean hasPercentageExportedToGrid() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2527,6 +2619,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
     public float getPercentageExportedToGrid() {
       return percentageExportedToGrid_;
     }
+
     /**
      *
      *
@@ -2548,6 +2641,7 @@ public final class FinancialDetails extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

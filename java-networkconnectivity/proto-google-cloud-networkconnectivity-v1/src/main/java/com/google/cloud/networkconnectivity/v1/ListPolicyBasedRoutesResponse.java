@@ -23,7 +23,9 @@ package com.google.cloud.networkconnectivity.v1;
  *
  *
  * <pre>
- * Response for [PolicyBasedRouting.ListPolicyBasedRoutes][] method.
+ * Response for
+ * [PolicyBasedRoutingService.ListPolicyBasedRoutes][google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.ListPolicyBasedRoutes]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkconnectivity.v1.ListPolicyBasedRoutesResponse}
@@ -33,6 +35,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.ListPolicyBasedRoutesResponse)
     ListPolicyBasedRoutesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListPolicyBasedRoutesResponse.newBuilder() to construct.
   private ListPolicyBasedRoutesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,11 +73,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkconnectivity.v1.PolicyBasedRoute>
       policyBasedRoutes_;
+
   /**
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -85,11 +89,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       getPolicyBasedRoutesList() {
     return policyBasedRoutes_;
   }
+
   /**
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -100,11 +105,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       getPolicyBasedRoutesOrBuilderList() {
     return policyBasedRoutes_;
   }
+
   /**
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -114,11 +120,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
   public int getPolicyBasedRoutesCount() {
     return policyBasedRoutes_.size();
   }
+
   /**
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -128,11 +135,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
   public com.google.cloud.networkconnectivity.v1.PolicyBasedRoute getPolicyBasedRoutes(int index) {
     return policyBasedRoutes_.get(index);
   }
+
   /**
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -148,6 +156,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -172,6 +181,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -202,6 +212,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -216,6 +227,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
+
   /**
    *
    *
@@ -230,6 +242,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
   public int getUnreachableCount() {
     return unreachable_.size();
   }
+
   /**
    *
    *
@@ -245,6 +258,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
+
   /**
    *
    *
@@ -450,11 +464,14 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
    * <pre>
-   * Response for [PolicyBasedRouting.ListPolicyBasedRoutes][] method.
+   * Response for
+   * [PolicyBasedRoutingService.ListPolicyBasedRoutes][google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.ListPolicyBasedRoutes]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.ListPolicyBasedRoutesResponse}
@@ -746,7 +763,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -760,11 +777,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
         return policyBasedRoutesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -777,11 +795,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
         return policyBasedRoutesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -795,11 +814,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
         return policyBasedRoutesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -819,11 +839,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -841,11 +862,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -865,11 +887,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -889,11 +912,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -910,11 +934,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -932,11 +957,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -954,11 +980,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -974,11 +1001,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -994,11 +1022,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -1008,11 +1037,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
         getPolicyBasedRoutesBuilder(int index) {
       return getPolicyBasedRoutesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -1026,11 +1056,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
         return policyBasedRoutesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -1045,11 +1076,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(policyBasedRoutes_);
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -1061,11 +1093,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
           .addBuilder(
               com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.getDefaultInstance());
     }
+
     /**
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -1077,11 +1110,12 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
           .addBuilder(
               index, com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.getDefaultInstance());
     }
+
     /**
      *
      *
      * <pre>
-     * Policy based routes to be returned.
+     * Policy-based routes to be returned.
      * </pre>
      *
      * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -1113,6 +1147,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1136,6 +1171,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1159,6 +1195,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1181,6 +1218,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1199,6 +1237,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1232,6 +1271,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1247,6 +1287,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       unreachable_.makeImmutable();
       return unreachable_;
     }
+
     /**
      *
      *
@@ -1261,6 +1302,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
     public int getUnreachableCount() {
       return unreachable_.size();
     }
+
     /**
      *
      *
@@ -1276,6 +1318,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
+
     /**
      *
      *
@@ -1291,6 +1334,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1314,6 +1358,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1336,6 +1381,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1355,6 +1401,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1373,6 +1420,7 @@ public final class ListPolicyBasedRoutesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

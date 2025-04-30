@@ -37,6 +37,7 @@ public interface UniversalActionOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface UniversalActionOrBuilder
    * @return Whether the openLink field is set.
    */
   boolean hasOpenLink();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface UniversalActionOrBuilder
    * @return The openLink.
    */
   java.lang.String getOpenLink();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UniversalActionOrBuilder
    * @return Whether the runFunction field is set.
    */
   boolean hasRunFunction();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface UniversalActionOrBuilder
    * @return The runFunction.
    */
   java.lang.String getRunFunction();
+
   /**
    *
    *

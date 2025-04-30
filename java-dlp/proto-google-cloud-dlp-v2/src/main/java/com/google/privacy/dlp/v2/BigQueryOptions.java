@@ -33,6 +33,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.BigQueryOptions)
     BigQueryOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BigQueryOptions.newBuilder() to construct.
   private BigQueryOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -123,6 +124,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code>
      */
     public static final int SAMPLE_METHOD_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -135,6 +137,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * <code>TOP = 1;</code>
      */
     public static final int TOP_VALUE = 1;
+
     /**
      *
      *
@@ -232,6 +235,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int TABLE_REFERENCE_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.BigQueryTable tableReference_;
+
   /**
    *
    *
@@ -247,6 +251,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
   public boolean hasTableReference() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -264,6 +269,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
         : tableReference_;
   }
+
   /**
    *
    *
@@ -284,6 +290,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.FieldId> identifyingFields_;
+
   /**
    *
    *
@@ -301,6 +308,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.privacy.dlp.v2.FieldId> getIdentifyingFieldsList() {
     return identifyingFields_;
   }
+
   /**
    *
    *
@@ -319,6 +327,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       getIdentifyingFieldsOrBuilderList() {
     return identifyingFields_;
   }
+
   /**
    *
    *
@@ -336,6 +345,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
   public int getIdentifyingFieldsCount() {
     return identifyingFields_.size();
   }
+
   /**
    *
    *
@@ -353,6 +363,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
   public com.google.privacy.dlp.v2.FieldId getIdentifyingFields(int index) {
     return identifyingFields_.get(index);
   }
+
   /**
    *
    *
@@ -373,6 +384,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
 
   public static final int ROWS_LIMIT_FIELD_NUMBER = 3;
   private long rowsLimit_ = 0L;
+
   /**
    *
    *
@@ -394,6 +406,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
 
   public static final int ROWS_LIMIT_PERCENT_FIELD_NUMBER = 6;
   private int rowsLimitPercent_ = 0;
+
   /**
    *
    *
@@ -421,6 +434,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
 
   public static final int SAMPLE_METHOD_FIELD_NUMBER = 4;
   private int sampleMethod_ = 0;
+
   /**
    *
    *
@@ -436,6 +450,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
   public int getSampleMethodValue() {
     return sampleMethod_;
   }
+
   /**
    *
    *
@@ -460,6 +475,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.FieldId> excludedFields_;
+
   /**
    *
    *
@@ -477,6 +493,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.privacy.dlp.v2.FieldId> getExcludedFieldsList() {
     return excludedFields_;
   }
+
   /**
    *
    *
@@ -495,6 +512,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       getExcludedFieldsOrBuilderList() {
     return excludedFields_;
   }
+
   /**
    *
    *
@@ -512,6 +530,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
   public int getExcludedFieldsCount() {
     return excludedFields_.size();
   }
+
   /**
    *
    *
@@ -529,6 +548,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
   public com.google.privacy.dlp.v2.FieldId getExcludedFields(int index) {
     return excludedFields_.get(index);
   }
+
   /**
    *
    *
@@ -551,6 +571,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.FieldId> includedFields_;
+
   /**
    *
    *
@@ -567,6 +588,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.privacy.dlp.v2.FieldId> getIncludedFieldsList() {
     return includedFields_;
   }
+
   /**
    *
    *
@@ -584,6 +606,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       getIncludedFieldsOrBuilderList() {
     return includedFields_;
   }
+
   /**
    *
    *
@@ -600,6 +623,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
   public int getIncludedFieldsCount() {
     return includedFields_.size();
   }
+
   /**
    *
    *
@@ -616,6 +640,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
   public com.google.privacy.dlp.v2.FieldId getIncludedFields(int index) {
     return includedFields_.get(index);
   }
+
   /**
    *
    *
@@ -862,6 +887,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1279,6 +1305,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
             com.google.privacy.dlp.v2.BigQueryTable.Builder,
             com.google.privacy.dlp.v2.BigQueryTableOrBuilder>
         tableReferenceBuilder_;
+
     /**
      *
      *
@@ -1293,6 +1320,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     public boolean hasTableReference() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1313,6 +1341,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         return tableReferenceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1335,6 +1364,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1355,6 +1385,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1382,6 +1413,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1401,6 +1433,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1415,6 +1448,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getTableReferenceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1433,6 +1467,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
             : tableReference_;
       }
     }
+
     /**
      *
      *
@@ -1496,6 +1531,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         return identifyingFieldsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1516,6 +1552,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         return identifyingFieldsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1536,6 +1573,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         return identifyingFieldsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1562,6 +1600,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1586,6 +1625,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1612,6 +1652,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1638,6 +1679,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1661,6 +1703,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1685,6 +1728,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1709,6 +1753,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1732,6 +1777,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1755,6 +1801,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1771,6 +1818,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.FieldId.Builder getIdentifyingFieldsBuilder(int index) {
       return getIdentifyingFieldsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1791,6 +1839,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         return identifyingFieldsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1812,6 +1861,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(identifyingFields_);
       }
     }
+
     /**
      *
      *
@@ -1829,6 +1879,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       return getIdentifyingFieldsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1846,6 +1897,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       return getIdentifyingFieldsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1885,6 +1937,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     }
 
     private long rowsLimit_;
+
     /**
      *
      *
@@ -1903,6 +1956,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     public long getRowsLimit() {
       return rowsLimit_;
     }
+
     /**
      *
      *
@@ -1925,6 +1979,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1947,6 +2002,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     }
 
     private int rowsLimitPercent_;
+
     /**
      *
      *
@@ -1971,6 +2027,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     public int getRowsLimitPercent() {
       return rowsLimitPercent_;
     }
+
     /**
      *
      *
@@ -1999,6 +2056,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2027,6 +2085,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     }
 
     private int sampleMethod_ = 0;
+
     /**
      *
      *
@@ -2042,6 +2101,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     public int getSampleMethodValue() {
       return sampleMethod_;
     }
+
     /**
      *
      *
@@ -2060,6 +2120,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2079,6 +2140,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
           ? com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2100,6 +2162,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2155,6 +2218,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         return excludedFieldsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2175,6 +2239,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         return excludedFieldsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2195,6 +2260,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         return excludedFieldsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2221,6 +2287,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2245,6 +2312,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2271,6 +2339,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2297,6 +2366,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2320,6 +2390,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2344,6 +2415,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2368,6 +2440,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2391,6 +2464,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2414,6 +2488,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2430,6 +2505,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.FieldId.Builder getExcludedFieldsBuilder(int index) {
       return getExcludedFieldsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2450,6 +2526,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         return excludedFieldsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2471,6 +2548,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(excludedFields_);
       }
     }
+
     /**
      *
      *
@@ -2488,6 +2566,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       return getExcludedFieldsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2505,6 +2584,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       return getExcludedFieldsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2579,6 +2659,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         return includedFieldsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2598,6 +2679,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         return includedFieldsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2617,6 +2699,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         return includedFieldsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2642,6 +2725,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2665,6 +2749,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2690,6 +2775,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2715,6 +2801,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2737,6 +2824,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2760,6 +2848,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2783,6 +2872,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2805,6 +2895,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2827,6 +2918,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2842,6 +2934,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.FieldId.Builder getIncludedFieldsBuilder(int index) {
       return getIncludedFieldsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2861,6 +2954,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         return includedFieldsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2881,6 +2975,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(includedFields_);
       }
     }
+
     /**
      *
      *
@@ -2897,6 +2992,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       return getIncludedFieldsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2913,6 +3009,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       return getIncludedFieldsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
     }
+
     /**
      *
      *

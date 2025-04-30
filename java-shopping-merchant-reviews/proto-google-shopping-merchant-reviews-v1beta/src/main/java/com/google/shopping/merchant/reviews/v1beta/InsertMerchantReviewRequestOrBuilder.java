@@ -37,6 +37,7 @@ public interface InsertMerchantReviewRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface InsertMerchantReviewRequestOrBuilder
    * @return Whether the merchantReview field is set.
    */
   boolean hasMerchantReview();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface InsertMerchantReviewRequestOrBuilder
    * @return The merchantReview.
    */
   com.google.shopping.merchant.reviews.v1beta.MerchantReview getMerchantReview();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface InsertMerchantReviewRequestOrBuilder
    * @return The dataSource.
    */
   java.lang.String getDataSource();
+
   /**
    *
    *

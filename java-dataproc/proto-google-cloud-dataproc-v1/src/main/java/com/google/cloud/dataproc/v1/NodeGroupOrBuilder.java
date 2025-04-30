@@ -36,6 +36,7 @@ public interface NodeGroupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface NodeGroupOrBuilder
    * @return A list containing the roles.
    */
   java.util.List<com.google.cloud.dataproc.v1.NodeGroup.Role> getRolesList();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface NodeGroupOrBuilder
    * @return The count of roles.
    */
   int getRolesCount();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface NodeGroupOrBuilder
    * @return The roles at the given index.
    */
   com.google.cloud.dataproc.v1.NodeGroup.Role getRoles(int index);
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface NodeGroupOrBuilder
    * @return A list containing the enum numeric values on the wire for roles.
    */
   java.util.List<java.lang.Integer> getRolesValueList();
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public interface NodeGroupOrBuilder
    * @return Whether the nodeGroupConfig field is set.
    */
   boolean hasNodeGroupConfig();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface NodeGroupOrBuilder
    * @return The nodeGroupConfig.
    */
   com.google.cloud.dataproc.v1.InstanceGroupConfig getNodeGroupConfig();
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public interface NodeGroupOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -197,9 +205,11 @@ public interface NodeGroupOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -217,6 +227,7 @@ public interface NodeGroupOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -238,6 +249,7 @@ public interface NodeGroupOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

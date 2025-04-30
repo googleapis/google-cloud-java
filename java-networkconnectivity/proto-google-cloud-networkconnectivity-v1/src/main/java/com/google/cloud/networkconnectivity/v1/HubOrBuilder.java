@@ -38,6 +38,7 @@ public interface HubOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface HubOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface HubOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface HubOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface HubOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface HubOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -153,9 +159,11 @@ public interface HubOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -168,6 +176,7 @@ public interface HubOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -184,6 +193,7 @@ public interface HubOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -201,22 +211,23 @@ public interface HubOrBuilder
    *
    *
    * <pre>
-   * An optional description of the hub.
+   * Optional. An optional description of the hub.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
    * <pre>
-   * An optional description of the hub.
+   * Optional. An optional description of the hub.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -236,6 +247,7 @@ public interface HubOrBuilder
    * @return The uniqueId.
    */
   java.lang.String getUniqueId();
+
   /**
    *
    *
@@ -265,6 +277,7 @@ public interface HubOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -293,6 +306,7 @@ public interface HubOrBuilder
    * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.RoutingVPC> getRoutingVpcsList();
+
   /**
    *
    *
@@ -306,6 +320,7 @@ public interface HubOrBuilder
    * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
    */
   com.google.cloud.networkconnectivity.v1.RoutingVPC getRoutingVpcs(int index);
+
   /**
    *
    *
@@ -319,6 +334,7 @@ public interface HubOrBuilder
    * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
    */
   int getRoutingVpcsCount();
+
   /**
    *
    *
@@ -333,6 +349,7 @@ public interface HubOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkconnectivity.v1.RoutingVPCOrBuilder>
       getRoutingVpcsOrBuilderList();
+
   /**
    *
    *
@@ -364,6 +381,7 @@ public interface HubOrBuilder
    * @return A list containing the routeTables.
    */
   java.util.List<java.lang.String> getRouteTablesList();
+
   /**
    *
    *
@@ -381,6 +399,7 @@ public interface HubOrBuilder
    * @return The count of routeTables.
    */
   int getRouteTablesCount();
+
   /**
    *
    *
@@ -399,6 +418,7 @@ public interface HubOrBuilder
    * @return The routeTables at the given index.
    */
   java.lang.String getRouteTables(int index);
+
   /**
    *
    *
@@ -436,6 +456,7 @@ public interface HubOrBuilder
    * @return Whether the spokeSummary field is set.
    */
   boolean hasSpokeSummary();
+
   /**
    *
    *
@@ -454,6 +475,7 @@ public interface HubOrBuilder
    * @return The spokeSummary.
    */
   com.google.cloud.networkconnectivity.v1.SpokeSummary getSpokeSummary();
+
   /**
    *
    *
@@ -487,6 +509,7 @@ public interface HubOrBuilder
    * @return The enum numeric value on the wire for policyMode.
    */
   int getPolicyModeValue();
+
   /**
    *
    *
@@ -522,6 +545,7 @@ public interface HubOrBuilder
    * @return The enum numeric value on the wire for presetTopology.
    */
   int getPresetTopologyValue();
+
   /**
    *
    *
@@ -545,10 +569,10 @@ public interface HubOrBuilder
    *
    *
    * <pre>
-   * Optional. Whether Private Service Connect transitivity is enabled for the
-   * hub. If true, Private Service Connect endpoints in VPC spokes attached to
-   * the hub are made accessible to other VPC spokes attached to the hub.
-   * The default value is false.
+   * Optional. Whether Private Service Connect connection propagation is enabled
+   * for the hub. If true, Private Service Connect endpoints in VPC spokes
+   * attached to the hub are made accessible to other VPC spokes attached to the
+   * hub. The default value is false.
    * </pre>
    *
    * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -556,14 +580,15 @@ public interface HubOrBuilder
    * @return Whether the exportPsc field is set.
    */
   boolean hasExportPsc();
+
   /**
    *
    *
    * <pre>
-   * Optional. Whether Private Service Connect transitivity is enabled for the
-   * hub. If true, Private Service Connect endpoints in VPC spokes attached to
-   * the hub are made accessible to other VPC spokes attached to the hub.
-   * The default value is false.
+   * Optional. Whether Private Service Connect connection propagation is enabled
+   * for the hub. If true, Private Service Connect endpoints in VPC spokes
+   * attached to the hub are made accessible to other VPC spokes attached to the
+   * hub. The default value is false.
    * </pre>
    *
    * <code>optional bool export_psc = 15 [(.google.api.field_behavior) = OPTIONAL];</code>

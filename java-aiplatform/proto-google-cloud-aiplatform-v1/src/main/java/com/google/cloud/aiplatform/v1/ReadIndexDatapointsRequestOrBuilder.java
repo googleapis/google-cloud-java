@@ -40,6 +40,7 @@ public interface ReadIndexDatapointsRequestOrBuilder
    * @return The indexEndpoint.
    */
   java.lang.String getIndexEndpoint();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ReadIndexDatapointsRequestOrBuilder
    * @return The deployedIndexId.
    */
   java.lang.String getDeployedIndexId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface ReadIndexDatapointsRequestOrBuilder
    * @return A list containing the ids.
    */
   java.util.List<java.lang.String> getIdsList();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface ReadIndexDatapointsRequestOrBuilder
    * @return The count of ids.
    */
   int getIdsCount();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface ReadIndexDatapointsRequestOrBuilder
    * @return The ids at the given index.
    */
   java.lang.String getIds(int index);
+
   /**
    *
    *

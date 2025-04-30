@@ -37,6 +37,7 @@ public interface MenuItemExtensionPointOrBuilder
    * @return The runFunction.
    */
   java.lang.String getRunFunction();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface MenuItemExtensionPointOrBuilder
    * @return The label.
    */
   java.lang.String getLabel();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface MenuItemExtensionPointOrBuilder
    * @return The logoUrl.
    */
   java.lang.String getLogoUrl();
+
   /**
    *
    *

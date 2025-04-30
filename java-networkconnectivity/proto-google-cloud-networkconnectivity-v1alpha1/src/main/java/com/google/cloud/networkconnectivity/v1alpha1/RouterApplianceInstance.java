@@ -34,6 +34,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1alpha1.RouterApplianceInstance)
     RouterApplianceInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RouterApplianceInstance.newBuilder() to construct.
   private RouterApplianceInstance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object virtualMachine_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkInterface_ = "";
+
   /**
    * <code>string network_interface = 2 [deprecated = true];</code>
    *
@@ -192,6 +198,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    * <code>string network_interface = 2 [deprecated = true];</code>
    *
@@ -392,6 +399,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -614,6 +622,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object virtualMachine_ = "";
+
     /**
      *
      *
@@ -636,6 +645,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -658,6 +668,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -679,6 +690,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +708,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +733,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
     }
 
     private java.lang.Object ipAddress_ = "";
+
     /**
      *
      *
@@ -742,6 +756,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -764,6 +779,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +819,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +844,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
     }
 
     private java.lang.Object networkInterface_ = "";
+
     /**
      * <code>string network_interface = 2 [deprecated = true];</code>
      *
@@ -846,6 +865,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>string network_interface = 2 [deprecated = true];</code>
      *
@@ -866,6 +886,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>string network_interface = 2 [deprecated = true];</code>
      *
@@ -885,6 +906,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      * <code>string network_interface = 2 [deprecated = true];</code>
      *
@@ -900,6 +922,7 @@ public final class RouterApplianceInstance extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      * <code>string network_interface = 2 [deprecated = true];</code>
      *

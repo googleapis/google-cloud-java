@@ -34,6 +34,7 @@ public interface ListEnginesResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Engine engines = 1;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.Engine> getEnginesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListEnginesResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Engine engines = 1;</code>
    */
   com.google.cloud.discoveryengine.v1beta.Engine getEngines(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListEnginesResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Engine engines = 1;</code>
    */
   int getEnginesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListEnginesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1beta.EngineOrBuilder>
       getEnginesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListEnginesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

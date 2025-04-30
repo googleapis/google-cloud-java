@@ -34,6 +34,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Asset)
     AssetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Asset.newBuilder() to construct.
   private Asset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -98,6 +99,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      *
      *
@@ -124,6 +126,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The message.
      */
     java.lang.String getMessage();
+
     /**
      *
      *
@@ -149,6 +152,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     boolean hasUpdateTime();
+
     /**
      *
      *
@@ -161,6 +165,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The updateTime.
      */
     com.google.protobuf.Timestamp getUpdateTime();
+
     /**
      *
      *
@@ -172,6 +177,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
   }
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Asset.SecurityStatus)
       SecurityStatusOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SecurityStatus.newBuilder() to construct.
     private SecurityStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -283,6 +290,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * <code>STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -293,6 +301,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * <code>READY = 1;</code>
        */
       public static final int READY_VALUE = 1;
+
       /**
        *
        *
@@ -304,6 +313,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * <code>APPLYING = 2;</code>
        */
       public static final int APPLYING_VALUE = 2;
+
       /**
        *
        *
@@ -406,6 +416,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int STATE_FIELD_NUMBER = 1;
     private int state_ = 0;
+
     /**
      *
      *
@@ -422,6 +433,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -447,6 +459,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -470,6 +483,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -496,6 +510,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     public static final int UPDATE_TIME_FIELD_NUMBER = 3;
     private com.google.protobuf.Timestamp updateTime_;
+
     /**
      *
      *
@@ -511,6 +526,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -526,6 +542,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getUpdateTime() {
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
+
     /**
      *
      *
@@ -727,6 +744,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -958,6 +976,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int state_ = 0;
+
       /**
        *
        *
@@ -974,6 +993,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public int getStateValue() {
         return state_;
       }
+
       /**
        *
        *
@@ -993,6 +1013,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1013,6 +1034,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.dataplex.v1.Asset.SecurityStatus.State.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1035,6 +1057,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1055,6 +1078,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object message_ = "";
+
       /**
        *
        *
@@ -1077,6 +1101,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1099,6 +1124,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1120,6 +1146,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1137,6 +1164,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1166,6 +1194,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           updateTimeBuilder_;
+
       /**
        *
        *
@@ -1180,6 +1209,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUpdateTime() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1200,6 +1230,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return updateTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1222,6 +1253,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1241,6 +1273,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1268,6 +1301,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1287,6 +1321,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1301,6 +1336,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getUpdateTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1319,6 +1355,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               : updateTime_;
         }
       }
+
       /**
        *
        *
@@ -1443,6 +1480,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the includePatterns.
      */
     java.util.List<java.lang.String> getIncludePatternsList();
+
     /**
      *
      *
@@ -1459,6 +1497,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The count of includePatterns.
      */
     int getIncludePatternsCount();
+
     /**
      *
      *
@@ -1476,6 +1515,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The includePatterns at the given index.
      */
     java.lang.String getIncludePatterns(int index);
+
     /**
      *
      *
@@ -1509,6 +1549,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the excludePatterns.
      */
     java.util.List<java.lang.String> getExcludePatternsList();
+
     /**
      *
      *
@@ -1524,6 +1565,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The count of excludePatterns.
      */
     int getExcludePatternsCount();
+
     /**
      *
      *
@@ -1540,6 +1582,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The excludePatterns at the given index.
      */
     java.lang.String getExcludePatterns(int index);
+
     /**
      *
      *
@@ -1571,6 +1614,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the csvOptions field is set.
      */
     boolean hasCsvOptions();
+
     /**
      *
      *
@@ -1585,6 +1629,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The csvOptions.
      */
     com.google.cloud.dataplex.v1.Asset.DiscoverySpec.CsvOptions getCsvOptions();
+
     /**
      *
      *
@@ -1612,6 +1657,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the jsonOptions field is set.
      */
     boolean hasJsonOptions();
+
     /**
      *
      *
@@ -1626,6 +1672,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The jsonOptions.
      */
     com.google.cloud.dataplex.v1.Asset.DiscoverySpec.JsonOptions getJsonOptions();
+
     /**
      *
      *
@@ -1646,11 +1693,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
      * running discovery periodically. Successive discovery runs must be
      * scheduled at least 60 minutes apart. The default value is to run
-     * discovery every 60 minutes. To explicitly set a timezone to the cron
-     * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
-     * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-     * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
-     * * * * *`, or `TZ=America/New_York 1 * * * *`.
+     * discovery every 60 minutes.
+     *
+     * To explicitly set a timezone to the cron tab, apply a prefix in the
+     * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
+     * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
+     * database. For example, `CRON_TZ=America/New_York 1 * * * *`, or
+     * `TZ=America/New_York 1 * * * *`.
      * </pre>
      *
      * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1658,6 +1707,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the schedule field is set.
      */
     boolean hasSchedule();
+
     /**
      *
      *
@@ -1665,11 +1715,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
      * running discovery periodically. Successive discovery runs must be
      * scheduled at least 60 minutes apart. The default value is to run
-     * discovery every 60 minutes. To explicitly set a timezone to the cron
-     * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
-     * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-     * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
-     * * * * *`, or `TZ=America/New_York 1 * * * *`.
+     * discovery every 60 minutes.
+     *
+     * To explicitly set a timezone to the cron tab, apply a prefix in the
+     * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
+     * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
+     * database. For example, `CRON_TZ=America/New_York 1 * * * *`, or
+     * `TZ=America/New_York 1 * * * *`.
      * </pre>
      *
      * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1677,6 +1729,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The schedule.
      */
     java.lang.String getSchedule();
+
     /**
      *
      *
@@ -1684,11 +1737,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
      * running discovery periodically. Successive discovery runs must be
      * scheduled at least 60 minutes apart. The default value is to run
-     * discovery every 60 minutes. To explicitly set a timezone to the cron
-     * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
-     * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-     * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
-     * * * * *`, or `TZ=America/New_York 1 * * * *`.
+     * discovery every 60 minutes.
+     *
+     * To explicitly set a timezone to the cron tab, apply a prefix in the
+     * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
+     * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
+     * database. For example, `CRON_TZ=America/New_York 1 * * * *`, or
+     * `TZ=America/New_York 1 * * * *`.
      * </pre>
      *
      * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1699,6 +1754,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.dataplex.v1.Asset.DiscoverySpec.TriggerCase getTriggerCase();
   }
+
   /**
    *
    *
@@ -1713,6 +1769,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Asset.DiscoverySpec)
       DiscoverySpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DiscoverySpec.newBuilder() to construct.
     private DiscoverySpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1776,6 +1833,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * @return The delimiter.
        */
       java.lang.String getDelimiter();
+
       /**
        *
        *
@@ -1802,6 +1860,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * @return The encoding.
        */
       java.lang.String getEncoding();
+
       /**
        *
        *
@@ -1829,6 +1888,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        */
       boolean getDisableTypeInference();
     }
+
     /**
      *
      *
@@ -1843,6 +1903,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Asset.DiscoverySpec.CsvOptions)
         CsvOptionsOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use CsvOptions.newBuilder() to construct.
       private CsvOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1876,6 +1937,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
       public static final int HEADER_ROWS_FIELD_NUMBER = 1;
       private int headerRows_ = 0;
+
       /**
        *
        *
@@ -1897,6 +1959,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object delimiter_ = "";
+
       /**
        *
        *
@@ -1921,6 +1984,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -1950,6 +2014,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object encoding_ = "";
+
       /**
        *
        *
@@ -1973,6 +2038,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -1999,6 +2065,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
       public static final int DISABLE_TYPE_INFERENCE_FIELD_NUMBER = 4;
       private boolean disableTypeInference_ = false;
+
       /**
        *
        *
@@ -2204,6 +2271,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2436,6 +2504,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private int headerRows_;
+
         /**
          *
          *
@@ -2452,6 +2521,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         public int getHeaderRows() {
           return headerRows_;
         }
+
         /**
          *
          *
@@ -2472,6 +2542,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2492,6 +2563,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object delimiter_ = "";
+
         /**
          *
          *
@@ -2515,6 +2587,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2538,6 +2611,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2560,6 +2634,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2578,6 +2653,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2603,6 +2679,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object encoding_ = "";
+
         /**
          *
          *
@@ -2625,6 +2702,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2647,6 +2725,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2668,6 +2747,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2685,6 +2765,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2709,6 +2790,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
 
         private boolean disableTypeInference_;
+
         /**
          *
          *
@@ -2725,6 +2807,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         public boolean getDisableTypeInference() {
           return disableTypeInference_;
         }
+
         /**
          *
          *
@@ -2745,6 +2828,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2848,6 +2932,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * @return The encoding.
        */
       java.lang.String getEncoding();
+
       /**
        *
        *
@@ -2876,6 +2961,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        */
       boolean getDisableTypeInference();
     }
+
     /**
      *
      *
@@ -2890,6 +2976,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Asset.DiscoverySpec.JsonOptions)
         JsonOptionsOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use JsonOptions.newBuilder() to construct.
       private JsonOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2924,6 +3011,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object encoding_ = "";
+
       /**
        *
        *
@@ -2947,6 +3035,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -2973,6 +3062,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
       public static final int DISABLE_TYPE_INFERENCE_FIELD_NUMBER = 2;
       private boolean disableTypeInference_ = false;
+
       /**
        *
        *
@@ -3161,6 +3251,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -3365,6 +3456,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object encoding_ = "";
+
         /**
          *
          *
@@ -3387,6 +3479,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -3409,6 +3502,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -3430,6 +3524,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3447,6 +3542,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3471,6 +3567,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
 
         private boolean disableTypeInference_;
+
         /**
          *
          *
@@ -3488,6 +3585,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         public boolean getDisableTypeInference() {
           return disableTypeInference_;
         }
+
         /**
          *
          *
@@ -3509,6 +3607,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3613,6 +3712,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       private TriggerCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -3645,6 +3745,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ENABLED_FIELD_NUMBER = 1;
     private boolean enabled_ = false;
+
     /**
      *
      *
@@ -3666,6 +3767,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList includePatterns_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -3684,6 +3786,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getIncludePatternsList() {
       return includePatterns_;
     }
+
     /**
      *
      *
@@ -3702,6 +3805,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public int getIncludePatternsCount() {
       return includePatterns_.size();
     }
+
     /**
      *
      *
@@ -3721,6 +3825,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getIncludePatterns(int index) {
       return includePatterns_.get(index);
     }
+
     /**
      *
      *
@@ -3746,6 +3851,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList excludePatterns_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -3763,6 +3869,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getExcludePatternsList() {
       return excludePatterns_;
     }
+
     /**
      *
      *
@@ -3780,6 +3887,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public int getExcludePatternsCount() {
       return excludePatterns_.size();
     }
+
     /**
      *
      *
@@ -3798,6 +3906,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getExcludePatterns(int index) {
       return excludePatterns_.get(index);
     }
+
     /**
      *
      *
@@ -3819,6 +3928,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CSV_OPTIONS_FIELD_NUMBER = 4;
     private com.google.cloud.dataplex.v1.Asset.DiscoverySpec.CsvOptions csvOptions_;
+
     /**
      *
      *
@@ -3836,6 +3946,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCsvOptions() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3855,6 +3966,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dataplex.v1.Asset.DiscoverySpec.CsvOptions.getDefaultInstance()
           : csvOptions_;
     }
+
     /**
      *
      *
@@ -3876,6 +3988,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     public static final int JSON_OPTIONS_FIELD_NUMBER = 5;
     private com.google.cloud.dataplex.v1.Asset.DiscoverySpec.JsonOptions jsonOptions_;
+
     /**
      *
      *
@@ -3893,6 +4006,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasJsonOptions() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3912,6 +4026,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dataplex.v1.Asset.DiscoverySpec.JsonOptions.getDefaultInstance()
           : jsonOptions_;
     }
+
     /**
      *
      *
@@ -3932,6 +4047,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SCHEDULE_FIELD_NUMBER = 10;
+
     /**
      *
      *
@@ -3939,11 +4055,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
      * running discovery periodically. Successive discovery runs must be
      * scheduled at least 60 minutes apart. The default value is to run
-     * discovery every 60 minutes. To explicitly set a timezone to the cron
-     * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
-     * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-     * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
-     * * * * *`, or `TZ=America/New_York 1 * * * *`.
+     * discovery every 60 minutes.
+     *
+     * To explicitly set a timezone to the cron tab, apply a prefix in the
+     * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
+     * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
+     * database. For example, `CRON_TZ=America/New_York 1 * * * *`, or
+     * `TZ=America/New_York 1 * * * *`.
      * </pre>
      *
      * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3953,6 +4071,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSchedule() {
       return triggerCase_ == 10;
     }
+
     /**
      *
      *
@@ -3960,11 +4079,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
      * running discovery periodically. Successive discovery runs must be
      * scheduled at least 60 minutes apart. The default value is to run
-     * discovery every 60 minutes. To explicitly set a timezone to the cron
-     * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
-     * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-     * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
-     * * * * *`, or `TZ=America/New_York 1 * * * *`.
+     * discovery every 60 minutes.
+     *
+     * To explicitly set a timezone to the cron tab, apply a prefix in the
+     * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
+     * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
+     * database. For example, `CRON_TZ=America/New_York 1 * * * *`, or
+     * `TZ=America/New_York 1 * * * *`.
      * </pre>
      *
      * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3987,6 +4108,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -3994,11 +4116,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
      * running discovery periodically. Successive discovery runs must be
      * scheduled at least 60 minutes apart. The default value is to run
-     * discovery every 60 minutes. To explicitly set a timezone to the cron
-     * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
-     * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-     * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
-     * * * * *`, or `TZ=America/New_York 1 * * * *`.
+     * discovery every 60 minutes.
+     *
+     * To explicitly set a timezone to the cron tab, apply a prefix in the
+     * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
+     * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
+     * database. For example, `CRON_TZ=America/New_York 1 * * * *`, or
+     * `TZ=America/New_York 1 * * * *`.
      * </pre>
      *
      * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4264,6 +4388,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4585,6 +4710,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private boolean enabled_;
+
       /**
        *
        *
@@ -4600,6 +4726,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public boolean getEnabled() {
         return enabled_;
       }
+
       /**
        *
        *
@@ -4619,6 +4746,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4646,6 +4774,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -4666,6 +4795,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         includePatterns_.makeImmutable();
         return includePatterns_;
       }
+
       /**
        *
        *
@@ -4685,6 +4815,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public int getIncludePatternsCount() {
         return includePatterns_.size();
       }
+
       /**
        *
        *
@@ -4705,6 +4836,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getIncludePatterns(int index) {
         return includePatterns_.get(index);
       }
+
       /**
        *
        *
@@ -4725,6 +4857,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getIncludePatternsBytes(int index) {
         return includePatterns_.getByteString(index);
       }
+
       /**
        *
        *
@@ -4753,6 +4886,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4780,6 +4914,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4804,6 +4939,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4827,6 +4963,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4865,6 +5002,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000004;
       }
+
       /**
        *
        *
@@ -4884,6 +5022,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         excludePatterns_.makeImmutable();
         return excludePatterns_;
       }
+
       /**
        *
        *
@@ -4902,6 +5041,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public int getExcludePatternsCount() {
         return excludePatterns_.size();
       }
+
       /**
        *
        *
@@ -4921,6 +5061,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getExcludePatterns(int index) {
         return excludePatterns_.get(index);
       }
+
       /**
        *
        *
@@ -4940,6 +5081,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getExcludePatternsBytes(int index) {
         return excludePatterns_.getByteString(index);
       }
+
       /**
        *
        *
@@ -4967,6 +5109,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4993,6 +5136,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5016,6 +5160,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5038,6 +5183,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5072,6 +5218,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.dataplex.v1.Asset.DiscoverySpec.CsvOptions.Builder,
               com.google.cloud.dataplex.v1.Asset.DiscoverySpec.CsvOptionsOrBuilder>
           csvOptionsBuilder_;
+
       /**
        *
        *
@@ -5088,6 +5235,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCsvOptions() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -5110,6 +5258,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return csvOptionsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5135,6 +5284,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5157,6 +5307,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5189,6 +5340,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5210,6 +5362,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5227,6 +5380,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getCsvOptionsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5248,6 +5402,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               : csvOptions_;
         }
       }
+
       /**
        *
        *
@@ -5282,6 +5437,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.dataplex.v1.Asset.DiscoverySpec.JsonOptions.Builder,
               com.google.cloud.dataplex.v1.Asset.DiscoverySpec.JsonOptionsOrBuilder>
           jsonOptionsBuilder_;
+
       /**
        *
        *
@@ -5298,6 +5454,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public boolean hasJsonOptions() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -5320,6 +5477,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return jsonOptionsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5345,6 +5503,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5367,6 +5526,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5399,6 +5559,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5420,6 +5581,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5437,6 +5599,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getJsonOptionsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5458,6 +5621,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               : jsonOptions_;
         }
       }
+
       /**
        *
        *
@@ -5493,11 +5657,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
        * running discovery periodically. Successive discovery runs must be
        * scheduled at least 60 minutes apart. The default value is to run
-       * discovery every 60 minutes. To explicitly set a timezone to the cron
-       * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
-       * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-       * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
-       * * * * *`, or `TZ=America/New_York 1 * * * *`.
+       * discovery every 60 minutes.
+       *
+       * To explicitly set a timezone to the cron tab, apply a prefix in the
+       * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
+       * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
+       * database. For example, `CRON_TZ=America/New_York 1 * * * *`, or
+       * `TZ=America/New_York 1 * * * *`.
        * </pre>
        *
        * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5508,6 +5674,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSchedule() {
         return triggerCase_ == 10;
       }
+
       /**
        *
        *
@@ -5515,11 +5682,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
        * running discovery periodically. Successive discovery runs must be
        * scheduled at least 60 minutes apart. The default value is to run
-       * discovery every 60 minutes. To explicitly set a timezone to the cron
-       * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
-       * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-       * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
-       * * * * *`, or `TZ=America/New_York 1 * * * *`.
+       * discovery every 60 minutes.
+       *
+       * To explicitly set a timezone to the cron tab, apply a prefix in the
+       * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
+       * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
+       * database. For example, `CRON_TZ=America/New_York 1 * * * *`, or
+       * `TZ=America/New_York 1 * * * *`.
        * </pre>
        *
        * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5543,6 +5712,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5550,11 +5720,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
        * running discovery periodically. Successive discovery runs must be
        * scheduled at least 60 minutes apart. The default value is to run
-       * discovery every 60 minutes. To explicitly set a timezone to the cron
-       * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
-       * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-       * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
-       * * * * *`, or `TZ=America/New_York 1 * * * *`.
+       * discovery every 60 minutes.
+       *
+       * To explicitly set a timezone to the cron tab, apply a prefix in the
+       * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
+       * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
+       * database. For example, `CRON_TZ=America/New_York 1 * * * *`, or
+       * `TZ=America/New_York 1 * * * *`.
        * </pre>
        *
        * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5578,6 +5750,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5585,11 +5758,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
        * running discovery periodically. Successive discovery runs must be
        * scheduled at least 60 minutes apart. The default value is to run
-       * discovery every 60 minutes. To explicitly set a timezone to the cron
-       * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
-       * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-       * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
-       * * * * *`, or `TZ=America/New_York 1 * * * *`.
+       * discovery every 60 minutes.
+       *
+       * To explicitly set a timezone to the cron tab, apply a prefix in the
+       * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
+       * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
+       * database. For example, `CRON_TZ=America/New_York 1 * * * *`, or
+       * `TZ=America/New_York 1 * * * *`.
        * </pre>
        *
        * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5606,6 +5781,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5613,11 +5789,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
        * running discovery periodically. Successive discovery runs must be
        * scheduled at least 60 minutes apart. The default value is to run
-       * discovery every 60 minutes. To explicitly set a timezone to the cron
-       * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
-       * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-       * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
-       * * * * *`, or `TZ=America/New_York 1 * * * *`.
+       * discovery every 60 minutes.
+       *
+       * To explicitly set a timezone to the cron tab, apply a prefix in the
+       * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
+       * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
+       * database. For example, `CRON_TZ=America/New_York 1 * * * *`, or
+       * `TZ=America/New_York 1 * * * *`.
        * </pre>
        *
        * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5632,6 +5810,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5639,11 +5818,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
        * running discovery periodically. Successive discovery runs must be
        * scheduled at least 60 minutes apart. The default value is to run
-       * discovery every 60 minutes. To explicitly set a timezone to the cron
-       * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
-       * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-       * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
-       * * * * *`, or `TZ=America/New_York 1 * * * *`.
+       * discovery every 60 minutes.
+       *
+       * To explicitly set a timezone to the cron tab, apply a prefix in the
+       * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
+       * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
+       * database. For example, `CRON_TZ=America/New_York 1 * * * *`, or
+       * `TZ=America/New_York 1 * * * *`.
        * </pre>
        *
        * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5746,6 +5927,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -5776,6 +5958,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
+
     /**
      *
      *
@@ -5806,6 +5989,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for readAccessMode.
      */
     int getReadAccessModeValue();
+
     /**
      *
      *
@@ -5822,6 +6006,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode getReadAccessMode();
   }
+
   /**
    *
    *
@@ -5836,6 +6021,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Asset.ResourceSpec)
       ResourceSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ResourceSpec.newBuilder() to construct.
     private ResourceSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5921,6 +6107,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * <code>TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -5931,6 +6118,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * <code>STORAGE_BUCKET = 1;</code>
        */
       public static final int STORAGE_BUCKET_VALUE = 1;
+
       /**
        *
        *
@@ -6081,6 +6269,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * <code>ACCESS_MODE_UNSPECIFIED = 0;</code>
        */
       public static final int ACCESS_MODE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -6091,6 +6280,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * <code>DIRECT = 1;</code>
        */
       public static final int DIRECT_VALUE = 1;
+
       /**
        *
        *
@@ -6191,6 +6381,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -6217,6 +6408,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -6246,6 +6438,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TYPE_FIELD_NUMBER = 2;
     private int type_ = 0;
+
     /**
      *
      *
@@ -6263,6 +6456,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -6287,6 +6481,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     public static final int READ_ACCESS_MODE_FIELD_NUMBER = 5;
     private int readAccessMode_ = 0;
+
     /**
      *
      *
@@ -6305,6 +6500,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public int getReadAccessModeValue() {
       return readAccessMode_;
     }
+
     /**
      *
      *
@@ -6512,6 +6708,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -6725,6 +6922,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -6750,6 +6948,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6775,6 +6974,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6799,6 +6999,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6819,6 +7020,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6846,6 +7048,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int type_ = 0;
+
       /**
        *
        *
@@ -6863,6 +7066,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public int getTypeValue() {
         return type_;
       }
+
       /**
        *
        *
@@ -6883,6 +7087,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6904,6 +7109,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.dataplex.v1.Asset.ResourceSpec.Type.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -6927,6 +7133,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6948,6 +7155,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int readAccessMode_ = 0;
+
       /**
        *
        *
@@ -6966,6 +7174,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public int getReadAccessModeValue() {
         return readAccessMode_;
       }
+
       /**
        *
        *
@@ -6987,6 +7196,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7009,6 +7219,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -7034,6 +7245,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7136,6 +7348,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      *
      *
@@ -7161,6 +7374,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The message.
      */
     java.lang.String getMessage();
+
     /**
      *
      *
@@ -7186,6 +7400,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     boolean hasUpdateTime();
+
     /**
      *
      *
@@ -7198,6 +7413,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The updateTime.
      */
     com.google.protobuf.Timestamp getUpdateTime();
+
     /**
      *
      *
@@ -7221,6 +7437,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The managedAccessIdentity.
      */
     java.lang.String getManagedAccessIdentity();
+
     /**
      *
      *
@@ -7234,6 +7451,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getManagedAccessIdentityBytes();
   }
+
   /**
    *
    *
@@ -7248,6 +7466,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Asset.ResourceStatus)
       ResourceStatusOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ResourceStatus.newBuilder() to construct.
     private ResourceStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7333,6 +7552,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * <code>STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -7343,6 +7563,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * <code>READY = 1;</code>
        */
       public static final int READY_VALUE = 1;
+
       /**
        *
        *
@@ -7442,6 +7663,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int STATE_FIELD_NUMBER = 1;
     private int state_ = 0;
+
     /**
      *
      *
@@ -7457,6 +7679,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -7481,6 +7704,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -7504,6 +7728,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -7530,6 +7755,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     public static final int UPDATE_TIME_FIELD_NUMBER = 3;
     private com.google.protobuf.Timestamp updateTime_;
+
     /**
      *
      *
@@ -7545,6 +7771,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -7560,6 +7787,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getUpdateTime() {
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
+
     /**
      *
      *
@@ -7578,6 +7806,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object managedAccessIdentity_ = "";
+
     /**
      *
      *
@@ -7601,6 +7830,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -7821,6 +8051,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -8066,6 +8297,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int state_ = 0;
+
       /**
        *
        *
@@ -8081,6 +8313,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public int getStateValue() {
         return state_;
       }
+
       /**
        *
        *
@@ -8099,6 +8332,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8118,6 +8352,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.dataplex.v1.Asset.ResourceStatus.State.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -8139,6 +8374,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8158,6 +8394,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object message_ = "";
+
       /**
        *
        *
@@ -8180,6 +8417,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -8202,6 +8440,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -8223,6 +8462,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8240,6 +8480,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8269,6 +8510,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           updateTimeBuilder_;
+
       /**
        *
        *
@@ -8283,6 +8525,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUpdateTime() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -8303,6 +8546,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return updateTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -8325,6 +8569,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8344,6 +8589,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8371,6 +8617,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -8390,6 +8637,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8404,6 +8652,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getUpdateTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -8422,6 +8671,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               : updateTime_;
         }
       }
+
       /**
        *
        *
@@ -8449,6 +8699,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object managedAccessIdentity_ = "";
+
       /**
        *
        *
@@ -8472,6 +8723,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -8495,6 +8747,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -8517,6 +8770,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8535,6 +8789,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8640,6 +8895,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      *
      *
@@ -8665,6 +8921,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The message.
      */
     java.lang.String getMessage();
+
     /**
      *
      *
@@ -8690,6 +8947,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     boolean hasUpdateTime();
+
     /**
      *
      *
@@ -8702,6 +8960,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The updateTime.
      */
     com.google.protobuf.Timestamp getUpdateTime();
+
     /**
      *
      *
@@ -8725,6 +8984,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastRunTime field is set.
      */
     boolean hasLastRunTime();
+
     /**
      *
      *
@@ -8737,6 +8997,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The lastRunTime.
      */
     com.google.protobuf.Timestamp getLastRunTime();
+
     /**
      *
      *
@@ -8760,6 +9021,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stats field is set.
      */
     boolean hasStats();
+
     /**
      *
      *
@@ -8772,6 +9034,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The stats.
      */
     com.google.cloud.dataplex.v1.Asset.DiscoveryStatus.Stats getStats();
+
     /**
      *
      *
@@ -8795,6 +9058,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastRunDuration field is set.
      */
     boolean hasLastRunDuration();
+
     /**
      *
      *
@@ -8807,6 +9071,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The lastRunDuration.
      */
     com.google.protobuf.Duration getLastRunDuration();
+
     /**
      *
      *
@@ -8818,6 +9083,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.DurationOrBuilder getLastRunDurationOrBuilder();
   }
+
   /**
    *
    *
@@ -8832,6 +9098,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Asset.DiscoveryStatus)
       DiscoveryStatusOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DiscoveryStatus.newBuilder() to construct.
     private DiscoveryStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8937,6 +9204,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * <code>STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -8947,6 +9215,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * <code>SCHEDULED = 1;</code>
        */
       public static final int SCHEDULED_VALUE = 1;
+
       /**
        *
        *
@@ -8957,6 +9226,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * <code>IN_PROGRESS = 2;</code>
        */
       public static final int IN_PROGRESS_VALUE = 2;
+
       /**
        *
        *
@@ -8968,6 +9238,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * <code>PAUSED = 3;</code>
        */
       public static final int PAUSED_VALUE = 3;
+
       /**
        *
        *
@@ -9125,6 +9396,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        */
       long getFilesets();
     }
+
     /**
      *
      *
@@ -9139,6 +9411,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Asset.DiscoveryStatus.Stats)
         StatsOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Stats.newBuilder() to construct.
       private Stats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -9169,6 +9442,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
       public static final int DATA_ITEMS_FIELD_NUMBER = 1;
       private long dataItems_ = 0L;
+
       /**
        *
        *
@@ -9187,6 +9461,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
       public static final int DATA_SIZE_FIELD_NUMBER = 2;
       private long dataSize_ = 0L;
+
       /**
        *
        *
@@ -9205,6 +9480,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
       public static final int TABLES_FIELD_NUMBER = 3;
       private long tables_ = 0L;
+
       /**
        *
        *
@@ -9223,6 +9499,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
       public static final int FILESETS_FIELD_NUMBER = 4;
       private long filesets_ = 0L;
+
       /**
        *
        *
@@ -9427,6 +9704,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -9654,6 +9932,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private long dataItems_;
+
         /**
          *
          *
@@ -9669,6 +9948,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         public long getDataItems() {
           return dataItems_;
         }
+
         /**
          *
          *
@@ -9688,6 +9968,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -9707,6 +9988,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
 
         private long dataSize_;
+
         /**
          *
          *
@@ -9722,6 +10004,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         public long getDataSize() {
           return dataSize_;
         }
+
         /**
          *
          *
@@ -9741,6 +10024,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -9760,6 +10044,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
 
         private long tables_;
+
         /**
          *
          *
@@ -9775,6 +10060,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         public long getTables() {
           return tables_;
         }
+
         /**
          *
          *
@@ -9794,6 +10080,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -9813,6 +10100,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
 
         private long filesets_;
+
         /**
          *
          *
@@ -9828,6 +10116,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         public long getFilesets() {
           return filesets_;
         }
+
         /**
          *
          *
@@ -9847,6 +10136,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -9933,6 +10223,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int STATE_FIELD_NUMBER = 1;
     private int state_ = 0;
+
     /**
      *
      *
@@ -9948,6 +10239,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -9972,6 +10264,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -9995,6 +10288,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -10021,6 +10315,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     public static final int UPDATE_TIME_FIELD_NUMBER = 3;
     private com.google.protobuf.Timestamp updateTime_;
+
     /**
      *
      *
@@ -10036,6 +10331,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -10051,6 +10347,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getUpdateTime() {
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
+
     /**
      *
      *
@@ -10067,6 +10364,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LAST_RUN_TIME_FIELD_NUMBER = 4;
     private com.google.protobuf.Timestamp lastRunTime_;
+
     /**
      *
      *
@@ -10082,6 +10380,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLastRunTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -10099,6 +10398,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : lastRunTime_;
     }
+
     /**
      *
      *
@@ -10117,6 +10417,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     public static final int STATS_FIELD_NUMBER = 6;
     private com.google.cloud.dataplex.v1.Asset.DiscoveryStatus.Stats stats_;
+
     /**
      *
      *
@@ -10132,6 +10433,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStats() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -10149,6 +10451,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dataplex.v1.Asset.DiscoveryStatus.Stats.getDefaultInstance()
           : stats_;
     }
+
     /**
      *
      *
@@ -10167,6 +10470,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LAST_RUN_DURATION_FIELD_NUMBER = 7;
     private com.google.protobuf.Duration lastRunDuration_;
+
     /**
      *
      *
@@ -10182,6 +10486,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLastRunDuration() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -10199,6 +10504,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : lastRunDuration_;
     }
+
     /**
      *
      *
@@ -10444,6 +10750,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -10734,6 +11041,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int state_ = 0;
+
       /**
        *
        *
@@ -10749,6 +11057,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public int getStateValue() {
         return state_;
       }
+
       /**
        *
        *
@@ -10767,6 +11076,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10786,6 +11096,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.dataplex.v1.Asset.DiscoveryStatus.State.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -10807,6 +11118,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10826,6 +11138,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object message_ = "";
+
       /**
        *
        *
@@ -10848,6 +11161,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -10870,6 +11184,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -10891,6 +11206,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10908,6 +11224,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10937,6 +11254,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           updateTimeBuilder_;
+
       /**
        *
        *
@@ -10951,6 +11269,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUpdateTime() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -10971,6 +11290,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return updateTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -10993,6 +11313,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11012,6 +11333,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11039,6 +11361,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -11058,6 +11381,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11072,6 +11396,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getUpdateTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -11090,6 +11415,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               : updateTime_;
         }
       }
+
       /**
        *
        *
@@ -11122,6 +11448,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           lastRunTimeBuilder_;
+
       /**
        *
        *
@@ -11136,6 +11463,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public boolean hasLastRunTime() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -11156,6 +11484,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return lastRunTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -11178,6 +11507,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11197,6 +11527,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11224,6 +11555,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -11243,6 +11575,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11257,6 +11590,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getLastRunTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -11275,6 +11609,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               : lastRunTime_;
         }
       }
+
       /**
        *
        *
@@ -11307,6 +11642,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.dataplex.v1.Asset.DiscoveryStatus.Stats.Builder,
               com.google.cloud.dataplex.v1.Asset.DiscoveryStatus.StatsOrBuilder>
           statsBuilder_;
+
       /**
        *
        *
@@ -11321,6 +11657,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStats() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -11341,6 +11678,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return statsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -11363,6 +11701,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11383,6 +11722,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11412,6 +11752,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -11431,6 +11772,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11445,6 +11787,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getStatsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -11463,6 +11806,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               : stats_;
         }
       }
+
       /**
        *
        *
@@ -11495,6 +11839,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           lastRunDurationBuilder_;
+
       /**
        *
        *
@@ -11509,6 +11854,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       public boolean hasLastRunDuration() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        *
        *
@@ -11529,6 +11875,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           return lastRunDurationBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -11551,6 +11898,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11570,6 +11918,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11597,6 +11946,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -11616,6 +11966,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11630,6 +11981,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getLastRunDurationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -11648,6 +12000,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
               : lastRunDuration_;
         }
       }
+
       /**
        *
        *
@@ -11743,6 +12096,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -11769,6 +12123,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -11800,6 +12155,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -11823,6 +12179,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -11851,6 +12208,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
+
   /**
    *
    *
@@ -11876,6 +12234,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -11904,6 +12263,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -11920,6 +12280,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -11936,6 +12297,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -11953,6 +12315,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -11969,6 +12332,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -11985,6 +12349,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -12026,6 +12391,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -12042,12 +12408,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -12061,6 +12429,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -12081,6 +12450,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -12106,6 +12476,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -12129,6 +12500,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -12155,6 +12527,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 8;
   private int state_ = 0;
+
   /**
    *
    *
@@ -12171,6 +12544,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -12192,6 +12566,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESOURCE_SPEC_FIELD_NUMBER = 100;
   private com.google.cloud.dataplex.v1.Asset.ResourceSpec resourceSpec_;
+
   /**
    *
    *
@@ -12209,6 +12584,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResourceSpec() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -12228,6 +12604,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataplex.v1.Asset.ResourceSpec.getDefaultInstance()
         : resourceSpec_;
   }
+
   /**
    *
    *
@@ -12248,6 +12625,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESOURCE_STATUS_FIELD_NUMBER = 101;
   private com.google.cloud.dataplex.v1.Asset.ResourceStatus resourceStatus_;
+
   /**
    *
    *
@@ -12265,6 +12643,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResourceStatus() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -12284,6 +12663,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataplex.v1.Asset.ResourceStatus.getDefaultInstance()
         : resourceStatus_;
   }
+
   /**
    *
    *
@@ -12304,6 +12684,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SECURITY_STATUS_FIELD_NUMBER = 103;
   private com.google.cloud.dataplex.v1.Asset.SecurityStatus securityStatus_;
+
   /**
    *
    *
@@ -12322,6 +12703,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSecurityStatus() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -12342,6 +12724,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataplex.v1.Asset.SecurityStatus.getDefaultInstance()
         : securityStatus_;
   }
+
   /**
    *
    *
@@ -12363,6 +12746,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISCOVERY_SPEC_FIELD_NUMBER = 106;
   private com.google.cloud.dataplex.v1.Asset.DiscoverySpec discoverySpec_;
+
   /**
    *
    *
@@ -12382,6 +12766,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDiscoverySpec() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -12403,6 +12788,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataplex.v1.Asset.DiscoverySpec.getDefaultInstance()
         : discoverySpec_;
   }
+
   /**
    *
    *
@@ -12425,6 +12811,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISCOVERY_STATUS_FIELD_NUMBER = 107;
   private com.google.cloud.dataplex.v1.Asset.DiscoveryStatus discoveryStatus_;
+
   /**
    *
    *
@@ -12443,6 +12830,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDiscoveryStatus() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -12463,6 +12851,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataplex.v1.Asset.DiscoveryStatus.getDefaultInstance()
         : discoveryStatus_;
   }
+
   /**
    *
    *
@@ -12790,6 +13179,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -13220,6 +13610,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -13245,6 +13636,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -13270,6 +13662,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -13294,6 +13687,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13314,6 +13708,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13341,6 +13736,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -13363,6 +13759,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -13385,6 +13782,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -13406,6 +13804,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13423,6 +13822,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13447,6 +13847,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uid_ = "";
+
     /**
      *
      *
@@ -13471,6 +13872,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -13495,6 +13897,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -13518,6 +13921,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13537,6 +13941,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13568,6 +13973,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -13584,6 +13990,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -13606,6 +14013,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -13630,6 +14038,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13651,6 +14060,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13680,6 +14090,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13701,6 +14112,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13717,6 +14129,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13737,6 +14150,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -13771,6 +14185,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -13787,6 +14202,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -13809,6 +14225,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -13833,6 +14250,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13854,6 +14272,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13883,6 +14302,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -13904,6 +14324,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13920,6 +14341,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13940,6 +14362,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -13993,6 +14416,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -14009,12 +14433,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -14028,6 +14454,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -14048,6 +14475,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -14074,6 +14502,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -14090,12 +14519,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000020;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -14116,6 +14547,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       return this;
     }
+
     /**
      *
      *
@@ -14132,6 +14564,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -14154,6 +14587,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -14176,6 +14610,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -14197,6 +14632,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14214,6 +14650,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14238,6 +14675,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -14254,6 +14692,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -14273,6 +14712,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14291,6 +14731,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dataplex.v1.State.forNumber(state_);
       return result == null ? com.google.cloud.dataplex.v1.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -14313,6 +14754,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14338,6 +14780,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.Asset.ResourceSpec.Builder,
             com.google.cloud.dataplex.v1.Asset.ResourceSpecOrBuilder>
         resourceSpecBuilder_;
+
     /**
      *
      *
@@ -14354,6 +14797,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResourceSpec() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -14376,6 +14820,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return resourceSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -14400,6 +14845,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14422,6 +14868,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14452,6 +14899,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -14473,6 +14921,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14489,6 +14938,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResourceSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14509,6 +14959,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             : resourceSpec_;
       }
     }
+
     /**
      *
      *
@@ -14543,6 +14994,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.Asset.ResourceStatus.Builder,
             com.google.cloud.dataplex.v1.Asset.ResourceStatusOrBuilder>
         resourceStatusBuilder_;
+
     /**
      *
      *
@@ -14559,6 +15011,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResourceStatus() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -14581,6 +15034,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return resourceStatusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -14605,6 +15059,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14627,6 +15082,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14657,6 +15113,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -14678,6 +15135,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14694,6 +15152,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResourceStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14714,6 +15173,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             : resourceStatus_;
       }
     }
+
     /**
      *
      *
@@ -14748,6 +15208,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.Asset.SecurityStatus.Builder,
             com.google.cloud.dataplex.v1.Asset.SecurityStatusOrBuilder>
         securityStatusBuilder_;
+
     /**
      *
      *
@@ -14765,6 +15226,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSecurityStatus() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -14788,6 +15250,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return securityStatusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -14813,6 +15276,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14836,6 +15300,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14867,6 +15332,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -14889,6 +15355,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14906,6 +15373,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSecurityStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14927,6 +15395,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             : securityStatus_;
       }
     }
+
     /**
      *
      *
@@ -14962,6 +15431,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.Asset.DiscoverySpec.Builder,
             com.google.cloud.dataplex.v1.Asset.DiscoverySpecOrBuilder>
         discoverySpecBuilder_;
+
     /**
      *
      *
@@ -14980,6 +15450,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDiscoverySpec() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -15004,6 +15475,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return discoverySpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -15030,6 +15502,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15054,6 +15527,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15086,6 +15560,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -15109,6 +15584,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15127,6 +15603,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDiscoverySpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -15149,6 +15626,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             : discoverySpec_;
       }
     }
+
     /**
      *
      *
@@ -15185,6 +15663,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.Asset.DiscoveryStatus.Builder,
             com.google.cloud.dataplex.v1.Asset.DiscoveryStatusOrBuilder>
         discoveryStatusBuilder_;
+
     /**
      *
      *
@@ -15202,6 +15681,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDiscoveryStatus() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -15225,6 +15705,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return discoveryStatusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -15250,6 +15731,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15273,6 +15755,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15304,6 +15787,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -15326,6 +15810,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15343,6 +15828,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDiscoveryStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -15365,6 +15851,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             : discoveryStatus_;
       }
     }
+
     /**
      *
      *

@@ -44,6 +44,7 @@ public final class AutomaticShippingImprovements extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.AutomaticShippingImprovements)
     AutomaticShippingImprovementsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutomaticShippingImprovements.newBuilder() to construct.
   private AutomaticShippingImprovements(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,6 +77,7 @@ public final class AutomaticShippingImprovements extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int ALLOW_SHIPPING_IMPROVEMENTS_FIELD_NUMBER = 1;
   private boolean allowShippingImprovements_ = false;
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class AutomaticShippingImprovements extends com.google.protobuf.Gen
   public boolean hasAllowShippingImprovements() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -279,6 +282,7 @@ public final class AutomaticShippingImprovements extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -486,6 +490,7 @@ public final class AutomaticShippingImprovements extends com.google.protobuf.Gen
     private int bitField0_;
 
     private boolean allowShippingImprovements_;
+
     /**
      *
      *
@@ -501,6 +506,7 @@ public final class AutomaticShippingImprovements extends com.google.protobuf.Gen
     public boolean hasAllowShippingImprovements() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -516,6 +522,7 @@ public final class AutomaticShippingImprovements extends com.google.protobuf.Gen
     public boolean getAllowShippingImprovements() {
       return allowShippingImprovements_;
     }
+
     /**
      *
      *
@@ -535,6 +542,7 @@ public final class AutomaticShippingImprovements extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class ExportModelMetadataResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.financialservices.v1.ExportModelMetadataResponse)
     ExportModelMetadataResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExportModelMetadataResponse.newBuilder() to construct.
   private ExportModelMetadataResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class ExportModelMetadataResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

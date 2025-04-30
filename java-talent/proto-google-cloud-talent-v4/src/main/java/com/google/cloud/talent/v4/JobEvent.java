@@ -34,6 +34,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.talent.v4.JobEvent)
     JobEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use JobEvent.newBuilder() to construct.
   private JobEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -296,6 +297,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>JOB_EVENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int JOB_EVENT_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -309,6 +311,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPRESSION = 1;</code>
      */
     public static final int IMPRESSION_VALUE = 1;
+
     /**
      *
      *
@@ -323,6 +326,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>VIEW = 2;</code>
      */
     public static final int VIEW_VALUE = 2;
+
     /**
      *
      *
@@ -335,6 +339,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>VIEW_REDIRECT = 3;</code>
      */
     public static final int VIEW_REDIRECT_VALUE = 3;
+
     /**
      *
      *
@@ -346,6 +351,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>APPLICATION_START = 4;</code>
      */
     public static final int APPLICATION_START_VALUE = 4;
+
     /**
      *
      *
@@ -357,6 +363,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>APPLICATION_FINISH = 5;</code>
      */
     public static final int APPLICATION_FINISH_VALUE = 5;
+
     /**
      *
      *
@@ -374,6 +381,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>APPLICATION_QUICK_SUBMISSION = 6;</code>
      */
     public static final int APPLICATION_QUICK_SUBMISSION_VALUE = 6;
+
     /**
      *
      *
@@ -386,6 +394,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>APPLICATION_REDIRECT = 7;</code>
      */
     public static final int APPLICATION_REDIRECT_VALUE = 7;
+
     /**
      *
      *
@@ -399,6 +408,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>APPLICATION_START_FROM_SEARCH = 8;</code>
      */
     public static final int APPLICATION_START_FROM_SEARCH_VALUE = 8;
+
     /**
      *
      *
@@ -418,6 +428,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>APPLICATION_REDIRECT_FROM_SEARCH = 9;</code>
      */
     public static final int APPLICATION_REDIRECT_FROM_SEARCH_VALUE = 9;
+
     /**
      *
      *
@@ -430,6 +441,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>APPLICATION_COMPANY_SUBMIT = 10;</code>
      */
     public static final int APPLICATION_COMPANY_SUBMIT_VALUE = 10;
+
     /**
      *
      *
@@ -441,6 +453,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>BOOKMARK = 11;</code>
      */
     public static final int BOOKMARK_VALUE = 11;
+
     /**
      *
      *
@@ -453,6 +466,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>NOTIFICATION = 12;</code>
      */
     public static final int NOTIFICATION_VALUE = 12;
+
     /**
      *
      *
@@ -467,6 +481,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>HIRED = 13;</code>
      */
     public static final int HIRED_VALUE = 13;
+
     /**
      *
      *
@@ -479,6 +494,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>SENT_CV = 14;</code>
      */
     public static final int SENT_CV_VALUE = 14;
+
     /**
      *
      *
@@ -605,6 +621,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -623,6 +640,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -649,6 +667,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList jobs_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -673,6 +692,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getJobsList() {
     return jobs_;
   }
+
   /**
    *
    *
@@ -697,6 +717,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
   public int getJobsCount() {
     return jobs_.size();
   }
+
   /**
    *
    *
@@ -722,6 +743,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getJobs(int index) {
     return jobs_.get(index);
   }
+
   /**
    *
    *
@@ -925,6 +947,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1128,6 +1151,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -1146,6 +1170,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1167,6 +1192,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1215,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.talent.v4.JobEvent.JobEventType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1213,6 +1240,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1243,6 +1271,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1268,6 +1297,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       jobs_.makeImmutable();
       return jobs_;
     }
+
     /**
      *
      *
@@ -1292,6 +1322,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     public int getJobsCount() {
       return jobs_.size();
     }
+
     /**
      *
      *
@@ -1317,6 +1348,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getJobs(int index) {
       return jobs_.get(index);
     }
+
     /**
      *
      *
@@ -1342,6 +1374,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getJobsBytes(int index) {
       return jobs_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1375,6 +1408,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1407,6 +1441,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1436,6 +1471,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1464,6 +1500,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

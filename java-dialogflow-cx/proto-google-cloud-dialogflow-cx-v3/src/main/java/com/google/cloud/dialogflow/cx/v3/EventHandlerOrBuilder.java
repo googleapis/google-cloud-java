@@ -36,6 +36,7 @@ public interface EventHandlerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface EventHandlerOrBuilder
    * @return The event.
    */
   java.lang.String getEvent();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface EventHandlerOrBuilder
    * @return Whether the triggerFulfillment field is set.
    */
   boolean hasTriggerFulfillment();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface EventHandlerOrBuilder
    * @return The triggerFulfillment.
    */
   com.google.cloud.dialogflow.cx.v3.Fulfillment getTriggerFulfillment();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface EventHandlerOrBuilder
    * @return Whether the targetPage field is set.
    */
   boolean hasTargetPage();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface EventHandlerOrBuilder
    * @return The targetPage.
    */
   java.lang.String getTargetPage();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface EventHandlerOrBuilder
    * @return Whether the targetFlow field is set.
    */
   boolean hasTargetFlow();
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public interface EventHandlerOrBuilder
    * @return The targetFlow.
    */
   java.lang.String getTargetFlow();
+
   /**
    *
    *

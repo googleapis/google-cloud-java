@@ -37,6 +37,7 @@ public interface DocumentOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface DocumentOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface DocumentOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface DocumentOrBuilder
    * @return Whether the gcsContentUri field is set.
    */
   boolean hasGcsContentUri();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface DocumentOrBuilder
    * @return The gcsContentUri.
    */
   java.lang.String getGcsContentUri();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface DocumentOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

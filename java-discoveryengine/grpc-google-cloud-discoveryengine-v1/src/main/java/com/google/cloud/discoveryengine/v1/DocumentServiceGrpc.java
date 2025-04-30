@@ -422,6 +422,19 @@ public final class DocumentServiceGrpc {
     return DocumentServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DocumentServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DocumentServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DocumentServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public DocumentServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DocumentServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DocumentServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -792,6 +805,153 @@ public final class DocumentServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DocumentService.
+   *
+   * <pre>
+   * Service for ingesting [Document][google.cloud.discoveryengine.v1.Document]
+   * information of the customer's website.
+   * </pre>
+   */
+  public static final class DocumentServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DocumentServiceBlockingV2Stub> {
+    private DocumentServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DocumentServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DocumentServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a [Document][google.cloud.discoveryengine.v1.Document].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.Document getDocument(
+        com.google.cloud.discoveryengine.v1.GetDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a list of [Document][google.cloud.discoveryengine.v1.Document]s.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.ListDocumentsResponse listDocuments(
+        com.google.cloud.discoveryengine.v1.ListDocumentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Document][google.cloud.discoveryengine.v1.Document].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.Document createDocument(
+        com.google.cloud.discoveryengine.v1.CreateDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [Document][google.cloud.discoveryengine.v1.Document].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.Document updateDocument(
+        com.google.cloud.discoveryengine.v1.UpdateDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Document][google.cloud.discoveryengine.v1.Document].
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDocument(
+        com.google.cloud.discoveryengine.v1.DeleteDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bulk import of multiple
+     * [Document][google.cloud.discoveryengine.v1.Document]s. Request processing
+     * may be synchronous. Non-existing items are created.
+     * Note: It is possible for a subset of the
+     * [Document][google.cloud.discoveryengine.v1.Document]s to be successfully
+     * updated.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importDocuments(
+        com.google.cloud.discoveryengine.v1.ImportDocumentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Permanently deletes all selected
+     * [Document][google.cloud.discoveryengine.v1.Document]s in a branch.
+     * This process is asynchronous. Depending on the number of
+     * [Document][google.cloud.discoveryengine.v1.Document]s to be deleted, this
+     * operation can take hours to complete. Before the delete operation
+     * completes, some [Document][google.cloud.discoveryengine.v1.Document]s might
+     * still be returned by
+     * [DocumentService.GetDocument][google.cloud.discoveryengine.v1.DocumentService.GetDocument]
+     * or
+     * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1.DocumentService.ListDocuments].
+     * To get a list of the [Document][google.cloud.discoveryengine.v1.Document]s
+     * to be deleted, set
+     * [PurgeDocumentsRequest.force][google.cloud.discoveryengine.v1.PurgeDocumentsRequest.force]
+     * to false.
+     * </pre>
+     */
+    public com.google.longrunning.Operation purgeDocuments(
+        com.google.cloud.discoveryengine.v1.PurgeDocumentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPurgeDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets index freshness metadata for
+     * [Document][google.cloud.discoveryengine.v1.Document]s. Supported for
+     * website search only.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataResponse
+        batchGetDocumentsMetadata(
+            com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchGetDocumentsMetadataMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DocumentService.
    *
    * <pre>
    * Service for ingesting [Document][google.cloud.discoveryengine.v1.Document]

@@ -38,6 +38,7 @@ public interface TrajectorySingleToolUseInstanceOrBuilder
    * @return Whether the predictedTrajectory field is set.
    */
   boolean hasPredictedTrajectory();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface TrajectorySingleToolUseInstanceOrBuilder
    * @return The predictedTrajectory.
    */
   com.google.cloud.aiplatform.v1beta1.Trajectory getPredictedTrajectory();
+
   /**
    *
    *

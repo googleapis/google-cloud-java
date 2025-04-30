@@ -56,6 +56,7 @@ public interface DimensionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public interface DimensionOrBuilder
    * @return Whether the dimensionExpression field is set.
    */
   boolean hasDimensionExpression();
+
   /**
    *
    *
@@ -115,6 +117,7 @@ public interface DimensionOrBuilder
    * @return The dimensionExpression.
    */
   com.google.analytics.data.v1beta.DimensionExpression getDimensionExpression();
+
   /**
    *
    *

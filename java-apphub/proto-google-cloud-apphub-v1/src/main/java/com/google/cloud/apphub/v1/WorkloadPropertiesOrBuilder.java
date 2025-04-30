@@ -29,7 +29,7 @@ public interface WorkloadPropertiesOrBuilder
    *
    * <pre>
    * Output only. The service project identifier that the underlying cloud
-   * resource resides in. Empty for non cloud resources.
+   * resource resides in. Empty for non-cloud resources.
    * </pre>
    *
    * <code>string gcp_project = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -37,12 +37,13 @@ public interface WorkloadPropertiesOrBuilder
    * @return The gcpProject.
    */
   java.lang.String getGcpProject();
+
   /**
    *
    *
    * <pre>
    * Output only. The service project identifier that the underlying cloud
-   * resource resides in. Empty for non cloud resources.
+   * resource resides in. Empty for non-cloud resources.
    * </pre>
    *
    * <code>string gcp_project = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -56,7 +57,7 @@ public interface WorkloadPropertiesOrBuilder
    *
    * <pre>
    * Output only. The location that the underlying compute resource resides in
-   * (e.g us-west1).
+   * (for example, us-west1).
    * </pre>
    *
    * <code>string location = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -64,12 +65,13 @@ public interface WorkloadPropertiesOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
    * <pre>
    * Output only. The location that the underlying compute resource resides in
-   * (e.g us-west1).
+   * (for example, us-west1).
    * </pre>
    *
    * <code>string location = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -83,7 +85,7 @@ public interface WorkloadPropertiesOrBuilder
    *
    * <pre>
    * Output only. The location that the underlying compute resource resides in
-   * if it is zonal (e.g us-west1-a).
+   * if it is zonal (for example, us-west1-a).
    * </pre>
    *
    * <code>string zone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -91,12 +93,13 @@ public interface WorkloadPropertiesOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *
    * <pre>
    * Output only. The location that the underlying compute resource resides in
-   * if it is zonal (e.g us-west1-a).
+   * if it is zonal (for example, us-west1-a).
    * </pre>
    *
    * <code>string zone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

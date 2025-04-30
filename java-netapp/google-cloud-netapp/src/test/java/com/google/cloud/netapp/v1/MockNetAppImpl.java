@@ -178,7 +178,8 @@ public class MockNetAppImpl extends NetAppImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ValidateDirectoryService, expected %s or %s",
+                  "Unrecognized response type %s for method ValidateDirectoryService, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -199,7 +200,8 @@ public class MockNetAppImpl extends NetAppImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SwitchActiveReplicaZone, expected %s or %s",
+                  "Unrecognized response type %s for method SwitchActiveReplicaZone, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -450,7 +452,8 @@ public class MockNetAppImpl extends NetAppImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListActiveDirectories, expected %s or %s",
+                  "Unrecognized response type %s for method ListActiveDirectories, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListActiveDirectoriesResponse.class.getName(),
                   Exception.class.getName())));
@@ -492,7 +495,8 @@ public class MockNetAppImpl extends NetAppImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateActiveDirectory, expected %s or %s",
+                  "Unrecognized response type %s for method CreateActiveDirectory, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -513,7 +517,8 @@ public class MockNetAppImpl extends NetAppImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateActiveDirectory, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateActiveDirectory, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -534,7 +539,8 @@ public class MockNetAppImpl extends NetAppImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteActiveDirectory, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteActiveDirectory, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -849,7 +855,8 @@ public class MockNetAppImpl extends NetAppImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ReverseReplicationDirection, expected %s or %s",
+                  "Unrecognized response type %s for method ReverseReplicationDirection, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

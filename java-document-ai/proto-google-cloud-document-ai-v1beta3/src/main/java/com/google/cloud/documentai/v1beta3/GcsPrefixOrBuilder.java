@@ -36,6 +36,7 @@ public interface GcsPrefixOrBuilder
    * @return The gcsUriPrefix.
    */
   java.lang.String getGcsUriPrefix();
+
   /**
    *
    *

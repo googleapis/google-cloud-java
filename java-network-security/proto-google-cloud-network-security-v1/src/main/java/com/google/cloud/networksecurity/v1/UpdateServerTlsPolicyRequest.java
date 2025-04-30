@@ -33,6 +33,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.networksecurity.v1.UpdateServerTlsPolicyRequest)
     UpdateServerTlsPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateServerTlsPolicyRequest.newBuilder() to construct.
   private UpdateServerTlsPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
 
   public static final int SERVER_TLS_POLICY_FIELD_NUMBER = 2;
   private com.google.cloud.networksecurity.v1.ServerTlsPolicy serverTlsPolicy_;
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
   public boolean hasServerTlsPolicy() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
         ? com.google.cloud.networksecurity.v1.ServerTlsPolicy.getDefaultInstance()
         : serverTlsPolicy_;
   }
+
   /**
    *
    *
@@ -362,6 +369,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -589,6 +597,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -609,6 +618,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -635,6 +645,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -663,6 +674,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -688,6 +700,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +734,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +760,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +781,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -790,6 +806,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -828,6 +845,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
             com.google.cloud.networksecurity.v1.ServerTlsPolicy.Builder,
             com.google.cloud.networksecurity.v1.ServerTlsPolicyOrBuilder>
         serverTlsPolicyBuilder_;
+
     /**
      *
      *
@@ -844,6 +862,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
     public boolean hasServerTlsPolicy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -866,6 +885,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
         return serverTlsPolicyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -890,6 +910,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +933,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +964,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +986,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +1003,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
       onChanged();
       return getServerTlsPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1000,6 +1025,7 @@ public final class UpdateServerTlsPolicyRequest extends com.google.protobuf.Gene
             : serverTlsPolicy_;
       }
     }
+
     /**
      *
      *

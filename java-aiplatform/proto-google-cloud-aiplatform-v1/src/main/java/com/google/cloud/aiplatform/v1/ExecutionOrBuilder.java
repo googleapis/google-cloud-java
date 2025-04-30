@@ -36,6 +36,7 @@ public interface ExecutionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface ExecutionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface ExecutionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface ExecutionOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface ExecutionOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -166,9 +171,11 @@ public interface ExecutionOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public interface ExecutionOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -205,6 +213,7 @@ public interface ExecutionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -235,6 +244,7 @@ public interface ExecutionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -248,6 +258,7 @@ public interface ExecutionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -273,6 +284,7 @@ public interface ExecutionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -286,6 +298,7 @@ public interface ExecutionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -314,6 +327,7 @@ public interface ExecutionOrBuilder
    * @return The schemaTitle.
    */
   java.lang.String getSchemaTitle();
+
   /**
    *
    *
@@ -347,6 +361,7 @@ public interface ExecutionOrBuilder
    * @return The schemaVersion.
    */
   java.lang.String getSchemaVersion();
+
   /**
    *
    *
@@ -378,6 +393,7 @@ public interface ExecutionOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -392,6 +408,7 @@ public interface ExecutionOrBuilder
    * @return The metadata.
    */
   com.google.protobuf.Struct getMetadata();
+
   /**
    *
    *
@@ -417,6 +434,7 @@ public interface ExecutionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

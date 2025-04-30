@@ -38,6 +38,7 @@ public interface TargetSiteOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface TargetSiteOrBuilder
    * @return The providedUriPattern.
    */
   java.lang.String getProvidedUriPattern();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface TargetSiteOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -115,15 +118,15 @@ public interface TargetSiteOrBuilder
    *
    *
    * <pre>
-   * Input only. If set to false, a uri_pattern is generated to include all
-   * pages whose address contains the provided_uri_pattern. If set to true, an
+   * Immutable. If set to false, a uri_pattern is generated to include all pages
+   * whose address contains the provided_uri_pattern. If set to true, an
    * uri_pattern is generated to try to be an exact match of the
    * provided_uri_pattern or just the specific page if the provided_uri_pattern
    * is a specific one. provided_uri_pattern is always normalized to
    * generate the URI pattern to be used by the search engine.
    * </pre>
    *
-   * <code>bool exact_match = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>bool exact_match = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The exactMatch.
    */
@@ -141,6 +144,7 @@ public interface TargetSiteOrBuilder
    * @return The generatedUriPattern.
    */
   java.lang.String getGeneratedUriPattern();
+
   /**
    *
    *
@@ -166,6 +170,7 @@ public interface TargetSiteOrBuilder
    * @return The rootDomainUri.
    */
   java.lang.String getRootDomainUri();
+
   /**
    *
    *
@@ -193,6 +198,7 @@ public interface TargetSiteOrBuilder
    * @return Whether the siteVerificationInfo field is set.
    */
   boolean hasSiteVerificationInfo();
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public interface TargetSiteOrBuilder
    * @return The siteVerificationInfo.
    */
   com.google.cloud.discoveryengine.v1.SiteVerificationInfo getSiteVerificationInfo();
+
   /**
    *
    *
@@ -235,6 +242,7 @@ public interface TargetSiteOrBuilder
    * @return The enum numeric value on the wire for indexingStatus.
    */
   int getIndexingStatusValue();
+
   /**
    *
    *
@@ -263,6 +271,7 @@ public interface TargetSiteOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -276,6 +285,7 @@ public interface TargetSiteOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -302,6 +312,7 @@ public interface TargetSiteOrBuilder
    * @return Whether the failureReason field is set.
    */
   boolean hasFailureReason();
+
   /**
    *
    *
@@ -316,6 +327,7 @@ public interface TargetSiteOrBuilder
    * @return The failureReason.
    */
   com.google.cloud.discoveryengine.v1.TargetSite.FailureReason getFailureReason();
+
   /**
    *
    *

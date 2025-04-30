@@ -33,6 +33,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.ListBackupsResponse)
     ListBackupsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListBackupsResponse.newBuilder() to construct.
   private ListBackupsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -41,6 +42,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
   private ListBackupsResponse() {
     backups_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
+    unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -68,6 +70,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkebackup.v1.Backup> backups_;
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.gkebackup.v1.Backup> getBackupsList() {
     return backups_;
   }
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       getBackupsOrBuilderList() {
     return backups_;
   }
+
   /**
    *
    *
@@ -108,6 +113,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
   public int getBackupsCount() {
     return backups_.size();
   }
+
   /**
    *
    *
@@ -121,6 +127,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.gkebackup.v1.Backup getBackups(int index) {
     return backups_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +146,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -165,6 +173,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -192,6 +201,74 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int UNREACHABLE_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList unreachable_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   *
+   * @return A list containing the unreachable.
+   */
+  public com.google.protobuf.ProtocolStringList getUnreachableList() {
+    return unreachable_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   *
+   * @return The count of unreachable.
+   */
+  public int getUnreachableCount() {
+    return unreachable_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The unreachable at the given index.
+   */
+  public java.lang.String getUnreachable(int index) {
+    return unreachable_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Locations that could not be reached.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the unreachable at the given index.
+   */
+  public com.google.protobuf.ByteString getUnreachableBytes(int index) {
+    return unreachable_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -212,6 +289,9 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
     }
+    for (int i = 0; i < unreachable_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, unreachable_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -226,6 +306,14 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < unreachable_.size(); i++) {
+        dataSize += computeStringSizeNoTag(unreachable_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getUnreachableList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -245,6 +333,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
 
     if (!getBackupsList().equals(other.getBackupsList())) return false;
     if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!getUnreachableList().equals(other.getUnreachableList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -262,6 +351,10 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getNextPageToken().hashCode();
+    if (getUnreachableCount() > 0) {
+      hash = (37 * hash) + UNREACHABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getUnreachableList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -362,6 +455,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -409,6 +503,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
+      unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -461,6 +556,10 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.nextPageToken_ = nextPageToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        unreachable_.makeImmutable();
+        result.unreachable_ = unreachable_;
       }
     }
 
@@ -542,6 +641,16 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.unreachable_.isEmpty()) {
+        if (unreachable_.isEmpty()) {
+          unreachable_ = other.unreachable_;
+          bitField0_ |= 0x00000004;
+        } else {
+          ensureUnreachableIsMutable();
+          unreachable_.addAll(other.unreachable_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -587,6 +696,13 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureUnreachableIsMutable();
+                unreachable_.add(s);
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -638,6 +754,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
         return backupsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -654,6 +771,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
         return backupsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -670,6 +788,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
         return backupsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -692,6 +811,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +832,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +855,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +878,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +898,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +919,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +940,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +960,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +980,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +993,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.gkebackup.v1.Backup.Builder getBackupsBuilder(int index) {
       return getBackupsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -881,6 +1010,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
         return backupsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -898,6 +1028,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(backups_);
       }
     }
+
     /**
      *
      *
@@ -911,6 +1042,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       return getBackupsFieldBuilder()
           .addBuilder(com.google.cloud.gkebackup.v1.Backup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -924,6 +1056,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       return getBackupsFieldBuilder()
           .addBuilder(index, com.google.cloud.gkebackup.v1.Backup.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -955,6 +1088,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -980,6 +1114,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1005,6 +1140,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1029,6 +1165,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1049,6 +1186,7 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1209,189 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       nextPageToken_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList unreachable_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureUnreachableIsMutable() {
+      if (!unreachable_.isModifiable()) {
+        unreachable_ = new com.google.protobuf.LazyStringArrayList(unreachable_);
+      }
+      bitField0_ |= 0x00000004;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @return A list containing the unreachable.
+     */
+    public com.google.protobuf.ProtocolStringList getUnreachableList() {
+      unreachable_.makeImmutable();
+      return unreachable_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @return The count of unreachable.
+     */
+    public int getUnreachableCount() {
+      return unreachable_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The unreachable at the given index.
+     */
+    public java.lang.String getUnreachable(int index) {
+      return unreachable_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the unreachable at the given index.
+     */
+    public com.google.protobuf.ByteString getUnreachableBytes(int index) {
+      return unreachable_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The unreachable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUnreachable(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUnreachableIsMutable();
+      unreachable_.set(index, value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @param value The unreachable to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUnreachable(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUnreachableIsMutable();
+      unreachable_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @param values The unreachable to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllUnreachable(java.lang.Iterable<java.lang.String> values) {
+      ensureUnreachableIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unreachable_);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUnreachable() {
+      unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locations that could not be reached.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @param value The bytes of the unreachable to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUnreachableBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureUnreachableIsMutable();
+      unreachable_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

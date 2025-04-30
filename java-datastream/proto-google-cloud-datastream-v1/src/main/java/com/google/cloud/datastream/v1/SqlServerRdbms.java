@@ -33,6 +33,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SqlServerRdbms)
     SqlServerRdbmsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SqlServerRdbms.newBuilder() to construct.
   private SqlServerRdbms(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.SqlServerSchema> schemas_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.datastream.v1.SqlServerSchema> getSchemasList() {
     return schemas_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
       getSchemasOrBuilderList() {
     return schemas_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
   public int getSchemasCount() {
     return schemas_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datastream.v1.SqlServerSchema getSchemas(int index) {
     return schemas_.get(index);
   }
+
   /**
    *
    *
@@ -295,6 +301,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -555,6 +562,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
         return schemasBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -571,6 +579,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
         return schemasBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
         return schemasBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -609,6 +619,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -629,6 +640,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +663,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -673,6 +686,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +707,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +728,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -733,6 +749,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +769,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +789,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +802,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1.SqlServerSchema.Builder getSchemasBuilder(int index) {
       return getSchemasFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -799,6 +819,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
         return schemasBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -816,6 +837,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(schemas_);
       }
     }
+
     /**
      *
      *
@@ -829,6 +851,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
       return getSchemasFieldBuilder()
           .addBuilder(com.google.cloud.datastream.v1.SqlServerSchema.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -842,6 +865,7 @@ public final class SqlServerRdbms extends com.google.protobuf.GeneratedMessageV3
       return getSchemasFieldBuilder()
           .addBuilder(index, com.google.cloud.datastream.v1.SqlServerSchema.getDefaultInstance());
     }
+
     /**
      *
      *

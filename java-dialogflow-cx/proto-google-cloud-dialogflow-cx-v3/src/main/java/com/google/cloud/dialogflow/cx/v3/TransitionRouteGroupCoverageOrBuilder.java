@@ -37,6 +37,7 @@ public interface TransitionRouteGroupCoverageOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Coverage>
       getCoveragesList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface TransitionRouteGroupCoverageOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Coverage getCoverages(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface TransitionRouteGroupCoverageOrBuilder
    * </code>
    */
   int getCoveragesCount();
+
   /**
    *
    *
@@ -76,6 +79,7 @@ public interface TransitionRouteGroupCoverageOrBuilder
           ? extends
               com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.CoverageOrBuilder>
       getCoveragesOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.InstanceConfig)
     InstanceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceConfig.newBuilder() to construct.
   private InstanceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object notebookUpgradeSchedule_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLE_HEALTH_MONITORING_FIELD_NUMBER = 2;
   private boolean enableHealthMonitoring_ = false;
+
   /**
    *
    *
@@ -302,6 +306,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -498,6 +503,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object notebookUpgradeSchedule_ = "";
+
     /**
      *
      *
@@ -521,6 +527,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -544,6 +551,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -566,6 +574,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -584,6 +593,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -609,6 +619,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean enableHealthMonitoring_;
+
     /**
      *
      *
@@ -624,6 +635,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnableHealthMonitoring() {
       return enableHealthMonitoring_;
     }
+
     /**
      *
      *
@@ -643,6 +655,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

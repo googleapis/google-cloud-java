@@ -19,12 +19,21 @@
 // Protobuf Java Version: 3.25.5
 package com.google.cloud.discoveryengine.v1;
 
-/** Protobuf type {@code google.cloud.discoveryengine.v1.GenerateGroundedContentResponse} */
+/**
+ *
+ *
+ * <pre>
+ * Response for the `GenerateGroundedContent` method.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.discoveryengine.v1.GenerateGroundedContentResponse}
+ */
 public final class GenerateGroundedContentResponse extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse)
     GenerateGroundedContentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerateGroundedContentResponse.newBuilder() to construct.
   private GenerateGroundedContentResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -86,6 +95,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
      * @return Whether the content field is set.
      */
     boolean hasContent();
+
     /**
      *
      *
@@ -98,6 +108,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
      * @return The content.
      */
     com.google.cloud.discoveryengine.v1.GroundedGenerationContent getContent();
+
     /**
      *
      *
@@ -121,6 +132,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
      * @return Whether the groundingScore field is set.
      */
     boolean hasGroundingScore();
+
     /**
      *
      *
@@ -148,6 +160,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
      * @return Whether the groundingMetadata field is set.
      */
     boolean hasGroundingMetadata();
+
     /**
      *
      *
@@ -163,6 +176,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
      */
     com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata
         getGroundingMetadata();
+
     /**
      *
      *
@@ -178,6 +192,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             .GroundingMetadataOrBuilder
         getGroundingMetadataOrBuilder();
   }
+
   /**
    *
    *
@@ -192,6 +207,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate)
       CandidateOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Candidate.newBuilder() to construct.
     private Candidate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -244,6 +260,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                   .GroundingMetadata.RetrievalMetadata>
           getRetrievalMetadataList();
+
       /**
        *
        *
@@ -261,6 +278,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
               .GroundingMetadata.RetrievalMetadata
           getRetrievalMetadata(int index);
+
       /**
        *
        *
@@ -276,6 +294,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * </code>
        */
       int getRetrievalMetadataCount();
+
       /**
        *
        *
@@ -295,6 +314,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.RetrievalMetadataOrBuilder>
           getRetrievalMetadataOrBuilderList();
+
       /**
        *
        *
@@ -324,6 +344,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * <code>repeated .google.cloud.discoveryengine.v1.FactChunk support_chunks = 1;</code>
        */
       java.util.List<com.google.cloud.discoveryengine.v1.FactChunk> getSupportChunksList();
+
       /**
        *
        *
@@ -335,6 +356,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * <code>repeated .google.cloud.discoveryengine.v1.FactChunk support_chunks = 1;</code>
        */
       com.google.cloud.discoveryengine.v1.FactChunk getSupportChunks(int index);
+
       /**
        *
        *
@@ -346,6 +368,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * <code>repeated .google.cloud.discoveryengine.v1.FactChunk support_chunks = 1;</code>
        */
       int getSupportChunksCount();
+
       /**
        *
        *
@@ -358,6 +381,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        */
       java.util.List<? extends com.google.cloud.discoveryengine.v1.FactChunkOrBuilder>
           getSupportChunksOrBuilderList();
+
       /**
        *
        *
@@ -382,6 +406,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * @return A list containing the webSearchQueries.
        */
       java.util.List<java.lang.String> getWebSearchQueriesList();
+
       /**
        *
        *
@@ -394,6 +419,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * @return The count of webSearchQueries.
        */
       int getWebSearchQueriesCount();
+
       /**
        *
        *
@@ -407,6 +433,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * @return The webSearchQueries at the given index.
        */
       java.lang.String getWebSearchQueries(int index);
+
       /**
        *
        *
@@ -435,6 +462,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * @return Whether the searchEntryPoint field is set.
        */
       boolean hasSearchEntryPoint();
+
       /**
        *
        *
@@ -451,6 +479,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
               .GroundingMetadata.SearchEntryPoint
           getSearchEntryPoint();
+
       /**
        *
        *
@@ -483,6 +512,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                   .GroundingMetadata.GroundingSupport>
           getGroundingSupportList();
+
       /**
        *
        *
@@ -499,6 +529,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
               .GroundingMetadata.GroundingSupport
           getGroundingSupport(int index);
+
       /**
        *
        *
@@ -513,6 +544,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * </code>
        */
       int getGroundingSupportCount();
+
       /**
        *
        *
@@ -531,6 +563,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.GroundingSupportOrBuilder>
           getGroundingSupportOrBuilderList();
+
       /**
        *
        *
@@ -547,7 +580,84 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
               .GroundingMetadata.GroundingSupportOrBuilder
           getGroundingSupportOrBuilder(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Images from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+       * </code>
+       */
+      java.util.List<
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata>
+          getImagesList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Images from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+              .GroundingMetadata.ImageMetadata
+          getImages(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Images from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+       * </code>
+       */
+      int getImagesCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Images from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+       * </code>
+       */
+      java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadataOrBuilder>
+          getImagesOrBuilderList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Images from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+              .GroundingMetadata.ImageMetadataOrBuilder
+          getImagesOrBuilder(int index);
     }
+
     /**
      *
      *
@@ -563,6 +673,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata)
         GroundingMetadataOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use GroundingMetadata.newBuilder() to construct.
       private GroundingMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -573,6 +684,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         supportChunks_ = java.util.Collections.emptyList();
         webSearchQueries_ = com.google.protobuf.LazyStringArrayList.emptyList();
         groundingSupport_ = java.util.Collections.emptyList();
+        images_ = java.util.Collections.emptyList();
       }
 
       @java.lang.Override
@@ -617,6 +729,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return The enum numeric value on the wire for source.
          */
         int getSourceValue();
+
         /**
          *
          *
@@ -648,6 +761,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return Whether the dynamicRetrievalMetadata field is set.
          */
         boolean hasDynamicRetrievalMetadata();
+
         /**
          *
          *
@@ -664,6 +778,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                 .GroundingMetadata.DynamicRetrievalMetadata
             getDynamicRetrievalMetadata();
+
         /**
          *
          *
@@ -679,6 +794,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                 .GroundingMetadata.DynamicRetrievalMetadataOrBuilder
             getDynamicRetrievalMetadataOrBuilder();
       }
+
       /**
        *
        *
@@ -694,6 +810,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.RetrievalMetadata)
           RetrievalMetadataOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use RetrievalMetadata.newBuilder() to construct.
         private RetrievalMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -800,6 +917,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
            * <code>SOURCE_UNSPECIFIED = 0;</code>
            */
           public static final int SOURCE_UNSPECIFIED_VALUE = 0;
+
           /**
            *
            *
@@ -810,6 +928,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
            * <code>VERTEX_AI_SEARCH = 1;</code>
            */
           public static final int VERTEX_AI_SEARCH_VALUE = 1;
+
           /**
            *
            *
@@ -820,6 +939,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
            * <code>GOOGLE_SEARCH = 3;</code>
            */
           public static final int GOOGLE_SEARCH_VALUE = 3;
+
           /**
            *
            *
@@ -830,6 +950,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
            * <code>INLINE_CONTENT = 2;</code>
            */
           public static final int INLINE_CONTENT_VALUE = 2;
+
           /**
            *
            *
@@ -935,6 +1056,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         private int bitField0_;
         public static final int SOURCE_FIELD_NUMBER = 1;
         private int source_ = 0;
+
         /**
          *
          *
@@ -952,6 +1074,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public int getSourceValue() {
           return source_;
         }
+
         /**
          *
          *
@@ -984,6 +1107,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         private com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                 .GroundingMetadata.DynamicRetrievalMetadata
             dynamicRetrievalMetadata_;
+
         /**
          *
          *
@@ -1001,6 +1125,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public boolean hasDynamicRetrievalMetadata() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -1023,6 +1148,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   .GroundingMetadata.DynamicRetrievalMetadata.getDefaultInstance()
               : dynamicRetrievalMetadata_;
         }
+
         /**
          *
          *
@@ -1260,6 +1386,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -1509,6 +1636,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           private int bitField0_;
 
           private int source_ = 0;
+
           /**
            *
            *
@@ -1526,6 +1654,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public int getSourceValue() {
             return source_;
           }
+
           /**
            *
            *
@@ -1546,6 +1675,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -1573,6 +1703,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                     .GroundingMetadata.RetrievalMetadata.Source.UNRECOGNIZED
                 : result;
           }
+
           /**
            *
            *
@@ -1599,6 +1730,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -1630,6 +1762,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.DynamicRetrievalMetadataOrBuilder>
               dynamicRetrievalMetadataBuilder_;
+
           /**
            *
            *
@@ -1646,6 +1779,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public boolean hasDynamicRetrievalMetadata() {
             return ((bitField0_ & 0x00000002) != 0);
           }
+
           /**
            *
            *
@@ -1671,6 +1805,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               return dynamicRetrievalMetadataBuilder_.getMessage();
             }
           }
+
           /**
            *
            *
@@ -1698,6 +1833,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -1722,6 +1858,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -1757,6 +1894,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             }
             return this;
           }
+
           /**
            *
            *
@@ -1778,6 +1916,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -1796,6 +1935,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return getDynamicRetrievalMetadataFieldBuilder().getBuilder();
           }
+
           /**
            *
            *
@@ -1819,6 +1959,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   : dynamicRetrievalMetadata_;
             }
           }
+
           /**
            *
            *
@@ -1944,6 +2085,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return Whether the predictorMetadata field is set.
          */
         boolean hasPredictorMetadata();
+
         /**
          *
          *
@@ -1960,6 +2102,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                 .GroundingMetadata.DynamicRetrievalPredictorMetadata
             getPredictorMetadata();
+
         /**
          *
          *
@@ -1975,6 +2118,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                 .GroundingMetadata.DynamicRetrievalPredictorMetadataOrBuilder
             getPredictorMetadataOrBuilder();
       }
+
       /**
        *
        *
@@ -1991,6 +2135,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.DynamicRetrievalMetadata)
           DynamicRetrievalMetadataOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use DynamicRetrievalMetadata.newBuilder() to construct.
         private DynamicRetrievalMetadata(
             com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -2027,6 +2172,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         private com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                 .GroundingMetadata.DynamicRetrievalPredictorMetadata
             predictorMetadata_;
+
         /**
          *
          *
@@ -2044,6 +2190,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public boolean hasPredictorMetadata() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -2066,6 +2213,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   .GroundingMetadata.DynamicRetrievalPredictorMetadata.getDefaultInstance()
               : predictorMetadata_;
         }
+
         /**
          *
          *
@@ -2286,6 +2434,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -2531,6 +2680,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.DynamicRetrievalPredictorMetadataOrBuilder>
               predictorMetadataBuilder_;
+
           /**
            *
            *
@@ -2547,6 +2697,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public boolean hasPredictorMetadata() {
             return ((bitField0_ & 0x00000001) != 0);
           }
+
           /**
            *
            *
@@ -2572,6 +2723,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               return predictorMetadataBuilder_.getMessage();
             }
           }
+
           /**
            *
            *
@@ -2599,6 +2751,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -2623,6 +2776,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -2658,6 +2812,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             }
             return this;
           }
+
           /**
            *
            *
@@ -2679,6 +2834,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -2697,6 +2853,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return getPredictorMetadataFieldBuilder().getBuilder();
           }
+
           /**
            *
            *
@@ -2720,6 +2877,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   : predictorMetadata_;
             }
           }
+
           /**
            *
            *
@@ -2845,6 +3003,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return The enum numeric value on the wire for version.
          */
         int getVersionValue();
+
         /**
          *
          *
@@ -2878,6 +3037,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return Whether the prediction field is set.
          */
         boolean hasPrediction();
+
         /**
          *
          *
@@ -2895,6 +3055,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          */
         float getPrediction();
       }
+
       /**
        *
        *
@@ -2911,6 +3072,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.DynamicRetrievalPredictorMetadata)
           DynamicRetrievalPredictorMetadataOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use DynamicRetrievalPredictorMetadata.newBuilder() to construct.
         private DynamicRetrievalPredictorMetadata(
             com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -2988,6 +3150,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
            * <code>VERSION_UNSPECIFIED = 0;</code>
            */
           public static final int VERSION_UNSPECIFIED_VALUE = 0;
+
           /**
            *
            *
@@ -3087,6 +3250,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         private int bitField0_;
         public static final int VERSION_FIELD_NUMBER = 1;
         private int version_ = 0;
+
         /**
          *
          *
@@ -3104,6 +3268,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public int getVersionValue() {
           return version_;
         }
+
         /**
          *
          *
@@ -3135,6 +3300,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
         public static final int PREDICTION_FIELD_NUMBER = 2;
         private float prediction_ = 0F;
+
         /**
          *
          *
@@ -3154,6 +3320,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public boolean hasPrediction() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -3388,6 +3555,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -3620,6 +3788,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           private int bitField0_;
 
           private int version_ = 0;
+
           /**
            *
            *
@@ -3637,6 +3806,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public int getVersionValue() {
             return version_;
           }
+
           /**
            *
            *
@@ -3657,6 +3827,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -3685,6 +3856,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                     .GroundingMetadata.DynamicRetrievalPredictorMetadata.Version.UNRECOGNIZED
                 : result;
           }
+
           /**
            *
            *
@@ -3711,6 +3883,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -3732,6 +3905,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
 
           private float prediction_;
+
           /**
            *
            *
@@ -3751,6 +3925,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public boolean hasPrediction() {
             return ((bitField0_ & 0x00000002) != 0);
           }
+
           /**
            *
            *
@@ -3770,6 +3945,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public float getPrediction() {
             return prediction_;
           }
+
           /**
            *
            *
@@ -3793,6 +3969,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -3905,6 +4082,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return The renderedContent.
          */
         java.lang.String getRenderedContent();
+
         /**
          *
          *
@@ -3933,6 +4111,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          */
         com.google.protobuf.ByteString getSdkBlob();
       }
+
       /**
        *
        *
@@ -3948,6 +4127,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.SearchEntryPoint)
           SearchEntryPointOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use SearchEntryPoint.newBuilder() to construct.
         private SearchEntryPoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -3985,6 +4165,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object renderedContent_ = "";
+
         /**
          *
          *
@@ -4009,6 +4190,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return s;
           }
         }
+
         /**
          *
          *
@@ -4036,6 +4218,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
         public static final int SDK_BLOB_FIELD_NUMBER = 2;
         private com.google.protobuf.ByteString sdkBlob_ = com.google.protobuf.ByteString.EMPTY;
+
         /**
          *
          *
@@ -4255,6 +4438,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -4485,6 +4669,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           private int bitField0_;
 
           private java.lang.Object renderedContent_ = "";
+
           /**
            *
            *
@@ -4508,6 +4693,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               return (java.lang.String) ref;
             }
           }
+
           /**
            *
            *
@@ -4531,6 +4717,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            *
            *
@@ -4553,6 +4740,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -4571,6 +4759,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -4596,6 +4785,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
 
           private com.google.protobuf.ByteString sdkBlob_ = com.google.protobuf.ByteString.EMPTY;
+
           /**
            *
            *
@@ -4612,6 +4802,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public com.google.protobuf.ByteString getSdkBlob() {
             return sdkBlob_;
           }
+
           /**
            *
            *
@@ -4634,6 +4825,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -4743,6 +4935,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return The claimText.
          */
         java.lang.String getClaimText();
+
         /**
          *
          *
@@ -4772,6 +4965,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return A list containing the supportChunkIndices.
          */
         java.util.List<java.lang.Integer> getSupportChunkIndicesList();
+
         /**
          *
          *
@@ -4787,6 +4981,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return The count of supportChunkIndices.
          */
         int getSupportChunkIndicesCount();
+
         /**
          *
          *
@@ -4818,6 +5013,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return Whether the supportScore field is set.
          */
         boolean hasSupportScore();
+
         /**
          *
          *
@@ -4833,6 +5029,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          */
         float getSupportScore();
       }
+
       /**
        *
        *
@@ -4848,6 +5045,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.GroundingSupport)
           GroundingSupportOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use GroundingSupport.newBuilder() to construct.
         private GroundingSupport(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -4886,6 +5084,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object claimText_ = "";
+
         /**
          *
          *
@@ -4910,6 +5109,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return s;
           }
         }
+
         /**
          *
          *
@@ -4939,6 +5139,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
         @SuppressWarnings("serial")
         private com.google.protobuf.Internal.IntList supportChunkIndices_ = emptyIntList();
+
         /**
          *
          *
@@ -4957,6 +5158,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public java.util.List<java.lang.Integer> getSupportChunkIndicesList() {
           return supportChunkIndices_;
         }
+
         /**
          *
          *
@@ -4974,6 +5176,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public int getSupportChunkIndicesCount() {
           return supportChunkIndices_.size();
         }
+
         /**
          *
          *
@@ -4997,6 +5200,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
         public static final int SUPPORT_SCORE_FIELD_NUMBER = 2;
         private float supportScore_ = 0F;
+
         /**
          *
          *
@@ -5014,6 +5218,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public boolean hasSupportScore() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -5268,6 +5473,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -5535,6 +5741,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           private int bitField0_;
 
           private java.lang.Object claimText_ = "";
+
           /**
            *
            *
@@ -5558,6 +5765,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               return (java.lang.String) ref;
             }
           }
+
           /**
            *
            *
@@ -5581,6 +5789,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               return (com.google.protobuf.ByteString) ref;
             }
           }
+
           /**
            *
            *
@@ -5603,6 +5812,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -5621,6 +5831,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -5653,6 +5864,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             }
             bitField0_ |= 0x00000002;
           }
+
           /**
            *
            *
@@ -5671,6 +5883,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             supportChunkIndices_.makeImmutable();
             return supportChunkIndices_;
           }
+
           /**
            *
            *
@@ -5688,6 +5901,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public int getSupportChunkIndicesCount() {
             return supportChunkIndices_.size();
           }
+
           /**
            *
            *
@@ -5706,6 +5920,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public int getSupportChunkIndices(int index) {
             return supportChunkIndices_.getInt(index);
           }
+
           /**
            *
            *
@@ -5730,6 +5945,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -5753,6 +5969,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -5776,6 +5993,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -5798,6 +6016,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
 
           private float supportScore_;
+
           /**
            *
            *
@@ -5815,6 +6034,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public boolean hasSupportScore() {
             return ((bitField0_ & 0x00000004) != 0);
           }
+
           /**
            *
            *
@@ -5832,6 +6052,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public float getSupportScore() {
             return supportScore_;
           }
+
           /**
            *
            *
@@ -5853,6 +6074,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -5945,6 +6167,3584 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         }
       }
 
+      public interface ImageMetadataOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Metadata about the full size image.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image image = 1;
+         * </code>
+         *
+         * @return Whether the image field is set.
+         */
+        boolean hasImage();
+
+        /**
+         *
+         *
+         * <pre>
+         * Metadata about the full size image.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image image = 1;
+         * </code>
+         *
+         * @return The image.
+         */
+        com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.Image
+            getImage();
+
+        /**
+         *
+         *
+         * <pre>
+         * Metadata about the full size image.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image image = 1;
+         * </code>
+         */
+        com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.ImageOrBuilder
+            getImageOrBuilder();
+
+        /**
+         *
+         *
+         * <pre>
+         * Metadata about the thumbnail.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image thumbnail = 2;
+         * </code>
+         *
+         * @return Whether the thumbnail field is set.
+         */
+        boolean hasThumbnail();
+
+        /**
+         *
+         *
+         * <pre>
+         * Metadata about the thumbnail.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image thumbnail = 2;
+         * </code>
+         *
+         * @return The thumbnail.
+         */
+        com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.Image
+            getThumbnail();
+
+        /**
+         *
+         *
+         * <pre>
+         * Metadata about the thumbnail.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image thumbnail = 2;
+         * </code>
+         */
+        com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.ImageOrBuilder
+            getThumbnailOrBuilder();
+
+        /**
+         *
+         *
+         * <pre>
+         * The details about the website that the image is from.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo source = 3;
+         * </code>
+         *
+         * @return Whether the source field is set.
+         */
+        boolean hasSource();
+
+        /**
+         *
+         *
+         * <pre>
+         * The details about the website that the image is from.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo source = 3;
+         * </code>
+         *
+         * @return The source.
+         */
+        com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.WebsiteInfo
+            getSource();
+
+        /**
+         *
+         *
+         * <pre>
+         * The details about the website that the image is from.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo source = 3;
+         * </code>
+         */
+        com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.WebsiteInfoOrBuilder
+            getSourceOrBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Metadata about an image from the web search.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata}
+       */
+      public static final class ImageMetadata extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata)
+          ImageMetadataOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        // Use ImageMetadata.newBuilder() to construct.
+        private ImageMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private ImageMetadata() {}
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new ImageMetadata();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.class,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Builder.class);
+        }
+
+        public interface WebsiteInfoOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo)
+            com.google.protobuf.MessageOrBuilder {
+
+          /**
+           *
+           *
+           * <pre>
+           * The url of the website.
+           * </pre>
+           *
+           * <code>string uri = 1;</code>
+           *
+           * @return The uri.
+           */
+          java.lang.String getUri();
+
+          /**
+           *
+           *
+           * <pre>
+           * The url of the website.
+           * </pre>
+           *
+           * <code>string uri = 1;</code>
+           *
+           * @return The bytes for uri.
+           */
+          com.google.protobuf.ByteString getUriBytes();
+
+          /**
+           *
+           *
+           * <pre>
+           * The title of the website.
+           * </pre>
+           *
+           * <code>string title = 2;</code>
+           *
+           * @return The title.
+           */
+          java.lang.String getTitle();
+
+          /**
+           *
+           *
+           * <pre>
+           * The title of the website.
+           * </pre>
+           *
+           * <code>string title = 2;</code>
+           *
+           * @return The bytes for title.
+           */
+          com.google.protobuf.ByteString getTitleBytes();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Metadata about the website that the image is from.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo}
+         */
+        public static final class WebsiteInfo extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo)
+            WebsiteInfoOrBuilder {
+          private static final long serialVersionUID = 0L;
+
+          // Use WebsiteInfo.newBuilder() to construct.
+          private WebsiteInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+          }
+
+          private WebsiteInfo() {
+            uri_ = "";
+            title_ = "";
+          }
+
+          @java.lang.Override
+          @SuppressWarnings({"unused"})
+          protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new WebsiteInfo();
+          }
+
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+                .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_WebsiteInfo_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+                .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_WebsiteInfo_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.ImageMetadata.WebsiteInfo.class,
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.ImageMetadata.WebsiteInfo.Builder.class);
+          }
+
+          public static final int URI_FIELD_NUMBER = 1;
+
+          @SuppressWarnings("serial")
+          private volatile java.lang.Object uri_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * The url of the website.
+           * </pre>
+           *
+           * <code>string uri = 1;</code>
+           *
+           * @return The uri.
+           */
+          @java.lang.Override
+          public java.lang.String getUri() {
+            java.lang.Object ref = uri_;
+            if (ref instanceof java.lang.String) {
+              return (java.lang.String) ref;
+            } else {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              uri_ = s;
+              return s;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The url of the website.
+           * </pre>
+           *
+           * <code>string uri = 1;</code>
+           *
+           * @return The bytes for uri.
+           */
+          @java.lang.Override
+          public com.google.protobuf.ByteString getUriBytes() {
+            java.lang.Object ref = uri_;
+            if (ref instanceof java.lang.String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              uri_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          public static final int TITLE_FIELD_NUMBER = 2;
+
+          @SuppressWarnings("serial")
+          private volatile java.lang.Object title_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * The title of the website.
+           * </pre>
+           *
+           * <code>string title = 2;</code>
+           *
+           * @return The title.
+           */
+          @java.lang.Override
+          public java.lang.String getTitle() {
+            java.lang.Object ref = title_;
+            if (ref instanceof java.lang.String) {
+              return (java.lang.String) ref;
+            } else {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              title_ = s;
+              return s;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The title of the website.
+           * </pre>
+           *
+           * <code>string title = 2;</code>
+           *
+           * @return The bytes for title.
+           */
+          @java.lang.Override
+          public com.google.protobuf.ByteString getTitleBytes() {
+            java.lang.Object ref = title_;
+            if (ref instanceof java.lang.String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              title_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          private byte memoizedIsInitialized = -1;
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+          }
+
+          @java.lang.Override
+          public void writeTo(com.google.protobuf.CodedOutputStream output)
+              throws java.io.IOException {
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+              com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+            }
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+              com.google.protobuf.GeneratedMessageV3.writeString(output, 2, title_);
+            }
+            getUnknownFields().writeTo(output);
+          }
+
+          @java.lang.Override
+          public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+              size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+            }
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+              size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, title_);
+            }
+            size += getUnknownFields().getSerializedSize();
+            memoizedSize = size;
+            return size;
+          }
+
+          @java.lang.Override
+          public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+              return true;
+            }
+            if (!(obj
+                instanceof
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.WebsiteInfo)) {
+              return super.equals(obj);
+            }
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.WebsiteInfo
+                other =
+                    (com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                            .GroundingMetadata.ImageMetadata.WebsiteInfo)
+                        obj;
+
+            if (!getUri().equals(other.getUri())) return false;
+            if (!getTitle().equals(other.getTitle())) return false;
+            if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+            return true;
+          }
+
+          @java.lang.Override
+          public int hashCode() {
+            if (memoizedHashCode != 0) {
+              return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + URI_FIELD_NUMBER;
+            hash = (53 * hash) + getUri().hashCode();
+            hash = (37 * hash) + TITLE_FIELD_NUMBER;
+            hash = (53 * hash) + getTitle().hashCode();
+            hash = (29 * hash) + getUnknownFields().hashCode();
+            memoizedHashCode = hash;
+            return hash;
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo
+              parseFrom(java.nio.ByteBuffer data)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo
+              parseFrom(
+                  java.nio.ByteBuffer data,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo
+              parseFrom(com.google.protobuf.ByteString data)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo
+              parseFrom(
+                  com.google.protobuf.ByteString data,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo
+              parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo
+              parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo
+              parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo
+              parseFrom(
+                  java.io.InputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                PARSER, input, extensionRegistry);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo
+              parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                PARSER, input);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo
+              parseDelimitedFrom(
+                  java.io.InputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                PARSER, input, extensionRegistry);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo
+              parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo
+              parseFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                PARSER, input, extensionRegistry);
+          }
+
+          @java.lang.Override
+          public Builder newBuilderForType() {
+            return newBuilder();
+          }
+
+          public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+          }
+
+          public static Builder newBuilder(
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.WebsiteInfo
+                  prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+          }
+
+          @java.lang.Override
+          public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+          }
+
+          @java.lang.Override
+          protected Builder newBuilderForType(
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the website that the image is from.
+           * </pre>
+           *
+           * Protobuf type {@code
+           * google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo}
+           */
+          public static final class Builder
+              extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+              implements
+              // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo)
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.WebsiteInfoOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+              return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+                  .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_WebsiteInfo_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+              return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+                  .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_WebsiteInfo_fieldAccessorTable
+                  .ensureFieldAccessorsInitialized(
+                      com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                          .GroundingMetadata.ImageMetadata.WebsiteInfo.class,
+                      com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                          .GroundingMetadata.ImageMetadata.WebsiteInfo.Builder.class);
+            }
+
+            // Construct using
+            // com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo.newBuilder()
+            private Builder() {}
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+              super(parent);
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+              super.clear();
+              bitField0_ = 0;
+              uri_ = "";
+              title_ = "";
+              return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+              return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+                  .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_WebsiteInfo_descriptor;
+            }
+
+            @java.lang.Override
+            public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.WebsiteInfo
+                getDefaultInstanceForType() {
+              return com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.WebsiteInfo.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.WebsiteInfo
+                build() {
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.WebsiteInfo
+                  result = buildPartial();
+              if (!result.isInitialized()) {
+                throw newUninitializedMessageException(result);
+              }
+              return result;
+            }
+
+            @java.lang.Override
+            public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.WebsiteInfo
+                buildPartial() {
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.WebsiteInfo
+                  result =
+                      new com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                          .Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo(this);
+              if (bitField0_ != 0) {
+                buildPartial0(result);
+              }
+              onBuilt();
+              return result;
+            }
+
+            private void buildPartial0(
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.ImageMetadata.WebsiteInfo
+                    result) {
+              int from_bitField0_ = bitField0_;
+              if (((from_bitField0_ & 0x00000001) != 0)) {
+                result.uri_ = uri_;
+              }
+              if (((from_bitField0_ & 0x00000002) != 0)) {
+                result.title_ = title_;
+              }
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+              return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+              return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+              return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+              return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index,
+                java.lang.Object value) {
+              return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+              return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+              if (other
+                  instanceof
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.WebsiteInfo) {
+                return mergeFrom(
+                    (com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                            .GroundingMetadata.ImageMetadata.WebsiteInfo)
+                        other);
+              } else {
+                super.mergeFrom(other);
+                return this;
+              }
+            }
+
+            public Builder mergeFrom(
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.ImageMetadata.WebsiteInfo
+                    other) {
+              if (other
+                  == com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.WebsiteInfo.getDefaultInstance())
+                return this;
+              if (!other.getUri().isEmpty()) {
+                uri_ = other.uri_;
+                bitField0_ |= 0x00000001;
+                onChanged();
+              }
+              if (!other.getTitle().isEmpty()) {
+                title_ = other.title_;
+                bitField0_ |= 0x00000002;
+                onChanged();
+              }
+              this.mergeUnknownFields(other.getUnknownFields());
+              onChanged();
+              return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+              return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+              if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+              }
+              try {
+                boolean done = false;
+                while (!done) {
+                  int tag = input.readTag();
+                  switch (tag) {
+                    case 0:
+                      done = true;
+                      break;
+                    case 10:
+                      {
+                        uri_ = input.readStringRequireUtf8();
+                        bitField0_ |= 0x00000001;
+                        break;
+                      } // case 10
+                    case 18:
+                      {
+                        title_ = input.readStringRequireUtf8();
+                        bitField0_ |= 0x00000002;
+                        break;
+                      } // case 18
+                    default:
+                      {
+                        if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                          done = true; // was an endgroup tag
+                        }
+                        break;
+                      } // default:
+                  } // switch (tag)
+                } // while (!done)
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.unwrapIOException();
+              } finally {
+                onChanged();
+              } // finally
+              return this;
+            }
+
+            private int bitField0_;
+
+            private java.lang.Object uri_ = "";
+
+            /**
+             *
+             *
+             * <pre>
+             * The url of the website.
+             * </pre>
+             *
+             * <code>string uri = 1;</code>
+             *
+             * @return The uri.
+             */
+            public java.lang.String getUri() {
+              java.lang.Object ref = uri_;
+              if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                uri_ = s;
+                return s;
+              } else {
+                return (java.lang.String) ref;
+              }
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The url of the website.
+             * </pre>
+             *
+             * <code>string uri = 1;</code>
+             *
+             * @return The bytes for uri.
+             */
+            public com.google.protobuf.ByteString getUriBytes() {
+              java.lang.Object ref = uri_;
+              if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                uri_ = b;
+                return b;
+              } else {
+                return (com.google.protobuf.ByteString) ref;
+              }
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The url of the website.
+             * </pre>
+             *
+             * <code>string uri = 1;</code>
+             *
+             * @param value The uri to set.
+             * @return This builder for chaining.
+             */
+            public Builder setUri(java.lang.String value) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              uri_ = value;
+              bitField0_ |= 0x00000001;
+              onChanged();
+              return this;
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The url of the website.
+             * </pre>
+             *
+             * <code>string uri = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearUri() {
+              uri_ = getDefaultInstance().getUri();
+              bitField0_ = (bitField0_ & ~0x00000001);
+              onChanged();
+              return this;
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The url of the website.
+             * </pre>
+             *
+             * <code>string uri = 1;</code>
+             *
+             * @param value The bytes for uri to set.
+             * @return This builder for chaining.
+             */
+            public Builder setUriBytes(com.google.protobuf.ByteString value) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              checkByteStringIsUtf8(value);
+              uri_ = value;
+              bitField0_ |= 0x00000001;
+              onChanged();
+              return this;
+            }
+
+            private java.lang.Object title_ = "";
+
+            /**
+             *
+             *
+             * <pre>
+             * The title of the website.
+             * </pre>
+             *
+             * <code>string title = 2;</code>
+             *
+             * @return The title.
+             */
+            public java.lang.String getTitle() {
+              java.lang.Object ref = title_;
+              if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                title_ = s;
+                return s;
+              } else {
+                return (java.lang.String) ref;
+              }
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The title of the website.
+             * </pre>
+             *
+             * <code>string title = 2;</code>
+             *
+             * @return The bytes for title.
+             */
+            public com.google.protobuf.ByteString getTitleBytes() {
+              java.lang.Object ref = title_;
+              if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                title_ = b;
+                return b;
+              } else {
+                return (com.google.protobuf.ByteString) ref;
+              }
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The title of the website.
+             * </pre>
+             *
+             * <code>string title = 2;</code>
+             *
+             * @param value The title to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTitle(java.lang.String value) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              title_ = value;
+              bitField0_ |= 0x00000002;
+              onChanged();
+              return this;
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The title of the website.
+             * </pre>
+             *
+             * <code>string title = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearTitle() {
+              title_ = getDefaultInstance().getTitle();
+              bitField0_ = (bitField0_ & ~0x00000002);
+              onChanged();
+              return this;
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The title of the website.
+             * </pre>
+             *
+             * <code>string title = 2;</code>
+             *
+             * @param value The bytes for title to set.
+             * @return This builder for chaining.
+             */
+            public Builder setTitleBytes(com.google.protobuf.ByteString value) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              checkByteStringIsUtf8(value);
+              title_ = value;
+              bitField0_ |= 0x00000002;
+              onChanged();
+              return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+              return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+              return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo)
+          }
+
+          // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo)
+          private static final com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo
+              DEFAULT_INSTANCE;
+
+          static {
+            DEFAULT_INSTANCE =
+                new com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.WebsiteInfo();
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo
+              getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+          }
+
+          private static final com.google.protobuf.Parser<WebsiteInfo> PARSER =
+              new com.google.protobuf.AbstractParser<WebsiteInfo>() {
+                @java.lang.Override
+                public WebsiteInfo parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                  Builder builder = newBuilder();
+                  try {
+                    builder.mergeFrom(input, extensionRegistry);
+                  } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.setUnfinishedMessage(builder.buildPartial());
+                  } catch (com.google.protobuf.UninitializedMessageException e) {
+                    throw e.asInvalidProtocolBufferException()
+                        .setUnfinishedMessage(builder.buildPartial());
+                  } catch (java.io.IOException e) {
+                    throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                        .setUnfinishedMessage(builder.buildPartial());
+                  }
+                  return builder.buildPartial();
+                }
+              };
+
+          public static com.google.protobuf.Parser<WebsiteInfo> parser() {
+            return PARSER;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Parser<WebsiteInfo> getParserForType() {
+            return PARSER;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.WebsiteInfo
+              getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+          }
+        }
+
+        public interface ImageOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image)
+            com.google.protobuf.MessageOrBuilder {
+
+          /**
+           *
+           *
+           * <pre>
+           * The url of the image.
+           * </pre>
+           *
+           * <code>string uri = 1;</code>
+           *
+           * @return The uri.
+           */
+          java.lang.String getUri();
+
+          /**
+           *
+           *
+           * <pre>
+           * The url of the image.
+           * </pre>
+           *
+           * <code>string uri = 1;</code>
+           *
+           * @return The bytes for uri.
+           */
+          com.google.protobuf.ByteString getUriBytes();
+
+          /**
+           *
+           *
+           * <pre>
+           * The width of the image in pixels.
+           * </pre>
+           *
+           * <code>int32 width = 2;</code>
+           *
+           * @return The width.
+           */
+          int getWidth();
+
+          /**
+           *
+           *
+           * <pre>
+           * The height of the image in pixels.
+           * </pre>
+           *
+           * <code>int32 height = 3;</code>
+           *
+           * @return The height.
+           */
+          int getHeight();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Metadata about the image.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image}
+         */
+        public static final class Image extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image)
+            ImageOrBuilder {
+          private static final long serialVersionUID = 0L;
+
+          // Use Image.newBuilder() to construct.
+          private Image(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+          }
+
+          private Image() {
+            uri_ = "";
+          }
+
+          @java.lang.Override
+          @SuppressWarnings({"unused"})
+          protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new Image();
+          }
+
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+                .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_Image_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+                .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_Image_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.ImageMetadata.Image.class,
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.ImageMetadata.Image.Builder.class);
+          }
+
+          public static final int URI_FIELD_NUMBER = 1;
+
+          @SuppressWarnings("serial")
+          private volatile java.lang.Object uri_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * The url of the image.
+           * </pre>
+           *
+           * <code>string uri = 1;</code>
+           *
+           * @return The uri.
+           */
+          @java.lang.Override
+          public java.lang.String getUri() {
+            java.lang.Object ref = uri_;
+            if (ref instanceof java.lang.String) {
+              return (java.lang.String) ref;
+            } else {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              uri_ = s;
+              return s;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The url of the image.
+           * </pre>
+           *
+           * <code>string uri = 1;</code>
+           *
+           * @return The bytes for uri.
+           */
+          @java.lang.Override
+          public com.google.protobuf.ByteString getUriBytes() {
+            java.lang.Object ref = uri_;
+            if (ref instanceof java.lang.String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              uri_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          public static final int WIDTH_FIELD_NUMBER = 2;
+          private int width_ = 0;
+
+          /**
+           *
+           *
+           * <pre>
+           * The width of the image in pixels.
+           * </pre>
+           *
+           * <code>int32 width = 2;</code>
+           *
+           * @return The width.
+           */
+          @java.lang.Override
+          public int getWidth() {
+            return width_;
+          }
+
+          public static final int HEIGHT_FIELD_NUMBER = 3;
+          private int height_ = 0;
+
+          /**
+           *
+           *
+           * <pre>
+           * The height of the image in pixels.
+           * </pre>
+           *
+           * <code>int32 height = 3;</code>
+           *
+           * @return The height.
+           */
+          @java.lang.Override
+          public int getHeight() {
+            return height_;
+          }
+
+          private byte memoizedIsInitialized = -1;
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+          }
+
+          @java.lang.Override
+          public void writeTo(com.google.protobuf.CodedOutputStream output)
+              throws java.io.IOException {
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+              com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+            }
+            if (width_ != 0) {
+              output.writeInt32(2, width_);
+            }
+            if (height_ != 0) {
+              output.writeInt32(3, height_);
+            }
+            getUnknownFields().writeTo(output);
+          }
+
+          @java.lang.Override
+          public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+              size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+            }
+            if (width_ != 0) {
+              size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, width_);
+            }
+            if (height_ != 0) {
+              size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, height_);
+            }
+            size += getUnknownFields().getSerializedSize();
+            memoizedSize = size;
+            return size;
+          }
+
+          @java.lang.Override
+          public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+              return true;
+            }
+            if (!(obj
+                instanceof
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.Image)) {
+              return super.equals(obj);
+            }
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.Image
+                other =
+                    (com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                            .GroundingMetadata.ImageMetadata.Image)
+                        obj;
+
+            if (!getUri().equals(other.getUri())) return false;
+            if (getWidth() != other.getWidth()) return false;
+            if (getHeight() != other.getHeight()) return false;
+            if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+            return true;
+          }
+
+          @java.lang.Override
+          public int hashCode() {
+            if (memoizedHashCode != 0) {
+              return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + URI_FIELD_NUMBER;
+            hash = (53 * hash) + getUri().hashCode();
+            hash = (37 * hash) + WIDTH_FIELD_NUMBER;
+            hash = (53 * hash) + getWidth();
+            hash = (37 * hash) + HEIGHT_FIELD_NUMBER;
+            hash = (53 * hash) + getHeight();
+            hash = (29 * hash) + getUnknownFields().hashCode();
+            memoizedHashCode = hash;
+            return hash;
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.Image
+              parseFrom(java.nio.ByteBuffer data)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.Image
+              parseFrom(
+                  java.nio.ByteBuffer data,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.Image
+              parseFrom(com.google.protobuf.ByteString data)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.Image
+              parseFrom(
+                  com.google.protobuf.ByteString data,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.Image
+              parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.Image
+              parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.Image
+              parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.Image
+              parseFrom(
+                  java.io.InputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                PARSER, input, extensionRegistry);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.Image
+              parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                PARSER, input);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.Image
+              parseDelimitedFrom(
+                  java.io.InputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                PARSER, input, extensionRegistry);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.Image
+              parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.Image
+              parseFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                PARSER, input, extensionRegistry);
+          }
+
+          @java.lang.Override
+          public Builder newBuilderForType() {
+            return newBuilder();
+          }
+
+          public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+          }
+
+          public static Builder newBuilder(
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image
+                  prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+          }
+
+          @java.lang.Override
+          public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+          }
+
+          @java.lang.Override
+          protected Builder newBuilderForType(
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the image.
+           * </pre>
+           *
+           * Protobuf type {@code
+           * google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image}
+           */
+          public static final class Builder
+              extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+              implements
+              // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image)
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.ImageOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+              return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+                  .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_Image_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+              return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+                  .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_Image_fieldAccessorTable
+                  .ensureFieldAccessorsInitialized(
+                      com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                          .GroundingMetadata.ImageMetadata.Image.class,
+                      com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                          .GroundingMetadata.ImageMetadata.Image.Builder.class);
+            }
+
+            // Construct using
+            // com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image.newBuilder()
+            private Builder() {}
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+              super(parent);
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+              super.clear();
+              bitField0_ = 0;
+              uri_ = "";
+              width_ = 0;
+              height_ = 0;
+              return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+              return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+                  .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_Image_descriptor;
+            }
+
+            @java.lang.Override
+            public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.Image
+                getDefaultInstanceForType() {
+              return com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.Image.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.Image
+                build() {
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image
+                  result = buildPartial();
+              if (!result.isInitialized()) {
+                throw newUninitializedMessageException(result);
+              }
+              return result;
+            }
+
+            @java.lang.Override
+            public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.Image
+                buildPartial() {
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image
+                  result =
+                      new com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                          .Candidate.GroundingMetadata.ImageMetadata.Image(this);
+              if (bitField0_ != 0) {
+                buildPartial0(result);
+              }
+              onBuilt();
+              return result;
+            }
+
+            private void buildPartial0(
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.ImageMetadata.Image
+                    result) {
+              int from_bitField0_ = bitField0_;
+              if (((from_bitField0_ & 0x00000001) != 0)) {
+                result.uri_ = uri_;
+              }
+              if (((from_bitField0_ & 0x00000002) != 0)) {
+                result.width_ = width_;
+              }
+              if (((from_bitField0_ & 0x00000004) != 0)) {
+                result.height_ = height_;
+              }
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+              return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+              return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+              return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+              return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index,
+                java.lang.Object value) {
+              return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+              return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+              if (other
+                  instanceof
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image) {
+                return mergeFrom(
+                    (com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                            .GroundingMetadata.ImageMetadata.Image)
+                        other);
+              } else {
+                super.mergeFrom(other);
+                return this;
+              }
+            }
+
+            public Builder mergeFrom(
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.ImageMetadata.Image
+                    other) {
+              if (other
+                  == com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image.getDefaultInstance()) return this;
+              if (!other.getUri().isEmpty()) {
+                uri_ = other.uri_;
+                bitField0_ |= 0x00000001;
+                onChanged();
+              }
+              if (other.getWidth() != 0) {
+                setWidth(other.getWidth());
+              }
+              if (other.getHeight() != 0) {
+                setHeight(other.getHeight());
+              }
+              this.mergeUnknownFields(other.getUnknownFields());
+              onChanged();
+              return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+              return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+              if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+              }
+              try {
+                boolean done = false;
+                while (!done) {
+                  int tag = input.readTag();
+                  switch (tag) {
+                    case 0:
+                      done = true;
+                      break;
+                    case 10:
+                      {
+                        uri_ = input.readStringRequireUtf8();
+                        bitField0_ |= 0x00000001;
+                        break;
+                      } // case 10
+                    case 16:
+                      {
+                        width_ = input.readInt32();
+                        bitField0_ |= 0x00000002;
+                        break;
+                      } // case 16
+                    case 24:
+                      {
+                        height_ = input.readInt32();
+                        bitField0_ |= 0x00000004;
+                        break;
+                      } // case 24
+                    default:
+                      {
+                        if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                          done = true; // was an endgroup tag
+                        }
+                        break;
+                      } // default:
+                  } // switch (tag)
+                } // while (!done)
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.unwrapIOException();
+              } finally {
+                onChanged();
+              } // finally
+              return this;
+            }
+
+            private int bitField0_;
+
+            private java.lang.Object uri_ = "";
+
+            /**
+             *
+             *
+             * <pre>
+             * The url of the image.
+             * </pre>
+             *
+             * <code>string uri = 1;</code>
+             *
+             * @return The uri.
+             */
+            public java.lang.String getUri() {
+              java.lang.Object ref = uri_;
+              if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                uri_ = s;
+                return s;
+              } else {
+                return (java.lang.String) ref;
+              }
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The url of the image.
+             * </pre>
+             *
+             * <code>string uri = 1;</code>
+             *
+             * @return The bytes for uri.
+             */
+            public com.google.protobuf.ByteString getUriBytes() {
+              java.lang.Object ref = uri_;
+              if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                uri_ = b;
+                return b;
+              } else {
+                return (com.google.protobuf.ByteString) ref;
+              }
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The url of the image.
+             * </pre>
+             *
+             * <code>string uri = 1;</code>
+             *
+             * @param value The uri to set.
+             * @return This builder for chaining.
+             */
+            public Builder setUri(java.lang.String value) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              uri_ = value;
+              bitField0_ |= 0x00000001;
+              onChanged();
+              return this;
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The url of the image.
+             * </pre>
+             *
+             * <code>string uri = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearUri() {
+              uri_ = getDefaultInstance().getUri();
+              bitField0_ = (bitField0_ & ~0x00000001);
+              onChanged();
+              return this;
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The url of the image.
+             * </pre>
+             *
+             * <code>string uri = 1;</code>
+             *
+             * @param value The bytes for uri to set.
+             * @return This builder for chaining.
+             */
+            public Builder setUriBytes(com.google.protobuf.ByteString value) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              checkByteStringIsUtf8(value);
+              uri_ = value;
+              bitField0_ |= 0x00000001;
+              onChanged();
+              return this;
+            }
+
+            private int width_;
+
+            /**
+             *
+             *
+             * <pre>
+             * The width of the image in pixels.
+             * </pre>
+             *
+             * <code>int32 width = 2;</code>
+             *
+             * @return The width.
+             */
+            @java.lang.Override
+            public int getWidth() {
+              return width_;
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The width of the image in pixels.
+             * </pre>
+             *
+             * <code>int32 width = 2;</code>
+             *
+             * @param value The width to set.
+             * @return This builder for chaining.
+             */
+            public Builder setWidth(int value) {
+
+              width_ = value;
+              bitField0_ |= 0x00000002;
+              onChanged();
+              return this;
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The width of the image in pixels.
+             * </pre>
+             *
+             * <code>int32 width = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearWidth() {
+              bitField0_ = (bitField0_ & ~0x00000002);
+              width_ = 0;
+              onChanged();
+              return this;
+            }
+
+            private int height_;
+
+            /**
+             *
+             *
+             * <pre>
+             * The height of the image in pixels.
+             * </pre>
+             *
+             * <code>int32 height = 3;</code>
+             *
+             * @return The height.
+             */
+            @java.lang.Override
+            public int getHeight() {
+              return height_;
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The height of the image in pixels.
+             * </pre>
+             *
+             * <code>int32 height = 3;</code>
+             *
+             * @param value The height to set.
+             * @return This builder for chaining.
+             */
+            public Builder setHeight(int value) {
+
+              height_ = value;
+              bitField0_ |= 0x00000004;
+              onChanged();
+              return this;
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The height of the image in pixels.
+             * </pre>
+             *
+             * <code>int32 height = 3;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearHeight() {
+              bitField0_ = (bitField0_ & ~0x00000004);
+              height_ = 0;
+              onChanged();
+              return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+              return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+              return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image)
+          }
+
+          // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image)
+          private static final com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.Image
+              DEFAULT_INSTANCE;
+
+          static {
+            DEFAULT_INSTANCE =
+                new com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.Image();
+          }
+
+          public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                  .Candidate.GroundingMetadata.ImageMetadata.Image
+              getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+          }
+
+          private static final com.google.protobuf.Parser<Image> PARSER =
+              new com.google.protobuf.AbstractParser<Image>() {
+                @java.lang.Override
+                public Image parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                  Builder builder = newBuilder();
+                  try {
+                    builder.mergeFrom(input, extensionRegistry);
+                  } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    throw e.setUnfinishedMessage(builder.buildPartial());
+                  } catch (com.google.protobuf.UninitializedMessageException e) {
+                    throw e.asInvalidProtocolBufferException()
+                        .setUnfinishedMessage(builder.buildPartial());
+                  } catch (java.io.IOException e) {
+                    throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                        .setUnfinishedMessage(builder.buildPartial());
+                  }
+                  return builder.buildPartial();
+                }
+              };
+
+          public static com.google.protobuf.Parser<Image> parser() {
+            return PARSER;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Parser<Image> getParserForType() {
+            return PARSER;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.Image
+              getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+          }
+        }
+
+        private int bitField0_;
+        public static final int IMAGE_FIELD_NUMBER = 1;
+        private com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.Image
+            image_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Metadata about the full size image.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image image = 1;
+         * </code>
+         *
+         * @return Whether the image field is set.
+         */
+        @java.lang.Override
+        public boolean hasImage() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Metadata about the full size image.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image image = 1;
+         * </code>
+         *
+         * @return The image.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.Image
+            getImage() {
+          return image_ == null
+              ? com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.Image.getDefaultInstance()
+              : image_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Metadata about the full size image.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image image = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.ImageOrBuilder
+            getImageOrBuilder() {
+          return image_ == null
+              ? com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.Image.getDefaultInstance()
+              : image_;
+        }
+
+        public static final int THUMBNAIL_FIELD_NUMBER = 2;
+        private com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.Image
+            thumbnail_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Metadata about the thumbnail.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image thumbnail = 2;
+         * </code>
+         *
+         * @return Whether the thumbnail field is set.
+         */
+        @java.lang.Override
+        public boolean hasThumbnail() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Metadata about the thumbnail.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image thumbnail = 2;
+         * </code>
+         *
+         * @return The thumbnail.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.Image
+            getThumbnail() {
+          return thumbnail_ == null
+              ? com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.Image.getDefaultInstance()
+              : thumbnail_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Metadata about the thumbnail.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image thumbnail = 2;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.ImageOrBuilder
+            getThumbnailOrBuilder() {
+          return thumbnail_ == null
+              ? com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.Image.getDefaultInstance()
+              : thumbnail_;
+        }
+
+        public static final int SOURCE_FIELD_NUMBER = 3;
+        private com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.WebsiteInfo
+            source_;
+
+        /**
+         *
+         *
+         * <pre>
+         * The details about the website that the image is from.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo source = 3;
+         * </code>
+         *
+         * @return Whether the source field is set.
+         */
+        @java.lang.Override
+        public boolean hasSource() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The details about the website that the image is from.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo source = 3;
+         * </code>
+         *
+         * @return The source.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.WebsiteInfo
+            getSource() {
+          return source_ == null
+              ? com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.WebsiteInfo.getDefaultInstance()
+              : source_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The details about the website that the image is from.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo source = 3;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.WebsiteInfoOrBuilder
+            getSourceOrBuilder() {
+          return source_ == null
+              ? com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.WebsiteInfo.getDefaultInstance()
+              : source_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            output.writeMessage(1, getImage());
+          }
+          if (((bitField0_ & 0x00000002) != 0)) {
+            output.writeMessage(2, getThumbnail());
+          }
+          if (((bitField0_ & 0x00000004) != 0)) {
+            output.writeMessage(3, getSource());
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (((bitField0_ & 0x00000001) != 0)) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getImage());
+          }
+          if (((bitField0_ & 0x00000002) != 0)) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getThumbnail());
+          }
+          if (((bitField0_ & 0x00000004) != 0)) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getSource());
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata
+              other =
+                  (com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                          .GroundingMetadata.ImageMetadata)
+                      obj;
+
+          if (hasImage() != other.hasImage()) return false;
+          if (hasImage()) {
+            if (!getImage().equals(other.getImage())) return false;
+          }
+          if (hasThumbnail() != other.hasThumbnail()) return false;
+          if (hasThumbnail()) {
+            if (!getThumbnail().equals(other.getThumbnail())) return false;
+          }
+          if (hasSource() != other.hasSource()) return false;
+          if (hasSource()) {
+            if (!getSource().equals(other.getSource())) return false;
+          }
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (hasImage()) {
+            hash = (37 * hash) + IMAGE_FIELD_NUMBER;
+            hash = (53 * hash) + getImage().hashCode();
+          }
+          if (hasThumbnail()) {
+            hash = (37 * hash) + THUMBNAIL_FIELD_NUMBER;
+            hash = (53 * hash) + getThumbnail().hashCode();
+          }
+          if (hasSource()) {
+            hash = (37 * hash) + SOURCE_FIELD_NUMBER;
+            hash = (53 * hash) + getSource().hashCode();
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Metadata about an image from the web search.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata)
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadataOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+                .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+                .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.ImageMetadata.class,
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.ImageMetadata.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+              getImageFieldBuilder();
+              getThumbnailFieldBuilder();
+              getSourceFieldBuilder();
+            }
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            image_ = null;
+            if (imageBuilder_ != null) {
+              imageBuilder_.dispose();
+              imageBuilder_ = null;
+            }
+            thumbnail_ = null;
+            if (thumbnailBuilder_ != null) {
+              thumbnailBuilder_.dispose();
+              thumbnailBuilder_ = null;
+            }
+            source_ = null;
+            if (sourceBuilder_ != null) {
+              sourceBuilder_.dispose();
+              sourceBuilder_ = null;
+            }
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+                .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata
+              getDefaultInstanceForType() {
+            return com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata
+              build() {
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata
+              buildPartial() {
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata
+                result =
+                    new com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                        .Candidate.GroundingMetadata.ImageMetadata(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata
+                  result) {
+            int from_bitField0_ = bitField0_;
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.image_ = imageBuilder_ == null ? image_ : imageBuilder_.build();
+              to_bitField0_ |= 0x00000001;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.thumbnail_ =
+                  thumbnailBuilder_ == null ? thumbnail_ : thumbnailBuilder_.build();
+              to_bitField0_ |= 0x00000002;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.source_ = sourceBuilder_ == null ? source_ : sourceBuilder_.build();
+              to_bitField0_ |= 0x00000004;
+            }
+            result.bitField0_ |= to_bitField0_;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata) {
+              return mergeFrom(
+                  (com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                          .GroundingMetadata.ImageMetadata)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata
+                  other) {
+            if (other
+                == com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.getDefaultInstance()) return this;
+            if (other.hasImage()) {
+              mergeImage(other.getImage());
+            }
+            if (other.hasThumbnail()) {
+              mergeThumbnail(other.getThumbnail());
+            }
+            if (other.hasSource()) {
+              mergeSource(other.getSource());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      input.readMessage(getImageFieldBuilder().getBuilder(), extensionRegistry);
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      input.readMessage(getThumbnailFieldBuilder().getBuilder(), extensionRegistry);
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 18
+                  case 26:
+                    {
+                      input.readMessage(getSourceFieldBuilder().getBuilder(), extensionRegistry);
+                      bitField0_ |= 0x00000004;
+                      break;
+                    } // case 26
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.Image
+              image_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image.Builder,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.ImageOrBuilder>
+              imageBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the full size image.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image image = 1;
+           * </code>
+           *
+           * @return Whether the image field is set.
+           */
+          public boolean hasImage() {
+            return ((bitField0_ & 0x00000001) != 0);
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the full size image.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image image = 1;
+           * </code>
+           *
+           * @return The image.
+           */
+          public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.Image
+              getImage() {
+            if (imageBuilder_ == null) {
+              return image_ == null
+                  ? com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image.getDefaultInstance()
+                  : image_;
+            } else {
+              return imageBuilder_.getMessage();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the full size image.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image image = 1;
+           * </code>
+           */
+          public Builder setImage(
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image
+                  value) {
+            if (imageBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              image_ = value;
+            } else {
+              imageBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the full size image.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image image = 1;
+           * </code>
+           */
+          public Builder setImage(
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image.Builder
+                  builderForValue) {
+            if (imageBuilder_ == null) {
+              image_ = builderForValue.build();
+            } else {
+              imageBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the full size image.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image image = 1;
+           * </code>
+           */
+          public Builder mergeImage(
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image
+                  value) {
+            if (imageBuilder_ == null) {
+              if (((bitField0_ & 0x00000001) != 0)
+                  && image_ != null
+                  && image_
+                      != com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                          .Candidate.GroundingMetadata.ImageMetadata.Image.getDefaultInstance()) {
+                getImageBuilder().mergeFrom(value);
+              } else {
+                image_ = value;
+              }
+            } else {
+              imageBuilder_.mergeFrom(value);
+            }
+            if (image_ != null) {
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the full size image.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image image = 1;
+           * </code>
+           */
+          public Builder clearImage() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            image_ = null;
+            if (imageBuilder_ != null) {
+              imageBuilder_.dispose();
+              imageBuilder_ = null;
+            }
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the full size image.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image image = 1;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.Image.Builder
+              getImageBuilder() {
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return getImageFieldBuilder().getBuilder();
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the full size image.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image image = 1;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.ImageOrBuilder
+              getImageOrBuilder() {
+            if (imageBuilder_ != null) {
+              return imageBuilder_.getMessageOrBuilder();
+            } else {
+              return image_ == null
+                  ? com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image.getDefaultInstance()
+                  : image_;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the full size image.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image image = 1;
+           * </code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image.Builder,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.ImageOrBuilder>
+              getImageFieldBuilder() {
+            if (imageBuilder_ == null) {
+              imageBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                          .GroundingMetadata.ImageMetadata.Image,
+                      com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                          .GroundingMetadata.ImageMetadata.Image.Builder,
+                      com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                          .GroundingMetadata.ImageMetadata.ImageOrBuilder>(
+                      getImage(), getParentForChildren(), isClean());
+              image_ = null;
+            }
+            return imageBuilder_;
+          }
+
+          private com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.Image
+              thumbnail_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image.Builder,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.ImageOrBuilder>
+              thumbnailBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the thumbnail.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image thumbnail = 2;
+           * </code>
+           *
+           * @return Whether the thumbnail field is set.
+           */
+          public boolean hasThumbnail() {
+            return ((bitField0_ & 0x00000002) != 0);
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the thumbnail.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image thumbnail = 2;
+           * </code>
+           *
+           * @return The thumbnail.
+           */
+          public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.Image
+              getThumbnail() {
+            if (thumbnailBuilder_ == null) {
+              return thumbnail_ == null
+                  ? com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image.getDefaultInstance()
+                  : thumbnail_;
+            } else {
+              return thumbnailBuilder_.getMessage();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the thumbnail.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image thumbnail = 2;
+           * </code>
+           */
+          public Builder setThumbnail(
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image
+                  value) {
+            if (thumbnailBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              thumbnail_ = value;
+            } else {
+              thumbnailBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the thumbnail.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image thumbnail = 2;
+           * </code>
+           */
+          public Builder setThumbnail(
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image.Builder
+                  builderForValue) {
+            if (thumbnailBuilder_ == null) {
+              thumbnail_ = builderForValue.build();
+            } else {
+              thumbnailBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the thumbnail.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image thumbnail = 2;
+           * </code>
+           */
+          public Builder mergeThumbnail(
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image
+                  value) {
+            if (thumbnailBuilder_ == null) {
+              if (((bitField0_ & 0x00000002) != 0)
+                  && thumbnail_ != null
+                  && thumbnail_
+                      != com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                          .Candidate.GroundingMetadata.ImageMetadata.Image.getDefaultInstance()) {
+                getThumbnailBuilder().mergeFrom(value);
+              } else {
+                thumbnail_ = value;
+              }
+            } else {
+              thumbnailBuilder_.mergeFrom(value);
+            }
+            if (thumbnail_ != null) {
+              bitField0_ |= 0x00000002;
+              onChanged();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the thumbnail.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image thumbnail = 2;
+           * </code>
+           */
+          public Builder clearThumbnail() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            thumbnail_ = null;
+            if (thumbnailBuilder_ != null) {
+              thumbnailBuilder_.dispose();
+              thumbnailBuilder_ = null;
+            }
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the thumbnail.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image thumbnail = 2;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.Image.Builder
+              getThumbnailBuilder() {
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return getThumbnailFieldBuilder().getBuilder();
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the thumbnail.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image thumbnail = 2;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.ImageOrBuilder
+              getThumbnailOrBuilder() {
+            if (thumbnailBuilder_ != null) {
+              return thumbnailBuilder_.getMessageOrBuilder();
+            } else {
+              return thumbnail_ == null
+                  ? com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image.getDefaultInstance()
+                  : thumbnail_;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Metadata about the thumbnail.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image thumbnail = 2;
+           * </code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.Image.Builder,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.ImageOrBuilder>
+              getThumbnailFieldBuilder() {
+            if (thumbnailBuilder_ == null) {
+              thumbnailBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                          .GroundingMetadata.ImageMetadata.Image,
+                      com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                          .GroundingMetadata.ImageMetadata.Image.Builder,
+                      com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                          .GroundingMetadata.ImageMetadata.ImageOrBuilder>(
+                      getThumbnail(), getParentForChildren(), isClean());
+              thumbnail_ = null;
+            }
+            return thumbnailBuilder_;
+          }
+
+          private com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.WebsiteInfo
+              source_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.WebsiteInfo,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.WebsiteInfo.Builder,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.WebsiteInfoOrBuilder>
+              sourceBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * The details about the website that the image is from.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo source = 3;
+           * </code>
+           *
+           * @return Whether the source field is set.
+           */
+          public boolean hasSource() {
+            return ((bitField0_ & 0x00000004) != 0);
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The details about the website that the image is from.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo source = 3;
+           * </code>
+           *
+           * @return The source.
+           */
+          public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.WebsiteInfo
+              getSource() {
+            if (sourceBuilder_ == null) {
+              return source_ == null
+                  ? com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.WebsiteInfo.getDefaultInstance()
+                  : source_;
+            } else {
+              return sourceBuilder_.getMessage();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The details about the website that the image is from.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo source = 3;
+           * </code>
+           */
+          public Builder setSource(
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.WebsiteInfo
+                  value) {
+            if (sourceBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              source_ = value;
+            } else {
+              sourceBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The details about the website that the image is from.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo source = 3;
+           * </code>
+           */
+          public Builder setSource(
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.WebsiteInfo.Builder
+                  builderForValue) {
+            if (sourceBuilder_ == null) {
+              source_ = builderForValue.build();
+            } else {
+              sourceBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The details about the website that the image is from.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo source = 3;
+           * </code>
+           */
+          public Builder mergeSource(
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.WebsiteInfo
+                  value) {
+            if (sourceBuilder_ == null) {
+              if (((bitField0_ & 0x00000004) != 0)
+                  && source_ != null
+                  && source_
+                      != com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                          .Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo
+                          .getDefaultInstance()) {
+                getSourceBuilder().mergeFrom(value);
+              } else {
+                source_ = value;
+              }
+            } else {
+              sourceBuilder_.mergeFrom(value);
+            }
+            if (source_ != null) {
+              bitField0_ |= 0x00000004;
+              onChanged();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The details about the website that the image is from.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo source = 3;
+           * </code>
+           */
+          public Builder clearSource() {
+            bitField0_ = (bitField0_ & ~0x00000004);
+            source_ = null;
+            if (sourceBuilder_ != null) {
+              sourceBuilder_.dispose();
+              sourceBuilder_ = null;
+            }
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The details about the website that the image is from.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo source = 3;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.WebsiteInfo.Builder
+              getSourceBuilder() {
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return getSourceFieldBuilder().getBuilder();
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The details about the website that the image is from.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo source = 3;
+           * </code>
+           */
+          public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata.WebsiteInfoOrBuilder
+              getSourceOrBuilder() {
+            if (sourceBuilder_ != null) {
+              return sourceBuilder_.getMessageOrBuilder();
+            } else {
+              return source_ == null
+                  ? com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.WebsiteInfo.getDefaultInstance()
+                  : source_;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The details about the website that the image is from.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo source = 3;
+           * </code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.WebsiteInfo,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.WebsiteInfo.Builder,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.WebsiteInfoOrBuilder>
+              getSourceFieldBuilder() {
+            if (sourceBuilder_ == null) {
+              sourceBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                          .GroundingMetadata.ImageMetadata.WebsiteInfo,
+                      com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                          .GroundingMetadata.ImageMetadata.WebsiteInfo.Builder,
+                      com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                          .GroundingMetadata.ImageMetadata.WebsiteInfoOrBuilder>(
+                      getSource(), getParentForChildren(), isClean());
+              source_ = null;
+            }
+            return sourceBuilder_;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata)
+        private static final com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                .Candidate.GroundingMetadata.ImageMetadata
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata();
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ImageMetadata> PARSER =
+            new com.google.protobuf.AbstractParser<ImageMetadata>() {
+              @java.lang.Override
+              public ImageMetadata parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<ImageMetadata> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ImageMetadata> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
       private int bitField0_;
       public static final int RETRIEVAL_METADATA_FIELD_NUMBER = 5;
 
@@ -5953,6 +9753,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                   .GroundingMetadata.RetrievalMetadata>
           retrievalMetadata_;
+
       /**
        *
        *
@@ -5974,6 +9775,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           getRetrievalMetadataList() {
         return retrievalMetadata_;
       }
+
       /**
        *
        *
@@ -5996,6 +9798,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           getRetrievalMetadataOrBuilderList() {
         return retrievalMetadata_;
       }
+
       /**
        *
        *
@@ -6014,6 +9817,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public int getRetrievalMetadataCount() {
         return retrievalMetadata_.size();
       }
+
       /**
        *
        *
@@ -6034,6 +9838,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           getRetrievalMetadata(int index) {
         return retrievalMetadata_.get(index);
       }
+
       /**
        *
        *
@@ -6059,6 +9864,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
       @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.discoveryengine.v1.FactChunk> supportChunks_;
+
       /**
        *
        *
@@ -6073,6 +9879,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public java.util.List<com.google.cloud.discoveryengine.v1.FactChunk> getSupportChunksList() {
         return supportChunks_;
       }
+
       /**
        *
        *
@@ -6088,6 +9895,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           getSupportChunksOrBuilderList() {
         return supportChunks_;
       }
+
       /**
        *
        *
@@ -6102,6 +9910,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public int getSupportChunksCount() {
         return supportChunks_.size();
       }
+
       /**
        *
        *
@@ -6116,6 +9925,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public com.google.cloud.discoveryengine.v1.FactChunk getSupportChunks(int index) {
         return supportChunks_.get(index);
       }
+
       /**
        *
        *
@@ -6137,6 +9947,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList webSearchQueries_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -6151,6 +9962,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public com.google.protobuf.ProtocolStringList getWebSearchQueriesList() {
         return webSearchQueries_;
       }
+
       /**
        *
        *
@@ -6165,6 +9977,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public int getWebSearchQueriesCount() {
         return webSearchQueries_.size();
       }
+
       /**
        *
        *
@@ -6180,6 +9993,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public java.lang.String getWebSearchQueries(int index) {
         return webSearchQueries_.get(index);
       }
+
       /**
        *
        *
@@ -6200,6 +10014,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       private com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
               .GroundingMetadata.SearchEntryPoint
           searchEntryPoint_;
+
       /**
        *
        *
@@ -6217,6 +10032,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public boolean hasSearchEntryPoint() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -6239,6 +10055,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                 .GroundingMetadata.SearchEntryPoint.getDefaultInstance()
             : searchEntryPoint_;
       }
+
       /**
        *
        *
@@ -6267,6 +10084,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                   .GroundingMetadata.GroundingSupport>
           groundingSupport_;
+
       /**
        *
        *
@@ -6287,6 +10105,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           getGroundingSupportList() {
         return groundingSupport_;
       }
+
       /**
        *
        *
@@ -6308,6 +10127,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           getGroundingSupportOrBuilderList() {
         return groundingSupport_;
       }
+
       /**
        *
        *
@@ -6325,6 +10145,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public int getGroundingSupportCount() {
         return groundingSupport_.size();
       }
+
       /**
        *
        *
@@ -6344,6 +10165,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           getGroundingSupport(int index) {
         return groundingSupport_.get(index);
       }
+
       /**
        *
        *
@@ -6362,6 +10184,105 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               .GroundingMetadata.GroundingSupportOrBuilder
           getGroundingSupportOrBuilder(int index) {
         return groundingSupport_.get(index);
+      }
+
+      public static final int IMAGES_FIELD_NUMBER = 9;
+
+      @SuppressWarnings("serial")
+      private java.util.List<
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata>
+          images_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Images from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.ImageMetadata>
+          getImagesList() {
+        return images_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Images from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadataOrBuilder>
+          getImagesOrBuilderList() {
+        return images_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Images from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+       * </code>
+       */
+      @java.lang.Override
+      public int getImagesCount() {
+        return images_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Images from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+              .GroundingMetadata.ImageMetadata
+          getImages(int index) {
+        return images_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Images from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+              .GroundingMetadata.ImageMetadataOrBuilder
+          getImagesOrBuilder(int index) {
+        return images_.get(index);
       }
 
       private byte memoizedIsInitialized = -1;
@@ -6393,6 +10314,9 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         }
         for (int i = 0; i < retrievalMetadata_.size(); i++) {
           output.writeMessage(5, retrievalMetadata_.get(i));
+        }
+        for (int i = 0; i < images_.size(); i++) {
+          output.writeMessage(9, images_.get(i));
         }
         getUnknownFields().writeTo(output);
       }
@@ -6428,6 +10352,9 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.protobuf.CodedOutputStream.computeMessageSize(
                   5, retrievalMetadata_.get(i));
         }
+        for (int i = 0; i < images_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, images_.get(i));
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -6459,6 +10386,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           if (!getSearchEntryPoint().equals(other.getSearchEntryPoint())) return false;
         }
         if (!getGroundingSupportList().equals(other.getGroundingSupportList())) return false;
+        if (!getImagesList().equals(other.getImagesList())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -6489,6 +10417,10 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         if (getGroundingSupportCount() > 0) {
           hash = (37 * hash) + GROUNDING_SUPPORT_FIELD_NUMBER;
           hash = (53 * hash) + getGroundingSupportList().hashCode();
+        }
+        if (getImagesCount() > 0) {
+          hash = (37 * hash) + IMAGES_FIELD_NUMBER;
+          hash = (53 * hash) + getImagesList().hashCode();
         }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
@@ -6614,6 +10546,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -6664,6 +10597,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             getSupportChunksFieldBuilder();
             getSearchEntryPointFieldBuilder();
             getGroundingSupportFieldBuilder();
+            getImagesFieldBuilder();
           }
         }
 
@@ -6698,6 +10632,13 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             groundingSupportBuilder_.clear();
           }
           bitField0_ = (bitField0_ & ~0x00000010);
+          if (imagesBuilder_ == null) {
+            images_ = java.util.Collections.emptyList();
+          } else {
+            images_ = null;
+            imagesBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000020);
           return this;
         }
 
@@ -6775,6 +10716,15 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             result.groundingSupport_ = groundingSupport_;
           } else {
             result.groundingSupport_ = groundingSupportBuilder_.build();
+          }
+          if (imagesBuilder_ == null) {
+            if (((bitField0_ & 0x00000020) != 0)) {
+              images_ = java.util.Collections.unmodifiableList(images_);
+              bitField0_ = (bitField0_ & ~0x00000020);
+            }
+            result.images_ = images_;
+          } else {
+            result.images_ = imagesBuilder_.build();
           }
         }
 
@@ -6950,6 +10900,33 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               }
             }
           }
+          if (imagesBuilder_ == null) {
+            if (!other.images_.isEmpty()) {
+              if (images_.isEmpty()) {
+                images_ = other.images_;
+                bitField0_ = (bitField0_ & ~0x00000020);
+              } else {
+                ensureImagesIsMutable();
+                images_.addAll(other.images_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.images_.isEmpty()) {
+              if (imagesBuilder_.isEmpty()) {
+                imagesBuilder_.dispose();
+                imagesBuilder_ = null;
+                images_ = other.images_;
+                bitField0_ = (bitField0_ & ~0x00000020);
+                imagesBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getImagesFieldBuilder()
+                        : null;
+              } else {
+                imagesBuilder_.addAllMessages(other.images_);
+              }
+            }
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -7038,6 +11015,23 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                     }
                     break;
                   } // case 42
+                case 74:
+                  {
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                            .GroundingMetadata.ImageMetadata
+                        m =
+                            input.readMessage(
+                                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                                    .Candidate.GroundingMetadata.ImageMetadata.parser(),
+                                extensionRegistry);
+                    if (imagesBuilder_ == null) {
+                      ensureImagesIsMutable();
+                      images_.add(m);
+                    } else {
+                      imagesBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 74
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7105,6 +11099,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return retrievalMetadataBuilder_.getMessageList();
           }
         }
+
         /**
          *
          *
@@ -7126,6 +11121,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return retrievalMetadataBuilder_.getCount();
           }
         }
+
         /**
          *
          *
@@ -7149,6 +11145,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return retrievalMetadataBuilder_.getMessage(index);
           }
         }
+
         /**
          *
          *
@@ -7180,6 +11177,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -7208,6 +11206,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -7238,6 +11237,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -7269,6 +11269,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -7296,6 +11297,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -7324,6 +11326,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -7353,6 +11356,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -7377,6 +11381,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -7401,6 +11406,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -7420,6 +11426,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             getRetrievalMetadataBuilder(int index) {
           return getRetrievalMetadataFieldBuilder().getBuilder(index);
         }
+
         /**
          *
          *
@@ -7443,6 +11450,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return retrievalMetadataBuilder_.getMessageOrBuilder(index);
           }
         }
+
         /**
          *
          *
@@ -7468,6 +11476,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return java.util.Collections.unmodifiableList(retrievalMetadata_);
           }
         }
+
         /**
          *
          *
@@ -7490,6 +11499,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.RetrievalMetadata.getDefaultInstance());
         }
+
         /**
          *
          *
@@ -7513,6 +11523,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.RetrievalMetadata.getDefaultInstance());
         }
+
         /**
          *
          *
@@ -7596,6 +11607,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return supportChunksBuilder_.getMessageList();
           }
         }
+
         /**
          *
          *
@@ -7613,6 +11625,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return supportChunksBuilder_.getCount();
           }
         }
+
         /**
          *
          *
@@ -7630,6 +11643,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return supportChunksBuilder_.getMessage(index);
           }
         }
+
         /**
          *
          *
@@ -7654,6 +11668,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -7675,6 +11690,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -7698,6 +11714,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -7722,6 +11739,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -7743,6 +11761,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -7764,6 +11783,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -7785,6 +11805,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -7805,6 +11826,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -7825,6 +11847,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -7839,6 +11862,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             int index) {
           return getSupportChunksFieldBuilder().getBuilder(index);
         }
+
         /**
          *
          *
@@ -7857,6 +11881,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return supportChunksBuilder_.getMessageOrBuilder(index);
           }
         }
+
         /**
          *
          *
@@ -7875,6 +11900,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return java.util.Collections.unmodifiableList(supportChunks_);
           }
         }
+
         /**
          *
          *
@@ -7889,6 +11915,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           return getSupportChunksFieldBuilder()
               .addBuilder(com.google.cloud.discoveryengine.v1.FactChunk.getDefaultInstance());
         }
+
         /**
          *
          *
@@ -7905,6 +11932,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               .addBuilder(
                   index, com.google.cloud.discoveryengine.v1.FactChunk.getDefaultInstance());
         }
+
         /**
          *
          *
@@ -7949,6 +11977,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           bitField0_ |= 0x00000004;
         }
+
         /**
          *
          *
@@ -7964,6 +11993,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           webSearchQueries_.makeImmutable();
           return webSearchQueries_;
         }
+
         /**
          *
          *
@@ -7978,6 +12008,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public int getWebSearchQueriesCount() {
           return webSearchQueries_.size();
         }
+
         /**
          *
          *
@@ -7993,6 +12024,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public java.lang.String getWebSearchQueries(int index) {
           return webSearchQueries_.get(index);
         }
+
         /**
          *
          *
@@ -8008,6 +12040,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public com.google.protobuf.ByteString getWebSearchQueriesBytes(int index) {
           return webSearchQueries_.getByteString(index);
         }
+
         /**
          *
          *
@@ -8031,6 +12064,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8053,6 +12087,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8072,6 +12107,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8090,6 +12126,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8125,6 +12162,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                 com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                     .GroundingMetadata.SearchEntryPointOrBuilder>
             searchEntryPointBuilder_;
+
         /**
          *
          *
@@ -8141,6 +12179,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public boolean hasSearchEntryPoint() {
           return ((bitField0_ & 0x00000008) != 0);
         }
+
         /**
          *
          *
@@ -8166,6 +12205,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return searchEntryPointBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -8193,6 +12233,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8217,6 +12258,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8251,6 +12293,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -8272,6 +12315,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8290,6 +12334,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           onChanged();
           return getSearchEntryPointFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -8313,6 +12358,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                 : searchEntryPoint_;
           }
         }
+
         /**
          *
          *
@@ -8394,6 +12440,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return groundingSupportBuilder_.getMessageList();
           }
         }
+
         /**
          *
          *
@@ -8414,6 +12461,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return groundingSupportBuilder_.getCount();
           }
         }
+
         /**
          *
          *
@@ -8436,6 +12484,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return groundingSupportBuilder_.getMessage(index);
           }
         }
+
         /**
          *
          *
@@ -8466,6 +12515,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -8493,6 +12543,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -8522,6 +12573,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -8552,6 +12604,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -8578,6 +12631,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -8605,6 +12659,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -8633,6 +12688,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -8656,6 +12712,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -8679,6 +12736,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
+
         /**
          *
          *
@@ -8697,6 +12755,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             getGroundingSupportBuilder(int index) {
           return getGroundingSupportFieldBuilder().getBuilder(index);
         }
+
         /**
          *
          *
@@ -8719,6 +12778,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return groundingSupportBuilder_.getMessageOrBuilder(index);
           }
         }
+
         /**
          *
          *
@@ -8743,6 +12803,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return java.util.Collections.unmodifiableList(groundingSupport_);
           }
         }
+
         /**
          *
          *
@@ -8764,6 +12825,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.GroundingSupport.getDefaultInstance());
         }
+
         /**
          *
          *
@@ -8786,6 +12848,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.GroundingSupport.getDefaultInstance());
         }
+
         /**
          *
          *
@@ -8830,6 +12893,469 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             groundingSupport_ = null;
           }
           return groundingSupportBuilder_;
+        }
+
+        private java.util.List<
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata>
+            images_ = java.util.Collections.emptyList();
+
+        private void ensureImagesIsMutable() {
+          if (!((bitField0_ & 0x00000020) != 0)) {
+            images_ =
+                new java.util.ArrayList<
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.ImageMetadata>(images_);
+            bitField0_ |= 0x00000020;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata,
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.Builder,
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadataOrBuilder>
+            imagesBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Images from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata>
+            getImagesList() {
+          if (imagesBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(images_);
+          } else {
+            return imagesBuilder_.getMessageList();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Images from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+         * </code>
+         */
+        public int getImagesCount() {
+          if (imagesBuilder_ == null) {
+            return images_.size();
+          } else {
+            return imagesBuilder_.getCount();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Images from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata
+            getImages(int index) {
+          if (imagesBuilder_ == null) {
+            return images_.get(index);
+          } else {
+            return imagesBuilder_.getMessage(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Images from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+         * </code>
+         */
+        public Builder setImages(
+            int index,
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata
+                value) {
+          if (imagesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureImagesIsMutable();
+            images_.set(index, value);
+            onChanged();
+          } else {
+            imagesBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Images from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+         * </code>
+         */
+        public Builder setImages(
+            int index,
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.Builder
+                builderForValue) {
+          if (imagesBuilder_ == null) {
+            ensureImagesIsMutable();
+            images_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            imagesBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Images from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+         * </code>
+         */
+        public Builder addImages(
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata
+                value) {
+          if (imagesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureImagesIsMutable();
+            images_.add(value);
+            onChanged();
+          } else {
+            imagesBuilder_.addMessage(value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Images from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+         * </code>
+         */
+        public Builder addImages(
+            int index,
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata
+                value) {
+          if (imagesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureImagesIsMutable();
+            images_.add(index, value);
+            onChanged();
+          } else {
+            imagesBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Images from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+         * </code>
+         */
+        public Builder addImages(
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.Builder
+                builderForValue) {
+          if (imagesBuilder_ == null) {
+            ensureImagesIsMutable();
+            images_.add(builderForValue.build());
+            onChanged();
+          } else {
+            imagesBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Images from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+         * </code>
+         */
+        public Builder addImages(
+            int index,
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.Builder
+                builderForValue) {
+          if (imagesBuilder_ == null) {
+            ensureImagesIsMutable();
+            images_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            imagesBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Images from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+         * </code>
+         */
+        public Builder addAllImages(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                            .Candidate.GroundingMetadata.ImageMetadata>
+                values) {
+          if (imagesBuilder_ == null) {
+            ensureImagesIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, images_);
+            onChanged();
+          } else {
+            imagesBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Images from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+         * </code>
+         */
+        public Builder clearImages() {
+          if (imagesBuilder_ == null) {
+            images_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000020);
+            onChanged();
+          } else {
+            imagesBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Images from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+         * </code>
+         */
+        public Builder removeImages(int index) {
+          if (imagesBuilder_ == null) {
+            ensureImagesIsMutable();
+            images_.remove(index);
+            onChanged();
+          } else {
+            imagesBuilder_.remove(index);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Images from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.Builder
+            getImagesBuilder(int index) {
+          return getImagesFieldBuilder().getBuilder(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Images from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadataOrBuilder
+            getImagesOrBuilder(int index) {
+          if (imagesBuilder_ == null) {
+            return images_.get(index);
+          } else {
+            return imagesBuilder_.getMessageOrBuilder(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Images from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.ImageMetadataOrBuilder>
+            getImagesOrBuilderList() {
+          if (imagesBuilder_ != null) {
+            return imagesBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(images_);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Images from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.Builder
+            addImagesBuilder() {
+          return getImagesFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Images from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.ImageMetadata.Builder
+            addImagesBuilder(int index) {
+          return getImagesFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.ImageMetadata.getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Images from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata images = 9;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.Builder>
+            getImagesBuilderList() {
+          return getImagesFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata,
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadata.Builder,
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.ImageMetadataOrBuilder>
+            getImagesFieldBuilder() {
+          if (imagesBuilder_ == null) {
+            imagesBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.ImageMetadata,
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.ImageMetadata.Builder,
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.ImageMetadataOrBuilder>(
+                    images_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+            images_ = null;
+          }
+          return imagesBuilder_;
         }
 
         @java.lang.Override
@@ -8907,6 +13433,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
     private int bitField0_;
     public static final int INDEX_FIELD_NUMBER = 1;
     private int index_ = 0;
+
     /**
      *
      *
@@ -8925,6 +13452,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
     public static final int CONTENT_FIELD_NUMBER = 2;
     private com.google.cloud.discoveryengine.v1.GroundedGenerationContent content_;
+
     /**
      *
      *
@@ -8940,6 +13468,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
     public boolean hasContent() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -8957,6 +13486,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           ? com.google.cloud.discoveryengine.v1.GroundedGenerationContent.getDefaultInstance()
           : content_;
     }
+
     /**
      *
      *
@@ -8976,6 +13506,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
     public static final int GROUNDING_SCORE_FIELD_NUMBER = 3;
     private float groundingScore_ = 0F;
+
     /**
      *
      *
@@ -8991,6 +13522,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
     public boolean hasGroundingScore() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -9011,6 +13543,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
     private com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
             .GroundingMetadata
         groundingMetadata_;
+
     /**
      *
      *
@@ -9028,6 +13561,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
     public boolean hasGroundingMetadata() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -9050,6 +13584,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               .GroundingMetadata.getDefaultInstance()
           : groundingMetadata_;
     }
+
     /**
      *
      *
@@ -9283,6 +13818,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -9548,6 +14084,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       private int bitField0_;
 
       private int index_;
+
       /**
        *
        *
@@ -9563,6 +14100,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public int getIndex() {
         return index_;
       }
+
       /**
        *
        *
@@ -9582,6 +14120,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9606,6 +14145,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.cloud.discoveryengine.v1.GroundedGenerationContent.Builder,
               com.google.cloud.discoveryengine.v1.GroundedGenerationContentOrBuilder>
           contentBuilder_;
+
       /**
        *
        *
@@ -9620,6 +14160,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public boolean hasContent() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -9640,6 +14181,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           return contentBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -9663,6 +14205,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9683,6 +14226,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9713,6 +14257,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -9732,6 +14277,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9747,6 +14293,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return getContentFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -9766,6 +14313,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               : content_;
         }
       }
+
       /**
        *
        *
@@ -9793,6 +14341,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
 
       private float groundingScore_;
+
       /**
        *
        *
@@ -9808,6 +14357,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public boolean hasGroundingScore() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -9823,6 +14373,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public float getGroundingScore() {
         return groundingScore_;
       }
+
       /**
        *
        *
@@ -9842,6 +14393,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9871,6 +14423,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                   .GroundingMetadataOrBuilder>
           groundingMetadataBuilder_;
+
       /**
        *
        *
@@ -9887,6 +14440,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public boolean hasGroundingMetadata() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -9912,6 +14466,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           return groundingMetadataBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -9939,6 +14494,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9963,6 +14519,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9997,6 +14554,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         }
         return this;
       }
+
       /**
        *
        *
@@ -10018,6 +14576,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10036,6 +14595,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return getGroundingMetadataFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -10059,6 +14619,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               : groundingMetadata_;
         }
       }
+
       /**
        *
        *
@@ -10168,6 +14729,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
   private java.util.List<
           com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate>
       candidates_;
+
   /**
    *
    *
@@ -10185,6 +14747,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       getCandidatesList() {
     return candidates_;
   }
+
   /**
    *
    *
@@ -10204,6 +14767,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       getCandidatesOrBuilderList() {
     return candidates_;
   }
+
   /**
    *
    *
@@ -10219,6 +14783,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
   public int getCandidatesCount() {
     return candidates_.size();
   }
+
   /**
    *
    *
@@ -10235,6 +14800,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       getCandidates(int index) {
     return candidates_.get(index);
   }
+
   /**
    *
    *
@@ -10415,7 +14981,16 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.discoveryengine.v1.GenerateGroundedContentResponse} */
+
+  /**
+   *
+   *
+   * <pre>
+   * Response for the `GenerateGroundedContent` method.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1.GenerateGroundedContentResponse}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse)
@@ -10685,6 +15260,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         return candidatesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -10703,6 +15279,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         return candidatesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -10722,6 +15299,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         return candidatesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -10748,6 +15326,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -10772,6 +15351,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -10797,6 +15377,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -10823,6 +15404,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -10846,6 +15428,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -10870,6 +15453,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -10895,6 +15479,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -10916,6 +15501,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -10937,6 +15523,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -10952,6 +15539,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         getCandidatesBuilder(int index) {
       return getCandidatesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -10971,6 +15559,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         return candidatesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -10993,6 +15582,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(candidates_);
       }
     }
+
     /**
      *
      *
@@ -11011,6 +15601,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -11030,6 +15621,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                   .getDefaultInstance());
     }
+
     /**
      *
      *

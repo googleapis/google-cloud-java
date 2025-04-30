@@ -35,6 +35,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.CustomClass)
     CustomClassOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomClass.newBuilder() to construct.
   private CustomClass(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -44,6 +45,12 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     customClassId_ = "";
     items_ = java.util.Collections.emptyList();
+    kmsKeyName_ = "";
+    kmsKeyVersionName_ = "";
+    uid_ = "";
+    displayName_ = "";
+    state_ = 0;
+    etag_ = "";
   }
 
   @java.lang.Override
@@ -57,6 +64,18 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_cloud_speech_v1p1beta1_CustomClass_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 13:
+        return internalGetAnnotations();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -65,6 +84,167 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.speech.v1p1beta1.CustomClass.class,
             com.google.cloud.speech.v1p1beta1.CustomClass.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Set of states that define the lifecycle of a CustomClass.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.speech.v1p1beta1.CustomClass.State}
+   */
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified state.  This is only used/useful for distinguishing
+     * unset values.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The normal and active state.
+     * </pre>
+     *
+     * <code>ACTIVE = 2;</code>
+     */
+    ACTIVE(2),
+    /**
+     *
+     *
+     * <pre>
+     * This CustomClass has been deleted.
+     * </pre>
+     *
+     * <code>DELETED = 4;</code>
+     */
+    DELETED(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified state.  This is only used/useful for distinguishing
+     * unset values.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int STATE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The normal and active state.
+     * </pre>
+     *
+     * <code>ACTIVE = 2;</code>
+     */
+    public static final int ACTIVE_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * This CustomClass has been deleted.
+     * </pre>
+     *
+     * <code>DELETED = 4;</code>
+     */
+    public static final int DELETED_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static State valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static State forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STATE_UNSPECIFIED;
+        case 2:
+          return ACTIVE;
+        case 4:
+          return DELETED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.speech.v1p1beta1.CustomClass.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final State[] VALUES = values();
+
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private State(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.speech.v1p1beta1.CustomClass.State)
   }
 
   public interface ClassItemOrBuilder
@@ -84,6 +264,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      * @return The value.
      */
     java.lang.String getValue();
+
     /**
      *
      *
@@ -97,6 +278,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getValueBytes();
   }
+
   /**
    *
    *
@@ -111,6 +293,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.CustomClass.ClassItem)
       ClassItemOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ClassItem.newBuilder() to construct.
     private ClassItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -145,6 +328,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object value_ = "";
+
     /**
      *
      *
@@ -168,6 +352,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -353,6 +538,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -540,6 +726,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object value_ = "";
+
       /**
        *
        *
@@ -562,6 +749,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -584,6 +772,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -605,6 +794,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -622,6 +812,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -709,10 +900,12 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -736,6 +929,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -764,6 +958,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customClassId_ = "";
+
   /**
    *
    *
@@ -788,6 +983,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -817,6 +1013,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v1p1beta1.CustomClass.ClassItem> items_;
+
   /**
    *
    *
@@ -830,6 +1027,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.speech.v1p1beta1.CustomClass.ClassItem> getItemsList() {
     return items_;
   }
+
   /**
    *
    *
@@ -844,6 +1042,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       getItemsOrBuilderList() {
     return items_;
   }
+
   /**
    *
    *
@@ -857,6 +1056,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
   public int getItemsCount() {
     return items_.size();
   }
+
   /**
    *
    *
@@ -870,6 +1070,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.speech.v1p1beta1.CustomClass.ClassItem getItems(int index) {
     return items_.get(index);
   }
+
   /**
    *
    *
@@ -883,6 +1084,600 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.speech.v1p1beta1.CustomClass.ClassItemOrBuilder getItemsOrBuilder(
       int index) {
     return items_.get(index);
+  }
+
+  public static final int KMS_KEY_NAME_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The [KMS key
+   * name](https://cloud.google.com/kms/docs/resource-hierarchy#keys) with which
+   * the content of the ClassItem is encrypted. The expected format is
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   * </pre>
+   *
+   * <code>
+   * string kms_key_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The kmsKeyName.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKeyName() {
+    java.lang.Object ref = kmsKeyName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKeyName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The [KMS key
+   * name](https://cloud.google.com/kms/docs/resource-hierarchy#keys) with which
+   * the content of the ClassItem is encrypted. The expected format is
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   * </pre>
+   *
+   * <code>
+   * string kms_key_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+    java.lang.Object ref = kmsKeyName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKeyName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int KMS_KEY_VERSION_NAME_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyVersionName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The [KMS key version
+   * name](https://cloud.google.com/kms/docs/resource-hierarchy#key_versions)
+   * with which content of the ClassItem is encrypted. The expected format is
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`.
+   * </pre>
+   *
+   * <code>
+   * string kms_key_version_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The kmsKeyVersionName.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKeyVersionName() {
+    java.lang.Object ref = kmsKeyVersionName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKeyVersionName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The [KMS key version
+   * name](https://cloud.google.com/kms/docs/resource-hierarchy#key_versions)
+   * with which content of the ClassItem is encrypted. The expected format is
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`.
+   * </pre>
+   *
+   * <code>
+   * string kms_key_version_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for kmsKeyVersionName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyVersionNameBytes() {
+    java.lang.Object ref = kmsKeyVersionName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKeyVersionName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int UID_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. System-assigned unique identifier for the CustomClass.
+   * This field is not used.
+   * </pre>
+   *
+   * <code>string uid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The uid.
+   */
+  @java.lang.Override
+  public java.lang.String getUid() {
+    java.lang.Object ref = uid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      uid_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. System-assigned unique identifier for the CustomClass.
+   * This field is not used.
+   * </pre>
+   *
+   * <code>string uid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for uid.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUidBytes() {
+    java.lang.Object ref = uid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      uid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. User-settable, human-readable name for the CustomClass. Must
+   * be 63 characters or less. This field is not used.
+   * </pre>
+   *
+   * <code>string display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. User-settable, human-readable name for the CustomClass. Must
+   * be 63 characters or less. This field is not used.
+   * </pre>
+   *
+   * <code>string display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STATE_FIELD_NUMBER = 10;
+  private int state_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The CustomClass lifecycle state.
+   * This field is not used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1p1beta1.CustomClass.State state = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  @java.lang.Override
+  public int getStateValue() {
+    return state_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The CustomClass lifecycle state.
+   * This field is not used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1p1beta1.CustomClass.State state = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v1p1beta1.CustomClass.State getState() {
+    com.google.cloud.speech.v1p1beta1.CustomClass.State result =
+        com.google.cloud.speech.v1p1beta1.CustomClass.State.forNumber(state_);
+    return result == null
+        ? com.google.cloud.speech.v1p1beta1.CustomClass.State.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int DELETE_TIME_FIELD_NUMBER = 11;
+  private com.google.protobuf.Timestamp deleteTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time at which this resource was requested for deletion.
+   * This field is not used.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp delete_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the deleteTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeleteTime() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time at which this resource was requested for deletion.
+   * This field is not used.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp delete_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The deleteTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getDeleteTime() {
+    return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time at which this resource was requested for deletion.
+   * This field is not used.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp delete_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder() {
+    return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
+  }
+
+  public static final int EXPIRE_TIME_FIELD_NUMBER = 12;
+  private com.google.protobuf.Timestamp expireTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time at which this resource will be purged.
+   * This field is not used.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the expireTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasExpireTime() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time at which this resource will be purged.
+   * This field is not used.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The expireTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getExpireTime() {
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time at which this resource will be purged.
+   * This field is not used.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
+  }
+
+  public static final int ANNOTATIONS_FIELD_NUMBER = 13;
+
+  private static final class AnnotationsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.speech.v1p1beta1.SpeechResourceProto
+                .internal_static_google_cloud_speech_v1p1beta1_CustomClass_AnnotationsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetAnnotations() {
+    if (annotations_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(AnnotationsDefaultEntryHolder.defaultEntry);
+    }
+    return annotations_;
+  }
+
+  public int getAnnotationsCount() {
+    return internalGetAnnotations().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Allows users to store small amounts of arbitrary data.
+   * Both the key and the value must be 63 characters or less each.
+   * At most 100 annotations.
+   * This field is not used.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsAnnotations(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetAnnotations().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getAnnotationsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
+    return getAnnotationsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Allows users to store small amounts of arbitrary data.
+   * Both the key and the value must be 63 characters or less each.
+   * At most 100 annotations.
+   * This field is not used.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
+    return internalGetAnnotations().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Allows users to store small amounts of arbitrary data.
+   * Both the key and the value must be 63 characters or less each.
+   * At most 100 annotations.
+   * This field is not used.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Allows users to store small amounts of arbitrary data.
+   * Both the key and the value must be 63 characters or less each.
+   * At most 100 annotations.
+   * This field is not used.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int ETAG_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This checksum is computed by the server based on the value of
+   * other fields. This may be sent on update, undelete, and delete requests to
+   * ensure the client has an up-to-date value before proceeding. This field is
+   * not used.
+   * </pre>
+   *
+   * <code>string etag = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This checksum is computed by the server based on the value of
+   * other fields. This may be sent on update, undelete, and delete requests to
+   * ensure the client has an up-to-date value before proceeding. This field is
+   * not used.
+   * </pre>
+   *
+   * <code>string etag = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RECONCILING_FIELD_NUMBER = 15;
+  private boolean reconciling_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether or not this CustomClass is in the process of being
+   * updated. This field is not used.
+   * </pre>
+   *
+   * <code>bool reconciling = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The reconciling.
+   */
+  @java.lang.Override
+  public boolean getReconciling() {
+    return reconciling_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -908,6 +1703,36 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < items_.size(); i++) {
       output.writeMessage(3, items_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, kmsKeyName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyVersionName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, kmsKeyVersionName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, uid_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, displayName_);
+    }
+    if (state_
+        != com.google.cloud.speech.v1p1beta1.CustomClass.State.STATE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(10, state_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(11, getDeleteTime());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(12, getExpireTime());
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetAnnotations(), AnnotationsDefaultEntryHolder.defaultEntry, 13);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, etag_);
+    }
+    if (reconciling_ != false) {
+      output.writeBool(15, reconciling_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -925,6 +1750,44 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < items_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, items_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, kmsKeyName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyVersionName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, kmsKeyVersionName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, uid_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, displayName_);
+    }
+    if (state_
+        != com.google.cloud.speech.v1p1beta1.CustomClass.State.STATE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, state_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getDeleteTime());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getExpireTime());
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetAnnotations().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
+          AnnotationsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, annotations__);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, etag_);
+    }
+    if (reconciling_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, reconciling_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -945,6 +1808,22 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getCustomClassId().equals(other.getCustomClassId())) return false;
     if (!getItemsList().equals(other.getItemsList())) return false;
+    if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
+    if (!getKmsKeyVersionName().equals(other.getKmsKeyVersionName())) return false;
+    if (!getUid().equals(other.getUid())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (state_ != other.state_) return false;
+    if (hasDeleteTime() != other.hasDeleteTime()) return false;
+    if (hasDeleteTime()) {
+      if (!getDeleteTime().equals(other.getDeleteTime())) return false;
+    }
+    if (hasExpireTime() != other.hasExpireTime()) return false;
+    if (hasExpireTime()) {
+      if (!getExpireTime().equals(other.getExpireTime())) return false;
+    }
+    if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
+    if (!getEtag().equals(other.getEtag())) return false;
+    if (getReconciling() != other.getReconciling()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -964,6 +1843,32 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ITEMS_FIELD_NUMBER;
       hash = (53 * hash) + getItemsList().hashCode();
     }
+    hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getKmsKeyName().hashCode();
+    hash = (37 * hash) + KMS_KEY_VERSION_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getKmsKeyVersionName().hashCode();
+    hash = (37 * hash) + UID_FIELD_NUMBER;
+    hash = (53 * hash) + getUid().hashCode();
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
+    if (hasDeleteTime()) {
+      hash = (37 * hash) + DELETE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getDeleteTime().hashCode();
+    }
+    if (hasExpireTime()) {
+      hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getExpireTime().hashCode();
+    }
+    if (!internalGetAnnotations().getMap().isEmpty()) {
+      hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetAnnotations().hashCode();
+    }
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + RECONCILING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReconciling());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1064,6 +1969,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1084,6 +1990,28 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_speech_v1p1beta1_CustomClass_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 13:
+          return internalGetAnnotations();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 13:
+          return internalGetMutableAnnotations();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1095,10 +2023,21 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.speech.v1p1beta1.CustomClass.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getItemsFieldBuilder();
+        getDeleteTimeFieldBuilder();
+        getExpireTimeFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1114,6 +2053,24 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         itemsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
+      kmsKeyName_ = "";
+      kmsKeyVersionName_ = "";
+      uid_ = "";
+      displayName_ = "";
+      state_ = 0;
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
+        deleteTimeBuilder_ = null;
+      }
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
+        expireTimeBuilder_ = null;
+      }
+      internalGetMutableAnnotations().clear();
+      etag_ = "";
+      reconciling_ = false;
       return this;
     }
 
@@ -1169,6 +2126,41 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.customClassId_ = customClassId_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.kmsKeyName_ = kmsKeyName_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.kmsKeyVersionName_ = kmsKeyVersionName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.uid_ = uid_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.state_ = state_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.deleteTime_ = deleteTimeBuilder_ == null ? deleteTime_ : deleteTimeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.annotations_ = internalGetAnnotations();
+        result.annotations_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.reconciling_ = reconciling_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1253,6 +2245,45 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (!other.getKmsKeyName().isEmpty()) {
+        kmsKeyName_ = other.kmsKeyName_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getKmsKeyVersionName().isEmpty()) {
+        kmsKeyVersionName_ = other.kmsKeyVersionName_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (!other.getUid().isEmpty()) {
+        uid_ = other.uid_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
+      }
+      if (other.hasDeleteTime()) {
+        mergeDeleteTime(other.getDeleteTime());
+      }
+      if (other.hasExpireTime()) {
+        mergeExpireTime(other.getExpireTime());
+      }
+      internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00000400;
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      if (other.getReconciling() != false) {
+        setReconciling(other.getReconciling());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1305,6 +2336,72 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 26
+            case 50:
+              {
+                kmsKeyName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 50
+            case 58:
+              {
+                kmsKeyVersionName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 58
+            case 66:
+              {
+                uid_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 66
+            case 74:
+              {
+                displayName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 74
+            case 80:
+              {
+                state_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 80
+            case 90:
+              {
+                input.readMessage(getDeleteTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 98
+            case 106:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
+                    input.readMessage(
+                        AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableAnnotations()
+                    .getMutableMap()
+                    .put(annotations__.getKey(), annotations__.getValue());
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 106
+            case 114:
+              {
+                etag_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 114
+            case 120:
+              {
+                reconciling_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 120
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1325,6 +2422,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1347,6 +2445,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1369,6 +2468,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1390,6 +2490,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1407,6 +2508,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1431,6 +2533,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object customClassId_ = "";
+
     /**
      *
      *
@@ -1454,6 +2557,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1477,6 +2581,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1499,6 +2604,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1517,6 +2623,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1575,6 +2682,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return itemsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1591,6 +2699,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return itemsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1607,6 +2716,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return itemsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1630,6 +2740,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1651,6 +2762,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1673,6 +2785,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1696,6 +2809,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1716,6 +2830,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1737,6 +2852,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1758,6 +2874,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1777,6 +2894,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1796,6 +2914,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1809,6 +2928,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1826,6 +2946,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1844,6 +2965,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(items_);
       }
     }
+
     /**
      *
      *
@@ -1857,6 +2979,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.speech.v1p1beta1.CustomClass.ClassItem.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1872,6 +2995,7 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.speech.v1p1beta1.CustomClass.ClassItem.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1901,6 +3025,1459 @@ public final class CustomClass extends com.google.protobuf.GeneratedMessageV3
         items_ = null;
       }
       return itemsBuilder_;
+    }
+
+    private java.lang.Object kmsKeyName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The [KMS key
+     * name](https://cloud.google.com/kms/docs/resource-hierarchy#keys) with which
+     * the content of the ClassItem is encrypted. The expected format is
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * </pre>
+     *
+     * <code>
+     * string kms_key_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The kmsKeyName.
+     */
+    public java.lang.String getKmsKeyName() {
+      java.lang.Object ref = kmsKeyName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKeyName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The [KMS key
+     * name](https://cloud.google.com/kms/docs/resource-hierarchy#keys) with which
+     * the content of the ClassItem is encrypted. The expected format is
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * </pre>
+     *
+     * <code>
+     * string kms_key_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for kmsKeyName.
+     */
+    public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+      java.lang.Object ref = kmsKeyName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKeyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The [KMS key
+     * name](https://cloud.google.com/kms/docs/resource-hierarchy#keys) with which
+     * the content of the ClassItem is encrypted. The expected format is
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * </pre>
+     *
+     * <code>
+     * string kms_key_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The kmsKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKeyName_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The [KMS key
+     * name](https://cloud.google.com/kms/docs/resource-hierarchy#keys) with which
+     * the content of the ClassItem is encrypted. The expected format is
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * </pre>
+     *
+     * <code>
+     * string kms_key_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKeyName() {
+      kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The [KMS key
+     * name](https://cloud.google.com/kms/docs/resource-hierarchy#keys) with which
+     * the content of the ClassItem is encrypted. The expected format is
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * </pre>
+     *
+     * <code>
+     * string kms_key_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for kmsKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKeyName_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object kmsKeyVersionName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The [KMS key version
+     * name](https://cloud.google.com/kms/docs/resource-hierarchy#key_versions)
+     * with which content of the ClassItem is encrypted. The expected format is
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`.
+     * </pre>
+     *
+     * <code>
+     * string kms_key_version_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The kmsKeyVersionName.
+     */
+    public java.lang.String getKmsKeyVersionName() {
+      java.lang.Object ref = kmsKeyVersionName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKeyVersionName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The [KMS key version
+     * name](https://cloud.google.com/kms/docs/resource-hierarchy#key_versions)
+     * with which content of the ClassItem is encrypted. The expected format is
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`.
+     * </pre>
+     *
+     * <code>
+     * string kms_key_version_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for kmsKeyVersionName.
+     */
+    public com.google.protobuf.ByteString getKmsKeyVersionNameBytes() {
+      java.lang.Object ref = kmsKeyVersionName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKeyVersionName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The [KMS key version
+     * name](https://cloud.google.com/kms/docs/resource-hierarchy#key_versions)
+     * with which content of the ClassItem is encrypted. The expected format is
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`.
+     * </pre>
+     *
+     * <code>
+     * string kms_key_version_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The kmsKeyVersionName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyVersionName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKeyVersionName_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The [KMS key version
+     * name](https://cloud.google.com/kms/docs/resource-hierarchy#key_versions)
+     * with which content of the ClassItem is encrypted. The expected format is
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`.
+     * </pre>
+     *
+     * <code>
+     * string kms_key_version_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKeyVersionName() {
+      kmsKeyVersionName_ = getDefaultInstance().getKmsKeyVersionName();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The [KMS key version
+     * name](https://cloud.google.com/kms/docs/resource-hierarchy#key_versions)
+     * with which content of the ClassItem is encrypted. The expected format is
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`.
+     * </pre>
+     *
+     * <code>
+     * string kms_key_version_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for kmsKeyVersionName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyVersionNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKeyVersionName_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object uid_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. System-assigned unique identifier for the CustomClass.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>string uid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The uid.
+     */
+    public java.lang.String getUid() {
+      java.lang.Object ref = uid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. System-assigned unique identifier for the CustomClass.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>string uid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for uid.
+     */
+    public com.google.protobuf.ByteString getUidBytes() {
+      java.lang.Object ref = uid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. System-assigned unique identifier for the CustomClass.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>string uid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The uid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUid(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      uid_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. System-assigned unique identifier for the CustomClass.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>string uid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUid() {
+      uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. System-assigned unique identifier for the CustomClass.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>string uid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for uid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUidBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      uid_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object displayName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. User-settable, human-readable name for the CustomClass. Must
+     * be 63 characters or less. This field is not used.
+     * </pre>
+     *
+     * <code>string display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. User-settable, human-readable name for the CustomClass. Must
+     * be 63 characters or less. This field is not used.
+     * </pre>
+     *
+     * <code>string display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. User-settable, human-readable name for the CustomClass. Must
+     * be 63 characters or less. This field is not used.
+     * </pre>
+     *
+     * <code>string display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      displayName_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. User-settable, human-readable name for the CustomClass. Must
+     * be 63 characters or less. This field is not used.
+     * </pre>
+     *
+     * <code>string display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+      displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. User-settable, human-readable name for the CustomClass. Must
+     * be 63 characters or less. This field is not used.
+     * </pre>
+     *
+     * <code>string display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      displayName_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private int state_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The CustomClass lifecycle state.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1p1beta1.CustomClass.State state = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The CustomClass lifecycle state.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1p1beta1.CustomClass.State state = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateValue(int value) {
+      state_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The CustomClass lifecycle state.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1p1beta1.CustomClass.State state = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.cloud.speech.v1p1beta1.CustomClass.State getState() {
+      com.google.cloud.speech.v1p1beta1.CustomClass.State result =
+          com.google.cloud.speech.v1p1beta1.CustomClass.State.forNumber(state_);
+      return result == null
+          ? com.google.cloud.speech.v1p1beta1.CustomClass.State.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The CustomClass lifecycle state.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1p1beta1.CustomClass.State state = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setState(com.google.cloud.speech.v1p1beta1.CustomClass.State value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      state_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The CustomClass lifecycle state.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v1p1beta1.CustomClass.State state = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearState() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp deleteTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        deleteTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource was requested for deletion.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the deleteTime field is set.
+     */
+    public boolean hasDeleteTime() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource was requested for deletion.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The deleteTime.
+     */
+    public com.google.protobuf.Timestamp getDeleteTime() {
+      if (deleteTimeBuilder_ == null) {
+        return deleteTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : deleteTime_;
+      } else {
+        return deleteTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource was requested for deletion.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDeleteTime(com.google.protobuf.Timestamp value) {
+      if (deleteTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deleteTime_ = value;
+      } else {
+        deleteTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource was requested for deletion.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDeleteTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (deleteTimeBuilder_ == null) {
+        deleteTime_ = builderForValue.build();
+      } else {
+        deleteTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource was requested for deletion.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDeleteTime(com.google.protobuf.Timestamp value) {
+      if (deleteTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && deleteTime_ != null
+            && deleteTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDeleteTimeBuilder().mergeFrom(value);
+        } else {
+          deleteTime_ = value;
+        }
+      } else {
+        deleteTimeBuilder_.mergeFrom(value);
+      }
+      if (deleteTime_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource was requested for deletion.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDeleteTime() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
+        deleteTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource was requested for deletion.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getDeleteTimeBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getDeleteTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource was requested for deletion.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder() {
+      if (deleteTimeBuilder_ != null) {
+        return deleteTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return deleteTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : deleteTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource was requested for deletion.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getDeleteTimeFieldBuilder() {
+      if (deleteTimeBuilder_ == null) {
+        deleteTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getDeleteTime(), getParentForChildren(), isClean());
+        deleteTime_ = null;
+      }
+      return deleteTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp expireTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        expireTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource will be purged.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the expireTime field is set.
+     */
+    public boolean hasExpireTime() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource will be purged.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The expireTime.
+     */
+    public com.google.protobuf.Timestamp getExpireTime() {
+      if (expireTimeBuilder_ == null) {
+        return expireTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : expireTime_;
+      } else {
+        return expireTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource will be purged.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExpireTime(com.google.protobuf.Timestamp value) {
+      if (expireTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expireTime_ = value;
+      } else {
+        expireTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource will be purged.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (expireTimeBuilder_ == null) {
+        expireTime_ = builderForValue.build();
+      } else {
+        expireTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource will be purged.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
+      if (expireTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && expireTime_ != null
+            && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireTimeBuilder().mergeFrom(value);
+        } else {
+          expireTime_ = value;
+        }
+      } else {
+        expireTimeBuilder_.mergeFrom(value);
+      }
+      if (expireTime_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource will be purged.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearExpireTime() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
+        expireTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource will be purged.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getExpireTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource will be purged.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
+      if (expireTimeBuilder_ != null) {
+        return expireTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return expireTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : expireTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which this resource will be purged.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getExpireTimeFieldBuilder() {
+      if (expireTimeBuilder_ == null) {
+        expireTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getExpireTime(), getParentForChildren(), isClean());
+        expireTime_ = null;
+      }
+      return expireTimeBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetAnnotations() {
+      if (annotations_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            AnnotationsDefaultEntryHolder.defaultEntry);
+      }
+      return annotations_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableAnnotations() {
+      if (annotations_ == null) {
+        annotations_ =
+            com.google.protobuf.MapField.newMapField(AnnotationsDefaultEntryHolder.defaultEntry);
+      }
+      if (!annotations_.isMutable()) {
+        annotations_ = annotations_.copy();
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return annotations_;
+    }
+
+    public int getAnnotationsCount() {
+      return internalGetAnnotations().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Allows users to store small amounts of arbitrary data.
+     * Both the key and the value must be 63 characters or less each.
+     * At most 100 annotations.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsAnnotations(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetAnnotations().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getAnnotationsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
+      return getAnnotationsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Allows users to store small amounts of arbitrary data.
+     * Both the key and the value must be 63 characters or less each.
+     * At most 100 annotations.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
+      return internalGetAnnotations().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Allows users to store small amounts of arbitrary data.
+     * Both the key and the value must be 63 characters or less each.
+     * At most 100 annotations.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getAnnotationsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Allows users to store small amounts of arbitrary data.
+     * Both the key and the value must be 63 characters or less each.
+     * At most 100 annotations.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearAnnotations() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      internalGetMutableAnnotations().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Allows users to store small amounts of arbitrary data.
+     * Both the key and the value must be 63 characters or less each.
+     * At most 100 annotations.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeAnnotations(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableAnnotations().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
+      bitField0_ |= 0x00000400;
+      return internalGetMutableAnnotations().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Allows users to store small amounts of arbitrary data.
+     * Both the key and the value must be 63 characters or less each.
+     * At most 100 annotations.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putAnnotations(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableAnnotations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000400;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Allows users to store small amounts of arbitrary data.
+     * Both the key and the value must be 63 characters or less each.
+     * At most 100 annotations.
+     * This field is not used.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableAnnotations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000400;
+      return this;
+    }
+
+    private java.lang.Object etag_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This checksum is computed by the server based on the value of
+     * other fields. This may be sent on update, undelete, and delete requests to
+     * ensure the client has an up-to-date value before proceeding. This field is
+     * not used.
+     * </pre>
+     *
+     * <code>string etag = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This checksum is computed by the server based on the value of
+     * other fields. This may be sent on update, undelete, and delete requests to
+     * ensure the client has an up-to-date value before proceeding. This field is
+     * not used.
+     * </pre>
+     *
+     * <code>string etag = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This checksum is computed by the server based on the value of
+     * other fields. This may be sent on update, undelete, and delete requests to
+     * ensure the client has an up-to-date value before proceeding. This field is
+     * not used.
+     * </pre>
+     *
+     * <code>string etag = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      etag_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This checksum is computed by the server based on the value of
+     * other fields. This may be sent on update, undelete, and delete requests to
+     * ensure the client has an up-to-date value before proceeding. This field is
+     * not used.
+     * </pre>
+     *
+     * <code>string etag = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+      etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This checksum is computed by the server based on the value of
+     * other fields. This may be sent on update, undelete, and delete requests to
+     * ensure the client has an up-to-date value before proceeding. This field is
+     * not used.
+     * </pre>
+     *
+     * <code>string etag = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      etag_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private boolean reconciling_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether or not this CustomClass is in the process of being
+     * updated. This field is not used.
+     * </pre>
+     *
+     * <code>bool reconciling = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The reconciling.
+     */
+    @java.lang.Override
+    public boolean getReconciling() {
+      return reconciling_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether or not this CustomClass is in the process of being
+     * updated. This field is not used.
+     * </pre>
+     *
+     * <code>bool reconciling = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The reconciling to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReconciling(boolean value) {
+
+      reconciling_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether or not this CustomClass is in the process of being
+     * updated. This field is not used.
+     * </pre>
+     *
+     * <code>bool reconciling = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReconciling() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      reconciling_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

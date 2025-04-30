@@ -299,6 +299,19 @@ public final class LicenseManagementServiceGrpc {
     return LicenseManagementServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static LicenseManagementServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<LicenseManagementServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<LicenseManagementServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public LicenseManagementServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new LicenseManagementServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return LicenseManagementServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -535,6 +548,95 @@ public final class LicenseManagementServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service LicenseManagementService.
+   *
+   * <pre>
+   * Service for managing licenses.
+   * </pre>
+   */
+  public static final class LicenseManagementServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<LicenseManagementServiceBlockingV2Stub> {
+    private LicenseManagementServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected LicenseManagementServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new LicenseManagementServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the license pool.
+     * </pre>
+     */
+    public com.google.cloud.commerce.consumer.procurement.v1.LicensePool getLicensePool(
+        com.google.cloud.commerce.consumer.procurement.v1.GetLicensePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLicensePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the license pool if one exists for this Order.
+     * </pre>
+     */
+    public com.google.cloud.commerce.consumer.procurement.v1.LicensePool updateLicensePool(
+        com.google.cloud.commerce.consumer.procurement.v1.UpdateLicensePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateLicensePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Assigns a license to a user.
+     * </pre>
+     */
+    public com.google.cloud.commerce.consumer.procurement.v1.AssignResponse assign(
+        com.google.cloud.commerce.consumer.procurement.v1.AssignRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAssignMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unassigns a license from a user.
+     * </pre>
+     */
+    public com.google.cloud.commerce.consumer.procurement.v1.UnassignResponse unassign(
+        com.google.cloud.commerce.consumer.procurement.v1.UnassignRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUnassignMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enumerates all users assigned a license.
+     * </pre>
+     */
+    public com.google.cloud.commerce.consumer.procurement.v1.EnumerateLicensedUsersResponse
+        enumerateLicensedUsers(
+            com.google.cloud.commerce.consumer.procurement.v1.EnumerateLicensedUsersRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEnumerateLicensedUsersMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * LicenseManagementService.
    *
    * <pre>
    * Service for managing licenses.

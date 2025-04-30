@@ -33,6 +33,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.DataRetentionConfig)
     DataRetentionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataRetentionConfig.newBuilder() to construct.
   private DataRetentionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int AIRFLOW_DATABASE_RETENTION_DAYS_FIELD_NUMBER = 1;
   private int airflowDatabaseRetentionDays_ = 0;
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
   public static final int TASK_LOGS_RETENTION_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.orchestration.airflow.service.v1beta1.TaskLogsRetentionConfig
       taskLogsRetentionConfig_;
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
   public boolean hasTaskLogsRetentionConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
             .getDefaultInstance()
         : taskLogsRetentionConfig_;
   }
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
   private com.google.cloud.orchestration.airflow.service.v1beta1
           .AirflowMetadataRetentionPolicyConfig
       airflowMetadataRetentionConfig_;
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
   public boolean hasAirflowMetadataRetentionConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -193,6 +200,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
             .AirflowMetadataRetentionPolicyConfig.getDefaultInstance()
         : airflowMetadataRetentionConfig_;
   }
+
   /**
    *
    *
@@ -415,6 +423,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -665,6 +674,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int airflowDatabaseRetentionDays_;
+
     /**
      *
      *
@@ -689,6 +699,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
     public int getAirflowDatabaseRetentionDays() {
       return airflowDatabaseRetentionDays_;
     }
+
     /**
      *
      *
@@ -717,6 +728,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +763,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.orchestration.airflow.service.v1beta1.TaskLogsRetentionConfig.Builder,
             com.google.cloud.orchestration.airflow.service.v1beta1.TaskLogsRetentionConfigOrBuilder>
         taskLogsRetentionConfigBuilder_;
+
     /**
      *
      *
@@ -767,6 +780,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
     public boolean hasTaskLogsRetentionConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -791,6 +805,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
         return taskLogsRetentionConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -816,6 +831,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +855,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +888,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +910,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -909,6 +928,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return getTaskLogsRetentionConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -931,6 +951,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
             : taskLogsRetentionConfig_;
       }
     }
+
     /**
      *
      *
@@ -972,6 +993,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.orchestration.airflow.service.v1beta1
                 .AirflowMetadataRetentionPolicyConfigOrBuilder>
         airflowMetadataRetentionConfigBuilder_;
+
     /**
      *
      *
@@ -988,6 +1010,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
     public boolean hasAirflowMetadataRetentionConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1013,6 +1036,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
         return airflowMetadataRetentionConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1039,6 +1063,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1088,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1122,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1144,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1135,6 +1163,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return getAirflowMetadataRetentionConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1158,6 +1187,7 @@ public final class DataRetentionConfig extends com.google.protobuf.GeneratedMess
             : airflowMetadataRetentionConfig_;
       }
     }
+
     /**
      *
      *

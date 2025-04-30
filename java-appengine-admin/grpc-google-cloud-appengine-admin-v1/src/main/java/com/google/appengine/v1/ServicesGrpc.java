@@ -211,6 +211,19 @@ public final class ServicesGrpc {
     return ServicesStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ServicesBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ServicesBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ServicesBlockingV2Stub>() {
+          @java.lang.Override
+          public ServicesBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ServicesBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ServicesBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -403,6 +416,78 @@ public final class ServicesGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Services.
+   *
+   * <pre>
+   * Manages services of an application.
+   * </pre>
+   */
+  public static final class ServicesBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ServicesBlockingV2Stub> {
+    private ServicesBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ServicesBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ServicesBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the services in the application.
+     * </pre>
+     */
+    public com.google.appengine.v1.ListServicesResponse listServices(
+        com.google.appengine.v1.ListServicesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the current configuration of the specified service.
+     * </pre>
+     */
+    public com.google.appengine.v1.Service getService(
+        com.google.appengine.v1.GetServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the configuration of the specified service.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateService(
+        com.google.appengine.v1.UpdateServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified service and all enclosed versions.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteService(
+        com.google.appengine.v1.DeleteServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServiceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Services.
    *
    * <pre>
    * Manages services of an application.

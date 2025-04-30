@@ -37,6 +37,7 @@ public interface ListCertificateMapEntriesResponseOrBuilder
    */
   java.util.List<com.google.cloud.certificatemanager.v1.CertificateMapEntry>
       getCertificateMapEntriesList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ListCertificateMapEntriesResponseOrBuilder
    * </code>
    */
   com.google.cloud.certificatemanager.v1.CertificateMapEntry getCertificateMapEntries(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListCertificateMapEntriesResponseOrBuilder
    * </code>
    */
   int getCertificateMapEntriesCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface ListCertificateMapEntriesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.certificatemanager.v1.CertificateMapEntryOrBuilder>
       getCertificateMapEntriesOrBuilderList();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface ListCertificateMapEntriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public interface ListCertificateMapEntriesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface ListCertificateMapEntriesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -154,6 +161,7 @@ public interface ListCertificateMapEntriesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

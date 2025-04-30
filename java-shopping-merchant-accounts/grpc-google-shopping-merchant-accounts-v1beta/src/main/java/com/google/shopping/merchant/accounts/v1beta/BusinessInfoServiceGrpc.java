@@ -145,6 +145,19 @@ public final class BusinessInfoServiceGrpc {
     return BusinessInfoServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static BusinessInfoServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<BusinessInfoServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BusinessInfoServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public BusinessInfoServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BusinessInfoServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return BusinessInfoServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -287,6 +300,54 @@ public final class BusinessInfoServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service BusinessInfoService.
+   *
+   * <pre>
+   * Service to support business info API.
+   * </pre>
+   */
+  public static final class BusinessInfoServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<BusinessInfoServiceBlockingV2Stub> {
+    private BusinessInfoServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected BusinessInfoServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new BusinessInfoServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the business info of an account.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.BusinessInfo getBusinessInfo(
+        com.google.shopping.merchant.accounts.v1beta.GetBusinessInfoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBusinessInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the business info of an account. Executing this method requires
+     * admin access.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.BusinessInfo updateBusinessInfo(
+        com.google.shopping.merchant.accounts.v1beta.UpdateBusinessInfoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBusinessInfoMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service BusinessInfoService.
    *
    * <pre>
    * Service to support business info API.

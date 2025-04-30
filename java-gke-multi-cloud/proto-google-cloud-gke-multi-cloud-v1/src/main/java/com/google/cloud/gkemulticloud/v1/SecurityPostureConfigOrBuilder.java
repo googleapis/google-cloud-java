@@ -38,6 +38,7 @@ public interface SecurityPostureConfigOrBuilder
    * @return The enum numeric value on the wire for vulnerabilityMode.
    */
   int getVulnerabilityModeValue();
+
   /**
    *
    *

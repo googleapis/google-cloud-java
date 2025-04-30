@@ -37,6 +37,7 @@ public interface DeleteRegionNotificationEndpointRequestOrBuilder
    * @return The notificationEndpoint.
    */
   java.lang.String getNotificationEndpoint();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface DeleteRegionNotificationEndpointRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface DeleteRegionNotificationEndpointRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface DeleteRegionNotificationEndpointRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface DeleteRegionNotificationEndpointRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

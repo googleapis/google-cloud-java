@@ -37,6 +37,7 @@ public interface CreateVersionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface CreateVersionRequestOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface CreateVersionRequestOrBuilder
    * @return The version.
    */
   com.google.appengine.v1.Version getVersion();
+
   /**
    *
    *

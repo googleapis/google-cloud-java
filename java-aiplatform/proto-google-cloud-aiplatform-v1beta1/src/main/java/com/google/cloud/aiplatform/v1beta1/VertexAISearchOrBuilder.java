@@ -28,28 +28,59 @@ public interface VertexAISearchOrBuilder
    *
    *
    * <pre>
-   * Required. Fully-qualified Vertex AI Search data store resource ID.
+   * Optional. Fully-qualified Vertex AI Search data store resource ID.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
    * </pre>
    *
-   * <code>string datastore = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string datastore = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The datastore.
    */
   java.lang.String getDatastore();
+
   /**
    *
    *
    * <pre>
-   * Required. Fully-qualified Vertex AI Search data store resource ID.
+   * Optional. Fully-qualified Vertex AI Search data store resource ID.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
    * </pre>
    *
-   * <code>string datastore = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string datastore = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for datastore.
    */
   com.google.protobuf.ByteString getDatastoreBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Fully-qualified Vertex AI Search engine resource ID.
+   * Format:
+   * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
+   * </pre>
+   *
+   * <code>string engine = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The engine.
+   */
+  java.lang.String getEngine();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Fully-qualified Vertex AI Search engine resource ID.
+   * Format:
+   * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
+   * </pre>
+   *
+   * <code>string engine = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for engine.
+   */
+  com.google.protobuf.ByteString getEngineBytes();
 }

@@ -36,6 +36,7 @@ public interface ConfigSyncOrBuilder
    * @return Whether the git field is set.
    */
   boolean hasGit();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ConfigSyncOrBuilder
    * @return The git.
    */
   com.google.cloud.gkehub.configmanagement.v1.GitConfig getGit();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface ConfigSyncOrBuilder
    * @return The sourceFormat.
    */
   java.lang.String getSourceFormat();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface ConfigSyncOrBuilder
    * @return Whether the enabled field is set.
    */
   boolean hasEnabled();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface ConfigSyncOrBuilder
    * @return Whether the oci field is set.
    */
   boolean hasOci();
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public interface ConfigSyncOrBuilder
    * @return The oci.
    */
   com.google.cloud.gkehub.configmanagement.v1.OciConfig getOci();
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public interface ConfigSyncOrBuilder
    * @return The metricsGcpServiceAccountEmail.
    */
   java.lang.String getMetricsGcpServiceAccountEmail();
+
   /**
    *
    *

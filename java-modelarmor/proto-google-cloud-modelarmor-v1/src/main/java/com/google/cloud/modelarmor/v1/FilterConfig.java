@@ -33,6 +33,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.FilterConfig)
     FilterConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FilterConfig.newBuilder() to construct.
   private FilterConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int RAI_SETTINGS_FIELD_NUMBER = 1;
   private com.google.cloud.modelarmor.v1.RaiFilterSettings raiSettings_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRaiSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.modelarmor.v1.RaiFilterSettings.getDefaultInstance()
         : raiSettings_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SDP_SETTINGS_FIELD_NUMBER = 2;
   private com.google.cloud.modelarmor.v1.SdpFilterSettings sdpSettings_;
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSdpSettings() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.modelarmor.v1.SdpFilterSettings.getDefaultInstance()
         : sdpSettings_;
   }
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PI_AND_JAILBREAK_FILTER_SETTINGS_FIELD_NUMBER = 3;
   private com.google.cloud.modelarmor.v1.PiAndJailbreakFilterSettings piAndJailbreakFilterSettings_;
+
   /**
    *
    *
@@ -193,6 +201,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPiAndJailbreakFilterSettings() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -213,6 +222,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.modelarmor.v1.PiAndJailbreakFilterSettings.getDefaultInstance()
         : piAndJailbreakFilterSettings_;
   }
+
   /**
    *
    *
@@ -234,6 +244,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MALICIOUS_URI_FILTER_SETTINGS_FIELD_NUMBER = 4;
   private com.google.cloud.modelarmor.v1.MaliciousUriFilterSettings maliciousUriFilterSettings_;
+
   /**
    *
    *
@@ -251,6 +262,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaliciousUriFilterSettings() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -270,6 +282,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.modelarmor.v1.MaliciousUriFilterSettings.getDefaultInstance()
         : maliciousUriFilterSettings_;
   }
+
   /**
    *
    *
@@ -501,6 +514,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -770,6 +784,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.modelarmor.v1.RaiFilterSettings.Builder,
             com.google.cloud.modelarmor.v1.RaiFilterSettingsOrBuilder>
         raiSettingsBuilder_;
+
     /**
      *
      *
@@ -786,6 +801,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRaiSettings() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -808,6 +824,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
         return raiSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -832,6 +849,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +872,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +903,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +925,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +942,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRaiSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -941,6 +963,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
             : raiSettings_;
       }
     }
+
     /**
      *
      *
@@ -975,6 +998,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.modelarmor.v1.SdpFilterSettings.Builder,
             com.google.cloud.modelarmor.v1.SdpFilterSettingsOrBuilder>
         sdpSettingsBuilder_;
+
     /**
      *
      *
@@ -991,6 +1015,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSdpSettings() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
         return sdpSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1063,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1086,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1117,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1110,6 +1139,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1156,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSdpSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1146,6 +1177,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
             : sdpSettings_;
       }
     }
+
     /**
      *
      *
@@ -1181,6 +1213,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.modelarmor.v1.PiAndJailbreakFilterSettings.Builder,
             com.google.cloud.modelarmor.v1.PiAndJailbreakFilterSettingsOrBuilder>
         piAndJailbreakFilterSettingsBuilder_;
+
     /**
      *
      *
@@ -1197,6 +1230,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPiAndJailbreakFilterSettings() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1220,6 +1254,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
         return piAndJailbreakFilterSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1245,6 +1280,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1267,6 +1303,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1299,6 +1336,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1320,6 +1358,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1337,6 +1376,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPiAndJailbreakFilterSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1358,6 +1398,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
             : piAndJailbreakFilterSettings_;
       }
     }
+
     /**
      *
      *
@@ -1392,6 +1433,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.modelarmor.v1.MaliciousUriFilterSettings.Builder,
             com.google.cloud.modelarmor.v1.MaliciousUriFilterSettingsOrBuilder>
         maliciousUriFilterSettingsBuilder_;
+
     /**
      *
      *
@@ -1408,6 +1450,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaliciousUriFilterSettings() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1431,6 +1474,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
         return maliciousUriFilterSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1456,6 +1500,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1478,6 +1523,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1509,6 +1555,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1530,6 +1577,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1547,6 +1595,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMaliciousUriFilterSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1568,6 +1617,7 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessageV3
             : maliciousUriFilterSettings_;
       }
     }
+
     /**
      *
      *

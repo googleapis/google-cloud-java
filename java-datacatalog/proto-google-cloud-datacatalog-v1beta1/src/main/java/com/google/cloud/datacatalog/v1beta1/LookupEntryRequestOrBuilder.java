@@ -44,6 +44,7 @@ public interface LookupEntryRequestOrBuilder
    * @return Whether the linkedResource field is set.
    */
   boolean hasLinkedResource();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface LookupEntryRequestOrBuilder
    * @return The linkedResource.
    */
   java.lang.String getLinkedResource();
+
   /**
    *
    *
@@ -99,7 +101,7 @@ public interface LookupEntryRequestOrBuilder
    *   * `bigquery.dataset.project_id.dataset_id`
    *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
    *
-   * `*_id`s should satisfy the standard SQL rules for identifiers.
+   * `*_id`s should satisfy the GoogleSQL rules for identifiers.
    * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
    * </pre>
    *
@@ -108,6 +110,7 @@ public interface LookupEntryRequestOrBuilder
    * @return Whether the sqlResource field is set.
    */
   boolean hasSqlResource();
+
   /**
    *
    *
@@ -122,7 +125,7 @@ public interface LookupEntryRequestOrBuilder
    *   * `bigquery.dataset.project_id.dataset_id`
    *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
    *
-   * `*_id`s should satisfy the standard SQL rules for identifiers.
+   * `*_id`s should satisfy the GoogleSQL rules for identifiers.
    * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
    * </pre>
    *
@@ -131,6 +134,7 @@ public interface LookupEntryRequestOrBuilder
    * @return The sqlResource.
    */
   java.lang.String getSqlResource();
+
   /**
    *
    *
@@ -145,7 +149,7 @@ public interface LookupEntryRequestOrBuilder
    *   * `bigquery.dataset.project_id.dataset_id`
    *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
    *
-   * `*_id`s should satisfy the standard SQL rules for identifiers.
+   * `*_id`s should satisfy the GoogleSQL rules for identifiers.
    * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
    * </pre>
    *

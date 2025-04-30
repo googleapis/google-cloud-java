@@ -33,6 +33,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.DocumentInfo)
     DocumentInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DocumentInfo.newBuilder() to construct.
   private DocumentInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     private DocumentDescriptorCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,6 +119,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasId() {
     return documentDescriptorCase_ == 1;
   }
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -187,6 +192,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasName() {
     return documentDescriptorCase_ == 2;
   }
+
   /**
    *
    *
@@ -232,6 +239,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -263,6 +271,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URI_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -278,6 +287,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUri() {
     return documentDescriptorCase_ == 6;
   }
+
   /**
    *
    *
@@ -306,6 +316,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -337,6 +348,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int QUANTITY_FIELD_NUMBER = 3;
   private int quantity_ = 0;
+
   /**
    *
    *
@@ -360,6 +372,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQuantity() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -389,6 +402,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList promotionIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -404,6 +418,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getPromotionIdsList() {
     return promotionIds_;
   }
+
   /**
    *
    *
@@ -419,6 +434,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   public int getPromotionIdsCount() {
     return promotionIds_.size();
   }
+
   /**
    *
    *
@@ -435,6 +451,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getPromotionIds(int index) {
     return promotionIds_.get(index);
   }
+
   /**
    *
    *
@@ -454,6 +471,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int JOINED_FIELD_NUMBER = 5;
   private boolean joined_ = false;
+
   /**
    *
    *
@@ -469,6 +487,53 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getJoined() {
     return joined_;
+  }
+
+  public static final int CONVERSION_VALUE_FIELD_NUMBER = 7;
+  private float conversionValue_ = 0F;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The conversion value associated with this Document.
+   * Must be set if
+   * [UserEvent.event_type][google.cloud.discoveryengine.v1.UserEvent.event_type]
+   * is "conversion".
+   *
+   * For example, a value of 1000 signifies that 1000 seconds were spent viewing
+   * a Document for the `watch` conversion type.
+   * </pre>
+   *
+   * <code>optional float conversion_value = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the conversionValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasConversionValue() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The conversion value associated with this Document.
+   * Must be set if
+   * [UserEvent.event_type][google.cloud.discoveryengine.v1.UserEvent.event_type]
+   * is "conversion".
+   *
+   * For example, a value of 1000 signifies that 1000 seconds were spent viewing
+   * a Document for the `watch` conversion type.
+   * </pre>
+   *
+   * <code>optional float conversion_value = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The conversionValue.
+   */
+  @java.lang.Override
+  public float getConversionValue() {
+    return conversionValue_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -503,6 +568,9 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     if (documentDescriptorCase_ == 6) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, documentDescriptor_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeFloat(7, conversionValue_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -535,6 +603,9 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     if (documentDescriptorCase_ == 6) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, documentDescriptor_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(7, conversionValue_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -557,6 +628,11 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getPromotionIdsList().equals(other.getPromotionIdsList())) return false;
     if (getJoined() != other.getJoined()) return false;
+    if (hasConversionValue() != other.hasConversionValue()) return false;
+    if (hasConversionValue()) {
+      if (java.lang.Float.floatToIntBits(getConversionValue())
+          != java.lang.Float.floatToIntBits(other.getConversionValue())) return false;
+    }
     if (!getDocumentDescriptorCase().equals(other.getDocumentDescriptorCase())) return false;
     switch (documentDescriptorCase_) {
       case 1:
@@ -592,6 +668,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + JOINED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getJoined());
+    if (hasConversionValue()) {
+      hash = (37 * hash) + CONVERSION_VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getConversionValue());
+    }
     switch (documentDescriptorCase_) {
       case 1:
         hash = (37 * hash) + ID_FIELD_NUMBER;
@@ -708,6 +788,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -750,6 +831,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       quantity_ = 0;
       promotionIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       joined_ = false;
+      conversionValue_ = 0F;
       documentDescriptorCase_ = 0;
       documentDescriptor_ = null;
       return this;
@@ -800,6 +882,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.joined_ = joined_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.conversionValue_ = conversionValue_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -870,6 +956,9 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getJoined() != false) {
         setJoined(other.getJoined());
+      }
+      if (other.hasConversionValue()) {
+        setConversionValue(other.getConversionValue());
       }
       switch (other.getDocumentDescriptorCase()) {
         case ID:
@@ -964,6 +1053,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
                 documentDescriptor_ = s;
                 break;
               } // case 50
+            case 61:
+              {
+                conversionValue_ = input.readFloat();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 61
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1012,6 +1107,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasId() {
       return documentDescriptorCase_ == 1;
     }
+
     /**
      *
      *
@@ -1040,6 +1136,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1068,6 +1165,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1089,6 +1187,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1108,6 +1207,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1148,6 +1248,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasName() {
       return documentDescriptorCase_ == 2;
     }
+
     /**
      *
      *
@@ -1178,6 +1279,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1208,6 +1310,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1231,6 +1334,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1252,6 +1356,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1293,6 +1398,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUri() {
       return documentDescriptorCase_ == 6;
     }
+
     /**
      *
      *
@@ -1322,6 +1428,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1351,6 +1458,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1373,6 +1481,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1393,6 +1502,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1418,6 +1528,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int quantity_;
+
     /**
      *
      *
@@ -1441,6 +1552,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQuantity() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1464,6 +1576,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public int getQuantity() {
       return quantity_;
     }
+
     /**
      *
      *
@@ -1491,6 +1604,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1526,6 +1640,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -1542,6 +1657,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       promotionIds_.makeImmutable();
       return promotionIds_;
     }
+
     /**
      *
      *
@@ -1557,6 +1673,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public int getPromotionIdsCount() {
       return promotionIds_.size();
     }
+
     /**
      *
      *
@@ -1573,6 +1690,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getPromotionIds(int index) {
       return promotionIds_.get(index);
     }
+
     /**
      *
      *
@@ -1589,6 +1707,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPromotionIdsBytes(int index) {
       return promotionIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1613,6 +1732,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1636,6 +1756,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1656,6 +1777,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1675,6 +1797,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1701,6 +1824,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean joined_;
+
     /**
      *
      *
@@ -1717,6 +1841,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean getJoined() {
       return joined_;
     }
+
     /**
      *
      *
@@ -1737,6 +1862,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1752,6 +1878,102 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder clearJoined() {
       bitField0_ = (bitField0_ & ~0x00000020);
       joined_ = false;
+      onChanged();
+      return this;
+    }
+
+    private float conversionValue_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The conversion value associated with this Document.
+     * Must be set if
+     * [UserEvent.event_type][google.cloud.discoveryengine.v1.UserEvent.event_type]
+     * is "conversion".
+     *
+     * For example, a value of 1000 signifies that 1000 seconds were spent viewing
+     * a Document for the `watch` conversion type.
+     * </pre>
+     *
+     * <code>optional float conversion_value = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the conversionValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasConversionValue() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The conversion value associated with this Document.
+     * Must be set if
+     * [UserEvent.event_type][google.cloud.discoveryengine.v1.UserEvent.event_type]
+     * is "conversion".
+     *
+     * For example, a value of 1000 signifies that 1000 seconds were spent viewing
+     * a Document for the `watch` conversion type.
+     * </pre>
+     *
+     * <code>optional float conversion_value = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The conversionValue.
+     */
+    @java.lang.Override
+    public float getConversionValue() {
+      return conversionValue_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The conversion value associated with this Document.
+     * Must be set if
+     * [UserEvent.event_type][google.cloud.discoveryengine.v1.UserEvent.event_type]
+     * is "conversion".
+     *
+     * For example, a value of 1000 signifies that 1000 seconds were spent viewing
+     * a Document for the `watch` conversion type.
+     * </pre>
+     *
+     * <code>optional float conversion_value = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The conversionValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConversionValue(float value) {
+
+      conversionValue_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The conversion value associated with this Document.
+     * Must be set if
+     * [UserEvent.event_type][google.cloud.discoveryengine.v1.UserEvent.event_type]
+     * is "conversion".
+     *
+     * For example, a value of 1000 signifies that 1000 seconds were spent viewing
+     * a Document for the `watch` conversion type.
+     * </pre>
+     *
+     * <code>optional float conversion_value = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConversionValue() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      conversionValue_ = 0F;
       onChanged();
       return this;
     }

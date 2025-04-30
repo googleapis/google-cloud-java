@@ -33,6 +33,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.TargetArtifact)
     TargetArtifactOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TargetArtifact.newBuilder() to construct.
   private TargetArtifact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -94,6 +95,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
      * @return The skaffoldConfigPath.
      */
     java.lang.String getSkaffoldConfigPath();
+
     /**
      *
      *
@@ -120,6 +122,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
      * @return The manifestPath.
      */
     java.lang.String getManifestPath();
+
     /**
      *
      *
@@ -146,6 +149,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
      * @return The jobManifestsPath.
      */
     java.lang.String getJobManifestsPath();
+
     /**
      *
      *
@@ -160,6 +164,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getJobManifestsPathBytes();
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.TargetArtifact.PhaseArtifact)
       PhaseArtifactOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PhaseArtifact.newBuilder() to construct.
     private PhaseArtifact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -210,6 +216,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object skaffoldConfigPath_ = "";
+
     /**
      *
      *
@@ -234,6 +241,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -263,6 +271,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object manifestPath_ = "";
+
     /**
      *
      *
@@ -286,6 +295,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -314,6 +324,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object jobManifestsPath_ = "";
+
     /**
      *
      *
@@ -338,6 +349,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -542,6 +554,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -759,6 +772,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object skaffoldConfigPath_ = "";
+
       /**
        *
        *
@@ -782,6 +796,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -805,6 +820,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -827,6 +843,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -845,6 +862,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -870,6 +888,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object manifestPath_ = "";
+
       /**
        *
        *
@@ -892,6 +911,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -914,6 +934,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -935,6 +956,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -952,6 +974,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -976,6 +999,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object jobManifestsPath_ = "";
+
       /**
        *
        *
@@ -999,6 +1023,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1022,6 +1047,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1044,6 +1070,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1062,6 +1089,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1166,6 +1194,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
     private UriCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1197,6 +1226,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARTIFACT_URI_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -1213,6 +1243,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
   public boolean hasArtifactUri() {
     return uriCase_ == 4;
   }
+
   /**
    *
    *
@@ -1242,6 +1273,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1276,12 +1308,13 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object skaffoldConfigPath_ = "";
+
   /**
    *
    *
    * <pre>
-   * Output only. File path of the resolved Skaffold configuration relative to
-   * the URI.
+   * Output only. File path of the resolved Skaffold configuration for the
+   * stable phase, relative to the URI.
    * </pre>
    *
    * <code>string skaffold_config_path = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1300,12 +1333,13 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Output only. File path of the resolved Skaffold configuration relative to
-   * the URI.
+   * Output only. File path of the resolved Skaffold configuration for the
+   * stable phase, relative to the URI.
    * </pre>
    *
    * <code>string skaffold_config_path = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1329,11 +1363,13 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object manifestPath_ = "";
+
   /**
    *
    *
    * <pre>
-   * Output only. File path of the rendered manifest relative to the URI.
+   * Output only. File path of the rendered manifest relative to the URI for the
+   * stable phase.
    * </pre>
    *
    * <code>string manifest_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1352,11 +1388,13 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Output only. File path of the rendered manifest relative to the URI.
+   * Output only. File path of the rendered manifest relative to the URI for the
+   * stable phase.
    * </pre>
    *
    * <code>string manifest_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1412,6 +1450,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
   public int getPhaseArtifactsCount() {
     return internalGetPhaseArtifacts().getMap().size();
   }
+
   /**
    *
    *
@@ -1430,6 +1469,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetPhaseArtifacts().getMap().containsKey(key);
   }
+
   /** Use {@link #getPhaseArtifactsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -1437,6 +1477,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       getPhaseArtifacts() {
     return getPhaseArtifactsMap();
   }
+
   /**
    *
    *
@@ -1453,6 +1494,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       getPhaseArtifactsMap() {
     return internalGetPhaseArtifacts().getMap();
   }
+
   /**
    *
    *
@@ -1477,6 +1519,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         internalGetPhaseArtifacts().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1712,6 +1755,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2011,6 +2055,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
     public boolean hasArtifactUri() {
       return uriCase_ == 4;
     }
+
     /**
      *
      *
@@ -2041,6 +2086,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2071,6 +2117,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2094,6 +2141,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2115,6 +2163,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2141,12 +2190,13 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object skaffoldConfigPath_ = "";
+
     /**
      *
      *
      * <pre>
-     * Output only. File path of the resolved Skaffold configuration relative to
-     * the URI.
+     * Output only. File path of the resolved Skaffold configuration for the
+     * stable phase, relative to the URI.
      * </pre>
      *
      * <code>string skaffold_config_path = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2164,12 +2214,13 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. File path of the resolved Skaffold configuration relative to
-     * the URI.
+     * Output only. File path of the resolved Skaffold configuration for the
+     * stable phase, relative to the URI.
      * </pre>
      *
      * <code>string skaffold_config_path = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2187,12 +2238,13 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. File path of the resolved Skaffold configuration relative to
-     * the URI.
+     * Output only. File path of the resolved Skaffold configuration for the
+     * stable phase, relative to the URI.
      * </pre>
      *
      * <code>string skaffold_config_path = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2209,12 +2261,13 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. File path of the resolved Skaffold configuration relative to
-     * the URI.
+     * Output only. File path of the resolved Skaffold configuration for the
+     * stable phase, relative to the URI.
      * </pre>
      *
      * <code>string skaffold_config_path = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2227,12 +2280,13 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. File path of the resolved Skaffold configuration relative to
-     * the URI.
+     * Output only. File path of the resolved Skaffold configuration for the
+     * stable phase, relative to the URI.
      * </pre>
      *
      * <code>string skaffold_config_path = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2252,11 +2306,13 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object manifestPath_ = "";
+
     /**
      *
      *
      * <pre>
-     * Output only. File path of the rendered manifest relative to the URI.
+     * Output only. File path of the rendered manifest relative to the URI for the
+     * stable phase.
      * </pre>
      *
      * <code>string manifest_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2274,11 +2330,13 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. File path of the rendered manifest relative to the URI.
+     * Output only. File path of the rendered manifest relative to the URI for the
+     * stable phase.
      * </pre>
      *
      * <code>string manifest_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2296,11 +2354,13 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. File path of the rendered manifest relative to the URI.
+     * Output only. File path of the rendered manifest relative to the URI for the
+     * stable phase.
      * </pre>
      *
      * <code>string manifest_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2317,11 +2377,13 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. File path of the rendered manifest relative to the URI.
+     * Output only. File path of the rendered manifest relative to the URI for the
+     * stable phase.
      * </pre>
      *
      * <code>string manifest_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2334,11 +2396,13 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. File path of the rendered manifest relative to the URI.
+     * Output only. File path of the rendered manifest relative to the URI for the
+     * stable phase.
      * </pre>
      *
      * <code>string manifest_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2377,7 +2441,8 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return PhaseArtifactsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final PhaseArtifactsConverter phaseArtifactsConverter =
         new PhaseArtifactsConverter();
@@ -2418,6 +2483,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
     public int getPhaseArtifactsCount() {
       return internalGetPhaseArtifacts().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -2436,6 +2502,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetPhaseArtifacts().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getPhaseArtifactsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -2443,6 +2510,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         getPhaseArtifacts() {
       return getPhaseArtifactsMap();
     }
+
     /**
      *
      *
@@ -2459,6 +2527,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
         getPhaseArtifactsMap() {
       return internalGetPhaseArtifacts().getImmutableMap();
     }
+
     /**
      *
      *
@@ -2484,6 +2553,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutablePhaseArtifacts().ensureBuilderMap();
       return map.containsKey(key) ? phaseArtifactsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -2515,6 +2585,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       internalGetMutablePhaseArtifacts().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2533,6 +2604,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       internalGetMutablePhaseArtifacts().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.deploy.v1.TargetArtifact.PhaseArtifact>
@@ -2540,6 +2612,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return internalGetMutablePhaseArtifacts().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -2563,6 +2636,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -2588,6 +2662,7 @@ public final class TargetArtifact extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *

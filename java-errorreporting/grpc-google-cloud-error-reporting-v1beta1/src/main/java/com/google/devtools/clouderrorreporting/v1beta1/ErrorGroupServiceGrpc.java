@@ -143,6 +143,19 @@ public final class ErrorGroupServiceGrpc {
     return ErrorGroupServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ErrorGroupServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ErrorGroupServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ErrorGroupServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ErrorGroupServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ErrorGroupServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ErrorGroupServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -282,6 +295,54 @@ public final class ErrorGroupServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ErrorGroupService.
+   *
+   * <pre>
+   * Service for retrieving and updating individual error groups.
+   * </pre>
+   */
+  public static final class ErrorGroupServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ErrorGroupServiceBlockingV2Stub> {
+    private ErrorGroupServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ErrorGroupServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ErrorGroupServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the specified group.
+     * </pre>
+     */
+    public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup getGroup(
+        com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Replace the data for the specified group.
+     * Fails if the group does not exist.
+     * </pre>
+     */
+    public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup updateGroup(
+        com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGroupMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ErrorGroupService.
    *
    * <pre>
    * Service for retrieving and updating individual error groups.

@@ -39,6 +39,7 @@ public interface CreateDeploymentResourcePoolRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateDeploymentResourcePoolRequestOrBuilder
    * @return Whether the deploymentResourcePool field is set.
    */
   boolean hasDeploymentResourcePool();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateDeploymentResourcePoolRequestOrBuilder
    * @return The deploymentResourcePool.
    */
   com.google.cloud.aiplatform.v1.DeploymentResourcePool getDeploymentResourcePool();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateDeploymentResourcePoolRequestOrBuilder
    * @return The deploymentResourcePoolId.
    */
   java.lang.String getDeploymentResourcePoolId();
+
   /**
    *
    *

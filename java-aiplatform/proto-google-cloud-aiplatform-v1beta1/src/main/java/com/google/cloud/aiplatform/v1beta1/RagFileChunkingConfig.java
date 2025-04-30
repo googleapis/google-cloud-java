@@ -33,6 +33,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagFileChunkingConfig)
     RagFileChunkingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RagFileChunkingConfig.newBuilder() to construct.
   private RagFileChunkingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -92,6 +93,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
      */
     int getChunkOverlap();
   }
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.FixedLengthChunking)
       FixedLengthChunkingOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FixedLengthChunking.newBuilder() to construct.
     private FixedLengthChunking(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -137,6 +140,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
 
     public static final int CHUNK_SIZE_FIELD_NUMBER = 1;
     private int chunkSize_ = 0;
+
     /**
      *
      *
@@ -155,6 +159,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
 
     public static final int CHUNK_OVERLAP_FIELD_NUMBER = 2;
     private int chunkOverlap_ = 0;
+
     /**
      *
      *
@@ -349,6 +354,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -561,6 +567,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private int chunkSize_;
+
       /**
        *
        *
@@ -576,6 +583,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       public int getChunkSize() {
         return chunkSize_;
       }
+
       /**
        *
        *
@@ -595,6 +603,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -614,6 +623,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       }
 
       private int chunkOverlap_;
+
       /**
        *
        *
@@ -629,6 +639,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       public int getChunkOverlap() {
         return chunkOverlap_;
       }
+
       /**
        *
        *
@@ -648,6 +659,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -751,6 +763,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     private ChunkingConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -782,6 +795,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int FIXED_LENGTH_CHUNKING_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -799,6 +813,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
   public boolean hasFixedLengthChunking() {
     return chunkingConfigCase_ == 3;
   }
+
   /**
    *
    *
@@ -822,6 +837,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     return com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.FixedLengthChunking
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -846,6 +862,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
 
   public static final int CHUNK_SIZE_FIELD_NUMBER = 1;
   private int chunkSize_ = 0;
+
   /**
    *
    *
@@ -856,7 +873,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
    * <code>int32 chunk_size = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.chunk_size is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=406
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=426
    * @return The chunkSize.
    */
   @java.lang.Override
@@ -867,6 +884,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
 
   public static final int CHUNK_OVERLAP_FIELD_NUMBER = 2;
   private int chunkOverlap_ = 0;
+
   /**
    *
    *
@@ -877,7 +895,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
    * <code>int32 chunk_overlap = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.chunk_overlap is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=409
+   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=429
    * @return The chunkOverlap.
    */
   @java.lang.Override
@@ -1084,6 +1102,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1330,6 +1349,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
             com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.FixedLengthChunking.Builder,
             com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.FixedLengthChunkingOrBuilder>
         fixedLengthChunkingBuilder_;
+
     /**
      *
      *
@@ -1347,6 +1367,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     public boolean hasFixedLengthChunking() {
       return chunkingConfigCase_ == 3;
     }
+
     /**
      *
      *
@@ -1378,6 +1399,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1403,6 +1425,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       chunkingConfigCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1426,6 +1449,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       chunkingConfigCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1466,6 +1490,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       chunkingConfigCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1493,6 +1518,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1508,6 +1534,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
         getFixedLengthChunkingBuilder() {
       return getFixedLengthChunkingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1533,6 +1560,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1574,6 +1602,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     }
 
     private int chunkSize_;
+
     /**
      *
      *
@@ -1584,7 +1613,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
      * <code>int32 chunk_size = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.chunk_size is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=406
+     *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=426
      * @return The chunkSize.
      */
     @java.lang.Override
@@ -1592,6 +1621,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     public int getChunkSize() {
       return chunkSize_;
     }
+
     /**
      *
      *
@@ -1602,7 +1632,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
      * <code>int32 chunk_size = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.chunk_size is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=406
+     *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=426
      * @param value The chunkSize to set.
      * @return This builder for chaining.
      */
@@ -1614,6 +1644,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1624,7 +1655,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
      * <code>int32 chunk_size = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.chunk_size is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=406
+     *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=426
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1636,6 +1667,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     }
 
     private int chunkOverlap_;
+
     /**
      *
      *
@@ -1646,7 +1678,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
      * <code>int32 chunk_overlap = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.chunk_overlap is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=409
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=429
      * @return The chunkOverlap.
      */
     @java.lang.Override
@@ -1654,6 +1686,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     public int getChunkOverlap() {
       return chunkOverlap_;
     }
+
     /**
      *
      *
@@ -1664,7 +1697,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
      * <code>int32 chunk_overlap = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.chunk_overlap is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=409
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=429
      * @param value The chunkOverlap to set.
      * @return This builder for chaining.
      */
@@ -1676,6 +1709,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1686,7 +1720,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
      * <code>int32 chunk_overlap = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.chunk_overlap is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=409
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=429
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

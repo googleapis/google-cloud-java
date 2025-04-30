@@ -102,6 +102,7 @@ public enum BillingPlatformIdentifier implements com.google.protobuf.ProtocolMes
    * <code>BILLING_PLATFORM_IDENTIFIER_UNSPECIFIED = 0;</code>
    */
   public static final int BILLING_PLATFORM_IDENTIFIER_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -112,6 +113,7 @@ public enum BillingPlatformIdentifier implements com.google.protobuf.ProtocolMes
    * <code>SERVER = 1;</code>
    */
   public static final int SERVER_VALUE = 1;
+
   /**
    *
    *
@@ -122,6 +124,7 @@ public enum BillingPlatformIdentifier implements com.google.protobuf.ProtocolMes
    * <code>WEB = 2;</code>
    */
   public static final int WEB_VALUE = 2;
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public enum BillingPlatformIdentifier implements com.google.protobuf.ProtocolMes
    * <code>ANDROID = 3;</code>
    */
   public static final int ANDROID_VALUE = 3;
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public enum BillingPlatformIdentifier implements com.google.protobuf.ProtocolMes
    * <code>IOS = 4;</code>
    */
   public static final int IOS_VALUE = 4;
+
   /**
    *
    *

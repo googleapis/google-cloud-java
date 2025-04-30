@@ -30,12 +30,14 @@ public interface RoutersListBgpRoutesOrBuilder
    * @return Whether the etag field is set.
    */
   boolean hasEtag();
+
   /**
    * <code>optional string etag = 3123477;</code>
    *
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -55,6 +57,7 @@ public interface RoutersListBgpRoutesOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -67,6 +70,7 @@ public interface RoutersListBgpRoutesOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface RoutersListBgpRoutesOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -104,6 +109,7 @@ public interface RoutersListBgpRoutesOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -129,6 +135,7 @@ public interface RoutersListBgpRoutesOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -141,6 +148,7 @@ public interface RoutersListBgpRoutesOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -164,6 +172,7 @@ public interface RoutersListBgpRoutesOrBuilder
    * <code>repeated .google.cloud.compute.v1.BgpRoute result = 139315229;</code>
    */
   java.util.List<com.google.cloud.compute.v1.BgpRoute> getResultList();
+
   /**
    *
    *
@@ -174,6 +183,7 @@ public interface RoutersListBgpRoutesOrBuilder
    * <code>repeated .google.cloud.compute.v1.BgpRoute result = 139315229;</code>
    */
   com.google.cloud.compute.v1.BgpRoute getResult(int index);
+
   /**
    *
    *
@@ -184,6 +194,7 @@ public interface RoutersListBgpRoutesOrBuilder
    * <code>repeated .google.cloud.compute.v1.BgpRoute result = 139315229;</code>
    */
   int getResultCount();
+
   /**
    *
    *
@@ -194,6 +205,7 @@ public interface RoutersListBgpRoutesOrBuilder
    * <code>repeated .google.cloud.compute.v1.BgpRoute result = 139315229;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.BgpRouteOrBuilder> getResultOrBuilderList();
+
   /**
    *
    *
@@ -217,6 +229,7 @@ public interface RoutersListBgpRoutesOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -229,6 +242,7 @@ public interface RoutersListBgpRoutesOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -254,6 +268,7 @@ public interface RoutersListBgpRoutesOrBuilder
    * @return A list containing the unreachables.
    */
   java.util.List<java.lang.String> getUnreachablesList();
+
   /**
    *
    *
@@ -266,6 +281,7 @@ public interface RoutersListBgpRoutesOrBuilder
    * @return The count of unreachables.
    */
   int getUnreachablesCount();
+
   /**
    *
    *
@@ -279,6 +295,7 @@ public interface RoutersListBgpRoutesOrBuilder
    * @return The unreachables at the given index.
    */
   java.lang.String getUnreachables(int index);
+
   /**
    *
    *
@@ -305,6 +322,7 @@ public interface RoutersListBgpRoutesOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -317,6 +335,7 @@ public interface RoutersListBgpRoutesOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

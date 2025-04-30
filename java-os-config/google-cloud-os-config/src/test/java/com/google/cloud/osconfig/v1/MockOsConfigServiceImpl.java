@@ -161,7 +161,8 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListPatchJobInstanceDetails, expected %s or %s",
+                  "Unrecognized response type %s for method ListPatchJobInstanceDetails, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   PatchJobs.ListPatchJobInstanceDetailsResponse.class.getName(),
                   Exception.class.getName())));
@@ -183,7 +184,8 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreatePatchDeployment, expected %s or %s",
+                  "Unrecognized response type %s for method CreatePatchDeployment, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   PatchDeployments.PatchDeployment.class.getName(),
                   Exception.class.getName())));
@@ -227,7 +229,8 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListPatchDeployments, expected %s or %s",
+                  "Unrecognized response type %s for method ListPatchDeployments, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   PatchDeployments.ListPatchDeploymentsResponse.class.getName(),
                   Exception.class.getName())));
@@ -249,7 +252,8 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeletePatchDeployment, expected %s or %s",
+                  "Unrecognized response type %s for method DeletePatchDeployment, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -271,7 +275,8 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdatePatchDeployment, expected %s or %s",
+                  "Unrecognized response type %s for method UpdatePatchDeployment, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   PatchDeployments.PatchDeployment.class.getName(),
                   Exception.class.getName())));
@@ -293,7 +298,8 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method PausePatchDeployment, expected %s or %s",
+                  "Unrecognized response type %s for method PausePatchDeployment, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   PatchDeployments.PatchDeployment.class.getName(),
                   Exception.class.getName())));
@@ -315,7 +321,8 @@ public class MockOsConfigServiceImpl extends OsConfigServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ResumePatchDeployment, expected %s or %s",
+                  "Unrecognized response type %s for method ResumePatchDeployment, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   PatchDeployments.PatchDeployment.class.getName(),
                   Exception.class.getName())));

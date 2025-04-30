@@ -38,6 +38,7 @@ public interface SubscribeListingRequestOrBuilder
    * @return Whether the destinationDataset field is set.
    */
   boolean hasDestinationDataset();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface SubscribeListingRequestOrBuilder
    * @return The destinationDataset.
    */
   com.google.cloud.bigquery.analyticshub.v1.DestinationDataset getDestinationDataset();
+
   /**
    *
    *
@@ -70,6 +72,54 @@ public interface SubscribeListingRequestOrBuilder
    *
    *
    * <pre>
+   * Input only. Destination Pub/Sub subscription to create for the
+   * subscriber.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription destination_pubsub_subscription = 5 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the destinationPubsubSubscription field is set.
+   */
+  boolean hasDestinationPubsubSubscription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Destination Pub/Sub subscription to create for the
+   * subscriber.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription destination_pubsub_subscription = 5 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The destinationPubsubSubscription.
+   */
+  com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription
+      getDestinationPubsubSubscription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Destination Pub/Sub subscription to create for the
+   * subscriber.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscription destination_pubsub_subscription = 5 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscriptionOrBuilder
+      getDestinationPubsubSubscriptionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. Resource name of the listing that you want to subscribe to.
    * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
    * </pre>
@@ -81,6 +131,7 @@ public interface SubscribeListingRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

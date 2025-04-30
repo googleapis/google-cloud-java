@@ -39,6 +39,7 @@ public interface StreamingRecognitionConfigOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface StreamingRecognitionConfigOrBuilder
    * @return The config.
    */
   com.google.cloud.speech.v1p1beta1.RecognitionConfig getConfig();
+
   /**
    *
    *
@@ -85,8 +87,9 @@ public interface StreamingRecognitionConfigOrBuilder
    * `true`.
    *
    * The `single_utterance` field can only be used with specified models,
-   * otherwise an error is thrown. The `model` field in [`RecognitionConfig`][]
-   * must be set to:
+   * otherwise an error is thrown. The `model` field in
+   * [RecognitionConfig][google.cloud.speech.v1p1beta1.RecognitionConfig] must
+   * be set to:
    *
    * * `command_and_search`
    * * `phone_call` AND additional field `useEnhanced`=`true`
@@ -147,6 +150,7 @@ public interface StreamingRecognitionConfigOrBuilder
    * @return Whether the voiceActivityTimeout field is set.
    */
   boolean hasVoiceActivityTimeout();
+
   /**
    *
    *
@@ -164,6 +168,7 @@ public interface StreamingRecognitionConfigOrBuilder
    */
   com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
       getVoiceActivityTimeout();
+
   /**
    *
    *

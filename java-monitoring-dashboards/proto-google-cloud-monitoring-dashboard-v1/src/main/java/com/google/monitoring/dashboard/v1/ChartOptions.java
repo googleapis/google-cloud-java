@@ -33,6 +33,7 @@ public final class ChartOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.ChartOptions)
     ChartOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ChartOptions.newBuilder() to construct.
   private ChartOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,6 +130,7 @@ public final class ChartOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>MODE_UNSPECIFIED = 0;</code>
      */
     public static final int MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -140,6 +142,7 @@ public final class ChartOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>COLOR = 1;</code>
      */
     public static final int COLOR_VALUE = 1;
+
     /**
      *
      *
@@ -151,6 +154,7 @@ public final class ChartOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>X_RAY = 2;</code>
      */
     public static final int X_RAY_VALUE = 2;
+
     /**
      *
      *
@@ -250,6 +254,7 @@ public final class ChartOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MODE_FIELD_NUMBER = 1;
   private int mode_ = 0;
+
   /**
    *
    *
@@ -265,6 +270,7 @@ public final class ChartOptions extends com.google.protobuf.GeneratedMessageV3
   public int getModeValue() {
     return mode_;
   }
+
   /**
    *
    *
@@ -446,6 +452,7 @@ public final class ChartOptions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -628,6 +635,7 @@ public final class ChartOptions extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int mode_ = 0;
+
     /**
      *
      *
@@ -643,6 +651,7 @@ public final class ChartOptions extends com.google.protobuf.GeneratedMessageV3
     public int getModeValue() {
       return mode_;
     }
+
     /**
      *
      *
@@ -661,6 +670,7 @@ public final class ChartOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -680,6 +690,7 @@ public final class ChartOptions extends com.google.protobuf.GeneratedMessageV3
           ? com.google.monitoring.dashboard.v1.ChartOptions.Mode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -701,6 +712,7 @@ public final class ChartOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -187,6 +187,19 @@ public final class TemplatesServiceGrpc {
     return TemplatesServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TemplatesServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TemplatesServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TemplatesServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public TemplatesServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TemplatesServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TemplatesServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -356,6 +369,66 @@ public final class TemplatesServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TemplatesService.
+   *
+   * <pre>
+   * Provides a method to create Cloud Dataflow jobs from templates.
+   * </pre>
+   */
+  public static final class TemplatesServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TemplatesServiceBlockingV2Stub> {
+    private TemplatesServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TemplatesServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TemplatesServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Cloud Dataflow job from a template.
+     * </pre>
+     */
+    public com.google.dataflow.v1beta3.Job createJobFromTemplate(
+        com.google.dataflow.v1beta3.CreateJobFromTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateJobFromTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Launch a template.
+     * </pre>
+     */
+    public com.google.dataflow.v1beta3.LaunchTemplateResponse launchTemplate(
+        com.google.dataflow.v1beta3.LaunchTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLaunchTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the template associated with a template.
+     * </pre>
+     */
+    public com.google.dataflow.v1beta3.GetTemplateResponse getTemplate(
+        com.google.dataflow.v1beta3.GetTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTemplateMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service TemplatesService.
    *
    * <pre>
    * Provides a method to create Cloud Dataflow jobs from templates.

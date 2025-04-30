@@ -38,6 +38,7 @@ public interface CreateVolumeSnapshotRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateVolumeSnapshotRequestOrBuilder
    * @return Whether the volumeSnapshot field is set.
    */
   boolean hasVolumeSnapshot();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateVolumeSnapshotRequestOrBuilder
    * @return The volumeSnapshot.
    */
   com.google.cloud.baremetalsolution.v2.VolumeSnapshot getVolumeSnapshot();
+
   /**
    *
    *

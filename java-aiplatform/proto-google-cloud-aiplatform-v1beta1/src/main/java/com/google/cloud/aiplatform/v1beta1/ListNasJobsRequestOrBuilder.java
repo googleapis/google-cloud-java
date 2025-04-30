@@ -39,6 +39,7 @@ public interface ListNasJobsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public interface ListNasJobsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -148,6 +150,7 @@ public interface ListNasJobsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -178,6 +181,7 @@ public interface ListNasJobsRequestOrBuilder
    * @return Whether the readMask field is set.
    */
   boolean hasReadMask();
+
   /**
    *
    *
@@ -190,6 +194,7 @@ public interface ListNasJobsRequestOrBuilder
    * @return The readMask.
    */
   com.google.protobuf.FieldMask getReadMask();
+
   /**
    *
    *

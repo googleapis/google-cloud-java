@@ -34,6 +34,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.SetConfigRequest)
     SetConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetConfigRequest.newBuilder() to construct.
   private SetConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
     private ConfigurationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,6 +119,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -140,6 +143,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -165,6 +169,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int TAG_TEMPLATE_MIGRATION_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasTagTemplateMigration() {
     return configurationCase_ == 2;
   }
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
     }
     return 0;
   }
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CATALOG_UI_EXPERIENCE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -234,6 +242,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasCatalogUiExperience() {
     return configurationCase_ == 3;
   }
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
     }
     return 0;
   }
+
   /**
    *
    *
@@ -472,6 +482,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -709,6 +720,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -731,6 +743,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -753,6 +766,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -774,6 +788,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +806,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +845,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasTagTemplateMigration() {
       return configurationCase_ == 2;
     }
+
     /**
      *
      *
@@ -847,6 +864,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
       }
       return 0;
     }
+
     /**
      *
      *
@@ -865,6 +883,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +908,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
       return com.google.cloud.datacatalog.v1.TagTemplateMigration
           .TAG_TEMPLATE_MIGRATION_UNSPECIFIED;
     }
+
     /**
      *
      *
@@ -911,6 +931,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -946,6 +967,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasCatalogUiExperience() {
       return configurationCase_ == 3;
     }
+
     /**
      *
      *
@@ -964,6 +986,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
       }
       return 0;
     }
+
     /**
      *
      *
@@ -982,6 +1005,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1005,6 +1029,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
       }
       return com.google.cloud.datacatalog.v1.CatalogUIExperience.CATALOG_UI_EXPERIENCE_UNSPECIFIED;
     }
+
     /**
      *
      *
@@ -1027,6 +1052,7 @@ public final class SetConfigRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

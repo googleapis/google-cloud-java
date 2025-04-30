@@ -1,0 +1,16 @@
+{
+  "api_shortname": "lustre",
+  "name_pretty": "Google Cloud Managed Lustre API",
+  "product_documentation": "https://cloud.google.com/managed-lustre/docs",
+  "api_description": "Google Cloud Managed Lustre delivers a high-performance, fully managed parallel file system optimized for AI and HPC applications.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-lustre/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-lustre",
+  "distribution_name": "com.google.cloud:google-cloud-lustre",
+  "api_id": "lustre.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

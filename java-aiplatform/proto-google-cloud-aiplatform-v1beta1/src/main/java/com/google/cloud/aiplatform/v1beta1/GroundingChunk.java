@@ -33,6 +33,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GroundingChunk)
     GroundingChunkOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GroundingChunk.newBuilder() to construct.
   private GroundingChunk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the uri field is set.
      */
     boolean hasUri();
+
     /**
      *
      *
@@ -90,6 +92,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
+
     /**
      *
      *
@@ -115,6 +118,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the title field is set.
      */
     boolean hasTitle();
+
     /**
      *
      *
@@ -127,6 +131,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return The title.
      */
     java.lang.String getTitle();
+
     /**
      *
      *
@@ -140,6 +145,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTitleBytes();
   }
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GroundingChunk.Web)
       WebOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Web.newBuilder() to construct.
     private Web(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -190,6 +197,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -205,6 +213,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUri() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -228,6 +237,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -256,6 +266,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object title_ = "";
+
     /**
      *
      *
@@ -271,6 +282,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTitle() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -294,6 +306,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -498,6 +511,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -704,6 +718,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -718,6 +733,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUri() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -740,6 +756,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -762,6 +779,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -783,6 +801,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -800,6 +819,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -824,6 +844,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object title_ = "";
+
       /**
        *
        *
@@ -838,6 +859,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTitle() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -860,6 +882,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -882,6 +905,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -903,6 +927,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -920,6 +945,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1016,6 +1042,46 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Additional context for the RAG retrieval result. This is only populated
+     * when using the RAG retrieval tool.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagChunk rag_chunk = 4;</code>
+     *
+     * @return Whether the ragChunk field is set.
+     */
+    boolean hasRagChunk();
+
+    /**
+     *
+     *
+     * <pre>
+     * Additional context for the RAG retrieval result. This is only populated
+     * when using the RAG retrieval tool.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagChunk rag_chunk = 4;</code>
+     *
+     * @return The ragChunk.
+     */
+    com.google.cloud.aiplatform.v1beta1.RagChunk getRagChunk();
+
+    /**
+     *
+     *
+     * <pre>
+     * Additional context for the RAG retrieval result. This is only populated
+     * when using the RAG retrieval tool.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagChunk rag_chunk = 4;</code>
+     */
+    com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder getRagChunkOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * URI reference of the attribution.
      * </pre>
      *
@@ -1024,6 +1090,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the uri field is set.
      */
     boolean hasUri();
+
     /**
      *
      *
@@ -1036,6 +1103,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
+
     /**
      *
      *
@@ -1061,6 +1129,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the title field is set.
      */
     boolean hasTitle();
+
     /**
      *
      *
@@ -1073,6 +1142,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return The title.
      */
     java.lang.String getTitle();
+
     /**
      *
      *
@@ -1098,6 +1168,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the text field is set.
      */
     boolean hasText();
+
     /**
      *
      *
@@ -1110,6 +1181,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return The text.
      */
     java.lang.String getText();
+
     /**
      *
      *
@@ -1122,7 +1194,11 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for text.
      */
     com.google.protobuf.ByteString getTextBytes();
+
+    com.google.cloud.aiplatform.v1beta1.GroundingChunk.RetrievedContext.ContextDetailsCase
+        getContextDetailsCase();
   }
+
   /**
    *
    *
@@ -1137,6 +1213,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GroundingChunk.RetrievedContext)
       RetrievedContextOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RetrievedContext.newBuilder() to construct.
     private RetrievedContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1170,10 +1247,115 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+    private int contextDetailsCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object contextDetails_;
+
+    public enum ContextDetailsCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      RAG_CHUNK(4),
+      CONTEXTDETAILS_NOT_SET(0);
+      private final int value;
+
+      private ContextDetailsCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ContextDetailsCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ContextDetailsCase forNumber(int value) {
+        switch (value) {
+          case 4:
+            return RAG_CHUNK;
+          case 0:
+            return CONTEXTDETAILS_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ContextDetailsCase getContextDetailsCase() {
+      return ContextDetailsCase.forNumber(contextDetailsCase_);
+    }
+
+    public static final int RAG_CHUNK_FIELD_NUMBER = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Additional context for the RAG retrieval result. This is only populated
+     * when using the RAG retrieval tool.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagChunk rag_chunk = 4;</code>
+     *
+     * @return Whether the ragChunk field is set.
+     */
+    @java.lang.Override
+    public boolean hasRagChunk() {
+      return contextDetailsCase_ == 4;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Additional context for the RAG retrieval result. This is only populated
+     * when using the RAG retrieval tool.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagChunk rag_chunk = 4;</code>
+     *
+     * @return The ragChunk.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagChunk getRagChunk() {
+      if (contextDetailsCase_ == 4) {
+        return (com.google.cloud.aiplatform.v1beta1.RagChunk) contextDetails_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.RagChunk.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Additional context for the RAG retrieval result. This is only populated
+     * when using the RAG retrieval tool.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagChunk rag_chunk = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder getRagChunkOrBuilder() {
+      if (contextDetailsCase_ == 4) {
+        return (com.google.cloud.aiplatform.v1beta1.RagChunk) contextDetails_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.RagChunk.getDefaultInstance();
+    }
+
     public static final int URI_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -1189,6 +1371,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUri() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1212,6 +1395,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1240,6 +1424,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object title_ = "";
+
     /**
      *
      *
@@ -1255,6 +1440,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTitle() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1278,6 +1464,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1306,6 +1493,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object text_ = "";
+
     /**
      *
      *
@@ -1321,6 +1509,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasText() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1344,6 +1533,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1391,6 +1581,9 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000004) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, text_);
       }
+      if (contextDetailsCase_ == 4) {
+        output.writeMessage(4, (com.google.cloud.aiplatform.v1beta1.RagChunk) contextDetails_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1408,6 +1601,11 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, text_);
+      }
+      if (contextDetailsCase_ == 4) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                4, (com.google.cloud.aiplatform.v1beta1.RagChunk) contextDetails_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1437,6 +1635,14 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       if (hasText()) {
         if (!getText().equals(other.getText())) return false;
       }
+      if (!getContextDetailsCase().equals(other.getContextDetailsCase())) return false;
+      switch (contextDetailsCase_) {
+        case 4:
+          if (!getRagChunk().equals(other.getRagChunk())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1459,6 +1665,14 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       if (hasText()) {
         hash = (37 * hash) + TEXT_FIELD_NUMBER;
         hash = (53 * hash) + getText().hashCode();
+      }
+      switch (contextDetailsCase_) {
+        case 4:
+          hash = (37 * hash) + RAG_CHUNK_FIELD_NUMBER;
+          hash = (53 * hash) + getRagChunk().hashCode();
+          break;
+        case 0:
+        default:
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1563,6 +1777,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1604,9 +1819,14 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        if (ragChunkBuilder_ != null) {
+          ragChunkBuilder_.clear();
+        }
         uri_ = "";
         title_ = "";
         text_ = "";
+        contextDetailsCase_ = 0;
+        contextDetails_ = null;
         return this;
       }
 
@@ -1639,6 +1859,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
       }
@@ -1647,19 +1868,28 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1beta1.GroundingChunk.RetrievedContext result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           result.uri_ = uri_;
           to_bitField0_ |= 0x00000001;
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.title_ = title_;
           to_bitField0_ |= 0x00000002;
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.text_ = text_;
           to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.aiplatform.v1beta1.GroundingChunk.RetrievedContext result) {
+        result.contextDetailsCase_ = contextDetailsCase_;
+        result.contextDetails_ = this.contextDetails_;
+        if (contextDetailsCase_ == 4 && ragChunkBuilder_ != null) {
+          result.contextDetails_ = ragChunkBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1715,18 +1945,29 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()) return this;
         if (other.hasUri()) {
           uri_ = other.uri_;
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasTitle()) {
           title_ = other.title_;
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.hasText()) {
           text_ = other.text_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
+        }
+        switch (other.getContextDetailsCase()) {
+          case RAG_CHUNK:
+            {
+              mergeRagChunk(other.getRagChunk());
+              break;
+            }
+          case CONTEXTDETAILS_NOT_SET:
+            {
+              break;
+            }
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1757,21 +1998,27 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   uri_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000001;
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 10
               case 18:
                 {
                   title_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000002;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 18
               case 26:
                 {
                   text_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 26
+              case 34:
+                {
+                  input.readMessage(getRagChunkFieldBuilder().getBuilder(), extensionRegistry);
+                  contextDetailsCase_ = 4;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1789,9 +2036,252 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private int contextDetailsCase_ = 0;
+      private java.lang.Object contextDetails_;
+
+      public ContextDetailsCase getContextDetailsCase() {
+        return ContextDetailsCase.forNumber(contextDetailsCase_);
+      }
+
+      public Builder clearContextDetails() {
+        contextDetailsCase_ = 0;
+        contextDetails_ = null;
+        onChanged();
+        return this;
+      }
+
       private int bitField0_;
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.RagChunk,
+              com.google.cloud.aiplatform.v1beta1.RagChunk.Builder,
+              com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder>
+          ragChunkBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Additional context for the RAG retrieval result. This is only populated
+       * when using the RAG retrieval tool.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.RagChunk rag_chunk = 4;</code>
+       *
+       * @return Whether the ragChunk field is set.
+       */
+      @java.lang.Override
+      public boolean hasRagChunk() {
+        return contextDetailsCase_ == 4;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Additional context for the RAG retrieval result. This is only populated
+       * when using the RAG retrieval tool.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.RagChunk rag_chunk = 4;</code>
+       *
+       * @return The ragChunk.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagChunk getRagChunk() {
+        if (ragChunkBuilder_ == null) {
+          if (contextDetailsCase_ == 4) {
+            return (com.google.cloud.aiplatform.v1beta1.RagChunk) contextDetails_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.RagChunk.getDefaultInstance();
+        } else {
+          if (contextDetailsCase_ == 4) {
+            return ragChunkBuilder_.getMessage();
+          }
+          return com.google.cloud.aiplatform.v1beta1.RagChunk.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Additional context for the RAG retrieval result. This is only populated
+       * when using the RAG retrieval tool.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.RagChunk rag_chunk = 4;</code>
+       */
+      public Builder setRagChunk(com.google.cloud.aiplatform.v1beta1.RagChunk value) {
+        if (ragChunkBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          contextDetails_ = value;
+          onChanged();
+        } else {
+          ragChunkBuilder_.setMessage(value);
+        }
+        contextDetailsCase_ = 4;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Additional context for the RAG retrieval result. This is only populated
+       * when using the RAG retrieval tool.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.RagChunk rag_chunk = 4;</code>
+       */
+      public Builder setRagChunk(
+          com.google.cloud.aiplatform.v1beta1.RagChunk.Builder builderForValue) {
+        if (ragChunkBuilder_ == null) {
+          contextDetails_ = builderForValue.build();
+          onChanged();
+        } else {
+          ragChunkBuilder_.setMessage(builderForValue.build());
+        }
+        contextDetailsCase_ = 4;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Additional context for the RAG retrieval result. This is only populated
+       * when using the RAG retrieval tool.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.RagChunk rag_chunk = 4;</code>
+       */
+      public Builder mergeRagChunk(com.google.cloud.aiplatform.v1beta1.RagChunk value) {
+        if (ragChunkBuilder_ == null) {
+          if (contextDetailsCase_ == 4
+              && contextDetails_
+                  != com.google.cloud.aiplatform.v1beta1.RagChunk.getDefaultInstance()) {
+            contextDetails_ =
+                com.google.cloud.aiplatform.v1beta1.RagChunk.newBuilder(
+                        (com.google.cloud.aiplatform.v1beta1.RagChunk) contextDetails_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            contextDetails_ = value;
+          }
+          onChanged();
+        } else {
+          if (contextDetailsCase_ == 4) {
+            ragChunkBuilder_.mergeFrom(value);
+          } else {
+            ragChunkBuilder_.setMessage(value);
+          }
+        }
+        contextDetailsCase_ = 4;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Additional context for the RAG retrieval result. This is only populated
+       * when using the RAG retrieval tool.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.RagChunk rag_chunk = 4;</code>
+       */
+      public Builder clearRagChunk() {
+        if (ragChunkBuilder_ == null) {
+          if (contextDetailsCase_ == 4) {
+            contextDetailsCase_ = 0;
+            contextDetails_ = null;
+            onChanged();
+          }
+        } else {
+          if (contextDetailsCase_ == 4) {
+            contextDetailsCase_ = 0;
+            contextDetails_ = null;
+          }
+          ragChunkBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Additional context for the RAG retrieval result. This is only populated
+       * when using the RAG retrieval tool.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.RagChunk rag_chunk = 4;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.RagChunk.Builder getRagChunkBuilder() {
+        return getRagChunkFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Additional context for the RAG retrieval result. This is only populated
+       * when using the RAG retrieval tool.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.RagChunk rag_chunk = 4;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder getRagChunkOrBuilder() {
+        if ((contextDetailsCase_ == 4) && (ragChunkBuilder_ != null)) {
+          return ragChunkBuilder_.getMessageOrBuilder();
+        } else {
+          if (contextDetailsCase_ == 4) {
+            return (com.google.cloud.aiplatform.v1beta1.RagChunk) contextDetails_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.RagChunk.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Additional context for the RAG retrieval result. This is only populated
+       * when using the RAG retrieval tool.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.RagChunk rag_chunk = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.RagChunk,
+              com.google.cloud.aiplatform.v1beta1.RagChunk.Builder,
+              com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder>
+          getRagChunkFieldBuilder() {
+        if (ragChunkBuilder_ == null) {
+          if (!(contextDetailsCase_ == 4)) {
+            contextDetails_ = com.google.cloud.aiplatform.v1beta1.RagChunk.getDefaultInstance();
+          }
+          ragChunkBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.RagChunk,
+                  com.google.cloud.aiplatform.v1beta1.RagChunk.Builder,
+                  com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder>(
+                  (com.google.cloud.aiplatform.v1beta1.RagChunk) contextDetails_,
+                  getParentForChildren(),
+                  isClean());
+          contextDetails_ = null;
+        }
+        contextDetailsCase_ = 4;
+        onChanged();
+        return ragChunkBuilder_;
+      }
+
       private java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -1804,8 +2294,9 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the uri field is set.
        */
       public boolean hasUri() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1828,6 +2319,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1850,6 +2342,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1867,10 +2360,11 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         uri_ = value;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1884,10 +2378,11 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearUri() {
         uri_ = getDefaultInstance().getUri();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1906,12 +2401,13 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         uri_ = value;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
       private java.lang.Object title_ = "";
+
       /**
        *
        *
@@ -1924,8 +2420,9 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the title field is set.
        */
       public boolean hasTitle() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1948,6 +2445,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1970,6 +2468,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1987,10 +2486,11 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         title_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2004,10 +2504,11 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearTitle() {
         title_ = getDefaultInstance().getTitle();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2026,12 +2527,13 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         title_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
 
       private java.lang.Object text_ = "";
+
       /**
        *
        *
@@ -2044,8 +2546,9 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the text field is set.
        */
       public boolean hasText() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -2068,6 +2571,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2090,6 +2594,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2107,10 +2612,11 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         text_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2124,10 +2630,11 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearText() {
         text_ = getDefaultInstance().getText();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2146,7 +2653,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         text_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2235,6 +2742,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     private ChunkTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2268,6 +2776,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WEB_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -2283,6 +2792,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWeb() {
     return chunkTypeCase_ == 1;
   }
+
   /**
    *
    *
@@ -2301,6 +2811,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1beta1.GroundingChunk.Web.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2319,6 +2830,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RETRIEVED_CONTEXT_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -2335,6 +2847,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRetrievedContext() {
     return chunkTypeCase_ == 2;
   }
+
   /**
    *
    *
@@ -2354,6 +2867,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1beta1.GroundingChunk.RetrievedContext.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2563,6 +3077,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2799,6 +3314,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.GroundingChunk.Web.Builder,
             com.google.cloud.aiplatform.v1beta1.GroundingChunk.WebOrBuilder>
         webBuilder_;
+
     /**
      *
      *
@@ -2814,6 +3330,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWeb() {
       return chunkTypeCase_ == 1;
     }
+
     /**
      *
      *
@@ -2839,6 +3356,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.GroundingChunk.Web.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2861,6 +3379,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       chunkTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2881,6 +3400,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       chunkTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2914,6 +3434,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       chunkTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2939,6 +3460,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2951,6 +3473,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Web.Builder getWebBuilder() {
       return getWebFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2971,6 +3494,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.GroundingChunk.Web.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3009,6 +3533,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.GroundingChunk.RetrievedContext.Builder,
             com.google.cloud.aiplatform.v1beta1.GroundingChunk.RetrievedContextOrBuilder>
         retrievedContextBuilder_;
+
     /**
      *
      *
@@ -3025,6 +3550,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRetrievedContext() {
       return chunkTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -3054,6 +3580,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3078,6 +3605,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       chunkTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -3100,6 +3628,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       chunkTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -3137,6 +3666,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       chunkTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -3163,6 +3693,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3177,6 +3708,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         getRetrievedContextBuilder() {
       return getRetrievedContextFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3200,6 +3732,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

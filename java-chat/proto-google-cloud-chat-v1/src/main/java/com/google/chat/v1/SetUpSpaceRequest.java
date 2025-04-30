@@ -33,6 +33,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.chat.v1.SetUpSpaceRequest)
     SetUpSpaceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetUpSpaceRequest.newBuilder() to construct.
   private SetUpSpaceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int SPACE_FIELD_NUMBER = 1;
   private com.google.chat.v1.Space space_;
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasSpace() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
   public com.google.chat.v1.Space getSpace() {
     return space_ == null ? com.google.chat.v1.Space.getDefaultInstance() : space_;
   }
+
   /**
    *
    *
@@ -181,6 +185,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -209,6 +214,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -242,6 +248,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.chat.v1.Membership> memberships_;
+
   /**
    *
    *
@@ -285,6 +292,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.chat.v1.Membership> getMembershipsList() {
     return memberships_;
   }
+
   /**
    *
    *
@@ -329,6 +337,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       getMembershipsOrBuilderList() {
     return memberships_;
   }
+
   /**
    *
    *
@@ -372,6 +381,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
   public int getMembershipsCount() {
     return memberships_.size();
   }
+
   /**
    *
    *
@@ -415,6 +425,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
   public com.google.chat.v1.Membership getMemberships(int index) {
     return memberships_.get(index);
   }
+
   /**
    *
    *
@@ -641,6 +652,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -917,6 +929,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
             com.google.chat.v1.Space.Builder,
             com.google.chat.v1.SpaceOrBuilder>
         spaceBuilder_;
+
     /**
      *
      *
@@ -953,6 +966,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasSpace() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -993,6 +1007,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
         return spaceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1052,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1078,6 +1094,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1127,6 +1144,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1168,6 +1186,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1204,6 +1223,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getSpaceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1242,6 +1262,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
         return space_ == null ? com.google.chat.v1.Space.getDefaultInstance() : space_;
       }
     }
+
     /**
      *
      *
@@ -1290,6 +1311,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1317,6 +1339,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1344,6 +1367,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1370,6 +1394,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1392,6 +1417,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1482,6 +1508,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
         return membershipsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1528,6 +1555,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
         return membershipsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1574,6 +1602,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
         return membershipsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1626,6 +1655,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1676,6 +1706,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1728,6 +1759,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1780,6 +1812,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1829,6 +1862,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1879,6 +1913,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1929,6 +1964,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1978,6 +2014,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2027,6 +2064,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2069,6 +2107,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
     public com.google.chat.v1.Membership.Builder getMembershipsBuilder(int index) {
       return getMembershipsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2115,6 +2154,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
         return membershipsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2162,6 +2202,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(memberships_);
       }
     }
+
     /**
      *
      *
@@ -2205,6 +2246,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       return getMembershipsFieldBuilder()
           .addBuilder(com.google.chat.v1.Membership.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2248,6 +2290,7 @@ public final class SetUpSpaceRequest extends com.google.protobuf.GeneratedMessag
       return getMembershipsFieldBuilder()
           .addBuilder(index, com.google.chat.v1.Membership.getDefaultInstance());
     }
+
     /**
      *
      *

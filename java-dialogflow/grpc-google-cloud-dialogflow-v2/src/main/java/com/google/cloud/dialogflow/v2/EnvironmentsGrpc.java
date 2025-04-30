@@ -326,6 +326,19 @@ public final class EnvironmentsGrpc {
     return EnvironmentsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EnvironmentsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EnvironmentsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EnvironmentsBlockingV2Stub>() {
+          @java.lang.Override
+          public EnvironmentsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EnvironmentsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EnvironmentsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -605,6 +618,114 @@ public final class EnvironmentsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Environments.
+   *
+   * <pre>
+   * Service for managing [Environments][google.cloud.dialogflow.v2.Environment].
+   * </pre>
+   */
+  public static final class EnvironmentsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EnvironmentsBlockingV2Stub> {
+    private EnvironmentsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EnvironmentsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EnvironmentsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all non-default environments of the specified agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.ListEnvironmentsResponse listEnvironments(
+        com.google.cloud.dialogflow.v2.ListEnvironmentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEnvironmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified agent environment.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.Environment getEnvironment(
+        com.google.cloud.dialogflow.v2.GetEnvironmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an agent environment.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.Environment createEnvironment(
+        com.google.cloud.dialogflow.v2.CreateEnvironmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified agent environment.
+     * This method allows you to deploy new agent versions into the environment.
+     * When an environment is pointed to a new agent version by setting
+     * `environment.agent_version`, the environment is temporarily set to the
+     * `LOADING` state. During that time, the environment continues serving the
+     * previous version of the agent. After the new agent version is done loading,
+     * the environment is set back to the `RUNNING` state.
+     * You can use "-" as Environment ID in environment name to update an agent
+     * version in the default environment. WARNING: this will negate all recent
+     * changes to the draft agent and can't be undone. You may want to save the
+     * draft agent to a version before calling this method.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.Environment updateEnvironment(
+        com.google.cloud.dialogflow.v2.UpdateEnvironmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified agent environment.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteEnvironment(
+        com.google.cloud.dialogflow.v2.DeleteEnvironmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEnvironmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the history of the specified environment.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.EnvironmentHistory getEnvironmentHistory(
+        com.google.cloud.dialogflow.v2.GetEnvironmentHistoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEnvironmentHistoryMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Environments.
    *
    * <pre>
    * Service for managing [Environments][google.cloud.dialogflow.v2.Environment].

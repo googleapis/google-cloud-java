@@ -34,6 +34,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityDimensionResult)
     DataQualityDimensionResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataQualityDimensionResult.newBuilder() to construct.
   private DataQualityDimensionResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int DIMENSION_FIELD_NUMBER = 1;
   private com.google.cloud.dataplex.v1.DataQualityDimension dimension_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
   public boolean hasDimension() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
         ? com.google.cloud.dataplex.v1.DataQualityDimension.getDefaultInstance()
         : dimension_;
   }
+
   /**
    *
    *
@@ -121,14 +125,15 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
 
   public static final int PASSED_FIELD_NUMBER = 3;
   private boolean passed_ = false;
+
   /**
    *
    *
    * <pre>
-   * Whether the dimension passed or failed.
+   * Output only. Whether the dimension passed or failed.
    * </pre>
    *
-   * <code>bool passed = 3;</code>
+   * <code>bool passed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The passed.
    */
@@ -139,6 +144,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
 
   public static final int SCORE_FIELD_NUMBER = 4;
   private float score_ = 0F;
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
   public boolean hasScore() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -367,6 +374,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -598,6 +606,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
             com.google.cloud.dataplex.v1.DataQualityDimension.Builder,
             com.google.cloud.dataplex.v1.DataQualityDimensionOrBuilder>
         dimensionBuilder_;
+
     /**
      *
      *
@@ -614,6 +623,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     public boolean hasDimension() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -636,6 +646,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
         return dimensionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -660,6 +671,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +694,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -733,6 +747,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +764,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
       onChanged();
       return getDimensionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -769,6 +785,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
             : dimension_;
       }
     }
+
     /**
      *
      *
@@ -798,14 +815,15 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     }
 
     private boolean passed_;
+
     /**
      *
      *
      * <pre>
-     * Whether the dimension passed or failed.
+     * Output only. Whether the dimension passed or failed.
      * </pre>
      *
-     * <code>bool passed = 3;</code>
+     * <code>bool passed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The passed.
      */
@@ -813,14 +831,15 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     public boolean getPassed() {
       return passed_;
     }
+
     /**
      *
      *
      * <pre>
-     * Whether the dimension passed or failed.
+     * Output only. Whether the dimension passed or failed.
      * </pre>
      *
-     * <code>bool passed = 3;</code>
+     * <code>bool passed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The passed to set.
      * @return This builder for chaining.
@@ -832,14 +851,15 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Whether the dimension passed or failed.
+     * Output only. Whether the dimension passed or failed.
      * </pre>
      *
-     * <code>bool passed = 3;</code>
+     * <code>bool passed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -851,6 +871,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     }
 
     private float score_;
+
     /**
      *
      *
@@ -870,6 +891,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     public boolean hasScore() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -889,6 +911,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     public float getScore() {
       return score_;
     }
+
     /**
      *
      *
@@ -912,6 +935,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

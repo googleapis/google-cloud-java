@@ -36,6 +36,7 @@ public interface LocationFilterOrBuilder
    * @return The address.
    */
   java.lang.String getAddress();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface LocationFilterOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
+
   /**
    *
    *
@@ -115,6 +117,7 @@ public interface LocationFilterOrBuilder
    * @return Whether the latLng field is set.
    */
   boolean hasLatLng();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface LocationFilterOrBuilder
    * @return The latLng.
    */
   com.google.type.LatLng getLatLng();
+
   /**
    *
    *
@@ -193,6 +197,7 @@ public interface LocationFilterOrBuilder
    * @return The enum numeric value on the wire for telecommutePreference.
    */
   int getTelecommutePreferenceValue();
+
   /**
    *
    *

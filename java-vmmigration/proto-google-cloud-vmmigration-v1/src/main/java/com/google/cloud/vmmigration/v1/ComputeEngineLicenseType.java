@@ -72,6 +72,7 @@ public enum ComputeEngineLicenseType implements com.google.protobuf.ProtocolMess
    * <code>COMPUTE_ENGINE_LICENSE_TYPE_DEFAULT = 0;</code>
    */
   public static final int COMPUTE_ENGINE_LICENSE_TYPE_DEFAULT_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum ComputeEngineLicenseType implements com.google.protobuf.ProtocolMess
    * <code>COMPUTE_ENGINE_LICENSE_TYPE_PAYG = 1;</code>
    */
   public static final int COMPUTE_ENGINE_LICENSE_TYPE_PAYG_VALUE = 1;
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.apphub.v1.WorkloadProperties)
     WorkloadPropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WorkloadProperties.newBuilder() to construct.
   private WorkloadProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,12 +70,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gcpProject_ = "";
+
   /**
    *
    *
    * <pre>
    * Output only. The service project identifier that the underlying cloud
-   * resource resides in. Empty for non cloud resources.
+   * resource resides in. Empty for non-cloud resources.
    * </pre>
    *
    * <code>string gcp_project = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -93,12 +95,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
    * Output only. The service project identifier that the underlying cloud
-   * resource resides in. Empty for non cloud resources.
+   * resource resides in. Empty for non-cloud resources.
    * </pre>
    *
    * <code>string gcp_project = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -122,12 +125,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
+
   /**
    *
    *
    * <pre>
    * Output only. The location that the underlying compute resource resides in
-   * (e.g us-west1).
+   * (for example, us-west1).
    * </pre>
    *
    * <code>string location = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -146,12 +150,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
    * Output only. The location that the underlying compute resource resides in
-   * (e.g us-west1).
+   * (for example, us-west1).
    * </pre>
    *
    * <code>string location = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -175,12 +180,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
    * <pre>
    * Output only. The location that the underlying compute resource resides in
-   * if it is zonal (e.g us-west1-a).
+   * if it is zonal (for example, us-west1-a).
    * </pre>
    *
    * <code>string zone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -199,12 +205,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
    * Output only. The location that the underlying compute resource resides in
-   * if it is zonal (e.g us-west1-a).
+   * if it is zonal (for example, us-west1-a).
    * </pre>
    *
    * <code>string zone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -401,6 +408,7 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -614,12 +622,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object gcpProject_ = "";
+
     /**
      *
      *
      * <pre>
      * Output only. The service project identifier that the underlying cloud
-     * resource resides in. Empty for non cloud resources.
+     * resource resides in. Empty for non-cloud resources.
      * </pre>
      *
      * <code>string gcp_project = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -637,12 +646,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The service project identifier that the underlying cloud
-     * resource resides in. Empty for non cloud resources.
+     * resource resides in. Empty for non-cloud resources.
      * </pre>
      *
      * <code>string gcp_project = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -660,12 +670,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The service project identifier that the underlying cloud
-     * resource resides in. Empty for non cloud resources.
+     * resource resides in. Empty for non-cloud resources.
      * </pre>
      *
      * <code>string gcp_project = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -682,12 +693,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The service project identifier that the underlying cloud
-     * resource resides in. Empty for non cloud resources.
+     * resource resides in. Empty for non-cloud resources.
      * </pre>
      *
      * <code>string gcp_project = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -700,12 +712,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The service project identifier that the underlying cloud
-     * resource resides in. Empty for non cloud resources.
+     * resource resides in. Empty for non-cloud resources.
      * </pre>
      *
      * <code>string gcp_project = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -725,12 +738,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object location_ = "";
+
     /**
      *
      *
      * <pre>
      * Output only. The location that the underlying compute resource resides in
-     * (e.g us-west1).
+     * (for example, us-west1).
      * </pre>
      *
      * <code>string location = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -748,12 +762,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The location that the underlying compute resource resides in
-     * (e.g us-west1).
+     * (for example, us-west1).
      * </pre>
      *
      * <code>string location = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -771,12 +786,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The location that the underlying compute resource resides in
-     * (e.g us-west1).
+     * (for example, us-west1).
      * </pre>
      *
      * <code>string location = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -793,12 +809,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The location that the underlying compute resource resides in
-     * (e.g us-west1).
+     * (for example, us-west1).
      * </pre>
      *
      * <code>string location = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -811,12 +828,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The location that the underlying compute resource resides in
-     * (e.g us-west1).
+     * (for example, us-west1).
      * </pre>
      *
      * <code>string location = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -836,12 +854,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
      * <pre>
      * Output only. The location that the underlying compute resource resides in
-     * if it is zonal (e.g us-west1-a).
+     * if it is zonal (for example, us-west1-a).
      * </pre>
      *
      * <code>string zone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -859,12 +878,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The location that the underlying compute resource resides in
-     * if it is zonal (e.g us-west1-a).
+     * if it is zonal (for example, us-west1-a).
      * </pre>
      *
      * <code>string zone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -882,12 +902,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The location that the underlying compute resource resides in
-     * if it is zonal (e.g us-west1-a).
+     * if it is zonal (for example, us-west1-a).
      * </pre>
      *
      * <code>string zone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -904,12 +925,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The location that the underlying compute resource resides in
-     * if it is zonal (e.g us-west1-a).
+     * if it is zonal (for example, us-west1-a).
      * </pre>
      *
      * <code>string zone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -922,12 +944,13 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The location that the underlying compute resource resides in
-     * if it is zonal (e.g us-west1-a).
+     * if it is zonal (for example, us-west1-a).
      * </pre>
      *
      * <code>string zone = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -35,6 +35,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.RolloutNotificationEvent)
     RolloutNotificationEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RolloutNotificationEvent.newBuilder() to construct.
   private RolloutNotificationEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,6 +77,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pipelineUid_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object releaseUid_ = "";
+
   /**
    *
    *
@@ -201,6 +207,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -229,6 +236,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object release_ = "";
+
   /**
    *
    *
@@ -252,6 +260,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -280,6 +289,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rolloutUid_ = "";
+
   /**
    *
    *
@@ -303,6 +313,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -331,6 +342,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rollout_ = "";
+
   /**
    *
    *
@@ -354,6 +366,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -382,6 +395,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetId_ = "";
+
   /**
    *
    *
@@ -405,6 +419,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -431,6 +446,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
 
   public static final int TYPE_FIELD_NUMBER = 5;
   private int type_ = 0;
+
   /**
    *
    *
@@ -446,6 +462,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -685,6 +702,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -974,6 +992,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -996,6 +1015,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1018,6 +1038,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1039,6 +1060,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1078,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1103,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
     }
 
     private java.lang.Object pipelineUid_ = "";
+
     /**
      *
      *
@@ -1102,6 +1126,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1124,6 +1149,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1145,6 +1171,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1162,6 +1189,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1186,6 +1214,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
     }
 
     private java.lang.Object releaseUid_ = "";
+
     /**
      *
      *
@@ -1208,6 +1237,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1230,6 +1260,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1251,6 +1282,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1268,6 +1300,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1292,6 +1325,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
     }
 
     private java.lang.Object release_ = "";
+
     /**
      *
      *
@@ -1314,6 +1348,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1336,6 +1371,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1357,6 +1393,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1374,6 +1411,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1398,6 +1436,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
     }
 
     private java.lang.Object rolloutUid_ = "";
+
     /**
      *
      *
@@ -1420,6 +1459,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1442,6 +1482,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1463,6 +1504,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1480,6 +1522,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1504,6 +1547,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
     }
 
     private java.lang.Object rollout_ = "";
+
     /**
      *
      *
@@ -1526,6 +1570,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1548,6 +1593,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1569,6 +1615,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1586,6 +1633,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1610,6 +1658,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
     }
 
     private java.lang.Object targetId_ = "";
+
     /**
      *
      *
@@ -1632,6 +1681,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1654,6 +1704,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1675,6 +1726,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1692,6 +1744,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1716,6 +1769,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -1731,6 +1785,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1749,6 +1804,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1765,6 +1821,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       com.google.cloud.deploy.v1.Type result = com.google.cloud.deploy.v1.Type.forNumber(type_);
       return result == null ? com.google.cloud.deploy.v1.Type.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1786,6 +1843,7 @@ public final class RolloutNotificationEvent extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

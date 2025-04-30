@@ -33,6 +33,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.Claim)
     ClaimOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Claim.newBuilder() to construct.
   private Claim(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int START_INDEX_FIELD_NUMBER = 1;
   private int startIndex_ = 0;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartIndex() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_INDEX_FIELD_NUMBER = 2;
   private int endIndex_ = 0;
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndIndex() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList factIndexes_ = emptyIntList();
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getFactIndexesList() {
     return factIndexes_;
   }
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
   public int getFactIndexesCount() {
     return factIndexes_.size();
   }
+
   /**
    *
    *
@@ -183,6 +191,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCORE_FIELD_NUMBER = 4;
   private float score_ = 0F;
+
   /**
    *
    *
@@ -198,6 +207,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
   public boolean hasScore() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -431,6 +441,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -676,6 +687,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int startIndex_;
+
     /**
      *
      *
@@ -691,6 +703,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartIndex() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -706,6 +719,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
     public int getStartIndex() {
       return startIndex_;
     }
+
     /**
      *
      *
@@ -725,6 +739,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +759,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int endIndex_;
+
     /**
      *
      *
@@ -759,6 +775,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndIndex() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -774,6 +791,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
     public int getEndIndex() {
       return endIndex_;
     }
+
     /**
      *
      *
@@ -793,6 +811,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +838,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -834,6 +854,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
       factIndexes_.makeImmutable();
       return factIndexes_;
     }
+
     /**
      *
      *
@@ -848,6 +869,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
     public int getFactIndexesCount() {
       return factIndexes_.size();
     }
+
     /**
      *
      *
@@ -863,6 +885,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
     public int getFactIndexes(int index) {
       return factIndexes_.getInt(index);
     }
+
     /**
      *
      *
@@ -884,6 +907,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +928,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +948,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +968,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float score_;
+
     /**
      *
      *
@@ -957,6 +984,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScore() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -972,6 +1000,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
     public float getScore() {
       return score_;
     }
+
     /**
      *
      *
@@ -991,6 +1020,7 @@ public final class Claim extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

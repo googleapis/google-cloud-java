@@ -22,7 +22,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  * <pre>
  * Service to use Product resource.
- * This service works for products with online channel only.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -144,6 +143,19 @@ public final class ProductsServiceGrpc {
     return ProductsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ProductsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ProductsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ProductsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ProductsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ProductsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ProductsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -177,7 +189,6 @@ public final class ProductsServiceGrpc {
    *
    * <pre>
    * Service to use Product resource.
-   * This service works for products with online channel only.
    * </pre>
    */
   public interface AsyncService {
@@ -203,8 +214,8 @@ public final class ProductsServiceGrpc {
      *
      * <pre>
      * Lists the processed products in your Merchant Center account. The response
-     * might contain fewer items than specified by pageSize. Rely on pageToken to
-     * determine if there are more items to be requested.
+     * might contain fewer items than specified by `pageSize`. Rely on `pageToken`
+     * to determine if there are more items to be requested.
      * After inserting, updating, or deleting a product input, it may take several
      * minutes before the updated processed product can be retrieved.
      * </pre>
@@ -224,7 +235,6 @@ public final class ProductsServiceGrpc {
    *
    * <pre>
    * Service to use Product resource.
-   * This service works for products with online channel only.
    * </pre>
    */
   public abstract static class ProductsServiceImplBase
@@ -241,7 +251,6 @@ public final class ProductsServiceGrpc {
    *
    * <pre>
    * Service to use Product resource.
-   * This service works for products with online channel only.
    * </pre>
    */
   public static final class ProductsServiceStub
@@ -277,8 +286,8 @@ public final class ProductsServiceGrpc {
      *
      * <pre>
      * Lists the processed products in your Merchant Center account. The response
-     * might contain fewer items than specified by pageSize. Rely on pageToken to
-     * determine if there are more items to be requested.
+     * might contain fewer items than specified by `pageSize`. Rely on `pageToken`
+     * to determine if there are more items to be requested.
      * After inserting, updating, or deleting a product input, it may take several
      * minutes before the updated processed product can be retrieved.
      * </pre>
@@ -300,7 +309,59 @@ public final class ProductsServiceGrpc {
    *
    * <pre>
    * Service to use Product resource.
-   * This service works for products with online channel only.
+   * </pre>
+   */
+  public static final class ProductsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ProductsServiceBlockingV2Stub> {
+    private ProductsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ProductsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ProductsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the processed product from your Merchant Center account.
+     * After inserting, updating, or deleting a product input, it may take several
+     * minutes before the updated final product can be retrieved.
+     * </pre>
+     */
+    public com.google.shopping.merchant.products.v1beta.Product getProduct(
+        com.google.shopping.merchant.products.v1beta.GetProductRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProductMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the processed products in your Merchant Center account. The response
+     * might contain fewer items than specified by `pageSize`. Rely on `pageToken`
+     * to determine if there are more items to be requested.
+     * After inserting, updating, or deleting a product input, it may take several
+     * minutes before the updated processed product can be retrieved.
+     * </pre>
+     */
+    public com.google.shopping.merchant.products.v1beta.ListProductsResponse listProducts(
+        com.google.shopping.merchant.products.v1beta.ListProductsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListProductsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ProductsService.
+   *
+   * <pre>
+   * Service to use Product resource.
    * </pre>
    */
   public static final class ProductsServiceBlockingStub
@@ -335,8 +396,8 @@ public final class ProductsServiceGrpc {
      *
      * <pre>
      * Lists the processed products in your Merchant Center account. The response
-     * might contain fewer items than specified by pageSize. Rely on pageToken to
-     * determine if there are more items to be requested.
+     * might contain fewer items than specified by `pageSize`. Rely on `pageToken`
+     * to determine if there are more items to be requested.
      * After inserting, updating, or deleting a product input, it may take several
      * minutes before the updated processed product can be retrieved.
      * </pre>
@@ -353,7 +414,6 @@ public final class ProductsServiceGrpc {
    *
    * <pre>
    * Service to use Product resource.
-   * This service works for products with online channel only.
    * </pre>
    */
   public static final class ProductsServiceFutureStub
@@ -389,8 +449,8 @@ public final class ProductsServiceGrpc {
      *
      * <pre>
      * Lists the processed products in your Merchant Center account. The response
-     * might contain fewer items than specified by pageSize. Rely on pageToken to
-     * determine if there are more items to be requested.
+     * might contain fewer items than specified by `pageSize`. Rely on `pageToken`
+     * to determine if there are more items to be requested.
      * After inserting, updating, or deleting a product input, it may take several
      * minutes before the updated processed product can be retrieved.
      * </pre>

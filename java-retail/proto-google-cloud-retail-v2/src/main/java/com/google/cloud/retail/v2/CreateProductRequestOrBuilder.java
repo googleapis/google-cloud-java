@@ -39,6 +39,7 @@ public interface CreateProductRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateProductRequestOrBuilder
    * @return Whether the product field is set.
    */
   boolean hasProduct();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateProductRequestOrBuilder
    * @return The product.
    */
   com.google.cloud.retail.v2.Product getProduct();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface CreateProductRequestOrBuilder
    * @return The productId.
    */
   java.lang.String getProductId();
+
   /**
    *
    *

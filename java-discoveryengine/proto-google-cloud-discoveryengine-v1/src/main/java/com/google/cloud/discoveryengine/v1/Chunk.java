@@ -34,6 +34,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.Chunk)
     ChunkOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Chunk.newBuilder() to construct.
   private Chunk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
+
     /**
      *
      *
@@ -108,6 +110,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * @return The title.
      */
     java.lang.String getTitle();
+
     /**
      *
      *
@@ -136,6 +139,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the structData field is set.
      */
     boolean hasStructData();
+
     /**
      *
      *
@@ -151,6 +155,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * @return The structData.
      */
     com.google.protobuf.Struct getStructData();
+
     /**
      *
      *
@@ -165,6 +170,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.StructOrBuilder getStructDataOrBuilder();
   }
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.Chunk.DocumentMetadata)
       DocumentMetadataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DocumentMetadata.newBuilder() to construct.
     private DocumentMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -216,6 +223,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -239,6 +247,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -267,6 +276,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object title_ = "";
+
     /**
      *
      *
@@ -290,6 +300,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -316,6 +327,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
 
     public static final int STRUCT_DATA_FIELD_NUMBER = 3;
     private com.google.protobuf.Struct structData_;
+
     /**
      *
      *
@@ -334,6 +346,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStructData() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -352,6 +365,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Struct getStructData() {
       return structData_ == null ? com.google.protobuf.Struct.getDefaultInstance() : structData_;
     }
+
     /**
      *
      *
@@ -553,6 +567,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -789,6 +804,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -811,6 +827,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -833,6 +850,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -854,6 +872,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -871,6 +890,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -895,6 +915,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object title_ = "";
+
       /**
        *
        *
@@ -917,6 +938,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -939,6 +961,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -960,6 +983,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -977,6 +1001,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1006,6 +1031,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Struct.Builder,
               com.google.protobuf.StructOrBuilder>
           structDataBuilder_;
+
       /**
        *
        *
@@ -1023,6 +1049,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStructData() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1046,6 +1073,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
           return structDataBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1071,6 +1099,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1093,6 +1122,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1123,6 +1153,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1145,6 +1176,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1162,6 +1194,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getStructDataFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1183,6 +1216,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
               : structData_;
         }
       }
+
       /**
        *
        *
@@ -1308,6 +1342,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      */
     int getPageEnd();
   }
+
   /**
    *
    *
@@ -1322,6 +1357,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.Chunk.PageSpan)
       PageSpanOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PageSpan.newBuilder() to construct.
     private PageSpan(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1352,6 +1388,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
 
     public static final int PAGE_START_FIELD_NUMBER = 1;
     private int pageStart_ = 0;
+
     /**
      *
      *
@@ -1370,6 +1407,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
 
     public static final int PAGE_END_FIELD_NUMBER = 2;
     private int pageEnd_ = 0;
+
     /**
      *
      *
@@ -1555,6 +1593,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1753,6 +1792,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int pageStart_;
+
       /**
        *
        *
@@ -1768,6 +1808,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       public int getPageStart() {
         return pageStart_;
       }
+
       /**
        *
        *
@@ -1787,6 +1828,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1806,6 +1848,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int pageEnd_;
+
       /**
        *
        *
@@ -1821,6 +1864,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       public int getPageEnd() {
         return pageEnd_;
       }
+
       /**
        *
        *
@@ -1840,6 +1884,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1941,6 +1986,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.discoveryengine.v1.Chunk previous_chunks = 1;</code>
      */
     java.util.List<com.google.cloud.discoveryengine.v1.Chunk> getPreviousChunksList();
+
     /**
      *
      *
@@ -1955,6 +2001,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.discoveryengine.v1.Chunk previous_chunks = 1;</code>
      */
     com.google.cloud.discoveryengine.v1.Chunk getPreviousChunks(int index);
+
     /**
      *
      *
@@ -1969,6 +2016,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.discoveryengine.v1.Chunk previous_chunks = 1;</code>
      */
     int getPreviousChunksCount();
+
     /**
      *
      *
@@ -1984,6 +2032,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.discoveryengine.v1.ChunkOrBuilder>
         getPreviousChunksOrBuilderList();
+
     /**
      *
      *
@@ -2013,6 +2062,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.discoveryengine.v1.Chunk next_chunks = 2;</code>
      */
     java.util.List<com.google.cloud.discoveryengine.v1.Chunk> getNextChunksList();
+
     /**
      *
      *
@@ -2027,6 +2077,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.discoveryengine.v1.Chunk next_chunks = 2;</code>
      */
     com.google.cloud.discoveryengine.v1.Chunk getNextChunks(int index);
+
     /**
      *
      *
@@ -2041,6 +2092,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.discoveryengine.v1.Chunk next_chunks = 2;</code>
      */
     int getNextChunksCount();
+
     /**
      *
      *
@@ -2056,6 +2108,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.discoveryengine.v1.ChunkOrBuilder>
         getNextChunksOrBuilderList();
+
     /**
      *
      *
@@ -2071,6 +2124,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.discoveryengine.v1.ChunkOrBuilder getNextChunksOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -2087,6 +2141,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.Chunk.ChunkMetadata)
       ChunkMetadataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ChunkMetadata.newBuilder() to construct.
     private ChunkMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2122,6 +2177,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.discoveryengine.v1.Chunk> previousChunks_;
+
     /**
      *
      *
@@ -2139,6 +2195,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.cloud.discoveryengine.v1.Chunk> getPreviousChunksList() {
       return previousChunks_;
     }
+
     /**
      *
      *
@@ -2157,6 +2214,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         getPreviousChunksOrBuilderList() {
       return previousChunks_;
     }
+
     /**
      *
      *
@@ -2174,6 +2232,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     public int getPreviousChunksCount() {
       return previousChunks_.size();
     }
+
     /**
      *
      *
@@ -2191,6 +2250,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1.Chunk getPreviousChunks(int index) {
       return previousChunks_.get(index);
     }
+
     /**
      *
      *
@@ -2214,6 +2274,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.discoveryengine.v1.Chunk> nextChunks_;
+
     /**
      *
      *
@@ -2231,6 +2292,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.cloud.discoveryengine.v1.Chunk> getNextChunksList() {
       return nextChunks_;
     }
+
     /**
      *
      *
@@ -2249,6 +2311,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         getNextChunksOrBuilderList() {
       return nextChunks_;
     }
+
     /**
      *
      *
@@ -2266,6 +2329,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     public int getNextChunksCount() {
       return nextChunks_.size();
     }
+
     /**
      *
      *
@@ -2283,6 +2347,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1.Chunk getNextChunks(int index) {
       return nextChunks_.get(index);
     }
+
     /**
      *
      *
@@ -2475,6 +2540,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2802,6 +2868,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
           return previousChunksBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -2822,6 +2889,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
           return previousChunksBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -2842,6 +2910,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
           return previousChunksBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -2868,6 +2937,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2892,6 +2962,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2918,6 +2989,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2944,6 +3016,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2968,6 +3041,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2992,6 +3066,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3016,6 +3091,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3039,6 +3115,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3062,6 +3139,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3078,6 +3156,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.discoveryengine.v1.Chunk.Builder getPreviousChunksBuilder(int index) {
         return getPreviousChunksFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -3099,6 +3178,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
           return previousChunksBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -3120,6 +3200,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(previousChunks_);
         }
       }
+
       /**
        *
        *
@@ -3137,6 +3218,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         return getPreviousChunksFieldBuilder()
             .addBuilder(com.google.cloud.discoveryengine.v1.Chunk.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3154,6 +3236,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         return getPreviousChunksFieldBuilder()
             .addBuilder(index, com.google.cloud.discoveryengine.v1.Chunk.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3229,6 +3312,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
           return nextChunksBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -3249,6 +3333,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
           return nextChunksBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -3269,6 +3354,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
           return nextChunksBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -3295,6 +3381,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3319,6 +3406,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3345,6 +3433,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3371,6 +3460,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3395,6 +3485,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3419,6 +3510,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3443,6 +3535,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3466,6 +3559,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3489,6 +3583,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3505,6 +3600,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.discoveryengine.v1.Chunk.Builder getNextChunksBuilder(int index) {
         return getNextChunksFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -3525,6 +3621,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
           return nextChunksBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -3546,6 +3643,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(nextChunks_);
         }
       }
+
       /**
        *
        *
@@ -3563,6 +3661,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         return getNextChunksFieldBuilder()
             .addBuilder(com.google.cloud.discoveryengine.v1.Chunk.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3580,6 +3679,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         return getNextChunksFieldBuilder()
             .addBuilder(index, com.google.cloud.discoveryengine.v1.Chunk.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3684,6 +3784,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -3712,6 +3813,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3745,6 +3847,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -3768,6 +3871,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3796,6 +3900,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object content_ = "";
+
   /**
    *
    *
@@ -3819,6 +3924,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3845,6 +3951,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RELEVANCE_SCORE_FIELD_NUMBER = 8;
   private double relevanceScore_ = 0D;
+
   /**
    *
    *
@@ -3852,7 +3959,8 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
    * Output only. Represents the relevance score based on similarity.
    * Higher score indicates higher chunk relevance.
    * The score is in range [-1.0, 1.0].
-   * Only populated on [SearchService.SearchResponse][].
+   * Only populated on
+   * [SearchResponse][google.cloud.discoveryengine.v1.SearchResponse].
    * </pre>
    *
    * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3863,6 +3971,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRelevanceScore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3870,7 +3979,8 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
    * Output only. Represents the relevance score based on similarity.
    * Higher score indicates higher chunk relevance.
    * The score is in range [-1.0, 1.0].
-   * Only populated on [SearchService.SearchResponse][].
+   * Only populated on
+   * [SearchResponse][google.cloud.discoveryengine.v1.SearchResponse].
    * </pre>
    *
    * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3884,6 +3994,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DOCUMENT_METADATA_FIELD_NUMBER = 5;
   private com.google.cloud.discoveryengine.v1.Chunk.DocumentMetadata documentMetadata_;
+
   /**
    *
    *
@@ -3899,6 +4010,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDocumentMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -3916,6 +4028,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1.Chunk.DocumentMetadata.getDefaultInstance()
         : documentMetadata_;
   }
+
   /**
    *
    *
@@ -3935,6 +4048,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DERIVED_STRUCT_DATA_FIELD_NUMBER = 4;
   private com.google.protobuf.Struct derivedStructData_;
+
   /**
    *
    *
@@ -3953,6 +4067,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDerivedStructData() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -3973,6 +4088,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Struct.getDefaultInstance()
         : derivedStructData_;
   }
+
   /**
    *
    *
@@ -3994,6 +4110,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PAGE_SPAN_FIELD_NUMBER = 6;
   private com.google.cloud.discoveryengine.v1.Chunk.PageSpan pageSpan_;
+
   /**
    *
    *
@@ -4009,6 +4126,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPageSpan() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -4026,6 +4144,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1.Chunk.PageSpan.getDefaultInstance()
         : pageSpan_;
   }
+
   /**
    *
    *
@@ -4044,6 +4163,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHUNK_METADATA_FIELD_NUMBER = 7;
   private com.google.cloud.discoveryengine.v1.Chunk.ChunkMetadata chunkMetadata_;
+
   /**
    *
    *
@@ -4061,6 +4181,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
   public boolean hasChunkMetadata() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -4080,6 +4201,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1.Chunk.ChunkMetadata.getDefaultInstance()
         : chunkMetadata_;
   }
+
   /**
    *
    *
@@ -4350,6 +4472,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4671,6 +4794,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -4698,6 +4822,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4725,6 +4850,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4751,6 +4877,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4773,6 +4900,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4802,6 +4930,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -4824,6 +4953,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4846,6 +4976,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4867,6 +4998,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4884,6 +5016,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4908,6 +5041,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object content_ = "";
+
     /**
      *
      *
@@ -4930,6 +5064,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4952,6 +5087,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4973,6 +5109,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4990,6 +5127,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5014,6 +5152,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double relevanceScore_;
+
     /**
      *
      *
@@ -5021,7 +5160,8 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * Output only. Represents the relevance score based on similarity.
      * Higher score indicates higher chunk relevance.
      * The score is in range [-1.0, 1.0].
-     * Only populated on [SearchService.SearchResponse][].
+     * Only populated on
+     * [SearchResponse][google.cloud.discoveryengine.v1.SearchResponse].
      * </pre>
      *
      * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5033,6 +5173,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRelevanceScore() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -5040,7 +5181,8 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * Output only. Represents the relevance score based on similarity.
      * Higher score indicates higher chunk relevance.
      * The score is in range [-1.0, 1.0].
-     * Only populated on [SearchService.SearchResponse][].
+     * Only populated on
+     * [SearchResponse][google.cloud.discoveryengine.v1.SearchResponse].
      * </pre>
      *
      * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5052,6 +5194,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     public double getRelevanceScore() {
       return relevanceScore_;
     }
+
     /**
      *
      *
@@ -5059,7 +5202,8 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * Output only. Represents the relevance score based on similarity.
      * Higher score indicates higher chunk relevance.
      * The score is in range [-1.0, 1.0].
-     * Only populated on [SearchService.SearchResponse][].
+     * Only populated on
+     * [SearchResponse][google.cloud.discoveryengine.v1.SearchResponse].
      * </pre>
      *
      * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5075,6 +5219,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5082,7 +5227,8 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
      * Output only. Represents the relevance score based on similarity.
      * Higher score indicates higher chunk relevance.
      * The score is in range [-1.0, 1.0].
-     * Only populated on [SearchService.SearchResponse][].
+     * Only populated on
+     * [SearchResponse][google.cloud.discoveryengine.v1.SearchResponse].
      * </pre>
      *
      * <code>optional double relevance_score = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5103,6 +5249,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1.Chunk.DocumentMetadata.Builder,
             com.google.cloud.discoveryengine.v1.Chunk.DocumentMetadataOrBuilder>
         documentMetadataBuilder_;
+
     /**
      *
      *
@@ -5117,6 +5264,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDocumentMetadata() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -5137,6 +5285,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         return documentMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5160,6 +5309,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5180,6 +5330,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5210,6 +5361,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5229,6 +5381,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5244,6 +5397,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDocumentMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5263,6 +5417,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
             : documentMetadata_;
       }
     }
+
     /**
      *
      *
@@ -5295,6 +5450,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         derivedStructDataBuilder_;
+
     /**
      *
      *
@@ -5312,6 +5468,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDerivedStructData() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -5335,6 +5492,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         return derivedStructDataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5360,6 +5518,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5382,6 +5541,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5412,6 +5572,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5434,6 +5595,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5451,6 +5613,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDerivedStructDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5472,6 +5635,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
             : derivedStructData_;
       }
     }
+
     /**
      *
      *
@@ -5507,6 +5671,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1.Chunk.PageSpan.Builder,
             com.google.cloud.discoveryengine.v1.Chunk.PageSpanOrBuilder>
         pageSpanBuilder_;
+
     /**
      *
      *
@@ -5521,6 +5686,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPageSpan() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -5541,6 +5707,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         return pageSpanBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5563,6 +5730,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5583,6 +5751,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5611,6 +5780,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5630,6 +5800,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5644,6 +5815,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPageSpanFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5662,6 +5834,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
             : pageSpan_;
       }
     }
+
     /**
      *
      *
@@ -5694,6 +5867,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1.Chunk.ChunkMetadata.Builder,
             com.google.cloud.discoveryengine.v1.Chunk.ChunkMetadataOrBuilder>
         chunkMetadataBuilder_;
+
     /**
      *
      *
@@ -5710,6 +5884,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
     public boolean hasChunkMetadata() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -5732,6 +5907,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
         return chunkMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5756,6 +5932,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5778,6 +5955,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5809,6 +5987,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5830,6 +6009,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5847,6 +6027,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getChunkMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5868,6 +6049,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessageV3
             : chunkMetadata_;
       }
     }
+
     /**
      *
      *

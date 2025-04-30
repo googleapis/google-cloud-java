@@ -36,6 +36,7 @@ public interface ServiceAccountDelegationInfoOrBuilder
    * @return The principalEmail.
    */
   java.lang.String getPrincipalEmail();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ServiceAccountDelegationInfoOrBuilder
    * @return The principalSubject.
    */
   java.lang.String getPrincipalSubject();
+
   /**
    *
    *

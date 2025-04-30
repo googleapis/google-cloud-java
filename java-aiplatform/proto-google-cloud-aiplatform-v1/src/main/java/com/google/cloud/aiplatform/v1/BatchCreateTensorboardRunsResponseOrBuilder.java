@@ -34,6 +34,7 @@ public interface BatchCreateTensorboardRunsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.TensorboardRun tensorboard_runs = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.TensorboardRun> getTensorboardRunsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface BatchCreateTensorboardRunsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.TensorboardRun tensorboard_runs = 1;</code>
    */
   com.google.cloud.aiplatform.v1.TensorboardRun getTensorboardRuns(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface BatchCreateTensorboardRunsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.TensorboardRun tensorboard_runs = 1;</code>
    */
   int getTensorboardRunsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface BatchCreateTensorboardRunsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.TensorboardRunOrBuilder>
       getTensorboardRunsOrBuilderList();
+
   /**
    *
    *

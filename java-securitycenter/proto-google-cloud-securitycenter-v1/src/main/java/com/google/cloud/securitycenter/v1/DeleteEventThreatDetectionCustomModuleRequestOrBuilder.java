@@ -44,6 +44,7 @@ public interface DeleteEventThreatDetectionCustomModuleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

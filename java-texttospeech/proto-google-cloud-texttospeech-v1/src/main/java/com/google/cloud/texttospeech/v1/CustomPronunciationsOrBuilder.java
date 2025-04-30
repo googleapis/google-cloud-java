@@ -28,7 +28,7 @@ public interface CustomPronunciationsOrBuilder
    *
    *
    * <pre>
-   * The pronunciation customizations to be applied.
+   * The pronunciation customizations are applied.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -36,33 +36,36 @@ public interface CustomPronunciationsOrBuilder
    */
   java.util.List<com.google.cloud.texttospeech.v1.CustomPronunciationParams>
       getPronunciationsList();
+
   /**
    *
    *
    * <pre>
-   * The pronunciation customizations to be applied.
+   * The pronunciation customizations are applied.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
    * </code>
    */
   com.google.cloud.texttospeech.v1.CustomPronunciationParams getPronunciations(int index);
+
   /**
    *
    *
    * <pre>
-   * The pronunciation customizations to be applied.
+   * The pronunciation customizations are applied.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
    * </code>
    */
   int getPronunciationsCount();
+
   /**
    *
    *
    * <pre>
-   * The pronunciation customizations to be applied.
+   * The pronunciation customizations are applied.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -70,11 +73,12 @@ public interface CustomPronunciationsOrBuilder
    */
   java.util.List<? extends com.google.cloud.texttospeech.v1.CustomPronunciationParamsOrBuilder>
       getPronunciationsOrBuilderList();
+
   /**
    *
    *
    * <pre>
-   * The pronunciation customizations to be applied.
+   * The pronunciation customizations are applied.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;

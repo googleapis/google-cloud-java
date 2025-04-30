@@ -36,6 +36,7 @@ public interface InstanceInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface InstanceInfoOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface InstanceInfoOrBuilder
    * @return The interface.
    */
   java.lang.String getInterface();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface InstanceInfoOrBuilder
    * @return The networkUri.
    */
   java.lang.String getNetworkUri();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface InstanceInfoOrBuilder
    * @return The internalIp.
    */
   java.lang.String getInternalIp();
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public interface InstanceInfoOrBuilder
    * @return The externalIp.
    */
   java.lang.String getExternalIp();
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public interface InstanceInfoOrBuilder
    * @return A list containing the networkTags.
    */
   java.util.List<java.lang.String> getNetworkTagsList();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface InstanceInfoOrBuilder
    * @return The count of networkTags.
    */
   int getNetworkTagsCount();
+
   /**
    *
    *
@@ -211,6 +219,7 @@ public interface InstanceInfoOrBuilder
    * @return The networkTags at the given index.
    */
   java.lang.String getNetworkTags(int index);
+
   /**
    *
    *
@@ -235,11 +244,12 @@ public interface InstanceInfoOrBuilder
    * <code>string service_account = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is deprecated.
-   *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=326
+   *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=340
    * @return The serviceAccount.
    */
   @java.lang.Deprecated
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -250,7 +260,7 @@ public interface InstanceInfoOrBuilder
    * <code>string service_account = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is deprecated.
-   *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=326
+   *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=340
    * @return The bytes for serviceAccount.
    */
   @java.lang.Deprecated
@@ -268,6 +278,7 @@ public interface InstanceInfoOrBuilder
    * @return The pscNetworkAttachmentUri.
    */
   java.lang.String getPscNetworkAttachmentUri();
+
   /**
    *
    *

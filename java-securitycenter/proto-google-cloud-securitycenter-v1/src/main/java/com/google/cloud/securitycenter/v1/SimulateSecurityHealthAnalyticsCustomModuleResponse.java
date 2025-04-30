@@ -36,6 +36,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse)
     SimulateSecurityHealthAnalyticsCustomModuleResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SimulateSecurityHealthAnalyticsCustomModuleResponse.newBuilder() to construct.
   private SimulateSecurityHealthAnalyticsCustomModuleResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -85,6 +86,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
      * @return Whether the finding field is set.
      */
     boolean hasFinding();
+
     /**
      *
      *
@@ -98,6 +100,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
      * @return The finding.
      */
     com.google.cloud.securitycenter.v1.Finding getFinding();
+
     /**
      *
      *
@@ -122,6 +125,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
      * @return Whether the noViolation field is set.
      */
     boolean hasNoViolation();
+
     /**
      *
      *
@@ -134,6 +138,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
      * @return The noViolation.
      */
     com.google.protobuf.Empty getNoViolation();
+
     /**
      *
      *
@@ -157,6 +162,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
      * @return Whether the error field is set.
      */
     boolean hasError();
+
     /**
      *
      *
@@ -169,6 +175,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
      * @return The error.
      */
     com.google.rpc.Status getError();
+
     /**
      *
      *
@@ -184,6 +191,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
             .SimulatedResult.ResultCase
         getResultCase();
   }
+
   /**
    *
    *
@@ -199,6 +207,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse.SimulatedResult)
       SimulatedResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SimulatedResult.newBuilder() to construct.
     private SimulatedResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -247,6 +256,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
       private ResultCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -282,6 +292,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
     }
 
     public static final int FINDING_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -298,6 +309,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
     public boolean hasFinding() {
       return resultCase_ == 1;
     }
+
     /**
      *
      *
@@ -317,6 +329,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
       }
       return com.google.cloud.securitycenter.v1.Finding.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -336,6 +349,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
     }
 
     public static final int NO_VIOLATION_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -351,6 +365,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
     public boolean hasNoViolation() {
       return resultCase_ == 2;
     }
+
     /**
      *
      *
@@ -369,6 +384,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
       }
       return com.google.protobuf.Empty.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -387,6 +403,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
     }
 
     public static final int ERROR_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -402,6 +419,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
     public boolean hasError() {
       return resultCase_ == 3;
     }
+
     /**
      *
      *
@@ -420,6 +438,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
       }
       return com.google.rpc.Status.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -670,6 +689,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -961,6 +981,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
               com.google.cloud.securitycenter.v1.Finding.Builder,
               com.google.cloud.securitycenter.v1.FindingOrBuilder>
           findingBuilder_;
+
       /**
        *
        *
@@ -977,6 +998,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
       public boolean hasFinding() {
         return resultCase_ == 1;
       }
+
       /**
        *
        *
@@ -1003,6 +1025,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
           return com.google.cloud.securitycenter.v1.Finding.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1026,6 +1049,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
         resultCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -1047,6 +1071,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
         resultCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -1080,6 +1105,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
         resultCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -1106,6 +1132,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -1119,6 +1146,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
       public com.google.cloud.securitycenter.v1.Finding.Builder getFindingBuilder() {
         return getFindingFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1140,6 +1168,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
           return com.google.cloud.securitycenter.v1.Finding.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1179,6 +1208,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
               com.google.protobuf.Empty.Builder,
               com.google.protobuf.EmptyOrBuilder>
           noViolationBuilder_;
+
       /**
        *
        *
@@ -1194,6 +1224,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
       public boolean hasNoViolation() {
         return resultCase_ == 2;
       }
+
       /**
        *
        *
@@ -1219,6 +1250,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
           return com.google.protobuf.Empty.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1241,6 +1273,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
         resultCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1260,6 +1293,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
         resultCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1290,6 +1324,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
         resultCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1315,6 +1350,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -1327,6 +1363,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
       public com.google.protobuf.Empty.Builder getNoViolationBuilder() {
         return getNoViolationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1347,6 +1384,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
           return com.google.protobuf.Empty.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1381,6 +1419,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
           errorBuilder_;
+
       /**
        *
        *
@@ -1396,6 +1435,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
       public boolean hasError() {
         return resultCase_ == 3;
       }
+
       /**
        *
        *
@@ -1421,6 +1461,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
           return com.google.rpc.Status.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1443,6 +1484,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
         resultCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -1462,6 +1504,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
         resultCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -1492,6 +1535,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
         resultCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -1517,6 +1561,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
         }
         return this;
       }
+
       /**
        *
        *
@@ -1529,6 +1574,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
       public com.google.rpc.Status.Builder getErrorBuilder() {
         return getErrorFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1549,6 +1595,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
           return com.google.rpc.Status.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1655,6 +1702,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
   private com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse
           .SimulatedResult
       result_;
+
   /**
    *
    *
@@ -1672,6 +1720,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
   public boolean hasResult() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1694,6 +1743,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
             .SimulatedResult.getDefaultInstance()
         : result_;
   }
+
   /**
    *
    *
@@ -1902,6 +1952,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2132,6 +2183,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
             com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse
                 .SimulatedResultOrBuilder>
         resultBuilder_;
+
     /**
      *
      *
@@ -2148,6 +2200,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
     public boolean hasResult() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2173,6 +2226,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
         return resultBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2200,6 +2254,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2224,6 +2279,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2259,6 +2315,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -2280,6 +2337,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2298,6 +2356,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2321,6 +2380,7 @@ public final class SimulateSecurityHealthAnalyticsCustomModuleResponse
             : result_;
       }
     }
+
     /**
      *
      *

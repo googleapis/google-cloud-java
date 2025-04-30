@@ -40,6 +40,7 @@ public interface NodeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface NodeOrBuilder
    * @return The fqdn.
    */
   java.lang.String getFqdn();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface NodeOrBuilder
    * @return The internalIp.
    */
   java.lang.String getInternalIp();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface NodeOrBuilder
    * @return The nodeTypeId.
    */
   java.lang.String getNodeTypeId();
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public interface NodeOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -190,6 +195,7 @@ public interface NodeOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

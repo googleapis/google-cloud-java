@@ -33,6 +33,7 @@ public final class TextSentimentAnnotation extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.TextSentimentAnnotation)
     TextSentimentAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TextSentimentAnnotation.newBuilder() to construct.
   private TextSentimentAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class TextSentimentAnnotation extends com.google.protobuf.Generated
 
   public static final int SENTIMENT_FIELD_NUMBER = 1;
   private int sentiment_ = 0;
+
   /**
    *
    *
@@ -249,6 +251,7 @@ public final class TextSentimentAnnotation extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -431,6 +434,7 @@ public final class TextSentimentAnnotation extends com.google.protobuf.Generated
     private int bitField0_;
 
     private int sentiment_;
+
     /**
      *
      *
@@ -457,6 +461,7 @@ public final class TextSentimentAnnotation extends com.google.protobuf.Generated
     public int getSentiment() {
       return sentiment_;
     }
+
     /**
      *
      *
@@ -487,6 +492,7 @@ public final class TextSentimentAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

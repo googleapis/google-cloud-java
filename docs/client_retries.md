@@ -13,7 +13,7 @@ Client libraries have two types of retry parameters to configure:
 
 ### Default RPC Retry Configuration Location
 The default retry configurations are defined in the generated `{Client}StubSettings` file. Using the ExportAssets RPC in
-Java-Asset v3.41.0 as an example, the default retry configurations are defined in the following places:
+Java-Asset v3.64.0 as an example, the default retry configurations are defined in the following places:
 <br>
 - Retry Status Codes are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1058-L1082). Example:
     ```java
@@ -23,23 +23,23 @@ Java-Asset v3.41.0 as an example, the default retry configurations are defined i
     RETRYABLE_CODE_DEFINITIONS = definitions.build();
     ```
 
-- Retry parameters are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1086-L1155). Example:
+- Retry parameters are configured [here](https://github.com/googleapis/google-cloud-java/blob/40ca7a8a267ca29837f9a6eceb3933c73551ac11/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1105-L1172). Example:
     ```java
     ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
     RetrySettings settings = null;
     settings =
         RetrySettings.newBuilder()
-        .setInitialRpcTimeout(Duration.ofMillis(60000L))
+        .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
         .setRpcTimeoutMultiplier(1.0)
-        .setMaxRpcTimeout(Duration.ofMillis(60000L))
-        .setTotalTimeout(Duration.ofMillis(60000L))
+        .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+        .setTotalTimeoutDuration(Duration.ofMillis(60000L))
         .build();
     definitions.put("no_retry_0_params", settings);
     // ... More RetrySettings configurations
     RETRY_PARAM_DEFINITIONS = definitions.build();
     ```
 
-- The configurations above are mapped to the RPC [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1306-L1474). Example:
+- The configurations above are mapped to the RPC [here](https://github.com/googleapis/google-cloud-java/blob/40ca7a8a267ca29837f9a6eceb3933c73551ac11/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1325-L1491). Example:
     ```java
     builder
       .exportAssetsSettings()
@@ -56,13 +56,13 @@ Take a sample RetrySettings configuration
 ```java
 settings =
   RetrySettings.newBuilder()
-      .setInitialRetryDelay(Duration.ofMillis(100L))
+      .setInitialRetryDelayDuration(Duration.ofMillis(100L))
       .setRetryDelayMultiplier(1.3)
-      .setMaxRetryDelay(Duration.ofMillis(60000L))
-      .setInitialRpcTimeout(Duration.ofMillis(60000L))
+      .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+      .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
       .setRpcTimeoutMultiplier(1.0)
-      .setMaxRpcTimeout(Duration.ofMillis(60000L))
-      .setTotalTimeout(Duration.ofMillis(60000L))
+      .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+      .setTotalTimeoutDuration(Duration.ofMillis(60000L))
       .build();
 ```
 The configuration above modifies the retry settings for both an RPC's attempt and operation. An RPC attempt is the
@@ -70,15 +70,15 @@ individual attempt made and an RPC operation is collection of all attempts made.
 have one or more attempts in a single operation.
 
 Individual RPC Bounds (an attempt) are controlled by the following settings:
-- [setInitialRetryDelay](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setInitialRetryDelay_org_threeten_bp_Duration_): Delay before the first attempt
+- [setInitialRetryDelayDuration](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setInitialRetryDelayDuration_java_time_Duration_): Delay before the first attempt
 - [setRetryDelayMultiplier](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setRetryDelayMultiplier_double_) - Delay multiplier applied between each attempt
-- [setMaxRetryDelay](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setMaxRetryDelay_org_threeten_bp_Duration_) - Max Delay possible for an attempt
-- [setInitialRpcTimeout](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setInitialRpcTimeout_org_threeten_bp_Duration_) - Timeout for the first attempt
+- [setMaxRetryDelayDuration](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setMaxRetryDelayDuration_java_time_Duration_) - Max Delay possible for an attempt
+- [setInitialRpcTimeoutDuration](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setInitialRpcTimeoutDuration_java_time_Duration_) - Timeout for the first attempt
 - [setRpcTimeoutMultiplier](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setRpcTimeoutMultiplier_double_) - Timeout multiplier applied between each attempt
-- [setMaxRpcTimeout](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setMaxRpcTimeout_org_threeten_bp_Duration_) - Max Timeout possible for an attempt
+- [setMaxRpcTimeoutDuration](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setMaxRpcTimeoutDuration_java_time_Duration_) - Max Timeout possible for an attempt
 
 Total RPC Bounds (an operation) are controlled by the following settings:
-- [setTotalTimeout](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setTotalTimeout_org_threeten_bp_Duration_) - Total timeout allowed the entire operation
+- [setTotalTimeout](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setTotalTimeoutDuration_java_time_Duration_) - Total timeout allowed the entire operation
 - [setMaxAttempts](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setMaxAttempts_int_) - Max number of attempts allowed
 
 ### When is an RPC retried
@@ -153,7 +153,7 @@ value at the end of each attempt.
 RetrySettings defaultNoRetrySettings =
     RetrySettings.newBuilder()
     // Use the default configurations for other settings
-    .setTotalTimeout(Duration.ofMillis(5000L))
+    .setTotalTimeoutDuration(Duration.ofMillis(5000L))
     // Explicitly set retries as disabled (maxAttempts == 1)
     .setMaxAttempts(1)
     .build();
@@ -162,7 +162,7 @@ Alternatively, this same behavior can be configured with
 ```java
 RetrySettings defaultNoRetrySettings =
     RetrySettings.newBuilder()
-    .setLogicalTimeout(Duration.ofMillis(5000L))
+    .setLogicalTimeoutDuration(Duration.ofMillis(5000L))
     .build();
 ```
 
@@ -176,13 +176,13 @@ The following table shows the attempts:
 #### Example 1
 ```java
 RetrySettings.newBuilder()
-    .setInitialRetryDelay(Duration.ofMillis(200L))
+    .setInitialRetryDelayDuration(Duration.ofMillis(200L))
     .setRetryDelayMultiplier(2.0)
-    .setMaxRetryDelay(Duration.ofMillis(500L))
-    .setInitialRpcTimeout(Duration.ofMillis(1500L))
+    .setMaxRetryDelayDuration(Duration.ofMillis(500L))
+    .setInitialRpcTimeoutDuration(Duration.ofMillis(1500L))
     .setRpcTimeoutMultiplier(2.0)
-    .setMaxRpcTimeout(Duration.ofMillis(3000L))
-    .setTotalTimeout(Duration.ofMillis(5000L))
+    .setMaxRpcTimeoutDuration(Duration.ofMillis(3000L))
+    .setTotalTimeoutDuration(Duration.ofMillis(5000L))
     .build();
 ```
 
@@ -201,13 +201,13 @@ This example is similar to Example #1, but has a longer total timeout to showcas
 retry attempt and the capped RPC Timeout for the last retry attempt.
 ```java
 RetrySettings.newBuilder()
-    .setInitialRetryDelay(Duration.ofMillis(200L))
+    .setInitialRetryDelayDuration(Duration.ofMillis(200L))
     .setRetryDelayMultiplier(2.0)
-    .setMaxRetryDelay(Duration.ofMillis(500L))
-    .setInitialRpcTimeout(Duration.ofMillis(1500L))
+    .setMaxRetryDelayDuration(Duration.ofMillis(500L))
+    .setInitialRpcTimeoutDuration(Duration.ofMillis(1500L))
     .setRpcTimeoutMultiplier(2.0)
-    .setMaxRpcTimeout(Duration.ofMillis(3000L))
-    .setTotalTimeout(Duration.ofMillis(10000L))
+    .setMaxRpcTimeoutDuration(Duration.ofMillis(3000L))
+    .setTotalTimeoutDuration(Duration.ofMillis(10000L))
     .build();
 ```
 
@@ -227,13 +227,13 @@ exceed the Total Timeout and is reduced to be the "time left" (10000 - 5100 = 49
 ```java
 RetrySettings defaultRetrySettings =
     RetrySettings.newBuilder()
-        .setInitialRetryDelay(Duration.ofMillis(200L))
+        .setInitialRetryDelayDuration(Duration.ofMillis(200L))
         .setRetryDelayMultiplier(2.0)
-        .setMaxRetryDelay(Duration.ofMillis(500L))
-        .setInitialRpcTimeout(Duration.ofMillis(500L))
+        .setMaxRetryDelayDuration(Duration.ofMillis(500L))
+        .setInitialRpcTimeoutDuration(Duration.ofMillis(500L))
         .setRpcTimeoutMultiplier(2.0)
-        .setMaxRpcTimeout(Duration.ofMillis(2000L))
-        .setTotalTimeout(Duration.ofMillis(4000L))
+        .setMaxRpcTimeoutDuration(Duration.ofMillis(2000L))
+        .setTotalTimeoutDuration(Duration.ofMillis(4000L))
         .build();
 ```
 

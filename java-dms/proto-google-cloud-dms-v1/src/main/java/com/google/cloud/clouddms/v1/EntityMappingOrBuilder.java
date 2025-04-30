@@ -38,6 +38,7 @@ public interface EntityMappingOrBuilder
    * @return The sourceEntity.
    */
   java.lang.String getSourceEntity();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface EntityMappingOrBuilder
    * @return The draftEntity.
    */
   java.lang.String getDraftEntity();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface EntityMappingOrBuilder
    * @return The enum numeric value on the wire for sourceType.
    */
   int getSourceTypeValue();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface EntityMappingOrBuilder
    * @return The enum numeric value on the wire for draftType.
    */
   int getDraftTypeValue();
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public interface EntityMappingOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.EntityMappingLogEntry mapping_log = 3;</code>
    */
   java.util.List<com.google.cloud.clouddms.v1.EntityMappingLogEntry> getMappingLogList();
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public interface EntityMappingOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.EntityMappingLogEntry mapping_log = 3;</code>
    */
   com.google.cloud.clouddms.v1.EntityMappingLogEntry getMappingLog(int index);
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public interface EntityMappingOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.EntityMappingLogEntry mapping_log = 3;</code>
    */
   int getMappingLogCount();
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public interface EntityMappingOrBuilder
    */
   java.util.List<? extends com.google.cloud.clouddms.v1.EntityMappingLogEntryOrBuilder>
       getMappingLogOrBuilderList();
+
   /**
    *
    *

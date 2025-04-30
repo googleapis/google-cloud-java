@@ -33,6 +33,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.DataStore)
     DataStoreOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataStore.newBuilder() to construct.
   private DataStore(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -145,6 +146,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>CONTENT_CONFIG_UNSPECIFIED = 0;</code>
      */
     public static final int CONTENT_CONFIG_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -156,6 +158,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>NO_CONTENT = 1;</code>
      */
     public static final int NO_CONTENT_VALUE = 1;
+
     /**
      *
      *
@@ -167,6 +170,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>CONTENT_REQUIRED = 2;</code>
      */
     public static final int CONTENT_REQUIRED_VALUE = 2;
+
     /**
      *
      *
@@ -177,6 +181,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>PUBLIC_WEBSITE = 3;</code>
      */
     public static final int PUBLIC_WEBSITE_VALUE = 3;
+
     /**
      *
      *
@@ -333,6 +338,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the structuredDataUpdateTime field is set.
      */
     boolean hasStructuredDataUpdateTime();
+
     /**
      *
      *
@@ -345,6 +351,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return The structuredDataUpdateTime.
      */
     com.google.protobuf.Timestamp getStructuredDataUpdateTime();
+
     /**
      *
      *
@@ -368,6 +375,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the unstructuredDataUpdateTime field is set.
      */
     boolean hasUnstructuredDataUpdateTime();
+
     /**
      *
      *
@@ -380,6 +388,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return The unstructuredDataUpdateTime.
      */
     com.google.protobuf.Timestamp getUnstructuredDataUpdateTime();
+
     /**
      *
      *
@@ -403,6 +412,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the websiteDataUpdateTime field is set.
      */
     boolean hasWebsiteDataUpdateTime();
+
     /**
      *
      *
@@ -415,6 +425,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return The websiteDataUpdateTime.
      */
     com.google.protobuf.Timestamp getWebsiteDataUpdateTime();
+
     /**
      *
      *
@@ -426,6 +437,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.TimestampOrBuilder getWebsiteDataUpdateTimeOrBuilder();
   }
+
   /**
    *
    *
@@ -440,6 +452,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.DataStore.BillingEstimation)
       BillingEstimationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BillingEstimation.newBuilder() to construct.
     private BillingEstimation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -471,6 +484,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int STRUCTURED_DATA_SIZE_FIELD_NUMBER = 1;
     private long structuredDataSize_ = 0L;
+
     /**
      *
      *
@@ -489,6 +503,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
 
     public static final int UNSTRUCTURED_DATA_SIZE_FIELD_NUMBER = 2;
     private long unstructuredDataSize_ = 0L;
+
     /**
      *
      *
@@ -507,6 +522,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
 
     public static final int WEBSITE_DATA_SIZE_FIELD_NUMBER = 3;
     private long websiteDataSize_ = 0L;
+
     /**
      *
      *
@@ -525,6 +541,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
 
     public static final int STRUCTURED_DATA_UPDATE_TIME_FIELD_NUMBER = 4;
     private com.google.protobuf.Timestamp structuredDataUpdateTime_;
+
     /**
      *
      *
@@ -540,6 +557,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStructuredDataUpdateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -557,6 +575,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : structuredDataUpdateTime_;
     }
+
     /**
      *
      *
@@ -575,6 +594,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
 
     public static final int UNSTRUCTURED_DATA_UPDATE_TIME_FIELD_NUMBER = 5;
     private com.google.protobuf.Timestamp unstructuredDataUpdateTime_;
+
     /**
      *
      *
@@ -590,6 +610,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUnstructuredDataUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -607,6 +628,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : unstructuredDataUpdateTime_;
     }
+
     /**
      *
      *
@@ -625,6 +647,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
 
     public static final int WEBSITE_DATA_UPDATE_TIME_FIELD_NUMBER = 6;
     private com.google.protobuf.Timestamp websiteDataUpdateTime_;
+
     /**
      *
      *
@@ -640,6 +663,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWebsiteDataUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -657,6 +681,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : websiteDataUpdateTime_;
     }
+
     /**
      *
      *
@@ -902,6 +927,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1197,6 +1223,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private long structuredDataSize_;
+
       /**
        *
        *
@@ -1212,6 +1239,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       public long getStructuredDataSize() {
         return structuredDataSize_;
       }
+
       /**
        *
        *
@@ -1231,6 +1259,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1250,6 +1279,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long unstructuredDataSize_;
+
       /**
        *
        *
@@ -1265,6 +1295,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       public long getUnstructuredDataSize() {
         return unstructuredDataSize_;
       }
+
       /**
        *
        *
@@ -1284,6 +1315,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1303,6 +1335,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long websiteDataSize_;
+
       /**
        *
        *
@@ -1318,6 +1351,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       public long getWebsiteDataSize() {
         return websiteDataSize_;
       }
+
       /**
        *
        *
@@ -1337,6 +1371,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1361,6 +1396,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           structuredDataUpdateTimeBuilder_;
+
       /**
        *
        *
@@ -1375,6 +1411,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStructuredDataUpdateTime() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -1395,6 +1432,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
           return structuredDataUpdateTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1417,6 +1455,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1437,6 +1476,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1464,6 +1504,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1483,6 +1524,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1497,6 +1539,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getStructuredDataUpdateTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1515,6 +1558,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
               : structuredDataUpdateTime_;
         }
       }
+
       /**
        *
        *
@@ -1547,6 +1591,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           unstructuredDataUpdateTimeBuilder_;
+
       /**
        *
        *
@@ -1561,6 +1606,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUnstructuredDataUpdateTime() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -1581,6 +1627,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
           return unstructuredDataUpdateTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1603,6 +1650,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1623,6 +1671,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1651,6 +1700,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1670,6 +1720,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1684,6 +1735,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getUnstructuredDataUpdateTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1702,6 +1754,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
               : unstructuredDataUpdateTime_;
         }
       }
+
       /**
        *
        *
@@ -1734,6 +1787,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           websiteDataUpdateTimeBuilder_;
+
       /**
        *
        *
@@ -1748,6 +1802,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       public boolean hasWebsiteDataUpdateTime() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        *
        *
@@ -1768,6 +1823,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
           return websiteDataUpdateTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1790,6 +1846,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1810,6 +1867,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1837,6 +1895,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1856,6 +1915,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1870,6 +1930,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getWebsiteDataUpdateTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1888,6 +1949,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
               : websiteDataUpdateTime_;
         }
       }
+
       /**
        *
        *
@@ -1986,6 +2048,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -2014,6 +2077,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2047,6 +2111,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -2073,6 +2138,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2102,6 +2168,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INDUSTRY_VERTICAL_FIELD_NUMBER = 3;
   private int industryVertical_ = 0;
+
   /**
    *
    *
@@ -2119,6 +2186,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
   public int getIndustryVerticalValue() {
     return industryVertical_;
   }
+
   /**
    *
    *
@@ -2160,6 +2228,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
+
   /**
    *
    *
@@ -2182,6 +2251,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.discoveryengine.v1.SolutionType>(
         solutionTypes_, solutionTypes_converter_);
   }
+
   /**
    *
    *
@@ -2202,6 +2272,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
   public int getSolutionTypesCount() {
     return solutionTypes_.size();
   }
+
   /**
    *
    *
@@ -2223,6 +2294,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.discoveryengine.v1.SolutionType getSolutionTypes(int index) {
     return solutionTypes_converter_.convert(solutionTypes_.get(index));
   }
+
   /**
    *
    *
@@ -2243,6 +2315,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getSolutionTypesValueList() {
     return solutionTypes_;
   }
+
   /**
    *
    *
@@ -2271,12 +2344,13 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object defaultSchemaId_ = "";
+
   /**
    *
    *
    * <pre>
    * Output only. The id of the default
-   * [Schema][google.cloud.discoveryengine.v1.Schema] asscociated to this data
+   * [Schema][google.cloud.discoveryengine.v1.Schema] associated to this data
    * store.
    * </pre>
    *
@@ -2296,12 +2370,13 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
    * Output only. The id of the default
-   * [Schema][google.cloud.discoveryengine.v1.Schema] asscociated to this data
+   * [Schema][google.cloud.discoveryengine.v1.Schema] associated to this data
    * store.
    * </pre>
    *
@@ -2324,6 +2399,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONTENT_CONFIG_FIELD_NUMBER = 6;
   private int contentConfig_ = 0;
+
   /**
    *
    *
@@ -2343,6 +2419,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
   public int getContentConfigValue() {
     return contentConfig_;
   }
+
   /**
    *
    *
@@ -2369,6 +2446,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -2386,6 +2464,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2403,6 +2482,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -2419,8 +2499,70 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
+  public static final int ADVANCED_SITE_SEARCH_CONFIG_FIELD_NUMBER = 12;
+  private com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advancedSiteSearchConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for advanced site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the advancedSiteSearchConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvancedSiteSearchConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for advanced site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The advancedSiteSearchConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig
+      getAdvancedSiteSearchConfig() {
+    return advancedSiteSearchConfig_ == null
+        ? com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig.getDefaultInstance()
+        : advancedSiteSearchConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for advanced site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfigOrBuilder
+      getAdvancedSiteSearchConfigOrBuilder() {
+    return advancedSiteSearchConfig_ == null
+        ? com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig.getDefaultInstance()
+        : advancedSiteSearchConfig_;
+  }
+
   public static final int BILLING_ESTIMATION_FIELD_NUMBER = 23;
   private com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation billingEstimation_;
+
   /**
    *
    *
@@ -2436,8 +2578,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasBillingEstimation() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -2457,6 +2600,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.getDefaultInstance()
         : billingEstimation_;
   }
+
   /**
    *
    *
@@ -2478,6 +2622,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WORKSPACE_CONFIG_FIELD_NUMBER = 25;
   private com.google.cloud.discoveryengine.v1.WorkspaceConfig workspaceConfig_;
+
   /**
    *
    *
@@ -2495,8 +2640,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasWorkspaceConfig() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -2518,6 +2664,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1.WorkspaceConfig.getDefaultInstance()
         : workspaceConfig_;
   }
+
   /**
    *
    *
@@ -2541,6 +2688,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DOCUMENT_PROCESSING_CONFIG_FIELD_NUMBER = 27;
   private com.google.cloud.discoveryengine.v1.DocumentProcessingConfig documentProcessingConfig_;
+
   /**
    *
    *
@@ -2556,8 +2704,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDocumentProcessingConfig() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -2578,6 +2727,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.getDefaultInstance()
         : documentProcessingConfig_;
   }
+
   /**
    *
    *
@@ -2599,6 +2749,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STARTING_SCHEMA_FIELD_NUMBER = 28;
   private com.google.cloud.discoveryengine.v1.Schema startingSchema_;
+
   /**
    *
    *
@@ -2607,9 +2758,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
    * it. If unset, a default vertical specialized schema will be used.
    *
-   * This field is only used by [CreateDataStore][] API, and will be ignored if
-   * used in other APIs. This field will be omitted from all API responses
-   * including [CreateDataStore][] API. To retrieve a schema of a
+   * This field is only used by
+   * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+   * API, and will be ignored if used in other APIs. This field will be omitted
+   * from all API responses including
+   * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+   * API. To retrieve a schema of a
    * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
    * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
    * API instead.
@@ -2625,8 +2779,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStartingSchema() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -2635,9 +2790,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
    * it. If unset, a default vertical specialized schema will be used.
    *
-   * This field is only used by [CreateDataStore][] API, and will be ignored if
-   * used in other APIs. This field will be omitted from all API responses
-   * including [CreateDataStore][] API. To retrieve a schema of a
+   * This field is only used by
+   * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+   * API, and will be ignored if used in other APIs. This field will be omitted
+   * from all API responses including
+   * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+   * API. To retrieve a schema of a
    * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
    * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
    * API instead.
@@ -2657,6 +2815,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1.Schema.getDefaultInstance()
         : startingSchema_;
   }
+
   /**
    *
    *
@@ -2665,9 +2824,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
    * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
    * it. If unset, a default vertical specialized schema will be used.
    *
-   * This field is only used by [CreateDataStore][] API, and will be ignored if
-   * used in other APIs. This field will be omitted from all API responses
-   * including [CreateDataStore][] API. To retrieve a schema of a
+   * This field is only used by
+   * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+   * API, and will be ignored if used in other APIs. This field will be omitted
+   * from all API responses including
+   * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+   * API. To retrieve a schema of a
    * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
    * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
    * API instead.
@@ -2731,15 +2893,18 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, defaultSchemaId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(23, getBillingEstimation());
+      output.writeMessage(12, getAdvancedSiteSearchConfig());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeMessage(25, getWorkspaceConfig());
+      output.writeMessage(23, getBillingEstimation());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeMessage(27, getDocumentProcessingConfig());
+      output.writeMessage(25, getWorkspaceConfig());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(27, getDocumentProcessingConfig());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(28, getStartingSchema());
     }
     getUnknownFields().writeTo(output);
@@ -2787,17 +2952,22 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, defaultSchemaId_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getBillingEstimation());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, getAdvancedSiteSearchConfig());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getWorkspaceConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getBillingEstimation());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getWorkspaceConfig());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               27, getDocumentProcessingConfig());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getStartingSchema());
     }
     size += getUnknownFields().getSerializedSize();
@@ -2825,6 +2995,10 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasAdvancedSiteSearchConfig() != other.hasAdvancedSiteSearchConfig()) return false;
+    if (hasAdvancedSiteSearchConfig()) {
+      if (!getAdvancedSiteSearchConfig().equals(other.getAdvancedSiteSearchConfig())) return false;
     }
     if (hasBillingEstimation() != other.hasBillingEstimation()) return false;
     if (hasBillingEstimation()) {
@@ -2870,6 +3044,10 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasAdvancedSiteSearchConfig()) {
+      hash = (37 * hash) + ADVANCED_SITE_SEARCH_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvancedSiteSearchConfig().hashCode();
     }
     if (hasBillingEstimation()) {
       hash = (37 * hash) + BILLING_ESTIMATION_FIELD_NUMBER;
@@ -2987,6 +3165,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3028,6 +3207,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
+        getAdvancedSiteSearchConfigFieldBuilder();
         getBillingEstimationFieldBuilder();
         getWorkspaceConfigFieldBuilder();
         getDocumentProcessingConfigFieldBuilder();
@@ -3050,6 +3230,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
+      }
+      advancedSiteSearchConfig_ = null;
+      if (advancedSiteSearchConfigBuilder_ != null) {
+        advancedSiteSearchConfigBuilder_.dispose();
+        advancedSiteSearchConfigBuilder_ = null;
       }
       billingEstimation_ = null;
       if (billingEstimationBuilder_ != null) {
@@ -3137,28 +3322,35 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.advancedSiteSearchConfig_ =
+            advancedSiteSearchConfigBuilder_ == null
+                ? advancedSiteSearchConfig_
+                : advancedSiteSearchConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.billingEstimation_ =
             billingEstimationBuilder_ == null
                 ? billingEstimation_
                 : billingEstimationBuilder_.build();
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.workspaceConfig_ =
-            workspaceConfigBuilder_ == null ? workspaceConfig_ : workspaceConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.workspaceConfig_ =
+            workspaceConfigBuilder_ == null ? workspaceConfig_ : workspaceConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.documentProcessingConfig_ =
             documentProcessingConfigBuilder_ == null
                 ? documentProcessingConfig_
                 : documentProcessingConfigBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.startingSchema_ =
             startingSchemaBuilder_ == null ? startingSchema_ : startingSchemaBuilder_.build();
-        to_bitField0_ |= 0x00000010;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3241,6 +3433,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasAdvancedSiteSearchConfig()) {
+        mergeAdvancedSiteSearchConfig(other.getAdvancedSiteSearchConfig());
       }
       if (other.hasBillingEstimation()) {
         mergeBillingEstimation(other.getBillingEstimation());
@@ -3335,30 +3530,37 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
+            case 98:
+              {
+                input.readMessage(
+                    getAdvancedSiteSearchConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 98
             case 186:
               {
                 input.readMessage(
                     getBillingEstimationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 186
             case 202:
               {
                 input.readMessage(getWorkspaceConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 202
             case 218:
               {
                 input.readMessage(
                     getDocumentProcessingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 218
             case 226:
               {
                 input.readMessage(getStartingSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 226
             default:
@@ -3381,6 +3583,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3408,6 +3611,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3435,6 +3639,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3461,6 +3666,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3483,6 +3689,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3512,6 +3719,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -3537,6 +3745,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3562,6 +3771,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3586,6 +3796,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3606,6 +3817,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3633,6 +3845,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int industryVertical_ = 0;
+
     /**
      *
      *
@@ -3650,6 +3863,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     public int getIndustryVerticalValue() {
       return industryVertical_;
     }
+
     /**
      *
      *
@@ -3670,6 +3884,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3691,6 +3906,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.discoveryengine.v1.IndustryVertical.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3714,6 +3930,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3742,6 +3959,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000008;
       }
     }
+
     /**
      *
      *
@@ -3763,6 +3981,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.discoveryengine.v1.SolutionType>(
           solutionTypes_, solutionTypes_converter_);
     }
+
     /**
      *
      *
@@ -3782,6 +4001,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     public int getSolutionTypesCount() {
       return solutionTypes_.size();
     }
+
     /**
      *
      *
@@ -3802,6 +4022,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1.SolutionType getSolutionTypes(int index) {
       return solutionTypes_converter_.convert(solutionTypes_.get(index));
     }
+
     /**
      *
      *
@@ -3830,6 +4051,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3856,6 +4078,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3882,6 +4105,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3904,6 +4128,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3923,6 +4148,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getSolutionTypesValueList() {
       return java.util.Collections.unmodifiableList(solutionTypes_);
     }
+
     /**
      *
      *
@@ -3943,6 +4169,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     public int getSolutionTypesValue(int index) {
       return solutionTypes_.get(index);
     }
+
     /**
      *
      *
@@ -3967,6 +4194,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3990,6 +4218,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4017,12 +4246,13 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object defaultSchemaId_ = "";
+
     /**
      *
      *
      * <pre>
      * Output only. The id of the default
-     * [Schema][google.cloud.discoveryengine.v1.Schema] asscociated to this data
+     * [Schema][google.cloud.discoveryengine.v1.Schema] associated to this data
      * store.
      * </pre>
      *
@@ -4041,12 +4271,13 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The id of the default
-     * [Schema][google.cloud.discoveryengine.v1.Schema] asscociated to this data
+     * [Schema][google.cloud.discoveryengine.v1.Schema] associated to this data
      * store.
      * </pre>
      *
@@ -4065,12 +4296,13 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The id of the default
-     * [Schema][google.cloud.discoveryengine.v1.Schema] asscociated to this data
+     * [Schema][google.cloud.discoveryengine.v1.Schema] associated to this data
      * store.
      * </pre>
      *
@@ -4088,12 +4320,13 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The id of the default
-     * [Schema][google.cloud.discoveryengine.v1.Schema] asscociated to this data
+     * [Schema][google.cloud.discoveryengine.v1.Schema] associated to this data
      * store.
      * </pre>
      *
@@ -4107,12 +4340,13 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The id of the default
-     * [Schema][google.cloud.discoveryengine.v1.Schema] asscociated to this data
+     * [Schema][google.cloud.discoveryengine.v1.Schema] associated to this data
      * store.
      * </pre>
      *
@@ -4133,6 +4367,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int contentConfig_ = 0;
+
     /**
      *
      *
@@ -4152,6 +4387,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     public int getContentConfigValue() {
       return contentConfig_;
     }
+
     /**
      *
      *
@@ -4174,6 +4410,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4197,6 +4434,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.discoveryengine.v1.DataStore.ContentConfig.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4223,6 +4461,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4251,6 +4490,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -4268,6 +4508,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -4291,6 +4532,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4316,6 +4558,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4338,6 +4581,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4368,6 +4612,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4390,6 +4635,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4407,6 +4653,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4428,6 +4675,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -4457,12 +4705,233 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       return createTimeBuilder_;
     }
 
+    private com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advancedSiteSearchConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig,
+            com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig.Builder,
+            com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfigOrBuilder>
+        advancedSiteSearchConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for advanced site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the advancedSiteSearchConfig field is set.
+     */
+    public boolean hasAdvancedSiteSearchConfig() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for advanced site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The advancedSiteSearchConfig.
+     */
+    public com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig
+        getAdvancedSiteSearchConfig() {
+      if (advancedSiteSearchConfigBuilder_ == null) {
+        return advancedSiteSearchConfig_ == null
+            ? com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig.getDefaultInstance()
+            : advancedSiteSearchConfig_;
+      } else {
+        return advancedSiteSearchConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for advanced site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAdvancedSiteSearchConfig(
+        com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig value) {
+      if (advancedSiteSearchConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        advancedSiteSearchConfig_ = value;
+      } else {
+        advancedSiteSearchConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for advanced site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAdvancedSiteSearchConfig(
+        com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig.Builder builderForValue) {
+      if (advancedSiteSearchConfigBuilder_ == null) {
+        advancedSiteSearchConfig_ = builderForValue.build();
+      } else {
+        advancedSiteSearchConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for advanced site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAdvancedSiteSearchConfig(
+        com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig value) {
+      if (advancedSiteSearchConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && advancedSiteSearchConfig_ != null
+            && advancedSiteSearchConfig_
+                != com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig
+                    .getDefaultInstance()) {
+          getAdvancedSiteSearchConfigBuilder().mergeFrom(value);
+        } else {
+          advancedSiteSearchConfig_ = value;
+        }
+      } else {
+        advancedSiteSearchConfigBuilder_.mergeFrom(value);
+      }
+      if (advancedSiteSearchConfig_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for advanced site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAdvancedSiteSearchConfig() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      advancedSiteSearchConfig_ = null;
+      if (advancedSiteSearchConfigBuilder_ != null) {
+        advancedSiteSearchConfigBuilder_.dispose();
+        advancedSiteSearchConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for advanced site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig.Builder
+        getAdvancedSiteSearchConfigBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getAdvancedSiteSearchConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for advanced site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfigOrBuilder
+        getAdvancedSiteSearchConfigOrBuilder() {
+      if (advancedSiteSearchConfigBuilder_ != null) {
+        return advancedSiteSearchConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return advancedSiteSearchConfig_ == null
+            ? com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig.getDefaultInstance()
+            : advancedSiteSearchConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for advanced site search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig,
+            com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig.Builder,
+            com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfigOrBuilder>
+        getAdvancedSiteSearchConfigFieldBuilder() {
+      if (advancedSiteSearchConfigBuilder_ == null) {
+        advancedSiteSearchConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig,
+                com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig.Builder,
+                com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfigOrBuilder>(
+                getAdvancedSiteSearchConfig(), getParentForChildren(), isClean());
+        advancedSiteSearchConfig_ = null;
+      }
+      return advancedSiteSearchConfigBuilder_;
+    }
+
     private com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation billingEstimation_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation,
             com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.Builder,
             com.google.cloud.discoveryengine.v1.DataStore.BillingEstimationOrBuilder>
         billingEstimationBuilder_;
+
     /**
      *
      *
@@ -4477,8 +4946,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the billingEstimation field is set.
      */
     public boolean hasBillingEstimation() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -4501,6 +4971,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         return billingEstimationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4522,10 +4993,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         billingEstimationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4544,10 +5016,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         billingEstimationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4562,7 +5035,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeBillingEstimation(
         com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation value) {
       if (billingEstimationBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && billingEstimation_ != null
             && billingEstimation_
                 != com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation
@@ -4575,11 +5048,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         billingEstimationBuilder_.mergeFrom(value);
       }
       if (billingEstimation_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
     }
+
     /**
      *
      *
@@ -4592,7 +5066,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearBillingEstimation() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       billingEstimation_ = null;
       if (billingEstimationBuilder_ != null) {
         billingEstimationBuilder_.dispose();
@@ -4601,6 +5075,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4614,10 +5089,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation.Builder
         getBillingEstimationBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getBillingEstimationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4639,6 +5115,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
             : billingEstimation_;
       }
     }
+
     /**
      *
      *
@@ -4673,6 +5150,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1.WorkspaceConfig.Builder,
             com.google.cloud.discoveryengine.v1.WorkspaceConfigOrBuilder>
         workspaceConfigBuilder_;
+
     /**
      *
      *
@@ -4689,8 +5167,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the workspaceConfig field is set.
      */
     public boolean hasWorkspaceConfig() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -4715,6 +5194,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         return workspaceConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4737,10 +5217,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         workspaceConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4761,10 +5242,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         workspaceConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4780,7 +5262,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeWorkspaceConfig(com.google.cloud.discoveryengine.v1.WorkspaceConfig value) {
       if (workspaceConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && workspaceConfig_ != null
             && workspaceConfig_
                 != com.google.cloud.discoveryengine.v1.WorkspaceConfig.getDefaultInstance()) {
@@ -4792,11 +5274,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         workspaceConfigBuilder_.mergeFrom(value);
       }
       if (workspaceConfig_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
     }
+
     /**
      *
      *
@@ -4811,7 +5294,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
      */
     public Builder clearWorkspaceConfig() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       workspaceConfig_ = null;
       if (workspaceConfigBuilder_ != null) {
         workspaceConfigBuilder_.dispose();
@@ -4820,6 +5303,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4834,10 +5318,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1.WorkspaceConfig workspace_config = 25;</code>
      */
     public com.google.cloud.discoveryengine.v1.WorkspaceConfig.Builder getWorkspaceConfigBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getWorkspaceConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4861,6 +5346,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
             : workspaceConfig_;
       }
     }
+
     /**
      *
      *
@@ -4897,6 +5383,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.Builder,
             com.google.cloud.discoveryengine.v1.DocumentProcessingConfigOrBuilder>
         documentProcessingConfigBuilder_;
+
     /**
      *
      *
@@ -4911,8 +5398,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the documentProcessingConfig field is set.
      */
     public boolean hasDocumentProcessingConfig() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -4936,6 +5424,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         return documentProcessingConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4957,10 +5446,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         documentProcessingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4979,10 +5469,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         documentProcessingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4997,7 +5488,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDocumentProcessingConfig(
         com.google.cloud.discoveryengine.v1.DocumentProcessingConfig value) {
       if (documentProcessingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && documentProcessingConfig_ != null
             && documentProcessingConfig_
                 != com.google.cloud.discoveryengine.v1.DocumentProcessingConfig
@@ -5010,11 +5501,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         documentProcessingConfigBuilder_.mergeFrom(value);
       }
       if (documentProcessingConfig_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
     }
+
     /**
      *
      *
@@ -5027,7 +5519,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDocumentProcessingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       documentProcessingConfig_ = null;
       if (documentProcessingConfigBuilder_ != null) {
         documentProcessingConfigBuilder_.dispose();
@@ -5036,6 +5528,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5049,10 +5542,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.Builder
         getDocumentProcessingConfigBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getDocumentProcessingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5074,6 +5568,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
             : documentProcessingConfig_;
       }
     }
+
     /**
      *
      *
@@ -5108,6 +5603,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1.Schema.Builder,
             com.google.cloud.discoveryengine.v1.SchemaOrBuilder>
         startingSchemaBuilder_;
+
     /**
      *
      *
@@ -5116,9 +5612,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
      * it. If unset, a default vertical specialized schema will be used.
      *
-     * This field is only used by [CreateDataStore][] API, and will be ignored if
-     * used in other APIs. This field will be omitted from all API responses
-     * including [CreateDataStore][] API. To retrieve a schema of a
+     * This field is only used by
+     * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+     * API, and will be ignored if used in other APIs. This field will be omitted
+     * from all API responses including
+     * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+     * API. To retrieve a schema of a
      * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
      * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
      * API instead.
@@ -5133,8 +5632,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startingSchema field is set.
      */
     public boolean hasStartingSchema() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -5143,9 +5643,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
      * it. If unset, a default vertical specialized schema will be used.
      *
-     * This field is only used by [CreateDataStore][] API, and will be ignored if
-     * used in other APIs. This field will be omitted from all API responses
-     * including [CreateDataStore][] API. To retrieve a schema of a
+     * This field is only used by
+     * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+     * API, and will be ignored if used in other APIs. This field will be omitted
+     * from all API responses including
+     * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+     * API. To retrieve a schema of a
      * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
      * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
      * API instead.
@@ -5168,6 +5671,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         return startingSchemaBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5176,9 +5680,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
      * it. If unset, a default vertical specialized schema will be used.
      *
-     * This field is only used by [CreateDataStore][] API, and will be ignored if
-     * used in other APIs. This field will be omitted from all API responses
-     * including [CreateDataStore][] API. To retrieve a schema of a
+     * This field is only used by
+     * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+     * API, and will be ignored if used in other APIs. This field will be omitted
+     * from all API responses including
+     * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+     * API. To retrieve a schema of a
      * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
      * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
      * API instead.
@@ -5199,10 +5706,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         startingSchemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5211,9 +5719,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
      * it. If unset, a default vertical specialized schema will be used.
      *
-     * This field is only used by [CreateDataStore][] API, and will be ignored if
-     * used in other APIs. This field will be omitted from all API responses
-     * including [CreateDataStore][] API. To retrieve a schema of a
+     * This field is only used by
+     * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+     * API, and will be ignored if used in other APIs. This field will be omitted
+     * from all API responses including
+     * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+     * API. To retrieve a schema of a
      * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
      * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
      * API instead.
@@ -5232,10 +5743,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       } else {
         startingSchemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5244,9 +5756,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
      * it. If unset, a default vertical specialized schema will be used.
      *
-     * This field is only used by [CreateDataStore][] API, and will be ignored if
-     * used in other APIs. This field will be omitted from all API responses
-     * including [CreateDataStore][] API. To retrieve a schema of a
+     * This field is only used by
+     * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+     * API, and will be ignored if used in other APIs. This field will be omitted
+     * from all API responses including
+     * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+     * API. To retrieve a schema of a
      * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
      * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
      * API instead.
@@ -5260,7 +5775,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartingSchema(com.google.cloud.discoveryengine.v1.Schema value) {
       if (startingSchemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && startingSchema_ != null
             && startingSchema_ != com.google.cloud.discoveryengine.v1.Schema.getDefaultInstance()) {
           getStartingSchemaBuilder().mergeFrom(value);
@@ -5271,11 +5786,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         startingSchemaBuilder_.mergeFrom(value);
       }
       if (startingSchema_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
     }
+
     /**
      *
      *
@@ -5284,9 +5800,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
      * it. If unset, a default vertical specialized schema will be used.
      *
-     * This field is only used by [CreateDataStore][] API, and will be ignored if
-     * used in other APIs. This field will be omitted from all API responses
-     * including [CreateDataStore][] API. To retrieve a schema of a
+     * This field is only used by
+     * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+     * API, and will be ignored if used in other APIs. This field will be omitted
+     * from all API responses including
+     * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+     * API. To retrieve a schema of a
      * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
      * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
      * API instead.
@@ -5299,7 +5818,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
      */
     public Builder clearStartingSchema() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       startingSchema_ = null;
       if (startingSchemaBuilder_ != null) {
         startingSchemaBuilder_.dispose();
@@ -5308,6 +5827,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5316,9 +5836,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
      * it. If unset, a default vertical specialized schema will be used.
      *
-     * This field is only used by [CreateDataStore][] API, and will be ignored if
-     * used in other APIs. This field will be omitted from all API responses
-     * including [CreateDataStore][] API. To retrieve a schema of a
+     * This field is only used by
+     * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+     * API, and will be ignored if used in other APIs. This field will be omitted
+     * from all API responses including
+     * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+     * API. To retrieve a schema of a
      * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
      * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
      * API instead.
@@ -5331,10 +5854,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
      */
     public com.google.cloud.discoveryengine.v1.Schema.Builder getStartingSchemaBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getStartingSchemaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5343,9 +5867,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
      * it. If unset, a default vertical specialized schema will be used.
      *
-     * This field is only used by [CreateDataStore][] API, and will be ignored if
-     * used in other APIs. This field will be omitted from all API responses
-     * including [CreateDataStore][] API. To retrieve a schema of a
+     * This field is only used by
+     * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+     * API, and will be ignored if used in other APIs. This field will be omitted
+     * from all API responses including
+     * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+     * API. To retrieve a schema of a
      * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
      * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
      * API instead.
@@ -5366,6 +5893,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
             : startingSchema_;
       }
     }
+
     /**
      *
      *
@@ -5374,9 +5902,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
      * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
      * it. If unset, a default vertical specialized schema will be used.
      *
-     * This field is only used by [CreateDataStore][] API, and will be ignored if
-     * used in other APIs. This field will be omitted from all API responses
-     * including [CreateDataStore][] API. To retrieve a schema of a
+     * This field is only used by
+     * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+     * API, and will be ignored if used in other APIs. This field will be omitted
+     * from all API responses including
+     * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+     * API. To retrieve a schema of a
      * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
      * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
      * API instead.

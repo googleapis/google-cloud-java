@@ -39,6 +39,7 @@ public interface ListAutonomousDatabaseBackupsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface ListAutonomousDatabaseBackupsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -119,6 +121,7 @@ public interface ListAutonomousDatabaseBackupsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

@@ -121,6 +121,16 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> FeatureViewDirectWrite</td>
+ *      <td><p> Bidirectional streaming RPC to directly write to feature values in a feature view. Requests may not have a one-to-one mapping to responses and responses may be returned out-of-order to reduce latency.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> featureViewDirectWriteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -544,6 +554,45 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
   public final UnaryCallable<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesCallable() {
     return stub.searchNearestEntitiesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bidirectional streaming RPC to directly write to feature values in a feature view. Requests may
+   * not have a one-to-one mapping to responses and responses may be returned out-of-order to reduce
+   * latency.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeatureOnlineStoreServiceClient featureOnlineStoreServiceClient =
+   *     FeatureOnlineStoreServiceClient.create()) {
+   *   BidiStream<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse> bidiStream =
+   *       featureOnlineStoreServiceClient.featureViewDirectWriteCallable().call();
+   *   FeatureViewDirectWriteRequest request =
+   *       FeatureViewDirectWriteRequest.newBuilder()
+   *           .setFeatureView(
+   *               FeatureViewName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+   *                   .toString())
+   *           .addAllDataKeyAndFeatureValues(
+   *               new ArrayList<FeatureViewDirectWriteRequest.DataKeyAndFeatureValues>())
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (FeatureViewDirectWriteResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteCallable() {
+    return stub.featureViewDirectWriteCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

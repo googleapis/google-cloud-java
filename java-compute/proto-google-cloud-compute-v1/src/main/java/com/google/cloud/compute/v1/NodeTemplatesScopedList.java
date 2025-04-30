@@ -32,6 +32,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NodeTemplatesScopedList)
     NodeTemplatesScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NodeTemplatesScopedList.newBuilder() to construct.
   private NodeTemplatesScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NodeTemplate> nodeTemplates_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.compute.v1.NodeTemplate> getNodeTemplatesList() {
     return nodeTemplates_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       getNodeTemplatesOrBuilderList() {
     return nodeTemplates_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
   public int getNodeTemplatesCount() {
     return nodeTemplates_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
   public com.google.cloud.compute.v1.NodeTemplate getNodeTemplates(int index) {
     return nodeTemplates_.get(index);
   }
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -151,6 +158,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -166,6 +174,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -357,6 +366,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -648,6 +658,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
         return nodeTemplatesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -664,6 +675,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
         return nodeTemplatesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -680,6 +692,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
         return nodeTemplatesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -702,6 +715,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +736,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +759,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +782,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +803,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +824,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +845,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +865,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +885,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +898,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.NodeTemplate.Builder getNodeTemplatesBuilder(int index) {
       return getNodeTemplatesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -892,6 +915,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
         return nodeTemplatesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -909,6 +933,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(nodeTemplates_);
       }
     }
+
     /**
      *
      *
@@ -922,6 +947,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       return getNodeTemplatesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.NodeTemplate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -935,6 +961,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       return getNodeTemplatesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.NodeTemplate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -975,6 +1002,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -989,6 +1017,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1009,6 +1038,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1031,6 +1061,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1081,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1109,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1129,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1110,6 +1144,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1128,6 +1163,7 @@ public final class NodeTemplatesScopedList extends com.google.protobuf.Generated
             : warning_;
       }
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface BulkDownloadFeedbackLabelsRequestOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface BulkDownloadFeedbackLabelsRequestOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.BulkDownloadFeedbackLabelsRequest.GcsDestination
       getGcsDestination();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface BulkDownloadFeedbackLabelsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface BulkDownloadFeedbackLabelsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -174,6 +178,7 @@ public interface BulkDownloadFeedbackLabelsRequestOrBuilder
    * @return The enum numeric value on the wire for feedbackLabelType.
    */
   int getFeedbackLabelTypeValue();
+
   /**
    *
    *
@@ -206,6 +211,7 @@ public interface BulkDownloadFeedbackLabelsRequestOrBuilder
    * @return The conversationFilter.
    */
   java.lang.String getConversationFilter();
+
   /**
    *
    *
@@ -238,6 +244,7 @@ public interface BulkDownloadFeedbackLabelsRequestOrBuilder
    * @return A list containing the templateQaScorecardId.
    */
   java.util.List<java.lang.String> getTemplateQaScorecardIdList();
+
   /**
    *
    *
@@ -253,6 +260,7 @@ public interface BulkDownloadFeedbackLabelsRequestOrBuilder
    * @return The count of templateQaScorecardId.
    */
   int getTemplateQaScorecardIdCount();
+
   /**
    *
    *
@@ -269,6 +277,7 @@ public interface BulkDownloadFeedbackLabelsRequestOrBuilder
    * @return The templateQaScorecardId at the given index.
    */
   java.lang.String getTemplateQaScorecardId(int index);
+
   /**
    *
    *

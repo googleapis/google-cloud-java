@@ -34,6 +34,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.Route)
     RouteOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Route.newBuilder() to construct.
   private Route(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,6 +89,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -113,6 +115,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -222,6 +230,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -241,6 +250,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipCidrRange_ = "";
+
   /**
    *
    *
@@ -264,6 +274,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -290,6 +301,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 10;
   private int type_ = 0;
+
   /**
    *
    *
@@ -308,6 +320,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -331,6 +344,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NEXT_HOP_VPC_NETWORK_FIELD_NUMBER = 2;
   private com.google.cloud.networkconnectivity.v1.NextHopVpcNetwork nextHopVpcNetwork_;
+
   /**
    *
    *
@@ -348,6 +362,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNextHopVpcNetwork() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -367,6 +382,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.networkconnectivity.v1.NextHopVpcNetwork.getDefaultInstance()
         : nextHopVpcNetwork_;
   }
+
   /**
    *
    *
@@ -412,6 +428,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -430,12 +447,14 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -451,6 +470,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -473,6 +493,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -500,6 +521,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -523,6 +545,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -551,6 +574,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
+
   /**
    *
    *
@@ -577,6 +601,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -606,6 +631,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 9;
   private int state_ = 0;
+
   /**
    *
    *
@@ -623,6 +649,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -647,6 +674,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object spoke_ = "";
+
   /**
    *
    *
@@ -673,6 +701,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -704,6 +733,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
+
   /**
    *
    *
@@ -729,6 +759,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -757,6 +788,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRIORITY_FIELD_NUMBER = 13;
   private long priority_ = 0L;
+
   /**
    *
    *
@@ -777,6 +809,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NEXT_HOP_VPN_TUNNEL_FIELD_NUMBER = 14;
   private com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel nextHopVpnTunnel_;
+
   /**
    *
    *
@@ -794,6 +827,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNextHopVpnTunnel() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -813,6 +847,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel.getDefaultInstance()
         : nextHopVpnTunnel_;
   }
+
   /**
    *
    *
@@ -835,6 +870,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   public static final int NEXT_HOP_ROUTER_APPLIANCE_INSTANCE_FIELD_NUMBER = 15;
   private com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance
       nextHopRouterApplianceInstance_;
+
   /**
    *
    *
@@ -853,6 +889,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNextHopRouterApplianceInstance() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -875,6 +912,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : nextHopRouterApplianceInstance_;
   }
+
   /**
    *
    *
@@ -899,6 +937,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   public static final int NEXT_HOP_INTERCONNECT_ATTACHMENT_FIELD_NUMBER = 16;
   private com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment
       nextHopInterconnectAttachment_;
+
   /**
    *
    *
@@ -916,6 +955,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNextHopInterconnectAttachment() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -936,6 +976,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment.getDefaultInstance()
         : nextHopInterconnectAttachment_;
   }
+
   /**
    *
    *
@@ -1297,6 +1338,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1775,6 +1817,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1799,6 +1842,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1823,6 +1867,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1846,6 +1891,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1865,6 +1911,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1896,6 +1943,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1912,6 +1960,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1934,6 +1983,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1958,6 +2008,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1979,6 +2030,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2008,6 +2060,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2029,6 +2082,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2045,6 +2099,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2065,6 +2120,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2099,6 +2155,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2115,6 +2172,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2137,6 +2195,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2161,6 +2220,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2182,6 +2242,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2211,6 +2272,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2232,6 +2294,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2248,6 +2311,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2268,6 +2332,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2297,6 +2362,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ipCidrRange_ = "";
+
     /**
      *
      *
@@ -2319,6 +2385,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2341,6 +2408,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2362,6 +2430,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2379,6 +2448,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2403,6 +2473,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -2421,6 +2492,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -2442,6 +2514,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2464,6 +2537,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkconnectivity.v1.RouteType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2488,6 +2562,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2515,6 +2590,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkconnectivity.v1.NextHopVpcNetwork.Builder,
             com.google.cloud.networkconnectivity.v1.NextHopVpcNetworkOrBuilder>
         nextHopVpcNetworkBuilder_;
+
     /**
      *
      *
@@ -2531,6 +2607,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNextHopVpcNetwork() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2553,6 +2630,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         return nextHopVpcNetworkBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2578,6 +2656,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2600,6 +2679,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2631,6 +2711,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2652,6 +2733,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2669,6 +2751,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNextHopVpcNetworkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2690,6 +2773,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             : nextHopVpcNetwork_;
       }
     }
+
     /**
      *
      *
@@ -2743,6 +2827,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2761,12 +2846,14 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2782,6 +2869,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2804,6 +2892,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2832,6 +2921,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2850,12 +2940,14 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2878,6 +2970,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *
@@ -2896,6 +2989,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2918,6 +3012,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2940,6 +3035,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2961,6 +3057,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2978,6 +3075,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3002,6 +3100,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uid_ = "";
+
     /**
      *
      *
@@ -3027,6 +3126,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3052,6 +3152,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3076,6 +3177,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3096,6 +3198,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3123,6 +3226,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -3140,6 +3244,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -3160,6 +3265,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3179,6 +3285,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.networkconnectivity.v1.State.forNumber(state_);
       return result == null ? com.google.cloud.networkconnectivity.v1.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -3202,6 +3309,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3223,6 +3331,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object spoke_ = "";
+
     /**
      *
      *
@@ -3248,6 +3357,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3273,6 +3383,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3297,6 +3408,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3317,6 +3429,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3344,6 +3457,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -3368,6 +3482,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3392,6 +3507,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3415,6 +3531,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3434,6 +3551,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3460,6 +3578,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long priority_;
+
     /**
      *
      *
@@ -3477,6 +3596,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public long getPriority() {
       return priority_;
     }
+
     /**
      *
      *
@@ -3498,6 +3618,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3524,6 +3645,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkconnectivity.v1.NextHopVPNTunnel.Builder,
             com.google.cloud.networkconnectivity.v1.NextHopVPNTunnelOrBuilder>
         nextHopVpnTunnelBuilder_;
+
     /**
      *
      *
@@ -3540,6 +3662,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNextHopVpnTunnel() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -3562,6 +3685,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         return nextHopVpnTunnelBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3587,6 +3711,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3609,6 +3734,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3640,6 +3766,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3661,6 +3788,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3678,6 +3806,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNextHopVpnTunnelFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3699,6 +3828,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             : nextHopVpnTunnel_;
       }
     }
+
     /**
      *
      *
@@ -3734,6 +3864,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstance.Builder,
             com.google.cloud.networkconnectivity.v1.NextHopRouterApplianceInstanceOrBuilder>
         nextHopRouterApplianceInstanceBuilder_;
+
     /**
      *
      *
@@ -3751,6 +3882,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNextHopRouterApplianceInstance() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -3776,6 +3908,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         return nextHopRouterApplianceInstanceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3802,6 +3935,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3826,6 +3960,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3859,6 +3994,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3881,6 +4017,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3899,6 +4036,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNextHopRouterApplianceInstanceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3922,6 +4060,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             : nextHopRouterApplianceInstance_;
       }
     }
+
     /**
      *
      *
@@ -3958,6 +4097,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachment.Builder,
             com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachmentOrBuilder>
         nextHopInterconnectAttachmentBuilder_;
+
     /**
      *
      *
@@ -3974,6 +4114,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNextHopInterconnectAttachment() {
       return ((bitField0_ & 0x00008000) != 0);
     }
+
     /**
      *
      *
@@ -3998,6 +4139,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         return nextHopInterconnectAttachmentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4023,6 +4165,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4046,6 +4189,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4078,6 +4222,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4099,6 +4244,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4116,6 +4262,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNextHopInterconnectAttachmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4138,6 +4285,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             : nextHopInterconnectAttachment_;
       }
     }
+
     /**
      *
      *

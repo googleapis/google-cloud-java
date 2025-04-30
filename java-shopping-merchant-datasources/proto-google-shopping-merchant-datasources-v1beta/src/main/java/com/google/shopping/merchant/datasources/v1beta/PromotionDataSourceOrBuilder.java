@@ -43,6 +43,7 @@ public interface PromotionDataSourceOrBuilder
    * @return The targetCountry.
    */
   java.lang.String getTargetCountry();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface PromotionDataSourceOrBuilder
    * @return The contentLanguage.
    */
   java.lang.String getContentLanguage();
+
   /**
    *
    *

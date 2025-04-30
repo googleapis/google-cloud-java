@@ -36,6 +36,7 @@ public interface TransferParametersOrBuilder
    * @return The domainName.
    */
   java.lang.String getDomainName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface TransferParametersOrBuilder
    * @return The currentRegistrar.
    */
   java.lang.String getCurrentRegistrar();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface TransferParametersOrBuilder
    * @return A list containing the nameServers.
    */
   java.util.List<java.lang.String> getNameServersList();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface TransferParametersOrBuilder
    * @return The count of nameServers.
    */
   int getNameServersCount();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface TransferParametersOrBuilder
    * @return The nameServers at the given index.
    */
   java.lang.String getNameServers(int index);
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface TransferParametersOrBuilder
    * @return The enum numeric value on the wire for transferLockState.
    */
   int getTransferLockStateValue();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface TransferParametersOrBuilder
    * @return A list containing the supportedPrivacy.
    */
   java.util.List<com.google.cloud.domains.v1.ContactPrivacy> getSupportedPrivacyList();
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public interface TransferParametersOrBuilder
    * @return The count of supportedPrivacy.
    */
   int getSupportedPrivacyCount();
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public interface TransferParametersOrBuilder
    * @return The supportedPrivacy at the given index.
    */
   com.google.cloud.domains.v1.ContactPrivacy getSupportedPrivacy(int index);
+
   /**
    *
    *
@@ -203,6 +212,7 @@ public interface TransferParametersOrBuilder
    * @return A list containing the enum numeric values on the wire for supportedPrivacy.
    */
   java.util.List<java.lang.Integer> getSupportedPrivacyValueList();
+
   /**
    *
    *
@@ -229,6 +239,7 @@ public interface TransferParametersOrBuilder
    * @return Whether the yearlyPrice field is set.
    */
   boolean hasYearlyPrice();
+
   /**
    *
    *
@@ -241,6 +252,7 @@ public interface TransferParametersOrBuilder
    * @return The yearlyPrice.
    */
   com.google.type.Money getYearlyPrice();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.AlloyDbSettings)
     AlloyDbSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AlloyDbSettings.newBuilder() to construct.
   private AlloyDbSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -92,6 +93,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
      * @return The user.
      */
     java.lang.String getUser();
+
     /**
      *
      *
@@ -117,6 +119,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
      * @return The password.
      */
     java.lang.String getPassword();
+
     /**
      *
      *
@@ -143,6 +146,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
      */
     boolean getPasswordSet();
   }
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.AlloyDbSettings.UserPassword)
       UserPasswordOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use UserPassword.newBuilder() to construct.
     private UserPassword(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -193,6 +198,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object user_ = "";
+
     /**
      *
      *
@@ -216,6 +222,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -244,6 +251,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object password_ = "";
+
     /**
      *
      *
@@ -267,6 +275,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -293,6 +302,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
 
     public static final int PASSWORD_SET_FIELD_NUMBER = 3;
     private boolean passwordSet_ = false;
+
     /**
      *
      *
@@ -488,6 +498,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -704,6 +715,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object user_ = "";
+
       /**
        *
        *
@@ -726,6 +738,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -748,6 +761,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -769,6 +783,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -786,6 +801,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -810,6 +826,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object password_ = "";
+
       /**
        *
        *
@@ -832,6 +849,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -854,6 +872,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -875,6 +894,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -892,6 +912,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -916,6 +937,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       }
 
       private boolean passwordSet_;
+
       /**
        *
        *
@@ -931,6 +953,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       public boolean getPasswordSet() {
         return passwordSet_;
       }
+
       /**
        *
        *
@@ -950,6 +973,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1050,6 +1074,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
      * @return The id.
      */
     java.lang.String getId();
+
     /**
      *
      *
@@ -1079,6 +1104,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
      * @return Whether the machineConfig field is set.
      */
     boolean hasMachineConfig();
+
     /**
      *
      *
@@ -1095,6 +1121,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
      */
     com.google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings.MachineConfig
         getMachineConfig();
+
     /**
      *
      *
@@ -1122,6 +1149,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
      * <code>map&lt;string, string&gt; database_flags = 6;</code>
      */
     int getDatabaseFlagsCount();
+
     /**
      *
      *
@@ -1134,9 +1162,11 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
      * <code>map&lt;string, string&gt; database_flags = 6;</code>
      */
     boolean containsDatabaseFlags(java.lang.String key);
+
     /** Use {@link #getDatabaseFlagsMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getDatabaseFlags();
+
     /**
      *
      *
@@ -1149,6 +1179,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
      * <code>map&lt;string, string&gt; database_flags = 6;</code>
      */
     java.util.Map<java.lang.String, java.lang.String> getDatabaseFlagsMap();
+
     /**
      *
      *
@@ -1165,6 +1196,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue);
+
     /**
      *
      *
@@ -1189,6 +1221,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
     int getLabelsCount();
+
     /**
      *
      *
@@ -1200,9 +1233,11 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
     boolean containsLabels(java.lang.String key);
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getLabels();
+
     /**
      *
      *
@@ -1214,6 +1249,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
     java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
     /**
      *
      *
@@ -1229,6 +1265,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue);
+
     /**
      *
      *
@@ -1254,6 +1291,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
      * @return The privateIp.
      */
     java.lang.String getPrivateIp();
+
     /**
      *
      *
@@ -1268,6 +1306,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getPrivateIpBytes();
   }
+
   /**
    *
    *
@@ -1282,6 +1321,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings)
       PrimaryInstanceSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PrimaryInstanceSettings.newBuilder() to construct.
     private PrimaryInstanceSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1345,6 +1385,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
        */
       int getCpuCount();
     }
+
     /**
      *
      *
@@ -1360,6 +1401,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings.MachineConfig)
         MachineConfigOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use MachineConfig.newBuilder() to construct.
       private MachineConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1392,6 +1434,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
 
       public static final int CPU_COUNT_FIELD_NUMBER = 1;
       private int cpuCount_ = 0;
+
       /**
        *
        *
@@ -1593,6 +1636,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1799,6 +1843,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         private int bitField0_;
 
         private int cpuCount_;
+
         /**
          *
          *
@@ -1814,6 +1859,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         public int getCpuCount() {
           return cpuCount_;
         }
+
         /**
          *
          *
@@ -1833,6 +1879,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1927,6 +1974,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1951,6 +1999,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -1979,6 +2028,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
     public static final int MACHINE_CONFIG_FIELD_NUMBER = 2;
     private com.google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings.MachineConfig
         machineConfig_;
+
     /**
      *
      *
@@ -1997,6 +2047,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
     public boolean hasMachineConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2019,6 +2070,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
               .getDefaultInstance()
           : machineConfig_;
     }
+
     /**
      *
      *
@@ -2069,6 +2121,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
     public int getDatabaseFlagsCount() {
       return internalGetDatabaseFlags().getMap().size();
     }
+
     /**
      *
      *
@@ -2087,12 +2140,14 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetDatabaseFlags().getMap().containsKey(key);
     }
+
     /** Use {@link #getDatabaseFlagsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getDatabaseFlags() {
       return getDatabaseFlagsMap();
     }
+
     /**
      *
      *
@@ -2108,6 +2163,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getDatabaseFlagsMap() {
       return internalGetDatabaseFlags().getMap();
     }
+
     /**
      *
      *
@@ -2130,6 +2186,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       java.util.Map<java.lang.String, java.lang.String> map = internalGetDatabaseFlags().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2179,6 +2236,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2196,12 +2254,14 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2216,6 +2276,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2237,6 +2298,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2263,6 +2325,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object privateIp_ = "";
+
     /**
      *
      *
@@ -2287,6 +2350,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -2531,6 +2595,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2835,6 +2900,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object id_ = "";
+
       /**
        *
        *
@@ -2858,6 +2924,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2881,6 +2948,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2903,6 +2971,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2921,6 +2990,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2954,6 +3024,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
               com.google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings
                   .MachineConfigOrBuilder>
           machineConfigBuilder_;
+
       /**
        *
        *
@@ -2971,6 +3042,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       public boolean hasMachineConfig() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -2996,6 +3068,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
           return machineConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3023,6 +3096,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3047,6 +3121,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3081,6 +3156,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -3103,6 +3179,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3122,6 +3199,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getMachineConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3146,6 +3224,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
               : machineConfig_;
         }
       }
+
       /**
        *
        *
@@ -3209,6 +3288,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       public int getDatabaseFlagsCount() {
         return internalGetDatabaseFlags().getMap().size();
       }
+
       /**
        *
        *
@@ -3227,12 +3307,14 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         }
         return internalGetDatabaseFlags().getMap().containsKey(key);
       }
+
       /** Use {@link #getDatabaseFlagsMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getDatabaseFlags() {
         return getDatabaseFlagsMap();
       }
+
       /**
        *
        *
@@ -3248,6 +3330,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       public java.util.Map<java.lang.String, java.lang.String> getDatabaseFlagsMap() {
         return internalGetDatabaseFlags().getMap();
       }
+
       /**
        *
        *
@@ -3270,6 +3353,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         java.util.Map<java.lang.String, java.lang.String> map = internalGetDatabaseFlags().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
+
       /**
        *
        *
@@ -3298,6 +3382,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         internalGetMutableDatabaseFlags().getMutableMap().clear();
         return this;
       }
+
       /**
        *
        *
@@ -3316,12 +3401,14 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         internalGetMutableDatabaseFlags().getMutableMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableDatabaseFlags() {
         bitField0_ |= 0x00000004;
         return internalGetMutableDatabaseFlags().getMutableMap();
       }
+
       /**
        *
        *
@@ -3344,6 +3431,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000004;
         return this;
       }
+
       /**
        *
        *
@@ -3386,6 +3474,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       public int getLabelsCount() {
         return internalGetLabels().getMap().size();
       }
+
       /**
        *
        *
@@ -3403,12 +3492,14 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         }
         return internalGetLabels().getMap().containsKey(key);
       }
+
       /** Use {@link #getLabelsMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getLabels() {
         return getLabelsMap();
       }
+
       /**
        *
        *
@@ -3423,6 +3514,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
         return internalGetLabels().getMap();
       }
+
       /**
        *
        *
@@ -3444,6 +3536,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
+
       /**
        *
        *
@@ -3471,6 +3564,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         internalGetMutableLabels().getMutableMap().clear();
         return this;
       }
+
       /**
        *
        *
@@ -3488,12 +3582,14 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         internalGetMutableLabels().getMutableMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
         bitField0_ |= 0x00000008;
         return internalGetMutableLabels().getMutableMap();
       }
+
       /**
        *
        *
@@ -3515,6 +3611,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000008;
         return this;
       }
+
       /**
        *
        *
@@ -3532,6 +3629,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object privateIp_ = "";
+
       /**
        *
        *
@@ -3555,6 +3653,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3578,6 +3677,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3600,6 +3700,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3618,6 +3719,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3728,6 +3830,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
      * @return The kmsKeyName.
      */
     java.lang.String getKmsKeyName();
+
     /**
      *
      *
@@ -3743,6 +3846,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getKmsKeyNameBytes();
   }
+
   /**
    *
    *
@@ -3758,6 +3862,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.AlloyDbSettings.EncryptionConfig)
       EncryptionConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use EncryptionConfig.newBuilder() to construct.
     private EncryptionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3792,6 +3897,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object kmsKeyName_ = "";
+
     /**
      *
      *
@@ -3817,6 +3923,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -4004,6 +4111,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4196,6 +4304,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object kmsKeyName_ = "";
+
       /**
        *
        *
@@ -4220,6 +4329,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4244,6 +4354,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4267,6 +4378,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4286,6 +4398,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4381,6 +4494,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int INITIAL_USER_FIELD_NUMBER = 1;
   private com.google.cloud.clouddms.v1.AlloyDbSettings.UserPassword initialUser_;
+
   /**
    *
    *
@@ -4399,6 +4513,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
   public boolean hasInitialUser() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -4419,6 +4534,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.clouddms.v1.AlloyDbSettings.UserPassword.getDefaultInstance()
         : initialUser_;
   }
+
   /**
    *
    *
@@ -4443,6 +4559,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vpcNetwork_ = "";
+
   /**
    *
    *
@@ -4470,6 +4587,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -4524,6 +4642,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -4541,12 +4660,14 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -4561,6 +4682,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -4582,6 +4704,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -4607,6 +4730,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
   public static final int PRIMARY_INSTANCE_SETTINGS_FIELD_NUMBER = 4;
   private com.google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings
       primaryInstanceSettings_;
+
   /**
    * <code>
    * .google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings primary_instance_settings = 4;
@@ -4618,6 +4742,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
   public boolean hasPrimaryInstanceSettings() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    * <code>
    * .google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings primary_instance_settings = 4;
@@ -4632,6 +4757,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings.getDefaultInstance()
         : primaryInstanceSettings_;
   }
+
   /**
    * <code>
    * .google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings primary_instance_settings = 4;
@@ -4647,6 +4773,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
 
   public static final int ENCRYPTION_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.clouddms.v1.AlloyDbSettings.EncryptionConfig encryptionConfig_;
+
   /**
    *
    *
@@ -4668,6 +4795,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
   public boolean hasEncryptionConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -4691,6 +4819,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.clouddms.v1.AlloyDbSettings.EncryptionConfig.getDefaultInstance()
         : encryptionConfig_;
   }
+
   /**
    *
    *
@@ -4933,6 +5062,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5236,6 +5366,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.clouddms.v1.AlloyDbSettings.UserPassword.Builder,
             com.google.cloud.clouddms.v1.AlloyDbSettings.UserPasswordOrBuilder>
         initialUserBuilder_;
+
     /**
      *
      *
@@ -5253,6 +5384,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
     public boolean hasInitialUser() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -5276,6 +5408,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         return initialUserBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5301,6 +5434,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5324,6 +5458,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5356,6 +5491,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5378,6 +5514,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5396,6 +5533,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getInitialUserFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5418,6 +5556,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
             : initialUser_;
       }
     }
+
     /**
      *
      *
@@ -5448,6 +5587,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object vpcNetwork_ = "";
+
     /**
      *
      *
@@ -5474,6 +5614,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5500,6 +5641,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5525,6 +5667,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5546,6 +5689,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5598,6 +5742,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -5615,12 +5760,14 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -5635,6 +5782,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -5656,6 +5804,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -5683,6 +5832,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -5700,12 +5850,14 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000004;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -5727,6 +5879,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -5750,6 +5903,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings.Builder,
             com.google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettingsOrBuilder>
         primaryInstanceSettingsBuilder_;
+
     /**
      * <code>
      * .google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings primary_instance_settings = 4;
@@ -5760,6 +5914,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
     public boolean hasPrimaryInstanceSettings() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      * <code>
      * .google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings primary_instance_settings = 4;
@@ -5778,6 +5933,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         return primaryInstanceSettingsBuilder_.getMessage();
       }
     }
+
     /**
      * <code>
      * .google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings primary_instance_settings = 4;
@@ -5797,6 +5953,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings primary_instance_settings = 4;
@@ -5814,6 +5971,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings primary_instance_settings = 4;
@@ -5840,6 +5998,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings primary_instance_settings = 4;
@@ -5855,6 +6014,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings primary_instance_settings = 4;
@@ -5866,6 +6026,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getPrimaryInstanceSettingsFieldBuilder().getBuilder();
     }
+
     /**
      * <code>
      * .google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings primary_instance_settings = 4;
@@ -5882,6 +6043,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
             : primaryInstanceSettings_;
       }
     }
+
     /**
      * <code>
      * .google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings primary_instance_settings = 4;
@@ -5910,6 +6072,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.clouddms.v1.AlloyDbSettings.EncryptionConfig.Builder,
             com.google.cloud.clouddms.v1.AlloyDbSettings.EncryptionConfigOrBuilder>
         encryptionConfigBuilder_;
+
     /**
      *
      *
@@ -5930,6 +6093,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
     public boolean hasEncryptionConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -5956,6 +6120,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
         return encryptionConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5985,6 +6150,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6011,6 +6177,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6047,6 +6214,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -6072,6 +6240,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6093,6 +6262,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getEncryptionConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6118,6 +6288,7 @@ public final class AlloyDbSettings extends com.google.protobuf.GeneratedMessageV
             : encryptionConfig_;
       }
     }
+
     /**
      *
      *

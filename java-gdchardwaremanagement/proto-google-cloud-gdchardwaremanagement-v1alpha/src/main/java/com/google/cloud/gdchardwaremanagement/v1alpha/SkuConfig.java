@@ -33,6 +33,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.SkuConfig)
     SkuConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SkuConfig.newBuilder() to construct.
   private SkuConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cpu_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gpu_ = "";
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ram_ = "";
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object storage_ = "";
+
   /**
    *
    *
@@ -246,6 +254,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -457,6 +466,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -686,6 +696,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object cpu_ = "";
+
     /**
      *
      *
@@ -708,6 +719,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -730,6 +742,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -751,6 +764,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +782,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +807,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object gpu_ = "";
+
     /**
      *
      *
@@ -814,6 +830,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -836,6 +853,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -857,6 +875,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +893,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -898,6 +918,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ram_ = "";
+
     /**
      *
      *
@@ -920,6 +941,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -942,6 +964,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -963,6 +986,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -980,6 +1004,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1029,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object storage_ = "";
+
     /**
      *
      *
@@ -1026,6 +1052,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1048,6 +1075,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1069,6 +1097,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1115,7 @@ public final class SkuConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

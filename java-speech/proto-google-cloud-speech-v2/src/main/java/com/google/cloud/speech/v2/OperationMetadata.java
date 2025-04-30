@@ -33,6 +33,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.OperationMetadata)
     OperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OperationMetadata.newBuilder() to construct.
   private OperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -97,6 +98,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     private RequestCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -169,6 +171,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     private MetadataCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -201,6 +204,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -216,6 +220,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -231,6 +236,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -247,6 +253,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -262,6 +269,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -277,6 +285,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -295,6 +304,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -318,6 +328,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -346,6 +357,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object method_ = "";
+
   /**
    *
    *
@@ -369,6 +381,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -397,6 +410,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKeyName_ = "";
+
   /**
    *
    *
@@ -423,6 +437,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -454,6 +469,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKeyVersionName_ = "";
+
   /**
    *
    *
@@ -480,6 +496,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -508,6 +525,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int BATCH_RECOGNIZE_REQUEST_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -523,6 +541,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasBatchRecognizeRequest() {
     return requestCase_ == 8;
   }
+
   /**
    *
    *
@@ -541,6 +560,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.speech.v2.BatchRecognizeRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -560,6 +580,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CREATE_RECOGNIZER_REQUEST_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -575,6 +596,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasCreateRecognizerRequest() {
     return requestCase_ == 9;
   }
+
   /**
    *
    *
@@ -593,6 +615,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.speech.v2.CreateRecognizerRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -612,6 +635,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int UPDATE_RECOGNIZER_REQUEST_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -627,6 +651,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateRecognizerRequest() {
     return requestCase_ == 10;
   }
+
   /**
    *
    *
@@ -645,6 +670,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.speech.v2.UpdateRecognizerRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -664,6 +690,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DELETE_RECOGNIZER_REQUEST_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -679,6 +706,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasDeleteRecognizerRequest() {
     return requestCase_ == 11;
   }
+
   /**
    *
    *
@@ -697,6 +725,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.speech.v2.DeleteRecognizerRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -716,6 +745,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int UNDELETE_RECOGNIZER_REQUEST_FIELD_NUMBER = 12;
+
   /**
    *
    *
@@ -732,6 +762,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasUndeleteRecognizerRequest() {
     return requestCase_ == 12;
   }
+
   /**
    *
    *
@@ -751,6 +782,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.speech.v2.UndeleteRecognizerRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -771,6 +803,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CREATE_CUSTOM_CLASS_REQUEST_FIELD_NUMBER = 13;
+
   /**
    *
    *
@@ -786,6 +819,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasCreateCustomClassRequest() {
     return requestCase_ == 13;
   }
+
   /**
    *
    *
@@ -804,6 +838,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.speech.v2.CreateCustomClassRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -823,6 +858,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int UPDATE_CUSTOM_CLASS_REQUEST_FIELD_NUMBER = 14;
+
   /**
    *
    *
@@ -838,6 +874,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateCustomClassRequest() {
     return requestCase_ == 14;
   }
+
   /**
    *
    *
@@ -856,6 +893,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.speech.v2.UpdateCustomClassRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -875,6 +913,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DELETE_CUSTOM_CLASS_REQUEST_FIELD_NUMBER = 15;
+
   /**
    *
    *
@@ -890,6 +929,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasDeleteCustomClassRequest() {
     return requestCase_ == 15;
   }
+
   /**
    *
    *
@@ -908,6 +948,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.speech.v2.DeleteCustomClassRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -927,6 +968,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int UNDELETE_CUSTOM_CLASS_REQUEST_FIELD_NUMBER = 16;
+
   /**
    *
    *
@@ -943,6 +985,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasUndeleteCustomClassRequest() {
     return requestCase_ == 16;
   }
+
   /**
    *
    *
@@ -962,6 +1005,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.speech.v2.UndeleteCustomClassRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -982,6 +1026,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CREATE_PHRASE_SET_REQUEST_FIELD_NUMBER = 17;
+
   /**
    *
    *
@@ -997,6 +1042,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasCreatePhraseSetRequest() {
     return requestCase_ == 17;
   }
+
   /**
    *
    *
@@ -1015,6 +1061,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.speech.v2.CreatePhraseSetRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1034,6 +1081,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int UPDATE_PHRASE_SET_REQUEST_FIELD_NUMBER = 18;
+
   /**
    *
    *
@@ -1049,6 +1097,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdatePhraseSetRequest() {
     return requestCase_ == 18;
   }
+
   /**
    *
    *
@@ -1067,6 +1116,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.speech.v2.UpdatePhraseSetRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1086,6 +1136,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DELETE_PHRASE_SET_REQUEST_FIELD_NUMBER = 19;
+
   /**
    *
    *
@@ -1101,6 +1152,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasDeletePhraseSetRequest() {
     return requestCase_ == 19;
   }
+
   /**
    *
    *
@@ -1119,6 +1171,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.speech.v2.DeletePhraseSetRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1138,6 +1191,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int UNDELETE_PHRASE_SET_REQUEST_FIELD_NUMBER = 20;
+
   /**
    *
    *
@@ -1153,6 +1207,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasUndeletePhraseSetRequest() {
     return requestCase_ == 20;
   }
+
   /**
    *
    *
@@ -1171,6 +1226,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.speech.v2.UndeletePhraseSetRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1190,6 +1246,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int UPDATE_CONFIG_REQUEST_FIELD_NUMBER = 21;
+
   /**
    *
    *
@@ -1210,6 +1267,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateConfigRequest() {
     return requestCase_ == 21;
   }
+
   /**
    *
    *
@@ -1233,6 +1291,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.speech.v2.UpdateConfigRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1255,6 +1314,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 22;
   private int progressPercent_ = 0;
+
   /**
    *
    *
@@ -1273,6 +1333,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int BATCH_RECOGNIZE_METADATA_FIELD_NUMBER = 23;
+
   /**
    *
    *
@@ -1288,6 +1349,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasBatchRecognizeMetadata() {
     return metadataCase_ == 23;
   }
+
   /**
    *
    *
@@ -1306,6 +1368,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.speech.v2.BatchRecognizeMetadata.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1796,6 +1859,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2412,6 +2476,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2426,6 +2491,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2446,6 +2512,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2468,6 +2535,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2487,6 +2555,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2514,6 +2583,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2533,6 +2603,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2547,6 +2618,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2565,6 +2637,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2597,6 +2670,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2611,6 +2685,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2631,6 +2706,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2653,6 +2729,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2672,6 +2749,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2699,6 +2777,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2718,6 +2797,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2732,6 +2812,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2750,6 +2831,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2777,6 +2859,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -2799,6 +2882,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2821,6 +2905,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2842,6 +2927,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2859,6 +2945,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2883,6 +2970,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object method_ = "";
+
     /**
      *
      *
@@ -2905,6 +2993,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2927,6 +3016,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2948,6 +3038,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2965,6 +3056,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2989,6 +3081,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object kmsKeyName_ = "";
+
     /**
      *
      *
@@ -3014,6 +3107,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3039,6 +3133,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3063,6 +3158,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3083,6 +3179,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3110,6 +3207,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object kmsKeyVersionName_ = "";
+
     /**
      *
      *
@@ -3135,6 +3233,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3160,6 +3259,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3184,6 +3284,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3204,6 +3305,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3235,6 +3337,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.BatchRecognizeRequest.Builder,
             com.google.cloud.speech.v2.BatchRecognizeRequestOrBuilder>
         batchRecognizeRequestBuilder_;
+
     /**
      *
      *
@@ -3250,6 +3353,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasBatchRecognizeRequest() {
       return requestCase_ == 8;
     }
+
     /**
      *
      *
@@ -3275,6 +3379,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.BatchRecognizeRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3298,6 +3403,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -3318,6 +3424,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -3351,6 +3458,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -3376,6 +3484,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3389,6 +3498,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         getBatchRecognizeRequestBuilder() {
       return getBatchRecognizeRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3410,6 +3520,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.BatchRecognizeRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3448,6 +3559,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.CreateRecognizerRequest.Builder,
             com.google.cloud.speech.v2.CreateRecognizerRequestOrBuilder>
         createRecognizerRequestBuilder_;
+
     /**
      *
      *
@@ -3463,6 +3575,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasCreateRecognizerRequest() {
       return requestCase_ == 9;
     }
+
     /**
      *
      *
@@ -3488,6 +3601,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.CreateRecognizerRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3511,6 +3625,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -3531,6 +3646,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -3565,6 +3681,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -3590,6 +3707,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3603,6 +3721,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         getCreateRecognizerRequestBuilder() {
       return getCreateRecognizerRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3624,6 +3743,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.CreateRecognizerRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3662,6 +3782,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.UpdateRecognizerRequest.Builder,
             com.google.cloud.speech.v2.UpdateRecognizerRequestOrBuilder>
         updateRecognizerRequestBuilder_;
+
     /**
      *
      *
@@ -3677,6 +3798,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateRecognizerRequest() {
       return requestCase_ == 10;
     }
+
     /**
      *
      *
@@ -3702,6 +3824,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.UpdateRecognizerRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3725,6 +3848,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -3745,6 +3869,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -3779,6 +3904,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -3804,6 +3930,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3817,6 +3944,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         getUpdateRecognizerRequestBuilder() {
       return getUpdateRecognizerRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3838,6 +3966,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.UpdateRecognizerRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3876,6 +4005,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.DeleteRecognizerRequest.Builder,
             com.google.cloud.speech.v2.DeleteRecognizerRequestOrBuilder>
         deleteRecognizerRequestBuilder_;
+
     /**
      *
      *
@@ -3891,6 +4021,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasDeleteRecognizerRequest() {
       return requestCase_ == 11;
     }
+
     /**
      *
      *
@@ -3916,6 +4047,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.DeleteRecognizerRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3939,6 +4071,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -3959,6 +4092,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -3993,6 +4127,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -4018,6 +4153,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4031,6 +4167,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         getDeleteRecognizerRequestBuilder() {
       return getDeleteRecognizerRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4052,6 +4189,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.DeleteRecognizerRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4090,6 +4228,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.UndeleteRecognizerRequest.Builder,
             com.google.cloud.speech.v2.UndeleteRecognizerRequestOrBuilder>
         undeleteRecognizerRequestBuilder_;
+
     /**
      *
      *
@@ -4106,6 +4245,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasUndeleteRecognizerRequest() {
       return requestCase_ == 12;
     }
+
     /**
      *
      *
@@ -4132,6 +4272,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.UndeleteRecognizerRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4156,6 +4297,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -4177,6 +4319,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -4212,6 +4355,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -4238,6 +4382,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4252,6 +4397,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         getUndeleteRecognizerRequestBuilder() {
       return getUndeleteRecognizerRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4274,6 +4420,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.UndeleteRecognizerRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4313,6 +4460,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.CreateCustomClassRequest.Builder,
             com.google.cloud.speech.v2.CreateCustomClassRequestOrBuilder>
         createCustomClassRequestBuilder_;
+
     /**
      *
      *
@@ -4329,6 +4477,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasCreateCustomClassRequest() {
       return requestCase_ == 13;
     }
+
     /**
      *
      *
@@ -4355,6 +4504,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.CreateCustomClassRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4379,6 +4529,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4400,6 +4551,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4435,6 +4587,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4461,6 +4614,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4475,6 +4629,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         getCreateCustomClassRequestBuilder() {
       return getCreateCustomClassRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4497,6 +4652,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.CreateCustomClassRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4536,6 +4692,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.UpdateCustomClassRequest.Builder,
             com.google.cloud.speech.v2.UpdateCustomClassRequestOrBuilder>
         updateCustomClassRequestBuilder_;
+
     /**
      *
      *
@@ -4552,6 +4709,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateCustomClassRequest() {
       return requestCase_ == 14;
     }
+
     /**
      *
      *
@@ -4578,6 +4736,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.UpdateCustomClassRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4602,6 +4761,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -4623,6 +4783,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -4658,6 +4819,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -4684,6 +4846,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4698,6 +4861,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         getUpdateCustomClassRequestBuilder() {
       return getUpdateCustomClassRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4720,6 +4884,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.UpdateCustomClassRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4759,6 +4924,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.DeleteCustomClassRequest.Builder,
             com.google.cloud.speech.v2.DeleteCustomClassRequestOrBuilder>
         deleteCustomClassRequestBuilder_;
+
     /**
      *
      *
@@ -4775,6 +4941,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasDeleteCustomClassRequest() {
       return requestCase_ == 15;
     }
+
     /**
      *
      *
@@ -4801,6 +4968,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.DeleteCustomClassRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4825,6 +4993,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -4846,6 +5015,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -4881,6 +5051,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -4907,6 +5078,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4921,6 +5093,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         getDeleteCustomClassRequestBuilder() {
       return getDeleteCustomClassRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4943,6 +5116,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.DeleteCustomClassRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4982,6 +5156,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.UndeleteCustomClassRequest.Builder,
             com.google.cloud.speech.v2.UndeleteCustomClassRequestOrBuilder>
         undeleteCustomClassRequestBuilder_;
+
     /**
      *
      *
@@ -4998,6 +5173,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasUndeleteCustomClassRequest() {
       return requestCase_ == 16;
     }
+
     /**
      *
      *
@@ -5024,6 +5200,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.UndeleteCustomClassRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5048,6 +5225,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 16;
       return this;
     }
+
     /**
      *
      *
@@ -5069,6 +5247,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 16;
       return this;
     }
+
     /**
      *
      *
@@ -5104,6 +5283,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 16;
       return this;
     }
+
     /**
      *
      *
@@ -5130,6 +5310,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -5144,6 +5325,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         getUndeleteCustomClassRequestBuilder() {
       return getUndeleteCustomClassRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5166,6 +5348,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.UndeleteCustomClassRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5205,6 +5388,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.CreatePhraseSetRequest.Builder,
             com.google.cloud.speech.v2.CreatePhraseSetRequestOrBuilder>
         createPhraseSetRequestBuilder_;
+
     /**
      *
      *
@@ -5220,6 +5404,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasCreatePhraseSetRequest() {
       return requestCase_ == 17;
     }
+
     /**
      *
      *
@@ -5245,6 +5430,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.CreatePhraseSetRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5268,6 +5454,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 17;
       return this;
     }
+
     /**
      *
      *
@@ -5288,6 +5475,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 17;
       return this;
     }
+
     /**
      *
      *
@@ -5321,6 +5509,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 17;
       return this;
     }
+
     /**
      *
      *
@@ -5346,6 +5535,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -5359,6 +5549,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         getCreatePhraseSetRequestBuilder() {
       return getCreatePhraseSetRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5380,6 +5571,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.CreatePhraseSetRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5418,6 +5610,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.UpdatePhraseSetRequest.Builder,
             com.google.cloud.speech.v2.UpdatePhraseSetRequestOrBuilder>
         updatePhraseSetRequestBuilder_;
+
     /**
      *
      *
@@ -5433,6 +5626,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdatePhraseSetRequest() {
       return requestCase_ == 18;
     }
+
     /**
      *
      *
@@ -5458,6 +5652,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.UpdatePhraseSetRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5481,6 +5676,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 18;
       return this;
     }
+
     /**
      *
      *
@@ -5501,6 +5697,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 18;
       return this;
     }
+
     /**
      *
      *
@@ -5534,6 +5731,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 18;
       return this;
     }
+
     /**
      *
      *
@@ -5559,6 +5757,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -5572,6 +5771,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         getUpdatePhraseSetRequestBuilder() {
       return getUpdatePhraseSetRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5593,6 +5793,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.UpdatePhraseSetRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5631,6 +5832,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.DeletePhraseSetRequest.Builder,
             com.google.cloud.speech.v2.DeletePhraseSetRequestOrBuilder>
         deletePhraseSetRequestBuilder_;
+
     /**
      *
      *
@@ -5646,6 +5848,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasDeletePhraseSetRequest() {
       return requestCase_ == 19;
     }
+
     /**
      *
      *
@@ -5671,6 +5874,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.DeletePhraseSetRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5694,6 +5898,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 19;
       return this;
     }
+
     /**
      *
      *
@@ -5714,6 +5919,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 19;
       return this;
     }
+
     /**
      *
      *
@@ -5747,6 +5953,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 19;
       return this;
     }
+
     /**
      *
      *
@@ -5772,6 +5979,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -5785,6 +5993,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         getDeletePhraseSetRequestBuilder() {
       return getDeletePhraseSetRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5806,6 +6015,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.DeletePhraseSetRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5844,6 +6054,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.UndeletePhraseSetRequest.Builder,
             com.google.cloud.speech.v2.UndeletePhraseSetRequestOrBuilder>
         undeletePhraseSetRequestBuilder_;
+
     /**
      *
      *
@@ -5860,6 +6071,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasUndeletePhraseSetRequest() {
       return requestCase_ == 20;
     }
+
     /**
      *
      *
@@ -5886,6 +6098,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.UndeletePhraseSetRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5910,6 +6123,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 20;
       return this;
     }
+
     /**
      *
      *
@@ -5931,6 +6145,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 20;
       return this;
     }
+
     /**
      *
      *
@@ -5966,6 +6181,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 20;
       return this;
     }
+
     /**
      *
      *
@@ -5992,6 +6208,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6006,6 +6223,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         getUndeletePhraseSetRequestBuilder() {
       return getUndeletePhraseSetRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6028,6 +6246,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.UndeletePhraseSetRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6067,6 +6286,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.UpdateConfigRequest.Builder,
             com.google.cloud.speech.v2.UpdateConfigRequestOrBuilder>
         updateConfigRequestBuilder_;
+
     /**
      *
      *
@@ -6087,6 +6307,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateConfigRequest() {
       return requestCase_ == 21;
     }
+
     /**
      *
      *
@@ -6117,6 +6338,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.UpdateConfigRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6142,6 +6364,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 21;
       return this;
     }
+
     /**
      *
      *
@@ -6165,6 +6388,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 21;
       return this;
     }
+
     /**
      *
      *
@@ -6200,6 +6424,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       requestCase_ = 21;
       return this;
     }
+
     /**
      *
      *
@@ -6228,6 +6453,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6243,6 +6469,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.speech.v2.UpdateConfigRequest.Builder getUpdateConfigRequestBuilder() {
       return getUpdateConfigRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6267,6 +6494,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.UpdateConfigRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6303,6 +6531,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     private int progressPercent_;
+
     /**
      *
      *
@@ -6319,6 +6548,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public int getProgressPercent() {
       return progressPercent_;
     }
+
     /**
      *
      *
@@ -6339,6 +6569,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6363,6 +6594,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.cloud.speech.v2.BatchRecognizeMetadata.Builder,
             com.google.cloud.speech.v2.BatchRecognizeMetadataOrBuilder>
         batchRecognizeMetadataBuilder_;
+
     /**
      *
      *
@@ -6378,6 +6610,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasBatchRecognizeMetadata() {
       return metadataCase_ == 23;
     }
+
     /**
      *
      *
@@ -6403,6 +6636,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.BatchRecognizeMetadata.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6426,6 +6660,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       metadataCase_ = 23;
       return this;
     }
+
     /**
      *
      *
@@ -6446,6 +6681,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       metadataCase_ = 23;
       return this;
     }
+
     /**
      *
      *
@@ -6480,6 +6716,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       metadataCase_ = 23;
       return this;
     }
+
     /**
      *
      *
@@ -6505,6 +6742,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -6518,6 +6756,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         getBatchRecognizeMetadataBuilder() {
       return getBatchRecognizeMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6539,6 +6778,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.speech.v2.BatchRecognizeMetadata.getDefaultInstance();
       }
     }
+
     /**
      *
      *

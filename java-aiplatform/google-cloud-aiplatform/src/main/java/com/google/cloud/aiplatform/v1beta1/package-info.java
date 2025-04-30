@@ -99,6 +99,24 @@
  * }
  * }</pre>
  *
+ * <p>======================= ExampleStoreServiceClient =======================
+ *
+ * <p>Service Description: A service for managing and retrieving few-shot examples.
+ *
+ * <p>Sample for ExampleStoreServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ExampleStoreServiceClient exampleStoreServiceClient = ExampleStoreServiceClient.create()) {
+ *   ExampleStoreName name = ExampleStoreName.of("[PROJECT]", "[LOCATION]", "[EXAMPLE_STORE]");
+ *   ExampleStore response = exampleStoreServiceClient.getExampleStore(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= ExtensionExecutionServiceClient =======================
  *
  * <p>Service Description: A service for Extension execution.
@@ -620,6 +638,25 @@
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Schedule schedule = Schedule.newBuilder().build();
  *   Schedule response = scheduleServiceClient.createSchedule(parent, schedule);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SessionServiceClient =======================
+ *
+ * <p>Service Description: The service that manages Vertex Session related resources.
+ *
+ * <p>Sample for SessionServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
+ *   SessionName name =
+ *       SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]");
+ *   Session response = sessionServiceClient.getSession(name);
  * }
  * }</pre>
  *

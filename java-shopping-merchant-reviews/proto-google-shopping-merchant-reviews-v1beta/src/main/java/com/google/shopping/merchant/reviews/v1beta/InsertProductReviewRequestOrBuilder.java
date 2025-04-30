@@ -37,6 +37,7 @@ public interface InsertProductReviewRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface InsertProductReviewRequestOrBuilder
    * @return Whether the productReview field is set.
    */
   boolean hasProductReview();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface InsertProductReviewRequestOrBuilder
    * @return The productReview.
    */
   com.google.shopping.merchant.reviews.v1beta.ProductReview getProductReview();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface InsertProductReviewRequestOrBuilder
    * @return The dataSource.
    */
   java.lang.String getDataSource();
+
   /**
    *
    *

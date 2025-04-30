@@ -40,6 +40,7 @@ public interface GetCustomJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface CloudShellErrorDetailsOrBuilder
    * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
+
   /**
    *
    *

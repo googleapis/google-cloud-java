@@ -28,7 +28,7 @@ public interface NetworkingConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates the user requested specifc connection type between
+   * Optional. Indicates the user requested specific connection type between
    * Tenant and Customer projects. You cannot set networking connection type in
    * public IP environment.
    * </pre>
@@ -40,11 +40,12 @@ public interface NetworkingConfigOrBuilder
    * @return The enum numeric value on the wire for connectionType.
    */
   int getConnectionTypeValue();
+
   /**
    *
    *
    * <pre>
-   * Optional. Indicates the user requested specifc connection type between
+   * Optional. Indicates the user requested specific connection type between
    * Tenant and Customer projects. You cannot set networking connection type in
    * public IP environment.
    * </pre>

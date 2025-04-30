@@ -33,6 +33,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GoogleDriveSource)
     GoogleDriveSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GoogleDriveSource.newBuilder() to construct.
   private GoogleDriveSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
      * @return The enum numeric value on the wire for resourceType.
      */
     int getResourceTypeValue();
+
     /**
      *
      *
@@ -109,6 +111,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
      * @return The resourceId.
      */
     java.lang.String getResourceId();
+
     /**
      *
      *
@@ -122,6 +125,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getResourceIdBytes();
   }
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GoogleDriveSource.ResourceId)
       ResourceIdOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ResourceId.newBuilder() to construct.
     private ResourceId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -221,6 +226,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
        * <code>RESOURCE_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int RESOURCE_TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -231,6 +237,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
        * <code>RESOURCE_TYPE_FILE = 1;</code>
        */
       public static final int RESOURCE_TYPE_FILE_VALUE = 1;
+
       /**
        *
        *
@@ -329,6 +336,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
 
     public static final int RESOURCE_TYPE_FIELD_NUMBER = 1;
     private int resourceType_ = 0;
+
     /**
      *
      *
@@ -346,6 +354,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
     public int getResourceTypeValue() {
       return resourceType_;
     }
+
     /**
      *
      *
@@ -375,6 +384,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resourceId_ = "";
+
     /**
      *
      *
@@ -398,6 +408,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
+
     /**
      *
      *
@@ -599,6 +610,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -806,6 +818,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private int resourceType_ = 0;
+
       /**
        *
        *
@@ -823,6 +836,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
       public int getResourceTypeValue() {
         return resourceType_;
       }
+
       /**
        *
        *
@@ -843,6 +857,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -867,6 +882,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -891,6 +907,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -912,6 +929,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object resourceId_ = "";
+
       /**
        *
        *
@@ -934,6 +952,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -956,6 +975,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -977,6 +997,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -994,6 +1015,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1089,6 +1111,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.GoogleDriveSource.ResourceId>
       resourceIds_;
+
   /**
    *
    *
@@ -1105,6 +1128,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
       getResourceIdsList() {
     return resourceIds_;
   }
+
   /**
    *
    *
@@ -1122,6 +1146,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
       getResourceIdsOrBuilderList() {
     return resourceIds_;
   }
+
   /**
    *
    *
@@ -1137,6 +1162,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
   public int getResourceIdsCount() {
     return resourceIds_.size();
   }
+
   /**
    *
    *
@@ -1153,6 +1179,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
       int index) {
     return resourceIds_.get(index);
   }
+
   /**
    *
    *
@@ -1332,6 +1359,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1599,6 +1627,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
         return resourceIdsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1617,6 +1646,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
         return resourceIdsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1636,6 +1666,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
         return resourceIdsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1661,6 +1692,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1684,6 +1716,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1709,6 +1742,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1734,6 +1768,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1756,6 +1791,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1779,6 +1815,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1803,6 +1840,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1824,6 +1862,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1845,6 +1884,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1860,6 +1900,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
         getResourceIdsBuilder(int index) {
       return getResourceIdsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1879,6 +1920,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
         return resourceIdsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1899,6 +1941,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(resourceIds_);
       }
     }
+
     /**
      *
      *
@@ -1917,6 +1960,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
               com.google.cloud.aiplatform.v1beta1.GoogleDriveSource.ResourceId
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1936,6 +1980,7 @@ public final class GoogleDriveSource extends com.google.protobuf.GeneratedMessag
               com.google.cloud.aiplatform.v1beta1.GoogleDriveSource.ResourceId
                   .getDefaultInstance());
     }
+
     /**
      *
      *

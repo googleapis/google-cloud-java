@@ -34,6 +34,7 @@ public interface ZoneSetPolicyRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Binding> getBindingsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ZoneSetPolicyRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   com.google.cloud.compute.v1.Binding getBindings(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ZoneSetPolicyRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   int getBindingsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ZoneSetPolicyRequestOrBuilder
    * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.BindingOrBuilder> getBindingsOrBuilderList();
+
   /**
    *
    *
@@ -87,6 +91,7 @@ public interface ZoneSetPolicyRequestOrBuilder
    * @return Whether the etag field is set.
    */
   boolean hasEtag();
+
   /**
    *
    *
@@ -99,6 +104,7 @@ public interface ZoneSetPolicyRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -124,6 +130,7 @@ public interface ZoneSetPolicyRequestOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
+
   /**
    *
    *
@@ -136,6 +143,7 @@ public interface ZoneSetPolicyRequestOrBuilder
    * @return The policy.
    */
   com.google.cloud.compute.v1.Policy getPolicy();
+
   /**
    *
    *

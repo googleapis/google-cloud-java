@@ -36,6 +36,7 @@ public interface BatchRecognizeMetadataOrBuilder
    * </code>
    */
   int getTranscriptionMetadataCount();
+
   /**
    *
    *
@@ -48,10 +49,12 @@ public interface BatchRecognizeMetadataOrBuilder
    * </code>
    */
   boolean containsTranscriptionMetadata(java.lang.String key);
+
   /** Use {@link #getTranscriptionMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata>
       getTranscriptionMetadata();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface BatchRecognizeMetadataOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata>
       getTranscriptionMetadataMap();
+
   /**
    *
    *
@@ -81,6 +85,7 @@ public interface BatchRecognizeMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata defaultValue);
+
   /**
    *
    *

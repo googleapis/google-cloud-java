@@ -36,6 +36,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.apphub.v1.DiscoveredWorkload)
     DiscoveredWorkloadOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiscoveredWorkload.newBuilder() to construct.
   private DiscoveredWorkload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,12 +72,13 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
    * <pre>
    * Identifier. The resource name of the discovered workload. Format:
-   * "projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"
+   * `"projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -95,12 +97,13 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
    * Identifier. The resource name of the discovered workload. Format:
-   * "projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"
+   * `"projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -122,6 +125,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
 
   public static final int WORKLOAD_REFERENCE_FIELD_NUMBER = 2;
   private com.google.cloud.apphub.v1.WorkloadReference workloadReference_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
   public boolean hasWorkloadReference() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.apphub.v1.WorkloadReference.getDefaultInstance()
         : workloadReference_;
   }
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
 
   public static final int WORKLOAD_PROPERTIES_FIELD_NUMBER = 3;
   private com.google.cloud.apphub.v1.WorkloadProperties workloadProperties_;
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
   public boolean hasWorkloadProperties() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.apphub.v1.WorkloadProperties.getDefaultInstance()
         : workloadProperties_;
   }
+
   /**
    *
    *
@@ -425,6 +434,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -667,12 +677,13 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
      * <pre>
      * Identifier. The resource name of the discovered workload. Format:
-     * "projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"
+     * `"projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -690,12 +701,13 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Identifier. The resource name of the discovered workload. Format:
-     * "projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"
+     * `"projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -713,12 +725,13 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Identifier. The resource name of the discovered workload. Format:
-     * "projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"
+     * `"projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -735,12 +748,13 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Identifier. The resource name of the discovered workload. Format:
-     * "projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"
+     * `"projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -753,12 +767,13 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Identifier. The resource name of the discovered workload. Format:
-     * "projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"
+     * `"projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -783,6 +798,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
             com.google.cloud.apphub.v1.WorkloadReference.Builder,
             com.google.cloud.apphub.v1.WorkloadReferenceOrBuilder>
         workloadReferenceBuilder_;
+
     /**
      *
      *
@@ -800,6 +816,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
     public boolean hasWorkloadReference() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -823,6 +840,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
         return workloadReferenceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -848,6 +866,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +890,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +922,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +945,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +963,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getWorkloadReferenceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -962,6 +985,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
             : workloadReference_;
       }
     }
+
     /**
      *
      *
@@ -997,6 +1021,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
             com.google.cloud.apphub.v1.WorkloadProperties.Builder,
             com.google.cloud.apphub.v1.WorkloadPropertiesOrBuilder>
         workloadPropertiesBuilder_;
+
     /**
      *
      *
@@ -1014,6 +1039,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
     public boolean hasWorkloadProperties() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1037,6 +1063,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
         return workloadPropertiesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1062,6 +1089,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1085,6 +1113,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1116,6 +1145,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1138,6 +1168,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1155,6 +1186,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getWorkloadPropertiesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1176,6 +1208,7 @@ public final class DiscoveredWorkload extends com.google.protobuf.GeneratedMessa
             : workloadProperties_;
       }
     }
+
     /**
      *
      *

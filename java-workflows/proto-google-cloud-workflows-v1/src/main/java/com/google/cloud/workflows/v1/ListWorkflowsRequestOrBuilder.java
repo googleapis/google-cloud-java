@@ -39,6 +39,7 @@ public interface ListWorkflowsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -87,6 +88,7 @@ public interface ListWorkflowsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -109,6 +111,16 @@ public interface ListWorkflowsRequestOrBuilder
    *
    * <pre>
    * Filter to restrict results to specific workflows.
+   * For details, see &lt;a href="https://google.aip.dev/160"
+   * class="external"&gt;AIP-160&lt;/a&gt;.
+   *
+   * For example, if you are using the Google APIs Explorer:
+   *
+   * `state="SUCCEEDED"`
+   *
+   * or
+   *
+   * `createTime&gt;"2023-08-01" AND state="FAILED"`
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -116,11 +128,22 @@ public interface ListWorkflowsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
    * <pre>
    * Filter to restrict results to specific workflows.
+   * For details, see &lt;a href="https://google.aip.dev/160"
+   * class="external"&gt;AIP-160&lt;/a&gt;.
+   *
+   * For example, if you are using the Google APIs Explorer:
+   *
+   * `state="SUCCEEDED"`
+   *
+   * or
+   *
+   * `createTime&gt;"2023-08-01" AND state="FAILED"`
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -144,6 +167,7 @@ public interface ListWorkflowsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *

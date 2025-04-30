@@ -33,6 +33,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.CreateWorkspaceRequest)
     CreateWorkspaceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateWorkspaceRequest.newBuilder() to construct.
   private CreateWorkspaceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
 
   public static final int WORKSPACE_FIELD_NUMBER = 2;
   private com.google.cloud.dataform.v1beta1.Workspace workspace_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
   public boolean hasWorkspace() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.dataform.v1beta1.Workspace.getDefaultInstance()
         : workspace_;
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workspaceId_ = "";
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -414,6 +422,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -642,6 +651,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -667,6 +677,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -692,6 +703,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -716,6 +728,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +749,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +782,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.dataform.v1beta1.Workspace.Builder,
             com.google.cloud.dataform.v1beta1.WorkspaceOrBuilder>
         workspaceBuilder_;
+
     /**
      *
      *
@@ -784,6 +799,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
     public boolean hasWorkspace() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -806,6 +822,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
         return workspaceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -830,6 +847,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +870,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +900,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +922,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +939,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getWorkspaceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -938,6 +960,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
             : workspace_;
       }
     }
+
     /**
      *
      *
@@ -967,6 +990,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object workspaceId_ = "";
+
     /**
      *
      *
@@ -990,6 +1014,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1035,6 +1061,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1080,7 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

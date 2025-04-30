@@ -39,6 +39,7 @@ public interface BatchPredictOutputConfigOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface BatchPredictOutputConfigOrBuilder
    * @return The gcsDestination.
    */
   com.google.cloud.automl.v1.GcsDestination getGcsDestination();
+
   /**
    *
    *

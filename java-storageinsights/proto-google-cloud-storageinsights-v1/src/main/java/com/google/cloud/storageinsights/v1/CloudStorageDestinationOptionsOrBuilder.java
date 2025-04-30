@@ -36,6 +36,7 @@ public interface CloudStorageDestinationOptionsOrBuilder
    * @return The bucket.
    */
   java.lang.String getBucket();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface CloudStorageDestinationOptionsOrBuilder
    * @return The destinationPath.
    */
   java.lang.String getDestinationPath();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface VodSessionAdOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface VodSessionAdOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface VodSessionAdOrBuilder
    * @return Whether the companionAds field is set.
    */
   boolean hasCompanionAds();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface VodSessionAdOrBuilder
    * @return The companionAds.
    */
   com.google.cloud.video.stitcher.v1.CompanionAds getCompanionAds();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface VodSessionAdOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.Event activity_events = 3;</code>
    */
   java.util.List<com.google.cloud.video.stitcher.v1.Event> getActivityEventsList();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface VodSessionAdOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.Event activity_events = 3;</code>
    */
   com.google.cloud.video.stitcher.v1.Event getActivityEvents(int index);
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public interface VodSessionAdOrBuilder
    * <code>repeated .google.cloud.video.stitcher.v1.Event activity_events = 3;</code>
    */
   int getActivityEventsCount();
+
   /**
    *
    *
@@ -151,6 +158,7 @@ public interface VodSessionAdOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.stitcher.v1.EventOrBuilder>
       getActivityEventsOrBuilderList();
+
   /**
    *
    *

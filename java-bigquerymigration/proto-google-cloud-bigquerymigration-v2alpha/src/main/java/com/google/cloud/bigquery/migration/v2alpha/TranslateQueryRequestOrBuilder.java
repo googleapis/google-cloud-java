@@ -39,6 +39,7 @@ public interface TranslateQueryRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface TranslateQueryRequestOrBuilder
    * @return The enum numeric value on the wire for sourceDialect.
    */
   int getSourceDialectValue();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface TranslateQueryRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *

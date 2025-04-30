@@ -34,6 +34,7 @@ public final class TrajectoryExactMatchSpec extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.TrajectoryExactMatchSpec)
     TrajectoryExactMatchSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TrajectoryExactMatchSpec.newBuilder() to construct.
   private TrajectoryExactMatchSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class TrajectoryExactMatchSpec extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

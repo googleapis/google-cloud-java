@@ -33,6 +33,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.HybridInspectStatistics)
     HybridInspectStatisticsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HybridInspectStatistics.newBuilder() to construct.
   private HybridInspectStatistics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
 
   public static final int PROCESSED_COUNT_FIELD_NUMBER = 1;
   private long processedCount_ = 0L;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
 
   public static final int ABORTED_COUNT_FIELD_NUMBER = 2;
   private long abortedCount_ = 0L;
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
 
   public static final int PENDING_COUNT_FIELD_NUMBER = 3;
   private long pendingCount_ = 0L;
+
   /**
    *
    *
@@ -297,6 +301,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -505,6 +510,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
     private int bitField0_;
 
     private long processedCount_;
+
     /**
      *
      *
@@ -520,6 +526,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
     public long getProcessedCount() {
       return processedCount_;
     }
+
     /**
      *
      *
@@ -539,6 +546,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -558,6 +566,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
     }
 
     private long abortedCount_;
+
     /**
      *
      *
@@ -574,6 +583,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
     public long getAbortedCount() {
       return abortedCount_;
     }
+
     /**
      *
      *
@@ -594,6 +604,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -614,6 +625,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
     }
 
     private long pendingCount_;
+
     /**
      *
      *
@@ -633,6 +645,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
     public long getPendingCount() {
       return pendingCount_;
     }
+
     /**
      *
      *
@@ -656,6 +669,7 @@ public final class HybridInspectStatistics extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

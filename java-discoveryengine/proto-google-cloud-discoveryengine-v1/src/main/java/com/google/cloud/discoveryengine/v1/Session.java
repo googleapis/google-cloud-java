@@ -33,6 +33,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.Session)
     SessionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Session.newBuilder() to construct.
   private Session(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -40,6 +41,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
 
   private Session() {
     name_ = "";
+    displayName_ = "";
     state_ = 0;
     userPseudoId_ = "";
     turns_ = java.util.Collections.emptyList();
@@ -109,6 +111,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -218,6 +221,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the query field is set.
      */
     boolean hasQuery();
+
     /**
      *
      *
@@ -230,6 +234,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * @return The query.
      */
     com.google.cloud.discoveryengine.v1.Query getQuery();
+
     /**
      *
      *
@@ -256,6 +261,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * @return The answer.
      */
     java.lang.String getAnswer();
+
     /**
      *
      *
@@ -271,7 +277,66 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for answer.
      */
     com.google.protobuf.ByteString getAnswerBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. In
+     * [ConversationalSearchService.GetSession][google.cloud.discoveryengine.v1.ConversationalSearchService.GetSession]
+     * API, if
+     * [GetSessionRequest.include_answer_details][google.cloud.discoveryengine.v1.GetSessionRequest.include_answer_details]
+     * is set to true, this field will be populated when getting answer query
+     * session.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Answer detailed_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the detailedAnswer field is set.
+     */
+    boolean hasDetailedAnswer();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. In
+     * [ConversationalSearchService.GetSession][google.cloud.discoveryengine.v1.ConversationalSearchService.GetSession]
+     * API, if
+     * [GetSessionRequest.include_answer_details][google.cloud.discoveryengine.v1.GetSessionRequest.include_answer_details]
+     * is set to true, this field will be populated when getting answer query
+     * session.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Answer detailed_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The detailedAnswer.
+     */
+    com.google.cloud.discoveryengine.v1.Answer getDetailedAnswer();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. In
+     * [ConversationalSearchService.GetSession][google.cloud.discoveryengine.v1.ConversationalSearchService.GetSession]
+     * API, if
+     * [GetSessionRequest.include_answer_details][google.cloud.discoveryengine.v1.GetSessionRequest.include_answer_details]
+     * is set to true, this field will be populated when getting answer query
+     * session.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Answer detailed_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.AnswerOrBuilder getDetailedAnswerOrBuilder();
   }
+
   /**
    *
    *
@@ -287,6 +352,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.Session.Turn)
       TurnOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Turn.newBuilder() to construct.
     private Turn(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -320,6 +386,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int QUERY_FIELD_NUMBER = 1;
     private com.google.cloud.discoveryengine.v1.Query query_;
+
     /**
      *
      *
@@ -335,6 +402,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQuery() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -352,6 +420,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.discoveryengine.v1.Query.getDefaultInstance()
           : query_;
     }
+
     /**
      *
      *
@@ -372,6 +441,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object answer_ = "";
+
     /**
      *
      *
@@ -398,6 +468,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -425,6 +496,80 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int DETAILED_ANSWER_FIELD_NUMBER = 7;
+    private com.google.cloud.discoveryengine.v1.Answer detailedAnswer_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. In
+     * [ConversationalSearchService.GetSession][google.cloud.discoveryengine.v1.ConversationalSearchService.GetSession]
+     * API, if
+     * [GetSessionRequest.include_answer_details][google.cloud.discoveryengine.v1.GetSessionRequest.include_answer_details]
+     * is set to true, this field will be populated when getting answer query
+     * session.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Answer detailed_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the detailedAnswer field is set.
+     */
+    @java.lang.Override
+    public boolean hasDetailedAnswer() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. In
+     * [ConversationalSearchService.GetSession][google.cloud.discoveryengine.v1.ConversationalSearchService.GetSession]
+     * API, if
+     * [GetSessionRequest.include_answer_details][google.cloud.discoveryengine.v1.GetSessionRequest.include_answer_details]
+     * is set to true, this field will be populated when getting answer query
+     * session.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Answer detailed_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The detailedAnswer.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.Answer getDetailedAnswer() {
+      return detailedAnswer_ == null
+          ? com.google.cloud.discoveryengine.v1.Answer.getDefaultInstance()
+          : detailedAnswer_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. In
+     * [ConversationalSearchService.GetSession][google.cloud.discoveryengine.v1.ConversationalSearchService.GetSession]
+     * API, if
+     * [GetSessionRequest.include_answer_details][google.cloud.discoveryengine.v1.GetSessionRequest.include_answer_details]
+     * is set to true, this field will be populated when getting answer query
+     * session.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Answer detailed_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.AnswerOrBuilder getDetailedAnswerOrBuilder() {
+      return detailedAnswer_ == null
+          ? com.google.cloud.discoveryengine.v1.Answer.getDefaultInstance()
+          : detailedAnswer_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -445,6 +590,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(answer_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, answer_);
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(7, getDetailedAnswer());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -459,6 +607,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(answer_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, answer_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getDetailedAnswer());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -481,6 +632,10 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         if (!getQuery().equals(other.getQuery())) return false;
       }
       if (!getAnswer().equals(other.getAnswer())) return false;
+      if (hasDetailedAnswer() != other.hasDetailedAnswer()) return false;
+      if (hasDetailedAnswer()) {
+        if (!getDetailedAnswer().equals(other.getDetailedAnswer())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -498,6 +653,10 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       }
       hash = (37 * hash) + ANSWER_FIELD_NUMBER;
       hash = (53 * hash) + getAnswer().hashCode();
+      if (hasDetailedAnswer()) {
+        hash = (37 * hash) + DETAILED_ANSWER_FIELD_NUMBER;
+        hash = (53 * hash) + getDetailedAnswer().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -599,6 +758,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -642,6 +802,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getQueryFieldBuilder();
+          getDetailedAnswerFieldBuilder();
         }
       }
 
@@ -655,6 +816,11 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
           queryBuilder_ = null;
         }
         answer_ = "";
+        detailedAnswer_ = null;
+        if (detailedAnswerBuilder_ != null) {
+          detailedAnswerBuilder_.dispose();
+          detailedAnswerBuilder_ = null;
+        }
         return this;
       }
 
@@ -698,6 +864,11 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.answer_ = answer_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.detailedAnswer_ =
+              detailedAnswerBuilder_ == null ? detailedAnswer_ : detailedAnswerBuilder_.build();
+          to_bitField0_ |= 0x00000002;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -758,6 +929,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (other.hasDetailedAnswer()) {
+          mergeDetailedAnswer(other.getDetailedAnswer());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -796,6 +970,13 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 58:
+                {
+                  input.readMessage(
+                      getDetailedAnswerFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -821,6 +1002,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.discoveryengine.v1.Query.Builder,
               com.google.cloud.discoveryengine.v1.QueryOrBuilder>
           queryBuilder_;
+
       /**
        *
        *
@@ -835,6 +1017,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       public boolean hasQuery() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -855,6 +1038,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
           return queryBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -877,6 +1061,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -896,6 +1081,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -923,6 +1109,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -942,6 +1129,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -956,6 +1144,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getQueryFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -974,6 +1163,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
               : query_;
         }
       }
+
       /**
        *
        *
@@ -1001,6 +1191,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object answer_ = "";
+
       /**
        *
        *
@@ -1026,6 +1217,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1051,6 +1243,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1075,6 +1268,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1095,6 +1289,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1119,6 +1314,265 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.discoveryengine.v1.Answer detailedAnswer_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.Answer,
+              com.google.cloud.discoveryengine.v1.Answer.Builder,
+              com.google.cloud.discoveryengine.v1.AnswerOrBuilder>
+          detailedAnswerBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. In
+       * [ConversationalSearchService.GetSession][google.cloud.discoveryengine.v1.ConversationalSearchService.GetSession]
+       * API, if
+       * [GetSessionRequest.include_answer_details][google.cloud.discoveryengine.v1.GetSessionRequest.include_answer_details]
+       * is set to true, this field will be populated when getting answer query
+       * session.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Answer detailed_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the detailedAnswer field is set.
+       */
+      public boolean hasDetailedAnswer() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. In
+       * [ConversationalSearchService.GetSession][google.cloud.discoveryengine.v1.ConversationalSearchService.GetSession]
+       * API, if
+       * [GetSessionRequest.include_answer_details][google.cloud.discoveryengine.v1.GetSessionRequest.include_answer_details]
+       * is set to true, this field will be populated when getting answer query
+       * session.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Answer detailed_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The detailedAnswer.
+       */
+      public com.google.cloud.discoveryengine.v1.Answer getDetailedAnswer() {
+        if (detailedAnswerBuilder_ == null) {
+          return detailedAnswer_ == null
+              ? com.google.cloud.discoveryengine.v1.Answer.getDefaultInstance()
+              : detailedAnswer_;
+        } else {
+          return detailedAnswerBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. In
+       * [ConversationalSearchService.GetSession][google.cloud.discoveryengine.v1.ConversationalSearchService.GetSession]
+       * API, if
+       * [GetSessionRequest.include_answer_details][google.cloud.discoveryengine.v1.GetSessionRequest.include_answer_details]
+       * is set to true, this field will be populated when getting answer query
+       * session.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Answer detailed_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setDetailedAnswer(com.google.cloud.discoveryengine.v1.Answer value) {
+        if (detailedAnswerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detailedAnswer_ = value;
+        } else {
+          detailedAnswerBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. In
+       * [ConversationalSearchService.GetSession][google.cloud.discoveryengine.v1.ConversationalSearchService.GetSession]
+       * API, if
+       * [GetSessionRequest.include_answer_details][google.cloud.discoveryengine.v1.GetSessionRequest.include_answer_details]
+       * is set to true, this field will be populated when getting answer query
+       * session.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Answer detailed_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setDetailedAnswer(
+          com.google.cloud.discoveryengine.v1.Answer.Builder builderForValue) {
+        if (detailedAnswerBuilder_ == null) {
+          detailedAnswer_ = builderForValue.build();
+        } else {
+          detailedAnswerBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. In
+       * [ConversationalSearchService.GetSession][google.cloud.discoveryengine.v1.ConversationalSearchService.GetSession]
+       * API, if
+       * [GetSessionRequest.include_answer_details][google.cloud.discoveryengine.v1.GetSessionRequest.include_answer_details]
+       * is set to true, this field will be populated when getting answer query
+       * session.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Answer detailed_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeDetailedAnswer(com.google.cloud.discoveryengine.v1.Answer value) {
+        if (detailedAnswerBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && detailedAnswer_ != null
+              && detailedAnswer_
+                  != com.google.cloud.discoveryengine.v1.Answer.getDefaultInstance()) {
+            getDetailedAnswerBuilder().mergeFrom(value);
+          } else {
+            detailedAnswer_ = value;
+          }
+        } else {
+          detailedAnswerBuilder_.mergeFrom(value);
+        }
+        if (detailedAnswer_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. In
+       * [ConversationalSearchService.GetSession][google.cloud.discoveryengine.v1.ConversationalSearchService.GetSession]
+       * API, if
+       * [GetSessionRequest.include_answer_details][google.cloud.discoveryengine.v1.GetSessionRequest.include_answer_details]
+       * is set to true, this field will be populated when getting answer query
+       * session.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Answer detailed_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearDetailedAnswer() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        detailedAnswer_ = null;
+        if (detailedAnswerBuilder_ != null) {
+          detailedAnswerBuilder_.dispose();
+          detailedAnswerBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. In
+       * [ConversationalSearchService.GetSession][google.cloud.discoveryengine.v1.ConversationalSearchService.GetSession]
+       * API, if
+       * [GetSessionRequest.include_answer_details][google.cloud.discoveryengine.v1.GetSessionRequest.include_answer_details]
+       * is set to true, this field will be populated when getting answer query
+       * session.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Answer detailed_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.Answer.Builder getDetailedAnswerBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getDetailedAnswerFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. In
+       * [ConversationalSearchService.GetSession][google.cloud.discoveryengine.v1.ConversationalSearchService.GetSession]
+       * API, if
+       * [GetSessionRequest.include_answer_details][google.cloud.discoveryengine.v1.GetSessionRequest.include_answer_details]
+       * is set to true, this field will be populated when getting answer query
+       * session.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Answer detailed_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.AnswerOrBuilder getDetailedAnswerOrBuilder() {
+        if (detailedAnswerBuilder_ != null) {
+          return detailedAnswerBuilder_.getMessageOrBuilder();
+        } else {
+          return detailedAnswer_ == null
+              ? com.google.cloud.discoveryengine.v1.Answer.getDefaultInstance()
+              : detailedAnswer_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. In
+       * [ConversationalSearchService.GetSession][google.cloud.discoveryengine.v1.ConversationalSearchService.GetSession]
+       * API, if
+       * [GetSessionRequest.include_answer_details][google.cloud.discoveryengine.v1.GetSessionRequest.include_answer_details]
+       * is set to true, this field will be populated when getting answer query
+       * session.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Answer detailed_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.Answer,
+              com.google.cloud.discoveryengine.v1.Answer.Builder,
+              com.google.cloud.discoveryengine.v1.AnswerOrBuilder>
+          getDetailedAnswerFieldBuilder() {
+        if (detailedAnswerBuilder_ == null) {
+          detailedAnswerBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.Answer,
+                  com.google.cloud.discoveryengine.v1.Answer.Builder,
+                  com.google.cloud.discoveryengine.v1.AnswerOrBuilder>(
+                  getDetailedAnswer(), getParentForChildren(), isClean());
+          detailedAnswer_ = null;
+        }
+        return detailedAnswerBuilder_;
       }
 
       @java.lang.Override
@@ -1190,6 +1644,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1214,6 +1669,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1239,8 +1695,68 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The display name of the session.
+   *
+   * This field is used to identify the session in the UI.
+   * By default, the display name is the first turn query text in the session.
+   * </pre>
+   *
+   * <code>string display_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The display name of the session.
+   *
+   * This field is used to identify the session in the UI.
+   * By default, the display name is the first turn query text in the session.
+   * </pre>
+   *
+   * <code>string display_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
+
   /**
    *
    *
@@ -1256,6 +1772,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -1278,6 +1795,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userPseudoId_ = "";
+
   /**
    *
    *
@@ -1301,6 +1819,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1329,6 +1848,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.discoveryengine.v1.Session.Turn> turns_;
+
   /**
    *
    *
@@ -1342,6 +1862,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.discoveryengine.v1.Session.Turn> getTurnsList() {
     return turns_;
   }
+
   /**
    *
    *
@@ -1356,6 +1877,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       getTurnsOrBuilderList() {
     return turns_;
   }
+
   /**
    *
    *
@@ -1369,6 +1891,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
   public int getTurnsCount() {
     return turns_.size();
   }
+
   /**
    *
    *
@@ -1382,6 +1905,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.discoveryengine.v1.Session.Turn getTurns(int index) {
     return turns_.get(index);
   }
+
   /**
    *
    *
@@ -1398,6 +1922,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -1414,6 +1939,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1430,6 +1956,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -1447,6 +1974,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -1463,6 +1991,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1479,6 +2008,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -1492,6 +2022,26 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+  }
+
+  public static final int IS_PINNED_FIELD_NUMBER = 8;
+  private boolean isPinned_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the session is pinned, pinned session will be displayed
+   * on the top of the session list.
+   * </pre>
+   *
+   * <code>bool is_pinned = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The isPinned.
+   */
+  @java.lang.Override
+  public boolean getIsPinned() {
+    return isPinned_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1526,6 +2076,12 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(6, getEndTime());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, displayName_);
+    }
+    if (isPinned_ != false) {
+      output.writeBool(8, isPinned_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1553,6 +2109,12 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getEndTime());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, displayName_);
+    }
+    if (isPinned_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, isPinned_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1570,6 +2132,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.discoveryengine.v1.Session) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (state_ != other.state_) return false;
     if (!getUserPseudoId().equals(other.getUserPseudoId())) return false;
     if (!getTurnsList().equals(other.getTurnsList())) return false;
@@ -1581,6 +2144,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
     if (hasEndTime()) {
       if (!getEndTime().equals(other.getEndTime())) return false;
     }
+    if (getIsPinned() != other.getIsPinned()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1594,6 +2158,8 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
     hash = (37 * hash) + USER_PSEUDO_ID_FIELD_NUMBER;
@@ -1610,6 +2176,8 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime().hashCode();
     }
+    hash = (37 * hash) + IS_PINNED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsPinned());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1710,6 +2278,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1761,6 +2330,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      displayName_ = "";
       state_ = 0;
       userPseudoId_ = "";
       if (turnsBuilder_ == null) {
@@ -1769,7 +2339,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         turns_ = null;
         turnsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       startTime_ = null;
       if (startTimeBuilder_ != null) {
         startTimeBuilder_.dispose();
@@ -1780,6 +2350,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
+      isPinned_ = false;
       return this;
     }
 
@@ -1817,9 +2388,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.discoveryengine.v1.Session result) {
       if (turnsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           turns_ = java.util.Collections.unmodifiableList(turns_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.turns_ = turns_;
       } else {
@@ -1833,19 +2404,25 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         result.name_ = name_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.state_ = state_;
+        result.displayName_ = displayName_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.userPseudoId_ = userPseudoId_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.isPinned_ = isPinned_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1900,19 +2477,24 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
       if (!other.getUserPseudoId().isEmpty()) {
         userPseudoId_ = other.userPseudoId_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (turnsBuilder_ == null) {
         if (!other.turns_.isEmpty()) {
           if (turns_.isEmpty()) {
             turns_ = other.turns_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureTurnsIsMutable();
             turns_.addAll(other.turns_);
@@ -1925,7 +2507,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
             turnsBuilder_.dispose();
             turnsBuilder_ = null;
             turns_ = other.turns_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             turnsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTurnsFieldBuilder()
@@ -1940,6 +2522,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasEndTime()) {
         mergeEndTime(other.getEndTime());
+      }
+      if (other.getIsPinned() != false) {
+        setIsPinned(other.getIsPinned());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1976,13 +2561,13 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 16
             case 26:
               {
                 userPseudoId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
@@ -2002,15 +2587,27 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
+            case 58:
+              {
+                displayName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 58
+            case 64:
+              {
+                isPinned_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2031,6 +2628,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2054,6 +2652,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2077,6 +2676,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2099,6 +2699,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2117,6 +2718,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2141,7 +2743,134 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object displayName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display name of the session.
+     *
+     * This field is used to identify the session in the UI.
+     * By default, the display name is the first turn query text in the session.
+     * </pre>
+     *
+     * <code>string display_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display name of the session.
+     *
+     * This field is used to identify the session in the UI.
+     * By default, the display name is the first turn query text in the session.
+     * </pre>
+     *
+     * <code>string display_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display name of the session.
+     *
+     * This field is used to identify the session in the UI.
+     * By default, the display name is the first turn query text in the session.
+     * </pre>
+     *
+     * <code>string display_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      displayName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display name of the session.
+     *
+     * This field is used to identify the session in the UI.
+     * By default, the display name is the first turn query text in the session.
+     * </pre>
+     *
+     * <code>string display_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+      displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display name of the session.
+     *
+     * This field is used to identify the session in the UI.
+     * By default, the display name is the first turn query text in the session.
+     * </pre>
+     *
+     * <code>string display_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      displayName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private int state_ = 0;
+
     /**
      *
      *
@@ -2157,6 +2886,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2171,10 +2901,11 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2194,6 +2925,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.discoveryengine.v1.Session.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2210,11 +2942,12 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       state_ = value.getNumber();
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2227,13 +2960,14 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       state_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object userPseudoId_ = "";
+
     /**
      *
      *
@@ -2256,6 +2990,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2278,6 +3013,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2295,10 +3031,11 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       userPseudoId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2312,10 +3049,11 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUserPseudoId() {
       userPseudoId_ = getDefaultInstance().getUserPseudoId();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2334,7 +3072,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       userPseudoId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2343,9 +3081,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTurnsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         turns_ = new java.util.ArrayList<com.google.cloud.discoveryengine.v1.Session.Turn>(turns_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2371,6 +3109,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         return turnsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2387,6 +3126,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         return turnsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2403,6 +3143,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         return turnsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2425,6 +3166,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2445,6 +3187,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2467,6 +3210,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2489,6 +3233,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2509,6 +3254,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2529,6 +3275,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2549,6 +3296,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2561,13 +3309,14 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTurns() {
       if (turnsBuilder_ == null) {
         turns_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         turnsBuilder_.clear();
       }
       return this;
     }
+
     /**
      *
      *
@@ -2587,6 +3336,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2599,6 +3349,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1.Session.Turn.Builder getTurnsBuilder(int index) {
       return getTurnsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2615,6 +3366,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         return turnsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2632,6 +3384,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(turns_);
       }
     }
+
     /**
      *
      *
@@ -2645,6 +3398,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       return getTurnsFieldBuilder()
           .addBuilder(com.google.cloud.discoveryengine.v1.Session.Turn.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2658,6 +3412,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       return getTurnsFieldBuilder()
           .addBuilder(index, com.google.cloud.discoveryengine.v1.Session.Turn.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2683,7 +3438,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.discoveryengine.v1.Session.Turn,
                 com.google.cloud.discoveryengine.v1.Session.Turn.Builder,
                 com.google.cloud.discoveryengine.v1.Session.TurnOrBuilder>(
-                turns_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                turns_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         turns_ = null;
       }
       return turnsBuilder_;
@@ -2695,6 +3450,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -2708,8 +3464,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2729,6 +3486,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2748,10 +3506,11 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       } else {
         startTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2768,10 +3527,11 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2784,7 +3544,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && startTime_ != null
             && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getStartTimeBuilder().mergeFrom(value);
@@ -2795,11 +3555,12 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         startTimeBuilder_.mergeFrom(value);
       }
       if (startTime_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
     }
+
     /**
      *
      *
@@ -2811,7 +3572,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       startTime_ = null;
       if (startTimeBuilder_ != null) {
         startTimeBuilder_.dispose();
@@ -2820,6 +3581,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2831,10 +3593,11 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2852,6 +3615,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -2885,6 +3649,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -2898,8 +3663,9 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2919,6 +3685,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2938,10 +3705,11 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       } else {
         endTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2958,10 +3726,11 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2974,7 +3743,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && endTime_ != null
             && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getEndTimeBuilder().mergeFrom(value);
@@ -2985,11 +3754,12 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         endTimeBuilder_.mergeFrom(value);
       }
       if (endTime_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
     }
+
     /**
      *
      *
@@ -3001,7 +3771,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEndTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       endTime_ = null;
       if (endTimeBuilder_ != null) {
         endTimeBuilder_.dispose();
@@ -3010,6 +3780,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3021,10 +3792,11 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3042,6 +3814,7 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -3067,6 +3840,65 @@ public final class Session extends com.google.protobuf.GeneratedMessageV3
         endTime_ = null;
       }
       return endTimeBuilder_;
+    }
+
+    private boolean isPinned_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the session is pinned, pinned session will be displayed
+     * on the top of the session list.
+     * </pre>
+     *
+     * <code>bool is_pinned = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The isPinned.
+     */
+    @java.lang.Override
+    public boolean getIsPinned() {
+      return isPinned_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the session is pinned, pinned session will be displayed
+     * on the top of the session list.
+     * </pre>
+     *
+     * <code>bool is_pinned = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The isPinned to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsPinned(boolean value) {
+
+      isPinned_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the session is pinned, pinned session will be displayed
+     * on the top of the session list.
+     * </pre>
+     *
+     * <code>bool is_pinned = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIsPinned() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      isPinned_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

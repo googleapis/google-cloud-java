@@ -34,6 +34,7 @@ public interface ListTestCaseResultsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.TestCaseResult test_case_results = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.TestCaseResult> getTestCaseResultsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListTestCaseResultsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.TestCaseResult test_case_results = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.TestCaseResult getTestCaseResults(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListTestCaseResultsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.TestCaseResult test_case_results = 1;</code>
    */
   int getTestCaseResultsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListTestCaseResultsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.TestCaseResultOrBuilder>
       getTestCaseResultsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListTestCaseResultsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

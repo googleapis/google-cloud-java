@@ -41,6 +41,7 @@ public interface DataStoreOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface DataStoreOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface DataStoreOrBuilder
    * @return The enum numeric value on the wire for industryVertical.
    */
   int getIndustryVerticalValue();
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public interface DataStoreOrBuilder
    * @return A list containing the solutionTypes.
    */
   java.util.List<com.google.cloud.discoveryengine.v1.SolutionType> getSolutionTypesList();
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public interface DataStoreOrBuilder
    * @return The count of solutionTypes.
    */
   int getSolutionTypesCount();
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public interface DataStoreOrBuilder
    * @return The solutionTypes at the given index.
    */
   com.google.cloud.discoveryengine.v1.SolutionType getSolutionTypes(int index);
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public interface DataStoreOrBuilder
    * @return A list containing the enum numeric values on the wire for solutionTypes.
    */
   java.util.List<java.lang.Integer> getSolutionTypesValueList();
+
   /**
    *
    *
@@ -212,7 +219,7 @@ public interface DataStoreOrBuilder
    *
    * <pre>
    * Output only. The id of the default
-   * [Schema][google.cloud.discoveryengine.v1.Schema] asscociated to this data
+   * [Schema][google.cloud.discoveryengine.v1.Schema] associated to this data
    * store.
    * </pre>
    *
@@ -221,12 +228,13 @@ public interface DataStoreOrBuilder
    * @return The defaultSchemaId.
    */
   java.lang.String getDefaultSchemaId();
+
   /**
    *
    *
    * <pre>
    * Output only. The id of the default
-   * [Schema][google.cloud.discoveryengine.v1.Schema] asscociated to this data
+   * [Schema][google.cloud.discoveryengine.v1.Schema] associated to this data
    * store.
    * </pre>
    *
@@ -252,6 +260,7 @@ public interface DataStoreOrBuilder
    * @return The enum numeric value on the wire for contentConfig.
    */
   int getContentConfigValue();
+
   /**
    *
    *
@@ -283,6 +292,7 @@ public interface DataStoreOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -297,6 +307,7 @@ public interface DataStoreOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -314,6 +325,50 @@ public interface DataStoreOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for advanced site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the advancedSiteSearchConfig field is set.
+   */
+  boolean hasAdvancedSiteSearchConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for advanced site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The advancedSiteSearchConfig.
+   */
+  com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig getAdvancedSiteSearchConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for advanced site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfigOrBuilder
+      getAdvancedSiteSearchConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Data size estimation for billing.
    * </pre>
    *
@@ -324,6 +379,7 @@ public interface DataStoreOrBuilder
    * @return Whether the billingEstimation field is set.
    */
   boolean hasBillingEstimation();
+
   /**
    *
    *
@@ -338,6 +394,7 @@ public interface DataStoreOrBuilder
    * @return The billingEstimation.
    */
   com.google.cloud.discoveryengine.v1.DataStore.BillingEstimation getBillingEstimation();
+
   /**
    *
    *
@@ -368,6 +425,7 @@ public interface DataStoreOrBuilder
    * @return Whether the workspaceConfig field is set.
    */
   boolean hasWorkspaceConfig();
+
   /**
    *
    *
@@ -384,6 +442,7 @@ public interface DataStoreOrBuilder
    * @return The workspaceConfig.
    */
   com.google.cloud.discoveryengine.v1.WorkspaceConfig getWorkspaceConfig();
+
   /**
    *
    *
@@ -413,6 +472,7 @@ public interface DataStoreOrBuilder
    * @return Whether the documentProcessingConfig field is set.
    */
   boolean hasDocumentProcessingConfig();
+
   /**
    *
    *
@@ -427,6 +487,7 @@ public interface DataStoreOrBuilder
    * @return The documentProcessingConfig.
    */
   com.google.cloud.discoveryengine.v1.DocumentProcessingConfig getDocumentProcessingConfig();
+
   /**
    *
    *
@@ -449,9 +510,12 @@ public interface DataStoreOrBuilder
    * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
    * it. If unset, a default vertical specialized schema will be used.
    *
-   * This field is only used by [CreateDataStore][] API, and will be ignored if
-   * used in other APIs. This field will be omitted from all API responses
-   * including [CreateDataStore][] API. To retrieve a schema of a
+   * This field is only used by
+   * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+   * API, and will be ignored if used in other APIs. This field will be omitted
+   * from all API responses including
+   * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+   * API. To retrieve a schema of a
    * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
    * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
    * API instead.
@@ -466,6 +530,7 @@ public interface DataStoreOrBuilder
    * @return Whether the startingSchema field is set.
    */
   boolean hasStartingSchema();
+
   /**
    *
    *
@@ -474,9 +539,12 @@ public interface DataStoreOrBuilder
    * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
    * it. If unset, a default vertical specialized schema will be used.
    *
-   * This field is only used by [CreateDataStore][] API, and will be ignored if
-   * used in other APIs. This field will be omitted from all API responses
-   * including [CreateDataStore][] API. To retrieve a schema of a
+   * This field is only used by
+   * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+   * API, and will be ignored if used in other APIs. This field will be omitted
+   * from all API responses including
+   * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+   * API. To retrieve a schema of a
    * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
    * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
    * API instead.
@@ -491,6 +559,7 @@ public interface DataStoreOrBuilder
    * @return The startingSchema.
    */
   com.google.cloud.discoveryengine.v1.Schema getStartingSchema();
+
   /**
    *
    *
@@ -499,9 +568,12 @@ public interface DataStoreOrBuilder
    * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
    * it. If unset, a default vertical specialized schema will be used.
    *
-   * This field is only used by [CreateDataStore][] API, and will be ignored if
-   * used in other APIs. This field will be omitted from all API responses
-   * including [CreateDataStore][] API. To retrieve a schema of a
+   * This field is only used by
+   * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+   * API, and will be ignored if used in other APIs. This field will be omitted
+   * from all API responses including
+   * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+   * API. To retrieve a schema of a
    * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
    * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
    * API instead.

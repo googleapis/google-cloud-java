@@ -158,6 +158,11 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> submitUriAsync(SubmitUriRequest request)
  *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> submitUriAsync(ProjectName parent, Submission submission)
+ *           <li><p> submitUriAsync(String parent, Submission submission)
+ *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> submitUriOperationCallable()
@@ -753,6 +758,85 @@ public class WebRiskServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateSubmissionRequest, Submission> createSubmissionCallable() {
     return stub.createSubmissionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submits a URI suspected of containing malicious content to be reviewed. Returns a
+   * google.longrunning.Operation which, once the review is complete, is updated with its result.
+   * You can use the [Pub/Sub API] (https://cloud.google.com/pubsub) to receive notifications for
+   * the returned Operation. If the result verifies the existence of malicious content, the site
+   * will be added to the [Google's Social Engineering lists]
+   * (https://support.google.com/webmasters/answer/6350487/) in order to protect users that could
+   * get exposed to this threat in the future. Only allowlisted projects can use this method during
+   * Early Access. Please reach out to Sales or your customer engineer to obtain access.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (WebRiskServiceClient webRiskServiceClient = WebRiskServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   Submission submission = Submission.newBuilder().build();
+   *   Submission response = webRiskServiceClient.submitUriAsync(parent, submission).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project that is making the submission. This string is
+   *     in the format "projects/{project_number}".
+   * @param submission Required. The submission that contains the URI to be scanned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Submission, SubmitUriMetadata> submitUriAsync(
+      ProjectName parent, Submission submission) {
+    SubmitUriRequest request =
+        SubmitUriRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSubmission(submission)
+            .build();
+    return submitUriAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submits a URI suspected of containing malicious content to be reviewed. Returns a
+   * google.longrunning.Operation which, once the review is complete, is updated with its result.
+   * You can use the [Pub/Sub API] (https://cloud.google.com/pubsub) to receive notifications for
+   * the returned Operation. If the result verifies the existence of malicious content, the site
+   * will be added to the [Google's Social Engineering lists]
+   * (https://support.google.com/webmasters/answer/6350487/) in order to protect users that could
+   * get exposed to this threat in the future. Only allowlisted projects can use this method during
+   * Early Access. Please reach out to Sales or your customer engineer to obtain access.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (WebRiskServiceClient webRiskServiceClient = WebRiskServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   Submission submission = Submission.newBuilder().build();
+   *   Submission response = webRiskServiceClient.submitUriAsync(parent, submission).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project that is making the submission. This string is
+   *     in the format "projects/{project_number}".
+   * @param submission Required. The submission that contains the URI to be scanned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Submission, SubmitUriMetadata> submitUriAsync(
+      String parent, Submission submission) {
+    SubmitUriRequest request =
+        SubmitUriRequest.newBuilder().setParent(parent).setSubmission(submission).build();
+    return submitUriAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

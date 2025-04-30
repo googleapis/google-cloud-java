@@ -33,6 +33,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.memorystore.v1.PscAutoConnection)
     PscAutoConnectionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PscAutoConnection.newBuilder() to construct.
   private PscAutoConnection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,6 +87,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     private PortsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,6 +119,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PORT_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
   public boolean hasPort() {
     return portsCase_ == 9;
   }
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pscConnectionId_ = "";
+
   /**
    *
    *
@@ -185,6 +190,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -214,6 +220,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
+
   /**
    *
    *
@@ -240,6 +247,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -271,6 +279,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object forwardingRule_ = "";
+
   /**
    *
    *
@@ -298,6 +307,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -330,6 +340,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -354,6 +365,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -383,6 +395,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
+
   /**
    *
    *
@@ -409,6 +422,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -440,6 +454,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAttachment_ = "";
+
   /**
    *
    *
@@ -467,6 +482,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -497,6 +513,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
 
   public static final int PSC_CONNECTION_STATUS_FIELD_NUMBER = 7;
   private int pscConnectionStatus_ = 0;
+
   /**
    *
    *
@@ -517,6 +534,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
   public int getPscConnectionStatusValue() {
     return pscConnectionStatus_;
   }
+
   /**
    *
    *
@@ -544,6 +562,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
 
   public static final int CONNECTION_TYPE_FIELD_NUMBER = 8;
   private int connectionType_ = 0;
+
   /**
    *
    *
@@ -561,6 +580,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
   public int getConnectionTypeValue() {
     return connectionType_;
   }
+
   /**
    *
    *
@@ -833,6 +853,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1173,6 +1194,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     public boolean hasPort() {
       return portsCase_ == 9;
     }
+
     /**
      *
      *
@@ -1193,6 +1215,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       }
       return 0;
     }
+
     /**
      *
      *
@@ -1215,6 +1238,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1239,6 +1263,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object pscConnectionId_ = "";
+
     /**
      *
      *
@@ -1262,6 +1287,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1285,6 +1311,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1307,6 +1334,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1325,6 +1353,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1350,6 +1379,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object ipAddress_ = "";
+
     /**
      *
      *
@@ -1375,6 +1405,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1400,6 +1431,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1424,6 +1456,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1444,6 +1477,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1471,6 +1505,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object forwardingRule_ = "";
+
     /**
      *
      *
@@ -1497,6 +1532,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1523,6 +1559,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1548,6 +1585,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1569,6 +1607,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1597,6 +1636,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -1620,6 +1660,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1643,6 +1684,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1665,6 +1707,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1683,6 +1726,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1708,6 +1752,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -1733,6 +1778,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1758,6 +1804,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1782,6 +1829,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1802,6 +1850,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1829,6 +1878,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object serviceAttachment_ = "";
+
     /**
      *
      *
@@ -1855,6 +1905,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1881,6 +1932,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1906,6 +1958,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1927,6 +1980,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1955,6 +2009,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private int pscConnectionStatus_ = 0;
+
     /**
      *
      *
@@ -1975,6 +2030,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     public int getPscConnectionStatusValue() {
       return pscConnectionStatus_;
     }
+
     /**
      *
      *
@@ -1998,6 +2054,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2022,6 +2079,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.memorystore.v1.PscConnectionStatus.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2049,6 +2107,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2073,6 +2132,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private int connectionType_ = 0;
+
     /**
      *
      *
@@ -2090,6 +2150,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
     public int getConnectionTypeValue() {
       return connectionType_;
     }
+
     /**
      *
      *
@@ -2110,6 +2171,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2129,6 +2191,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
           com.google.cloud.memorystore.v1.ConnectionType.forNumber(connectionType_);
       return result == null ? com.google.cloud.memorystore.v1.ConnectionType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2152,6 +2215,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

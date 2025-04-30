@@ -39,6 +39,7 @@ public interface ListNotificationSubscriptionsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface ListNotificationSubscriptionsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

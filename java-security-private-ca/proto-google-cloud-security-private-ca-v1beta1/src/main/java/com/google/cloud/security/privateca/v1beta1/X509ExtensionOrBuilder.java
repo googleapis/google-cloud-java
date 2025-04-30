@@ -38,6 +38,7 @@ public interface X509ExtensionOrBuilder
    * @return Whether the objectId field is set.
    */
   boolean hasObjectId();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface X509ExtensionOrBuilder
    * @return The objectId.
    */
   com.google.cloud.security.privateca.v1beta1.ObjectId getObjectId();
+
   /**
    *
    *

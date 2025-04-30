@@ -46,6 +46,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -121,6 +123,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return Whether the monitoredResource field is set.
    */
   boolean hasMonitoredResource();
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return The monitoredResource.
    */
   com.google.api.MonitoredResource getMonitoredResource();
+
   /**
    *
    *
@@ -178,6 +182,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return Whether the resourceGroup field is set.
    */
   boolean hasResourceGroup();
+
   /**
    *
    *
@@ -190,6 +195,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return The resourceGroup.
    */
   com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup getResourceGroup();
+
   /**
    *
    *
@@ -213,6 +219,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return Whether the syntheticMonitor field is set.
    */
   boolean hasSyntheticMonitor();
+
   /**
    *
    *
@@ -225,6 +232,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return The syntheticMonitor.
    */
   com.google.monitoring.v3.SyntheticMonitorTarget getSyntheticMonitor();
+
   /**
    *
    *
@@ -248,6 +256,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return Whether the httpCheck field is set.
    */
   boolean hasHttpCheck();
+
   /**
    *
    *
@@ -260,6 +269,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return The httpCheck.
    */
   com.google.monitoring.v3.UptimeCheckConfig.HttpCheck getHttpCheck();
+
   /**
    *
    *
@@ -283,6 +293,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return Whether the tcpCheck field is set.
    */
   boolean hasTcpCheck();
+
   /**
    *
    *
@@ -295,6 +306,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return The tcpCheck.
    */
   com.google.monitoring.v3.UptimeCheckConfig.TcpCheck getTcpCheck();
+
   /**
    *
    *
@@ -321,6 +333,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return Whether the period field is set.
    */
   boolean hasPeriod();
+
   /**
    *
    *
@@ -336,6 +349,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return The period.
    */
   com.google.protobuf.Duration getPeriod();
+
   /**
    *
    *
@@ -363,6 +377,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
+
   /**
    *
    *
@@ -376,6 +391,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
+
   /**
    *
    *
@@ -404,6 +420,7 @@ public interface UptimeCheckConfigOrBuilder
    */
   java.util.List<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher>
       getContentMatchersList();
+
   /**
    *
    *
@@ -419,6 +436,7 @@ public interface UptimeCheckConfigOrBuilder
    * </code>
    */
   com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher getContentMatchers(int index);
+
   /**
    *
    *
@@ -434,6 +452,7 @@ public interface UptimeCheckConfigOrBuilder
    * </code>
    */
   int getContentMatchersCount();
+
   /**
    *
    *
@@ -450,6 +469,7 @@ public interface UptimeCheckConfigOrBuilder
    */
   java.util.List<? extends com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder>
       getContentMatchersOrBuilderList();
+
   /**
    *
    *
@@ -479,6 +499,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return The enum numeric value on the wire for checkerType.
    */
   int getCheckerTypeValue();
+
   /**
    *
    *
@@ -508,6 +529,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return A list containing the selectedRegions.
    */
   java.util.List<com.google.monitoring.v3.UptimeCheckRegion> getSelectedRegionsList();
+
   /**
    *
    *
@@ -524,6 +546,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return The count of selectedRegions.
    */
   int getSelectedRegionsCount();
+
   /**
    *
    *
@@ -541,6 +564,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return The selectedRegions at the given index.
    */
   com.google.monitoring.v3.UptimeCheckRegion getSelectedRegions(int index);
+
   /**
    *
    *
@@ -557,6 +581,7 @@ public interface UptimeCheckConfigOrBuilder
    * @return A list containing the enum numeric values on the wire for selectedRegions.
    */
   java.util.List<java.lang.Integer> getSelectedRegionsValueList();
+
   /**
    *
    *
@@ -610,6 +635,7 @@ public interface UptimeCheckConfigOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<com.google.monitoring.v3.InternalChecker> getInternalCheckersList();
+
   /**
    *
    *
@@ -626,6 +652,7 @@ public interface UptimeCheckConfigOrBuilder
    */
   @java.lang.Deprecated
   com.google.monitoring.v3.InternalChecker getInternalCheckers(int index);
+
   /**
    *
    *
@@ -642,6 +669,7 @@ public interface UptimeCheckConfigOrBuilder
    */
   @java.lang.Deprecated
   int getInternalCheckersCount();
+
   /**
    *
    *
@@ -659,6 +687,7 @@ public interface UptimeCheckConfigOrBuilder
   @java.lang.Deprecated
   java.util.List<? extends com.google.monitoring.v3.InternalCheckerOrBuilder>
       getInternalCheckersOrBuilderList();
+
   /**
    *
    *
@@ -692,6 +721,7 @@ public interface UptimeCheckConfigOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 20;</code>
    */
   int getUserLabelsCount();
+
   /**
    *
    *
@@ -708,9 +738,11 @@ public interface UptimeCheckConfigOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 20;</code>
    */
   boolean containsUserLabels(java.lang.String key);
+
   /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getUserLabels();
+
   /**
    *
    *
@@ -727,6 +759,7 @@ public interface UptimeCheckConfigOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 20;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap();
+
   /**
    *
    *
@@ -747,6 +780,7 @@ public interface UptimeCheckConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

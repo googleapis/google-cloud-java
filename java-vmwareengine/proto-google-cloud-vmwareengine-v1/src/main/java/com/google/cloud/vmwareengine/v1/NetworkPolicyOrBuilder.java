@@ -40,6 +40,7 @@ public interface NetworkPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface NetworkPolicyOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface NetworkPolicyOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface NetworkPolicyOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface NetworkPolicyOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface NetworkPolicyOrBuilder
    * @return Whether the internetAccess field is set.
    */
   boolean hasInternetAccess();
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public interface NetworkPolicyOrBuilder
    * @return The internetAccess.
    */
   com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService getInternetAccess();
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public interface NetworkPolicyOrBuilder
    * @return Whether the externalIp field is set.
    */
   boolean hasExternalIp();
+
   /**
    *
    *
@@ -197,6 +205,7 @@ public interface NetworkPolicyOrBuilder
    * @return The externalIp.
    */
   com.google.cloud.vmwareengine.v1.NetworkPolicy.NetworkService getExternalIp();
+
   /**
    *
    *
@@ -225,6 +234,7 @@ public interface NetworkPolicyOrBuilder
    * @return The edgeServicesCidr.
    */
   java.lang.String getEdgeServicesCidr();
+
   /**
    *
    *
@@ -253,6 +263,7 @@ public interface NetworkPolicyOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -283,6 +294,7 @@ public interface NetworkPolicyOrBuilder
    * @return The vmwareEngineNetwork.
    */
   java.lang.String getVmwareEngineNetwork();
+
   /**
    *
    *
@@ -313,6 +325,7 @@ public interface NetworkPolicyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -341,6 +354,7 @@ public interface NetworkPolicyOrBuilder
    * @return The vmwareEngineNetworkCanonical.
    */
   java.lang.String getVmwareEngineNetworkCanonical();
+
   /**
    *
    *

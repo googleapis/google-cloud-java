@@ -34,6 +34,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p4beta1.ReferenceImage)
     ReferenceImageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReferenceImage.newBuilder() to construct.
   private ReferenceImage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p4beta1.BoundingPoly> boundingPolys_;
+
   /**
    *
    *
@@ -210,6 +216,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.vision.v1p4beta1.BoundingPoly> getBoundingPolysList() {
     return boundingPolys_;
   }
+
   /**
    *
    *
@@ -233,6 +240,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       getBoundingPolysOrBuilderList() {
     return boundingPolys_;
   }
+
   /**
    *
    *
@@ -255,6 +263,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
   public int getBoundingPolysCount() {
     return boundingPolys_.size();
   }
+
   /**
    *
    *
@@ -277,6 +286,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vision.v1p4beta1.BoundingPoly getBoundingPolys(int index) {
     return boundingPolys_.get(index);
   }
+
   /**
    *
    *
@@ -480,6 +490,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -741,6 +752,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -769,6 +781,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -797,6 +810,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -824,6 +838,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +862,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +893,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -901,6 +918,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -925,6 +943,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -948,6 +967,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +987,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1055,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
         return boundingPolysBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1059,6 +1081,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
         return boundingPolysBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1084,6 +1107,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
         return boundingPolysBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1116,6 +1140,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1170,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1176,6 +1202,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1208,6 +1235,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1265,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1266,6 +1295,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1295,6 +1325,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1323,6 +1354,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1351,6 +1383,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1373,6 +1406,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getBoundingPolysFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1399,6 +1433,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
         return boundingPolysBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1425,6 +1460,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(boundingPolys_);
       }
     }
+
     /**
      *
      *
@@ -1447,6 +1483,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       return getBoundingPolysFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1p4beta1.BoundingPoly.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1470,6 +1507,7 @@ public final class ReferenceImage extends com.google.protobuf.GeneratedMessageV3
       return getBoundingPolysFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1p4beta1.BoundingPoly.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectLocation)
     InterconnectLocationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InterconnectLocation.newBuilder() to construct.
   private InterconnectLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,6 +121,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_AVAILABLE_FEATURES = 0;</code>
      */
     public static final int UNDEFINED_AVAILABLE_FEATURES_VALUE = 0;
+
     /**
      *
      *
@@ -254,6 +256,16 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * <code>LINK_TYPE_ETHERNET_10G_LR = 236739749;</code>
      */
     LINK_TYPE_ETHERNET_10G_LR(236739749),
+    /**
+     *
+     *
+     * <pre>
+     * 400G Ethernet, LR4 Optics.
+     * </pre>
+     *
+     * <code>LINK_TYPE_ETHERNET_400G_LR4 = 127023690;</code>
+     */
+    LINK_TYPE_ETHERNET_400G_LR4(127023690),
     UNRECOGNIZED(-1),
     ;
 
@@ -267,6 +279,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_AVAILABLE_LINK_TYPES = 0;</code>
      */
     public static final int UNDEFINED_AVAILABLE_LINK_TYPES_VALUE = 0;
+
     /**
      *
      *
@@ -277,6 +290,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * <code>LINK_TYPE_ETHERNET_100G_LR = 337672551;</code>
      */
     public static final int LINK_TYPE_ETHERNET_100G_LR_VALUE = 337672551;
+
     /**
      *
      *
@@ -287,6 +301,17 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * <code>LINK_TYPE_ETHERNET_10G_LR = 236739749;</code>
      */
     public static final int LINK_TYPE_ETHERNET_10G_LR_VALUE = 236739749;
+
+    /**
+     *
+     *
+     * <pre>
+     * 400G Ethernet, LR4 Optics.
+     * </pre>
+     *
+     * <code>LINK_TYPE_ETHERNET_400G_LR4 = 127023690;</code>
+     */
+    public static final int LINK_TYPE_ETHERNET_400G_LR4_VALUE = 127023690;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -318,6 +343,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
           return LINK_TYPE_ETHERNET_100G_LR;
         case 236739749:
           return LINK_TYPE_ETHERNET_10G_LR;
+        case 127023690:
+          return LINK_TYPE_ETHERNET_400G_LR4;
         default:
           return null;
       }
@@ -427,24 +454,34 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_CONTINENT = 0;</code>
      */
     public static final int UNDEFINED_CONTINENT_VALUE = 0;
+
     /** <code>AFRICA = 317443706;</code> */
     public static final int AFRICA_VALUE = 317443706;
+
     /** <code>ASIA_PAC = 119782269;</code> */
     public static final int ASIA_PAC_VALUE = 119782269;
+
     /** <code>C_AFRICA = 71993846;</code> */
     public static final int C_AFRICA_VALUE = 71993846;
+
     /** <code>C_ASIA_PAC = 465668089;</code> */
     public static final int C_ASIA_PAC_VALUE = 465668089;
+
     /** <code>C_EUROPE = 200369438;</code> */
     public static final int C_EUROPE_VALUE = 200369438;
+
     /** <code>C_NORTH_AMERICA = 275697048;</code> */
     public static final int C_NORTH_AMERICA_VALUE = 275697048;
+
     /** <code>C_SOUTH_AMERICA = 397149792;</code> */
     public static final int C_SOUTH_AMERICA_VALUE = 397149792;
+
     /** <code>EUROPE = 445819298;</code> */
     public static final int EUROPE_VALUE = 445819298;
+
     /** <code>NORTH_AMERICA = 448015508;</code> */
     public static final int NORTH_AMERICA_VALUE = 448015508;
+
     /** <code>SOUTH_AMERICA = 32597340;</code> */
     public static final int SOUTH_AMERICA_VALUE = 32597340;
 
@@ -600,6 +637,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
+
     /**
      *
      *
@@ -610,6 +648,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * <code>AVAILABLE = 442079913;</code>
      */
     public static final int AVAILABLE_VALUE = 442079913;
+
     /**
      *
      *
@@ -709,6 +748,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object address_ = "";
+
   /**
    *
    *
@@ -724,6 +764,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public boolean hasAddress() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -747,6 +788,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -775,6 +817,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object availabilityZone_ = "";
+
   /**
    *
    *
@@ -790,6 +833,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public boolean hasAvailabilityZone() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -813,6 +857,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -842,6 +887,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList availableFeatures_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -857,6 +903,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getAvailableFeaturesList() {
     return availableFeatures_;
   }
+
   /**
    *
    *
@@ -872,6 +919,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public int getAvailableFeaturesCount() {
     return availableFeatures_.size();
   }
+
   /**
    *
    *
@@ -888,6 +936,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public java.lang.String getAvailableFeatures(int index) {
     return availableFeatures_.get(index);
   }
+
   /**
    *
    *
@@ -910,11 +959,12 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList availableLinkTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
    * <pre>
-   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
    * Check the AvailableLinkTypes enum for the list of possible values.
    * </pre>
    *
@@ -925,11 +975,12 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getAvailableLinkTypesList() {
     return availableLinkTypes_;
   }
+
   /**
    *
    *
    * <pre>
-   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
    * Check the AvailableLinkTypes enum for the list of possible values.
    * </pre>
    *
@@ -940,11 +991,12 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public int getAvailableLinkTypesCount() {
     return availableLinkTypes_.size();
   }
+
   /**
    *
    *
    * <pre>
-   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
    * Check the AvailableLinkTypes enum for the list of possible values.
    * </pre>
    *
@@ -956,11 +1008,12 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public java.lang.String getAvailableLinkTypes(int index) {
     return availableLinkTypes_.get(index);
   }
+
   /**
    *
    *
    * <pre>
-   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
    * Check the AvailableLinkTypes enum for the list of possible values.
    * </pre>
    *
@@ -977,6 +1030,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object city_ = "";
+
   /**
    *
    *
@@ -992,6 +1046,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public boolean hasCity() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1015,6 +1070,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -1043,6 +1099,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object continent_ = "";
+
   /**
    *
    *
@@ -1059,6 +1116,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public boolean hasContinent() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1083,6 +1141,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -1112,6 +1171,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
+
   /**
    *
    *
@@ -1127,6 +1187,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1150,6 +1211,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -1178,6 +1240,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -1193,6 +1256,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -1216,6 +1280,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -1244,6 +1309,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object facilityProvider_ = "";
+
   /**
    *
    *
@@ -1259,6 +1325,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public boolean hasFacilityProvider() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -1282,6 +1349,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -1310,6 +1378,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object facilityProviderFacilityId_ = "";
+
   /**
    *
    *
@@ -1325,6 +1394,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public boolean hasFacilityProviderFacilityId() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -1348,6 +1418,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -1374,6 +1445,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
+
   /**
    *
    *
@@ -1389,6 +1461,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public boolean hasId() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -1409,6 +1482,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -1424,6 +1498,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public boolean hasKind() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -1447,6 +1522,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -1475,6 +1551,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1490,6 +1567,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public boolean hasName() {
     return ((bitField0_ & 0x00000400) != 0);
   }
+
   /**
    *
    *
@@ -1513,6 +1591,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -1541,6 +1620,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object peeringdbFacilityId_ = "";
+
   /**
    *
    *
@@ -1556,6 +1636,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public boolean hasPeeringdbFacilityId() {
     return ((bitField0_ & 0x00000800) != 0);
   }
+
   /**
    *
    *
@@ -1579,6 +1660,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -1607,6 +1689,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InterconnectLocationRegionInfo> regionInfos_;
+
   /**
    *
    *
@@ -1623,6 +1706,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       getRegionInfosList() {
     return regionInfos_;
   }
+
   /**
    *
    *
@@ -1640,6 +1724,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       getRegionInfosOrBuilderList() {
     return regionInfos_;
   }
+
   /**
    *
    *
@@ -1655,6 +1740,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public int getRegionInfosCount() {
     return regionInfos_.size();
   }
+
   /**
    *
    *
@@ -1670,6 +1756,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public com.google.cloud.compute.v1.InterconnectLocationRegionInfo getRegionInfos(int index) {
     return regionInfos_.get(index);
   }
+
   /**
    *
    *
@@ -1691,6 +1778,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -1706,6 +1794,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00001000) != 0);
   }
+
   /**
    *
    *
@@ -1729,6 +1818,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -1757,6 +1847,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
+
   /**
    *
    *
@@ -1773,6 +1864,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public boolean hasStatus() {
     return ((bitField0_ & 0x00002000) != 0);
   }
+
   /**
    *
    *
@@ -1797,6 +1889,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -1824,6 +1917,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
 
   public static final int SUPPORTS_PZS_FIELD_NUMBER = 83983214;
   private boolean supportsPzs_ = false;
+
   /**
    *
    *
@@ -1839,6 +1933,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
   public boolean hasSupportsPzs() {
     return ((bitField0_ & 0x00004000) != 0);
   }
+
   /**
    *
    *
@@ -2269,6 +2364,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2782,6 +2878,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object address_ = "";
+
     /**
      *
      *
@@ -2796,6 +2893,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public boolean hasAddress() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2818,6 +2916,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2840,6 +2939,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2861,6 +2961,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2878,6 +2979,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2902,6 +3004,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object availabilityZone_ = "";
+
     /**
      *
      *
@@ -2916,6 +3019,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public boolean hasAvailabilityZone() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2938,6 +3042,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2960,6 +3065,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2981,6 +3087,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2998,6 +3105,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3030,6 +3138,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -3046,6 +3155,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       availableFeatures_.makeImmutable();
       return availableFeatures_;
     }
+
     /**
      *
      *
@@ -3061,6 +3171,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public int getAvailableFeaturesCount() {
       return availableFeatures_.size();
     }
+
     /**
      *
      *
@@ -3077,6 +3188,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public java.lang.String getAvailableFeatures(int index) {
       return availableFeatures_.get(index);
     }
+
     /**
      *
      *
@@ -3093,6 +3205,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getAvailableFeaturesBytes(int index) {
       return availableFeatures_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3117,6 +3230,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3140,6 +3254,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3160,6 +3275,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3179,6 +3295,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3213,11 +3330,12 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
      * <pre>
-     * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+     * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
      * Check the AvailableLinkTypes enum for the list of possible values.
      * </pre>
      *
@@ -3229,11 +3347,12 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       availableLinkTypes_.makeImmutable();
       return availableLinkTypes_;
     }
+
     /**
      *
      *
      * <pre>
-     * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+     * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
      * Check the AvailableLinkTypes enum for the list of possible values.
      * </pre>
      *
@@ -3244,11 +3363,12 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public int getAvailableLinkTypesCount() {
       return availableLinkTypes_.size();
     }
+
     /**
      *
      *
      * <pre>
-     * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+     * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
      * Check the AvailableLinkTypes enum for the list of possible values.
      * </pre>
      *
@@ -3260,11 +3380,12 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public java.lang.String getAvailableLinkTypes(int index) {
       return availableLinkTypes_.get(index);
     }
+
     /**
      *
      *
      * <pre>
-     * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+     * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
      * Check the AvailableLinkTypes enum for the list of possible values.
      * </pre>
      *
@@ -3276,11 +3397,12 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getAvailableLinkTypesBytes(int index) {
       return availableLinkTypes_.getByteString(index);
     }
+
     /**
      *
      *
      * <pre>
-     * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+     * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
      * Check the AvailableLinkTypes enum for the list of possible values.
      * </pre>
      *
@@ -3300,11 +3422,12 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+     * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
      * Check the AvailableLinkTypes enum for the list of possible values.
      * </pre>
      *
@@ -3323,11 +3446,12 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+     * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
      * Check the AvailableLinkTypes enum for the list of possible values.
      * </pre>
      *
@@ -3343,11 +3467,12 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+     * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
      * Check the AvailableLinkTypes enum for the list of possible values.
      * </pre>
      *
@@ -3362,11 +3487,12 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+     * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
      * Check the AvailableLinkTypes enum for the list of possible values.
      * </pre>
      *
@@ -3388,6 +3514,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object city_ = "";
+
     /**
      *
      *
@@ -3402,6 +3529,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public boolean hasCity() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -3424,6 +3552,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3446,6 +3575,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3467,6 +3597,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3484,6 +3615,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3508,6 +3640,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object continent_ = "";
+
     /**
      *
      *
@@ -3523,6 +3656,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public boolean hasContinent() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3546,6 +3680,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3569,6 +3704,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3591,6 +3727,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3609,6 +3746,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3634,6 +3772,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object creationTimestamp_ = "";
+
     /**
      *
      *
@@ -3648,6 +3787,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -3670,6 +3810,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3692,6 +3833,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3713,6 +3855,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3730,6 +3873,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3754,6 +3898,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -3768,6 +3913,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3790,6 +3936,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3812,6 +3959,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3833,6 +3981,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3850,6 +3999,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3874,6 +4024,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object facilityProvider_ = "";
+
     /**
      *
      *
@@ -3888,6 +4039,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public boolean hasFacilityProvider() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3910,6 +4062,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3932,6 +4085,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3953,6 +4107,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3970,6 +4125,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3994,6 +4150,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object facilityProviderFacilityId_ = "";
+
     /**
      *
      *
@@ -4008,6 +4165,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public boolean hasFacilityProviderFacilityId() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -4030,6 +4188,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4052,6 +4211,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4073,6 +4233,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4090,6 +4251,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4114,6 +4276,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
 
     private long id_;
+
     /**
      *
      *
@@ -4129,6 +4292,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public boolean hasId() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -4144,6 +4308,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public long getId() {
       return id_;
     }
+
     /**
      *
      *
@@ -4163,6 +4328,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4182,6 +4348,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -4196,6 +4363,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public boolean hasKind() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -4218,6 +4386,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4240,6 +4409,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4261,6 +4431,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4278,6 +4449,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4302,6 +4474,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -4316,6 +4489,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public boolean hasName() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -4338,6 +4512,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4360,6 +4535,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4381,6 +4557,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4398,6 +4575,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4422,6 +4600,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object peeringdbFacilityId_ = "";
+
     /**
      *
      *
@@ -4436,6 +4615,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public boolean hasPeeringdbFacilityId() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -4458,6 +4638,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4480,6 +4661,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4501,6 +4683,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4518,6 +4701,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4578,6 +4762,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return regionInfosBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4596,6 +4781,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return regionInfosBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4614,6 +4800,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return regionInfosBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4639,6 +4826,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4662,6 +4850,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4687,6 +4876,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4712,6 +4902,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4734,6 +4925,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4757,6 +4949,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4780,6 +4973,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4801,6 +4995,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4822,6 +5017,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -4837,6 +5033,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         int index) {
       return getRegionInfosFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4856,6 +5053,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return regionInfosBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4876,6 +5074,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(regionInfos_);
       }
     }
+
     /**
      *
      *
@@ -4893,6 +5092,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
           .addBuilder(
               com.google.cloud.compute.v1.InterconnectLocationRegionInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4911,6 +5111,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
               index,
               com.google.cloud.compute.v1.InterconnectLocationRegionInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4945,6 +5146,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -4959,6 +5161,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00008000) != 0);
     }
+
     /**
      *
      *
@@ -4981,6 +5184,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5003,6 +5207,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5024,6 +5229,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5041,6 +5247,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5065,6 +5272,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object status_ = "";
+
     /**
      *
      *
@@ -5080,6 +5288,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public boolean hasStatus() {
       return ((bitField0_ & 0x00010000) != 0);
     }
+
     /**
      *
      *
@@ -5103,6 +5312,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5126,6 +5336,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5148,6 +5359,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5166,6 +5378,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5191,6 +5404,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
 
     private boolean supportsPzs_;
+
     /**
      *
      *
@@ -5206,6 +5420,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public boolean hasSupportsPzs() {
       return ((bitField0_ & 0x00020000) != 0);
     }
+
     /**
      *
      *
@@ -5221,6 +5436,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public boolean getSupportsPzs() {
       return supportsPzs_;
     }
+
     /**
      *
      *
@@ -5240,6 +5456,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

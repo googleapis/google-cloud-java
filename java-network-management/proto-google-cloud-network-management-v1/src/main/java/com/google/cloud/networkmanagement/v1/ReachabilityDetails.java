@@ -33,6 +33,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1.ReachabilityDetails)
     ReachabilityDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReachabilityDetails.newBuilder() to construct.
   private ReachabilityDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -155,6 +156,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      * <code>RESULT_UNSPECIFIED = 0;</code>
      */
     public static final int RESULT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -171,6 +173,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      * <code>REACHABLE = 1;</code>
      */
     public static final int REACHABLE_VALUE = 1;
+
     /**
      *
      *
@@ -182,6 +185,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      * <code>UNREACHABLE = 2;</code>
      */
     public static final int UNREACHABLE_VALUE = 2;
+
     /**
      *
      *
@@ -197,6 +201,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      * <code>AMBIGUOUS = 4;</code>
      */
     public static final int AMBIGUOUS_VALUE = 4;
+
     /**
      *
      *
@@ -306,6 +311,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int RESULT_FIELD_NUMBER = 1;
   private int result_ = 0;
+
   /**
    *
    *
@@ -321,6 +327,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
   public int getResultValue() {
     return result_;
   }
+
   /**
    *
    *
@@ -343,6 +350,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
 
   public static final int VERIFY_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp verifyTime_;
+
   /**
    *
    *
@@ -358,6 +366,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
   public boolean hasVerifyTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -373,6 +382,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getVerifyTime() {
     return verifyTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : verifyTime_;
   }
+
   /**
    *
    *
@@ -389,6 +399,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
 
   public static final int ERROR_FIELD_NUMBER = 3;
   private com.google.rpc.Status error_;
+
   /**
    *
    *
@@ -404,6 +415,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
   public boolean hasError() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -419,6 +431,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
+
   /**
    *
    *
@@ -437,6 +450,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkmanagement.v1.Trace> traces_;
+
   /**
    *
    *
@@ -452,6 +466,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.networkmanagement.v1.Trace> getTracesList() {
     return traces_;
   }
+
   /**
    *
    *
@@ -468,6 +483,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       getTracesOrBuilderList() {
     return traces_;
   }
+
   /**
    *
    *
@@ -483,6 +499,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
   public int getTracesCount() {
     return traces_.size();
   }
+
   /**
    *
    *
@@ -498,6 +515,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
   public com.google.cloud.networkmanagement.v1.Trace getTraces(int index) {
     return traces_.get(index);
   }
+
   /**
    *
    *
@@ -717,6 +735,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1009,6 +1028,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int result_ = 0;
+
     /**
      *
      *
@@ -1024,6 +1044,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
     public int getResultValue() {
       return result_;
     }
+
     /**
      *
      *
@@ -1042,6 +1063,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1083,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.networkmanagement.v1.ReachabilityDetails.Result.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1083,6 +1106,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1107,6 +1131,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         verifyTimeBuilder_;
+
     /**
      *
      *
@@ -1121,6 +1146,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
     public boolean hasVerifyTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1141,6 +1167,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
         return verifyTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1163,6 +1190,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1210,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1238,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1228,6 +1258,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1242,6 +1273,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return getVerifyTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1260,6 +1292,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
             : verifyTime_;
       }
     }
+
     /**
      *
      *
@@ -1290,6 +1323,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -1304,6 +1338,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
     public boolean hasError() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1322,6 +1357,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
         return errorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1344,6 +1380,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1363,6 +1400,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1390,6 +1428,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1409,6 +1448,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1423,6 +1463,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1439,6 +1480,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
+
     /**
      *
      *
@@ -1496,6 +1538,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
         return tracesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1514,6 +1557,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
         return tracesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1532,6 +1576,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
         return tracesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1556,6 +1601,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1578,6 +1624,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1602,6 +1649,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1626,6 +1674,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1647,6 +1696,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1669,6 +1719,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1691,6 +1742,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1712,6 +1764,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1733,6 +1786,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1747,6 +1801,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
     public com.google.cloud.networkmanagement.v1.Trace.Builder getTracesBuilder(int index) {
       return getTracesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1765,6 +1820,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
         return tracesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1784,6 +1840,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(traces_);
       }
     }
+
     /**
      *
      *
@@ -1799,6 +1856,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       return getTracesFieldBuilder()
           .addBuilder(com.google.cloud.networkmanagement.v1.Trace.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1814,6 +1872,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       return getTracesFieldBuilder()
           .addBuilder(index, com.google.cloud.networkmanagement.v1.Trace.getDefaultInstance());
     }
+
     /**
      *
      *

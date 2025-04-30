@@ -35,6 +35,7 @@ public final class UpdateTargetSiteRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.UpdateTargetSiteRequest)
     UpdateTargetSiteRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateTargetSiteRequest.newBuilder() to construct.
   private UpdateTargetSiteRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class UpdateTargetSiteRequest extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int TARGET_SITE_FIELD_NUMBER = 1;
   private com.google.cloud.discoveryengine.v1.TargetSite targetSite_;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class UpdateTargetSiteRequest extends com.google.protobuf.Generated
   public boolean hasTargetSite() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public final class UpdateTargetSiteRequest extends com.google.protobuf.Generated
         ? com.google.cloud.discoveryengine.v1.TargetSite.getDefaultInstance()
         : targetSite_;
   }
+
   /**
    *
    *
@@ -303,6 +307,7 @@ public final class UpdateTargetSiteRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -508,6 +513,7 @@ public final class UpdateTargetSiteRequest extends com.google.protobuf.Generated
             com.google.cloud.discoveryengine.v1.TargetSite.Builder,
             com.google.cloud.discoveryengine.v1.TargetSiteOrBuilder>
         targetSiteBuilder_;
+
     /**
      *
      *
@@ -530,6 +536,7 @@ public final class UpdateTargetSiteRequest extends com.google.protobuf.Generated
     public boolean hasTargetSite() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -558,6 +565,7 @@ public final class UpdateTargetSiteRequest extends com.google.protobuf.Generated
         return targetSiteBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -588,6 +596,7 @@ public final class UpdateTargetSiteRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -616,6 +625,7 @@ public final class UpdateTargetSiteRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +661,7 @@ public final class UpdateTargetSiteRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +689,7 @@ public final class UpdateTargetSiteRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +712,7 @@ public final class UpdateTargetSiteRequest extends com.google.protobuf.Generated
       onChanged();
       return getTargetSiteFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -726,6 +739,7 @@ public final class UpdateTargetSiteRequest extends com.google.protobuf.Generated
             : targetSite_;
       }
     }
+
     /**
      *
      *

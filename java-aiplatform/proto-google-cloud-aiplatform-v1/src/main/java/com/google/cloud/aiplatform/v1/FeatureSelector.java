@@ -33,6 +33,7 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.FeatureSelector)
     FeatureSelectorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FeatureSelector.newBuilder() to construct.
   private FeatureSelector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int ID_MATCHER_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.IdMatcher idMatcher_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
   public boolean hasIdMatcher() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.aiplatform.v1.IdMatcher.getDefaultInstance()
         : idMatcher_;
   }
+
   /**
    *
    *
@@ -282,6 +286,7 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -484,6 +489,7 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.aiplatform.v1.IdMatcher.Builder,
             com.google.cloud.aiplatform.v1.IdMatcherOrBuilder>
         idMatcherBuilder_;
+
     /**
      *
      *
@@ -500,6 +506,7 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
     public boolean hasIdMatcher() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -522,6 +529,7 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
         return idMatcherBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -546,6 +554,7 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -567,6 +576,7 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -596,6 +606,7 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -617,6 +628,7 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -633,6 +645,7 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getIdMatcherFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -653,6 +666,7 @@ public final class FeatureSelector extends com.google.protobuf.GeneratedMessageV
             : idMatcher_;
       }
     }
+
     /**
      *
      *

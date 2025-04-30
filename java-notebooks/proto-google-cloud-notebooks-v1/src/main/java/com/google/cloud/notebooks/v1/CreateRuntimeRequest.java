@@ -33,6 +33,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.CreateRuntimeRequest)
     CreateRuntimeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateRuntimeRequest.newBuilder() to construct.
   private CreateRuntimeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object runtimeId_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
 
   public static final int RUNTIME_FIELD_NUMBER = 3;
   private com.google.cloud.notebooks.v1.Runtime runtime_;
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
   public boolean hasRuntime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
   public com.google.cloud.notebooks.v1.Runtime getRuntime() {
     return runtime_ == null ? com.google.cloud.notebooks.v1.Runtime.getDefaultInstance() : runtime_;
   }
+
   /**
    *
    *
@@ -227,6 +235,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -250,6 +259,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -465,6 +475,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -708,6 +719,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -733,6 +745,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -758,6 +771,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -782,6 +796,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +817,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +845,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object runtimeId_ = "";
+
     /**
      *
      *
@@ -851,6 +868,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -873,6 +891,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -894,6 +913,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -911,6 +931,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +961,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.notebooks.v1.Runtime.Builder,
             com.google.cloud.notebooks.v1.RuntimeOrBuilder>
         runtimeBuilder_;
+
     /**
      *
      *
@@ -956,6 +978,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
     public boolean hasRuntime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -978,6 +1001,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
         return runtimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1002,6 +1026,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1048,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1078,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1100,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1117,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getRuntimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1109,6 +1138,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
             : runtime_;
       }
     }
+
     /**
      *
      *
@@ -1138,6 +1168,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1160,6 +1191,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1182,6 +1214,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1203,6 +1236,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1220,6 +1254,7 @@ public final class CreateRuntimeRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

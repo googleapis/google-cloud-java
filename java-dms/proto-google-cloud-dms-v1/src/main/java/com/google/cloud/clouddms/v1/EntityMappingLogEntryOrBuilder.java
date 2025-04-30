@@ -36,6 +36,7 @@ public interface EntityMappingLogEntryOrBuilder
    * @return The ruleId.
    */
   java.lang.String getRuleId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface EntityMappingLogEntryOrBuilder
    * @return The ruleRevisionId.
    */
   java.lang.String getRuleRevisionId();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface EntityMappingLogEntryOrBuilder
    * @return The mappingComment.
    */
   java.lang.String getMappingComment();
+
   /**
    *
    *

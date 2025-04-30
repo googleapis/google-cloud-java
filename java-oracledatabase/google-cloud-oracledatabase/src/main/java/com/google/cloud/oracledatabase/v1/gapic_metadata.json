@@ -79,8 +79,17 @@
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "RestartAutonomousDatabase": {
+              "methods": ["restartAutonomousDatabaseAsync", "restartAutonomousDatabaseAsync", "restartAutonomousDatabaseAsync", "restartAutonomousDatabaseOperationCallable", "restartAutonomousDatabaseCallable"]
+            },
             "RestoreAutonomousDatabase": {
               "methods": ["restoreAutonomousDatabaseAsync", "restoreAutonomousDatabaseAsync", "restoreAutonomousDatabaseAsync", "restoreAutonomousDatabaseOperationCallable", "restoreAutonomousDatabaseCallable"]
+            },
+            "StartAutonomousDatabase": {
+              "methods": ["startAutonomousDatabaseAsync", "startAutonomousDatabaseAsync", "startAutonomousDatabaseAsync", "startAutonomousDatabaseOperationCallable", "startAutonomousDatabaseCallable"]
+            },
+            "StopAutonomousDatabase": {
+              "methods": ["stopAutonomousDatabaseAsync", "stopAutonomousDatabaseAsync", "stopAutonomousDatabaseAsync", "stopAutonomousDatabaseOperationCallable", "stopAutonomousDatabaseCallable"]
             }
           }
         }

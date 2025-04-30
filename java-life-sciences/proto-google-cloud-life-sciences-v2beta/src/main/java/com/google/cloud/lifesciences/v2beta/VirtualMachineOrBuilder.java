@@ -42,6 +42,7 @@ public interface VirtualMachineOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public interface VirtualMachineOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -110,9 +112,11 @@ public interface VirtualMachineOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface VirtualMachineOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public interface VirtualMachineOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public interface VirtualMachineOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Disk disks = 4;</code>
    */
   java.util.List<com.google.cloud.lifesciences.v2beta.Disk> getDisksList();
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public interface VirtualMachineOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Disk disks = 4;</code>
    */
   com.google.cloud.lifesciences.v2beta.Disk getDisks(int index);
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public interface VirtualMachineOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Disk disks = 4;</code>
    */
   int getDisksCount();
+
   /**
    *
    *
@@ -221,6 +230,7 @@ public interface VirtualMachineOrBuilder
    */
   java.util.List<? extends com.google.cloud.lifesciences.v2beta.DiskOrBuilder>
       getDisksOrBuilderList();
+
   /**
    *
    *
@@ -246,6 +256,7 @@ public interface VirtualMachineOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
+
   /**
    *
    *
@@ -258,6 +269,7 @@ public interface VirtualMachineOrBuilder
    * @return The network.
    */
   com.google.cloud.lifesciences.v2beta.Network getNetwork();
+
   /**
    *
    *
@@ -279,6 +291,7 @@ public interface VirtualMachineOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Accelerator accelerators = 6;</code>
    */
   java.util.List<com.google.cloud.lifesciences.v2beta.Accelerator> getAcceleratorsList();
+
   /**
    *
    *
@@ -289,6 +302,7 @@ public interface VirtualMachineOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Accelerator accelerators = 6;</code>
    */
   com.google.cloud.lifesciences.v2beta.Accelerator getAccelerators(int index);
+
   /**
    *
    *
@@ -299,6 +313,7 @@ public interface VirtualMachineOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Accelerator accelerators = 6;</code>
    */
   int getAcceleratorsCount();
+
   /**
    *
    *
@@ -310,6 +325,7 @@ public interface VirtualMachineOrBuilder
    */
   java.util.List<? extends com.google.cloud.lifesciences.v2beta.AcceleratorOrBuilder>
       getAcceleratorsOrBuilderList();
+
   /**
    *
    *
@@ -334,6 +350,7 @@ public interface VirtualMachineOrBuilder
    * @return Whether the serviceAccount field is set.
    */
   boolean hasServiceAccount();
+
   /**
    *
    *
@@ -347,6 +364,7 @@ public interface VirtualMachineOrBuilder
    * @return The serviceAccount.
    */
   com.google.cloud.lifesciences.v2beta.ServiceAccount getServiceAccount();
+
   /**
    *
    *
@@ -394,6 +412,7 @@ public interface VirtualMachineOrBuilder
    * @return The cpuPlatform.
    */
   java.lang.String getCpuPlatform();
+
   /**
    *
    *
@@ -438,6 +457,7 @@ public interface VirtualMachineOrBuilder
    * @return The bootImage.
    */
   java.lang.String getBootImage();
+
   /**
    *
    *
@@ -481,6 +501,7 @@ public interface VirtualMachineOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getNvidiaDriverVersion();
+
   /**
    *
    *
@@ -533,6 +554,7 @@ public interface VirtualMachineOrBuilder
    * @return A list containing the dockerCacheImages.
    */
   java.util.List<java.lang.String> getDockerCacheImagesList();
+
   /**
    *
    *
@@ -553,6 +575,7 @@ public interface VirtualMachineOrBuilder
    * @return The count of dockerCacheImages.
    */
   int getDockerCacheImagesCount();
+
   /**
    *
    *
@@ -574,6 +597,7 @@ public interface VirtualMachineOrBuilder
    * @return The dockerCacheImages at the given index.
    */
   java.lang.String getDockerCacheImages(int index);
+
   /**
    *
    *
@@ -608,6 +632,7 @@ public interface VirtualMachineOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Volume volumes = 14;</code>
    */
   java.util.List<com.google.cloud.lifesciences.v2beta.Volume> getVolumesList();
+
   /**
    *
    *
@@ -620,6 +645,7 @@ public interface VirtualMachineOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Volume volumes = 14;</code>
    */
   com.google.cloud.lifesciences.v2beta.Volume getVolumes(int index);
+
   /**
    *
    *
@@ -632,6 +658,7 @@ public interface VirtualMachineOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Volume volumes = 14;</code>
    */
   int getVolumesCount();
+
   /**
    *
    *
@@ -645,6 +672,7 @@ public interface VirtualMachineOrBuilder
    */
   java.util.List<? extends com.google.cloud.lifesciences.v2beta.VolumeOrBuilder>
       getVolumesOrBuilderList();
+
   /**
    *
    *
@@ -671,6 +699,7 @@ public interface VirtualMachineOrBuilder
    * @return The reservation.
    */
   java.lang.String getReservation();
+
   /**
    *
    *

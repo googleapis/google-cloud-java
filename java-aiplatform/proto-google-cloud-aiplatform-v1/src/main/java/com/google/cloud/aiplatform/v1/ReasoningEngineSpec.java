@@ -33,6 +33,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ReasoningEngineSpec)
     ReasoningEngineSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReasoningEngineSpec.newBuilder() to construct.
   private ReasoningEngineSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -40,6 +41,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
   private ReasoningEngineSpec() {
     classMethods_ = java.util.Collections.emptyList();
+    agentFramework_ = "";
   }
 
   @java.lang.Override
@@ -80,6 +82,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * @return The pickleObjectGcsUri.
      */
     java.lang.String getPickleObjectGcsUri();
+
     /**
      *
      *
@@ -105,6 +108,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * @return The dependencyFilesGcsUri.
      */
     java.lang.String getDependencyFilesGcsUri();
+
     /**
      *
      *
@@ -130,6 +134,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * @return The requirementsGcsUri.
      */
     java.lang.String getRequirementsGcsUri();
+
     /**
      *
      *
@@ -156,6 +161,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * @return The pythonVersion.
      */
     java.lang.String getPythonVersion();
+
     /**
      *
      *
@@ -170,6 +176,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getPythonVersionBytes();
   }
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec)
       PackageSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PackageSpec.newBuilder() to construct.
     private PackageSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -221,6 +229,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object pickleObjectGcsUri_ = "";
+
     /**
      *
      *
@@ -244,6 +253,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -272,6 +282,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dependencyFilesGcsUri_ = "";
+
     /**
      *
      *
@@ -295,6 +306,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -323,6 +335,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object requirementsGcsUri_ = "";
+
     /**
      *
      *
@@ -346,6 +359,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -374,6 +388,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object pythonVersion_ = "";
+
     /**
      *
      *
@@ -398,6 +413,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -611,6 +627,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -847,6 +864,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object pickleObjectGcsUri_ = "";
+
       /**
        *
        *
@@ -869,6 +887,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -891,6 +910,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -912,6 +932,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -929,6 +950,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -953,6 +975,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object dependencyFilesGcsUri_ = "";
+
       /**
        *
        *
@@ -975,6 +998,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -997,6 +1021,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1018,6 +1043,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1035,6 +1061,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1059,6 +1086,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object requirementsGcsUri_ = "";
+
       /**
        *
        *
@@ -1081,6 +1109,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1103,6 +1132,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1124,6 +1154,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1141,6 +1172,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1165,6 +1197,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object pythonVersion_ = "";
+
       /**
        *
        *
@@ -1188,6 +1221,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1211,6 +1245,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1233,6 +1268,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1251,6 +1287,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1342,18 +1379,1888 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     }
   }
 
-  private int bitField0_;
-  public static final int PACKAGE_SPEC_FIELD_NUMBER = 2;
-  private com.google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec packageSpec_;
+  public interface DeploymentSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables to be set with the Reasoning Engine
+     * deployment. The environment variables can be updated through the
+     * UpdateReasoningEngine API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<com.google.cloud.aiplatform.v1.EnvVar> getEnvList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables to be set with the Reasoning Engine
+     * deployment. The environment variables can be updated through the
+     * UpdateReasoningEngine API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.EnvVar getEnv(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables to be set with the Reasoning Engine
+     * deployment. The environment variables can be updated through the
+     * UpdateReasoningEngine API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getEnvCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables to be set with the Reasoning Engine
+     * deployment. The environment variables can be updated through the
+     * UpdateReasoningEngine API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.aiplatform.v1.EnvVarOrBuilder> getEnvOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables to be set with the Reasoning Engine
+     * deployment. The environment variables can be updated through the
+     * UpdateReasoningEngine API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.EnvVarOrBuilder getEnvOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables where the value is a secret in Cloud
+     * Secret Manager.
+     * To use this feature, add 'Secret Manager Secret Accessor' role
+     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+     * Service Agent.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<com.google.cloud.aiplatform.v1.SecretEnvVar> getSecretEnvList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables where the value is a secret in Cloud
+     * Secret Manager.
+     * To use this feature, add 'Secret Manager Secret Accessor' role
+     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+     * Service Agent.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.SecretEnvVar getSecretEnv(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables where the value is a secret in Cloud
+     * Secret Manager.
+     * To use this feature, add 'Secret Manager Secret Accessor' role
+     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+     * Service Agent.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getSecretEnvCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables where the value is a secret in Cloud
+     * Secret Manager.
+     * To use this feature, add 'Secret Manager Secret Accessor' role
+     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+     * Service Agent.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.aiplatform.v1.SecretEnvVarOrBuilder>
+        getSecretEnvOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables where the value is a secret in Cloud
+     * Secret Manager.
+     * To use this feature, add 'Secret Manager Secret Accessor' role
+     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+     * Service Agent.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.SecretEnvVarOrBuilder getSecretEnvOrBuilder(int index);
+  }
+
   /**
    *
    *
    * <pre>
-   * Required. User provided package spec of the ReasoningEngine.
+   * The specification of a Reasoning Engine deployment.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec}
+   */
+  public static final class DeploymentSpec extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec)
+      DeploymentSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use DeploymentSpec.newBuilder() to construct.
+    private DeploymentSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DeploymentSpec() {
+      env_ = java.util.Collections.emptyList();
+      secretEnv_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DeploymentSpec();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+          .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_DeploymentSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+          .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_DeploymentSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec.class,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec.Builder.class);
+    }
+
+    public static final int ENV_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.aiplatform.v1.EnvVar> env_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables to be set with the Reasoning Engine
+     * deployment. The environment variables can be updated through the
+     * UpdateReasoningEngine API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.aiplatform.v1.EnvVar> getEnvList() {
+      return env_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables to be set with the Reasoning Engine
+     * deployment. The environment variables can be updated through the
+     * UpdateReasoningEngine API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.aiplatform.v1.EnvVarOrBuilder>
+        getEnvOrBuilderList() {
+      return env_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables to be set with the Reasoning Engine
+     * deployment. The environment variables can be updated through the
+     * UpdateReasoningEngine API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getEnvCount() {
+      return env_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables to be set with the Reasoning Engine
+     * deployment. The environment variables can be updated through the
+     * UpdateReasoningEngine API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.EnvVar getEnv(int index) {
+      return env_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables to be set with the Reasoning Engine
+     * deployment. The environment variables can be updated through the
+     * UpdateReasoningEngine API.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.EnvVarOrBuilder getEnvOrBuilder(int index) {
+      return env_.get(index);
+    }
+
+    public static final int SECRET_ENV_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.aiplatform.v1.SecretEnvVar> secretEnv_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables where the value is a secret in Cloud
+     * Secret Manager.
+     * To use this feature, add 'Secret Manager Secret Accessor' role
+     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+     * Service Agent.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.aiplatform.v1.SecretEnvVar> getSecretEnvList() {
+      return secretEnv_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables where the value is a secret in Cloud
+     * Secret Manager.
+     * To use this feature, add 'Secret Manager Secret Accessor' role
+     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+     * Service Agent.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.aiplatform.v1.SecretEnvVarOrBuilder>
+        getSecretEnvOrBuilderList() {
+      return secretEnv_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables where the value is a secret in Cloud
+     * Secret Manager.
+     * To use this feature, add 'Secret Manager Secret Accessor' role
+     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+     * Service Agent.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getSecretEnvCount() {
+      return secretEnv_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables where the value is a secret in Cloud
+     * Secret Manager.
+     * To use this feature, add 'Secret Manager Secret Accessor' role
+     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+     * Service Agent.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.SecretEnvVar getSecretEnv(int index) {
+      return secretEnv_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables where the value is a secret in Cloud
+     * Secret Manager.
+     * To use this feature, add 'Secret Manager Secret Accessor' role
+     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+     * Service Agent.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.SecretEnvVarOrBuilder getSecretEnvOrBuilder(int index) {
+      return secretEnv_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < env_.size(); i++) {
+        output.writeMessage(1, env_.get(i));
+      }
+      for (int i = 0; i < secretEnv_.size(); i++) {
+        output.writeMessage(2, secretEnv_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < env_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, env_.get(i));
+      }
+      for (int i = 0; i < secretEnv_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, secretEnv_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec other =
+          (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec) obj;
+
+      if (!getEnvList().equals(other.getEnvList())) return false;
+      if (!getSecretEnvList().equals(other.getSecretEnvList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getEnvCount() > 0) {
+        hash = (37 * hash) + ENV_FIELD_NUMBER;
+        hash = (53 * hash) + getEnvList().hashCode();
+      }
+      if (getSecretEnvCount() > 0) {
+        hash = (37 * hash) + SECRET_ENV_FIELD_NUMBER;
+        hash = (53 * hash) + getSecretEnvList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The specification of a Reasoning Engine deployment.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec)
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_DeploymentSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_DeploymentSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec.class,
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (envBuilder_ == null) {
+          env_ = java.util.Collections.emptyList();
+        } else {
+          env_ = null;
+          envBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (secretEnvBuilder_ == null) {
+          secretEnv_ = java.util.Collections.emptyList();
+        } else {
+          secretEnv_ = null;
+          secretEnvBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_DeploymentSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec build() {
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec buildPartial() {
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec result =
+            new com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec result) {
+        if (envBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            env_ = java.util.Collections.unmodifiableList(env_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.env_ = env_;
+        } else {
+          result.env_ = envBuilder_.build();
+        }
+        if (secretEnvBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            secretEnv_ = java.util.Collections.unmodifiableList(secretEnv_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.secretEnv_ = secretEnv_;
+        } else {
+          result.secretEnv_ = secretEnvBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec other) {
+        if (other
+            == com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec
+                .getDefaultInstance()) return this;
+        if (envBuilder_ == null) {
+          if (!other.env_.isEmpty()) {
+            if (env_.isEmpty()) {
+              env_ = other.env_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureEnvIsMutable();
+              env_.addAll(other.env_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.env_.isEmpty()) {
+            if (envBuilder_.isEmpty()) {
+              envBuilder_.dispose();
+              envBuilder_ = null;
+              env_ = other.env_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              envBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getEnvFieldBuilder()
+                      : null;
+            } else {
+              envBuilder_.addAllMessages(other.env_);
+            }
+          }
+        }
+        if (secretEnvBuilder_ == null) {
+          if (!other.secretEnv_.isEmpty()) {
+            if (secretEnv_.isEmpty()) {
+              secretEnv_ = other.secretEnv_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureSecretEnvIsMutable();
+              secretEnv_.addAll(other.secretEnv_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.secretEnv_.isEmpty()) {
+            if (secretEnvBuilder_.isEmpty()) {
+              secretEnvBuilder_.dispose();
+              secretEnvBuilder_ = null;
+              secretEnv_ = other.secretEnv_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              secretEnvBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getSecretEnvFieldBuilder()
+                      : null;
+            } else {
+              secretEnvBuilder_.addAllMessages(other.secretEnv_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.aiplatform.v1.EnvVar m =
+                      input.readMessage(
+                          com.google.cloud.aiplatform.v1.EnvVar.parser(), extensionRegistry);
+                  if (envBuilder_ == null) {
+                    ensureEnvIsMutable();
+                    env_.add(m);
+                  } else {
+                    envBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.cloud.aiplatform.v1.SecretEnvVar m =
+                      input.readMessage(
+                          com.google.cloud.aiplatform.v1.SecretEnvVar.parser(), extensionRegistry);
+                  if (secretEnvBuilder_ == null) {
+                    ensureSecretEnvIsMutable();
+                    secretEnv_.add(m);
+                  } else {
+                    secretEnvBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.cloud.aiplatform.v1.EnvVar> env_ =
+          java.util.Collections.emptyList();
+
+      private void ensureEnvIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          env_ = new java.util.ArrayList<com.google.cloud.aiplatform.v1.EnvVar>(env_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.EnvVar,
+              com.google.cloud.aiplatform.v1.EnvVar.Builder,
+              com.google.cloud.aiplatform.v1.EnvVarOrBuilder>
+          envBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables to be set with the Reasoning Engine
+       * deployment. The environment variables can be updated through the
+       * UpdateReasoningEngine API.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.aiplatform.v1.EnvVar> getEnvList() {
+        if (envBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(env_);
+        } else {
+          return envBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables to be set with the Reasoning Engine
+       * deployment. The environment variables can be updated through the
+       * UpdateReasoningEngine API.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public int getEnvCount() {
+        if (envBuilder_ == null) {
+          return env_.size();
+        } else {
+          return envBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables to be set with the Reasoning Engine
+       * deployment. The environment variables can be updated through the
+       * UpdateReasoningEngine API.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.EnvVar getEnv(int index) {
+        if (envBuilder_ == null) {
+          return env_.get(index);
+        } else {
+          return envBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables to be set with the Reasoning Engine
+       * deployment. The environment variables can be updated through the
+       * UpdateReasoningEngine API.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setEnv(int index, com.google.cloud.aiplatform.v1.EnvVar value) {
+        if (envBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEnvIsMutable();
+          env_.set(index, value);
+          onChanged();
+        } else {
+          envBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables to be set with the Reasoning Engine
+       * deployment. The environment variables can be updated through the
+       * UpdateReasoningEngine API.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setEnv(
+          int index, com.google.cloud.aiplatform.v1.EnvVar.Builder builderForValue) {
+        if (envBuilder_ == null) {
+          ensureEnvIsMutable();
+          env_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          envBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables to be set with the Reasoning Engine
+       * deployment. The environment variables can be updated through the
+       * UpdateReasoningEngine API.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addEnv(com.google.cloud.aiplatform.v1.EnvVar value) {
+        if (envBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEnvIsMutable();
+          env_.add(value);
+          onChanged();
+        } else {
+          envBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables to be set with the Reasoning Engine
+       * deployment. The environment variables can be updated through the
+       * UpdateReasoningEngine API.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addEnv(int index, com.google.cloud.aiplatform.v1.EnvVar value) {
+        if (envBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEnvIsMutable();
+          env_.add(index, value);
+          onChanged();
+        } else {
+          envBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables to be set with the Reasoning Engine
+       * deployment. The environment variables can be updated through the
+       * UpdateReasoningEngine API.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addEnv(com.google.cloud.aiplatform.v1.EnvVar.Builder builderForValue) {
+        if (envBuilder_ == null) {
+          ensureEnvIsMutable();
+          env_.add(builderForValue.build());
+          onChanged();
+        } else {
+          envBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables to be set with the Reasoning Engine
+       * deployment. The environment variables can be updated through the
+       * UpdateReasoningEngine API.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addEnv(
+          int index, com.google.cloud.aiplatform.v1.EnvVar.Builder builderForValue) {
+        if (envBuilder_ == null) {
+          ensureEnvIsMutable();
+          env_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          envBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables to be set with the Reasoning Engine
+       * deployment. The environment variables can be updated through the
+       * UpdateReasoningEngine API.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAllEnv(
+          java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.EnvVar> values) {
+        if (envBuilder_ == null) {
+          ensureEnvIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, env_);
+          onChanged();
+        } else {
+          envBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables to be set with the Reasoning Engine
+       * deployment. The environment variables can be updated through the
+       * UpdateReasoningEngine API.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearEnv() {
+        if (envBuilder_ == null) {
+          env_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          envBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables to be set with the Reasoning Engine
+       * deployment. The environment variables can be updated through the
+       * UpdateReasoningEngine API.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeEnv(int index) {
+        if (envBuilder_ == null) {
+          ensureEnvIsMutable();
+          env_.remove(index);
+          onChanged();
+        } else {
+          envBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables to be set with the Reasoning Engine
+       * deployment. The environment variables can be updated through the
+       * UpdateReasoningEngine API.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.EnvVar.Builder getEnvBuilder(int index) {
+        return getEnvFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables to be set with the Reasoning Engine
+       * deployment. The environment variables can be updated through the
+       * UpdateReasoningEngine API.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.EnvVarOrBuilder getEnvOrBuilder(int index) {
+        if (envBuilder_ == null) {
+          return env_.get(index);
+        } else {
+          return envBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables to be set with the Reasoning Engine
+       * deployment. The environment variables can be updated through the
+       * UpdateReasoningEngine API.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<? extends com.google.cloud.aiplatform.v1.EnvVarOrBuilder>
+          getEnvOrBuilderList() {
+        if (envBuilder_ != null) {
+          return envBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(env_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables to be set with the Reasoning Engine
+       * deployment. The environment variables can be updated through the
+       * UpdateReasoningEngine API.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.EnvVar.Builder addEnvBuilder() {
+        return getEnvFieldBuilder()
+            .addBuilder(com.google.cloud.aiplatform.v1.EnvVar.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables to be set with the Reasoning Engine
+       * deployment. The environment variables can be updated through the
+       * UpdateReasoningEngine API.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.EnvVar.Builder addEnvBuilder(int index) {
+        return getEnvFieldBuilder()
+            .addBuilder(index, com.google.cloud.aiplatform.v1.EnvVar.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables to be set with the Reasoning Engine
+       * deployment. The environment variables can be updated through the
+       * UpdateReasoningEngine API.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.EnvVar env = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.aiplatform.v1.EnvVar.Builder> getEnvBuilderList() {
+        return getEnvFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.EnvVar,
+              com.google.cloud.aiplatform.v1.EnvVar.Builder,
+              com.google.cloud.aiplatform.v1.EnvVarOrBuilder>
+          getEnvFieldBuilder() {
+        if (envBuilder_ == null) {
+          envBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1.EnvVar,
+                  com.google.cloud.aiplatform.v1.EnvVar.Builder,
+                  com.google.cloud.aiplatform.v1.EnvVarOrBuilder>(
+                  env_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+          env_ = null;
+        }
+        return envBuilder_;
+      }
+
+      private java.util.List<com.google.cloud.aiplatform.v1.SecretEnvVar> secretEnv_ =
+          java.util.Collections.emptyList();
+
+      private void ensureSecretEnvIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          secretEnv_ =
+              new java.util.ArrayList<com.google.cloud.aiplatform.v1.SecretEnvVar>(secretEnv_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.SecretEnvVar,
+              com.google.cloud.aiplatform.v1.SecretEnvVar.Builder,
+              com.google.cloud.aiplatform.v1.SecretEnvVarOrBuilder>
+          secretEnvBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables where the value is a secret in Cloud
+       * Secret Manager.
+       * To use this feature, add 'Secret Manager Secret Accessor' role
+       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+       * Service Agent.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.aiplatform.v1.SecretEnvVar> getSecretEnvList() {
+        if (secretEnvBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(secretEnv_);
+        } else {
+          return secretEnvBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables where the value is a secret in Cloud
+       * Secret Manager.
+       * To use this feature, add 'Secret Manager Secret Accessor' role
+       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+       * Service Agent.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public int getSecretEnvCount() {
+        if (secretEnvBuilder_ == null) {
+          return secretEnv_.size();
+        } else {
+          return secretEnvBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables where the value is a secret in Cloud
+       * Secret Manager.
+       * To use this feature, add 'Secret Manager Secret Accessor' role
+       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+       * Service Agent.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.SecretEnvVar getSecretEnv(int index) {
+        if (secretEnvBuilder_ == null) {
+          return secretEnv_.get(index);
+        } else {
+          return secretEnvBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables where the value is a secret in Cloud
+       * Secret Manager.
+       * To use this feature, add 'Secret Manager Secret Accessor' role
+       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+       * Service Agent.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSecretEnv(int index, com.google.cloud.aiplatform.v1.SecretEnvVar value) {
+        if (secretEnvBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSecretEnvIsMutable();
+          secretEnv_.set(index, value);
+          onChanged();
+        } else {
+          secretEnvBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables where the value is a secret in Cloud
+       * Secret Manager.
+       * To use this feature, add 'Secret Manager Secret Accessor' role
+       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+       * Service Agent.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSecretEnv(
+          int index, com.google.cloud.aiplatform.v1.SecretEnvVar.Builder builderForValue) {
+        if (secretEnvBuilder_ == null) {
+          ensureSecretEnvIsMutable();
+          secretEnv_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          secretEnvBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables where the value is a secret in Cloud
+       * Secret Manager.
+       * To use this feature, add 'Secret Manager Secret Accessor' role
+       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+       * Service Agent.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addSecretEnv(com.google.cloud.aiplatform.v1.SecretEnvVar value) {
+        if (secretEnvBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSecretEnvIsMutable();
+          secretEnv_.add(value);
+          onChanged();
+        } else {
+          secretEnvBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables where the value is a secret in Cloud
+       * Secret Manager.
+       * To use this feature, add 'Secret Manager Secret Accessor' role
+       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+       * Service Agent.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addSecretEnv(int index, com.google.cloud.aiplatform.v1.SecretEnvVar value) {
+        if (secretEnvBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSecretEnvIsMutable();
+          secretEnv_.add(index, value);
+          onChanged();
+        } else {
+          secretEnvBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables where the value is a secret in Cloud
+       * Secret Manager.
+       * To use this feature, add 'Secret Manager Secret Accessor' role
+       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+       * Service Agent.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addSecretEnv(
+          com.google.cloud.aiplatform.v1.SecretEnvVar.Builder builderForValue) {
+        if (secretEnvBuilder_ == null) {
+          ensureSecretEnvIsMutable();
+          secretEnv_.add(builderForValue.build());
+          onChanged();
+        } else {
+          secretEnvBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables where the value is a secret in Cloud
+       * Secret Manager.
+       * To use this feature, add 'Secret Manager Secret Accessor' role
+       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+       * Service Agent.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addSecretEnv(
+          int index, com.google.cloud.aiplatform.v1.SecretEnvVar.Builder builderForValue) {
+        if (secretEnvBuilder_ == null) {
+          ensureSecretEnvIsMutable();
+          secretEnv_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          secretEnvBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables where the value is a secret in Cloud
+       * Secret Manager.
+       * To use this feature, add 'Secret Manager Secret Accessor' role
+       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+       * Service Agent.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAllSecretEnv(
+          java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.SecretEnvVar> values) {
+        if (secretEnvBuilder_ == null) {
+          ensureSecretEnvIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, secretEnv_);
+          onChanged();
+        } else {
+          secretEnvBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables where the value is a secret in Cloud
+       * Secret Manager.
+       * To use this feature, add 'Secret Manager Secret Accessor' role
+       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+       * Service Agent.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSecretEnv() {
+        if (secretEnvBuilder_ == null) {
+          secretEnv_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          secretEnvBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables where the value is a secret in Cloud
+       * Secret Manager.
+       * To use this feature, add 'Secret Manager Secret Accessor' role
+       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+       * Service Agent.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeSecretEnv(int index) {
+        if (secretEnvBuilder_ == null) {
+          ensureSecretEnvIsMutable();
+          secretEnv_.remove(index);
+          onChanged();
+        } else {
+          secretEnvBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables where the value is a secret in Cloud
+       * Secret Manager.
+       * To use this feature, add 'Secret Manager Secret Accessor' role
+       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+       * Service Agent.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.SecretEnvVar.Builder getSecretEnvBuilder(int index) {
+        return getSecretEnvFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables where the value is a secret in Cloud
+       * Secret Manager.
+       * To use this feature, add 'Secret Manager Secret Accessor' role
+       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+       * Service Agent.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.SecretEnvVarOrBuilder getSecretEnvOrBuilder(int index) {
+        if (secretEnvBuilder_ == null) {
+          return secretEnv_.get(index);
+        } else {
+          return secretEnvBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables where the value is a secret in Cloud
+       * Secret Manager.
+       * To use this feature, add 'Secret Manager Secret Accessor' role
+       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+       * Service Agent.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<? extends com.google.cloud.aiplatform.v1.SecretEnvVarOrBuilder>
+          getSecretEnvOrBuilderList() {
+        if (secretEnvBuilder_ != null) {
+          return secretEnvBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(secretEnv_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables where the value is a secret in Cloud
+       * Secret Manager.
+       * To use this feature, add 'Secret Manager Secret Accessor' role
+       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+       * Service Agent.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.SecretEnvVar.Builder addSecretEnvBuilder() {
+        return getSecretEnvFieldBuilder()
+            .addBuilder(com.google.cloud.aiplatform.v1.SecretEnvVar.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables where the value is a secret in Cloud
+       * Secret Manager.
+       * To use this feature, add 'Secret Manager Secret Accessor' role
+       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+       * Service Agent.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.SecretEnvVar.Builder addSecretEnvBuilder(int index) {
+        return getSecretEnvFieldBuilder()
+            .addBuilder(index, com.google.cloud.aiplatform.v1.SecretEnvVar.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Environment variables where the value is a secret in Cloud
+       * Secret Manager.
+       * To use this feature, add 'Secret Manager Secret Accessor' role
+       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
+       * Service Agent.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.SecretEnvVar secret_env = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.aiplatform.v1.SecretEnvVar.Builder>
+          getSecretEnvBuilderList() {
+        return getSecretEnvFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.SecretEnvVar,
+              com.google.cloud.aiplatform.v1.SecretEnvVar.Builder,
+              com.google.cloud.aiplatform.v1.SecretEnvVarOrBuilder>
+          getSecretEnvFieldBuilder() {
+        if (secretEnvBuilder_ == null) {
+          secretEnvBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1.SecretEnvVar,
+                  com.google.cloud.aiplatform.v1.SecretEnvVar.Builder,
+                  com.google.cloud.aiplatform.v1.SecretEnvVarOrBuilder>(
+                  secretEnv_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+          secretEnv_ = null;
+        }
+        return secretEnvBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec)
+    private static final com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec();
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DeploymentSpec> PARSER =
+        new com.google.protobuf.AbstractParser<DeploymentSpec>() {
+          @java.lang.Override
+          public DeploymentSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DeploymentSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeploymentSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
+  public static final int PACKAGE_SPEC_FIELD_NUMBER = 2;
+  private com.google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec packageSpec_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User provided package spec of the ReasoningEngine.
+   * Ignored when users directly specify a deployment image through
+   * `deployment_spec.first_party_image_override`, but keeping the
+   * field_behavior to avoid introducing breaking changes.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the packageSpec field is set.
@@ -1362,15 +3269,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
   public boolean hasPackageSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Required. User provided package spec of the ReasoningEngine.
+   * Optional. User provided package spec of the ReasoningEngine.
+   * Ignored when users directly specify a deployment image through
+   * `deployment_spec.first_party_image_override`, but keeping the
+   * field_behavior to avoid introducing breaking changes.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The packageSpec.
@@ -1381,15 +3292,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec.getDefaultInstance()
         : packageSpec_;
   }
+
   /**
    *
    *
    * <pre>
-   * Required. User provided package spec of the ReasoningEngine.
+   * Optional. User provided package spec of the ReasoningEngine.
+   * Ignored when users directly specify a deployment image through
+   * `deployment_spec.first_party_image_override`, but keeping the
+   * field_behavior to avoid introducing breaking changes.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -1400,10 +3315,71 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         : packageSpec_;
   }
 
+  public static final int DEPLOYMENT_SPEC_FIELD_NUMBER = 4;
+  private com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec deploymentSpec_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification of a Reasoning Engine deployment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec deployment_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the deploymentSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeploymentSpec() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification of a Reasoning Engine deployment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec deployment_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The deploymentSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec getDeploymentSpec() {
+    return deploymentSpec_ == null
+        ? com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec.getDefaultInstance()
+        : deploymentSpec_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification of a Reasoning Engine deployment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec deployment_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpecOrBuilder
+      getDeploymentSpecOrBuilder() {
+    return deploymentSpec_ == null
+        ? com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec.getDefaultInstance()
+        : deploymentSpec_;
+  }
+
   public static final int CLASS_METHODS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Struct> classMethods_;
+
   /**
    *
    *
@@ -1420,6 +3396,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.protobuf.Struct> getClassMethodsList() {
     return classMethods_;
   }
+
   /**
    *
    *
@@ -1437,6 +3414,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       getClassMethodsOrBuilderList() {
     return classMethods_;
   }
+
   /**
    *
    *
@@ -1453,6 +3431,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
   public int getClassMethodsCount() {
     return classMethods_.size();
   }
+
   /**
    *
    *
@@ -1469,6 +3448,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Struct getClassMethods(int index) {
     return classMethods_.get(index);
   }
+
   /**
    *
    *
@@ -1484,6 +3464,61 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getClassMethodsOrBuilder(int index) {
     return classMethods_.get(index);
+  }
+
+  public static final int AGENT_FRAMEWORK_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object agentFramework_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The OSS agent framework used to develop the agent.
+   * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+   * </pre>
+   *
+   * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The agentFramework.
+   */
+  @java.lang.Override
+  public java.lang.String getAgentFramework() {
+    java.lang.Object ref = agentFramework_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      agentFramework_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The OSS agent framework used to develop the agent.
+   * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+   * </pre>
+   *
+   * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for agentFramework.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAgentFrameworkBytes() {
+    java.lang.Object ref = agentFramework_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      agentFramework_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1506,6 +3541,12 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     for (int i = 0; i < classMethods_.size(); i++) {
       output.writeMessage(3, classMethods_.get(i));
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(4, getDeploymentSpec());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentFramework_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, agentFramework_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1520,6 +3561,12 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     }
     for (int i = 0; i < classMethods_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, classMethods_.get(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDeploymentSpec());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentFramework_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, agentFramework_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1541,7 +3588,12 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     if (hasPackageSpec()) {
       if (!getPackageSpec().equals(other.getPackageSpec())) return false;
     }
+    if (hasDeploymentSpec() != other.hasDeploymentSpec()) return false;
+    if (hasDeploymentSpec()) {
+      if (!getDeploymentSpec().equals(other.getDeploymentSpec())) return false;
+    }
     if (!getClassMethodsList().equals(other.getClassMethodsList())) return false;
+    if (!getAgentFramework().equals(other.getAgentFramework())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1557,10 +3609,16 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + PACKAGE_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getPackageSpec().hashCode();
     }
+    if (hasDeploymentSpec()) {
+      hash = (37 * hash) + DEPLOYMENT_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getDeploymentSpec().hashCode();
+    }
     if (getClassMethodsCount() > 0) {
       hash = (37 * hash) + CLASS_METHODS_FIELD_NUMBER;
       hash = (53 * hash) + getClassMethodsList().hashCode();
     }
+    hash = (37 * hash) + AGENT_FRAMEWORK_FIELD_NUMBER;
+    hash = (53 * hash) + getAgentFramework().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1661,6 +3719,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1702,6 +3761,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPackageSpecFieldBuilder();
+        getDeploymentSpecFieldBuilder();
         getClassMethodsFieldBuilder();
       }
     }
@@ -1715,13 +3775,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         packageSpecBuilder_.dispose();
         packageSpecBuilder_ = null;
       }
+      deploymentSpec_ = null;
+      if (deploymentSpecBuilder_ != null) {
+        deploymentSpecBuilder_.dispose();
+        deploymentSpecBuilder_ = null;
+      }
       if (classMethodsBuilder_ == null) {
         classMethods_ = java.util.Collections.emptyList();
       } else {
         classMethods_ = null;
         classMethodsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
+      agentFramework_ = "";
       return this;
     }
 
@@ -1760,9 +3826,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     private void buildPartialRepeatedFields(
         com.google.cloud.aiplatform.v1.ReasoningEngineSpec result) {
       if (classMethodsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           classMethods_ = java.util.Collections.unmodifiableList(classMethods_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.classMethods_ = classMethods_;
       } else {
@@ -1777,6 +3843,14 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         result.packageSpec_ =
             packageSpecBuilder_ == null ? packageSpec_ : packageSpecBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deploymentSpec_ =
+            deploymentSpecBuilder_ == null ? deploymentSpec_ : deploymentSpecBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.agentFramework_ = agentFramework_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1830,11 +3904,14 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       if (other.hasPackageSpec()) {
         mergePackageSpec(other.getPackageSpec());
       }
+      if (other.hasDeploymentSpec()) {
+        mergeDeploymentSpec(other.getDeploymentSpec());
+      }
       if (classMethodsBuilder_ == null) {
         if (!other.classMethods_.isEmpty()) {
           if (classMethods_.isEmpty()) {
             classMethods_ = other.classMethods_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureClassMethodsIsMutable();
             classMethods_.addAll(other.classMethods_);
@@ -1847,7 +3924,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             classMethodsBuilder_.dispose();
             classMethodsBuilder_ = null;
             classMethods_ = other.classMethods_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             classMethodsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getClassMethodsFieldBuilder()
@@ -1856,6 +3933,11 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             classMethodsBuilder_.addAllMessages(other.classMethods_);
           }
         }
+      }
+      if (!other.getAgentFramework().isEmpty()) {
+        agentFramework_ = other.agentFramework_;
+        bitField0_ |= 0x00000008;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1901,6 +3983,18 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
                 }
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getDeploymentSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 34
+            case 42:
+              {
+                agentFramework_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1926,15 +4020,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             com.google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec.Builder,
             com.google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpecOrBuilder>
         packageSpecBuilder_;
+
     /**
      *
      *
      * <pre>
-     * Required. User provided package spec of the ReasoningEngine.
+     * Optional. User provided package spec of the ReasoningEngine.
+     * Ignored when users directly specify a deployment image through
+     * `deployment_spec.first_party_image_override`, but keeping the
+     * field_behavior to avoid introducing breaking changes.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the packageSpec field is set.
@@ -1942,15 +4040,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public boolean hasPackageSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Required. User provided package spec of the ReasoningEngine.
+     * Optional. User provided package spec of the ReasoningEngine.
+     * Ignored when users directly specify a deployment image through
+     * `deployment_spec.first_party_image_override`, but keeping the
+     * field_behavior to avoid introducing breaking changes.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The packageSpec.
@@ -1964,15 +4066,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return packageSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Required. User provided package spec of the ReasoningEngine.
+     * Optional. User provided package spec of the ReasoningEngine.
+     * Ignored when users directly specify a deployment image through
+     * `deployment_spec.first_party_image_override`, but keeping the
+     * field_behavior to avoid introducing breaking changes.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setPackageSpec(
@@ -1989,15 +4095,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. User provided package spec of the ReasoningEngine.
+     * Optional. User provided package spec of the ReasoningEngine.
+     * Ignored when users directly specify a deployment image through
+     * `deployment_spec.first_party_image_override`, but keeping the
+     * field_behavior to avoid introducing breaking changes.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setPackageSpec(
@@ -2011,15 +4121,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. User provided package spec of the ReasoningEngine.
+     * Optional. User provided package spec of the ReasoningEngine.
+     * Ignored when users directly specify a deployment image through
+     * `deployment_spec.first_party_image_override`, but keeping the
+     * field_behavior to avoid introducing breaking changes.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergePackageSpec(
@@ -2043,15 +4157,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. User provided package spec of the ReasoningEngine.
+     * Optional. User provided package spec of the ReasoningEngine.
+     * Ignored when users directly specify a deployment image through
+     * `deployment_spec.first_party_image_override`, but keeping the
+     * field_behavior to avoid introducing breaking changes.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearPackageSpec() {
@@ -2064,15 +4182,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. User provided package spec of the ReasoningEngine.
+     * Optional. User provided package spec of the ReasoningEngine.
+     * Ignored when users directly specify a deployment image through
+     * `deployment_spec.first_party_image_override`, but keeping the
+     * field_behavior to avoid introducing breaking changes.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec.Builder
@@ -2081,15 +4203,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       onChanged();
       return getPackageSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * Required. User provided package spec of the ReasoningEngine.
+     * Optional. User provided package spec of the ReasoningEngine.
+     * Ignored when users directly specify a deployment image through
+     * `deployment_spec.first_party_image_override`, but keeping the
+     * field_behavior to avoid introducing breaking changes.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpecOrBuilder
@@ -2102,15 +4228,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             : packageSpec_;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Required. User provided package spec of the ReasoningEngine.
+     * Optional. User provided package spec of the ReasoningEngine.
+     * Ignored when users directly specify a deployment image through
+     * `deployment_spec.first_party_image_override`, but keeping the
+     * field_behavior to avoid introducing breaking changes.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec package_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2130,13 +4260,232 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       return packageSpecBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec deploymentSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec,
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec.Builder,
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpecOrBuilder>
+        deploymentSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification of a Reasoning Engine deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec deployment_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the deploymentSpec field is set.
+     */
+    public boolean hasDeploymentSpec() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification of a Reasoning Engine deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec deployment_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The deploymentSpec.
+     */
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec getDeploymentSpec() {
+      if (deploymentSpecBuilder_ == null) {
+        return deploymentSpec_ == null
+            ? com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec.getDefaultInstance()
+            : deploymentSpec_;
+      } else {
+        return deploymentSpecBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification of a Reasoning Engine deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec deployment_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDeploymentSpec(
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec value) {
+      if (deploymentSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deploymentSpec_ = value;
+      } else {
+        deploymentSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification of a Reasoning Engine deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec deployment_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDeploymentSpec(
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec.Builder builderForValue) {
+      if (deploymentSpecBuilder_ == null) {
+        deploymentSpec_ = builderForValue.build();
+      } else {
+        deploymentSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification of a Reasoning Engine deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec deployment_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDeploymentSpec(
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec value) {
+      if (deploymentSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && deploymentSpec_ != null
+            && deploymentSpec_
+                != com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec
+                    .getDefaultInstance()) {
+          getDeploymentSpecBuilder().mergeFrom(value);
+        } else {
+          deploymentSpec_ = value;
+        }
+      } else {
+        deploymentSpecBuilder_.mergeFrom(value);
+      }
+      if (deploymentSpec_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification of a Reasoning Engine deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec deployment_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDeploymentSpec() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      deploymentSpec_ = null;
+      if (deploymentSpecBuilder_ != null) {
+        deploymentSpecBuilder_.dispose();
+        deploymentSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification of a Reasoning Engine deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec deployment_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec.Builder
+        getDeploymentSpecBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getDeploymentSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification of a Reasoning Engine deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec deployment_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpecOrBuilder
+        getDeploymentSpecOrBuilder() {
+      if (deploymentSpecBuilder_ != null) {
+        return deploymentSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return deploymentSpec_ == null
+            ? com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec.getDefaultInstance()
+            : deploymentSpec_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification of a Reasoning Engine deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec deployment_spec = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec,
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec.Builder,
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpecOrBuilder>
+        getDeploymentSpecFieldBuilder() {
+      if (deploymentSpecBuilder_ == null) {
+        deploymentSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec,
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec.Builder,
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpecOrBuilder>(
+                getDeploymentSpec(), getParentForChildren(), isClean());
+        deploymentSpec_ = null;
+      }
+      return deploymentSpecBuilder_;
+    }
+
     private java.util.List<com.google.protobuf.Struct> classMethods_ =
         java.util.Collections.emptyList();
 
     private void ensureClassMethodsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         classMethods_ = new java.util.ArrayList<com.google.protobuf.Struct>(classMethods_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2165,6 +4514,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return classMethodsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2184,6 +4534,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return classMethodsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2203,6 +4554,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return classMethodsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2228,6 +4580,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2250,6 +4603,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2275,6 +4629,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2300,6 +4655,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2322,6 +4678,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2344,6 +4701,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2367,6 +4725,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2382,13 +4741,14 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public Builder clearClassMethods() {
       if (classMethodsBuilder_ == null) {
         classMethods_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         classMethodsBuilder_.clear();
       }
       return this;
     }
+
     /**
      *
      *
@@ -2411,6 +4771,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2426,6 +4787,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.Struct.Builder getClassMethodsBuilder(int index) {
       return getClassMethodsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2445,6 +4807,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return classMethodsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2465,6 +4828,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(classMethods_);
       }
     }
+
     /**
      *
      *
@@ -2481,6 +4845,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       return getClassMethodsFieldBuilder()
           .addBuilder(com.google.protobuf.Struct.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2497,6 +4862,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       return getClassMethodsFieldBuilder()
           .addBuilder(index, com.google.protobuf.Struct.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2524,10 +4890,126 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
                 com.google.protobuf.Struct,
                 com.google.protobuf.Struct.Builder,
                 com.google.protobuf.StructOrBuilder>(
-                classMethods_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                classMethods_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         classMethods_ = null;
       }
       return classMethodsBuilder_;
+    }
+
+    private java.lang.Object agentFramework_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The OSS agent framework used to develop the agent.
+     * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+     * </pre>
+     *
+     * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The agentFramework.
+     */
+    public java.lang.String getAgentFramework() {
+      java.lang.Object ref = agentFramework_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        agentFramework_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The OSS agent framework used to develop the agent.
+     * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+     * </pre>
+     *
+     * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for agentFramework.
+     */
+    public com.google.protobuf.ByteString getAgentFrameworkBytes() {
+      java.lang.Object ref = agentFramework_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        agentFramework_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The OSS agent framework used to develop the agent.
+     * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+     * </pre>
+     *
+     * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The agentFramework to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAgentFramework(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      agentFramework_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The OSS agent framework used to develop the agent.
+     * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+     * </pre>
+     *
+     * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAgentFramework() {
+      agentFramework_ = getDefaultInstance().getAgentFramework();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The OSS agent framework used to develop the agent.
+     * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+     * </pre>
+     *
+     * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for agentFramework to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAgentFrameworkBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      agentFramework_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

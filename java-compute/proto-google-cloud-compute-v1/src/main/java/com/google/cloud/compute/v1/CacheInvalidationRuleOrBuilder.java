@@ -28,6 +28,60 @@ public interface CacheInvalidationRuleOrBuilder
    *
    *
    * <pre>
+   * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
+   * </pre>
+   *
+   * <code>repeated string cache_tags = 29073078;</code>
+   *
+   * @return A list containing the cacheTags.
+   */
+  java.util.List<java.lang.String> getCacheTagsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
+   * </pre>
+   *
+   * <code>repeated string cache_tags = 29073078;</code>
+   *
+   * @return The count of cacheTags.
+   */
+  int getCacheTagsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
+   * </pre>
+   *
+   * <code>repeated string cache_tags = 29073078;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The cacheTags at the given index.
+   */
+  java.lang.String getCacheTags(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of cache tags used to identify cached objects. - Cache tags are specified when the response is first cached, by setting the `Cache-Tag` response header at the origin. - Multiple cache tags in the same invalidation request are treated as Boolean `OR` - for example, `tag1 OR tag2 OR tag3`. - If other fields are also specified, these are treated as Boolean `AND` with any tags. Up to 10 tags can be specified in a single invalidation request.
+   * </pre>
+   *
+   * <code>repeated string cache_tags = 29073078;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the cacheTags at the given index.
+   */
+  com.google.protobuf.ByteString getCacheTagsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * If set, this invalidation rule will only apply to requests with a Host header matching host.
    * </pre>
    *
@@ -36,6 +90,7 @@ public interface CacheInvalidationRuleOrBuilder
    * @return Whether the host field is set.
    */
   boolean hasHost();
+
   /**
    *
    *
@@ -48,6 +103,7 @@ public interface CacheInvalidationRuleOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
+
   /**
    *
    *
@@ -67,12 +123,14 @@ public interface CacheInvalidationRuleOrBuilder
    * @return Whether the path field is set.
    */
   boolean hasPath();
+
   /**
    * <code>optional string path = 3433509;</code>
    *
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    * <code>optional string path = 3433509;</code>
    *

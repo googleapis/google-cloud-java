@@ -23,7 +23,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Retrieve from Vertex AI Search datastore for grounding.
+ * Retrieve from Vertex AI Search datastore or engine for grounding.
+ * datastore and engine are mutually exclusive.
  * See https://cloud.google.com/products/agent-builder
  * </pre>
  *
@@ -34,6 +35,7 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.VertexAISearch)
     VertexAISearchOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VertexAISearch.newBuilder() to construct.
   private VertexAISearch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -41,6 +43,7 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
 
   private VertexAISearch() {
     datastore_ = "";
+    engine_ = "";
   }
 
   @java.lang.Override
@@ -68,16 +71,17 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object datastore_ = "";
+
   /**
    *
    *
    * <pre>
-   * Required. Fully-qualified Vertex AI Search data store resource ID.
+   * Optional. Fully-qualified Vertex AI Search data store resource ID.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
    * </pre>
    *
-   * <code>string datastore = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string datastore = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The datastore.
    */
@@ -93,16 +97,17 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Required. Fully-qualified Vertex AI Search data store resource ID.
+   * Optional. Fully-qualified Vertex AI Search data store resource ID.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
    * </pre>
    *
-   * <code>string datastore = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string datastore = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for datastore.
    */
@@ -113,6 +118,63 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       datastore_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ENGINE_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object engine_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Fully-qualified Vertex AI Search engine resource ID.
+   * Format:
+   * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
+   * </pre>
+   *
+   * <code>string engine = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The engine.
+   */
+  @java.lang.Override
+  public java.lang.String getEngine() {
+    java.lang.Object ref = engine_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      engine_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Fully-qualified Vertex AI Search engine resource ID.
+   * Format:
+   * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
+   * </pre>
+   *
+   * <code>string engine = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for engine.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEngineBytes() {
+    java.lang.Object ref = engine_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      engine_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -136,6 +198,9 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datastore_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, datastore_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(engine_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, engine_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -147,6 +212,9 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datastore_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, datastore_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(engine_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, engine_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -165,6 +233,7 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.aiplatform.v1beta1.VertexAISearch) obj;
 
     if (!getDatastore().equals(other.getDatastore())) return false;
+    if (!getEngine().equals(other.getEngine())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -178,6 +247,8 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + DATASTORE_FIELD_NUMBER;
     hash = (53 * hash) + getDatastore().hashCode();
+    hash = (37 * hash) + ENGINE_FIELD_NUMBER;
+    hash = (53 * hash) + getEngine().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -278,11 +349,13 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
    * <pre>
-   * Retrieve from Vertex AI Search datastore for grounding.
+   * Retrieve from Vertex AI Search datastore or engine for grounding.
+   * datastore and engine are mutually exclusive.
    * See https://cloud.google.com/products/agent-builder
    * </pre>
    *
@@ -319,6 +392,7 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       datastore_ = "";
+      engine_ = "";
       return this;
     }
 
@@ -357,6 +431,9 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.datastore_ = datastore_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.engine_ = engine_;
       }
     }
 
@@ -411,6 +488,11 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getEngine().isEmpty()) {
+        engine_ = other.engine_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -443,6 +525,12 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                engine_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -463,16 +551,17 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object datastore_ = "";
+
     /**
      *
      *
      * <pre>
-     * Required. Fully-qualified Vertex AI Search data store resource ID.
+     * Optional. Fully-qualified Vertex AI Search data store resource ID.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
      * </pre>
      *
-     * <code>string datastore = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string datastore = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The datastore.
      */
@@ -487,16 +576,17 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Fully-qualified Vertex AI Search data store resource ID.
+     * Optional. Fully-qualified Vertex AI Search data store resource ID.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
      * </pre>
      *
-     * <code>string datastore = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string datastore = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for datastore.
      */
@@ -511,16 +601,17 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Fully-qualified Vertex AI Search data store resource ID.
+     * Optional. Fully-qualified Vertex AI Search data store resource ID.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
      * </pre>
      *
-     * <code>string datastore = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string datastore = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The datastore to set.
      * @return This builder for chaining.
@@ -534,16 +625,17 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Fully-qualified Vertex AI Search data store resource ID.
+     * Optional. Fully-qualified Vertex AI Search data store resource ID.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
      * </pre>
      *
-     * <code>string datastore = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string datastore = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -553,16 +645,17 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Required. Fully-qualified Vertex AI Search data store resource ID.
+     * Optional. Fully-qualified Vertex AI Search data store resource ID.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
      * </pre>
      *
-     * <code>string datastore = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string datastore = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for datastore to set.
      * @return This builder for chaining.
@@ -574,6 +667,127 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       datastore_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object engine_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Fully-qualified Vertex AI Search engine resource ID.
+     * Format:
+     * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
+     * </pre>
+     *
+     * <code>string engine = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The engine.
+     */
+    public java.lang.String getEngine() {
+      java.lang.Object ref = engine_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        engine_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Fully-qualified Vertex AI Search engine resource ID.
+     * Format:
+     * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
+     * </pre>
+     *
+     * <code>string engine = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for engine.
+     */
+    public com.google.protobuf.ByteString getEngineBytes() {
+      java.lang.Object ref = engine_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        engine_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Fully-qualified Vertex AI Search engine resource ID.
+     * Format:
+     * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
+     * </pre>
+     *
+     * <code>string engine = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The engine to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEngine(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      engine_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Fully-qualified Vertex AI Search engine resource ID.
+     * Format:
+     * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
+     * </pre>
+     *
+     * <code>string engine = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEngine() {
+      engine_ = getDefaultInstance().getEngine();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Fully-qualified Vertex AI Search engine resource ID.
+     * Format:
+     * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
+     * </pre>
+     *
+     * <code>string engine = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for engine to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEngineBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      engine_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

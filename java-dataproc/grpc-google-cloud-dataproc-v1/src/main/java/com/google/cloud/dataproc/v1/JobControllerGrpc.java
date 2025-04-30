@@ -340,6 +340,19 @@ public final class JobControllerGrpc {
     return JobControllerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static JobControllerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<JobControllerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<JobControllerBlockingV2Stub>() {
+          @java.lang.Override
+          public JobControllerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new JobControllerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return JobControllerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -619,6 +632,122 @@ public final class JobControllerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service JobController.
+   *
+   * <pre>
+   * The JobController provides methods to manage jobs.
+   * </pre>
+   */
+  public static final class JobControllerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<JobControllerBlockingV2Stub> {
+    private JobControllerBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected JobControllerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new JobControllerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a job to a cluster.
+     * </pre>
+     */
+    public com.google.cloud.dataproc.v1.Job submitJob(
+        com.google.cloud.dataproc.v1.SubmitJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSubmitJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits job to a cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation submitJobAsOperation(
+        com.google.cloud.dataproc.v1.SubmitJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSubmitJobAsOperationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the resource representation for a job in a project.
+     * </pre>
+     */
+    public com.google.cloud.dataproc.v1.Job getJob(
+        com.google.cloud.dataproc.v1.GetJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists regions/{region}/jobs in a project.
+     * </pre>
+     */
+    public com.google.cloud.dataproc.v1.ListJobsResponse listJobs(
+        com.google.cloud.dataproc.v1.ListJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a job in a project.
+     * </pre>
+     */
+    public com.google.cloud.dataproc.v1.Job updateJob(
+        com.google.cloud.dataproc.v1.UpdateJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a job cancellation request. To access the job resource
+     * after cancellation, call
+     * [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1/projects.regions.jobs/list)
+     * or
+     * [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1/projects.regions.jobs/get).
+     * </pre>
+     */
+    public com.google.cloud.dataproc.v1.Job cancelJob(
+        com.google.cloud.dataproc.v1.CancelJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the job from the project. If the job is active, the delete fails,
+     * and the response returns `FAILED_PRECONDITION`.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteJob(
+        com.google.cloud.dataproc.v1.DeleteJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteJobMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service JobController.
    *
    * <pre>
    * The JobController provides methods to manage jobs.

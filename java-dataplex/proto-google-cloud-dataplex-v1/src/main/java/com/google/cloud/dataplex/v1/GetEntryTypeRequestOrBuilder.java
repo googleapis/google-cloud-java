@@ -39,6 +39,7 @@ public interface GetEntryTypeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface CreateToolVersionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateToolVersionRequestOrBuilder
    * @return Whether the toolVersion field is set.
    */
   boolean hasToolVersion();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateToolVersionRequestOrBuilder
    * @return The toolVersion.
    */
   com.google.cloud.dialogflow.cx.v3beta1.ToolVersion getToolVersion();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface GoogleApiSourceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface GoogleApiSourceOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface GoogleApiSourceOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface GoogleApiSourceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface GoogleApiSourceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public interface GoogleApiSourceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public interface GoogleApiSourceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public interface GoogleApiSourceOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -209,9 +217,11 @@ public interface GoogleApiSourceOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -222,6 +232,7 @@ public interface GoogleApiSourceOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -236,6 +247,7 @@ public interface GoogleApiSourceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -258,6 +270,7 @@ public interface GoogleApiSourceOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -269,9 +282,11 @@ public interface GoogleApiSourceOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -283,6 +298,7 @@ public interface GoogleApiSourceOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -298,6 +314,7 @@ public interface GoogleApiSourceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -322,6 +339,7 @@ public interface GoogleApiSourceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -352,6 +370,7 @@ public interface GoogleApiSourceOrBuilder
    * @return The destination.
    */
   java.lang.String getDestination();
+
   /**
    *
    *
@@ -388,6 +407,7 @@ public interface GoogleApiSourceOrBuilder
    * @return The cryptoKeyName.
    */
   java.lang.String getCryptoKeyName();
+
   /**
    *
    *
@@ -421,6 +441,7 @@ public interface GoogleApiSourceOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
+
   /**
    *
    *
@@ -435,6 +456,7 @@ public interface GoogleApiSourceOrBuilder
    * @return The loggingConfig.
    */
   com.google.cloud.eventarc.v1.LoggingConfig getLoggingConfig();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.chat.v1.SpaceNotificationSetting)
     SpaceNotificationSettingOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SpaceNotificationSetting.newBuilder() to construct.
   private SpaceNotificationSetting(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -143,6 +144,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
      * <code>NOTIFICATION_SETTING_UNSPECIFIED = 0;</code>
      */
     public static final int NOTIFICATION_SETTING_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -155,6 +157,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
      * <code>ALL = 1;</code>
      */
     public static final int ALL_VALUE = 1;
+
     /**
      *
      *
@@ -166,6 +169,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
      * <code>MAIN_CONVERSATIONS = 2;</code>
      */
     public static final int MAIN_CONVERSATIONS_VALUE = 2;
+
     /**
      *
      *
@@ -177,6 +181,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
      * <code>FOR_YOU = 3;</code>
      */
     public static final int FOR_YOU_VALUE = 3;
+
     /**
      *
      *
@@ -333,6 +338,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
      * <code>MUTE_SETTING_UNSPECIFIED = 0;</code>
      */
     public static final int MUTE_SETTING_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -344,6 +350,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
      * <code>UNMUTED = 1;</code>
      */
     public static final int UNMUTED_VALUE = 1;
+
     /**
      *
      *
@@ -444,6 +451,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -468,6 +476,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -495,6 +504,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
 
   public static final int NOTIFICATION_SETTING_FIELD_NUMBER = 2;
   private int notificationSetting_ = 0;
+
   /**
    *
    *
@@ -512,6 +522,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
   public boolean hasNotificationSetting() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -529,6 +540,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
   public int getNotificationSettingValue() {
     return notificationSetting_;
   }
+
   /**
    *
    *
@@ -554,6 +566,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
 
   public static final int MUTE_SETTING_FIELD_NUMBER = 3;
   private int muteSetting_ = 0;
+
   /**
    *
    *
@@ -569,6 +582,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
   public boolean hasMuteSetting() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -584,6 +598,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
   public int getMuteSettingValue() {
     return muteSetting_;
   }
+
   /**
    *
    *
@@ -791,6 +806,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1004,6 +1020,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1027,6 +1044,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1050,6 +1068,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1072,6 +1091,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1090,6 +1110,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1115,6 +1136,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
     }
 
     private int notificationSetting_ = 0;
+
     /**
      *
      *
@@ -1132,6 +1154,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
     public boolean hasNotificationSetting() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1149,6 +1172,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
     public int getNotificationSettingValue() {
       return notificationSetting_;
     }
+
     /**
      *
      *
@@ -1169,6 +1193,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1192,6 +1217,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
           ? com.google.chat.v1.SpaceNotificationSetting.NotificationSetting.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1216,6 +1242,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1264,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
     }
 
     private int muteSetting_ = 0;
+
     /**
      *
      *
@@ -1252,6 +1280,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
     public boolean hasMuteSetting() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1267,6 +1296,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
     public int getMuteSettingValue() {
       return muteSetting_;
     }
+
     /**
      *
      *
@@ -1285,6 +1315,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1304,6 +1335,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
           ? com.google.chat.v1.SpaceNotificationSetting.MuteSetting.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1325,6 +1357,7 @@ public final class SpaceNotificationSetting extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

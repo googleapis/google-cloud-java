@@ -33,6 +33,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.UpdateQaQuestionRequest)
     UpdateQaQuestionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateQaQuestionRequest.newBuilder() to construct.
   private UpdateQaQuestionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int QA_QUESTION_FIELD_NUMBER = 1;
   private com.google.cloud.contactcenterinsights.v1.QaQuestion qaQuestion_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
   public boolean hasQaQuestion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
         ? com.google.cloud.contactcenterinsights.v1.QaQuestion.getDefaultInstance()
         : qaQuestion_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -374,6 +381,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -601,6 +609,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
             com.google.cloud.contactcenterinsights.v1.QaQuestion.Builder,
             com.google.cloud.contactcenterinsights.v1.QaQuestionOrBuilder>
         qaQuestionBuilder_;
+
     /**
      *
      *
@@ -617,6 +626,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
     public boolean hasQaQuestion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -639,6 +649,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
         return qaQuestionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -663,6 +674,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -685,6 +697,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +728,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +750,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +767,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
       onChanged();
       return getQaQuestionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -772,6 +788,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
             : qaQuestion_;
       }
     }
+
     /**
      *
      *
@@ -806,6 +823,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -830,6 +848,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -860,6 +879,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -892,6 +912,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +942,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -958,6 +980,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -987,6 +1010,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1035,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1039,6 +1064,7 @@ public final class UpdateQaQuestionRequest extends com.google.protobuf.Generated
             : updateMask_;
       }
     }
+
     /**
      *
      *

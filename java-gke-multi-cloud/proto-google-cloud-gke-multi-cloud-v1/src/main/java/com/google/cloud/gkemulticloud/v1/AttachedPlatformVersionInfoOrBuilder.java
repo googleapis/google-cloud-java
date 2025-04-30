@@ -36,6 +36,7 @@ public interface AttachedPlatformVersionInfoOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

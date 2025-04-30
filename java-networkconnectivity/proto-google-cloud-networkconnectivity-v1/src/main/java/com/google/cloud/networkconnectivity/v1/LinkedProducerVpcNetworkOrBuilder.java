@@ -39,6 +39,7 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The serviceConsumerVpcSpoke.
    */
   java.lang.String getServiceConsumerVpcSpoke();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The peering.
    */
   java.lang.String getPeering();
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The producerNetwork.
    */
   java.lang.String getProducerNetwork();
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return A list containing the excludeExportRanges.
    */
   java.util.List<java.lang.String> getExcludeExportRangesList();
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The count of excludeExportRanges.
    */
   int getExcludeExportRangesCount();
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The excludeExportRanges at the given index.
    */
   java.lang.String getExcludeExportRanges(int index);
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return A list containing the includeExportRanges.
    */
   java.util.List<java.lang.String> getIncludeExportRangesList();
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The count of includeExportRanges.
    */
   int getIncludeExportRangesCount();
+
   /**
    *
    *
@@ -237,6 +246,7 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The includeExportRanges at the given index.
    */
   java.lang.String getIncludeExportRanges(int index);
+
   /**
    *
    *
@@ -251,4 +261,136 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The bytes of the includeExportRanges at the given index.
    */
   com.google.protobuf.ByteString getIncludeExportRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The proposed include export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the proposedIncludeExportRanges.
+   */
+  java.util.List<java.lang.String> getProposedIncludeExportRangesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The proposed include export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of proposedIncludeExportRanges.
+   */
+  int getProposedIncludeExportRangesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The proposed include export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The proposedIncludeExportRanges at the given index.
+   */
+  java.lang.String getProposedIncludeExportRanges(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The proposed include export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the proposedIncludeExportRanges at the given index.
+   */
+  com.google.protobuf.ByteString getProposedIncludeExportRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_export_ranges = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the proposedExcludeExportRanges.
+   */
+  java.util.List<java.lang.String> getProposedExcludeExportRangesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_export_ranges = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of proposedExcludeExportRanges.
+   */
+  int getProposedExcludeExportRangesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_export_ranges = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The proposedExcludeExportRanges at the given index.
+   */
+  java.lang.String getProposedExcludeExportRanges(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_export_ranges = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the proposedExcludeExportRanges at the given index.
+   */
+  com.google.protobuf.ByteString getProposedExcludeExportRangesBytes(int index);
 }

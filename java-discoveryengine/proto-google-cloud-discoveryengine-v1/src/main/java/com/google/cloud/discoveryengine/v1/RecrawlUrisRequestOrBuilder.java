@@ -40,6 +40,7 @@ public interface RecrawlUrisRequestOrBuilder
    * @return The siteSearchEngine.
    */
   java.lang.String getSiteSearchEngine();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface RecrawlUrisRequestOrBuilder
    * @return A list containing the uris.
    */
   java.util.List<java.lang.String> getUrisList();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface RecrawlUrisRequestOrBuilder
    * @return The count of uris.
    */
   int getUrisCount();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface RecrawlUrisRequestOrBuilder
    * @return The uris at the given index.
    */
   java.lang.String getUris(int index);
+
   /**
    *
    *
@@ -124,9 +128,7 @@ public interface RecrawlUrisRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Full resource name of the [SiteCredential][], such as
-   * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;siteSearchEngine/siteCredentials/&#42;`.
-   * Only set to crawl private URIs.
+   * Optional. Credential id to use for crawling.
    * </pre>
    *
    * <code>string site_credential = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -134,13 +136,12 @@ public interface RecrawlUrisRequestOrBuilder
    * @return The siteCredential.
    */
   java.lang.String getSiteCredential();
+
   /**
    *
    *
    * <pre>
-   * Optional. Full resource name of the [SiteCredential][], such as
-   * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;siteSearchEngine/siteCredentials/&#42;`.
-   * Only set to crawl private URIs.
+   * Optional. Credential id to use for crawling.
    * </pre>
    *
    * <code>string site_credential = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

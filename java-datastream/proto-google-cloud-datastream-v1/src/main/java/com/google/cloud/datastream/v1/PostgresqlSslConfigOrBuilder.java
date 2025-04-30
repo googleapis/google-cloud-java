@@ -39,6 +39,7 @@ public interface PostgresqlSslConfigOrBuilder
    * @return Whether the serverVerification field is set.
    */
   boolean hasServerVerification();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface PostgresqlSslConfigOrBuilder
    * @return The serverVerification.
    */
   com.google.cloud.datastream.v1.PostgresqlSslConfig.ServerVerification getServerVerification();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface PostgresqlSslConfigOrBuilder
    * @return Whether the serverAndClientVerification field is set.
    */
   boolean hasServerAndClientVerification();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface PostgresqlSslConfigOrBuilder
    */
   com.google.cloud.datastream.v1.PostgresqlSslConfig.ServerAndClientVerification
       getServerAndClientVerification();
+
   /**
    *
    *

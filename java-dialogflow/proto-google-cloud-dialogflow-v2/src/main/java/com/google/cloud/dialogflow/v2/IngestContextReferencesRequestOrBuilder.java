@@ -40,6 +40,7 @@ public interface IngestContextReferencesRequestOrBuilder
    * @return The conversation.
    */
   java.lang.String getConversation();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface IngestContextReferencesRequestOrBuilder
    * </code>
    */
   int getContextReferencesCount();
+
   /**
    *
    *
@@ -87,10 +89,12 @@ public interface IngestContextReferencesRequestOrBuilder
    * </code>
    */
   boolean containsContextReferences(java.lang.String key);
+
   /** Use {@link #getContextReferencesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
       getContextReferences();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface IngestContextReferencesRequestOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
       getContextReferencesMap();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface IngestContextReferencesRequestOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.dialogflow.v2.Conversation.ContextReference defaultValue);
+
   /**
    *
    *

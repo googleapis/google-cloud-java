@@ -44,6 +44,7 @@ public interface SdpAdvancedConfigOrBuilder
    * @return The inspectTemplate.
    */
   java.lang.String getInspectTemplate();
+
   /**
    *
    *
@@ -87,6 +88,7 @@ public interface SdpAdvancedConfigOrBuilder
    * @return The deidentifyTemplate.
    */
   java.lang.String getDeidentifyTemplate();
+
   /**
    *
    *

@@ -90,6 +90,7 @@ public class ProductsServiceClientHttpJsonTest {
             .setAttributes(Attributes.newBuilder().build())
             .addAllCustomAttributes(new ArrayList<CustomAttribute>())
             .setProductStatus(ProductStatus.newBuilder().build())
+            .setAutomatedDiscounts(AutomatedDiscounts.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -142,6 +143,7 @@ public class ProductsServiceClientHttpJsonTest {
             .setAttributes(Attributes.newBuilder().build())
             .addAllCustomAttributes(new ArrayList<CustomAttribute>())
             .setProductStatus(ProductStatus.newBuilder().build())
+            .setAutomatedDiscounts(AutomatedDiscounts.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

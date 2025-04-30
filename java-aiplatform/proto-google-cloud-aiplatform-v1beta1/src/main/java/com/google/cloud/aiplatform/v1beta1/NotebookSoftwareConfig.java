@@ -33,6 +33,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.NotebookSoftwareConfig)
     NotebookSoftwareConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NotebookSoftwareConfig.newBuilder() to construct.
   private NotebookSoftwareConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.EnvVar> env_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.aiplatform.v1beta1.EnvVar> getEnvList() {
     return env_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
       getEnvOrBuilderList() {
     return env_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
   public int getEnvCount() {
     return env_.size();
   }
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
   public com.google.cloud.aiplatform.v1beta1.EnvVar getEnv(int index) {
     return env_.get(index);
   }
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
 
   public static final int POST_STARTUP_SCRIPT_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.PostStartupScriptConfig postStartupScriptConfig_;
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
   public boolean hasPostStartupScriptConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -188,6 +196,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
         ? com.google.cloud.aiplatform.v1beta1.PostStartupScriptConfig.getDefaultInstance()
         : postStartupScriptConfig_;
   }
+
   /**
    *
    *
@@ -384,6 +393,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -682,6 +692,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
         return envBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -701,6 +712,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
         return envBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -720,6 +732,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
         return envBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -745,6 +758,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +782,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +808,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +834,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +857,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +881,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +905,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +928,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +951,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +967,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
     public com.google.cloud.aiplatform.v1beta1.EnvVar.Builder getEnvBuilder(int index) {
       return getEnvFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -964,6 +987,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
         return envBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -984,6 +1008,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(env_);
       }
     }
+
     /**
      *
      *
@@ -1000,6 +1025,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
       return getEnvFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.EnvVar.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1016,6 +1042,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
       return getEnvFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.EnvVar.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1055,6 +1082,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
             com.google.cloud.aiplatform.v1beta1.PostStartupScriptConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.PostStartupScriptConfigOrBuilder>
         postStartupScriptConfigBuilder_;
+
     /**
      *
      *
@@ -1071,6 +1099,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
     public boolean hasPostStartupScriptConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1094,6 +1123,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
         return postStartupScriptConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1119,6 +1149,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1141,6 +1172,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1173,6 +1205,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1194,6 +1227,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1211,6 +1245,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getPostStartupScriptConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1232,6 +1267,7 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
             : postStartupScriptConfig_;
       }
     }
+
     /**
      *
      *

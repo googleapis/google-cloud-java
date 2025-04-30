@@ -56,6 +56,10 @@ public final class DataDiscoveryProto {
       internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_BigQueryPublishing_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_BigQueryPublishing_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_ScanStatistics_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_ScanStatistics_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -65,48 +69,66 @@ public final class DataDiscoveryProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n-google/cloud/dataplex/v1/data_discover"
+      "\n"
+          + "-google/cloud/dataplex/v1/data_discover"
           + "y.proto\022\030google.cloud.dataplex.v1\032\037googl"
-          + "e/api/field_behavior.proto\032\031google/api/r"
-          + "esource.proto\"\205\010\n\021DataDiscoverySpec\022m\n\032b"
-          + "igquery_publishing_config\030\001 \001(\0132D.google"
-          + ".cloud.dataplex.v1.DataDiscoverySpec.Big"
-          + "QueryPublishingConfigB\003\340A\001\022S\n\016storage_co"
-          + "nfig\030d \001(\01329.google.cloud.dataplex.v1.Da"
-          + "taDiscoverySpec.StorageConfigH\000\032\250\002\n\030BigQ"
-          + "ueryPublishingConfig\022g\n\ntable_type\030\002 \001(\016"
-          + "2N.google.cloud.dataplex.v1.DataDiscover"
-          + "ySpec.BigQueryPublishingConfig.TableType"
-          + "B\003\340A\001\022H\n\nconnection\030\003 \001(\tB4\340A\001\372A.\n,bigqu"
-          + "eryconnection.googleapis.com/Connection\022"
-          + "\025\n\010location\030\004 \001(\tB\003\340A\001\"B\n\tTableType\022\032\n\026T"
-          + "ABLE_TYPE_UNSPECIFIED\020\000\022\014\n\010EXTERNAL\020\001\022\013\n"
-          + "\007BIGLAKE\020\002\032\355\003\n\rStorageConfig\022\035\n\020include_"
-          + "patterns\030\001 \003(\tB\003\340A\001\022\035\n\020exclude_patterns\030"
-          + "\002 \003(\tB\003\340A\001\022^\n\013csv_options\030\003 \001(\0132D.google"
-          + ".cloud.dataplex.v1.DataDiscoverySpec.Sto"
-          + "rageConfig.CsvOptionsB\003\340A\001\022`\n\014json_optio"
-          + "ns\030\004 \001(\0132E.google.cloud.dataplex.v1.Data"
-          + "DiscoverySpec.StorageConfig.JsonOptionsB"
-          + "\003\340A\001\032\217\001\n\nCsvOptions\022\030\n\013header_rows\030\001 \001(\005"
-          + "B\003\340A\001\022\026\n\tdelimiter\030\002 \001(\tB\003\340A\001\022\025\n\010encodin"
-          + "g\030\003 \001(\tB\003\340A\001\022$\n\027type_inference_disabled\030"
-          + "\004 \001(\010B\003\340A\001\022\022\n\005quote\030\005 \001(\tB\003\340A\001\032J\n\013JsonOp"
-          + "tions\022\025\n\010encoding\030\001 \001(\tB\003\340A\001\022$\n\027type_inf"
-          + "erence_disabled\030\002 \001(\010B\003\340A\001B\021\n\017resource_c"
-          + "onfig\"\311\001\n\023DataDiscoveryResult\022b\n\023bigquer"
-          + "y_publishing\030\001 \001(\0132@.google.cloud.datapl"
-          + "ex.v1.DataDiscoveryResult.BigQueryPublis"
-          + "hingB\003\340A\003\032N\n\022BigQueryPublishing\0228\n\007datas"
-          + "et\030\001 \001(\tB\'\340A\003\372A!\n\037bigquery.googleapis.co"
-          + "m/DatasetB\254\002\n\034com.google.cloud.dataplex."
-          + "v1B\022DataDiscoveryProtoP\001Z8cloud.google.c"
-          + "om/go/dataplex/apiv1/dataplexpb;dataplex"
-          + "pb\352AH\n\037bigquery.googleapis.com/Dataset\022%"
-          + "projects/{project}/datasets/{dataset}\352Ap"
-          + "\n,bigqueryconnection.googleapis.com/Conn"
-          + "ection\022@projects/{project}/locations/{lo"
-          + "cation}/connections/{connection}b\006proto3"
+          + "e/api/field_behavior.proto\032\031google/api/resource.proto\"\205\010\n"
+          + "\021DataDiscoverySpec\022m\n"
+          + "\032bigquery_publishing_config\030\001 \001(\0132D.google"
+          + ".cloud.dataplex.v1.DataDiscoverySpec.BigQueryPublishingConfigB\003\340A\001\022S\n"
+          + "\016storage_config\030d"
+          + " \001(\01329.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfigH\000\032\250\002\n"
+          + "\030BigQueryPublishingConfig\022g\n\n"
+          + "table_type\030\002 \001(\0162N.google.cloud.dataplex.v1.DataDiscover"
+          + "ySpec.BigQueryPublishingConfig.TableTypeB\003\340A\001\022H\n\n"
+          + "connection\030\003 \001(\tB4\340A\001\372A.\n"
+          + ",bigqueryconnection.googleapis.com/Connection\022\025\n"
+          + "\010location\030\004 \001(\tB\003\340A\001\"B\n"
+          + "\tTableType\022\032\n"
+          + "\026TABLE_TYPE_UNSPECIFIED\020\000\022\014\n"
+          + "\010EXTERNAL\020\001\022\013\n"
+          + "\007BIGLAKE\020\002\032\355\003\n\r"
+          + "StorageConfig\022\035\n"
+          + "\020include_patterns\030\001 \003(\tB\003\340A\001\022\035\n"
+          + "\020exclude_patterns\030\002 \003(\tB\003\340A\001\022^\n"
+          + "\013csv_options\030\003 \001(\0132D.google"
+          + ".cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.CsvOptionsB\003\340A\001\022`\n"
+          + "\014json_options\030\004 \001(\0132E.google.cloud.dataplex.v1.Data"
+          + "DiscoverySpec.StorageConfig.JsonOptionsB\003\340A\001\032\217\001\n\n"
+          + "CsvOptions\022\030\n"
+          + "\013header_rows\030\001 \001(\005B\003\340A\001\022\026\n"
+          + "\tdelimiter\030\002 \001(\tB\003\340A\001\022\025\n"
+          + "\010encoding\030\003 \001(\tB\003\340A\001\022$\n"
+          + "\027type_inference_disabled\030\004 \001(\010B\003\340A\001\022\022\n"
+          + "\005quote\030\005 \001(\tB\003\340A\001\032J\n"
+          + "\013JsonOptions\022\025\n"
+          + "\010encoding\030\001 \001(\tB\003\340A\001\022$\n"
+          + "\027type_inference_disabled\030\002 \001(\010B\003\340A\001B\021\n"
+          + "\017resource_config\"\267\004\n"
+          + "\023DataDiscoveryResult\022b\n"
+          + "\023bigquery_publishing\030\001 \001(\0132@.google.cloud.datapl"
+          + "ex.v1.DataDiscoveryResult.BigQueryPublishingB\003\340A\003\022Z\n"
+          + "\017scan_statistics\030\002 \001(\0132<.goo"
+          + "gle.cloud.dataplex.v1.DataDiscoveryResult.ScanStatisticsB\003\340A\003\032e\n"
+          + "\022BigQueryPublishing\0228\n"
+          + "\007dataset\030\001 \001(\tB\'\340A\003\372A!\n"
+          + "\037bigquery.googleapis.com/Dataset\022\025\n"
+          + "\010location\030\002 \001(\tB\003\340A\003\032\370\001\n"
+          + "\016ScanStatistics\022\032\n"
+          + "\022scanned_file_count\030\001 \001(\005\022\034\n"
+          + "\024data_processed_bytes\030\002 \001(\003\022\026\n"
+          + "\016files_excluded\030\003 \001(\005\022\026\n"
+          + "\016tables_created\030\004 \001(\005\022\026\n"
+          + "\016tables_deleted\030\005 \001(\005\022\026\n"
+          + "\016tables_updated\030\006 \001(\005\022\030\n"
+          + "\020filesets_created\030\007 \001(\005\022\030\n"
+          + "\020filesets_deleted\030\010 \001(\005\022\030\n"
+          + "\020filesets_updated\030\t \001(\005B\254\002\n"
+          + "\034com.google.cloud.dataplex.v1B\022DataDiscoveryProtoP\001Z8cloud.go"
+          + "ogle.com/go/dataplex/apiv1/dataplexpb;dataplexpb\352AH\n"
+          + "\037bigquery.googleapis.com/Dataset\022%projects/{project}/datasets/{dataset}\352Ap\n"
+          + ",bigqueryconnection.googleapis.com/Connection\022@projects/{project}/locatio"
+          + "ns/{location}/connections/{connection}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -169,7 +191,7 @@ public final class DataDiscoveryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_descriptor,
             new java.lang.String[] {
-              "BigqueryPublishing",
+              "BigqueryPublishing", "ScanStatistics",
             });
     internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_BigQueryPublishing_descriptor =
         internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_descriptor
@@ -179,7 +201,25 @@ public final class DataDiscoveryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_BigQueryPublishing_descriptor,
             new java.lang.String[] {
-              "Dataset",
+              "Dataset", "Location",
+            });
+    internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_ScanStatistics_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_ScanStatistics_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataDiscoveryResult_ScanStatistics_descriptor,
+            new java.lang.String[] {
+              "ScannedFileCount",
+              "DataProcessedBytes",
+              "FilesExcluded",
+              "TablesCreated",
+              "TablesDeleted",
+              "TablesUpdated",
+              "FilesetsCreated",
+              "FilesetsDeleted",
+              "FilesetsUpdated",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

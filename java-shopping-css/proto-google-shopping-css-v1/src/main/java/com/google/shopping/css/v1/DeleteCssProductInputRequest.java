@@ -33,6 +33,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.shopping.css.v1.DeleteCssProductInputRequest)
     DeleteCssProductInputRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteCssProductInputRequest.newBuilder() to construct.
   private DeleteCssProductInputRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,12 +69,16 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
    * <pre>
    * Required. The name of the CSS product input resource to delete.
-   * Format: accounts/{account}/cssProductInputs/{css_product_input}
+   * Format: accounts/{account}/cssProductInputs/{css_product_input}, where the
+   * last section `css_product_input` consists of 3 parts:
+   * contentLanguage~feedLabel~offerId. Example:
+   * accounts/123/cssProductInputs/de~DE~rawProvidedId123
    * </pre>
    *
    * <code>
@@ -94,12 +99,16 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
    * Required. The name of the CSS product input resource to delete.
-   * Format: accounts/{account}/cssProductInputs/{css_product_input}
+   * Format: accounts/{account}/cssProductInputs/{css_product_input}, where the
+   * last section `css_product_input` consists of 3 parts:
+   * contentLanguage~feedLabel~offerId. Example:
+   * accounts/123/cssProductInputs/de~DE~rawProvidedId123
    * </pre>
    *
    * <code>
@@ -123,6 +132,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
 
   public static final int SUPPLEMENTAL_FEED_ID_FIELD_NUMBER = 2;
   private long supplementalFeedId_ = 0L;
+
   /**
    *
    *
@@ -141,6 +151,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
   public boolean hasSupplementalFeedId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -334,6 +345,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -534,12 +546,16 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
      * <pre>
      * Required. The name of the CSS product input resource to delete.
-     * Format: accounts/{account}/cssProductInputs/{css_product_input}
+     * Format: accounts/{account}/cssProductInputs/{css_product_input}, where the
+     * last section `css_product_input` consists of 3 parts:
+     * contentLanguage~feedLabel~offerId. Example:
+     * accounts/123/cssProductInputs/de~DE~rawProvidedId123
      * </pre>
      *
      * <code>
@@ -559,12 +575,16 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Required. The name of the CSS product input resource to delete.
-     * Format: accounts/{account}/cssProductInputs/{css_product_input}
+     * Format: accounts/{account}/cssProductInputs/{css_product_input}, where the
+     * last section `css_product_input` consists of 3 parts:
+     * contentLanguage~feedLabel~offerId. Example:
+     * accounts/123/cssProductInputs/de~DE~rawProvidedId123
      * </pre>
      *
      * <code>
@@ -584,12 +604,16 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Required. The name of the CSS product input resource to delete.
-     * Format: accounts/{account}/cssProductInputs/{css_product_input}
+     * Format: accounts/{account}/cssProductInputs/{css_product_input}, where the
+     * last section `css_product_input` consists of 3 parts:
+     * contentLanguage~feedLabel~offerId. Example:
+     * accounts/123/cssProductInputs/de~DE~rawProvidedId123
      * </pre>
      *
      * <code>
@@ -608,12 +632,16 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Required. The name of the CSS product input resource to delete.
-     * Format: accounts/{account}/cssProductInputs/{css_product_input}
+     * Format: accounts/{account}/cssProductInputs/{css_product_input}, where the
+     * last section `css_product_input` consists of 3 parts:
+     * contentLanguage~feedLabel~offerId. Example:
+     * accounts/123/cssProductInputs/de~DE~rawProvidedId123
      * </pre>
      *
      * <code>
@@ -628,12 +656,16 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Required. The name of the CSS product input resource to delete.
-     * Format: accounts/{account}/cssProductInputs/{css_product_input}
+     * Format: accounts/{account}/cssProductInputs/{css_product_input}, where the
+     * last section `css_product_input` consists of 3 parts:
+     * contentLanguage~feedLabel~offerId. Example:
+     * accounts/123/cssProductInputs/de~DE~rawProvidedId123
      * </pre>
      *
      * <code>
@@ -655,6 +687,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
     }
 
     private long supplementalFeedId_;
+
     /**
      *
      *
@@ -673,6 +706,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
     public boolean hasSupplementalFeedId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -691,6 +725,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
     public long getSupplementalFeedId() {
       return supplementalFeedId_;
     }
+
     /**
      *
      *
@@ -713,6 +748,7 @@ public final class DeleteCssProductInputRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

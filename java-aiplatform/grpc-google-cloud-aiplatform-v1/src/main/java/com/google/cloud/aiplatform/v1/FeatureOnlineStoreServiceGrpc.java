@@ -153,6 +153,19 @@ public final class FeatureOnlineStoreServiceGrpc {
     return FeatureOnlineStoreServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static FeatureOnlineStoreServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<FeatureOnlineStoreServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<FeatureOnlineStoreServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public FeatureOnlineStoreServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new FeatureOnlineStoreServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return FeatureOnlineStoreServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -298,6 +311,56 @@ public final class FeatureOnlineStoreServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service FeatureOnlineStoreService.
+   *
+   * <pre>
+   * A service for fetching feature values from the online store.
+   * </pre>
+   */
+  public static final class FeatureOnlineStoreServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<FeatureOnlineStoreServiceBlockingV2Stub> {
+    private FeatureOnlineStoreServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected FeatureOnlineStoreServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new FeatureOnlineStoreServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch feature values under a FeatureView.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.FetchFeatureValuesResponse fetchFeatureValues(
+        com.google.cloud.aiplatform.v1.FetchFeatureValuesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchFeatureValuesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Search the nearest entities under a FeatureView.
+     * Search only works for indexable feature view; if a feature view isn't
+     * indexable, returns Invalid argument response.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse searchNearestEntities(
+        com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchNearestEntitiesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * FeatureOnlineStoreService.
    *
    * <pre>
    * A service for fetching feature values from the online store.

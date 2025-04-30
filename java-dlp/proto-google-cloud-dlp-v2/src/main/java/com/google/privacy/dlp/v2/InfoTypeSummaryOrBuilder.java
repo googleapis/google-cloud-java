@@ -36,6 +36,7 @@ public interface InfoTypeSummaryOrBuilder
    * @return Whether the infoType field is set.
    */
   boolean hasInfoType();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InfoTypeSummaryOrBuilder
    * @return The infoType.
    */
   com.google.privacy.dlp.v2.InfoType getInfoType();
+
   /**
    *
    *
@@ -69,7 +71,7 @@ public interface InfoTypeSummaryOrBuilder
    * <code>int32 estimated_prevalence = 2 [deprecated = true];</code>
    *
    * @deprecated google.privacy.dlp.v2.InfoTypeSummary.estimated_prevalence is deprecated. See
-   *     google/privacy/dlp/v2/dlp.proto;l=7554
+   *     google/privacy/dlp/v2/dlp.proto;l=7652
    * @return The estimatedPrevalence.
    */
   @java.lang.Deprecated

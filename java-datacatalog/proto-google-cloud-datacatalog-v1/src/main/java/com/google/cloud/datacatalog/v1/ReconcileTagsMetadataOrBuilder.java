@@ -36,6 +36,7 @@ public interface ReconcileTagsMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface ReconcileTagsMetadataOrBuilder
    * <code>map&lt;string, .google.rpc.Status&gt; errors = 2;</code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -71,9 +73,11 @@ public interface ReconcileTagsMetadataOrBuilder
    * <code>map&lt;string, .google.rpc.Status&gt; errors = 2;</code>
    */
   boolean containsErrors(java.lang.String key);
+
   /** Use {@link #getErrorsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.rpc.Status> getErrors();
+
   /**
    *
    *
@@ -85,6 +89,7 @@ public interface ReconcileTagsMetadataOrBuilder
    * <code>map&lt;string, .google.rpc.Status&gt; errors = 2;</code>
    */
   java.util.Map<java.lang.String, com.google.rpc.Status> getErrorsMap();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface ReconcileTagsMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.rpc.Status defaultValue);
+
   /**
    *
    *

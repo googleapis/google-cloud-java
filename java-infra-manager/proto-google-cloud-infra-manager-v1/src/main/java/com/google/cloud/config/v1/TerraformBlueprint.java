@@ -34,6 +34,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.config.v1.TerraformBlueprint)
     TerraformBlueprintOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TerraformBlueprint.newBuilder() to construct.
   private TerraformBlueprint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -91,6 +92,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -124,6 +126,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
   }
+
   /**
    *
    *
@@ -173,6 +177,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -206,6 +211,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int GIT_SOURCE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -221,6 +227,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
   public boolean hasGitSource() {
     return sourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -239,6 +246,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.config.v1.GitSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -289,6 +297,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
   public int getInputValuesCount() {
     return internalGetInputValues().getMap().size();
   }
+
   /**
    *
    *
@@ -305,6 +314,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
     }
     return internalGetInputValues().getMap().containsKey(key);
   }
+
   /** Use {@link #getInputValuesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -312,6 +322,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
       getInputValues() {
     return getInputValuesMap();
   }
+
   /**
    *
    *
@@ -326,6 +337,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
       getInputValuesMap() {
     return internalGetInputValues().getMap();
   }
+
   /**
    *
    *
@@ -347,6 +359,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
         internalGetInputValues().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -574,6 +587,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -863,6 +877,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -895,6 +910,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -927,6 +943,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -952,6 +969,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +993,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1026,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
             com.google.cloud.config.v1.GitSource.Builder,
             com.google.cloud.config.v1.GitSourceOrBuilder>
         gitSourceBuilder_;
+
     /**
      *
      *
@@ -1022,6 +1042,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
     public boolean hasGitSource() {
       return sourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -1047,6 +1068,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.config.v1.GitSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1069,6 +1091,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1088,6 +1111,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1120,6 +1144,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1170,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1183,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.config.v1.GitSource.Builder getGitSourceBuilder() {
       return getGitSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1177,6 +1204,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
         return com.google.cloud.config.v1.GitSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1228,7 +1256,8 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
           defaultEntry() {
         return InputValuesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final InputValuesConverter inputValuesConverter = new InputValuesConverter();
 
@@ -1268,6 +1297,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
     public int getInputValuesCount() {
       return internalGetInputValues().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -1284,6 +1314,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
       }
       return internalGetInputValues().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getInputValuesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1291,6 +1322,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
         getInputValues() {
       return getInputValuesMap();
     }
+
     /**
      *
      *
@@ -1305,6 +1337,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
         getInputValuesMap() {
       return internalGetInputValues().getImmutableMap();
     }
+
     /**
      *
      *
@@ -1326,6 +1359,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
           internalGetMutableInputValues().ensureBuilderMap();
       return map.containsKey(key) ? inputValuesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -1354,6 +1388,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
       internalGetMutableInputValues().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1370,6 +1405,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
       internalGetMutableInputValues().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.config.v1.TerraformVariable>
@@ -1377,6 +1413,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000004;
       return internalGetMutableInputValues().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -1398,6 +1435,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -1419,6 +1457,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *

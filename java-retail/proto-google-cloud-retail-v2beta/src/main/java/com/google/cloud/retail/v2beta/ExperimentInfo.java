@@ -23,7 +23,7 @@ package com.google.cloud.retail.v2beta;
  *
  *
  * <pre>
- * Metadata for active A/B testing [Experiment][].
+ * Metadata for active A/B testing experiment.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2beta.ExperimentInfo}
@@ -33,6 +33,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.ExperimentInfo)
     ExperimentInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExperimentInfo.newBuilder() to construct.
   private ExperimentInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
      * @return The originalServingConfig.
      */
     java.lang.String getOriginalServingConfig();
+
     /**
      *
      *
@@ -104,7 +106,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The fully qualified resource name of the serving config
-     * [Experiment.VariantArm.serving_config_id][] responsible for generating
+     * `Experiment.VariantArm.serving_config_id` responsible for generating
      * the search response. For example:
      * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;servingConfigs/&#42;`.
      * </pre>
@@ -114,12 +116,13 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
      * @return The experimentServingConfig.
      */
     java.lang.String getExperimentServingConfig();
+
     /**
      *
      *
      * <pre>
      * The fully qualified resource name of the serving config
-     * [Experiment.VariantArm.serving_config_id][] responsible for generating
+     * `Experiment.VariantArm.serving_config_id` responsible for generating
      * the search response. For example:
      * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;servingConfigs/&#42;`.
      * </pre>
@@ -130,6 +133,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getExperimentServingConfigBytes();
   }
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.ExperimentInfo.ServingConfigExperiment)
       ServingConfigExperimentOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ServingConfigExperiment.newBuilder() to construct.
     private ServingConfigExperiment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -179,6 +184,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object originalServingConfig_ = "";
+
     /**
      *
      *
@@ -205,6 +211,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -236,12 +243,13 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object experimentServingConfig_ = "";
+
     /**
      *
      *
      * <pre>
      * The fully qualified resource name of the serving config
-     * [Experiment.VariantArm.serving_config_id][] responsible for generating
+     * `Experiment.VariantArm.serving_config_id` responsible for generating
      * the search response. For example:
      * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;servingConfigs/&#42;`.
      * </pre>
@@ -262,12 +270,13 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
      * <pre>
      * The fully qualified resource name of the serving config
-     * [Experiment.VariantArm.serving_config_id][] responsible for generating
+     * `Experiment.VariantArm.serving_config_id` responsible for generating
      * the search response. For example:
      * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;servingConfigs/&#42;`.
      * </pre>
@@ -461,6 +470,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -673,6 +683,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object originalServingConfig_ = "";
+
       /**
        *
        *
@@ -698,6 +709,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -723,6 +735,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -747,6 +760,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -767,6 +781,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -794,12 +809,13 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object experimentServingConfig_ = "";
+
       /**
        *
        *
        * <pre>
        * The fully qualified resource name of the serving config
-       * [Experiment.VariantArm.serving_config_id][] responsible for generating
+       * `Experiment.VariantArm.serving_config_id` responsible for generating
        * the search response. For example:
        * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;servingConfigs/&#42;`.
        * </pre>
@@ -820,12 +836,13 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
        * <pre>
        * The fully qualified resource name of the serving config
-       * [Experiment.VariantArm.serving_config_id][] responsible for generating
+       * `Experiment.VariantArm.serving_config_id` responsible for generating
        * the search response. For example:
        * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;servingConfigs/&#42;`.
        * </pre>
@@ -846,12 +863,13 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
        * <pre>
        * The fully qualified resource name of the serving config
-       * [Experiment.VariantArm.serving_config_id][] responsible for generating
+       * `Experiment.VariantArm.serving_config_id` responsible for generating
        * the search response. For example:
        * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;servingConfigs/&#42;`.
        * </pre>
@@ -871,12 +889,13 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * The fully qualified resource name of the serving config
-       * [Experiment.VariantArm.serving_config_id][] responsible for generating
+       * `Experiment.VariantArm.serving_config_id` responsible for generating
        * the search response. For example:
        * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;servingConfigs/&#42;`.
        * </pre>
@@ -892,12 +911,13 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * The fully qualified resource name of the serving config
-       * [Experiment.VariantArm.serving_config_id][] responsible for generating
+       * `Experiment.VariantArm.serving_config_id` responsible for generating
        * the search response. For example:
        * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;servingConfigs/&#42;`.
        * </pre>
@@ -1003,6 +1023,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
     private ExperimentMetadataCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1034,6 +1055,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVING_CONFIG_EXPERIMENT_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1052,6 +1074,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasServingConfigExperiment() {
     return experimentMetadataCase_ == 2;
   }
+
   /**
    *
    *
@@ -1076,6 +1099,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.retail.v2beta.ExperimentInfo.ServingConfigExperiment
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1103,6 +1127,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object experiment_ = "";
+
   /**
    *
    *
@@ -1128,6 +1153,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1342,11 +1368,12 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
    * <pre>
-   * Metadata for active A/B testing [Experiment][].
+   * Metadata for active A/B testing experiment.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2beta.ExperimentInfo}
@@ -1575,6 +1602,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2beta.ExperimentInfo.ServingConfigExperiment.Builder,
             com.google.cloud.retail.v2beta.ExperimentInfo.ServingConfigExperimentOrBuilder>
         servingConfigExperimentBuilder_;
+
     /**
      *
      *
@@ -1593,6 +1621,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasServingConfigExperiment() {
       return experimentMetadataCase_ == 2;
     }
+
     /**
      *
      *
@@ -1625,6 +1654,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1651,6 +1681,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
       experimentMetadataCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1675,6 +1706,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
       experimentMetadataCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1714,6 +1746,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
       experimentMetadataCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1742,6 +1775,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1758,6 +1792,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
         getServingConfigExperimentBuilder() {
       return getServingConfigExperimentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1784,6 +1819,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1824,6 +1860,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object experiment_ = "";
+
     /**
      *
      *
@@ -1848,6 +1885,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1872,6 +1910,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1895,6 +1934,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1914,6 +1954,7 @@ public final class ExperimentInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

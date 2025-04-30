@@ -28,55 +28,62 @@ public interface AutoAcceptOrBuilder
    *
    *
    * <pre>
-   * A list of project ids or project numbers for which you want
+   * Optional. A list of project ids or project numbers for which you want
    * to enable auto-accept. The auto-accept setting is applied to
    * spokes being created or updated in these projects.
    * </pre>
    *
-   * <code>repeated string auto_accept_projects = 1;</code>
+   * <code>repeated string auto_accept_projects = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return A list containing the autoAcceptProjects.
    */
   java.util.List<java.lang.String> getAutoAcceptProjectsList();
+
   /**
    *
    *
    * <pre>
-   * A list of project ids or project numbers for which you want
+   * Optional. A list of project ids or project numbers for which you want
    * to enable auto-accept. The auto-accept setting is applied to
    * spokes being created or updated in these projects.
    * </pre>
    *
-   * <code>repeated string auto_accept_projects = 1;</code>
+   * <code>repeated string auto_accept_projects = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The count of autoAcceptProjects.
    */
   int getAutoAcceptProjectsCount();
+
   /**
    *
    *
    * <pre>
-   * A list of project ids or project numbers for which you want
+   * Optional. A list of project ids or project numbers for which you want
    * to enable auto-accept. The auto-accept setting is applied to
    * spokes being created or updated in these projects.
    * </pre>
    *
-   * <code>repeated string auto_accept_projects = 1;</code>
+   * <code>repeated string auto_accept_projects = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The autoAcceptProjects at the given index.
    */
   java.lang.String getAutoAcceptProjects(int index);
+
   /**
    *
    *
    * <pre>
-   * A list of project ids or project numbers for which you want
+   * Optional. A list of project ids or project numbers for which you want
    * to enable auto-accept. The auto-accept setting is applied to
    * spokes being created or updated in these projects.
    * </pre>
    *
-   * <code>repeated string auto_accept_projects = 1;</code>
+   * <code>repeated string auto_accept_projects = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the autoAcceptProjects at the given index.

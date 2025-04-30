@@ -73,7 +73,8 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateSecuritySettings, expected %s or %s",
+                  "Unrecognized response type %s for method CreateSecuritySettings, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   SecuritySettings.class.getName(),
                   Exception.class.getName())));
@@ -115,7 +116,8 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateSecuritySettings, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateSecuritySettings, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   SecuritySettings.class.getName(),
                   Exception.class.getName())));
@@ -137,7 +139,8 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListSecuritySettings, expected %s or %s",
+                  "Unrecognized response type %s for method ListSecuritySettings, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListSecuritySettingsResponse.class.getName(),
                   Exception.class.getName())));
@@ -158,7 +161,8 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteSecuritySettings, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteSecuritySettings, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

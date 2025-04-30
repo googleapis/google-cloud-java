@@ -33,6 +33,7 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.Constraints)
     ConstraintsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Constraints.newBuilder() to construct.
   private Constraints(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CUSTOMER_CONSTRAINTS_FIELD_NUMBER = 1;
   private com.google.cloud.channel.v1.CustomerConstraints customerConstraints_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomerConstraints() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.channel.v1.CustomerConstraints.getDefaultInstance()
         : customerConstraints_;
   }
+
   /**
    *
    *
@@ -276,6 +280,7 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -482,6 +487,7 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.channel.v1.CustomerConstraints.Builder,
             com.google.cloud.channel.v1.CustomerConstraintsOrBuilder>
         customerConstraintsBuilder_;
+
     /**
      *
      *
@@ -496,6 +502,7 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomerConstraints() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -516,6 +523,7 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
         return customerConstraintsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -538,6 +546,7 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -558,6 +567,7 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -586,6 +596,7 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -605,6 +616,7 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -619,6 +631,7 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCustomerConstraintsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -638,6 +651,7 @@ public final class Constraints extends com.google.protobuf.GeneratedMessageV3
             : customerConstraints_;
       }
     }
+
     /**
      *
      *

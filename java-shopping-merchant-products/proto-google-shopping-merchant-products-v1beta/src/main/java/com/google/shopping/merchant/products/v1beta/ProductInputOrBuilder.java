@@ -29,8 +29,7 @@ public interface ProductInputOrBuilder
    *
    * <pre>
    * Identifier. The name of the product input.
-   * Format:
-   * `"{productinput.name=accounts/{account}/productInputs/{productinput}}"`
+   * Format: accounts/{account}/productInputs/{productinput}
    * where the last section `productinput` consists of 4 parts:
    * channel~content_language~feed_label~offer_id
    * example for product input name is
@@ -42,13 +41,13 @@ public interface ProductInputOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
    * <pre>
    * Identifier. The name of the product input.
-   * Format:
-   * `"{productinput.name=accounts/{account}/productInputs/{productinput}}"`
+   * Format: accounts/{account}/productInputs/{productinput}
    * where the last section `productinput` consists of 4 parts:
    * channel~content_language~feed_label~offer_id
    * example for product input name is
@@ -75,6 +74,7 @@ public interface ProductInputOrBuilder
    * @return The product.
    */
   java.lang.String getProduct();
+
   /**
    *
    *
@@ -94,29 +94,30 @@ public interface ProductInputOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The
+   * Immutable. The
    * [channel](https://support.google.com/merchants/answer/7361332) of the
    * product.
    * </pre>
    *
    * <code>
-   * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for channel.
    */
   int getChannelValue();
+
   /**
    *
    *
    * <pre>
-   * Required. Immutable. The
+   * Immutable. The
    * [channel](https://support.google.com/merchants/answer/7361332) of the
    * product.
    * </pre>
    *
    * <code>
-   * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The channel.
@@ -142,6 +143,7 @@ public interface ProductInputOrBuilder
    * @return The offerId.
    */
   java.lang.String getOfferId();
+
   /**
    *
    *
@@ -178,6 +180,7 @@ public interface ProductInputOrBuilder
    * @return The contentLanguage.
    */
   java.lang.String getContentLanguage();
+
   /**
    *
    *
@@ -211,6 +214,7 @@ public interface ProductInputOrBuilder
    * @return The feedLabel.
    */
   java.lang.String getFeedLabel();
+
   /**
    *
    *
@@ -252,6 +256,7 @@ public interface ProductInputOrBuilder
    * @return Whether the versionNumber field is set.
    */
   boolean hasVersionNumber();
+
   /**
    *
    *
@@ -291,6 +296,7 @@ public interface ProductInputOrBuilder
    * @return Whether the attributes field is set.
    */
   boolean hasAttributes();
+
   /**
    *
    *
@@ -305,6 +311,7 @@ public interface ProductInputOrBuilder
    * @return The attributes.
    */
   com.google.shopping.merchant.products.v1beta.Attributes getAttributes();
+
   /**
    *
    *
@@ -340,6 +347,7 @@ public interface ProductInputOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList();
+
   /**
    *
    *
@@ -362,6 +370,7 @@ public interface ProductInputOrBuilder
    * </code>
    */
   com.google.shopping.type.CustomAttribute getCustomAttributes(int index);
+
   /**
    *
    *
@@ -384,6 +393,7 @@ public interface ProductInputOrBuilder
    * </code>
    */
   int getCustomAttributesCount();
+
   /**
    *
    *
@@ -407,6 +417,7 @@ public interface ProductInputOrBuilder
    */
   java.util.List<? extends com.google.shopping.type.CustomAttributeOrBuilder>
       getCustomAttributesOrBuilderList();
+
   /**
    *
    *

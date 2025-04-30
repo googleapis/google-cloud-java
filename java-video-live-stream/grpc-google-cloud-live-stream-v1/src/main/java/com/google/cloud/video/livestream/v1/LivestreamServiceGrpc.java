@@ -1231,6 +1231,19 @@ public final class LivestreamServiceGrpc {
     return LivestreamServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static LivestreamServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<LivestreamServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<LivestreamServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public LivestreamServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new LivestreamServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return LivestreamServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2082,6 +2095,374 @@ public final class LivestreamServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service LivestreamService.
+   *
+   * <pre>
+   * Using Live Stream API, you can generate live streams in the various
+   * renditions and streaming formats. The streaming format include HTTP Live
+   * Streaming (HLS) and Dynamic Adaptive Streaming over HTTP (DASH). You can send
+   * a source stream in the various ways, including Real-Time Messaging
+   * Protocol (RTMP) and Secure Reliable Transport (SRT).
+   * </pre>
+   */
+  public static final class LivestreamServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<LivestreamServiceBlockingV2Stub> {
+    private LivestreamServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected LivestreamServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new LivestreamServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a channel with the provided unique ID in the specified
+     * region.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createChannel(
+        com.google.cloud.video.livestream.v1.CreateChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all channels in the specified region.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.ListChannelsResponse listChannels(
+        com.google.cloud.video.livestream.v1.ListChannelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListChannelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified channel.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.Channel getChannel(
+        com.google.cloud.video.livestream.v1.GetChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified channel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteChannel(
+        com.google.cloud.video.livestream.v1.DeleteChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified channel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateChannel(
+        com.google.cloud.video.livestream.v1.UpdateChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts the specified channel. Part of the video pipeline will be created
+     * only when the StartChannel request is received by the server.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startChannel(
+        com.google.cloud.video.livestream.v1.StartChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops the specified channel. Part of the video pipeline will be released
+     * when the StopChannel request is received by the server.
+     * </pre>
+     */
+    public com.google.longrunning.Operation stopChannel(
+        com.google.cloud.video.livestream.v1.StopChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an input with the provided unique ID in the specified region.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createInput(
+        com.google.cloud.video.livestream.v1.CreateInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all inputs in the specified region.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.ListInputsResponse listInputs(
+        com.google.cloud.video.livestream.v1.ListInputsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListInputsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified input.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.Input getInput(
+        com.google.cloud.video.livestream.v1.GetInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified input.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteInput(
+        com.google.cloud.video.livestream.v1.DeleteInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified input.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateInput(
+        com.google.cloud.video.livestream.v1.UpdateInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an event with the provided unique ID in the specified channel.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.Event createEvent(
+        com.google.cloud.video.livestream.v1.CreateEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all events in the specified channel.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.ListEventsResponse listEvents(
+        com.google.cloud.video.livestream.v1.ListEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified event.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.Event getEvent(
+        com.google.cloud.video.livestream.v1.GetEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified event.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteEvent(
+        com.google.cloud.video.livestream.v1.DeleteEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all clips in the specified channel.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.ListClipsResponse listClips(
+        com.google.cloud.video.livestream.v1.ListClipsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListClipsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified clip.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.Clip getClip(
+        com.google.cloud.video.livestream.v1.GetClipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetClipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a clip with the provided clip ID in the specified channel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createClip(
+        com.google.cloud.video.livestream.v1.CreateClipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateClipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified clip job resource. This method only deletes the clip
+     * job and does not delete the VOD clip stored in the GCS.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteClip(
+        com.google.cloud.video.livestream.v1.DeleteClipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteClipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Asset with the provided unique ID in the specified
+     * region.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAsset(
+        com.google.cloud.video.livestream.v1.CreateAssetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAssetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified asset if it is not used.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAsset(
+        com.google.cloud.video.livestream.v1.DeleteAssetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAssetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified asset.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.Asset getAsset(
+        com.google.cloud.video.livestream.v1.GetAssetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAssetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all assets in the specified region.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.ListAssetsResponse listAssets(
+        com.google.cloud.video.livestream.v1.ListAssetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAssetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified pool.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.Pool getPool(
+        com.google.cloud.video.livestream.v1.GetPoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified pool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updatePool(
+        com.google.cloud.video.livestream.v1.UpdatePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePoolMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service LivestreamService.
    *
    * <pre>
    * Using Live Stream API, you can generate live streams in the various

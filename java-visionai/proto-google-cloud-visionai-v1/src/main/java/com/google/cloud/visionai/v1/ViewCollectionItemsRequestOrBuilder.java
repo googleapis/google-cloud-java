@@ -39,6 +39,7 @@ public interface ViewCollectionItemsRequestOrBuilder
    * @return The collection.
    */
   java.lang.String getCollection();
+
   /**
    *
    *
@@ -87,6 +88,7 @@ public interface ViewCollectionItemsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

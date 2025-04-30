@@ -35,6 +35,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.ListProductsRequest)
     ListProductsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListProductsRequest.newBuilder() to construct.
   private ListProductsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -165,6 +169,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -197,6 +202,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -234,6 +240,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -285,6 +292,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -339,6 +347,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
 
   public static final int READ_MASK_FIELD_NUMBER = 5;
   private com.google.protobuf.FieldMask readMask_;
+
   /**
    *
    *
@@ -370,6 +379,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
   public boolean hasReadMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -401,6 +411,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.FieldMask getReadMask() {
     return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
   }
+
   /**
    *
    *
@@ -433,6 +444,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
 
   public static final int REQUIRE_TOTAL_SIZE_FIELD_NUMBER = 6;
   private boolean requireTotalSize_ = false;
+
   /**
    *
    *
@@ -664,6 +676,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -935,6 +948,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -967,6 +981,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -999,6 +1014,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1046,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1074,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1091,6 +1109,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -1110,6 +1129,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -1133,6 +1153,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1156,6 +1177,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1187,6 +1209,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1218,6 +1241,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1248,6 +1272,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1274,6 +1299,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1307,6 +1333,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -1357,6 +1384,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1407,6 +1435,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1456,6 +1485,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1501,6 +1531,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1558,6 +1589,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         readMaskBuilder_;
+
     /**
      *
      *
@@ -1588,6 +1620,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
     public boolean hasReadMask() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1622,6 +1655,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
         return readMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1660,6 +1694,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1695,6 +1730,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1738,6 +1774,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1773,6 +1810,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1803,6 +1841,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getReadMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1835,6 +1874,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
         return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
       }
     }
+
     /**
      *
      *
@@ -1878,6 +1918,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
     }
 
     private boolean requireTotalSize_;
+
     /**
      *
      *
@@ -1899,6 +1940,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
     public boolean getRequireTotalSize() {
       return requireTotalSize_;
     }
+
     /**
      *
      *
@@ -1924,6 +1966,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface GetTranscriptEntryRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

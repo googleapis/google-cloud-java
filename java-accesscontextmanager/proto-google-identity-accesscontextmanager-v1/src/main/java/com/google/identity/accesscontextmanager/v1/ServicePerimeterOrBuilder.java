@@ -39,6 +39,7 @@ public interface ServicePerimeterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ServicePerimeterOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface ServicePerimeterOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface ServicePerimeterOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface ServicePerimeterOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface ServicePerimeterOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface ServicePerimeterOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public interface ServicePerimeterOrBuilder
    * @return The enum numeric value on the wire for perimeterType.
    */
   int getPerimeterTypeValue();
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public interface ServicePerimeterOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -244,6 +253,7 @@ public interface ServicePerimeterOrBuilder
    * @return The status.
    */
   com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig getStatus();
+
   /**
    *
    *
@@ -272,6 +282,7 @@ public interface ServicePerimeterOrBuilder
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
+
   /**
    *
    *
@@ -287,6 +298,7 @@ public interface ServicePerimeterOrBuilder
    * @return The spec.
    */
   com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig getSpec();
+
   /**
    *
    *

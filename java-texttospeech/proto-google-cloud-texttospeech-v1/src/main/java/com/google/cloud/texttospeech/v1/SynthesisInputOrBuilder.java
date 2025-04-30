@@ -36,6 +36,7 @@ public interface SynthesisInputOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SynthesisInputOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface SynthesisInputOrBuilder
    * @return Whether the ssml field is set.
    */
   boolean hasSsml();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface SynthesisInputOrBuilder
    * @return The ssml.
    */
   java.lang.String getSsml();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface SynthesisInputOrBuilder
    * @return Whether the multiSpeakerMarkup field is set.
    */
   boolean hasMultiSpeakerMarkup();
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public interface SynthesisInputOrBuilder
    * @return The multiSpeakerMarkup.
    */
   com.google.cloud.texttospeech.v1.MultiSpeakerMarkup getMultiSpeakerMarkup();
+
   /**
    *
    *
@@ -152,18 +158,16 @@ public interface SynthesisInputOrBuilder
    *
    *
    * <pre>
-   * Optional. The pronunciation customizations to be applied to the input. If
-   * this is set, the input will be synthesized using the given pronunciation
+   * Optional. The pronunciation customizations are applied to the input. If
+   * this is set, the input is synthesized using the given pronunciation
    * customizations.
    *
-   * The initial support will be for EFIGS (English, French,
-   * Italian, German, Spanish) languages, as provided in
-   * VoiceSelectionParams. Journey and Instant Clone voices are
-   * not supported yet.
+   * The initial support is for en-us, with plans to expand to other locales in
+   * the future. Instant Clone voices aren't supported.
    *
    * In order to customize the pronunciation of a phrase, there must be an exact
    * match of the phrase in the input types. If using SSML, the phrase must not
-   * be inside a phoneme tag (entirely or partially).
+   * be inside a phoneme tag.
    * </pre>
    *
    * <code>
@@ -173,22 +177,21 @@ public interface SynthesisInputOrBuilder
    * @return Whether the customPronunciations field is set.
    */
   boolean hasCustomPronunciations();
+
   /**
    *
    *
    * <pre>
-   * Optional. The pronunciation customizations to be applied to the input. If
-   * this is set, the input will be synthesized using the given pronunciation
+   * Optional. The pronunciation customizations are applied to the input. If
+   * this is set, the input is synthesized using the given pronunciation
    * customizations.
    *
-   * The initial support will be for EFIGS (English, French,
-   * Italian, German, Spanish) languages, as provided in
-   * VoiceSelectionParams. Journey and Instant Clone voices are
-   * not supported yet.
+   * The initial support is for en-us, with plans to expand to other locales in
+   * the future. Instant Clone voices aren't supported.
    *
    * In order to customize the pronunciation of a phrase, there must be an exact
    * match of the phrase in the input types. If using SSML, the phrase must not
-   * be inside a phoneme tag (entirely or partially).
+   * be inside a phoneme tag.
    * </pre>
    *
    * <code>
@@ -198,22 +201,21 @@ public interface SynthesisInputOrBuilder
    * @return The customPronunciations.
    */
   com.google.cloud.texttospeech.v1.CustomPronunciations getCustomPronunciations();
+
   /**
    *
    *
    * <pre>
-   * Optional. The pronunciation customizations to be applied to the input. If
-   * this is set, the input will be synthesized using the given pronunciation
+   * Optional. The pronunciation customizations are applied to the input. If
+   * this is set, the input is synthesized using the given pronunciation
    * customizations.
    *
-   * The initial support will be for EFIGS (English, French,
-   * Italian, German, Spanish) languages, as provided in
-   * VoiceSelectionParams. Journey and Instant Clone voices are
-   * not supported yet.
+   * The initial support is for en-us, with plans to expand to other locales in
+   * the future. Instant Clone voices aren't supported.
    *
    * In order to customize the pronunciation of a phrase, there must be an exact
    * match of the phrase in the input types. If using SSML, the phrase must not
-   * be inside a phoneme tag (entirely or partially).
+   * be inside a phoneme tag.
    * </pre>
    *
    * <code>

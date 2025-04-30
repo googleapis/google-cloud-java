@@ -29,7 +29,7 @@ public interface ServiceProjectAttachmentOrBuilder
    *
    * <pre>
    * Identifier. The resource name of a ServiceProjectAttachment. Format:
-   * "projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."
+   * `"projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -37,12 +37,13 @@ public interface ServiceProjectAttachmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
    * <pre>
    * Identifier. The resource name of a ServiceProjectAttachment. Format:
-   * "projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."
+   * `"projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -55,9 +56,9 @@ public interface ServiceProjectAttachmentOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Service project name in the format: "projects/abc" or
-   * "projects/123". As input, project name with either project id or number are
-   * accepted. As output, this field will contain project number.
+   * Required. Immutable. Service project name in the format: `"projects/abc"`
+   * or `"projects/123"`. As input, project name with either project id or
+   * number are accepted. As output, this field will contain project number.
    * </pre>
    *
    * <code>
@@ -67,13 +68,14 @@ public interface ServiceProjectAttachmentOrBuilder
    * @return The serviceProject.
    */
   java.lang.String getServiceProject();
+
   /**
    *
    *
    * <pre>
-   * Required. Immutable. Service project name in the format: "projects/abc" or
-   * "projects/123". As input, project name with either project id or number are
-   * accepted. As output, this field will contain project number.
+   * Required. Immutable. Service project name in the format: `"projects/abc"`
+   * or `"projects/123"`. As input, project name with either project id or
+   * number are accepted. As output, this field will contain project number.
    * </pre>
    *
    * <code>
@@ -97,6 +99,7 @@ public interface ServiceProjectAttachmentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface ServiceProjectAttachmentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface ServiceProjectAttachmentOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public interface ServiceProjectAttachmentOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

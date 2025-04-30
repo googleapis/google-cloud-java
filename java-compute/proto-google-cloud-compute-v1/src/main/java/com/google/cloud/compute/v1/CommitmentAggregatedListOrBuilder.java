@@ -36,6 +36,7 @@ public interface CommitmentAggregatedListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CommitmentAggregatedListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface CommitmentAggregatedListOrBuilder
    * </code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -83,9 +86,11 @@ public interface CommitmentAggregatedListOrBuilder
    * </code>
    */
   boolean containsItems(java.lang.String key);
+
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.CommitmentsScopedList> getItems();
+
   /**
    *
    *
@@ -97,6 +102,7 @@ public interface CommitmentAggregatedListOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.CommitmentsScopedList> getItemsMap();
+
   /**
    *
    *
@@ -112,6 +118,7 @@ public interface CommitmentAggregatedListOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.CommitmentsScopedList defaultValue);
+
   /**
    *
    *
@@ -136,6 +143,7 @@ public interface CommitmentAggregatedListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -148,6 +156,7 @@ public interface CommitmentAggregatedListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -173,6 +182,7 @@ public interface CommitmentAggregatedListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -185,6 +195,7 @@ public interface CommitmentAggregatedListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -210,6 +221,7 @@ public interface CommitmentAggregatedListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -222,6 +234,7 @@ public interface CommitmentAggregatedListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -247,6 +260,7 @@ public interface CommitmentAggregatedListOrBuilder
    * @return A list containing the unreachables.
    */
   java.util.List<java.lang.String> getUnreachablesList();
+
   /**
    *
    *
@@ -259,6 +273,7 @@ public interface CommitmentAggregatedListOrBuilder
    * @return The count of unreachables.
    */
   int getUnreachablesCount();
+
   /**
    *
    *
@@ -272,6 +287,7 @@ public interface CommitmentAggregatedListOrBuilder
    * @return The unreachables at the given index.
    */
   java.lang.String getUnreachables(int index);
+
   /**
    *
    *
@@ -298,6 +314,7 @@ public interface CommitmentAggregatedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -310,6 +327,7 @@ public interface CommitmentAggregatedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

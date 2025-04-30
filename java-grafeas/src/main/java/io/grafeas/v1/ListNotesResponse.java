@@ -34,6 +34,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:grafeas.v1.ListNotesResponse)
     ListNotesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListNotesResponse.newBuilder() to construct.
   private ListNotesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Note> notes_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<io.grafeas.v1.Note> getNotesList() {
     return notes_;
   }
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<? extends io.grafeas.v1.NoteOrBuilder> getNotesOrBuilderList() {
     return notes_;
   }
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
   public int getNotesCount() {
     return notes_.size();
   }
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
   public io.grafeas.v1.Note getNotes(int index) {
     return notes_.get(index);
   }
+
   /**
    *
    *
@@ -137,6 +143,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -356,6 +364,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -624,6 +633,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
         return notesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -640,6 +650,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
         return notesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -656,6 +667,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
         return notesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -678,6 +690,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +710,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +733,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -741,6 +756,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -760,6 +776,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +796,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +816,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +836,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +856,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +869,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
     public io.grafeas.v1.Note.Builder getNotesBuilder(int index) {
       return getNotesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -864,6 +886,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
         return notesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -880,6 +903,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(notes_);
       }
     }
+
     /**
      *
      *
@@ -892,6 +916,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
     public io.grafeas.v1.Note.Builder addNotesBuilder() {
       return getNotesFieldBuilder().addBuilder(io.grafeas.v1.Note.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -904,6 +929,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
     public io.grafeas.v1.Note.Builder addNotesBuilder(int index) {
       return getNotesFieldBuilder().addBuilder(index, io.grafeas.v1.Note.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -931,6 +957,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -955,6 +982,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -979,6 +1007,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1002,6 +1031,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1051,7 @@ public final class ListNotesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

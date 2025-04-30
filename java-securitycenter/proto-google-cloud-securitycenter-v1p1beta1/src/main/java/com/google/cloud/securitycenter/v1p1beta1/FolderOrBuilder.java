@@ -37,6 +37,7 @@ public interface FolderOrBuilder
    * @return The resourceFolder.
    */
   java.lang.String getResourceFolder();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface FolderOrBuilder
    * @return The resourceFolderDisplayName.
    */
   java.lang.String getResourceFolderDisplayName();
+
   /**
    *
    *

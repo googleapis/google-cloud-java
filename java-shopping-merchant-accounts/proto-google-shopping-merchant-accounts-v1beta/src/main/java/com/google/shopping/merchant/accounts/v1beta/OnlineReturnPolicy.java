@@ -35,6 +35,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy)
     OnlineReturnPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OnlineReturnPolicy.newBuilder() to construct.
   private OnlineReturnPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -135,6 +136,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * <code>RETURN_METHOD_UNSPECIFIED = 0;</code>
      */
     public static final int RETURN_METHOD_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -145,6 +147,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * <code>BY_MAIL = 1;</code>
      */
     public static final int BY_MAIL_VALUE = 1;
+
     /**
      *
      *
@@ -155,6 +158,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * <code>IN_STORE = 2;</code>
      */
     public static final int IN_STORE_VALUE = 2;
+
     /**
      *
      *
@@ -306,6 +310,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * <code>ITEM_CONDITION_UNSPECIFIED = 0;</code>
      */
     public static final int ITEM_CONDITION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -316,6 +321,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * <code>NEW = 1;</code>
      */
     public static final int NEW_VALUE = 1;
+
     /**
      *
      *
@@ -431,6 +437,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
+
     /**
      *
      *
@@ -461,6 +468,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return Whether the fixedFee field is set.
      */
     boolean hasFixedFee();
+
     /**
      *
      *
@@ -475,6 +483,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return The fixedFee.
      */
     com.google.shopping.type.Price getFixedFee();
+
     /**
      *
      *
@@ -488,6 +497,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      */
     com.google.shopping.type.PriceOrBuilder getFixedFeeOrBuilder();
   }
+
   /**
    *
    *
@@ -504,6 +514,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee)
       ReturnShippingFeeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ReturnShippingFee.newBuilder() to construct.
     private ReturnShippingFee(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -590,6 +601,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
        * <code>TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -600,6 +612,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
        * <code>FIXED = 1;</code>
        */
       public static final int FIXED_VALUE = 1;
+
       /**
        *
        *
@@ -700,6 +713,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_ = 0;
+
     /**
      *
      *
@@ -717,6 +731,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -745,6 +760,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
 
     public static final int FIXED_FEE_FIELD_NUMBER = 2;
     private com.google.shopping.type.Price fixedFee_;
+
     /**
      *
      *
@@ -762,6 +778,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public boolean hasFixedFee() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -779,6 +796,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public com.google.shopping.type.Price getFixedFee() {
       return fixedFee_ == null ? com.google.shopping.type.Price.getDefaultInstance() : fixedFee_;
     }
+
     /**
      *
      *
@@ -985,6 +1003,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1218,6 +1237,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private int type_ = 0;
+
       /**
        *
        *
@@ -1235,6 +1255,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       public int getTypeValue() {
         return type_;
       }
+
       /**
        *
        *
@@ -1255,6 +1276,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1280,6 +1302,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1305,6 +1328,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1331,6 +1355,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
               com.google.shopping.type.Price.Builder,
               com.google.shopping.type.PriceOrBuilder>
           fixedFeeBuilder_;
+
       /**
        *
        *
@@ -1347,6 +1372,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       public boolean hasFixedFee() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1369,6 +1395,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
           return fixedFeeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1393,6 +1420,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1414,6 +1442,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1443,6 +1472,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1464,6 +1494,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1480,6 +1511,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getFixedFeeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1500,6 +1532,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
               : fixedFee_;
         }
       }
+
       /**
        *
        *
@@ -1614,6 +1647,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return Whether the fixedFee field is set.
      */
     boolean hasFixedFee();
+
     /**
      *
      *
@@ -1626,6 +1660,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return The fixedFee.
      */
     com.google.shopping.type.Price getFixedFee();
+
     /**
      *
      *
@@ -1650,6 +1685,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return Whether the microPercent field is set.
      */
     boolean hasMicroPercent();
+
     /**
      *
      *
@@ -1667,6 +1703,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee.TypeCase
         getTypeCase();
   }
+
   /**
    *
    *
@@ -1681,6 +1718,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee)
       RestockingFeeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RestockingFee.newBuilder() to construct.
     private RestockingFee(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1727,6 +1765,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       private TypeCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1760,6 +1799,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int FIXED_FEE_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -1775,6 +1815,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public boolean hasFixedFee() {
       return typeCase_ == 1;
     }
+
     /**
      *
      *
@@ -1793,6 +1834,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
       return com.google.shopping.type.Price.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1811,6 +1853,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int MICRO_PERCENT_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -1827,6 +1870,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public boolean hasMicroPercent() {
       return typeCase_ == 2;
     }
+
     /**
      *
      *
@@ -2046,6 +2090,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2293,6 +2338,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
               com.google.shopping.type.Price.Builder,
               com.google.shopping.type.PriceOrBuilder>
           fixedFeeBuilder_;
+
       /**
        *
        *
@@ -2308,6 +2354,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       public boolean hasFixedFee() {
         return typeCase_ == 1;
       }
+
       /**
        *
        *
@@ -2333,6 +2380,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
           return com.google.shopping.type.Price.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2355,6 +2403,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         typeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -2374,6 +2423,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         typeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -2404,6 +2454,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         typeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -2429,6 +2480,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -2441,6 +2493,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       public com.google.shopping.type.Price.Builder getFixedFeeBuilder() {
         return getFixedFeeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2461,6 +2514,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
           return com.google.shopping.type.Price.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2507,6 +2561,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       public boolean hasMicroPercent() {
         return typeCase_ == 2;
       }
+
       /**
        *
        *
@@ -2525,6 +2580,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         }
         return 0;
       }
+
       /**
        *
        *
@@ -2545,6 +2601,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2653,6 +2710,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
+
     /**
      *
      *
@@ -2682,6 +2740,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      */
     long getDays();
   }
+
   /**
    *
    *
@@ -2696,6 +2755,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy)
       PolicyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Policy.newBuilder() to construct.
     private Policy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2789,6 +2849,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
        * <code>TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -2799,6 +2860,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
        * <code>NUMBER_OF_DAYS_AFTER_DELIVERY = 1;</code>
        */
       public static final int NUMBER_OF_DAYS_AFTER_DELIVERY_VALUE = 1;
+
       /**
        *
        *
@@ -2809,6 +2871,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
        * <code>NO_RETURNS = 2;</code>
        */
       public static final int NO_RETURNS_VALUE = 2;
+
       /**
        *
        *
@@ -2910,6 +2973,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
 
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_ = 0;
+
     /**
      *
      *
@@ -2926,6 +2990,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -2950,6 +3015,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
 
     public static final int DAYS_FIELD_NUMBER = 2;
     private long days_ = 0L;
+
     /**
      *
      *
@@ -3146,6 +3212,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3354,6 +3421,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private int type_ = 0;
+
       /**
        *
        *
@@ -3370,6 +3438,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       public int getTypeValue() {
         return type_;
       }
+
       /**
        *
        *
@@ -3389,6 +3458,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3411,6 +3481,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -3434,6 +3505,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3454,6 +3526,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
 
       private long days_;
+
       /**
        *
        *
@@ -3471,6 +3544,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       public long getDays() {
         return days_;
       }
+
       /**
        *
        *
@@ -3492,6 +3566,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3598,6 +3673,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return Whether the returnDays field is set.
      */
     boolean hasReturnDays();
+
     /**
      *
      *
@@ -3624,6 +3700,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return Whether the returnUntilDate field is set.
      */
     boolean hasReturnUntilDate();
+
     /**
      *
      *
@@ -3636,6 +3713,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return The returnUntilDate.
      */
     com.google.type.Date getReturnUntilDate();
+
     /**
      *
      *
@@ -3659,6 +3737,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return The label.
      */
     java.lang.String getLabel();
+
     /**
      *
      *
@@ -3686,6 +3765,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return Whether the startDate field is set.
      */
     boolean hasStartDate();
+
     /**
      *
      *
@@ -3700,6 +3780,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return The startDate.
      */
     com.google.type.Date getStartDate();
+
     /**
      *
      *
@@ -3725,6 +3806,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return Whether the endDate field is set.
      */
     boolean hasEndDate();
+
     /**
      *
      *
@@ -3737,6 +3819,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      * @return The endDate.
      */
     com.google.type.Date getEndDate();
+
     /**
      *
      *
@@ -3752,6 +3835,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
             .ReturnWindowCase
         getReturnWindowCase();
   }
+
   /**
    * Protobuf type {@code
    * google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride}
@@ -3761,6 +3845,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride)
       SeasonalOverrideOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SeasonalOverride.newBuilder() to construct.
     private SeasonalOverride(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3811,6 +3896,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       private ReturnWindowCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -3844,6 +3930,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int RETURN_DAYS_FIELD_NUMBER = 5;
+
     /**
      *
      *
@@ -3860,6 +3947,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public boolean hasReturnDays() {
       return returnWindowCase_ == 5;
     }
+
     /**
      *
      *
@@ -3881,6 +3969,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int RETURN_UNTIL_DATE_FIELD_NUMBER = 6;
+
     /**
      *
      *
@@ -3896,6 +3985,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public boolean hasReturnUntilDate() {
       return returnWindowCase_ == 6;
     }
+
     /**
      *
      *
@@ -3914,6 +4004,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
       return com.google.type.Date.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -3935,6 +4026,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object label_ = "";
+
     /**
      *
      *
@@ -3958,6 +4050,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -3984,6 +4077,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
 
     public static final int START_DATE_FIELD_NUMBER = 2;
     private com.google.type.Date startDate_;
+
     /**
      *
      *
@@ -4001,6 +4095,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public boolean hasStartDate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -4018,6 +4113,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public com.google.type.Date getStartDate() {
       return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
     }
+
     /**
      *
      *
@@ -4036,6 +4132,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
 
     public static final int END_DATE_FIELD_NUMBER = 3;
     private com.google.type.Date endDate_;
+
     /**
      *
      *
@@ -4051,6 +4148,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public boolean hasEndDate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -4066,6 +4164,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public com.google.type.Date getEndDate() {
       return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
     }
+
     /**
      *
      *
@@ -4317,6 +4416,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      * Protobuf type {@code
      * google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride}
@@ -4635,6 +4735,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       public boolean hasReturnDays() {
         return returnWindowCase_ == 5;
       }
+
       /**
        *
        *
@@ -4653,6 +4754,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         }
         return 0;
       }
+
       /**
        *
        *
@@ -4673,6 +4775,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4697,6 +4800,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
           returnUntilDateBuilder_;
+
       /**
        *
        *
@@ -4712,6 +4816,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       public boolean hasReturnUntilDate() {
         return returnWindowCase_ == 6;
       }
+
       /**
        *
        *
@@ -4737,6 +4842,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
           return com.google.type.Date.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4759,6 +4865,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         returnWindowCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -4778,6 +4885,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         returnWindowCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -4809,6 +4917,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         returnWindowCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -4834,6 +4943,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -4846,6 +4956,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       public com.google.type.Date.Builder getReturnUntilDateBuilder() {
         return getReturnUntilDateFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4866,6 +4977,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
           return com.google.type.Date.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4896,6 +5008,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object label_ = "";
+
       /**
        *
        *
@@ -4918,6 +5031,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4940,6 +5054,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4961,6 +5076,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4978,6 +5094,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5005,6 +5122,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
           startDateBuilder_;
+
       /**
        *
        *
@@ -5021,6 +5139,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       public boolean hasStartDate() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -5041,6 +5160,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
           return startDateBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5065,6 +5185,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5086,6 +5207,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5115,6 +5237,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -5136,6 +5259,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5152,6 +5276,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getStartDateFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5170,6 +5295,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
           return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
         }
       }
+
       /**
        *
        *
@@ -5199,6 +5325,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
           endDateBuilder_;
+
       /**
        *
        *
@@ -5213,6 +5340,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       public boolean hasEndDate() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -5231,6 +5359,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
           return endDateBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5253,6 +5382,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5272,6 +5402,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5299,6 +5430,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -5318,6 +5450,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5332,6 +5465,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getEndDateFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5348,6 +5482,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
           return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
         }
       }
+
       /**
        *
        *
@@ -5445,6 +5580,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -5469,6 +5605,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -5498,6 +5635,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object returnPolicyId_ = "";
+
   /**
    *
    *
@@ -5521,6 +5659,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -5549,6 +5688,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object label_ = "";
+
   /**
    *
    *
@@ -5581,6 +5721,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -5619,6 +5760,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList countries_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -5636,6 +5778,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getCountriesList() {
     return countries_;
   }
+
   /**
    *
    *
@@ -5653,6 +5796,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
   public int getCountriesCount() {
     return countries_.size();
   }
+
   /**
    *
    *
@@ -5671,6 +5815,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
   public java.lang.String getCountries(int index) {
     return countries_.get(index);
   }
+
   /**
    *
    *
@@ -5692,6 +5837,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
 
   public static final int POLICY_FIELD_NUMBER = 5;
   private com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy_;
+
   /**
    *
    *
@@ -5707,6 +5853,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
   public boolean hasPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -5725,6 +5872,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance()
         : policy_;
   }
+
   /**
    *
    *
@@ -5749,6 +5897,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
   private java.util.List<
           com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride>
       seasonalOverrides_;
+
   /**
    *
    *
@@ -5767,6 +5916,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       getSeasonalOverridesList() {
     return seasonalOverrides_;
   }
+
   /**
    *
    *
@@ -5787,6 +5937,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       getSeasonalOverridesOrBuilderList() {
     return seasonalOverrides_;
   }
+
   /**
    *
    *
@@ -5803,6 +5954,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
   public int getSeasonalOverridesCount() {
     return seasonalOverrides_.size();
   }
+
   /**
    *
    *
@@ -5820,6 +5972,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       getSeasonalOverrides(int index) {
     return seasonalOverrides_.get(index);
   }
+
   /**
    *
    *
@@ -5841,6 +5994,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
   public static final int RESTOCKING_FEE_FIELD_NUMBER = 6;
   private com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee
       restockingFee_;
+
   /**
    *
    *
@@ -5859,6 +6013,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
   public boolean hasRestockingFee() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -5881,6 +6036,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance()
         : restockingFee_;
   }
+
   /**
    *
    *
@@ -5925,6 +6081,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
                   : result;
             }
           };
+
   /**
    *
    *
@@ -5948,6 +6105,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod>(
         returnMethods_, returnMethods_converter_);
   }
+
   /**
    *
    *
@@ -5966,6 +6124,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
   public int getReturnMethodsCount() {
     return returnMethods_.size();
   }
+
   /**
    *
    *
@@ -5986,6 +6145,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       getReturnMethods(int index) {
     return returnMethods_converter_.convert(returnMethods_.get(index));
   }
+
   /**
    *
    *
@@ -6004,6 +6164,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
   public java.util.List<java.lang.Integer> getReturnMethodsValueList() {
     return returnMethods_;
   }
+
   /**
    *
    *
@@ -6049,6 +6210,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
                   : result;
             }
           };
+
   /**
    *
    *
@@ -6072,6 +6234,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition>(
         itemConditions_, itemConditions_converter_);
   }
+
   /**
    *
    *
@@ -6090,6 +6253,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
   public int getItemConditionsCount() {
     return itemConditions_.size();
   }
+
   /**
    *
    *
@@ -6110,6 +6274,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       getItemConditions(int index) {
     return itemConditions_converter_.convert(itemConditions_.get(index));
   }
+
   /**
    *
    *
@@ -6128,6 +6293,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
   public java.util.List<java.lang.Integer> getItemConditionsValueList() {
     return itemConditions_;
   }
+
   /**
    *
    *
@@ -6153,6 +6319,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
   public static final int RETURN_SHIPPING_FEE_FIELD_NUMBER = 9;
   private com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee
       returnShippingFee_;
+
   /**
    *
    *
@@ -6171,6 +6338,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
   public boolean hasReturnShippingFee() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -6193,6 +6361,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance()
         : returnShippingFee_;
   }
+
   /**
    *
    *
@@ -6218,6 +6387,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object returnPolicyUri_ = "";
+
   /**
    *
    *
@@ -6242,6 +6412,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -6269,6 +6440,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
 
   public static final int ACCEPT_DEFECTIVE_ONLY_FIELD_NUMBER = 11;
   private boolean acceptDefectiveOnly_ = false;
+
   /**
    *
    *
@@ -6285,6 +6457,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
   public boolean hasAcceptDefectiveOnly() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -6304,6 +6477,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
 
   public static final int PROCESS_REFUND_DAYS_FIELD_NUMBER = 12;
   private int processRefundDays_ = 0;
+
   /**
    *
    *
@@ -6320,6 +6494,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
   public boolean hasProcessRefundDays() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -6339,6 +6514,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
 
   public static final int ACCEPT_EXCHANGE_FIELD_NUMBER = 13;
   private boolean acceptExchange_ = false;
+
   /**
    *
    *
@@ -6355,6 +6531,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
   public boolean hasAcceptExchange() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -6722,6 +6899,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -7229,6 +7407,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -7252,6 +7431,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7275,6 +7455,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7297,6 +7478,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7315,6 +7497,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7340,6 +7523,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object returnPolicyId_ = "";
+
     /**
      *
      *
@@ -7362,6 +7546,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7384,6 +7569,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7405,6 +7591,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7422,6 +7609,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7446,6 +7634,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object label_ = "";
+
     /**
      *
      *
@@ -7477,6 +7666,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7508,6 +7698,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7538,6 +7729,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7564,6 +7756,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7605,6 +7798,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -7623,6 +7817,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       countries_.makeImmutable();
       return countries_;
     }
+
     /**
      *
      *
@@ -7640,6 +7835,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public int getCountriesCount() {
       return countries_.size();
     }
+
     /**
      *
      *
@@ -7658,6 +7854,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public java.lang.String getCountries(int index) {
       return countries_.get(index);
     }
+
     /**
      *
      *
@@ -7676,6 +7873,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getCountriesBytes(int index) {
       return countries_.getByteString(index);
     }
+
     /**
      *
      *
@@ -7702,6 +7900,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7727,6 +7926,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7749,6 +7949,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7770,6 +7971,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7803,6 +8005,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
             com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy.Builder,
             com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.PolicyOrBuilder>
         policyBuilder_;
+
     /**
      *
      *
@@ -7817,6 +8020,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public boolean hasPolicy() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -7838,6 +8042,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         return policyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -7861,6 +8066,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7882,6 +8088,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7912,6 +8119,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -7931,6 +8139,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7946,6 +8155,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7966,6 +8176,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
             : policy_;
       }
     }
+
     /**
      *
      *
@@ -8035,6 +8246,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         return seasonalOverridesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -8054,6 +8266,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         return seasonalOverridesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -8074,6 +8287,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         return seasonalOverridesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -8101,6 +8315,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -8126,6 +8341,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -8152,6 +8368,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -8179,6 +8396,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -8203,6 +8421,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -8228,6 +8447,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -8255,6 +8475,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -8277,6 +8498,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -8299,6 +8521,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -8315,6 +8538,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         getSeasonalOverridesBuilder(int index) {
       return getSeasonalOverridesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -8335,6 +8559,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         return seasonalOverridesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -8358,6 +8583,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(seasonalOverrides_);
       }
     }
+
     /**
      *
      *
@@ -8377,6 +8603,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
               com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -8397,6 +8624,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
               com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.SeasonalOverride
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -8447,6 +8675,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
             com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee.Builder,
             com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFeeOrBuilder>
         restockingFeeBuilder_;
+
     /**
      *
      *
@@ -8464,6 +8693,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public boolean hasRestockingFee() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -8489,6 +8719,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         return restockingFeeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -8515,6 +8746,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8539,6 +8771,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8572,6 +8805,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -8594,6 +8828,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8612,6 +8847,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getRestockingFeeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8635,6 +8871,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
             : restockingFee_;
       }
     }
+
     /**
      *
      *
@@ -8673,6 +8910,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000080;
       }
     }
+
     /**
      *
      *
@@ -8695,6 +8933,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
           com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod>(
           returnMethods_, returnMethods_converter_);
     }
+
     /**
      *
      *
@@ -8712,6 +8951,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public int getReturnMethodsCount() {
       return returnMethods_.size();
     }
+
     /**
      *
      *
@@ -8731,6 +8971,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         getReturnMethods(int index) {
       return returnMethods_converter_.convert(returnMethods_.get(index));
     }
+
     /**
      *
      *
@@ -8758,6 +8999,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8783,6 +9025,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8811,6 +9054,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8831,6 +9075,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8848,6 +9093,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public java.util.List<java.lang.Integer> getReturnMethodsValueList() {
       return java.util.Collections.unmodifiableList(returnMethods_);
     }
+
     /**
      *
      *
@@ -8866,6 +9112,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public int getReturnMethodsValue(int index) {
       return returnMethods_.get(index);
     }
+
     /**
      *
      *
@@ -8888,6 +9135,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8909,6 +9157,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8941,6 +9190,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000100;
       }
     }
+
     /**
      *
      *
@@ -8963,6 +9213,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
           com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition>(
           itemConditions_, itemConditions_converter_);
     }
+
     /**
      *
      *
@@ -8980,6 +9231,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public int getItemConditionsCount() {
       return itemConditions_.size();
     }
+
     /**
      *
      *
@@ -8999,6 +9251,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         getItemConditions(int index) {
       return itemConditions_converter_.convert(itemConditions_.get(index));
     }
+
     /**
      *
      *
@@ -9026,6 +9279,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9051,6 +9305,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9079,6 +9334,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9099,6 +9355,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9116,6 +9373,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public java.util.List<java.lang.Integer> getItemConditionsValueList() {
       return java.util.Collections.unmodifiableList(itemConditions_);
     }
+
     /**
      *
      *
@@ -9134,6 +9392,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public int getItemConditionsValue(int index) {
       return itemConditions_.get(index);
     }
+
     /**
      *
      *
@@ -9156,6 +9415,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9177,6 +9437,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9210,6 +9471,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
             com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy
                 .ReturnShippingFeeOrBuilder>
         returnShippingFeeBuilder_;
+
     /**
      *
      *
@@ -9227,6 +9489,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public boolean hasReturnShippingFee() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -9252,6 +9515,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         return returnShippingFeeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -9278,6 +9542,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9302,6 +9567,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9335,6 +9601,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -9357,6 +9624,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9375,6 +9643,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getReturnShippingFeeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9399,6 +9668,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
             : returnShippingFee_;
       }
     }
+
     /**
      *
      *
@@ -9433,6 +9703,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object returnPolicyUri_ = "";
+
     /**
      *
      *
@@ -9456,6 +9727,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9479,6 +9751,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9501,6 +9774,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9519,6 +9793,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9544,6 +9819,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean acceptDefectiveOnly_;
+
     /**
      *
      *
@@ -9560,6 +9836,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public boolean hasAcceptDefectiveOnly() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -9576,6 +9853,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public boolean getAcceptDefectiveOnly() {
       return acceptDefectiveOnly_;
     }
+
     /**
      *
      *
@@ -9596,6 +9874,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9616,6 +9895,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     }
 
     private int processRefundDays_;
+
     /**
      *
      *
@@ -9632,6 +9912,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public boolean hasProcessRefundDays() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -9648,6 +9929,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public int getProcessRefundDays() {
       return processRefundDays_;
     }
+
     /**
      *
      *
@@ -9668,6 +9950,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9688,6 +9971,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean acceptExchange_;
+
     /**
      *
      *
@@ -9704,6 +9988,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public boolean hasAcceptExchange() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -9720,6 +10005,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public boolean getAcceptExchange() {
       return acceptExchange_;
     }
+
     /**
      *
      *
@@ -9740,6 +10026,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

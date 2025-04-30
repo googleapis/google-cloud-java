@@ -28,7 +28,7 @@ public interface NamespacesOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of Kubernetes Namespaces
+   * Optional. A list of Kubernetes Namespaces.
    * </pre>
    *
    * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -36,11 +36,12 @@ public interface NamespacesOrBuilder
    * @return A list containing the namespaces.
    */
   java.util.List<java.lang.String> getNamespacesList();
+
   /**
    *
    *
    * <pre>
-   * Optional. A list of Kubernetes Namespaces
+   * Optional. A list of Kubernetes Namespaces.
    * </pre>
    *
    * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -48,11 +49,12 @@ public interface NamespacesOrBuilder
    * @return The count of namespaces.
    */
   int getNamespacesCount();
+
   /**
    *
    *
    * <pre>
-   * Optional. A list of Kubernetes Namespaces
+   * Optional. A list of Kubernetes Namespaces.
    * </pre>
    *
    * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -61,11 +63,12 @@ public interface NamespacesOrBuilder
    * @return The namespaces at the given index.
    */
   java.lang.String getNamespaces(int index);
+
   /**
    *
    *
    * <pre>
-   * Optional. A list of Kubernetes Namespaces
+   * Optional. A list of Kubernetes Namespaces.
    * </pre>
    *
    * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -36,8 +36,6 @@ public interface UserEventOrBuilder
    *   viewed.
    * * `detail-page-view`: Products detail page viewed.
    * * `home-page-view`: Homepage viewed.
-   * * `promotion-offered`: Promotion is offered to a user.
-   * * `promotion-not-offered`: Promotion is not offered to a user.
    * * `purchase-complete`: User finishing a purchase.
    * * `search`: Product search.
    * * `shopping-cart-page-view`: User viewing a shopping cart.
@@ -48,6 +46,7 @@ public interface UserEventOrBuilder
    * @return The eventType.
    */
   java.lang.String getEventType();
+
   /**
    *
    *
@@ -60,8 +59,6 @@ public interface UserEventOrBuilder
    *   viewed.
    * * `detail-page-view`: Products detail page viewed.
    * * `home-page-view`: Homepage viewed.
-   * * `promotion-offered`: Promotion is offered to a user.
-   * * `promotion-not-offered`: Promotion is not offered to a user.
    * * `purchase-complete`: User finishing a purchase.
    * * `search`: Product search.
    * * `shopping-cart-page-view`: User viewing a shopping cart.
@@ -101,6 +98,7 @@ public interface UserEventOrBuilder
    * @return The visitorId.
    */
   java.lang.String getVisitorId();
+
   /**
    *
    *
@@ -149,6 +147,7 @@ public interface UserEventOrBuilder
    * @return The sessionId.
    */
   java.lang.String getSessionId();
+
   /**
    *
    *
@@ -183,6 +182,7 @@ public interface UserEventOrBuilder
    * @return Whether the eventTime field is set.
    */
   boolean hasEventTime();
+
   /**
    *
    *
@@ -197,6 +197,7 @@ public interface UserEventOrBuilder
    * @return The eventTime.
    */
   com.google.protobuf.Timestamp getEventTime();
+
   /**
    *
    *
@@ -225,6 +226,7 @@ public interface UserEventOrBuilder
    * @return A list containing the experimentIds.
    */
   java.util.List<java.lang.String> getExperimentIdsList();
+
   /**
    *
    *
@@ -240,6 +242,7 @@ public interface UserEventOrBuilder
    * @return The count of experimentIds.
    */
   int getExperimentIdsCount();
+
   /**
    *
    *
@@ -256,6 +259,7 @@ public interface UserEventOrBuilder
    * @return The experimentIds at the given index.
    */
   java.lang.String getExperimentIds(int index);
+
   /**
    *
    *
@@ -307,6 +311,7 @@ public interface UserEventOrBuilder
    * @return The attributionToken.
    */
   java.lang.String getAttributionToken();
+
   /**
    *
    *
@@ -366,6 +371,7 @@ public interface UserEventOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.ProductDetail product_details = 6;</code>
    */
   java.util.List<com.google.cloud.retail.v2alpha.ProductDetail> getProductDetailsList();
+
   /**
    *
    *
@@ -390,6 +396,7 @@ public interface UserEventOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.ProductDetail product_details = 6;</code>
    */
   com.google.cloud.retail.v2alpha.ProductDetail getProductDetails(int index);
+
   /**
    *
    *
@@ -414,6 +421,7 @@ public interface UserEventOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.ProductDetail product_details = 6;</code>
    */
   int getProductDetailsCount();
+
   /**
    *
    *
@@ -439,6 +447,7 @@ public interface UserEventOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2alpha.ProductDetailOrBuilder>
       getProductDetailsOrBuilderList();
+
   /**
    *
    *
@@ -479,6 +488,7 @@ public interface UserEventOrBuilder
    * @return Whether the completionDetail field is set.
    */
   boolean hasCompletionDetail();
+
   /**
    *
    *
@@ -494,6 +504,7 @@ public interface UserEventOrBuilder
    * @return The completionDetail.
    */
   com.google.cloud.retail.v2alpha.CompletionDetail getCompletionDetail();
+
   /**
    *
    *
@@ -540,6 +551,7 @@ public interface UserEventOrBuilder
    * <code>map&lt;string, .google.cloud.retail.v2alpha.CustomAttribute&gt; attributes = 7;</code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -572,9 +584,11 @@ public interface UserEventOrBuilder
    * <code>map&lt;string, .google.cloud.retail.v2alpha.CustomAttribute&gt; attributes = 7;</code>
    */
   boolean containsAttributes(java.lang.String key);
+
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.CustomAttribute> getAttributes();
+
   /**
    *
    *
@@ -608,6 +622,7 @@ public interface UserEventOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.retail.v2alpha.CustomAttribute>
       getAttributesMap();
+
   /**
    *
    *
@@ -644,6 +659,7 @@ public interface UserEventOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.retail.v2alpha.CustomAttribute defaultValue);
+
   /**
    *
    *
@@ -693,6 +709,7 @@ public interface UserEventOrBuilder
    * @return The cartId.
    */
   java.lang.String getCartId();
+
   /**
    *
    *
@@ -725,6 +742,7 @@ public interface UserEventOrBuilder
    * @return Whether the purchaseTransaction field is set.
    */
   boolean hasPurchaseTransaction();
+
   /**
    *
    *
@@ -740,6 +758,7 @@ public interface UserEventOrBuilder
    * @return The purchaseTransaction.
    */
   com.google.cloud.retail.v2alpha.PurchaseTransaction getPurchaseTransaction();
+
   /**
    *
    *
@@ -778,6 +797,7 @@ public interface UserEventOrBuilder
    * @return The searchQuery.
    */
   java.lang.String getSearchQuery();
+
   /**
    *
    *
@@ -823,6 +843,7 @@ public interface UserEventOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -866,6 +887,7 @@ public interface UserEventOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *
@@ -938,6 +960,7 @@ public interface UserEventOrBuilder
    * @return A list containing the pageCategories.
    */
   java.util.List<java.lang.String> getPageCategoriesList();
+
   /**
    *
    *
@@ -964,6 +987,7 @@ public interface UserEventOrBuilder
    * @return The count of pageCategories.
    */
   int getPageCategoriesCount();
+
   /**
    *
    *
@@ -991,6 +1015,7 @@ public interface UserEventOrBuilder
    * @return The pageCategories at the given index.
    */
   java.lang.String getPageCategories(int index);
+
   /**
    *
    *
@@ -1031,6 +1056,7 @@ public interface UserEventOrBuilder
    * @return Whether the userInfo field is set.
    */
   boolean hasUserInfo();
+
   /**
    *
    *
@@ -1043,6 +1069,7 @@ public interface UserEventOrBuilder
    * @return The userInfo.
    */
   com.google.cloud.retail.v2alpha.UserInfo getUserInfo();
+
   /**
    *
    *
@@ -1070,6 +1097,7 @@ public interface UserEventOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -1102,6 +1130,7 @@ public interface UserEventOrBuilder
    * @return The referrerUri.
    */
   java.lang.String getReferrerUri();
+
   /**
    *
    *
@@ -1139,6 +1168,7 @@ public interface UserEventOrBuilder
    * @return The pageViewId.
    */
   java.lang.String getPageViewId();
+
   /**
    *
    *
@@ -1177,6 +1207,7 @@ public interface UserEventOrBuilder
    * @return The entity.
    */
   java.lang.String getEntity();
+
   /**
    *
    *

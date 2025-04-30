@@ -36,6 +36,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.Control)
     ControlOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Control.newBuilder() to construct.
   private Control(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,14 +81,93 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Strength of the boost, which should be in [-1, 1]. Negative
+     * Optional. Strength of the boost, which should be in [-1, 1]. Negative
      * boost means demotion. Default is 0.0 (No-op).
      * </pre>
      *
-     * <code>float boost = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>float fixed_boost = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @return Whether the fixedBoost field is set.
+     */
+    boolean hasFixedBoost();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Strength of the boost, which should be in [-1, 1]. Negative
+     * boost means demotion. Default is 0.0 (No-op).
+     * </pre>
+     *
+     * <code>float fixed_boost = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The fixedBoost.
+     */
+    float getFixedBoost();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Complex specification for custom ranking based on customer
+     * defined attribute value.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec interpolation_boost_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the interpolationBoostSpec field is set.
+     */
+    boolean hasInterpolationBoostSpec();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Complex specification for custom ranking based on customer
+     * defined attribute value.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec interpolation_boost_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The interpolationBoostSpec.
+     */
+    com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+        getInterpolationBoostSpec();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Complex specification for custom ranking based on customer
+     * defined attribute value.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec interpolation_boost_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpecOrBuilder
+        getInterpolationBoostSpecOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Strength of the boost, which should be in [-1, 1]. Negative
+     * boost means demotion. Default is 0.0 (No-op).
+     * </pre>
+     *
+     * <code>float boost = 1 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.discoveryengine.v1.Control.BoostAction.boost is deprecated. See
+     *     google/cloud/discoveryengine/v1/control.proto;l=187
      * @return The boost.
      */
+    @java.lang.Deprecated
     float getBoost();
 
     /**
@@ -108,6 +188,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * @return The filter.
      */
     java.lang.String getFilter();
+
     /**
      *
      *
@@ -143,6 +224,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * @return The dataStore.
      */
     java.lang.String getDataStore();
+
     /**
      *
      *
@@ -159,7 +241,10 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for dataStore.
      */
     com.google.protobuf.ByteString getDataStoreBytes();
+
+    com.google.cloud.discoveryengine.v1.Control.BoostAction.BoostSpecCase getBoostSpecCase();
   }
+
   /**
    *
    *
@@ -174,6 +259,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.Control.BoostAction)
       BoostActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BoostAction.newBuilder() to construct.
     private BoostAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -205,21 +291,3376 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.discoveryengine.v1.Control.BoostAction.Builder.class);
     }
 
-    public static final int BOOST_FIELD_NUMBER = 1;
-    private float boost_ = 0F;
+    public interface InterpolationBoostSpecOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the field whose value will be used to determine
+       * the boost amount.
+       * </pre>
+       *
+       * <code>string field_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The fieldName.
+       */
+      java.lang.String getFieldName();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the field whose value will be used to determine
+       * the boost amount.
+       * </pre>
+       *
+       * <code>string field_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for fieldName.
+       */
+      com.google.protobuf.ByteString getFieldNameBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The attribute type to be used to determine the boost amount.
+       * The attribute value can be derived from the field value of the
+       * specified field_name. In the case of numerical it is straightforward
+       * i.e. attribute_value = numerical_field_value. In the case of freshness
+       * however, attribute_value = (time.now() - datetime_field_value).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.AttributeType attribute_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for attributeType.
+       */
+      int getAttributeTypeValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The attribute type to be used to determine the boost amount.
+       * The attribute value can be derived from the field value of the
+       * specified field_name. In the case of numerical it is straightforward
+       * i.e. attribute_value = numerical_field_value. In the case of freshness
+       * however, attribute_value = (time.now() - datetime_field_value).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.AttributeType attribute_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The attributeType.
+       */
+      com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.AttributeType
+          getAttributeType();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The interpolation type to be applied to connect the control
+       * points listed below.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.InterpolationType interpolation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for interpolationType.
+       */
+      int getInterpolationTypeValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The interpolation type to be applied to connect the control
+       * points listed below.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.InterpolationType interpolation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The interpolationType.
+       */
+      com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+              .InterpolationType
+          getInterpolationType();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The control points used to define the curve. The monotonic
+       * function (defined through the interpolation_type above) passes through
+       * the control points listed here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      java.util.List<
+              com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                  .ControlPoint>
+          getControlPointsList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The control points used to define the curve. The monotonic
+       * function (defined through the interpolation_type above) passes through
+       * the control points listed here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint
+          getControlPoints(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The control points used to define the curve. The monotonic
+       * function (defined through the interpolation_type above) passes through
+       * the control points listed here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      int getControlPointsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The control points used to define the curve. The monotonic
+       * function (defined through the interpolation_type above) passes through
+       * the control points listed here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                      .ControlPointOrBuilder>
+          getControlPointsOrBuilderList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The control points used to define the curve. The monotonic
+       * function (defined through the interpolation_type above) passes through
+       * the control points listed here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+              .ControlPointOrBuilder
+          getControlPointsOrBuilder(int index);
+    }
+
     /**
      *
      *
      * <pre>
-     * Required. Strength of the boost, which should be in [-1, 1]. Negative
+     * Specification for custom ranking based on customer specified attribute
+     * value. It provides more controls for customized ranking than the simple
+     * (condition, boost) combination above.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec}
+     */
+    public static final class InterpolationBoostSpec extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec)
+        InterpolationBoostSpecOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use InterpolationBoostSpec.newBuilder() to construct.
+      private InterpolationBoostSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private InterpolationBoostSpec() {
+        fieldName_ = "";
+        attributeType_ = 0;
+        interpolationType_ = 0;
+        controlPoints_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new InterpolationBoostSpec();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.ControlProto
+            .internal_static_google_cloud_discoveryengine_v1_Control_BoostAction_InterpolationBoostSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.ControlProto
+            .internal_static_google_cloud_discoveryengine_v1_Control_BoostAction_InterpolationBoostSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .class,
+                com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .Builder.class);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The attribute(or function) for which the custom ranking is to be
+       * applied.
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.AttributeType}
+       */
+      public enum AttributeType implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * Unspecified AttributeType.
+         * </pre>
+         *
+         * <code>ATTRIBUTE_TYPE_UNSPECIFIED = 0;</code>
+         */
+        ATTRIBUTE_TYPE_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * The value of the numerical field will be used to dynamically update
+         * the boost amount. In this case, the attribute_value (the x value)
+         * of the control point will be the actual value of the numerical
+         * field for which the boost_amount is specified.
+         * </pre>
+         *
+         * <code>NUMERICAL = 1;</code>
+         */
+        NUMERICAL(1),
+        /**
+         *
+         *
+         * <pre>
+         * For the freshness use case the attribute value will be the duration
+         * between the current time and the date in the datetime field
+         * specified. The value must be formatted as an XSD `dayTimeDuration`
+         * value (a restricted subset of an ISO 8601 duration value). The
+         * pattern for this is: `[nD][T[nH][nM][nS]]`.
+         * For example, `5D`, `3DT12H30M`, `T24H`.
+         * </pre>
+         *
+         * <code>FRESHNESS = 2;</code>
+         */
+        FRESHNESS(2),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * Unspecified AttributeType.
+         * </pre>
+         *
+         * <code>ATTRIBUTE_TYPE_UNSPECIFIED = 0;</code>
+         */
+        public static final int ATTRIBUTE_TYPE_UNSPECIFIED_VALUE = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * The value of the numerical field will be used to dynamically update
+         * the boost amount. In this case, the attribute_value (the x value)
+         * of the control point will be the actual value of the numerical
+         * field for which the boost_amount is specified.
+         * </pre>
+         *
+         * <code>NUMERICAL = 1;</code>
+         */
+        public static final int NUMERICAL_VALUE = 1;
+
+        /**
+         *
+         *
+         * <pre>
+         * For the freshness use case the attribute value will be the duration
+         * between the current time and the date in the datetime field
+         * specified. The value must be formatted as an XSD `dayTimeDuration`
+         * value (a restricted subset of an ISO 8601 duration value). The
+         * pattern for this is: `[nD][T[nH][nM][nS]]`.
+         * For example, `5D`, `3DT12H30M`, `T24H`.
+         * </pre>
+         *
+         * <code>FRESHNESS = 2;</code>
+         */
+        public static final int FRESHNESS_VALUE = 2;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static AttributeType valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static AttributeType forNumber(int value) {
+          switch (value) {
+            case 0:
+              return ATTRIBUTE_TYPE_UNSPECIFIED;
+            case 1:
+              return NUMERICAL;
+            case 2:
+              return FRESHNESS;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<AttributeType>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<AttributeType>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<AttributeType>() {
+                  public AttributeType findValueByNumber(int number) {
+                    return AttributeType.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+              .getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final AttributeType[] VALUES = values();
+
+        public static AttributeType valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private AttributeType(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.AttributeType)
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The interpolation type to be applied. Default will be linear
+       * (Piecewise Linear).
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.InterpolationType}
+       */
+      public enum InterpolationType implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * Interpolation type is unspecified. In this case, it defaults to
+         * Linear.
+         * </pre>
+         *
+         * <code>INTERPOLATION_TYPE_UNSPECIFIED = 0;</code>
+         */
+        INTERPOLATION_TYPE_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * Piecewise linear interpolation will be applied.
+         * </pre>
+         *
+         * <code>LINEAR = 1;</code>
+         */
+        LINEAR(1),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * Interpolation type is unspecified. In this case, it defaults to
+         * Linear.
+         * </pre>
+         *
+         * <code>INTERPOLATION_TYPE_UNSPECIFIED = 0;</code>
+         */
+        public static final int INTERPOLATION_TYPE_UNSPECIFIED_VALUE = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * Piecewise linear interpolation will be applied.
+         * </pre>
+         *
+         * <code>LINEAR = 1;</code>
+         */
+        public static final int LINEAR_VALUE = 1;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static InterpolationType valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static InterpolationType forNumber(int value) {
+          switch (value) {
+            case 0:
+              return INTERPOLATION_TYPE_UNSPECIFIED;
+            case 1:
+              return LINEAR;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<InterpolationType>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<InterpolationType>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<InterpolationType>() {
+                  public InterpolationType findValueByNumber(int number) {
+                    return InterpolationType.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+              .getDescriptor()
+              .getEnumTypes()
+              .get(1);
+        }
+
+        private static final InterpolationType[] VALUES = values();
+
+        public static InterpolationType valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private InterpolationType(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.InterpolationType)
+      }
+
+      public interface ControlPointOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Can be one of:
+         * 1. The numerical field value.
+         * 2. The duration spec for freshness:
+         * The value must be formatted as an XSD `dayTimeDuration` value (a
+         * restricted subset of an ISO 8601 duration value). The pattern for
+         * this is: `[nD][T[nH][nM][nS]]`.
+         * </pre>
+         *
+         * <code>string attribute_value = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The attributeValue.
+         */
+        java.lang.String getAttributeValue();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Can be one of:
+         * 1. The numerical field value.
+         * 2. The duration spec for freshness:
+         * The value must be formatted as an XSD `dayTimeDuration` value (a
+         * restricted subset of an ISO 8601 duration value). The pattern for
+         * this is: `[nD][T[nH][nM][nS]]`.
+         * </pre>
+         *
+         * <code>string attribute_value = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for attributeValue.
+         */
+        com.google.protobuf.ByteString getAttributeValueBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The value between -1 to 1 by which to boost the score if
+         * the attribute_value evaluates to the value specified above.
+         * </pre>
+         *
+         * <code>float boost_amount = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The boostAmount.
+         */
+        float getBoostAmount();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The control points used to define the curve. The curve defined
+       * through these control points can only be monotonically increasing
+       * or decreasing(constant values are acceptable).
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint}
+       */
+      public static final class ControlPoint extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint)
+          ControlPointOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        // Use ControlPoint.newBuilder() to construct.
+        private ControlPoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private ControlPoint() {
+          attributeValue_ = "";
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new ControlPoint();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.ControlProto
+              .internal_static_google_cloud_discoveryengine_v1_Control_BoostAction_InterpolationBoostSpec_ControlPoint_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1.ControlProto
+              .internal_static_google_cloud_discoveryengine_v1_Control_BoostAction_InterpolationBoostSpec_ControlPoint_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                      .ControlPoint.class,
+                  com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                      .ControlPoint.Builder.class);
+        }
+
+        public static final int ATTRIBUTE_VALUE_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object attributeValue_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Can be one of:
+         * 1. The numerical field value.
+         * 2. The duration spec for freshness:
+         * The value must be formatted as an XSD `dayTimeDuration` value (a
+         * restricted subset of an ISO 8601 duration value). The pattern for
+         * this is: `[nD][T[nH][nM][nS]]`.
+         * </pre>
+         *
+         * <code>string attribute_value = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The attributeValue.
+         */
+        @java.lang.Override
+        public java.lang.String getAttributeValue() {
+          java.lang.Object ref = attributeValue_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            attributeValue_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Can be one of:
+         * 1. The numerical field value.
+         * 2. The duration spec for freshness:
+         * The value must be formatted as an XSD `dayTimeDuration` value (a
+         * restricted subset of an ISO 8601 duration value). The pattern for
+         * this is: `[nD][T[nH][nM][nS]]`.
+         * </pre>
+         *
+         * <code>string attribute_value = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for attributeValue.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getAttributeValueBytes() {
+          java.lang.Object ref = attributeValue_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            attributeValue_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int BOOST_AMOUNT_FIELD_NUMBER = 2;
+        private float boostAmount_ = 0F;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The value between -1 to 1 by which to boost the score if
+         * the attribute_value evaluates to the value specified above.
+         * </pre>
+         *
+         * <code>float boost_amount = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The boostAmount.
+         */
+        @java.lang.Override
+        public float getBoostAmount() {
+          return boostAmount_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attributeValue_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, attributeValue_);
+          }
+          if (java.lang.Float.floatToRawIntBits(boostAmount_) != 0) {
+            output.writeFloat(2, boostAmount_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attributeValue_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, attributeValue_);
+          }
+          if (java.lang.Float.floatToRawIntBits(boostAmount_) != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, boostAmount_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                  .ControlPoint)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                  .ControlPoint
+              other =
+                  (com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                          .ControlPoint)
+                      obj;
+
+          if (!getAttributeValue().equals(other.getAttributeValue())) return false;
+          if (java.lang.Float.floatToIntBits(getBoostAmount())
+              != java.lang.Float.floatToIntBits(other.getBoostAmount())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + ATTRIBUTE_VALUE_FIELD_NUMBER;
+          hash = (53 * hash) + getAttributeValue().hashCode();
+          hash = (37 * hash) + BOOST_AMOUNT_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(getBoostAmount());
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPoint
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The control points used to define the curve. The curve defined
+         * through these control points can only be monotonically increasing
+         * or decreasing(constant values are acceptable).
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint)
+            com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPointOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1.ControlProto
+                .internal_static_google_cloud_discoveryengine_v1_Control_BoostAction_InterpolationBoostSpec_ControlPoint_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.discoveryengine.v1.ControlProto
+                .internal_static_google_cloud_discoveryengine_v1_Control_BoostAction_InterpolationBoostSpec_ControlPoint_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                        .ControlPoint.class,
+                    com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                        .ControlPoint.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            attributeValue_ = "";
+            boostAmount_ = 0F;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.discoveryengine.v1.ControlProto
+                .internal_static_google_cloud_discoveryengine_v1_Control_BoostAction_InterpolationBoostSpec_ControlPoint_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                  .ControlPoint
+              getDefaultInstanceForType() {
+            return com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                  .ControlPoint
+              build() {
+            com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPoint
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                  .ControlPoint
+              buildPartial() {
+            com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPoint
+                result =
+                    new com.google.cloud.discoveryengine.v1.Control.BoostAction
+                        .InterpolationBoostSpec.ControlPoint(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                      .ControlPoint
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.attributeValue_ = attributeValue_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.boostAmount_ = boostAmount_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPoint) {
+              return mergeFrom(
+                  (com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                          .ControlPoint)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                      .ControlPoint
+                  other) {
+            if (other
+                == com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPoint.getDefaultInstance()) return this;
+            if (!other.getAttributeValue().isEmpty()) {
+              attributeValue_ = other.attributeValue_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            if (other.getBoostAmount() != 0F) {
+              setBoostAmount(other.getBoostAmount());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      attributeValue_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 21:
+                    {
+                      boostAmount_ = input.readFloat();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 21
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object attributeValue_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Can be one of:
+           * 1. The numerical field value.
+           * 2. The duration spec for freshness:
+           * The value must be formatted as an XSD `dayTimeDuration` value (a
+           * restricted subset of an ISO 8601 duration value). The pattern for
+           * this is: `[nD][T[nH][nM][nS]]`.
+           * </pre>
+           *
+           * <code>string attribute_value = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The attributeValue.
+           */
+          public java.lang.String getAttributeValue() {
+            java.lang.Object ref = attributeValue_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              attributeValue_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Can be one of:
+           * 1. The numerical field value.
+           * 2. The duration spec for freshness:
+           * The value must be formatted as an XSD `dayTimeDuration` value (a
+           * restricted subset of an ISO 8601 duration value). The pattern for
+           * this is: `[nD][T[nH][nM][nS]]`.
+           * </pre>
+           *
+           * <code>string attribute_value = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The bytes for attributeValue.
+           */
+          public com.google.protobuf.ByteString getAttributeValueBytes() {
+            java.lang.Object ref = attributeValue_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              attributeValue_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Can be one of:
+           * 1. The numerical field value.
+           * 2. The duration spec for freshness:
+           * The value must be formatted as an XSD `dayTimeDuration` value (a
+           * restricted subset of an ISO 8601 duration value). The pattern for
+           * this is: `[nD][T[nH][nM][nS]]`.
+           * </pre>
+           *
+           * <code>string attribute_value = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The attributeValue to set.
+           * @return This builder for chaining.
+           */
+          public Builder setAttributeValue(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            attributeValue_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Can be one of:
+           * 1. The numerical field value.
+           * 2. The duration spec for freshness:
+           * The value must be formatted as an XSD `dayTimeDuration` value (a
+           * restricted subset of an ISO 8601 duration value). The pattern for
+           * this is: `[nD][T[nH][nM][nS]]`.
+           * </pre>
+           *
+           * <code>string attribute_value = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearAttributeValue() {
+            attributeValue_ = getDefaultInstance().getAttributeValue();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Can be one of:
+           * 1. The numerical field value.
+           * 2. The duration spec for freshness:
+           * The value must be formatted as an XSD `dayTimeDuration` value (a
+           * restricted subset of an ISO 8601 duration value). The pattern for
+           * this is: `[nD][T[nH][nM][nS]]`.
+           * </pre>
+           *
+           * <code>string attribute_value = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The bytes for attributeValue to set.
+           * @return This builder for chaining.
+           */
+          public Builder setAttributeValueBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            attributeValue_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          private float boostAmount_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The value between -1 to 1 by which to boost the score if
+           * the attribute_value evaluates to the value specified above.
+           * </pre>
+           *
+           * <code>float boost_amount = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The boostAmount.
+           */
+          @java.lang.Override
+          public float getBoostAmount() {
+            return boostAmount_;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The value between -1 to 1 by which to boost the score if
+           * the attribute_value evaluates to the value specified above.
+           * </pre>
+           *
+           * <code>float boost_amount = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The boostAmount to set.
+           * @return This builder for chaining.
+           */
+          public Builder setBoostAmount(float value) {
+
+            boostAmount_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. The value between -1 to 1 by which to boost the score if
+           * the attribute_value evaluates to the value specified above.
+           * </pre>
+           *
+           * <code>float boost_amount = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearBoostAmount() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            boostAmount_ = 0F;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint)
+        private static final com.google.cloud.discoveryengine.v1.Control.BoostAction
+                .InterpolationBoostSpec.ControlPoint
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                  .ControlPoint();
+        }
+
+        public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ControlPoint> PARSER =
+            new com.google.protobuf.AbstractParser<ControlPoint>() {
+              @java.lang.Override
+              public ControlPoint parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<ControlPoint> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ControlPoint> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public static final int FIELD_NAME_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object fieldName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the field whose value will be used to determine
+       * the boost amount.
+       * </pre>
+       *
+       * <code>string field_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The fieldName.
+       */
+      @java.lang.Override
+      public java.lang.String getFieldName() {
+        java.lang.Object ref = fieldName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fieldName_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the field whose value will be used to determine
+       * the boost amount.
+       * </pre>
+       *
+       * <code>string field_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for fieldName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getFieldNameBytes() {
+        java.lang.Object ref = fieldName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          fieldName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ATTRIBUTE_TYPE_FIELD_NUMBER = 2;
+      private int attributeType_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The attribute type to be used to determine the boost amount.
+       * The attribute value can be derived from the field value of the
+       * specified field_name. In the case of numerical it is straightforward
+       * i.e. attribute_value = numerical_field_value. In the case of freshness
+       * however, attribute_value = (time.now() - datetime_field_value).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.AttributeType attribute_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for attributeType.
+       */
+      @java.lang.Override
+      public int getAttributeTypeValue() {
+        return attributeType_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The attribute type to be used to determine the boost amount.
+       * The attribute value can be derived from the field value of the
+       * specified field_name. In the case of numerical it is straightforward
+       * i.e. attribute_value = numerical_field_value. In the case of freshness
+       * however, attribute_value = (time.now() - datetime_field_value).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.AttributeType attribute_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The attributeType.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+              .AttributeType
+          getAttributeType() {
+        com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.AttributeType
+            result =
+                com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .AttributeType.forNumber(attributeType_);
+        return result == null
+            ? com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .AttributeType.UNRECOGNIZED
+            : result;
+      }
+
+      public static final int INTERPOLATION_TYPE_FIELD_NUMBER = 3;
+      private int interpolationType_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The interpolation type to be applied to connect the control
+       * points listed below.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.InterpolationType interpolation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for interpolationType.
+       */
+      @java.lang.Override
+      public int getInterpolationTypeValue() {
+        return interpolationType_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The interpolation type to be applied to connect the control
+       * points listed below.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.InterpolationType interpolation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The interpolationType.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+              .InterpolationType
+          getInterpolationType() {
+        com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .InterpolationType
+            result =
+                com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .InterpolationType.forNumber(interpolationType_);
+        return result == null
+            ? com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .InterpolationType.UNRECOGNIZED
+            : result;
+      }
+
+      public static final int CONTROL_POINTS_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
+      private java.util.List<
+              com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                  .ControlPoint>
+          controlPoints_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The control points used to define the curve. The monotonic
+       * function (defined through the interpolation_type above) passes through
+       * the control points listed here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                  .ControlPoint>
+          getControlPointsList() {
+        return controlPoints_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The control points used to define the curve. The monotonic
+       * function (defined through the interpolation_type above) passes through
+       * the control points listed here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                      .ControlPointOrBuilder>
+          getControlPointsOrBuilderList() {
+        return controlPoints_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The control points used to define the curve. The monotonic
+       * function (defined through the interpolation_type above) passes through
+       * the control points listed here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public int getControlPointsCount() {
+        return controlPoints_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The control points used to define the curve. The monotonic
+       * function (defined through the interpolation_type above) passes through
+       * the control points listed here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+              .ControlPoint
+          getControlPoints(int index) {
+        return controlPoints_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The control points used to define the curve. The monotonic
+       * function (defined through the interpolation_type above) passes through
+       * the control points listed here.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+              .ControlPointOrBuilder
+          getControlPointsOrBuilder(int index) {
+        return controlPoints_.get(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fieldName_);
+        }
+        if (attributeType_
+            != com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .AttributeType.ATTRIBUTE_TYPE_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(2, attributeType_);
+        }
+        if (interpolationType_
+            != com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .InterpolationType.INTERPOLATION_TYPE_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(3, interpolationType_);
+        }
+        for (int i = 0; i < controlPoints_.size(); i++) {
+          output.writeMessage(4, controlPoints_.get(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldName_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fieldName_);
+        }
+        if (attributeType_
+            != com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .AttributeType.ATTRIBUTE_TYPE_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, attributeType_);
+        }
+        if (interpolationType_
+            != com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .InterpolationType.INTERPOLATION_TYPE_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, interpolationType_);
+        }
+        for (int i = 0; i < controlPoints_.size(); i++) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(4, controlPoints_.get(i));
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec other =
+            (com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec) obj;
+
+        if (!getFieldName().equals(other.getFieldName())) return false;
+        if (attributeType_ != other.attributeType_) return false;
+        if (interpolationType_ != other.interpolationType_) return false;
+        if (!getControlPointsList().equals(other.getControlPointsList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + FIELD_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getFieldName().hashCode();
+        hash = (37 * hash) + ATTRIBUTE_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + attributeType_;
+        hash = (37 * hash) + INTERPOLATION_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + interpolationType_;
+        if (getControlPointsCount() > 0) {
+          hash = (37 * hash) + CONTROL_POINTS_FIELD_NUMBER;
+          hash = (53 * hash) + getControlPointsList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specification for custom ranking based on customer specified attribute
+       * value. It provides more controls for customized ranking than the simple
+       * (condition, boost) combination above.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec)
+          com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpecOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.ControlProto
+              .internal_static_google_cloud_discoveryengine_v1_Control_BoostAction_InterpolationBoostSpec_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1.ControlProto
+              .internal_static_google_cloud_discoveryengine_v1_Control_BoostAction_InterpolationBoostSpec_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                      .class,
+                  com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          fieldName_ = "";
+          attributeType_ = 0;
+          interpolationType_ = 0;
+          if (controlPointsBuilder_ == null) {
+            controlPoints_ = java.util.Collections.emptyList();
+          } else {
+            controlPoints_ = null;
+            controlPointsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000008);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1.ControlProto
+              .internal_static_google_cloud_discoveryengine_v1_Control_BoostAction_InterpolationBoostSpec_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+            build() {
+          com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec result =
+              new com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec(
+                  this);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec result) {
+          if (controlPointsBuilder_ == null) {
+            if (((bitField0_ & 0x00000008) != 0)) {
+              controlPoints_ = java.util.Collections.unmodifiableList(controlPoints_);
+              bitField0_ = (bitField0_ & ~0x00000008);
+            }
+            result.controlPoints_ = controlPoints_;
+          } else {
+            result.controlPoints_ = controlPointsBuilder_.build();
+          }
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.fieldName_ = fieldName_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.attributeType_ = attributeType_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.interpolationType_ = interpolationType_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                  .getDefaultInstance()) return this;
+          if (!other.getFieldName().isEmpty()) {
+            fieldName_ = other.fieldName_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (other.attributeType_ != 0) {
+            setAttributeTypeValue(other.getAttributeTypeValue());
+          }
+          if (other.interpolationType_ != 0) {
+            setInterpolationTypeValue(other.getInterpolationTypeValue());
+          }
+          if (controlPointsBuilder_ == null) {
+            if (!other.controlPoints_.isEmpty()) {
+              if (controlPoints_.isEmpty()) {
+                controlPoints_ = other.controlPoints_;
+                bitField0_ = (bitField0_ & ~0x00000008);
+              } else {
+                ensureControlPointsIsMutable();
+                controlPoints_.addAll(other.controlPoints_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.controlPoints_.isEmpty()) {
+              if (controlPointsBuilder_.isEmpty()) {
+                controlPointsBuilder_.dispose();
+                controlPointsBuilder_ = null;
+                controlPoints_ = other.controlPoints_;
+                bitField0_ = (bitField0_ & ~0x00000008);
+                controlPointsBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getControlPointsFieldBuilder()
+                        : null;
+              } else {
+                controlPointsBuilder_.addAllMessages(other.controlPoints_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    fieldName_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 16:
+                  {
+                    attributeType_ = input.readEnum();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                case 24:
+                  {
+                    interpolationType_ = input.readEnum();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 24
+                case 34:
+                  {
+                    com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                            .ControlPoint
+                        m =
+                            input.readMessage(
+                                com.google.cloud.discoveryengine.v1.Control.BoostAction
+                                    .InterpolationBoostSpec.ControlPoint.parser(),
+                                extensionRegistry);
+                    if (controlPointsBuilder_ == null) {
+                      ensureControlPointsIsMutable();
+                      controlPoints_.add(m);
+                    } else {
+                      controlPointsBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 34
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object fieldName_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the field whose value will be used to determine
+         * the boost amount.
+         * </pre>
+         *
+         * <code>string field_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The fieldName.
+         */
+        public java.lang.String getFieldName() {
+          java.lang.Object ref = fieldName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            fieldName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the field whose value will be used to determine
+         * the boost amount.
+         * </pre>
+         *
+         * <code>string field_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for fieldName.
+         */
+        public com.google.protobuf.ByteString getFieldNameBytes() {
+          java.lang.Object ref = fieldName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            fieldName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the field whose value will be used to determine
+         * the boost amount.
+         * </pre>
+         *
+         * <code>string field_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The fieldName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFieldName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          fieldName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the field whose value will be used to determine
+         * the boost amount.
+         * </pre>
+         *
+         * <code>string field_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearFieldName() {
+          fieldName_ = getDefaultInstance().getFieldName();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the field whose value will be used to determine
+         * the boost amount.
+         * </pre>
+         *
+         * <code>string field_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for fieldName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFieldNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          fieldName_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private int attributeType_ = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The attribute type to be used to determine the boost amount.
+         * The attribute value can be derived from the field value of the
+         * specified field_name. In the case of numerical it is straightforward
+         * i.e. attribute_value = numerical_field_value. In the case of freshness
+         * however, attribute_value = (time.now() - datetime_field_value).
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.AttributeType attribute_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for attributeType.
+         */
+        @java.lang.Override
+        public int getAttributeTypeValue() {
+          return attributeType_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The attribute type to be used to determine the boost amount.
+         * The attribute value can be derived from the field value of the
+         * specified field_name. In the case of numerical it is straightforward
+         * i.e. attribute_value = numerical_field_value. In the case of freshness
+         * however, attribute_value = (time.now() - datetime_field_value).
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.AttributeType attribute_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for attributeType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAttributeTypeValue(int value) {
+          attributeType_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The attribute type to be used to determine the boost amount.
+         * The attribute value can be derived from the field value of the
+         * specified field_name. In the case of numerical it is straightforward
+         * i.e. attribute_value = numerical_field_value. In the case of freshness
+         * however, attribute_value = (time.now() - datetime_field_value).
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.AttributeType attribute_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The attributeType.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .AttributeType
+            getAttributeType() {
+          com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                  .AttributeType
+              result =
+                  com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                      .AttributeType.forNumber(attributeType_);
+          return result == null
+              ? com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                  .AttributeType.UNRECOGNIZED
+              : result;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The attribute type to be used to determine the boost amount.
+         * The attribute value can be derived from the field value of the
+         * specified field_name. In the case of numerical it is straightforward
+         * i.e. attribute_value = numerical_field_value. In the case of freshness
+         * however, attribute_value = (time.now() - datetime_field_value).
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.AttributeType attribute_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The attributeType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAttributeType(
+            com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .AttributeType
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000002;
+          attributeType_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The attribute type to be used to determine the boost amount.
+         * The attribute value can be derived from the field value of the
+         * specified field_name. In the case of numerical it is straightforward
+         * i.e. attribute_value = numerical_field_value. In the case of freshness
+         * however, attribute_value = (time.now() - datetime_field_value).
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.AttributeType attribute_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearAttributeType() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          attributeType_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int interpolationType_ = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The interpolation type to be applied to connect the control
+         * points listed below.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.InterpolationType interpolation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for interpolationType.
+         */
+        @java.lang.Override
+        public int getInterpolationTypeValue() {
+          return interpolationType_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The interpolation type to be applied to connect the control
+         * points listed below.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.InterpolationType interpolation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for interpolationType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setInterpolationTypeValue(int value) {
+          interpolationType_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The interpolation type to be applied to connect the control
+         * points listed below.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.InterpolationType interpolation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The interpolationType.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .InterpolationType
+            getInterpolationType() {
+          com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                  .InterpolationType
+              result =
+                  com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                      .InterpolationType.forNumber(interpolationType_);
+          return result == null
+              ? com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                  .InterpolationType.UNRECOGNIZED
+              : result;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The interpolation type to be applied to connect the control
+         * points listed below.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.InterpolationType interpolation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The interpolationType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setInterpolationType(
+            com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .InterpolationType
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000004;
+          interpolationType_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The interpolation type to be applied to connect the control
+         * points listed below.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.InterpolationType interpolation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearInterpolationType() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          interpolationType_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.util.List<
+                com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPoint>
+            controlPoints_ = java.util.Collections.emptyList();
+
+        private void ensureControlPointsIsMutable() {
+          if (!((bitField0_ & 0x00000008) != 0)) {
+            controlPoints_ =
+                new java.util.ArrayList<
+                    com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                        .ControlPoint>(controlPoints_);
+            bitField0_ |= 0x00000008;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPoint,
+                com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPoint.Builder,
+                com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPointOrBuilder>
+            controlPointsBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The control points used to define the curve. The monotonic
+         * function (defined through the interpolation_type above) passes through
+         * the control points listed here.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPoint>
+            getControlPointsList() {
+          if (controlPointsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(controlPoints_);
+          } else {
+            return controlPointsBuilder_.getMessageList();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The control points used to define the curve. The monotonic
+         * function (defined through the interpolation_type above) passes through
+         * the control points listed here.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public int getControlPointsCount() {
+          if (controlPointsBuilder_ == null) {
+            return controlPoints_.size();
+          } else {
+            return controlPointsBuilder_.getCount();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The control points used to define the curve. The monotonic
+         * function (defined through the interpolation_type above) passes through
+         * the control points listed here.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint
+            getControlPoints(int index) {
+          if (controlPointsBuilder_ == null) {
+            return controlPoints_.get(index);
+          } else {
+            return controlPointsBuilder_.getMessage(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The control points used to define the curve. The monotonic
+         * function (defined through the interpolation_type above) passes through
+         * the control points listed here.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setControlPoints(
+            int index,
+            com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPoint
+                value) {
+          if (controlPointsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureControlPointsIsMutable();
+            controlPoints_.set(index, value);
+            onChanged();
+          } else {
+            controlPointsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The control points used to define the curve. The monotonic
+         * function (defined through the interpolation_type above) passes through
+         * the control points listed here.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setControlPoints(
+            int index,
+            com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPoint.Builder
+                builderForValue) {
+          if (controlPointsBuilder_ == null) {
+            ensureControlPointsIsMutable();
+            controlPoints_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            controlPointsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The control points used to define the curve. The monotonic
+         * function (defined through the interpolation_type above) passes through
+         * the control points listed here.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addControlPoints(
+            com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPoint
+                value) {
+          if (controlPointsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureControlPointsIsMutable();
+            controlPoints_.add(value);
+            onChanged();
+          } else {
+            controlPointsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The control points used to define the curve. The monotonic
+         * function (defined through the interpolation_type above) passes through
+         * the control points listed here.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addControlPoints(
+            int index,
+            com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPoint
+                value) {
+          if (controlPointsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureControlPointsIsMutable();
+            controlPoints_.add(index, value);
+            onChanged();
+          } else {
+            controlPointsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The control points used to define the curve. The monotonic
+         * function (defined through the interpolation_type above) passes through
+         * the control points listed here.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addControlPoints(
+            com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPoint.Builder
+                builderForValue) {
+          if (controlPointsBuilder_ == null) {
+            ensureControlPointsIsMutable();
+            controlPoints_.add(builderForValue.build());
+            onChanged();
+          } else {
+            controlPointsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The control points used to define the curve. The monotonic
+         * function (defined through the interpolation_type above) passes through
+         * the control points listed here.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addControlPoints(
+            int index,
+            com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPoint.Builder
+                builderForValue) {
+          if (controlPointsBuilder_ == null) {
+            ensureControlPointsIsMutable();
+            controlPoints_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            controlPointsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The control points used to define the curve. The monotonic
+         * function (defined through the interpolation_type above) passes through
+         * the control points listed here.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addAllControlPoints(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.discoveryengine.v1.Control.BoostAction
+                            .InterpolationBoostSpec.ControlPoint>
+                values) {
+          if (controlPointsBuilder_ == null) {
+            ensureControlPointsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, controlPoints_);
+            onChanged();
+          } else {
+            controlPointsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The control points used to define the curve. The monotonic
+         * function (defined through the interpolation_type above) passes through
+         * the control points listed here.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearControlPoints() {
+          if (controlPointsBuilder_ == null) {
+            controlPoints_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000008);
+            onChanged();
+          } else {
+            controlPointsBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The control points used to define the curve. The monotonic
+         * function (defined through the interpolation_type above) passes through
+         * the control points listed here.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder removeControlPoints(int index) {
+          if (controlPointsBuilder_ == null) {
+            ensureControlPointsIsMutable();
+            controlPoints_.remove(index);
+            onChanged();
+          } else {
+            controlPointsBuilder_.remove(index);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The control points used to define the curve. The monotonic
+         * function (defined through the interpolation_type above) passes through
+         * the control points listed here.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint.Builder
+            getControlPointsBuilder(int index) {
+          return getControlPointsFieldBuilder().getBuilder(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The control points used to define the curve. The monotonic
+         * function (defined through the interpolation_type above) passes through
+         * the control points listed here.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPointOrBuilder
+            getControlPointsOrBuilder(int index) {
+          if (controlPointsBuilder_ == null) {
+            return controlPoints_.get(index);
+          } else {
+            return controlPointsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The control points used to define the curve. The monotonic
+         * function (defined through the interpolation_type above) passes through
+         * the control points listed here.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                        .ControlPointOrBuilder>
+            getControlPointsOrBuilderList() {
+          if (controlPointsBuilder_ != null) {
+            return controlPointsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(controlPoints_);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The control points used to define the curve. The monotonic
+         * function (defined through the interpolation_type above) passes through
+         * the control points listed here.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint.Builder
+            addControlPointsBuilder() {
+          return getControlPointsFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                      .ControlPoint.getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The control points used to define the curve. The monotonic
+         * function (defined through the interpolation_type above) passes through
+         * the control points listed here.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                .ControlPoint.Builder
+            addControlPointsBuilder(int index) {
+          return getControlPointsFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                      .ControlPoint.getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The control points used to define the curve. The monotonic
+         * function (defined through the interpolation_type above) passes through
+         * the control points listed here.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.ControlPoint control_points = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPoint.Builder>
+            getControlPointsBuilderList() {
+          return getControlPointsFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPoint,
+                com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPoint.Builder,
+                com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .ControlPointOrBuilder>
+            getControlPointsFieldBuilder() {
+          if (controlPointsBuilder_ == null) {
+            controlPointsBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                        .ControlPoint,
+                    com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                        .ControlPoint.Builder,
+                    com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                        .ControlPointOrBuilder>(
+                    controlPoints_,
+                    ((bitField0_ & 0x00000008) != 0),
+                    getParentForChildren(),
+                    isClean());
+            controlPoints_ = null;
+          }
+          return controlPointsBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec)
+      private static final com.google.cloud.discoveryengine.v1.Control.BoostAction
+              .InterpolationBoostSpec
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec();
+      }
+
+      public static com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<InterpolationBoostSpec> PARSER =
+          new com.google.protobuf.AbstractParser<InterpolationBoostSpec>() {
+            @java.lang.Override
+            public InterpolationBoostSpec parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<InterpolationBoostSpec> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<InterpolationBoostSpec> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int boostSpecCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object boostSpec_;
+
+    public enum BoostSpecCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      FIXED_BOOST(4),
+      INTERPOLATION_BOOST_SPEC(5),
+      BOOSTSPEC_NOT_SET(0);
+      private final int value;
+
+      private BoostSpecCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static BoostSpecCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static BoostSpecCase forNumber(int value) {
+        switch (value) {
+          case 4:
+            return FIXED_BOOST;
+          case 5:
+            return INTERPOLATION_BOOST_SPEC;
+          case 0:
+            return BOOSTSPEC_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public BoostSpecCase getBoostSpecCase() {
+      return BoostSpecCase.forNumber(boostSpecCase_);
+    }
+
+    public static final int FIXED_BOOST_FIELD_NUMBER = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Strength of the boost, which should be in [-1, 1]. Negative
      * boost means demotion. Default is 0.0 (No-op).
      * </pre>
      *
-     * <code>float boost = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>float fixed_boost = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
+     * @return Whether the fixedBoost field is set.
+     */
+    @java.lang.Override
+    public boolean hasFixedBoost() {
+      return boostSpecCase_ == 4;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Strength of the boost, which should be in [-1, 1]. Negative
+     * boost means demotion. Default is 0.0 (No-op).
+     * </pre>
+     *
+     * <code>float fixed_boost = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The fixedBoost.
+     */
+    @java.lang.Override
+    public float getFixedBoost() {
+      if (boostSpecCase_ == 4) {
+        return (java.lang.Float) boostSpec_;
+      }
+      return 0F;
+    }
+
+    public static final int INTERPOLATION_BOOST_SPEC_FIELD_NUMBER = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Complex specification for custom ranking based on customer
+     * defined attribute value.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec interpolation_boost_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the interpolationBoostSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasInterpolationBoostSpec() {
+      return boostSpecCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Complex specification for custom ranking based on customer
+     * defined attribute value.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec interpolation_boost_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The interpolationBoostSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+        getInterpolationBoostSpec() {
+      if (boostSpecCase_ == 5) {
+        return (com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec)
+            boostSpec_;
+      }
+      return com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Complex specification for custom ranking based on customer
+     * defined attribute value.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec interpolation_boost_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpecOrBuilder
+        getInterpolationBoostSpecOrBuilder() {
+      if (boostSpecCase_ == 5) {
+        return (com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec)
+            boostSpec_;
+      }
+      return com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+          .getDefaultInstance();
+    }
+
+    public static final int BOOST_FIELD_NUMBER = 1;
+    private float boost_ = 0F;
+
+    /**
+     *
+     *
+     * <pre>
+     * Strength of the boost, which should be in [-1, 1]. Negative
+     * boost means demotion. Default is 0.0 (No-op).
+     * </pre>
+     *
+     * <code>float boost = 1 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.discoveryengine.v1.Control.BoostAction.boost is deprecated. See
+     *     google/cloud/discoveryengine/v1/control.proto;l=187
      * @return The boost.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public float getBoost() {
       return boost_;
     }
@@ -228,6 +3669,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -257,6 +3699,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -291,6 +3734,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dataStore_ = "";
+
     /**
      *
      *
@@ -318,6 +3762,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -369,6 +3814,15 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataStore_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, dataStore_);
       }
+      if (boostSpecCase_ == 4) {
+        output.writeFloat(4, (float) ((java.lang.Float) boostSpec_));
+      }
+      if (boostSpecCase_ == 5) {
+        output.writeMessage(
+            5,
+            (com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec)
+                boostSpec_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -386,6 +3840,18 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataStore_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, dataStore_);
+      }
+      if (boostSpecCase_ == 4) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeFloatSize(
+                4, (float) ((java.lang.Float) boostSpec_));
+      }
+      if (boostSpecCase_ == 5) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5,
+                (com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec)
+                    boostSpec_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -407,6 +3873,18 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           != java.lang.Float.floatToIntBits(other.getBoost())) return false;
       if (!getFilter().equals(other.getFilter())) return false;
       if (!getDataStore().equals(other.getDataStore())) return false;
+      if (!getBoostSpecCase().equals(other.getBoostSpecCase())) return false;
+      switch (boostSpecCase_) {
+        case 4:
+          if (java.lang.Float.floatToIntBits(getFixedBoost())
+              != java.lang.Float.floatToIntBits(other.getFixedBoost())) return false;
+          break;
+        case 5:
+          if (!getInterpolationBoostSpec().equals(other.getInterpolationBoostSpec())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -424,6 +3902,18 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getFilter().hashCode();
       hash = (37 * hash) + DATA_STORE_FIELD_NUMBER;
       hash = (53 * hash) + getDataStore().hashCode();
+      switch (boostSpecCase_) {
+        case 4:
+          hash = (37 * hash) + FIXED_BOOST_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(getFixedBoost());
+          break;
+        case 5:
+          hash = (37 * hash) + INTERPOLATION_BOOST_SPEC_FIELD_NUMBER;
+          hash = (53 * hash) + getInterpolationBoostSpec().hashCode();
+          break;
+        case 0:
+        default:
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -526,6 +4016,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -566,9 +4057,14 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        if (interpolationBoostSpecBuilder_ != null) {
+          interpolationBoostSpecBuilder_.clear();
+        }
         boost_ = 0F;
         filter_ = "";
         dataStore_ = "";
+        boostSpecCase_ = 0;
+        boostSpec_ = null;
         return this;
       }
 
@@ -599,20 +4095,30 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
       }
 
       private void buildPartial0(com.google.cloud.discoveryengine.v1.Control.BoostAction result) {
         int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.boost_ = boost_;
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.filter_ = filter_;
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.dataStore_ = dataStore_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.discoveryengine.v1.Control.BoostAction result) {
+        result.boostSpecCase_ = boostSpecCase_;
+        result.boostSpec_ = this.boostSpec_;
+        if (boostSpecCase_ == 5 && interpolationBoostSpecBuilder_ != null) {
+          result.boostSpec_ = interpolationBoostSpecBuilder_.build();
         }
       }
 
@@ -669,13 +4175,29 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getFilter().isEmpty()) {
           filter_ = other.filter_;
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (!other.getDataStore().isEmpty()) {
           dataStore_ = other.dataStore_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000010;
           onChanged();
+        }
+        switch (other.getBoostSpecCase()) {
+          case FIXED_BOOST:
+            {
+              setFixedBoost(other.getFixedBoost());
+              break;
+            }
+          case INTERPOLATION_BOOST_SPEC:
+            {
+              mergeInterpolationBoostSpec(other.getInterpolationBoostSpec());
+              break;
+            }
+          case BOOSTSPEC_NOT_SET:
+            {
+              break;
+            }
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -706,21 +4228,34 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
               case 13:
                 {
                   boost_ = input.readFloat();
-                  bitField0_ |= 0x00000001;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 13
               case 18:
                 {
                   filter_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000002;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 18
               case 26:
                 {
                   dataStore_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 26
+              case 37:
+                {
+                  boostSpec_ = input.readFloat();
+                  boostSpecCase_ = 4;
+                  break;
+                } // case 37
+              case 42:
+                {
+                  input.readMessage(
+                      getInterpolationBoostSpecFieldBuilder().getBuilder(), extensionRegistry);
+                  boostSpecCase_ = 5;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -738,65 +4273,439 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private int bitField0_;
+      private int boostSpecCase_ = 0;
+      private java.lang.Object boostSpec_;
 
-      private float boost_;
-      /**
-       *
-       *
-       * <pre>
-       * Required. Strength of the boost, which should be in [-1, 1]. Negative
-       * boost means demotion. Default is 0.0 (No-op).
-       * </pre>
-       *
-       * <code>float boost = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @return The boost.
-       */
-      @java.lang.Override
-      public float getBoost() {
-        return boost_;
+      public BoostSpecCase getBoostSpecCase() {
+        return BoostSpecCase.forNumber(boostSpecCase_);
       }
-      /**
-       *
-       *
-       * <pre>
-       * Required. Strength of the boost, which should be in [-1, 1]. Negative
-       * boost means demotion. Default is 0.0 (No-op).
-       * </pre>
-       *
-       * <code>float boost = 1 [(.google.api.field_behavior) = REQUIRED];</code>
-       *
-       * @param value The boost to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBoost(float value) {
 
-        boost_ = value;
-        bitField0_ |= 0x00000001;
+      public Builder clearBoostSpec() {
+        boostSpecCase_ = 0;
+        boostSpec_ = null;
         onChanged();
         return this;
       }
+
+      private int bitField0_;
+
       /**
        *
        *
        * <pre>
-       * Required. Strength of the boost, which should be in [-1, 1]. Negative
+       * Optional. Strength of the boost, which should be in [-1, 1]. Negative
        * boost means demotion. Default is 0.0 (No-op).
        * </pre>
        *
-       * <code>float boost = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>float fixed_boost = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the fixedBoost field is set.
+       */
+      public boolean hasFixedBoost() {
+        return boostSpecCase_ == 4;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Strength of the boost, which should be in [-1, 1]. Negative
+       * boost means demotion. Default is 0.0 (No-op).
+       * </pre>
+       *
+       * <code>float fixed_boost = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The fixedBoost.
+       */
+      public float getFixedBoost() {
+        if (boostSpecCase_ == 4) {
+          return (java.lang.Float) boostSpec_;
+        }
+        return 0F;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Strength of the boost, which should be in [-1, 1]. Negative
+       * boost means demotion. Default is 0.0 (No-op).
+       * </pre>
+       *
+       * <code>float fixed_boost = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The fixedBoost to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFixedBoost(float value) {
+
+        boostSpecCase_ = 4;
+        boostSpec_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Strength of the boost, which should be in [-1, 1]. Negative
+       * boost means demotion. Default is 0.0 (No-op).
+       * </pre>
+       *
+       * <code>float fixed_boost = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
+      public Builder clearFixedBoost() {
+        if (boostSpecCase_ == 4) {
+          boostSpecCase_ = 0;
+          boostSpec_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec,
+              com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                  .Builder,
+              com.google.cloud.discoveryengine.v1.Control.BoostAction
+                  .InterpolationBoostSpecOrBuilder>
+          interpolationBoostSpecBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Complex specification for custom ranking based on customer
+       * defined attribute value.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec interpolation_boost_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the interpolationBoostSpec field is set.
+       */
+      @java.lang.Override
+      public boolean hasInterpolationBoostSpec() {
+        return boostSpecCase_ == 5;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Complex specification for custom ranking based on customer
+       * defined attribute value.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec interpolation_boost_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The interpolationBoostSpec.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+          getInterpolationBoostSpec() {
+        if (interpolationBoostSpecBuilder_ == null) {
+          if (boostSpecCase_ == 5) {
+            return (com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec)
+                boostSpec_;
+          }
+          return com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+              .getDefaultInstance();
+        } else {
+          if (boostSpecCase_ == 5) {
+            return interpolationBoostSpecBuilder_.getMessage();
+          }
+          return com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Complex specification for custom ranking based on customer
+       * defined attribute value.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec interpolation_boost_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setInterpolationBoostSpec(
+          com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec value) {
+        if (interpolationBoostSpecBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          boostSpec_ = value;
+          onChanged();
+        } else {
+          interpolationBoostSpecBuilder_.setMessage(value);
+        }
+        boostSpecCase_ = 5;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Complex specification for custom ranking based on customer
+       * defined attribute value.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec interpolation_boost_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setInterpolationBoostSpec(
+          com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.Builder
+              builderForValue) {
+        if (interpolationBoostSpecBuilder_ == null) {
+          boostSpec_ = builderForValue.build();
+          onChanged();
+        } else {
+          interpolationBoostSpecBuilder_.setMessage(builderForValue.build());
+        }
+        boostSpecCase_ = 5;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Complex specification for custom ranking based on customer
+       * defined attribute value.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec interpolation_boost_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeInterpolationBoostSpec(
+          com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec value) {
+        if (interpolationBoostSpecBuilder_ == null) {
+          if (boostSpecCase_ == 5
+              && boostSpec_
+                  != com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                      .getDefaultInstance()) {
+            boostSpec_ =
+                com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .newBuilder(
+                        (com.google.cloud.discoveryengine.v1.Control.BoostAction
+                                .InterpolationBoostSpec)
+                            boostSpec_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            boostSpec_ = value;
+          }
+          onChanged();
+        } else {
+          if (boostSpecCase_ == 5) {
+            interpolationBoostSpecBuilder_.mergeFrom(value);
+          } else {
+            interpolationBoostSpecBuilder_.setMessage(value);
+          }
+        }
+        boostSpecCase_ = 5;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Complex specification for custom ranking based on customer
+       * defined attribute value.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec interpolation_boost_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearInterpolationBoostSpec() {
+        if (interpolationBoostSpecBuilder_ == null) {
+          if (boostSpecCase_ == 5) {
+            boostSpecCase_ = 0;
+            boostSpec_ = null;
+            onChanged();
+          }
+        } else {
+          if (boostSpecCase_ == 5) {
+            boostSpecCase_ = 0;
+            boostSpec_ = null;
+          }
+          interpolationBoostSpecBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Complex specification for custom ranking based on customer
+       * defined attribute value.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec interpolation_boost_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec.Builder
+          getInterpolationBoostSpecBuilder() {
+        return getInterpolationBoostSpecFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Complex specification for custom ranking based on customer
+       * defined attribute value.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec interpolation_boost_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpecOrBuilder
+          getInterpolationBoostSpecOrBuilder() {
+        if ((boostSpecCase_ == 5) && (interpolationBoostSpecBuilder_ != null)) {
+          return interpolationBoostSpecBuilder_.getMessageOrBuilder();
+        } else {
+          if (boostSpecCase_ == 5) {
+            return (com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec)
+                boostSpec_;
+          }
+          return com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Complex specification for custom ranking based on customer
+       * defined attribute value.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec interpolation_boost_spec = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec,
+              com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                  .Builder,
+              com.google.cloud.discoveryengine.v1.Control.BoostAction
+                  .InterpolationBoostSpecOrBuilder>
+          getInterpolationBoostSpecFieldBuilder() {
+        if (interpolationBoostSpecBuilder_ == null) {
+          if (!(boostSpecCase_ == 5)) {
+            boostSpec_ =
+                com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                    .getDefaultInstance();
+          }
+          interpolationBoostSpecBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec,
+                  com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1.Control.BoostAction
+                      .InterpolationBoostSpecOrBuilder>(
+                  (com.google.cloud.discoveryengine.v1.Control.BoostAction.InterpolationBoostSpec)
+                      boostSpec_,
+                  getParentForChildren(),
+                  isClean());
+          boostSpec_ = null;
+        }
+        boostSpecCase_ = 5;
+        onChanged();
+        return interpolationBoostSpecBuilder_;
+      }
+
+      private float boost_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Strength of the boost, which should be in [-1, 1]. Negative
+       * boost means demotion. Default is 0.0 (No-op).
+       * </pre>
+       *
+       * <code>float boost = 1 [deprecated = true];</code>
+       *
+       * @deprecated google.cloud.discoveryengine.v1.Control.BoostAction.boost is deprecated. See
+       *     google/cloud/discoveryengine/v1/control.proto;l=187
+       * @return The boost.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public float getBoost() {
+        return boost_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Strength of the boost, which should be in [-1, 1]. Negative
+       * boost means demotion. Default is 0.0 (No-op).
+       * </pre>
+       *
+       * <code>float boost = 1 [deprecated = true];</code>
+       *
+       * @deprecated google.cloud.discoveryengine.v1.Control.BoostAction.boost is deprecated. See
+       *     google/cloud/discoveryengine/v1/control.proto;l=187
+       * @param value The boost to set.
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated
+      public Builder setBoost(float value) {
+
+        boost_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Strength of the boost, which should be in [-1, 1]. Negative
+       * boost means demotion. Default is 0.0 (No-op).
+       * </pre>
+       *
+       * <code>float boost = 1 [deprecated = true];</code>
+       *
+       * @deprecated google.cloud.discoveryengine.v1.Control.BoostAction.boost is deprecated. See
+       *     google/cloud/discoveryengine/v1/control.proto;l=187
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated
       public Builder clearBoost() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         boost_ = 0F;
         onChanged();
         return this;
       }
 
       private java.lang.Object filter_ = "";
+
       /**
        *
        *
@@ -825,6 +4734,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -853,6 +4763,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -876,10 +4787,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         filter_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -899,10 +4811,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearFilter() {
         filter_ = getDefaultInstance().getFilter();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -927,12 +4840,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         filter_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
 
       private java.lang.Object dataStore_ = "";
+
       /**
        *
        *
@@ -959,6 +4873,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -985,6 +4900,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1006,10 +4922,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         dataStore_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1027,10 +4944,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearDataStore() {
         dataStore_ = getDefaultInstance().getDataStore();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1053,7 +4971,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         dataStore_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1145,6 +5063,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * @return The filter.
      */
     java.lang.String getFilter();
+
     /**
      *
      *
@@ -1180,6 +5099,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * @return The dataStore.
      */
     java.lang.String getDataStore();
+
     /**
      *
      *
@@ -1197,6 +5117,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getDataStoreBytes();
   }
+
   /**
    *
    *
@@ -1212,6 +5133,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.Control.FilterAction)
       FilterActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FilterAction.newBuilder() to construct.
     private FilterAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1247,6 +5169,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -1276,6 +5199,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1310,6 +5234,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dataStore_ = "";
+
     /**
      *
      *
@@ -1337,6 +5262,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1535,6 +5461,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1738,6 +5665,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object filter_ = "";
+
       /**
        *
        *
@@ -1766,6 +5694,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1794,6 +5723,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1821,6 +5751,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1844,6 +5775,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1874,6 +5806,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object dataStore_ = "";
+
       /**
        *
        *
@@ -1900,6 +5833,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1926,6 +5860,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1951,6 +5886,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1972,6 +5908,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2084,6 +6021,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * @return The redirectUri.
      */
     java.lang.String getRedirectUri();
+
     /**
      *
      *
@@ -2101,6 +6039,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getRedirectUriBytes();
   }
+
   /**
    *
    *
@@ -2115,6 +6054,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.Control.RedirectAction)
       RedirectActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RedirectAction.newBuilder() to construct.
     private RedirectAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2149,6 +6089,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object redirectUri_ = "";
+
     /**
      *
      *
@@ -2176,6 +6117,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -2365,6 +6307,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2555,6 +6498,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object redirectUri_ = "";
+
       /**
        *
        *
@@ -2581,6 +6525,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2607,6 +6552,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2632,6 +6578,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2653,6 +6600,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2765,6 +6713,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the synonyms.
      */
     java.util.List<java.lang.String> getSynonymsList();
+
     /**
      *
      *
@@ -2780,6 +6729,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * @return The count of synonyms.
      */
     int getSynonymsCount();
+
     /**
      *
      *
@@ -2796,6 +6746,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * @return The synonyms at the given index.
      */
     java.lang.String getSynonyms(int index);
+
     /**
      *
      *
@@ -2813,6 +6764,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getSynonymsBytes(int index);
   }
+
   /**
    *
    *
@@ -2830,6 +6782,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.Control.SynonymsAction)
       SynonymsActionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SynonymsAction.newBuilder() to construct.
     private SynonymsAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2865,6 +6818,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList synonyms_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -2882,6 +6836,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getSynonymsList() {
       return synonyms_;
     }
+
     /**
      *
      *
@@ -2899,6 +6854,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public int getSynonymsCount() {
       return synonyms_.size();
     }
+
     /**
      *
      *
@@ -2917,6 +6873,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSynonyms(int index) {
       return synonyms_.get(index);
     }
+
     /**
      *
      *
@@ -3104,6 +7061,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3312,6 +7270,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -3330,6 +7289,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         synonyms_.makeImmutable();
         return synonyms_;
       }
+
       /**
        *
        *
@@ -3347,6 +7307,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       public int getSynonymsCount() {
         return synonyms_.size();
       }
+
       /**
        *
        *
@@ -3365,6 +7326,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getSynonyms(int index) {
         return synonyms_.get(index);
       }
+
       /**
        *
        *
@@ -3383,6 +7345,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getSynonymsBytes(int index) {
         return synonyms_.getByteString(index);
       }
+
       /**
        *
        *
@@ -3409,6 +7372,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3434,6 +7398,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3456,6 +7421,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3477,6 +7443,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3569,6 +7536,1054 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface PromoteActionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.Control.PromoteAction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Data store with which this promotion is attached to.
+     * </pre>
+     *
+     * <code>
+     * string data_store = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The dataStore.
+     */
+    java.lang.String getDataStore();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Data store with which this promotion is attached to.
+     * </pre>
+     *
+     * <code>
+     * string data_store = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for dataStore.
+     */
+    com.google.protobuf.ByteString getDataStoreBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Promotion attached to this action.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotion = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the searchLinkPromotion field is set.
+     */
+    boolean hasSearchLinkPromotion();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Promotion attached to this action.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotion = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The searchLinkPromotion.
+     */
+    com.google.cloud.discoveryengine.v1.SearchLinkPromotion getSearchLinkPromotion();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Promotion attached to this action.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotion = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.SearchLinkPromotionOrBuilder
+        getSearchLinkPromotionOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Promote certain links based on some trigger queries.
+   *
+   * Example: Promote shoe store link when searching for `shoe` keyword.
+   * The link can be outside of associated data store.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1.Control.PromoteAction}
+   */
+  public static final class PromoteAction extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.Control.PromoteAction)
+      PromoteActionOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use PromoteAction.newBuilder() to construct.
+    private PromoteAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PromoteAction() {
+      dataStore_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PromoteAction();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1.ControlProto
+          .internal_static_google_cloud_discoveryengine_v1_Control_PromoteAction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1.ControlProto
+          .internal_static_google_cloud_discoveryengine_v1_Control_PromoteAction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1.Control.PromoteAction.class,
+              com.google.cloud.discoveryengine.v1.Control.PromoteAction.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int DATA_STORE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object dataStore_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Data store with which this promotion is attached to.
+     * </pre>
+     *
+     * <code>
+     * string data_store = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The dataStore.
+     */
+    @java.lang.Override
+    public java.lang.String getDataStore() {
+      java.lang.Object ref = dataStore_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dataStore_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Data store with which this promotion is attached to.
+     * </pre>
+     *
+     * <code>
+     * string data_store = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for dataStore.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDataStoreBytes() {
+      java.lang.Object ref = dataStore_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        dataStore_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SEARCH_LINK_PROMOTION_FIELD_NUMBER = 2;
+    private com.google.cloud.discoveryengine.v1.SearchLinkPromotion searchLinkPromotion_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Promotion attached to this action.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotion = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the searchLinkPromotion field is set.
+     */
+    @java.lang.Override
+    public boolean hasSearchLinkPromotion() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Promotion attached to this action.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotion = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The searchLinkPromotion.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchLinkPromotion getSearchLinkPromotion() {
+      return searchLinkPromotion_ == null
+          ? com.google.cloud.discoveryengine.v1.SearchLinkPromotion.getDefaultInstance()
+          : searchLinkPromotion_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Promotion attached to this action.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotion = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchLinkPromotionOrBuilder
+        getSearchLinkPromotionOrBuilder() {
+      return searchLinkPromotion_ == null
+          ? com.google.cloud.discoveryengine.v1.SearchLinkPromotion.getDefaultInstance()
+          : searchLinkPromotion_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataStore_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dataStore_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getSearchLinkPromotion());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataStore_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dataStore_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSearchLinkPromotion());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1.Control.PromoteAction)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1.Control.PromoteAction other =
+          (com.google.cloud.discoveryengine.v1.Control.PromoteAction) obj;
+
+      if (!getDataStore().equals(other.getDataStore())) return false;
+      if (hasSearchLinkPromotion() != other.hasSearchLinkPromotion()) return false;
+      if (hasSearchLinkPromotion()) {
+        if (!getSearchLinkPromotion().equals(other.getSearchLinkPromotion())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DATA_STORE_FIELD_NUMBER;
+      hash = (53 * hash) + getDataStore().hashCode();
+      if (hasSearchLinkPromotion()) {
+        hash = (37 * hash) + SEARCH_LINK_PROMOTION_FIELD_NUMBER;
+        hash = (53 * hash) + getSearchLinkPromotion().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Control.PromoteAction parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Control.PromoteAction parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Control.PromoteAction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Control.PromoteAction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Control.PromoteAction parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Control.PromoteAction parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Control.PromoteAction parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Control.PromoteAction parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Control.PromoteAction parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Control.PromoteAction parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Control.PromoteAction parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Control.PromoteAction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1.Control.PromoteAction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promote certain links based on some trigger queries.
+     *
+     * Example: Promote shoe store link when searching for `shoe` keyword.
+     * The link can be outside of associated data store.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1.Control.PromoteAction}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.Control.PromoteAction)
+        com.google.cloud.discoveryengine.v1.Control.PromoteActionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.ControlProto
+            .internal_static_google_cloud_discoveryengine_v1_Control_PromoteAction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.ControlProto
+            .internal_static_google_cloud_discoveryengine_v1_Control_PromoteAction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.Control.PromoteAction.class,
+                com.google.cloud.discoveryengine.v1.Control.PromoteAction.Builder.class);
+      }
+
+      // Construct using com.google.cloud.discoveryengine.v1.Control.PromoteAction.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getSearchLinkPromotionFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        dataStore_ = "";
+        searchLinkPromotion_ = null;
+        if (searchLinkPromotionBuilder_ != null) {
+          searchLinkPromotionBuilder_.dispose();
+          searchLinkPromotionBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1.ControlProto
+            .internal_static_google_cloud_discoveryengine_v1_Control_PromoteAction_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.Control.PromoteAction getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1.Control.PromoteAction.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.Control.PromoteAction build() {
+        com.google.cloud.discoveryengine.v1.Control.PromoteAction result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.Control.PromoteAction buildPartial() {
+        com.google.cloud.discoveryengine.v1.Control.PromoteAction result =
+            new com.google.cloud.discoveryengine.v1.Control.PromoteAction(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.discoveryengine.v1.Control.PromoteAction result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dataStore_ = dataStore_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.searchLinkPromotion_ =
+              searchLinkPromotionBuilder_ == null
+                  ? searchLinkPromotion_
+                  : searchLinkPromotionBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.discoveryengine.v1.Control.PromoteAction) {
+          return mergeFrom((com.google.cloud.discoveryengine.v1.Control.PromoteAction) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.discoveryengine.v1.Control.PromoteAction other) {
+        if (other == com.google.cloud.discoveryengine.v1.Control.PromoteAction.getDefaultInstance())
+          return this;
+        if (!other.getDataStore().isEmpty()) {
+          dataStore_ = other.dataStore_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasSearchLinkPromotion()) {
+          mergeSearchLinkPromotion(other.getSearchLinkPromotion());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  dataStore_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getSearchLinkPromotionFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object dataStore_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Data store with which this promotion is attached to.
+       * </pre>
+       *
+       * <code>
+       * string data_store = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The dataStore.
+       */
+      public java.lang.String getDataStore() {
+        java.lang.Object ref = dataStore_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          dataStore_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Data store with which this promotion is attached to.
+       * </pre>
+       *
+       * <code>
+       * string data_store = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for dataStore.
+       */
+      public com.google.protobuf.ByteString getDataStoreBytes() {
+        java.lang.Object ref = dataStore_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          dataStore_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Data store with which this promotion is attached to.
+       * </pre>
+       *
+       * <code>
+       * string data_store = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The dataStore to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDataStore(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataStore_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Data store with which this promotion is attached to.
+       * </pre>
+       *
+       * <code>
+       * string data_store = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDataStore() {
+        dataStore_ = getDefaultInstance().getDataStore();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Data store with which this promotion is attached to.
+       * </pre>
+       *
+       * <code>
+       * string data_store = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for dataStore to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDataStoreBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        dataStore_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.discoveryengine.v1.SearchLinkPromotion searchLinkPromotion_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.SearchLinkPromotion,
+              com.google.cloud.discoveryengine.v1.SearchLinkPromotion.Builder,
+              com.google.cloud.discoveryengine.v1.SearchLinkPromotionOrBuilder>
+          searchLinkPromotionBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Promotion attached to this action.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotion = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the searchLinkPromotion field is set.
+       */
+      public boolean hasSearchLinkPromotion() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Promotion attached to this action.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotion = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The searchLinkPromotion.
+       */
+      public com.google.cloud.discoveryengine.v1.SearchLinkPromotion getSearchLinkPromotion() {
+        if (searchLinkPromotionBuilder_ == null) {
+          return searchLinkPromotion_ == null
+              ? com.google.cloud.discoveryengine.v1.SearchLinkPromotion.getDefaultInstance()
+              : searchLinkPromotion_;
+        } else {
+          return searchLinkPromotionBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Promotion attached to this action.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotion = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setSearchLinkPromotion(
+          com.google.cloud.discoveryengine.v1.SearchLinkPromotion value) {
+        if (searchLinkPromotionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          searchLinkPromotion_ = value;
+        } else {
+          searchLinkPromotionBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Promotion attached to this action.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotion = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setSearchLinkPromotion(
+          com.google.cloud.discoveryengine.v1.SearchLinkPromotion.Builder builderForValue) {
+        if (searchLinkPromotionBuilder_ == null) {
+          searchLinkPromotion_ = builderForValue.build();
+        } else {
+          searchLinkPromotionBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Promotion attached to this action.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotion = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder mergeSearchLinkPromotion(
+          com.google.cloud.discoveryengine.v1.SearchLinkPromotion value) {
+        if (searchLinkPromotionBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && searchLinkPromotion_ != null
+              && searchLinkPromotion_
+                  != com.google.cloud.discoveryengine.v1.SearchLinkPromotion.getDefaultInstance()) {
+            getSearchLinkPromotionBuilder().mergeFrom(value);
+          } else {
+            searchLinkPromotion_ = value;
+          }
+        } else {
+          searchLinkPromotionBuilder_.mergeFrom(value);
+        }
+        if (searchLinkPromotion_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Promotion attached to this action.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotion = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearSearchLinkPromotion() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        searchLinkPromotion_ = null;
+        if (searchLinkPromotionBuilder_ != null) {
+          searchLinkPromotionBuilder_.dispose();
+          searchLinkPromotionBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Promotion attached to this action.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotion = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchLinkPromotion.Builder
+          getSearchLinkPromotionBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getSearchLinkPromotionFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Promotion attached to this action.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotion = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchLinkPromotionOrBuilder
+          getSearchLinkPromotionOrBuilder() {
+        if (searchLinkPromotionBuilder_ != null) {
+          return searchLinkPromotionBuilder_.getMessageOrBuilder();
+        } else {
+          return searchLinkPromotion_ == null
+              ? com.google.cloud.discoveryengine.v1.SearchLinkPromotion.getDefaultInstance()
+              : searchLinkPromotion_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Promotion attached to this action.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchLinkPromotion search_link_promotion = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1.SearchLinkPromotion,
+              com.google.cloud.discoveryengine.v1.SearchLinkPromotion.Builder,
+              com.google.cloud.discoveryengine.v1.SearchLinkPromotionOrBuilder>
+          getSearchLinkPromotionFieldBuilder() {
+        if (searchLinkPromotionBuilder_ == null) {
+          searchLinkPromotionBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1.SearchLinkPromotion,
+                  com.google.cloud.discoveryengine.v1.SearchLinkPromotion.Builder,
+                  com.google.cloud.discoveryengine.v1.SearchLinkPromotionOrBuilder>(
+                  getSearchLinkPromotion(), getParentForChildren(), isClean());
+          searchLinkPromotion_ = null;
+        }
+        return searchLinkPromotionBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.Control.PromoteAction)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.Control.PromoteAction)
+    private static final com.google.cloud.discoveryengine.v1.Control.PromoteAction DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.discoveryengine.v1.Control.PromoteAction();
+    }
+
+    public static com.google.cloud.discoveryengine.v1.Control.PromoteAction getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PromoteAction> PARSER =
+        new com.google.protobuf.AbstractParser<PromoteAction>() {
+          @java.lang.Override
+          public PromoteAction parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PromoteAction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PromoteAction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.Control.PromoteAction getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int actionCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -3582,12 +8597,14 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     FILTER_ACTION(7),
     REDIRECT_ACTION(9),
     SYNONYMS_ACTION(10),
+    PROMOTE_ACTION(15),
     ACTION_NOT_SET(0);
     private final int value;
 
     private ActionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3608,6 +8625,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           return REDIRECT_ACTION;
         case 10:
           return SYNONYMS_ACTION;
+        case 15:
+          return PROMOTE_ACTION;
         case 0:
           return ACTION_NOT_SET;
         default:
@@ -3625,6 +8644,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOST_ACTION_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -3640,6 +8660,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBoostAction() {
     return actionCase_ == 6;
   }
+
   /**
    *
    *
@@ -3658,6 +8679,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.discoveryengine.v1.Control.BoostAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3677,6 +8699,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILTER_ACTION_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -3693,6 +8716,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFilterAction() {
     return actionCase_ == 7;
   }
+
   /**
    *
    *
@@ -3712,6 +8736,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.discoveryengine.v1.Control.FilterAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3732,6 +8757,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REDIRECT_ACTION_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -3747,6 +8773,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRedirectAction() {
     return actionCase_ == 9;
   }
+
   /**
    *
    *
@@ -3765,6 +8792,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.discoveryengine.v1.Control.RedirectAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3784,6 +8812,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SYNONYMS_ACTION_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -3799,6 +8828,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSynonymsAction() {
     return actionCase_ == 10;
   }
+
   /**
    *
    *
@@ -3817,6 +8847,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.discoveryengine.v1.Control.SynonymsAction.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3835,10 +8866,72 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.discoveryengine.v1.Control.SynonymsAction.getDefaultInstance();
   }
 
+  public static final int PROMOTE_ACTION_FIELD_NUMBER = 15;
+
+  /**
+   *
+   *
+   * <pre>
+   * Promote certain links based on predefined trigger queries.
+   *
+   * This now only supports basic site search.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
+   *
+   * @return Whether the promoteAction field is set.
+   */
+  @java.lang.Override
+  public boolean hasPromoteAction() {
+    return actionCase_ == 15;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Promote certain links based on predefined trigger queries.
+   *
+   * This now only supports basic site search.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
+   *
+   * @return The promoteAction.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.Control.PromoteAction getPromoteAction() {
+    if (actionCase_ == 15) {
+      return (com.google.cloud.discoveryengine.v1.Control.PromoteAction) action_;
+    }
+    return com.google.cloud.discoveryengine.v1.Control.PromoteAction.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Promote certain links based on predefined trigger queries.
+   *
+   * This now only supports basic site search.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.Control.PromoteActionOrBuilder
+      getPromoteActionOrBuilder() {
+    if (actionCase_ == 15) {
+      return (com.google.cloud.discoveryengine.v1.Control.PromoteAction) action_;
+    }
+    return com.google.cloud.discoveryengine.v1.Control.PromoteAction.getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -3863,6 +8956,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3892,6 +8986,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -3918,6 +9013,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3950,6 +9046,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList associatedServingConfigIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -3968,6 +9065,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAssociatedServingConfigIdsList() {
     return associatedServingConfigIds_;
   }
+
   /**
    *
    *
@@ -3986,6 +9084,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public int getAssociatedServingConfigIdsCount() {
     return associatedServingConfigIds_.size();
   }
+
   /**
    *
    *
@@ -4005,6 +9104,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAssociatedServingConfigIds(int index) {
     return associatedServingConfigIds_.get(index);
   }
+
   /**
    *
    *
@@ -4027,6 +9127,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOLUTION_TYPE_FIELD_NUMBER = 4;
   private int solutionType_ = 0;
+
   /**
    *
    *
@@ -4047,6 +9148,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public int getSolutionTypeValue() {
     return solutionType_;
   }
+
   /**
    *
    *
@@ -4089,6 +9191,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
+
   /**
    *
    *
@@ -4112,6 +9215,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.discoveryengine.v1.SearchUseCase>(
         useCases_, useCases_converter_);
   }
+
   /**
    *
    *
@@ -4133,6 +9237,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public int getUseCasesCount() {
     return useCases_.size();
   }
+
   /**
    *
    *
@@ -4155,6 +9260,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.discoveryengine.v1.SearchUseCase getUseCases(int index) {
     return useCases_converter_.convert(useCases_.get(index));
   }
+
   /**
    *
    *
@@ -4176,6 +9282,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getUseCasesValueList() {
     return useCases_;
   }
+
   /**
    *
    *
@@ -4205,6 +9312,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.discoveryengine.v1.Condition> conditions_;
+
   /**
    *
    *
@@ -4222,6 +9330,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.discoveryengine.v1.Condition> getConditionsList() {
     return conditions_;
   }
+
   /**
    *
    *
@@ -4240,6 +9349,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       getConditionsOrBuilderList() {
     return conditions_;
   }
+
   /**
    *
    *
@@ -4257,6 +9367,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public int getConditionsCount() {
     return conditions_.size();
   }
+
   /**
    *
    *
@@ -4274,6 +9385,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.discoveryengine.v1.Condition getConditions(int index) {
     return conditions_.get(index);
   }
+
   /**
    *
    *
@@ -4343,6 +9455,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     if (actionCase_ == 10) {
       output.writeMessage(10, (com.google.cloud.discoveryengine.v1.Control.SynonymsAction) action_);
     }
+    if (actionCase_ == 15) {
+      output.writeMessage(15, (com.google.cloud.discoveryengine.v1.Control.PromoteAction) action_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4405,6 +9520,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, (com.google.cloud.discoveryengine.v1.Control.SynonymsAction) action_);
     }
+    if (actionCase_ == 15) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, (com.google.cloud.discoveryengine.v1.Control.PromoteAction) action_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4441,6 +9561,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         break;
       case 10:
         if (!getSynonymsAction().equals(other.getSynonymsAction())) return false;
+        break;
+      case 15:
+        if (!getPromoteAction().equals(other.getPromoteAction())) return false;
         break;
       case 0:
       default:
@@ -4490,6 +9613,10 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       case 10:
         hash = (37 * hash) + SYNONYMS_ACTION_FIELD_NUMBER;
         hash = (53 * hash) + getSynonymsAction().hashCode();
+        break;
+      case 15:
+        hash = (37 * hash) + PROMOTE_ACTION_FIELD_NUMBER;
+        hash = (53 * hash) + getPromoteAction().hashCode();
         break;
       case 0:
       default:
@@ -4594,6 +9721,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4648,19 +9776,22 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       if (synonymsActionBuilder_ != null) {
         synonymsActionBuilder_.clear();
       }
+      if (promoteActionBuilder_ != null) {
+        promoteActionBuilder_.clear();
+      }
       name_ = "";
       displayName_ = "";
       associatedServingConfigIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       solutionType_ = 0;
       useCases_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
       } else {
         conditions_ = null;
         conditionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       actionCase_ = 0;
       action_ = null;
       return this;
@@ -4700,15 +9831,15 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.discoveryengine.v1.Control result) {
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         useCases_ = java.util.Collections.unmodifiableList(useCases_);
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
       }
       result.useCases_ = useCases_;
       if (conditionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.conditions_ = conditions_;
       } else {
@@ -4718,17 +9849,17 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.discoveryengine.v1.Control result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         associatedServingConfigIds_.makeImmutable();
         result.associatedServingConfigIds_ = associatedServingConfigIds_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.solutionType_ = solutionType_;
       }
     }
@@ -4747,6 +9878,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       if (actionCase_ == 10 && synonymsActionBuilder_ != null) {
         result.action_ = synonymsActionBuilder_.build();
+      }
+      if (actionCase_ == 15 && promoteActionBuilder_ != null) {
+        result.action_ = promoteActionBuilder_.build();
       }
     }
 
@@ -4797,18 +9931,18 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.discoveryengine.v1.Control.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.associatedServingConfigIds_.isEmpty()) {
         if (associatedServingConfigIds_.isEmpty()) {
           associatedServingConfigIds_ = other.associatedServingConfigIds_;
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
         } else {
           ensureAssociatedServingConfigIdsIsMutable();
           associatedServingConfigIds_.addAll(other.associatedServingConfigIds_);
@@ -4821,7 +9955,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       if (!other.useCases_.isEmpty()) {
         if (useCases_.isEmpty()) {
           useCases_ = other.useCases_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
         } else {
           ensureUseCasesIsMutable();
           useCases_.addAll(other.useCases_);
@@ -4832,7 +9966,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         if (!other.conditions_.isEmpty()) {
           if (conditions_.isEmpty()) {
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureConditionsIsMutable();
             conditions_.addAll(other.conditions_);
@@ -4845,7 +9979,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
             conditionsBuilder_.dispose();
             conditionsBuilder_ = null;
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
             conditionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConditionsFieldBuilder()
@@ -4874,6 +10008,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         case SYNONYMS_ACTION:
           {
             mergeSynonymsAction(other.getSynonymsAction());
+            break;
+          }
+        case PROMOTE_ACTION:
+          {
+            mergePromoteAction(other.getPromoteAction());
             break;
           }
         case ACTION_NOT_SET:
@@ -4910,13 +10049,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 18
             case 26:
@@ -4929,7 +10068,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 solutionType_ = input.readEnum();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 32
             case 42:
@@ -4988,6 +10127,12 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
                 actionCase_ = 10;
                 break;
               } // case 82
+            case 122:
+              {
+                input.readMessage(getPromoteActionFieldBuilder().getBuilder(), extensionRegistry);
+                actionCase_ = 15;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5026,6 +10171,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1.Control.BoostAction.Builder,
             com.google.cloud.discoveryengine.v1.Control.BoostActionOrBuilder>
         boostActionBuilder_;
+
     /**
      *
      *
@@ -5041,6 +10187,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBoostAction() {
       return actionCase_ == 6;
     }
+
     /**
      *
      *
@@ -5066,6 +10213,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.discoveryengine.v1.Control.BoostAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5088,6 +10236,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -5108,6 +10257,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -5141,6 +10291,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -5166,6 +10317,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5178,6 +10330,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1.Control.BoostAction.Builder getBoostActionBuilder() {
       return getBoostActionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5199,6 +10352,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.discoveryengine.v1.Control.BoostAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5237,6 +10391,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1.Control.FilterAction.Builder,
             com.google.cloud.discoveryengine.v1.Control.FilterActionOrBuilder>
         filterActionBuilder_;
+
     /**
      *
      *
@@ -5253,6 +10408,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFilterAction() {
       return actionCase_ == 7;
     }
+
     /**
      *
      *
@@ -5279,6 +10435,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.discoveryengine.v1.Control.FilterAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5302,6 +10459,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -5323,6 +10481,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -5358,6 +10517,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -5384,6 +10544,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5398,6 +10559,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         getFilterActionBuilder() {
       return getFilterActionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5420,6 +10582,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.discoveryengine.v1.Control.FilterAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5459,6 +10622,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1.Control.RedirectAction.Builder,
             com.google.cloud.discoveryengine.v1.Control.RedirectActionOrBuilder>
         redirectActionBuilder_;
+
     /**
      *
      *
@@ -5474,6 +10638,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRedirectAction() {
       return actionCase_ == 9;
     }
+
     /**
      *
      *
@@ -5499,6 +10664,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.discoveryengine.v1.Control.RedirectAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5522,6 +10688,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -5542,6 +10709,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -5577,6 +10745,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -5602,6 +10771,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5615,6 +10785,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         getRedirectActionBuilder() {
       return getRedirectActionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5636,6 +10807,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.discoveryengine.v1.Control.RedirectAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5674,6 +10846,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1.Control.SynonymsAction.Builder,
             com.google.cloud.discoveryengine.v1.Control.SynonymsActionOrBuilder>
         synonymsActionBuilder_;
+
     /**
      *
      *
@@ -5689,6 +10862,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSynonymsAction() {
       return actionCase_ == 10;
     }
+
     /**
      *
      *
@@ -5714,6 +10888,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.discoveryengine.v1.Control.SynonymsAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5737,6 +10912,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -5757,6 +10933,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -5792,6 +10969,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -5817,6 +10995,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5830,6 +11009,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         getSynonymsActionBuilder() {
       return getSynonymsActionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5851,6 +11031,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.discoveryengine.v1.Control.SynonymsAction.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5884,7 +11065,249 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       return synonymsActionBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.Control.PromoteAction,
+            com.google.cloud.discoveryengine.v1.Control.PromoteAction.Builder,
+            com.google.cloud.discoveryengine.v1.Control.PromoteActionOrBuilder>
+        promoteActionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Promote certain links based on predefined trigger queries.
+     *
+     * This now only supports basic site search.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
+     *
+     * @return Whether the promoteAction field is set.
+     */
+    @java.lang.Override
+    public boolean hasPromoteAction() {
+      return actionCase_ == 15;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promote certain links based on predefined trigger queries.
+     *
+     * This now only supports basic site search.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
+     *
+     * @return The promoteAction.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.Control.PromoteAction getPromoteAction() {
+      if (promoteActionBuilder_ == null) {
+        if (actionCase_ == 15) {
+          return (com.google.cloud.discoveryengine.v1.Control.PromoteAction) action_;
+        }
+        return com.google.cloud.discoveryengine.v1.Control.PromoteAction.getDefaultInstance();
+      } else {
+        if (actionCase_ == 15) {
+          return promoteActionBuilder_.getMessage();
+        }
+        return com.google.cloud.discoveryengine.v1.Control.PromoteAction.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promote certain links based on predefined trigger queries.
+     *
+     * This now only supports basic site search.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
+     */
+    public Builder setPromoteAction(
+        com.google.cloud.discoveryengine.v1.Control.PromoteAction value) {
+      if (promoteActionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        action_ = value;
+        onChanged();
+      } else {
+        promoteActionBuilder_.setMessage(value);
+      }
+      actionCase_ = 15;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promote certain links based on predefined trigger queries.
+     *
+     * This now only supports basic site search.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
+     */
+    public Builder setPromoteAction(
+        com.google.cloud.discoveryengine.v1.Control.PromoteAction.Builder builderForValue) {
+      if (promoteActionBuilder_ == null) {
+        action_ = builderForValue.build();
+        onChanged();
+      } else {
+        promoteActionBuilder_.setMessage(builderForValue.build());
+      }
+      actionCase_ = 15;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promote certain links based on predefined trigger queries.
+     *
+     * This now only supports basic site search.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
+     */
+    public Builder mergePromoteAction(
+        com.google.cloud.discoveryengine.v1.Control.PromoteAction value) {
+      if (promoteActionBuilder_ == null) {
+        if (actionCase_ == 15
+            && action_
+                != com.google.cloud.discoveryengine.v1.Control.PromoteAction.getDefaultInstance()) {
+          action_ =
+              com.google.cloud.discoveryengine.v1.Control.PromoteAction.newBuilder(
+                      (com.google.cloud.discoveryengine.v1.Control.PromoteAction) action_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          action_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionCase_ == 15) {
+          promoteActionBuilder_.mergeFrom(value);
+        } else {
+          promoteActionBuilder_.setMessage(value);
+        }
+      }
+      actionCase_ = 15;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promote certain links based on predefined trigger queries.
+     *
+     * This now only supports basic site search.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
+     */
+    public Builder clearPromoteAction() {
+      if (promoteActionBuilder_ == null) {
+        if (actionCase_ == 15) {
+          actionCase_ = 0;
+          action_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionCase_ == 15) {
+          actionCase_ = 0;
+          action_ = null;
+        }
+        promoteActionBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promote certain links based on predefined trigger queries.
+     *
+     * This now only supports basic site search.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
+     */
+    public com.google.cloud.discoveryengine.v1.Control.PromoteAction.Builder
+        getPromoteActionBuilder() {
+      return getPromoteActionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promote certain links based on predefined trigger queries.
+     *
+     * This now only supports basic site search.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.Control.PromoteActionOrBuilder
+        getPromoteActionOrBuilder() {
+      if ((actionCase_ == 15) && (promoteActionBuilder_ != null)) {
+        return promoteActionBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionCase_ == 15) {
+          return (com.google.cloud.discoveryengine.v1.Control.PromoteAction) action_;
+        }
+        return com.google.cloud.discoveryengine.v1.Control.PromoteAction.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promote certain links based on predefined trigger queries.
+     *
+     * This now only supports basic site search.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Control.PromoteAction promote_action = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.Control.PromoteAction,
+            com.google.cloud.discoveryengine.v1.Control.PromoteAction.Builder,
+            com.google.cloud.discoveryengine.v1.Control.PromoteActionOrBuilder>
+        getPromoteActionFieldBuilder() {
+      if (promoteActionBuilder_ == null) {
+        if (!(actionCase_ == 15)) {
+          action_ = com.google.cloud.discoveryengine.v1.Control.PromoteAction.getDefaultInstance();
+        }
+        promoteActionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.Control.PromoteAction,
+                com.google.cloud.discoveryengine.v1.Control.PromoteAction.Builder,
+                com.google.cloud.discoveryengine.v1.Control.PromoteActionOrBuilder>(
+                (com.google.cloud.discoveryengine.v1.Control.PromoteAction) action_,
+                getParentForChildren(),
+                isClean());
+        action_ = null;
+      }
+      actionCase_ = 15;
+      onChanged();
+      return promoteActionBuilder_;
+    }
+
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -5908,6 +11331,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5931,6 +11355,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5949,10 +11374,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5967,10 +11393,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5990,12 +11417,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -6021,6 +11449,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6046,6 +11475,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6066,10 +11496,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6086,10 +11517,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6111,7 +11543,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -6124,8 +11556,9 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         associatedServingConfigIds_ =
             new com.google.protobuf.LazyStringArrayList(associatedServingConfigIds_);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
     }
+
     /**
      *
      *
@@ -6145,6 +11578,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       associatedServingConfigIds_.makeImmutable();
       return associatedServingConfigIds_;
     }
+
     /**
      *
      *
@@ -6163,6 +11597,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public int getAssociatedServingConfigIdsCount() {
       return associatedServingConfigIds_.size();
     }
+
     /**
      *
      *
@@ -6182,6 +11617,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAssociatedServingConfigIds(int index) {
       return associatedServingConfigIds_.get(index);
     }
+
     /**
      *
      *
@@ -6201,6 +11637,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAssociatedServingConfigIdsBytes(int index) {
       return associatedServingConfigIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -6224,10 +11661,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAssociatedServingConfigIdsIsMutable();
       associatedServingConfigIds_.set(index, value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6250,10 +11688,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAssociatedServingConfigIdsIsMutable();
       associatedServingConfigIds_.add(value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6273,10 +11712,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAssociatedServingConfigIds(java.lang.Iterable<java.lang.String> values) {
       ensureAssociatedServingConfigIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, associatedServingConfigIds_);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6294,11 +11734,12 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAssociatedServingConfigIds() {
       associatedServingConfigIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       ;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6322,12 +11763,13 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAssociatedServingConfigIdsIsMutable();
       associatedServingConfigIds_.add(value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
 
     private int solutionType_ = 0;
+
     /**
      *
      *
@@ -6348,6 +11790,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public int getSolutionTypeValue() {
       return solutionType_;
     }
+
     /**
      *
      *
@@ -6367,10 +11810,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setSolutionTypeValue(int value) {
       solutionType_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6395,6 +11839,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.discoveryengine.v1.SolutionType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -6416,11 +11861,12 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       solutionType_ = value.getNumber();
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6438,7 +11884,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSolutionType() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       solutionType_ = 0;
       onChanged();
       return this;
@@ -6447,11 +11893,12 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> useCases_ = java.util.Collections.emptyList();
 
     private void ensureUseCasesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         useCases_ = new java.util.ArrayList<java.lang.Integer>(useCases_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
       }
     }
+
     /**
      *
      *
@@ -6474,6 +11921,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.discoveryengine.v1.SearchUseCase>(
           useCases_, useCases_converter_);
     }
+
     /**
      *
      *
@@ -6494,6 +11942,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public int getUseCasesCount() {
       return useCases_.size();
     }
+
     /**
      *
      *
@@ -6515,6 +11964,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1.SearchUseCase getUseCases(int index) {
       return useCases_converter_.convert(useCases_.get(index));
     }
+
     /**
      *
      *
@@ -6543,6 +11993,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6570,6 +12021,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6597,6 +12049,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6616,10 +12069,11 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUseCases() {
       useCases_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6640,6 +12094,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getUseCasesValueList() {
       return java.util.Collections.unmodifiableList(useCases_);
     }
+
     /**
      *
      *
@@ -6661,6 +12116,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public int getUseCasesValue(int index) {
       return useCases_.get(index);
     }
+
     /**
      *
      *
@@ -6686,6 +12142,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6710,6 +12167,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6741,10 +12199,10 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureConditionsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         conditions_ =
             new java.util.ArrayList<com.google.cloud.discoveryengine.v1.Condition>(conditions_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -6774,6 +12232,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return conditionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -6794,6 +12253,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return conditionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -6814,6 +12274,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return conditionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -6840,6 +12301,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6864,6 +12326,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6890,6 +12353,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6916,6 +12380,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6940,6 +12405,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6964,6 +12430,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6988,6 +12455,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7004,13 +12472,14 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public Builder clearConditions() {
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         conditionsBuilder_.clear();
       }
       return this;
     }
+
     /**
      *
      *
@@ -7034,6 +12503,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -7050,6 +12520,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.discoveryengine.v1.Condition.Builder getConditionsBuilder(int index) {
       return getConditionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -7071,6 +12542,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return conditionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -7092,6 +12564,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(conditions_);
       }
     }
+
     /**
      *
      *
@@ -7109,6 +12582,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       return getConditionsFieldBuilder()
           .addBuilder(com.google.cloud.discoveryengine.v1.Condition.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -7126,6 +12600,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       return getConditionsFieldBuilder()
           .addBuilder(index, com.google.cloud.discoveryengine.v1.Condition.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -7155,7 +12630,7 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.discoveryengine.v1.Condition,
                 com.google.cloud.discoveryengine.v1.Condition.Builder,
                 com.google.cloud.discoveryengine.v1.ConditionOrBuilder>(
-                conditions_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
+                conditions_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
         conditions_ = null;
       }
       return conditionsBuilder_;

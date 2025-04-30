@@ -33,6 +33,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.GcipSettings)
     GcipSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GcipSettings.newBuilder() to construct.
   private GcipSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,11 +70,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList tenantIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
    * <pre>
-   * GCIP tenant ids that are linked to the IAP resource.
+   * Optional. GCIP tenant ids that are linked to the IAP resource.
    * tenant_ids could be a string beginning with a number character to indicate
    * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
    * to indicate authenticating with GCIP agent flow.
@@ -81,18 +83,19 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
    * while for tenant flow, tenant_ids can contain multiple elements.
    * </pre>
    *
-   * <code>repeated string tenant_ids = 1;</code>
+   * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the tenantIds.
    */
   public com.google.protobuf.ProtocolStringList getTenantIdsList() {
     return tenantIds_;
   }
+
   /**
    *
    *
    * <pre>
-   * GCIP tenant ids that are linked to the IAP resource.
+   * Optional. GCIP tenant ids that are linked to the IAP resource.
    * tenant_ids could be a string beginning with a number character to indicate
    * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
    * to indicate authenticating with GCIP agent flow.
@@ -100,18 +103,19 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
    * while for tenant flow, tenant_ids can contain multiple elements.
    * </pre>
    *
-   * <code>repeated string tenant_ids = 1;</code>
+   * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of tenantIds.
    */
   public int getTenantIdsCount() {
     return tenantIds_.size();
   }
+
   /**
    *
    *
    * <pre>
-   * GCIP tenant ids that are linked to the IAP resource.
+   * Optional. GCIP tenant ids that are linked to the IAP resource.
    * tenant_ids could be a string beginning with a number character to indicate
    * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
    * to indicate authenticating with GCIP agent flow.
@@ -119,7 +123,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
    * while for tenant flow, tenant_ids can contain multiple elements.
    * </pre>
    *
-   * <code>repeated string tenant_ids = 1;</code>
+   * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The tenantIds at the given index.
@@ -127,11 +131,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getTenantIds(int index) {
     return tenantIds_.get(index);
   }
+
   /**
    *
    *
    * <pre>
-   * GCIP tenant ids that are linked to the IAP resource.
+   * Optional. GCIP tenant ids that are linked to the IAP resource.
    * tenant_ids could be a string beginning with a number character to indicate
    * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
    * to indicate authenticating with GCIP agent flow.
@@ -139,7 +144,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
    * while for tenant flow, tenant_ids can contain multiple elements.
    * </pre>
    *
-   * <code>repeated string tenant_ids = 1;</code>
+   * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the tenantIds at the given index.
@@ -150,6 +155,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOGIN_PAGE_URI_FIELD_NUMBER = 2;
   private com.google.protobuf.StringValue loginPageUri_;
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLoginPageUri() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.StringValue.getDefaultInstance()
         : loginPageUri_;
   }
+
   /**
    *
    *
@@ -382,6 +390,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -609,11 +618,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
      * <pre>
-     * GCIP tenant ids that are linked to the IAP resource.
+     * Optional. GCIP tenant ids that are linked to the IAP resource.
      * tenant_ids could be a string beginning with a number character to indicate
      * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
      * to indicate authenticating with GCIP agent flow.
@@ -621,7 +631,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
      * while for tenant flow, tenant_ids can contain multiple elements.
      * </pre>
      *
-     * <code>repeated string tenant_ids = 1;</code>
+     * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the tenantIds.
      */
@@ -629,11 +639,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
       tenantIds_.makeImmutable();
       return tenantIds_;
     }
+
     /**
      *
      *
      * <pre>
-     * GCIP tenant ids that are linked to the IAP resource.
+     * Optional. GCIP tenant ids that are linked to the IAP resource.
      * tenant_ids could be a string beginning with a number character to indicate
      * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
      * to indicate authenticating with GCIP agent flow.
@@ -641,18 +652,19 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
      * while for tenant flow, tenant_ids can contain multiple elements.
      * </pre>
      *
-     * <code>repeated string tenant_ids = 1;</code>
+     * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of tenantIds.
      */
     public int getTenantIdsCount() {
       return tenantIds_.size();
     }
+
     /**
      *
      *
      * <pre>
-     * GCIP tenant ids that are linked to the IAP resource.
+     * Optional. GCIP tenant ids that are linked to the IAP resource.
      * tenant_ids could be a string beginning with a number character to indicate
      * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
      * to indicate authenticating with GCIP agent flow.
@@ -660,7 +672,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
      * while for tenant flow, tenant_ids can contain multiple elements.
      * </pre>
      *
-     * <code>repeated string tenant_ids = 1;</code>
+     * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The tenantIds at the given index.
@@ -668,11 +680,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getTenantIds(int index) {
       return tenantIds_.get(index);
     }
+
     /**
      *
      *
      * <pre>
-     * GCIP tenant ids that are linked to the IAP resource.
+     * Optional. GCIP tenant ids that are linked to the IAP resource.
      * tenant_ids could be a string beginning with a number character to indicate
      * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
      * to indicate authenticating with GCIP agent flow.
@@ -680,7 +693,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
      * while for tenant flow, tenant_ids can contain multiple elements.
      * </pre>
      *
-     * <code>repeated string tenant_ids = 1;</code>
+     * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the tenantIds at the given index.
@@ -688,11 +701,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTenantIdsBytes(int index) {
       return tenantIds_.getByteString(index);
     }
+
     /**
      *
      *
      * <pre>
-     * GCIP tenant ids that are linked to the IAP resource.
+     * Optional. GCIP tenant ids that are linked to the IAP resource.
      * tenant_ids could be a string beginning with a number character to indicate
      * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
      * to indicate authenticating with GCIP agent flow.
@@ -700,7 +714,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
      * while for tenant flow, tenant_ids can contain multiple elements.
      * </pre>
      *
-     * <code>repeated string tenant_ids = 1;</code>
+     * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index to set the value at.
      * @param value The tenantIds to set.
@@ -716,11 +730,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * GCIP tenant ids that are linked to the IAP resource.
+     * Optional. GCIP tenant ids that are linked to the IAP resource.
      * tenant_ids could be a string beginning with a number character to indicate
      * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
      * to indicate authenticating with GCIP agent flow.
@@ -728,7 +743,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
      * while for tenant flow, tenant_ids can contain multiple elements.
      * </pre>
      *
-     * <code>repeated string tenant_ids = 1;</code>
+     * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The tenantIds to add.
      * @return This builder for chaining.
@@ -743,11 +758,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * GCIP tenant ids that are linked to the IAP resource.
+     * Optional. GCIP tenant ids that are linked to the IAP resource.
      * tenant_ids could be a string beginning with a number character to indicate
      * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
      * to indicate authenticating with GCIP agent flow.
@@ -755,7 +771,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
      * while for tenant flow, tenant_ids can contain multiple elements.
      * </pre>
      *
-     * <code>repeated string tenant_ids = 1;</code>
+     * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param values The tenantIds to add.
      * @return This builder for chaining.
@@ -767,11 +783,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * GCIP tenant ids that are linked to the IAP resource.
+     * Optional. GCIP tenant ids that are linked to the IAP resource.
      * tenant_ids could be a string beginning with a number character to indicate
      * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
      * to indicate authenticating with GCIP agent flow.
@@ -779,7 +796,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
      * while for tenant flow, tenant_ids can contain multiple elements.
      * </pre>
      *
-     * <code>repeated string tenant_ids = 1;</code>
+     * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -790,11 +807,12 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * GCIP tenant ids that are linked to the IAP resource.
+     * Optional. GCIP tenant ids that are linked to the IAP resource.
      * tenant_ids could be a string beginning with a number character to indicate
      * authenticating with GCIP tenant flow, or in the format of _&lt;ProjectNumber&gt;
      * to indicate authenticating with GCIP agent flow.
@@ -802,7 +820,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
      * while for tenant flow, tenant_ids can contain multiple elements.
      * </pre>
      *
-     * <code>repeated string tenant_ids = 1;</code>
+     * <code>repeated string tenant_ids = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes of the tenantIds to add.
      * @return This builder for chaining.
@@ -825,6 +843,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.StringValue.Builder,
             com.google.protobuf.StringValueOrBuilder>
         loginPageUriBuilder_;
+
     /**
      *
      *
@@ -841,6 +860,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLoginPageUri() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -863,6 +883,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
         return loginPageUriBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -887,6 +908,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +930,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +960,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -958,6 +982,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -974,6 +999,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLoginPageUriFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -994,6 +1020,7 @@ public final class GcipSettings extends com.google.protobuf.GeneratedMessageV3
             : loginPageUri_;
       }
     }
+
     /**
      *
      *

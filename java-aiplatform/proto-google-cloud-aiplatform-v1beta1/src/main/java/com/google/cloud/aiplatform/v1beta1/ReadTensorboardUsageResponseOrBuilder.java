@@ -36,6 +36,7 @@ public interface ReadTensorboardUsageResponseOrBuilder
    * </code>
    */
   int getMonthlyUsageDataCount();
+
   /**
    *
    *
@@ -48,12 +49,14 @@ public interface ReadTensorboardUsageResponseOrBuilder
    * </code>
    */
   boolean containsMonthlyUsageData(java.lang.String key);
+
   /** Use {@link #getMonthlyUsageDataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String,
           com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerMonthUsageData>
       getMonthlyUsageData();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ReadTensorboardUsageResponseOrBuilder
           java.lang.String,
           com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerMonthUsageData>
       getMonthlyUsageDataMap();
+
   /**
    *
    *
@@ -87,6 +91,7 @@ public interface ReadTensorboardUsageResponseOrBuilder
           /* nullable */
           com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse.PerMonthUsageData
               defaultValue);
+
   /**
    *
    *

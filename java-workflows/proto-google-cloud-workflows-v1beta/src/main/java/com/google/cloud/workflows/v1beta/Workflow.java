@@ -33,6 +33,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.workflows.v1beta.Workflow)
     WorkflowOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Workflow.newBuilder() to construct.
   private Workflow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -123,6 +124,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -232,6 +234,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     private SourceCodeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -266,6 +269,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -290,6 +294,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -319,6 +324,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -343,6 +349,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -370,6 +377,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -387,6 +395,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -411,15 +420,19 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object revisionId_ = "";
+
   /**
    *
    *
    * <pre>
    * Output only. The revision of the workflow.
    * A new revision of a workflow is created as a result of updating the
-   * following fields of a workflow:
-   * - `source_code`
-   * - `service_account`
+   * following properties of a workflow:
+   *
+   * - [Service account][google.cloud.workflows.v1beta.Workflow.service_account]
+   * - [Workflow code to be
+   * executed][google.cloud.workflows.v1beta.Workflow.source_contents]
+   *
    * The format is "000001-a4d", where the first 6 characters define
    * the zero-padded revision ordinal number. They are followed by a hyphen and
    * 3 hexadecimal random characters.
@@ -441,15 +454,19 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
    * Output only. The revision of the workflow.
    * A new revision of a workflow is created as a result of updating the
-   * following fields of a workflow:
-   * - `source_code`
-   * - `service_account`
+   * following properties of a workflow:
+   *
+   * - [Service account][google.cloud.workflows.v1beta.Workflow.service_account]
+   * - [Workflow code to be
+   * executed][google.cloud.workflows.v1beta.Workflow.source_contents]
+   *
    * The format is "000001-a4d", where the first 6 characters define
    * the zero-padded revision ordinal number. They are followed by a hyphen and
    * 3 hexadecimal random characters.
@@ -474,6 +491,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -490,6 +508,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -506,6 +525,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -523,6 +543,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -539,6 +560,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -555,6 +577,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -572,6 +595,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REVISION_CREATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp revisionCreateTime_;
+
   /**
    *
    *
@@ -590,6 +614,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRevisionCreateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -610,6 +635,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : revisionCreateTime_;
   }
+
   /**
    *
    *
@@ -655,6 +681,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -675,12 +702,14 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -698,6 +727,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -722,6 +752,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -751,18 +782,19 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccount_ = "";
+
   /**
    *
    *
    * <pre>
-   * Name of the service account associated with the latest workflow version.
+   * The service account associated with the latest workflow version.
    * This service account represents the identity of the workflow and determines
    * what permissions the workflow has.
-   * Format: projects/{project}/serviceAccounts/{account}
+   * Format: projects/{project}/serviceAccounts/{account} or {account}
    *
-   * Using `-` as a wildcard for the `{project}` will infer the project from
-   * the account. The `{account}` value can be the `email` address or the
-   * `unique_id` of the service account.
+   * Using `-` as a wildcard for the `{project}` or not providing one at all
+   * will infer the project from the account. The `{account}` value can be the
+   * `email` address or the `unique_id` of the service account.
    *
    * If not provided, workflow will use the project's default service account.
    * Modifying this field for an existing workflow results in a new workflow
@@ -785,18 +817,19 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Name of the service account associated with the latest workflow version.
+   * The service account associated with the latest workflow version.
    * This service account represents the identity of the workflow and determines
    * what permissions the workflow has.
-   * Format: projects/{project}/serviceAccounts/{account}
+   * Format: projects/{project}/serviceAccounts/{account} or {account}
    *
-   * Using `-` as a wildcard for the `{project}` will infer the project from
-   * the account. The `{account}` value can be the `email` address or the
-   * `unique_id` of the service account.
+   * Using `-` as a wildcard for the `{project}` or not providing one at all
+   * will infer the project from the account. The `{account}` value can be the
+   * `email` address or the `unique_id` of the service account.
    *
    * If not provided, workflow will use the project's default service account.
    * Modifying this field for an existing workflow results in a new workflow
@@ -821,11 +854,12 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_CONTENTS_FIELD_NUMBER = 10;
+
   /**
    *
    *
    * <pre>
-   * Workflow code to be executed. The size limit is 32KB.
+   * Workflow code to be executed. The size limit is 128KB.
    * </pre>
    *
    * <code>string source_contents = 10;</code>
@@ -835,11 +869,12 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSourceContents() {
     return sourceCodeCase_ == 10;
   }
+
   /**
    *
    *
    * <pre>
-   * Workflow code to be executed. The size limit is 32KB.
+   * Workflow code to be executed. The size limit is 128KB.
    * </pre>
    *
    * <code>string source_contents = 10;</code>
@@ -862,11 +897,12 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Workflow code to be executed. The size limit is 32KB.
+   * Workflow code to be executed. The size limit is 128KB.
    * </pre>
    *
    * <code>string source_contents = 10;</code>
@@ -1166,6 +1202,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1561,6 +1598,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1584,6 +1622,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1607,6 +1646,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1629,6 +1669,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1647,6 +1688,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1672,6 +1714,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1695,6 +1738,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1718,6 +1762,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1740,6 +1785,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1758,6 +1804,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1783,6 +1830,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1800,6 +1848,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1820,6 +1869,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1841,6 +1891,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.workflows.v1beta.Workflow.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1864,6 +1915,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1885,15 +1937,19 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object revisionId_ = "";
+
     /**
      *
      *
      * <pre>
      * Output only. The revision of the workflow.
      * A new revision of a workflow is created as a result of updating the
-     * following fields of a workflow:
-     * - `source_code`
-     * - `service_account`
+     * following properties of a workflow:
+     *
+     * - [Service account][google.cloud.workflows.v1beta.Workflow.service_account]
+     * - [Workflow code to be
+     * executed][google.cloud.workflows.v1beta.Workflow.source_contents]
+     *
      * The format is "000001-a4d", where the first 6 characters define
      * the zero-padded revision ordinal number. They are followed by a hyphen and
      * 3 hexadecimal random characters.
@@ -1914,15 +1970,19 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The revision of the workflow.
      * A new revision of a workflow is created as a result of updating the
-     * following fields of a workflow:
-     * - `source_code`
-     * - `service_account`
+     * following properties of a workflow:
+     *
+     * - [Service account][google.cloud.workflows.v1beta.Workflow.service_account]
+     * - [Workflow code to be
+     * executed][google.cloud.workflows.v1beta.Workflow.source_contents]
+     *
      * The format is "000001-a4d", where the first 6 characters define
      * the zero-padded revision ordinal number. They are followed by a hyphen and
      * 3 hexadecimal random characters.
@@ -1943,15 +2003,19 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The revision of the workflow.
      * A new revision of a workflow is created as a result of updating the
-     * following fields of a workflow:
-     * - `source_code`
-     * - `service_account`
+     * following properties of a workflow:
+     *
+     * - [Service account][google.cloud.workflows.v1beta.Workflow.service_account]
+     * - [Workflow code to be
+     * executed][google.cloud.workflows.v1beta.Workflow.source_contents]
+     *
      * The format is "000001-a4d", where the first 6 characters define
      * the zero-padded revision ordinal number. They are followed by a hyphen and
      * 3 hexadecimal random characters.
@@ -1971,15 +2035,19 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The revision of the workflow.
      * A new revision of a workflow is created as a result of updating the
-     * following fields of a workflow:
-     * - `source_code`
-     * - `service_account`
+     * following properties of a workflow:
+     *
+     * - [Service account][google.cloud.workflows.v1beta.Workflow.service_account]
+     * - [Workflow code to be
+     * executed][google.cloud.workflows.v1beta.Workflow.source_contents]
+     *
      * The format is "000001-a4d", where the first 6 characters define
      * the zero-padded revision ordinal number. They are followed by a hyphen and
      * 3 hexadecimal random characters.
@@ -1995,15 +2063,19 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The revision of the workflow.
      * A new revision of a workflow is created as a result of updating the
-     * following fields of a workflow:
-     * - `source_code`
-     * - `service_account`
+     * following properties of a workflow:
+     *
+     * - [Service account][google.cloud.workflows.v1beta.Workflow.service_account]
+     * - [Workflow code to be
+     * executed][google.cloud.workflows.v1beta.Workflow.source_contents]
+     *
      * The format is "000001-a4d", where the first 6 characters define
      * the zero-padded revision ordinal number. They are followed by a hyphen and
      * 3 hexadecimal random characters.
@@ -2031,6 +2103,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2047,6 +2120,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2069,6 +2143,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2093,6 +2168,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2114,6 +2190,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2143,6 +2220,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2164,6 +2242,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2180,6 +2259,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2200,6 +2280,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2234,6 +2315,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2250,6 +2332,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2272,6 +2355,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2296,6 +2380,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2317,6 +2402,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2346,6 +2432,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2367,6 +2454,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2383,6 +2471,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2403,6 +2492,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2437,6 +2527,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         revisionCreateTimeBuilder_;
+
     /**
      *
      *
@@ -2454,6 +2545,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRevisionCreateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2477,6 +2569,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
         return revisionCreateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2502,6 +2595,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2524,6 +2618,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2554,6 +2649,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2576,6 +2672,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2593,6 +2690,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRevisionCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2614,6 +2712,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
             : revisionCreateTime_;
       }
     }
+
     /**
      *
      *
@@ -2668,6 +2767,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2688,12 +2788,14 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2711,6 +2813,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2735,6 +2838,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2765,6 +2869,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2785,12 +2890,14 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2815,6 +2922,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000080;
       return this;
     }
+
     /**
      *
      *
@@ -2835,18 +2943,19 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object serviceAccount_ = "";
+
     /**
      *
      *
      * <pre>
-     * Name of the service account associated with the latest workflow version.
+     * The service account associated with the latest workflow version.
      * This service account represents the identity of the workflow and determines
      * what permissions the workflow has.
-     * Format: projects/{project}/serviceAccounts/{account}
+     * Format: projects/{project}/serviceAccounts/{account} or {account}
      *
-     * Using `-` as a wildcard for the `{project}` will infer the project from
-     * the account. The `{account}` value can be the `email` address or the
-     * `unique_id` of the service account.
+     * Using `-` as a wildcard for the `{project}` or not providing one at all
+     * will infer the project from the account. The `{account}` value can be the
+     * `email` address or the `unique_id` of the service account.
      *
      * If not provided, workflow will use the project's default service account.
      * Modifying this field for an existing workflow results in a new workflow
@@ -2868,18 +2977,19 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Name of the service account associated with the latest workflow version.
+     * The service account associated with the latest workflow version.
      * This service account represents the identity of the workflow and determines
      * what permissions the workflow has.
-     * Format: projects/{project}/serviceAccounts/{account}
+     * Format: projects/{project}/serviceAccounts/{account} or {account}
      *
-     * Using `-` as a wildcard for the `{project}` will infer the project from
-     * the account. The `{account}` value can be the `email` address or the
-     * `unique_id` of the service account.
+     * Using `-` as a wildcard for the `{project}` or not providing one at all
+     * will infer the project from the account. The `{account}` value can be the
+     * `email` address or the `unique_id` of the service account.
      *
      * If not provided, workflow will use the project's default service account.
      * Modifying this field for an existing workflow results in a new workflow
@@ -2901,18 +3011,19 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Name of the service account associated with the latest workflow version.
+     * The service account associated with the latest workflow version.
      * This service account represents the identity of the workflow and determines
      * what permissions the workflow has.
-     * Format: projects/{project}/serviceAccounts/{account}
+     * Format: projects/{project}/serviceAccounts/{account} or {account}
      *
-     * Using `-` as a wildcard for the `{project}` will infer the project from
-     * the account. The `{account}` value can be the `email` address or the
-     * `unique_id` of the service account.
+     * Using `-` as a wildcard for the `{project}` or not providing one at all
+     * will infer the project from the account. The `{account}` value can be the
+     * `email` address or the `unique_id` of the service account.
      *
      * If not provided, workflow will use the project's default service account.
      * Modifying this field for an existing workflow results in a new workflow
@@ -2933,18 +3044,19 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Name of the service account associated with the latest workflow version.
+     * The service account associated with the latest workflow version.
      * This service account represents the identity of the workflow and determines
      * what permissions the workflow has.
-     * Format: projects/{project}/serviceAccounts/{account}
+     * Format: projects/{project}/serviceAccounts/{account} or {account}
      *
-     * Using `-` as a wildcard for the `{project}` will infer the project from
-     * the account. The `{account}` value can be the `email` address or the
-     * `unique_id` of the service account.
+     * Using `-` as a wildcard for the `{project}` or not providing one at all
+     * will infer the project from the account. The `{account}` value can be the
+     * `email` address or the `unique_id` of the service account.
      *
      * If not provided, workflow will use the project's default service account.
      * Modifying this field for an existing workflow results in a new workflow
@@ -2961,18 +3073,19 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Name of the service account associated with the latest workflow version.
+     * The service account associated with the latest workflow version.
      * This service account represents the identity of the workflow and determines
      * what permissions the workflow has.
-     * Format: projects/{project}/serviceAccounts/{account}
+     * Format: projects/{project}/serviceAccounts/{account} or {account}
      *
-     * Using `-` as a wildcard for the `{project}` will infer the project from
-     * the account. The `{account}` value can be the `email` address or the
-     * `unique_id` of the service account.
+     * Using `-` as a wildcard for the `{project}` or not providing one at all
+     * will infer the project from the account. The `{account}` value can be the
+     * `email` address or the `unique_id` of the service account.
      *
      * If not provided, workflow will use the project's default service account.
      * Modifying this field for an existing workflow results in a new workflow
@@ -2999,7 +3112,7 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Workflow code to be executed. The size limit is 32KB.
+     * Workflow code to be executed. The size limit is 128KB.
      * </pre>
      *
      * <code>string source_contents = 10;</code>
@@ -3010,11 +3123,12 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSourceContents() {
       return sourceCodeCase_ == 10;
     }
+
     /**
      *
      *
      * <pre>
-     * Workflow code to be executed. The size limit is 32KB.
+     * Workflow code to be executed. The size limit is 128KB.
      * </pre>
      *
      * <code>string source_contents = 10;</code>
@@ -3038,11 +3152,12 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Workflow code to be executed. The size limit is 32KB.
+     * Workflow code to be executed. The size limit is 128KB.
      * </pre>
      *
      * <code>string source_contents = 10;</code>
@@ -3066,11 +3181,12 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Workflow code to be executed. The size limit is 32KB.
+     * Workflow code to be executed. The size limit is 128KB.
      * </pre>
      *
      * <code>string source_contents = 10;</code>
@@ -3087,11 +3203,12 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Workflow code to be executed. The size limit is 32KB.
+     * Workflow code to be executed. The size limit is 128KB.
      * </pre>
      *
      * <code>string source_contents = 10;</code>
@@ -3106,11 +3223,12 @@ public final class Workflow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Workflow code to be executed. The size limit is 32KB.
+     * Workflow code to be executed. The size limit is 128KB.
      * </pre>
      *
      * <code>string source_contents = 10;</code>

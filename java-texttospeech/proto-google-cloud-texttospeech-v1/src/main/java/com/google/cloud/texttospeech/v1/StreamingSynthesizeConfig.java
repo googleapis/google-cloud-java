@@ -33,6 +33,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1.StreamingSynthesizeConfig)
     StreamingSynthesizeConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamingSynthesizeConfig.newBuilder() to construct.
   private StreamingSynthesizeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int VOICE_FIELD_NUMBER = 1;
   private com.google.cloud.texttospeech.v1.VoiceSelectionParams voice_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
   public boolean hasVoice() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
         ? com.google.cloud.texttospeech.v1.VoiceSelectionParams.getDefaultInstance()
         : voice_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
 
   public static final int STREAMING_AUDIO_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.texttospeech.v1.StreamingAudioConfig streamingAudioConfig_;
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
   public boolean hasStreamingAudioConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
         ? com.google.cloud.texttospeech.v1.StreamingAudioConfig.getDefaultInstance()
         : streamingAudioConfig_;
   }
+
   /**
    *
    *
@@ -173,6 +180,93 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     return streamingAudioConfig_ == null
         ? com.google.cloud.texttospeech.v1.StreamingAudioConfig.getDefaultInstance()
         : streamingAudioConfig_;
+  }
+
+  public static final int CUSTOM_PRONUNCIATIONS_FIELD_NUMBER = 5;
+  private com.google.cloud.texttospeech.v1.CustomPronunciations customPronunciations_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pronunciation customizations are applied to the input. If
+   * this is set, the input is synthesized using the given pronunciation
+   * customizations.
+   *
+   * The initial support is for en-us, with plans to expand to other locales in
+   * the future. Instant Clone voices aren't supported.
+   *
+   * In order to customize the pronunciation of a phrase, there must be an exact
+   * match of the phrase in the input types. If using SSML, the phrase must not
+   * be inside a phoneme tag.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customPronunciations field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomPronunciations() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pronunciation customizations are applied to the input. If
+   * this is set, the input is synthesized using the given pronunciation
+   * customizations.
+   *
+   * The initial support is for en-us, with plans to expand to other locales in
+   * the future. Instant Clone voices aren't supported.
+   *
+   * In order to customize the pronunciation of a phrase, there must be an exact
+   * match of the phrase in the input types. If using SSML, the phrase must not
+   * be inside a phoneme tag.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customPronunciations.
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1.CustomPronunciations getCustomPronunciations() {
+    return customPronunciations_ == null
+        ? com.google.cloud.texttospeech.v1.CustomPronunciations.getDefaultInstance()
+        : customPronunciations_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pronunciation customizations are applied to the input. If
+   * this is set, the input is synthesized using the given pronunciation
+   * customizations.
+   *
+   * The initial support is for en-us, with plans to expand to other locales in
+   * the future. Instant Clone voices aren't supported.
+   *
+   * In order to customize the pronunciation of a phrase, there must be an exact
+   * match of the phrase in the input types. If using SSML, the phrase must not
+   * be inside a phoneme tag.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1.CustomPronunciationsOrBuilder
+      getCustomPronunciationsOrBuilder() {
+    return customPronunciations_ == null
+        ? com.google.cloud.texttospeech.v1.CustomPronunciations.getDefaultInstance()
+        : customPronunciations_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -195,6 +289,9 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(4, getStreamingAudioConfig());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(5, getCustomPronunciations());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -210,6 +307,10 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(4, getStreamingAudioConfig());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCustomPronunciations());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -235,6 +336,10 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     if (hasStreamingAudioConfig()) {
       if (!getStreamingAudioConfig().equals(other.getStreamingAudioConfig())) return false;
     }
+    if (hasCustomPronunciations() != other.hasCustomPronunciations()) return false;
+    if (hasCustomPronunciations()) {
+      if (!getCustomPronunciations().equals(other.getCustomPronunciations())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -253,6 +358,10 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     if (hasStreamingAudioConfig()) {
       hash = (37 * hash) + STREAMING_AUDIO_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getStreamingAudioConfig().hashCode();
+    }
+    if (hasCustomPronunciations()) {
+      hash = (37 * hash) + CUSTOM_PRONUNCIATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomPronunciations().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -355,6 +464,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -397,6 +507,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getVoiceFieldBuilder();
         getStreamingAudioConfigFieldBuilder();
+        getCustomPronunciationsFieldBuilder();
       }
     }
 
@@ -413,6 +524,11 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       if (streamingAudioConfigBuilder_ != null) {
         streamingAudioConfigBuilder_.dispose();
         streamingAudioConfigBuilder_ = null;
+      }
+      customPronunciations_ = null;
+      if (customPronunciationsBuilder_ != null) {
+        customPronunciationsBuilder_.dispose();
+        customPronunciationsBuilder_ = null;
       }
       return this;
     }
@@ -461,6 +577,13 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
                 ? streamingAudioConfig_
                 : streamingAudioConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.customPronunciations_ =
+            customPronunciationsBuilder_ == null
+                ? customPronunciations_
+                : customPronunciationsBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -517,6 +640,9 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       if (other.hasStreamingAudioConfig()) {
         mergeStreamingAudioConfig(other.getStreamingAudioConfig());
       }
+      if (other.hasCustomPronunciations()) {
+        mergeCustomPronunciations(other.getCustomPronunciations());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -556,6 +682,13 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000002;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getCustomPronunciationsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -581,6 +714,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
             com.google.cloud.texttospeech.v1.VoiceSelectionParams.Builder,
             com.google.cloud.texttospeech.v1.VoiceSelectionParamsOrBuilder>
         voiceBuilder_;
+
     /**
      *
      *
@@ -597,6 +731,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     public boolean hasVoice() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -619,6 +754,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
         return voiceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -643,6 +779,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -665,6 +802,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -695,6 +833,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +855,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +872,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return getVoiceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -752,6 +893,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
             : voice_;
       }
     }
+
     /**
      *
      *
@@ -786,6 +928,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
             com.google.cloud.texttospeech.v1.StreamingAudioConfig.Builder,
             com.google.cloud.texttospeech.v1.StreamingAudioConfigOrBuilder>
         streamingAudioConfigBuilder_;
+
     /**
      *
      *
@@ -802,6 +945,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
     public boolean hasStreamingAudioConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -824,6 +968,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
         return streamingAudioConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -849,6 +994,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +1017,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +1049,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +1071,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +1089,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
       onChanged();
       return getStreamingAudioConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -961,6 +1111,7 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
             : streamingAudioConfig_;
       }
     }
+
     /**
      *
      *
@@ -987,6 +1138,305 @@ public final class StreamingSynthesizeConfig extends com.google.protobuf.Generat
         streamingAudioConfig_ = null;
       }
       return streamingAudioConfigBuilder_;
+    }
+
+    private com.google.cloud.texttospeech.v1.CustomPronunciations customPronunciations_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.texttospeech.v1.CustomPronunciations,
+            com.google.cloud.texttospeech.v1.CustomPronunciations.Builder,
+            com.google.cloud.texttospeech.v1.CustomPronunciationsOrBuilder>
+        customPronunciationsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pronunciation customizations are applied to the input. If
+     * this is set, the input is synthesized using the given pronunciation
+     * customizations.
+     *
+     * The initial support is for en-us, with plans to expand to other locales in
+     * the future. Instant Clone voices aren't supported.
+     *
+     * In order to customize the pronunciation of a phrase, there must be an exact
+     * match of the phrase in the input types. If using SSML, the phrase must not
+     * be inside a phoneme tag.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customPronunciations field is set.
+     */
+    public boolean hasCustomPronunciations() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pronunciation customizations are applied to the input. If
+     * this is set, the input is synthesized using the given pronunciation
+     * customizations.
+     *
+     * The initial support is for en-us, with plans to expand to other locales in
+     * the future. Instant Clone voices aren't supported.
+     *
+     * In order to customize the pronunciation of a phrase, there must be an exact
+     * match of the phrase in the input types. If using SSML, the phrase must not
+     * be inside a phoneme tag.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customPronunciations.
+     */
+    public com.google.cloud.texttospeech.v1.CustomPronunciations getCustomPronunciations() {
+      if (customPronunciationsBuilder_ == null) {
+        return customPronunciations_ == null
+            ? com.google.cloud.texttospeech.v1.CustomPronunciations.getDefaultInstance()
+            : customPronunciations_;
+      } else {
+        return customPronunciationsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pronunciation customizations are applied to the input. If
+     * this is set, the input is synthesized using the given pronunciation
+     * customizations.
+     *
+     * The initial support is for en-us, with plans to expand to other locales in
+     * the future. Instant Clone voices aren't supported.
+     *
+     * In order to customize the pronunciation of a phrase, there must be an exact
+     * match of the phrase in the input types. If using SSML, the phrase must not
+     * be inside a phoneme tag.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomPronunciations(
+        com.google.cloud.texttospeech.v1.CustomPronunciations value) {
+      if (customPronunciationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customPronunciations_ = value;
+      } else {
+        customPronunciationsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pronunciation customizations are applied to the input. If
+     * this is set, the input is synthesized using the given pronunciation
+     * customizations.
+     *
+     * The initial support is for en-us, with plans to expand to other locales in
+     * the future. Instant Clone voices aren't supported.
+     *
+     * In order to customize the pronunciation of a phrase, there must be an exact
+     * match of the phrase in the input types. If using SSML, the phrase must not
+     * be inside a phoneme tag.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomPronunciations(
+        com.google.cloud.texttospeech.v1.CustomPronunciations.Builder builderForValue) {
+      if (customPronunciationsBuilder_ == null) {
+        customPronunciations_ = builderForValue.build();
+      } else {
+        customPronunciationsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pronunciation customizations are applied to the input. If
+     * this is set, the input is synthesized using the given pronunciation
+     * customizations.
+     *
+     * The initial support is for en-us, with plans to expand to other locales in
+     * the future. Instant Clone voices aren't supported.
+     *
+     * In order to customize the pronunciation of a phrase, there must be an exact
+     * match of the phrase in the input types. If using SSML, the phrase must not
+     * be inside a phoneme tag.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCustomPronunciations(
+        com.google.cloud.texttospeech.v1.CustomPronunciations value) {
+      if (customPronunciationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && customPronunciations_ != null
+            && customPronunciations_
+                != com.google.cloud.texttospeech.v1.CustomPronunciations.getDefaultInstance()) {
+          getCustomPronunciationsBuilder().mergeFrom(value);
+        } else {
+          customPronunciations_ = value;
+        }
+      } else {
+        customPronunciationsBuilder_.mergeFrom(value);
+      }
+      if (customPronunciations_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pronunciation customizations are applied to the input. If
+     * this is set, the input is synthesized using the given pronunciation
+     * customizations.
+     *
+     * The initial support is for en-us, with plans to expand to other locales in
+     * the future. Instant Clone voices aren't supported.
+     *
+     * In order to customize the pronunciation of a phrase, there must be an exact
+     * match of the phrase in the input types. If using SSML, the phrase must not
+     * be inside a phoneme tag.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCustomPronunciations() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      customPronunciations_ = null;
+      if (customPronunciationsBuilder_ != null) {
+        customPronunciationsBuilder_.dispose();
+        customPronunciationsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pronunciation customizations are applied to the input. If
+     * this is set, the input is synthesized using the given pronunciation
+     * customizations.
+     *
+     * The initial support is for en-us, with plans to expand to other locales in
+     * the future. Instant Clone voices aren't supported.
+     *
+     * In order to customize the pronunciation of a phrase, there must be an exact
+     * match of the phrase in the input types. If using SSML, the phrase must not
+     * be inside a phoneme tag.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.texttospeech.v1.CustomPronunciations.Builder
+        getCustomPronunciationsBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getCustomPronunciationsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pronunciation customizations are applied to the input. If
+     * this is set, the input is synthesized using the given pronunciation
+     * customizations.
+     *
+     * The initial support is for en-us, with plans to expand to other locales in
+     * the future. Instant Clone voices aren't supported.
+     *
+     * In order to customize the pronunciation of a phrase, there must be an exact
+     * match of the phrase in the input types. If using SSML, the phrase must not
+     * be inside a phoneme tag.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.texttospeech.v1.CustomPronunciationsOrBuilder
+        getCustomPronunciationsOrBuilder() {
+      if (customPronunciationsBuilder_ != null) {
+        return customPronunciationsBuilder_.getMessageOrBuilder();
+      } else {
+        return customPronunciations_ == null
+            ? com.google.cloud.texttospeech.v1.CustomPronunciations.getDefaultInstance()
+            : customPronunciations_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The pronunciation customizations are applied to the input. If
+     * this is set, the input is synthesized using the given pronunciation
+     * customizations.
+     *
+     * The initial support is for en-us, with plans to expand to other locales in
+     * the future. Instant Clone voices aren't supported.
+     *
+     * In order to customize the pronunciation of a phrase, there must be an exact
+     * match of the phrase in the input types. If using SSML, the phrase must not
+     * be inside a phoneme tag.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.texttospeech.v1.CustomPronunciations,
+            com.google.cloud.texttospeech.v1.CustomPronunciations.Builder,
+            com.google.cloud.texttospeech.v1.CustomPronunciationsOrBuilder>
+        getCustomPronunciationsFieldBuilder() {
+      if (customPronunciationsBuilder_ == null) {
+        customPronunciationsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.texttospeech.v1.CustomPronunciations,
+                com.google.cloud.texttospeech.v1.CustomPronunciations.Builder,
+                com.google.cloud.texttospeech.v1.CustomPronunciationsOrBuilder>(
+                getCustomPronunciations(), getParentForChildren(), isClean());
+        customPronunciations_ = null;
+      }
+      return customPronunciationsBuilder_;
     }
 
     @java.lang.Override

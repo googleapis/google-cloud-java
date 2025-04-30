@@ -29,9 +29,8 @@ public interface StreamingSynthesisInputOrBuilder
    *
    * <pre>
    * The raw text to be synthesized. It is recommended that each input
-   * contains complete, terminating sentences, as this will likely result in
-   * better prosody in the output audio. That being said, users are free to
-   * input text however they please.
+   * contains complete, terminating sentences, which results in better prosody
+   * in the output audio.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -39,14 +38,14 @@ public interface StreamingSynthesisInputOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
+
   /**
    *
    *
    * <pre>
    * The raw text to be synthesized. It is recommended that each input
-   * contains complete, terminating sentences, as this will likely result in
-   * better prosody in the output audio. That being said, users are free to
-   * input text however they please.
+   * contains complete, terminating sentences, which results in better prosody
+   * in the output audio.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -54,14 +53,14 @@ public interface StreamingSynthesisInputOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *
    * <pre>
    * The raw text to be synthesized. It is recommended that each input
-   * contains complete, terminating sentences, as this will likely result in
-   * better prosody in the output audio. That being said, users are free to
-   * input text however they please.
+   * contains complete, terminating sentences, which results in better prosody
+   * in the output audio.
    * </pre>
    *
    * <code>string text = 1;</code>

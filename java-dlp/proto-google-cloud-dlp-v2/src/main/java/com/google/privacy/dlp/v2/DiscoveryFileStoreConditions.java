@@ -35,6 +35,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryFileStoreConditions)
     DiscoveryFileStoreConditionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiscoveryFileStoreConditions.newBuilder() to construct.
   private DiscoveryFileStoreConditions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
     private ConditionsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,6 +114,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
 
   public static final int CREATED_AFTER_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createdAfter_;
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
   public boolean hasCreatedAfter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : createdAfter_;
   }
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
 
   public static final int MIN_AGE_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration minAge_;
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
   public boolean hasMinAge() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -200,6 +207,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
   public com.google.protobuf.Duration getMinAge() {
     return minAge_ == null ? com.google.protobuf.Duration.getDefaultInstance() : minAge_;
   }
+
   /**
    *
    *
@@ -216,6 +224,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
   }
 
   public static final int CLOUD_STORAGE_CONDITIONS_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -233,6 +242,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
   public boolean hasCloudStorageConditions() {
     return conditionsCase_ == 3;
   }
+
   /**
    *
    *
@@ -253,6 +263,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
     }
     return com.google.privacy.dlp.v2.DiscoveryCloudStorageConditions.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -477,6 +488,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -748,6 +760,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createdAfterBuilder_;
+
     /**
      *
      *
@@ -764,6 +777,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
     public boolean hasCreatedAfter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -786,6 +800,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
         return createdAfterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -810,6 +825,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +847,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +877,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +899,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +916,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
       onChanged();
       return getCreatedAfterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -917,6 +937,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
             : createdAfter_;
       }
     }
+
     /**
      *
      *
@@ -951,6 +972,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         minAgeBuilder_;
+
     /**
      *
      *
@@ -966,6 +988,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
     public boolean hasMinAge() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -985,6 +1008,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
         return minAgeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1008,6 +1032,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1028,6 +1053,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1082,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1103,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1091,6 +1119,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
       onChanged();
       return getMinAgeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1108,6 +1137,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
         return minAge_ == null ? com.google.protobuf.Duration.getDefaultInstance() : minAge_;
       }
     }
+
     /**
      *
      *
@@ -1140,6 +1170,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.DiscoveryCloudStorageConditions.Builder,
             com.google.privacy.dlp.v2.DiscoveryCloudStorageConditionsOrBuilder>
         cloudStorageConditionsBuilder_;
+
     /**
      *
      *
@@ -1157,6 +1188,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
     public boolean hasCloudStorageConditions() {
       return conditionsCase_ == 3;
     }
+
     /**
      *
      *
@@ -1184,6 +1216,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
         return com.google.privacy.dlp.v2.DiscoveryCloudStorageConditions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1209,6 +1242,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
       conditionsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1231,6 +1265,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
       conditionsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1267,6 +1302,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
       conditionsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1294,6 +1330,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1309,6 +1346,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
         getCloudStorageConditionsBuilder() {
       return getCloudStorageConditionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1332,6 +1370,7 @@ public final class DiscoveryFileStoreConditions extends com.google.protobuf.Gene
         return com.google.privacy.dlp.v2.DiscoveryCloudStorageConditions.getDefaultInstance();
       }
     }
+
     /**
      *
      *

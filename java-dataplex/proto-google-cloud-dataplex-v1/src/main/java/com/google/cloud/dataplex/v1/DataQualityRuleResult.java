@@ -33,6 +33,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRuleResult)
     DataQualityRuleResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataQualityRuleResult.newBuilder() to construct.
   private DataQualityRuleResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,14 +67,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int RULE_FIELD_NUMBER = 1;
   private com.google.cloud.dataplex.v1.DataQualityRule rule_;
+
   /**
    *
    *
    * <pre>
-   * The rule specified in the DataQualitySpec, as is.
+   * Output only. The rule specified in the DataQualitySpec, as is.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityRule rule = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the rule field is set.
    */
@@ -81,14 +85,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
   public boolean hasRule() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * The rule specified in the DataQualitySpec, as is.
+   * Output only. The rule specified in the DataQualitySpec, as is.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityRule rule = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The rule.
    */
@@ -98,14 +105,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.dataplex.v1.DataQualityRule.getDefaultInstance()
         : rule_;
   }
+
   /**
    *
    *
    * <pre>
-   * The rule specified in the DataQualitySpec, as is.
+   * Output only. The rule specified in the DataQualitySpec, as is.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityRule rule = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.DataQualityRuleOrBuilder getRuleOrBuilder() {
@@ -116,14 +126,15 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
 
   public static final int PASSED_FIELD_NUMBER = 7;
   private boolean passed_ = false;
+
   /**
    *
    *
    * <pre>
-   * Whether the rule passed or failed.
+   * Output only. Whether the rule passed or failed.
    * </pre>
    *
-   * <code>bool passed = 7;</code>
+   * <code>bool passed = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The passed.
    */
@@ -134,11 +145,12 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
 
   public static final int EVALUATED_COUNT_FIELD_NUMBER = 9;
   private long evaluatedCount_ = 0L;
+
   /**
    *
    *
    * <pre>
-   * The number of rows a rule was evaluated against.
+   * Output only. The number of rows a rule was evaluated against.
    *
    * This field is only valid for row-level type rules.
    *
@@ -152,7 +164,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
    * This field is not set for rule SqlAssertion.
    * </pre>
    *
-   * <code>int64 evaluated_count = 9;</code>
+   * <code>int64 evaluated_count = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The evaluatedCount.
    */
@@ -163,14 +175,19 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
 
   public static final int PASSED_COUNT_FIELD_NUMBER = 8;
   private long passedCount_ = 0L;
+
   /**
    *
    *
    * <pre>
+   * Output only. The number of rows which passed a rule evaluation.
+   *
+   * This field is only valid for row-level type rules.
+   *
    * This field is not set for rule SqlAssertion.
    * </pre>
    *
-   * <code>int64 passed_count = 8;</code>
+   * <code>int64 passed_count = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The passedCount.
    */
@@ -181,14 +198,15 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
 
   public static final int NULL_COUNT_FIELD_NUMBER = 5;
   private long nullCount_ = 0L;
+
   /**
    *
    *
    * <pre>
-   * The number of rows with null values in the specified column.
+   * Output only. The number of rows with null values in the specified column.
    * </pre>
    *
-   * <code>int64 null_count = 5;</code>
+   * <code>int64 null_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The nullCount.
    */
@@ -199,16 +217,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
 
   public static final int PASS_RATIO_FIELD_NUMBER = 6;
   private double passRatio_ = 0D;
+
   /**
    *
    *
    * <pre>
-   * The ratio of **passed_count / evaluated_count**.
+   * Output only. The ratio of **passed_count / evaluated_count**.
    *
    * This field is only valid for row-level type rules.
    * </pre>
    *
-   * <code>double pass_ratio = 6;</code>
+   * <code>double pass_ratio = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The passRatio.
    */
@@ -221,16 +240,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object failingRowsQuery_ = "";
+
   /**
    *
    *
    * <pre>
-   * The query to find rows that did not pass this rule.
+   * Output only. The query to find rows that did not pass this rule.
    *
    * This field is only valid for row-level type rules.
    * </pre>
    *
-   * <code>string failing_rows_query = 10;</code>
+   * <code>string failing_rows_query = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The failingRowsQuery.
    */
@@ -246,16 +266,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * The query to find rows that did not pass this rule.
+   * Output only. The query to find rows that did not pass this rule.
    *
    * This field is only valid for row-level type rules.
    * </pre>
    *
-   * <code>string failing_rows_query = 10;</code>
+   * <code>string failing_rows_query = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for failingRowsQuery.
    */
@@ -274,6 +295,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
 
   public static final int ASSERTION_ROW_COUNT_FIELD_NUMBER = 11;
   private long assertionRowCount_ = 0L;
+
   /**
    *
    *
@@ -524,6 +546,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -820,28 +843,34 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
             com.google.cloud.dataplex.v1.DataQualityRule.Builder,
             com.google.cloud.dataplex.v1.DataQualityRuleOrBuilder>
         ruleBuilder_;
+
     /**
      *
      *
      * <pre>
-     * The rule specified in the DataQualitySpec, as is.
+     * Output only. The rule specified in the DataQualitySpec, as is.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRule rule = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the rule field is set.
      */
     public boolean hasRule() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * The rule specified in the DataQualitySpec, as is.
+     * Output only. The rule specified in the DataQualitySpec, as is.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRule rule = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The rule.
      */
@@ -854,14 +883,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
         return ruleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The rule specified in the DataQualitySpec, as is.
+     * Output only. The rule specified in the DataQualitySpec, as is.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRule rule = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setRule(com.google.cloud.dataplex.v1.DataQualityRule value) {
       if (ruleBuilder_ == null) {
@@ -876,14 +908,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The rule specified in the DataQualitySpec, as is.
+     * Output only. The rule specified in the DataQualitySpec, as is.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRule rule = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setRule(com.google.cloud.dataplex.v1.DataQualityRule.Builder builderForValue) {
       if (ruleBuilder_ == null) {
@@ -895,14 +930,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The rule specified in the DataQualitySpec, as is.
+     * Output only. The rule specified in the DataQualitySpec, as is.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRule rule = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeRule(com.google.cloud.dataplex.v1.DataQualityRule value) {
       if (ruleBuilder_ == null) {
@@ -922,14 +960,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The rule specified in the DataQualitySpec, as is.
+     * Output only. The rule specified in the DataQualitySpec, as is.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRule rule = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearRule() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -941,28 +982,34 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The rule specified in the DataQualitySpec, as is.
+     * Output only. The rule specified in the DataQualitySpec, as is.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRule rule = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataplex.v1.DataQualityRule.Builder getRuleBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return getRuleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * The rule specified in the DataQualitySpec, as is.
+     * Output only. The rule specified in the DataQualitySpec, as is.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRule rule = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataplex.v1.DataQualityRuleOrBuilder getRuleOrBuilder() {
       if (ruleBuilder_ != null) {
@@ -973,14 +1020,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
             : rule_;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The rule specified in the DataQualitySpec, as is.
+     * Output only. The rule specified in the DataQualitySpec, as is.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.DataQualityRule rule = 1;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRule rule = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataplex.v1.DataQualityRule,
@@ -1000,14 +1050,15 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     }
 
     private boolean passed_;
+
     /**
      *
      *
      * <pre>
-     * Whether the rule passed or failed.
+     * Output only. Whether the rule passed or failed.
      * </pre>
      *
-     * <code>bool passed = 7;</code>
+     * <code>bool passed = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The passed.
      */
@@ -1015,14 +1066,15 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     public boolean getPassed() {
       return passed_;
     }
+
     /**
      *
      *
      * <pre>
-     * Whether the rule passed or failed.
+     * Output only. Whether the rule passed or failed.
      * </pre>
      *
-     * <code>bool passed = 7;</code>
+     * <code>bool passed = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The passed to set.
      * @return This builder for chaining.
@@ -1034,14 +1086,15 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Whether the rule passed or failed.
+     * Output only. Whether the rule passed or failed.
      * </pre>
      *
-     * <code>bool passed = 7;</code>
+     * <code>bool passed = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1053,11 +1106,12 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     }
 
     private long evaluatedCount_;
+
     /**
      *
      *
      * <pre>
-     * The number of rows a rule was evaluated against.
+     * Output only. The number of rows a rule was evaluated against.
      *
      * This field is only valid for row-level type rules.
      *
@@ -1071,7 +1125,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      * This field is not set for rule SqlAssertion.
      * </pre>
      *
-     * <code>int64 evaluated_count = 9;</code>
+     * <code>int64 evaluated_count = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The evaluatedCount.
      */
@@ -1079,11 +1133,12 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     public long getEvaluatedCount() {
       return evaluatedCount_;
     }
+
     /**
      *
      *
      * <pre>
-     * The number of rows a rule was evaluated against.
+     * Output only. The number of rows a rule was evaluated against.
      *
      * This field is only valid for row-level type rules.
      *
@@ -1097,7 +1152,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      * This field is not set for rule SqlAssertion.
      * </pre>
      *
-     * <code>int64 evaluated_count = 9;</code>
+     * <code>int64 evaluated_count = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The evaluatedCount to set.
      * @return This builder for chaining.
@@ -1109,11 +1164,12 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The number of rows a rule was evaluated against.
+     * Output only. The number of rows a rule was evaluated against.
      *
      * This field is only valid for row-level type rules.
      *
@@ -1127,7 +1183,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
      * This field is not set for rule SqlAssertion.
      * </pre>
      *
-     * <code>int64 evaluated_count = 9;</code>
+     * <code>int64 evaluated_count = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1139,14 +1195,19 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     }
 
     private long passedCount_;
+
     /**
      *
      *
      * <pre>
+     * Output only. The number of rows which passed a rule evaluation.
+     *
+     * This field is only valid for row-level type rules.
+     *
      * This field is not set for rule SqlAssertion.
      * </pre>
      *
-     * <code>int64 passed_count = 8;</code>
+     * <code>int64 passed_count = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The passedCount.
      */
@@ -1154,14 +1215,19 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     public long getPassedCount() {
       return passedCount_;
     }
+
     /**
      *
      *
      * <pre>
+     * Output only. The number of rows which passed a rule evaluation.
+     *
+     * This field is only valid for row-level type rules.
+     *
      * This field is not set for rule SqlAssertion.
      * </pre>
      *
-     * <code>int64 passed_count = 8;</code>
+     * <code>int64 passed_count = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The passedCount to set.
      * @return This builder for chaining.
@@ -1173,14 +1239,19 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
+     * Output only. The number of rows which passed a rule evaluation.
+     *
+     * This field is only valid for row-level type rules.
+     *
      * This field is not set for rule SqlAssertion.
      * </pre>
      *
-     * <code>int64 passed_count = 8;</code>
+     * <code>int64 passed_count = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1192,14 +1263,15 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     }
 
     private long nullCount_;
+
     /**
      *
      *
      * <pre>
-     * The number of rows with null values in the specified column.
+     * Output only. The number of rows with null values in the specified column.
      * </pre>
      *
-     * <code>int64 null_count = 5;</code>
+     * <code>int64 null_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The nullCount.
      */
@@ -1207,14 +1279,15 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     public long getNullCount() {
       return nullCount_;
     }
+
     /**
      *
      *
      * <pre>
-     * The number of rows with null values in the specified column.
+     * Output only. The number of rows with null values in the specified column.
      * </pre>
      *
-     * <code>int64 null_count = 5;</code>
+     * <code>int64 null_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The nullCount to set.
      * @return This builder for chaining.
@@ -1226,14 +1299,15 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The number of rows with null values in the specified column.
+     * Output only. The number of rows with null values in the specified column.
      * </pre>
      *
-     * <code>int64 null_count = 5;</code>
+     * <code>int64 null_count = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1245,16 +1319,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     }
 
     private double passRatio_;
+
     /**
      *
      *
      * <pre>
-     * The ratio of **passed_count / evaluated_count**.
+     * Output only. The ratio of **passed_count / evaluated_count**.
      *
      * This field is only valid for row-level type rules.
      * </pre>
      *
-     * <code>double pass_ratio = 6;</code>
+     * <code>double pass_ratio = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The passRatio.
      */
@@ -1262,16 +1337,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     public double getPassRatio() {
       return passRatio_;
     }
+
     /**
      *
      *
      * <pre>
-     * The ratio of **passed_count / evaluated_count**.
+     * Output only. The ratio of **passed_count / evaluated_count**.
      *
      * This field is only valid for row-level type rules.
      * </pre>
      *
-     * <code>double pass_ratio = 6;</code>
+     * <code>double pass_ratio = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The passRatio to set.
      * @return This builder for chaining.
@@ -1283,16 +1359,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The ratio of **passed_count / evaluated_count**.
+     * Output only. The ratio of **passed_count / evaluated_count**.
      *
      * This field is only valid for row-level type rules.
      * </pre>
      *
-     * <code>double pass_ratio = 6;</code>
+     * <code>double pass_ratio = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1304,16 +1381,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object failingRowsQuery_ = "";
+
     /**
      *
      *
      * <pre>
-     * The query to find rows that did not pass this rule.
+     * Output only. The query to find rows that did not pass this rule.
      *
      * This field is only valid for row-level type rules.
      * </pre>
      *
-     * <code>string failing_rows_query = 10;</code>
+     * <code>string failing_rows_query = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The failingRowsQuery.
      */
@@ -1328,16 +1406,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The query to find rows that did not pass this rule.
+     * Output only. The query to find rows that did not pass this rule.
      *
      * This field is only valid for row-level type rules.
      * </pre>
      *
-     * <code>string failing_rows_query = 10;</code>
+     * <code>string failing_rows_query = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for failingRowsQuery.
      */
@@ -1352,16 +1431,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The query to find rows that did not pass this rule.
+     * Output only. The query to find rows that did not pass this rule.
      *
      * This field is only valid for row-level type rules.
      * </pre>
      *
-     * <code>string failing_rows_query = 10;</code>
+     * <code>string failing_rows_query = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The failingRowsQuery to set.
      * @return This builder for chaining.
@@ -1375,16 +1455,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The query to find rows that did not pass this rule.
+     * Output only. The query to find rows that did not pass this rule.
      *
      * This field is only valid for row-level type rules.
      * </pre>
      *
-     * <code>string failing_rows_query = 10;</code>
+     * <code>string failing_rows_query = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1394,16 +1475,17 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The query to find rows that did not pass this rule.
+     * Output only. The query to find rows that did not pass this rule.
      *
      * This field is only valid for row-level type rules.
      * </pre>
      *
-     * <code>string failing_rows_query = 10;</code>
+     * <code>string failing_rows_query = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for failingRowsQuery to set.
      * @return This builder for chaining.
@@ -1420,6 +1502,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     }
 
     private long assertionRowCount_;
+
     /**
      *
      *
@@ -1438,6 +1521,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
     public long getAssertionRowCount() {
       return assertionRowCount_;
     }
+
     /**
      *
      *
@@ -1460,6 +1544,7 @@ public final class DataQualityRuleResult extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

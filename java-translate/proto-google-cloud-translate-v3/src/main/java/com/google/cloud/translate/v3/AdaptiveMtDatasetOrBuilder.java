@@ -39,6 +39,7 @@ public interface AdaptiveMtDatasetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface AdaptiveMtDatasetOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface AdaptiveMtDatasetOrBuilder
    * @return The sourceLanguageCode.
    */
   java.lang.String getSourceLanguageCode();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface AdaptiveMtDatasetOrBuilder
    * @return The targetLanguageCode.
    */
   java.lang.String getTargetLanguageCode();
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public interface AdaptiveMtDatasetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public interface AdaptiveMtDatasetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public interface AdaptiveMtDatasetOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public interface AdaptiveMtDatasetOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

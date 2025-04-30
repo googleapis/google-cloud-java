@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.shopping.merchant.products.v1beta.stub.HttpJsonProductInputsServiceStub;
 import com.google.shopping.type.CustomAttribute;
 import java.io.IOException;
@@ -129,6 +130,79 @@ public class ProductInputsServiceClientHttpJsonTest {
               .setDataSource("dataSource1272470629")
               .build();
       client.insertProductInput(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateProductInputTest() throws Exception {
+    ProductInput expectedResponse =
+        ProductInput.newBuilder()
+            .setName(ProductInputName.of("[ACCOUNT]", "[PRODUCTINPUT]").toString())
+            .setProduct("product-309474065")
+            .setOfferId("offerId-1548813161")
+            .setContentLanguage("contentLanguage810066673")
+            .setFeedLabel("feedLabel-1661895690")
+            .setVersionNumber(135927952)
+            .setAttributes(Attributes.newBuilder().build())
+            .addAllCustomAttributes(new ArrayList<CustomAttribute>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProductInput productInput =
+        ProductInput.newBuilder()
+            .setName(ProductInputName.of("[ACCOUNT]", "[PRODUCTINPUT]").toString())
+            .setProduct("product-309474065")
+            .setOfferId("offerId-1548813161")
+            .setContentLanguage("contentLanguage810066673")
+            .setFeedLabel("feedLabel-1661895690")
+            .setVersionNumber(135927952)
+            .setAttributes(Attributes.newBuilder().build())
+            .addAllCustomAttributes(new ArrayList<CustomAttribute>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ProductInput actualResponse = client.updateProductInput(productInput, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateProductInputExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProductInput productInput =
+          ProductInput.newBuilder()
+              .setName(ProductInputName.of("[ACCOUNT]", "[PRODUCTINPUT]").toString())
+              .setProduct("product-309474065")
+              .setOfferId("offerId-1548813161")
+              .setContentLanguage("contentLanguage810066673")
+              .setFeedLabel("feedLabel-1661895690")
+              .setVersionNumber(135927952)
+              .setAttributes(Attributes.newBuilder().build())
+              .addAllCustomAttributes(new ArrayList<CustomAttribute>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateProductInput(productInput, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -305,6 +305,19 @@ public final class SessionTemplateControllerGrpc {
     return SessionTemplateControllerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SessionTemplateControllerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SessionTemplateControllerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SessionTemplateControllerBlockingV2Stub>() {
+          @java.lang.Override
+          public SessionTemplateControllerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SessionTemplateControllerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SessionTemplateControllerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -540,6 +553,93 @@ public final class SessionTemplateControllerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SessionTemplateController.
+   *
+   * <pre>
+   * The SessionTemplateController provides methods to manage session templates.
+   * </pre>
+   */
+  public static final class SessionTemplateControllerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SessionTemplateControllerBlockingV2Stub> {
+    private SessionTemplateControllerBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SessionTemplateControllerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SessionTemplateControllerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a session template synchronously.
+     * </pre>
+     */
+    public com.google.cloud.dataproc.v1.SessionTemplate createSessionTemplate(
+        com.google.cloud.dataproc.v1.CreateSessionTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSessionTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the session template synchronously.
+     * </pre>
+     */
+    public com.google.cloud.dataproc.v1.SessionTemplate updateSessionTemplate(
+        com.google.cloud.dataproc.v1.UpdateSessionTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSessionTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the resource representation for a session template.
+     * </pre>
+     */
+    public com.google.cloud.dataproc.v1.SessionTemplate getSessionTemplate(
+        com.google.cloud.dataproc.v1.GetSessionTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSessionTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists session templates.
+     * </pre>
+     */
+    public com.google.cloud.dataproc.v1.ListSessionTemplatesResponse listSessionTemplates(
+        com.google.cloud.dataproc.v1.ListSessionTemplatesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSessionTemplatesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a session template.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSessionTemplate(
+        com.google.cloud.dataproc.v1.DeleteSessionTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSessionTemplateMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * SessionTemplateController.
    *
    * <pre>
    * The SessionTemplateController provides methods to manage session templates.

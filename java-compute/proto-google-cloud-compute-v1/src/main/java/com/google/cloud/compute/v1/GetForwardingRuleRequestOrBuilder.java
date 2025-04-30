@@ -36,6 +36,7 @@ public interface GetForwardingRuleRequestOrBuilder
    * @return The forwardingRule.
    */
   java.lang.String getForwardingRule();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetForwardingRuleRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GetForwardingRuleRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *

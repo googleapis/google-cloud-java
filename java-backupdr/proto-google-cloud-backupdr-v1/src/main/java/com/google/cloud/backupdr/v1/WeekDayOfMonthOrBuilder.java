@@ -38,6 +38,7 @@ public interface WeekDayOfMonthOrBuilder
    * @return The enum numeric value on the wire for weekOfMonth.
    */
   int getWeekOfMonthValue();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface WeekDayOfMonthOrBuilder
    * @return The enum numeric value on the wire for dayOfWeek.
    */
   int getDayOfWeekValue();
+
   /**
    *
    *

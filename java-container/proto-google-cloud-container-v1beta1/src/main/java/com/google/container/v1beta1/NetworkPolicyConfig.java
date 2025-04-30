@@ -35,6 +35,7 @@ public final class NetworkPolicyConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.NetworkPolicyConfig)
     NetworkPolicyConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkPolicyConfig.newBuilder() to construct.
   private NetworkPolicyConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class NetworkPolicyConfig extends com.google.protobuf.GeneratedMess
 
   public static final int DISABLED_FIELD_NUMBER = 1;
   private boolean disabled_ = false;
+
   /**
    *
    *
@@ -240,6 +242,7 @@ public final class NetworkPolicyConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -424,6 +427,7 @@ public final class NetworkPolicyConfig extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private boolean disabled_;
+
     /**
      *
      *
@@ -439,6 +443,7 @@ public final class NetworkPolicyConfig extends com.google.protobuf.GeneratedMess
     public boolean getDisabled() {
       return disabled_;
     }
+
     /**
      *
      *
@@ -458,6 +463,7 @@ public final class NetworkPolicyConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

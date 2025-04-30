@@ -34,6 +34,7 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.AttributePropagationSettings)
     AttributePropagationSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AttributePropagationSettings.newBuilder() to construct.
   private AttributePropagationSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -132,6 +133,7 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
      * <code>OUTPUT_CREDENTIALS_UNSPECIFIED = 0;</code>
      */
     public static final int OUTPUT_CREDENTIALS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -142,6 +144,7 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
      * <code>HEADER = 1;</code>
      */
     public static final int HEADER_VALUE = 1;
+
     /**
      *
      *
@@ -153,6 +156,7 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
      * <code>JWT = 2;</code>
      */
     public static final int JWT_VALUE = 2;
+
     /**
      *
      *
@@ -260,13 +264,14 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object expression_ = "";
+
   /**
    *
    *
    * <pre>
-   * Raw string CEL expression. Must return a list of attributes. A maximum of
-   * 45 attributes can be selected. Expressions can select different attribute
-   * types from `attributes`: `attributes.saml_attributes`,
+   * Optional. Raw string CEL expression. Must return a list of attributes. A
+   * maximum of 45 attributes can be selected. Expressions can select different
+   * attribute types from `attributes`: `attributes.saml_attributes`,
    * `attributes.iap_attributes`. The following functions are supported:
    *
    *  - filter `&lt;list&gt;.filter(&lt;iter_var&gt;, &lt;predicate&gt;)`: Returns a subset of
@@ -294,7 +299,7 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
    * ['test']).append(attributes.iap_attributes.selectByName('exact').emitAs('custom').strict())`
    * </pre>
    *
-   * <code>optional string expression = 1;</code>
+   * <code>optional string expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the expression field is set.
    */
@@ -302,13 +307,14 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
   public boolean hasExpression() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Raw string CEL expression. Must return a list of attributes. A maximum of
-   * 45 attributes can be selected. Expressions can select different attribute
-   * types from `attributes`: `attributes.saml_attributes`,
+   * Optional. Raw string CEL expression. Must return a list of attributes. A
+   * maximum of 45 attributes can be selected. Expressions can select different
+   * attribute types from `attributes`: `attributes.saml_attributes`,
    * `attributes.iap_attributes`. The following functions are supported:
    *
    *  - filter `&lt;list&gt;.filter(&lt;iter_var&gt;, &lt;predicate&gt;)`: Returns a subset of
@@ -336,7 +342,7 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
    * ['test']).append(attributes.iap_attributes.selectByName('exact').emitAs('custom').strict())`
    * </pre>
    *
-   * <code>optional string expression = 1;</code>
+   * <code>optional string expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The expression.
    */
@@ -352,13 +358,14 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Raw string CEL expression. Must return a list of attributes. A maximum of
-   * 45 attributes can be selected. Expressions can select different attribute
-   * types from `attributes`: `attributes.saml_attributes`,
+   * Optional. Raw string CEL expression. Must return a list of attributes. A
+   * maximum of 45 attributes can be selected. Expressions can select different
+   * attribute types from `attributes`: `attributes.saml_attributes`,
    * `attributes.iap_attributes`. The following functions are supported:
    *
    *  - filter `&lt;list&gt;.filter(&lt;iter_var&gt;, &lt;predicate&gt;)`: Returns a subset of
@@ -386,7 +393,7 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
    * ['test']).append(attributes.iap_attributes.selectByName('exact').emitAs('custom').strict())`
    * </pre>
    *
-   * <code>optional string expression = 1;</code>
+   * <code>optional string expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for expression.
    */
@@ -425,17 +432,18 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
                   : result;
             }
           };
+
   /**
    *
    *
    * <pre>
-   * Which output credentials attributes selected by the CEL expression should
-   * be propagated in. All attributes will be fully duplicated in each selected
-   * output credential.
+   * Optional. Which output credentials attributes selected by the CEL
+   * expression should be propagated in. All attributes will be fully duplicated
+   * in each selected output credential.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the outputCredentials.
@@ -447,17 +455,18 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
         java.lang.Integer, com.google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials>(
         outputCredentials_, outputCredentials_converter_);
   }
+
   /**
    *
    *
    * <pre>
-   * Which output credentials attributes selected by the CEL expression should
-   * be propagated in. All attributes will be fully duplicated in each selected
-   * output credential.
+   * Optional. Which output credentials attributes selected by the CEL
+   * expression should be propagated in. All attributes will be fully duplicated
+   * in each selected output credential.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The count of outputCredentials.
@@ -466,17 +475,18 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
   public int getOutputCredentialsCount() {
     return outputCredentials_.size();
   }
+
   /**
    *
    *
    * <pre>
-   * Which output credentials attributes selected by the CEL expression should
-   * be propagated in. All attributes will be fully duplicated in each selected
-   * output credential.
+   * Optional. Which output credentials attributes selected by the CEL
+   * expression should be propagated in. All attributes will be fully duplicated
+   * in each selected output credential.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the element to return.
@@ -487,17 +497,18 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       getOutputCredentials(int index) {
     return outputCredentials_converter_.convert(outputCredentials_.get(index));
   }
+
   /**
    *
    *
    * <pre>
-   * Which output credentials attributes selected by the CEL expression should
-   * be propagated in. All attributes will be fully duplicated in each selected
-   * output credential.
+   * Optional. Which output credentials attributes selected by the CEL
+   * expression should be propagated in. All attributes will be fully duplicated
+   * in each selected output credential.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for outputCredentials.
@@ -506,17 +517,18 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
   public java.util.List<java.lang.Integer> getOutputCredentialsValueList() {
     return outputCredentials_;
   }
+
   /**
    *
    *
    * <pre>
-   * Which output credentials attributes selected by the CEL expression should
-   * be propagated in. All attributes will be fully duplicated in each selected
-   * output credential.
+   * Optional. Which output credentials attributes selected by the CEL
+   * expression should be propagated in. All attributes will be fully duplicated
+   * in each selected output credential.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+   * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the value to return.
@@ -531,16 +543,17 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
 
   public static final int ENABLE_FIELD_NUMBER = 3;
   private boolean enable_ = false;
+
   /**
    *
    *
    * <pre>
-   * Whether the provided attribute propagation settings should be evaluated on
-   * user requests. If set to true, attributes returned from the expression will
-   * be propagated in the set output credentials.
+   * Optional. Whether the provided attribute propagation settings should be
+   * evaluated on user requests. If set to true, attributes returned from the
+   * expression will be propagated in the set output credentials.
    * </pre>
    *
-   * <code>optional bool enable = 3;</code>
+   * <code>optional bool enable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the enable field is set.
    */
@@ -548,16 +561,17 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
   public boolean hasEnable() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Whether the provided attribute propagation settings should be evaluated on
-   * user requests. If set to true, attributes returned from the expression will
-   * be propagated in the set output credentials.
+   * Optional. Whether the provided attribute propagation settings should be
+   * evaluated on user requests. If set to true, attributes returned from the
+   * expression will be propagated in the set output credentials.
    * </pre>
    *
-   * <code>optional bool enable = 3;</code>
+   * <code>optional bool enable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The enable.
    */
@@ -770,6 +784,7 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1013,13 +1028,14 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object expression_ = "";
+
     /**
      *
      *
      * <pre>
-     * Raw string CEL expression. Must return a list of attributes. A maximum of
-     * 45 attributes can be selected. Expressions can select different attribute
-     * types from `attributes`: `attributes.saml_attributes`,
+     * Optional. Raw string CEL expression. Must return a list of attributes. A
+     * maximum of 45 attributes can be selected. Expressions can select different
+     * attribute types from `attributes`: `attributes.saml_attributes`,
      * `attributes.iap_attributes`. The following functions are supported:
      *
      *  - filter `&lt;list&gt;.filter(&lt;iter_var&gt;, &lt;predicate&gt;)`: Returns a subset of
@@ -1047,20 +1063,21 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
      * ['test']).append(attributes.iap_attributes.selectByName('exact').emitAs('custom').strict())`
      * </pre>
      *
-     * <code>optional string expression = 1;</code>
+     * <code>optional string expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the expression field is set.
      */
     public boolean hasExpression() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Raw string CEL expression. Must return a list of attributes. A maximum of
-     * 45 attributes can be selected. Expressions can select different attribute
-     * types from `attributes`: `attributes.saml_attributes`,
+     * Optional. Raw string CEL expression. Must return a list of attributes. A
+     * maximum of 45 attributes can be selected. Expressions can select different
+     * attribute types from `attributes`: `attributes.saml_attributes`,
      * `attributes.iap_attributes`. The following functions are supported:
      *
      *  - filter `&lt;list&gt;.filter(&lt;iter_var&gt;, &lt;predicate&gt;)`: Returns a subset of
@@ -1088,7 +1105,7 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
      * ['test']).append(attributes.iap_attributes.selectByName('exact').emitAs('custom').strict())`
      * </pre>
      *
-     * <code>optional string expression = 1;</code>
+     * <code>optional string expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The expression.
      */
@@ -1103,13 +1120,14 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Raw string CEL expression. Must return a list of attributes. A maximum of
-     * 45 attributes can be selected. Expressions can select different attribute
-     * types from `attributes`: `attributes.saml_attributes`,
+     * Optional. Raw string CEL expression. Must return a list of attributes. A
+     * maximum of 45 attributes can be selected. Expressions can select different
+     * attribute types from `attributes`: `attributes.saml_attributes`,
      * `attributes.iap_attributes`. The following functions are supported:
      *
      *  - filter `&lt;list&gt;.filter(&lt;iter_var&gt;, &lt;predicate&gt;)`: Returns a subset of
@@ -1137,7 +1155,7 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
      * ['test']).append(attributes.iap_attributes.selectByName('exact').emitAs('custom').strict())`
      * </pre>
      *
-     * <code>optional string expression = 1;</code>
+     * <code>optional string expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for expression.
      */
@@ -1152,13 +1170,14 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Raw string CEL expression. Must return a list of attributes. A maximum of
-     * 45 attributes can be selected. Expressions can select different attribute
-     * types from `attributes`: `attributes.saml_attributes`,
+     * Optional. Raw string CEL expression. Must return a list of attributes. A
+     * maximum of 45 attributes can be selected. Expressions can select different
+     * attribute types from `attributes`: `attributes.saml_attributes`,
      * `attributes.iap_attributes`. The following functions are supported:
      *
      *  - filter `&lt;list&gt;.filter(&lt;iter_var&gt;, &lt;predicate&gt;)`: Returns a subset of
@@ -1186,7 +1205,7 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
      * ['test']).append(attributes.iap_attributes.selectByName('exact').emitAs('custom').strict())`
      * </pre>
      *
-     * <code>optional string expression = 1;</code>
+     * <code>optional string expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The expression to set.
      * @return This builder for chaining.
@@ -1200,13 +1219,14 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Raw string CEL expression. Must return a list of attributes. A maximum of
-     * 45 attributes can be selected. Expressions can select different attribute
-     * types from `attributes`: `attributes.saml_attributes`,
+     * Optional. Raw string CEL expression. Must return a list of attributes. A
+     * maximum of 45 attributes can be selected. Expressions can select different
+     * attribute types from `attributes`: `attributes.saml_attributes`,
      * `attributes.iap_attributes`. The following functions are supported:
      *
      *  - filter `&lt;list&gt;.filter(&lt;iter_var&gt;, &lt;predicate&gt;)`: Returns a subset of
@@ -1234,7 +1254,7 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
      * ['test']).append(attributes.iap_attributes.selectByName('exact').emitAs('custom').strict())`
      * </pre>
      *
-     * <code>optional string expression = 1;</code>
+     * <code>optional string expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1244,13 +1264,14 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Raw string CEL expression. Must return a list of attributes. A maximum of
-     * 45 attributes can be selected. Expressions can select different attribute
-     * types from `attributes`: `attributes.saml_attributes`,
+     * Optional. Raw string CEL expression. Must return a list of attributes. A
+     * maximum of 45 attributes can be selected. Expressions can select different
+     * attribute types from `attributes`: `attributes.saml_attributes`,
      * `attributes.iap_attributes`. The following functions are supported:
      *
      *  - filter `&lt;list&gt;.filter(&lt;iter_var&gt;, &lt;predicate&gt;)`: Returns a subset of
@@ -1278,7 +1299,7 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
      * ['test']).append(attributes.iap_attributes.selectByName('exact').emitAs('custom').strict())`
      * </pre>
      *
-     * <code>optional string expression = 1;</code>
+     * <code>optional string expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for expression to set.
      * @return This builder for chaining.
@@ -1303,17 +1324,18 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
         bitField0_ |= 0x00000002;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Which output credentials attributes selected by the CEL expression should
-     * be propagated in. All attributes will be fully duplicated in each selected
-     * output credential.
+     * Optional. Which output credentials attributes selected by the CEL
+     * expression should be propagated in. All attributes will be fully duplicated
+     * in each selected output credential.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return A list containing the outputCredentials.
@@ -1325,17 +1347,18 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
           com.google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials>(
           outputCredentials_, outputCredentials_converter_);
     }
+
     /**
      *
      *
      * <pre>
-     * Which output credentials attributes selected by the CEL expression should
-     * be propagated in. All attributes will be fully duplicated in each selected
-     * output credential.
+     * Optional. Which output credentials attributes selected by the CEL
+     * expression should be propagated in. All attributes will be fully duplicated
+     * in each selected output credential.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The count of outputCredentials.
@@ -1343,17 +1366,18 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     public int getOutputCredentialsCount() {
       return outputCredentials_.size();
     }
+
     /**
      *
      *
      * <pre>
-     * Which output credentials attributes selected by the CEL expression should
-     * be propagated in. All attributes will be fully duplicated in each selected
-     * output credential.
+     * Optional. Which output credentials attributes selected by the CEL
+     * expression should be propagated in. All attributes will be fully duplicated
+     * in each selected output credential.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index of the element to return.
@@ -1363,17 +1387,18 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
         getOutputCredentials(int index) {
       return outputCredentials_converter_.convert(outputCredentials_.get(index));
     }
+
     /**
      *
      *
      * <pre>
-     * Which output credentials attributes selected by the CEL expression should
-     * be propagated in. All attributes will be fully duplicated in each selected
-     * output credential.
+     * Optional. Which output credentials attributes selected by the CEL
+     * expression should be propagated in. All attributes will be fully duplicated
+     * in each selected output credential.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index to set the value at.
@@ -1390,17 +1415,18 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Which output credentials attributes selected by the CEL expression should
-     * be propagated in. All attributes will be fully duplicated in each selected
-     * output credential.
+     * Optional. Which output credentials attributes selected by the CEL
+     * expression should be propagated in. All attributes will be fully duplicated
+     * in each selected output credential.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The outputCredentials to add.
@@ -1416,17 +1442,18 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Which output credentials attributes selected by the CEL expression should
-     * be propagated in. All attributes will be fully duplicated in each selected
-     * output credential.
+     * Optional. Which output credentials attributes selected by the CEL
+     * expression should be propagated in. All attributes will be fully duplicated
+     * in each selected output credential.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param values The outputCredentials to add.
@@ -1443,17 +1470,18 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Which output credentials attributes selected by the CEL expression should
-     * be propagated in. All attributes will be fully duplicated in each selected
-     * output credential.
+     * Optional. Which output credentials attributes selected by the CEL
+     * expression should be propagated in. All attributes will be fully duplicated
+     * in each selected output credential.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -1464,17 +1492,18 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Which output credentials attributes selected by the CEL expression should
-     * be propagated in. All attributes will be fully duplicated in each selected
-     * output credential.
+     * Optional. Which output credentials attributes selected by the CEL
+     * expression should be propagated in. All attributes will be fully duplicated
+     * in each selected output credential.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return A list containing the enum numeric values on the wire for outputCredentials.
@@ -1482,17 +1511,18 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     public java.util.List<java.lang.Integer> getOutputCredentialsValueList() {
       return java.util.Collections.unmodifiableList(outputCredentials_);
     }
+
     /**
      *
      *
      * <pre>
-     * Which output credentials attributes selected by the CEL expression should
-     * be propagated in. All attributes will be fully duplicated in each selected
-     * output credential.
+     * Optional. Which output credentials attributes selected by the CEL
+     * expression should be propagated in. All attributes will be fully duplicated
+     * in each selected output credential.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index of the value to return.
@@ -1501,17 +1531,18 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     public int getOutputCredentialsValue(int index) {
       return outputCredentials_.get(index);
     }
+
     /**
      *
      *
      * <pre>
-     * Which output credentials attributes selected by the CEL expression should
-     * be propagated in. All attributes will be fully duplicated in each selected
-     * output credential.
+     * Optional. Which output credentials attributes selected by the CEL
+     * expression should be propagated in. All attributes will be fully duplicated
+     * in each selected output credential.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index to set the value at.
@@ -1524,17 +1555,18 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Which output credentials attributes selected by the CEL expression should
-     * be propagated in. All attributes will be fully duplicated in each selected
-     * output credential.
+     * Optional. Which output credentials attributes selected by the CEL
+     * expression should be propagated in. All attributes will be fully duplicated
+     * in each selected output credential.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for outputCredentials to add.
@@ -1546,17 +1578,18 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Which output credentials attributes selected by the CEL expression should
-     * be propagated in. All attributes will be fully duplicated in each selected
-     * output credential.
+     * Optional. Which output credentials attributes selected by the CEL
+     * expression should be propagated in. All attributes will be fully duplicated
+     * in each selected output credential.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2;
+     * repeated .google.cloud.iap.v1.AttributePropagationSettings.OutputCredentials output_credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param values The enum numeric values on the wire for outputCredentials to add.
@@ -1572,16 +1605,17 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     }
 
     private boolean enable_;
+
     /**
      *
      *
      * <pre>
-     * Whether the provided attribute propagation settings should be evaluated on
-     * user requests. If set to true, attributes returned from the expression will
-     * be propagated in the set output credentials.
+     * Optional. Whether the provided attribute propagation settings should be
+     * evaluated on user requests. If set to true, attributes returned from the
+     * expression will be propagated in the set output credentials.
      * </pre>
      *
-     * <code>optional bool enable = 3;</code>
+     * <code>optional bool enable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the enable field is set.
      */
@@ -1589,16 +1623,17 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     public boolean hasEnable() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Whether the provided attribute propagation settings should be evaluated on
-     * user requests. If set to true, attributes returned from the expression will
-     * be propagated in the set output credentials.
+     * Optional. Whether the provided attribute propagation settings should be
+     * evaluated on user requests. If set to true, attributes returned from the
+     * expression will be propagated in the set output credentials.
      * </pre>
      *
-     * <code>optional bool enable = 3;</code>
+     * <code>optional bool enable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The enable.
      */
@@ -1606,16 +1641,17 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
     public boolean getEnable() {
       return enable_;
     }
+
     /**
      *
      *
      * <pre>
-     * Whether the provided attribute propagation settings should be evaluated on
-     * user requests. If set to true, attributes returned from the expression will
-     * be propagated in the set output credentials.
+     * Optional. Whether the provided attribute propagation settings should be
+     * evaluated on user requests. If set to true, attributes returned from the
+     * expression will be propagated in the set output credentials.
      * </pre>
      *
-     * <code>optional bool enable = 3;</code>
+     * <code>optional bool enable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The enable to set.
      * @return This builder for chaining.
@@ -1627,16 +1663,17 @@ public final class AttributePropagationSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Whether the provided attribute propagation settings should be evaluated on
-     * user requests. If set to true, attributes returned from the expression will
-     * be propagated in the set output credentials.
+     * Optional. Whether the provided attribute propagation settings should be
+     * evaluated on user requests. If set to true, attributes returned from the
+     * expression will be propagated in the set output credentials.
      * </pre>
      *
-     * <code>optional bool enable = 3;</code>
+     * <code>optional bool enable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

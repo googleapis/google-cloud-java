@@ -36,6 +36,7 @@ public interface ConfigSyncStateOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ConfigSyncStateOrBuilder
    * @return The version.
    */
   com.google.cloud.gkehub.configmanagement.v1.ConfigSyncVersion getVersion();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ConfigSyncStateOrBuilder
    * @return Whether the deploymentState field is set.
    */
   boolean hasDeploymentState();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface ConfigSyncStateOrBuilder
    * @return The deploymentState.
    */
   com.google.cloud.gkehub.configmanagement.v1.ConfigSyncDeploymentState getDeploymentState();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface ConfigSyncStateOrBuilder
    * @return Whether the syncState field is set.
    */
   boolean hasSyncState();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface ConfigSyncStateOrBuilder
    * @return The syncState.
    */
   com.google.cloud.gkehub.configmanagement.v1.SyncState getSyncState();
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public interface ConfigSyncStateOrBuilder
    * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
    */
   java.util.List<com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError> getErrorsList();
+
   /**
    *
    *
@@ -156,6 +163,7 @@ public interface ConfigSyncStateOrBuilder
    * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
    */
   com.google.cloud.gkehub.configmanagement.v1.ConfigSyncError getErrors(int index);
+
   /**
    *
    *
@@ -166,6 +174,7 @@ public interface ConfigSyncStateOrBuilder
    * <code>repeated .google.cloud.gkehub.configmanagement.v1.ConfigSyncError errors = 4;</code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -177,6 +186,7 @@ public interface ConfigSyncStateOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkehub.configmanagement.v1.ConfigSyncErrorOrBuilder>
       getErrorsOrBuilderList();
+
   /**
    *
    *
@@ -202,6 +212,7 @@ public interface ConfigSyncStateOrBuilder
    * @return The enum numeric value on the wire for rootsyncCrd.
    */
   int getRootsyncCrdValue();
+
   /**
    *
    *
@@ -229,6 +240,7 @@ public interface ConfigSyncStateOrBuilder
    * @return The enum numeric value on the wire for reposyncCrd.
    */
   int getReposyncCrdValue();
+
   /**
    *
    *
@@ -256,6 +268,7 @@ public interface ConfigSyncStateOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

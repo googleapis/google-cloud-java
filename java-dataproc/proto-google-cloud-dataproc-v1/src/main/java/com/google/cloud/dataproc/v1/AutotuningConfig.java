@@ -33,6 +33,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.AutotuningConfig)
     AutotuningConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutotuningConfig.newBuilder() to construct.
   private AutotuningConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,6 +128,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
      * <code>SCENARIO_UNSPECIFIED = 0;</code>
      */
     public static final int SCENARIO_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -137,6 +139,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
      * <code>SCALING = 2;</code>
      */
     public static final int SCALING_VALUE = 2;
+
     /**
      *
      *
@@ -147,6 +150,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
      * <code>BROADCAST_HASH_JOIN = 3;</code>
      */
     public static final int BROADCAST_HASH_JOIN_VALUE = 3;
+
     /**
      *
      *
@@ -262,6 +266,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
                   : result;
             }
           };
+
   /**
    *
    *
@@ -281,6 +286,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
         java.lang.Integer, com.google.cloud.dataproc.v1.AutotuningConfig.Scenario>(
         scenarios_, scenarios_converter_);
   }
+
   /**
    *
    *
@@ -298,6 +304,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
   public int getScenariosCount() {
     return scenarios_.size();
   }
+
   /**
    *
    *
@@ -316,6 +323,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.dataproc.v1.AutotuningConfig.Scenario getScenarios(int index) {
     return scenarios_converter_.convert(scenarios_.get(index));
   }
+
   /**
    *
    *
@@ -333,6 +341,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
   public java.util.List<java.lang.Integer> getScenariosValueList() {
     return scenarios_;
   }
+
   /**
    *
    *
@@ -529,6 +538,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -744,6 +754,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000001;
       }
     }
+
     /**
      *
      *
@@ -763,6 +774,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
           java.lang.Integer, com.google.cloud.dataproc.v1.AutotuningConfig.Scenario>(
           scenarios_, scenarios_converter_);
     }
+
     /**
      *
      *
@@ -779,6 +791,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
     public int getScenariosCount() {
       return scenarios_.size();
     }
+
     /**
      *
      *
@@ -796,6 +809,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dataproc.v1.AutotuningConfig.Scenario getScenarios(int index) {
       return scenarios_converter_.convert(scenarios_.get(index));
     }
+
     /**
      *
      *
@@ -821,6 +835,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +859,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +884,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +904,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +921,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
     public java.util.List<java.lang.Integer> getScenariosValueList() {
       return java.util.Collections.unmodifiableList(scenarios_);
     }
+
     /**
      *
      *
@@ -920,6 +939,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
     public int getScenariosValue(int index) {
       return scenarios_.get(index);
     }
+
     /**
      *
      *
@@ -941,6 +961,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +982,7 @@ public final class AutotuningConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

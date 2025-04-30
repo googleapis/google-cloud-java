@@ -36,6 +36,7 @@ public interface SimpleExportPolicyRuleOrBuilder
    * @return Whether the allowedClients field is set.
    */
   boolean hasAllowedClients();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SimpleExportPolicyRuleOrBuilder
    * @return The allowedClients.
    */
   java.lang.String getAllowedClients();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface SimpleExportPolicyRuleOrBuilder
    * @return Whether the hasRootAccess field is set.
    */
   boolean hasHasRootAccess();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface SimpleExportPolicyRuleOrBuilder
    * @return The hasRootAccess.
    */
   java.lang.String getHasRootAccess();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface SimpleExportPolicyRuleOrBuilder
    * @return Whether the accessType field is set.
    */
   boolean hasAccessType();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface SimpleExportPolicyRuleOrBuilder
    * @return The enum numeric value on the wire for accessType.
    */
   int getAccessTypeValue();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface SimpleExportPolicyRuleOrBuilder
    * @return Whether the nfsv3 field is set.
    */
   boolean hasNfsv3();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface SimpleExportPolicyRuleOrBuilder
    * @return Whether the nfsv4 field is set.
    */
   boolean hasNfsv4();
+
   /**
    *
    *
@@ -199,6 +207,7 @@ public interface SimpleExportPolicyRuleOrBuilder
    * @return Whether the kerberos5ReadOnly field is set.
    */
   boolean hasKerberos5ReadOnly();
+
   /**
    *
    *
@@ -229,6 +238,7 @@ public interface SimpleExportPolicyRuleOrBuilder
    * @return Whether the kerberos5ReadWrite field is set.
    */
   boolean hasKerberos5ReadWrite();
+
   /**
    *
    *
@@ -259,6 +269,7 @@ public interface SimpleExportPolicyRuleOrBuilder
    * @return Whether the kerberos5iReadOnly field is set.
    */
   boolean hasKerberos5IReadOnly();
+
   /**
    *
    *
@@ -289,6 +300,7 @@ public interface SimpleExportPolicyRuleOrBuilder
    * @return Whether the kerberos5iReadWrite field is set.
    */
   boolean hasKerberos5IReadWrite();
+
   /**
    *
    *
@@ -319,6 +331,7 @@ public interface SimpleExportPolicyRuleOrBuilder
    * @return Whether the kerberos5pReadOnly field is set.
    */
   boolean hasKerberos5PReadOnly();
+
   /**
    *
    *
@@ -349,6 +362,7 @@ public interface SimpleExportPolicyRuleOrBuilder
    * @return Whether the kerberos5pReadWrite field is set.
    */
   boolean hasKerberos5PReadWrite();
+
   /**
    *
    *

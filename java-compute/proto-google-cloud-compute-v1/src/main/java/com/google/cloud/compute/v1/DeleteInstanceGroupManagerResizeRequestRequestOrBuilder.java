@@ -37,6 +37,7 @@ public interface DeleteInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface DeleteInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface DeleteInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface DeleteInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface DeleteInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return The resizeRequest.
    */
   java.lang.String getResizeRequest();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface DeleteInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

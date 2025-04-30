@@ -33,6 +33,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.UpdateMigrationJobRequest)
     UpdateMigrationJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateMigrationJobRequest.newBuilder() to construct.
   private UpdateMigrationJobRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
 
   public static final int MIGRATION_JOB_FIELD_NUMBER = 2;
   private com.google.cloud.clouddms.v1.MigrationJob migrationJob_;
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
   public boolean hasMigrationJob() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
         ? com.google.cloud.clouddms.v1.MigrationJob.getDefaultInstance()
         : migrationJob_;
   }
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -205,6 +213,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -423,6 +432,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -661,6 +671,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -677,6 +688,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -699,6 +711,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -723,6 +736,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +758,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +788,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +810,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -810,6 +827,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -830,6 +848,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -864,6 +883,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
             com.google.cloud.clouddms.v1.MigrationJob.Builder,
             com.google.cloud.clouddms.v1.MigrationJobOrBuilder>
         migrationJobBuilder_;
+
     /**
      *
      *
@@ -880,6 +900,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
     public boolean hasMigrationJob() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -902,6 +923,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
         return migrationJobBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -926,6 +948,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -948,6 +971,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -977,6 +1001,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1023,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1040,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
       onChanged();
       return getMigrationJobFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1034,6 +1061,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
             : migrationJob_;
       }
     }
+
     /**
      *
      *
@@ -1063,6 +1091,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1091,6 +1120,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1119,6 +1149,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1146,6 +1177,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1169,6 +1201,7 @@ public final class UpdateMigrationJobRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

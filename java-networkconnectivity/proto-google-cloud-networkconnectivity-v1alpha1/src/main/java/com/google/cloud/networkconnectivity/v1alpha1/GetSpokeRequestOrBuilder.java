@@ -38,6 +38,7 @@ public interface GetSpokeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

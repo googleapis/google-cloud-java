@@ -38,6 +38,7 @@ public interface InitializeServiceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface InitializeServiceRequestOrBuilder
    * @return The resourceType.
    */
   java.lang.String getResourceType();
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public interface InitializeServiceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest)
     DeleteAzureNodePoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteAzureNodePoolRequest.newBuilder() to construct.
   private DeleteAzureNodePoolRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
   private boolean allowMissing_ = false;
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -209,6 +215,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -241,6 +248,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
 
   public static final int IGNORE_ERRORS_FIELD_NUMBER = 5;
   private boolean ignoreErrors_ = false;
+
   /**
    *
    *
@@ -456,6 +464,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -697,6 +706,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -728,6 +738,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -759,6 +770,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -789,6 +801,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +828,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +862,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -864,6 +879,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -884,6 +900,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +921,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
     }
 
     private boolean allowMissing_;
+
     /**
      *
      *
@@ -925,6 +943,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
     public boolean getAllowMissing() {
       return allowMissing_;
     }
+
     /**
      *
      *
@@ -950,6 +969,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +995,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -1003,6 +1024,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1031,6 +1053,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1058,6 +1081,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1081,6 +1105,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1111,6 +1136,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
     }
 
     private boolean ignoreErrors_;
+
     /**
      *
      *
@@ -1129,6 +1155,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
     public boolean getIgnoreErrors() {
       return ignoreErrors_;
     }
+
     /**
      *
      *
@@ -1151,6 +1178,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

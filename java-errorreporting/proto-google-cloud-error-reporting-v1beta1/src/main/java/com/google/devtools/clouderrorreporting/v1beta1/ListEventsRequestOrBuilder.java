@@ -49,6 +49,7 @@ public interface ListEventsRequestOrBuilder
    * @return The projectName.
    */
   java.lang.String getProjectName();
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public interface ListEventsRequestOrBuilder
    * @return The groupId.
    */
   java.lang.String getGroupId();
+
   /**
    *
    *
@@ -126,6 +128,7 @@ public interface ListEventsRequestOrBuilder
    * @return Whether the serviceFilter field is set.
    */
   boolean hasServiceFilter();
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public interface ListEventsRequestOrBuilder
    * @return The serviceFilter.
    */
   com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter getServiceFilter();
+
   /**
    *
    *
@@ -174,6 +178,7 @@ public interface ListEventsRequestOrBuilder
    * @return Whether the timeRange field is set.
    */
   boolean hasTimeRange();
+
   /**
    *
    *
@@ -190,6 +195,7 @@ public interface ListEventsRequestOrBuilder
    * @return The timeRange.
    */
   com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange getTimeRange();
+
   /**
    *
    *
@@ -230,6 +236,7 @@ public interface ListEventsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

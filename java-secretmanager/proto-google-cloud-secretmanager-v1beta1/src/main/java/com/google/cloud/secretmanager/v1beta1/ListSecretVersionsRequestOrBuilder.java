@@ -28,9 +28,10 @@ public interface ListSecretVersionsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] associated with the
-   * [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] to list, in the format
-   * `projects/&#42;&#47;secrets/&#42;`.
+   * Required. The resource name of the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] associated with the
+   * [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] to list, in
+   * the format `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>
@@ -40,13 +41,15 @@ public interface ListSecretVersionsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
    * <pre>
-   * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] associated with the
-   * [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] to list, in the format
-   * `projects/&#42;&#47;secrets/&#42;`.
+   * Required. The resource name of the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] associated with the
+   * [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] to list, in
+   * the format `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>
@@ -85,6 +88,7 @@ public interface ListSecretVersionsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

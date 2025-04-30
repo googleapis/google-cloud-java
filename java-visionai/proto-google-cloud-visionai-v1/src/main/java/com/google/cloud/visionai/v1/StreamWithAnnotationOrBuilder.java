@@ -36,6 +36,7 @@ public interface StreamWithAnnotationOrBuilder
    * @return The stream.
    */
   java.lang.String getStream();
+
   /**
    *
    *
@@ -59,6 +60,7 @@ public interface StreamWithAnnotationOrBuilder
    * <code>repeated .google.cloud.visionai.v1.StreamAnnotation application_annotations = 2;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.StreamAnnotation> getApplicationAnnotationsList();
+
   /**
    *
    *
@@ -69,6 +71,7 @@ public interface StreamWithAnnotationOrBuilder
    * <code>repeated .google.cloud.visionai.v1.StreamAnnotation application_annotations = 2;</code>
    */
   com.google.cloud.visionai.v1.StreamAnnotation getApplicationAnnotations(int index);
+
   /**
    *
    *
@@ -79,6 +82,7 @@ public interface StreamWithAnnotationOrBuilder
    * <code>repeated .google.cloud.visionai.v1.StreamAnnotation application_annotations = 2;</code>
    */
   int getApplicationAnnotationsCount();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface StreamWithAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.StreamAnnotationOrBuilder>
       getApplicationAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface StreamWithAnnotationOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.StreamWithAnnotation.NodeAnnotation>
       getNodeAnnotationsList();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface StreamWithAnnotationOrBuilder
    * </code>
    */
   com.google.cloud.visionai.v1.StreamWithAnnotation.NodeAnnotation getNodeAnnotations(int index);
+
   /**
    *
    *
@@ -160,6 +167,7 @@ public interface StreamWithAnnotationOrBuilder
    * </code>
    */
   int getNodeAnnotationsCount();
+
   /**
    *
    *
@@ -181,6 +189,7 @@ public interface StreamWithAnnotationOrBuilder
   java.util.List<
           ? extends com.google.cloud.visionai.v1.StreamWithAnnotation.NodeAnnotationOrBuilder>
       getNodeAnnotationsOrBuilderList();
+
   /**
    *
    *

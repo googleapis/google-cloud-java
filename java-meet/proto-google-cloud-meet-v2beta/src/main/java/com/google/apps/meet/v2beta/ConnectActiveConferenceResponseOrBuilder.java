@@ -36,6 +36,7 @@ public interface ConnectActiveConferenceResponseOrBuilder
    * @return The answer.
    */
   java.lang.String getAnswer();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface ConnectActiveConferenceResponseOrBuilder
    * @return The traceId.
    */
   java.lang.String getTraceId();
+
   /**
    *
    *

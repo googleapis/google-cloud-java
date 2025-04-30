@@ -34,6 +34,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.PrivateConnection)
     PrivateConnectionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PrivateConnection.newBuilder() to construct.
   private PrivateConnection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -161,6 +162,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -171,6 +173,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
+
     /**
      *
      *
@@ -181,6 +184,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>CREATED = 2;</code>
      */
     public static final int CREATED_VALUE = 2;
+
     /**
      *
      *
@@ -191,6 +195,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>FAILED = 3;</code>
      */
     public static final int FAILED_VALUE = 3;
+
     /**
      *
      *
@@ -201,6 +206,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>DELETING = 4;</code>
      */
     public static final int DELETING_VALUE = 4;
+
     /**
      *
      *
@@ -306,6 +312,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -331,6 +338,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -359,6 +367,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -375,6 +384,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -391,6 +401,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -408,6 +419,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -424,6 +436,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -440,6 +453,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -481,6 +495,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -497,12 +512,14 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -516,6 +533,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -536,6 +554,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -561,6 +580,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -584,6 +604,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -610,6 +631,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   public static final int STATE_FIELD_NUMBER = 6;
   private int state_ = 0;
+
   /**
    *
    *
@@ -627,6 +649,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -651,6 +674,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   public static final int ERROR_FIELD_NUMBER = 7;
   private com.google.cloud.datastream.v1.Error error_;
+
   /**
    *
    *
@@ -668,6 +692,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
   public boolean hasError() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -685,6 +710,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.datastream.v1.Error getError() {
     return error_ == null ? com.google.cloud.datastream.v1.Error.getDefaultInstance() : error_;
   }
+
   /**
    *
    *
@@ -701,8 +727,79 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     return error_ == null ? com.google.cloud.datastream.v1.Error.getDefaultInstance() : error_;
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 8;
+  private boolean satisfiesPzs_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzs() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 9;
+  private boolean satisfiesPzi_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzi() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   public static final int VPC_PEERING_CONFIG_FIELD_NUMBER = 100;
   private com.google.cloud.datastream.v1.VpcPeeringConfig vpcPeeringConfig_;
+
   /**
    *
    *
@@ -716,8 +813,9 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasVpcPeeringConfig() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -735,6 +833,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.datastream.v1.VpcPeeringConfig.getDefaultInstance()
         : vpcPeeringConfig_;
   }
+
   /**
    *
    *
@@ -787,6 +886,12 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       output.writeMessage(7, getError());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeBool(8, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeBool(9, satisfiesPzi_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(100, getVpcPeeringConfig());
     }
     getUnknownFields().writeTo(output);
@@ -828,6 +933,12 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getError());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, satisfiesPzi_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(100, getVpcPeeringConfig());
     }
     size += getUnknownFields().getSerializedSize();
@@ -861,6 +972,14 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     if (hasError() != other.hasError()) return false;
     if (hasError()) {
       if (!getError().equals(other.getError())) return false;
+    }
+    if (hasSatisfiesPzs() != other.hasSatisfiesPzs()) return false;
+    if (hasSatisfiesPzs()) {
+      if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    }
+    if (hasSatisfiesPzi() != other.hasSatisfiesPzi()) return false;
+    if (hasSatisfiesPzi()) {
+      if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     }
     if (hasVpcPeeringConfig() != other.hasVpcPeeringConfig()) return false;
     if (hasVpcPeeringConfig()) {
@@ -898,6 +1017,14 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     if (hasError()) {
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
+    }
+    if (hasSatisfiesPzs()) {
+      hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    }
+    if (hasSatisfiesPzi()) {
+      hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     }
     if (hasVpcPeeringConfig()) {
       hash = (37 * hash) + VPC_PEERING_CONFIG_FIELD_NUMBER;
@@ -1003,6 +1130,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1096,6 +1224,8 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         errorBuilder_.dispose();
         errorBuilder_ = null;
       }
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       vpcPeeringConfig_ = null;
       if (vpcPeeringConfigBuilder_ != null) {
         vpcPeeringConfigBuilder_.dispose();
@@ -1164,9 +1294,17 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.vpcPeeringConfig_ =
             vpcPeeringConfigBuilder_ == null ? vpcPeeringConfig_ : vpcPeeringConfigBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1240,6 +1378,12 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasError()) {
         mergeError(other.getError());
+      }
+      if (other.hasSatisfiesPzs()) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.hasSatisfiesPzi()) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
       }
       if (other.hasVpcPeeringConfig()) {
         mergeVpcPeeringConfig(other.getVpcPeeringConfig());
@@ -1318,11 +1462,23 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 64:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+            case 72:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
             case 802:
               {
                 input.readMessage(
                     getVpcPeeringConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 802
             default:
@@ -1345,6 +1501,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1369,6 +1526,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1393,6 +1551,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1416,6 +1575,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1435,6 +1595,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1466,6 +1627,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1482,6 +1644,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1504,6 +1667,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1528,6 +1692,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1549,6 +1714,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1578,6 +1744,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1599,6 +1766,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1615,6 +1783,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1635,6 +1804,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1669,6 +1839,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1685,6 +1856,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1707,6 +1879,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1731,6 +1904,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1752,6 +1926,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1781,6 +1956,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1802,6 +1978,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1818,6 +1995,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1838,6 +2016,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -1891,6 +2070,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -1907,12 +2087,14 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -1926,6 +2108,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -1946,6 +2129,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1972,6 +2156,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1988,12 +2173,14 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2014,6 +2201,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -2030,6 +2218,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -2052,6 +2241,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2074,6 +2264,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2095,6 +2286,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2112,6 +2304,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2136,6 +2329,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2153,6 +2347,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2173,6 +2368,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2194,6 +2390,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.datastream.v1.PrivateConnection.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2217,6 +2414,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2243,6 +2441,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1.Error.Builder,
             com.google.cloud.datastream.v1.ErrorOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -2260,6 +2459,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     public boolean hasError() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2281,6 +2481,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return errorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2306,6 +2507,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2328,6 +2530,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2358,6 +2561,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2380,6 +2584,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2397,6 +2602,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2416,6 +2622,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return error_ == null ? com.google.cloud.datastream.v1.Error.getDefaultInstance() : error_;
       }
     }
+
     /**
      *
      *
@@ -2445,12 +2652,157 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       return errorBuilder_;
     }
 
+    private boolean satisfiesPzs_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the satisfiesPzs field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzs() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the satisfiesPzi field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzi() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.datastream.v1.VpcPeeringConfig vpcPeeringConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datastream.v1.VpcPeeringConfig,
             com.google.cloud.datastream.v1.VpcPeeringConfig.Builder,
             com.google.cloud.datastream.v1.VpcPeeringConfigOrBuilder>
         vpcPeeringConfigBuilder_;
+
     /**
      *
      *
@@ -2463,8 +2815,9 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * @return Whether the vpcPeeringConfig field is set.
      */
     public boolean hasVpcPeeringConfig() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2485,6 +2838,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return vpcPeeringConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2503,10 +2857,11 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       } else {
         vpcPeeringConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2523,10 +2878,11 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       } else {
         vpcPeeringConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2538,7 +2894,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeVpcPeeringConfig(com.google.cloud.datastream.v1.VpcPeeringConfig value) {
       if (vpcPeeringConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && vpcPeeringConfig_ != null
             && vpcPeeringConfig_
                 != com.google.cloud.datastream.v1.VpcPeeringConfig.getDefaultInstance()) {
@@ -2550,11 +2906,12 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         vpcPeeringConfigBuilder_.mergeFrom(value);
       }
       if (vpcPeeringConfig_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
     }
+
     /**
      *
      *
@@ -2565,7 +2922,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.datastream.v1.VpcPeeringConfig vpc_peering_config = 100;</code>
      */
     public Builder clearVpcPeeringConfig() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       vpcPeeringConfig_ = null;
       if (vpcPeeringConfigBuilder_ != null) {
         vpcPeeringConfigBuilder_.dispose();
@@ -2574,6 +2931,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2584,10 +2942,11 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.datastream.v1.VpcPeeringConfig vpc_peering_config = 100;</code>
      */
     public com.google.cloud.datastream.v1.VpcPeeringConfig.Builder getVpcPeeringConfigBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getVpcPeeringConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2606,6 +2965,7 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
             : vpcPeeringConfig_;
       }
     }
+
     /**
      *
      *

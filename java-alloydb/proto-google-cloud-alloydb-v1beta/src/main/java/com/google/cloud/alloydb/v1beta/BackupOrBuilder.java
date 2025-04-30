@@ -44,6 +44,7 @@ public interface BackupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface BackupOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface BackupOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public interface BackupOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface BackupOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public interface BackupOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public interface BackupOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public interface BackupOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public interface BackupOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -241,6 +250,7 @@ public interface BackupOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -251,9 +261,11 @@ public interface BackupOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -264,6 +276,7 @@ public interface BackupOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -278,6 +291,7 @@ public interface BackupOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -303,6 +317,7 @@ public interface BackupOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -330,6 +345,7 @@ public interface BackupOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -355,6 +371,7 @@ public interface BackupOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -381,6 +398,7 @@ public interface BackupOrBuilder
    * @return The clusterUid.
    */
   java.lang.String getClusterUid();
+
   /**
    *
    *
@@ -410,6 +428,7 @@ public interface BackupOrBuilder
    * @return The clusterName.
    */
   java.lang.String getClusterName();
+
   /**
    *
    *
@@ -459,6 +478,7 @@ public interface BackupOrBuilder
    * @return Whether the encryptionConfig field is set.
    */
   boolean hasEncryptionConfig();
+
   /**
    *
    *
@@ -476,6 +496,7 @@ public interface BackupOrBuilder
    * @return The encryptionConfig.
    */
   com.google.cloud.alloydb.v1beta.EncryptionConfig getEncryptionConfig();
+
   /**
    *
    *
@@ -506,6 +527,7 @@ public interface BackupOrBuilder
    * @return Whether the encryptionInfo field is set.
    */
   boolean hasEncryptionInfo();
+
   /**
    *
    *
@@ -520,6 +542,7 @@ public interface BackupOrBuilder
    * @return The encryptionInfo.
    */
   com.google.cloud.alloydb.v1beta.EncryptionInfo getEncryptionInfo();
+
   /**
    *
    *
@@ -545,6 +568,7 @@ public interface BackupOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -570,6 +594,7 @@ public interface BackupOrBuilder
    * <code>map&lt;string, string&gt; annotations = 16;</code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -582,9 +607,11 @@ public interface BackupOrBuilder
    * <code>map&lt;string, string&gt; annotations = 16;</code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -597,6 +624,7 @@ public interface BackupOrBuilder
    * <code>map&lt;string, string&gt; annotations = 16;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -613,6 +641,7 @@ public interface BackupOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -654,6 +683,7 @@ public interface BackupOrBuilder
    * @return Whether the expiryTime field is set.
    */
   boolean hasExpiryTime();
+
   /**
    *
    *
@@ -669,6 +699,7 @@ public interface BackupOrBuilder
    * @return The expiryTime.
    */
   com.google.protobuf.Timestamp getExpiryTime();
+
   /**
    *
    *
@@ -699,6 +730,7 @@ public interface BackupOrBuilder
    * @return Whether the expiryQuantity field is set.
    */
   boolean hasExpiryQuantity();
+
   /**
    *
    *
@@ -715,6 +747,7 @@ public interface BackupOrBuilder
    * @return The expiryQuantity.
    */
   com.google.cloud.alloydb.v1beta.Backup.QuantityBasedExpiry getExpiryQuantity();
+
   /**
    *
    *
@@ -759,6 +792,7 @@ public interface BackupOrBuilder
    * @return The enum numeric value on the wire for databaseVersion.
    */
   int getDatabaseVersionValue();
+
   /**
    *
    *
@@ -793,6 +827,7 @@ public interface BackupOrBuilder
    * </code>
    */
   int getTagsCount();
+
   /**
    *
    *
@@ -810,9 +845,11 @@ public interface BackupOrBuilder
    * </code>
    */
   boolean containsTags(java.lang.String key);
+
   /** Use {@link #getTagsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getTags();
+
   /**
    *
    *
@@ -830,6 +867,7 @@ public interface BackupOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+
   /**
    *
    *
@@ -851,6 +889,7 @@ public interface BackupOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

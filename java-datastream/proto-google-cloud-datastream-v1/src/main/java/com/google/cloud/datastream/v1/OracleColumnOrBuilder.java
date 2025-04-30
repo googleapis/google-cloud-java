@@ -36,6 +36,7 @@ public interface OracleColumnOrBuilder
    * @return The column.
    */
   java.lang.String getColumn();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface OracleColumnOrBuilder
    * @return The dataType.
    */
   java.lang.String getDataType();
+
   /**
    *
    *
@@ -125,6 +127,7 @@ public interface OracleColumnOrBuilder
    * @return The encoding.
    */
   java.lang.String getEncoding();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface GetStoredInfoTypeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

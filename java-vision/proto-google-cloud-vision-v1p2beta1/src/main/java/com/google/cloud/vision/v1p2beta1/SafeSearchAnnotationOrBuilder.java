@@ -38,6 +38,7 @@ public interface SafeSearchAnnotationOrBuilder
    * @return The enum numeric value on the wire for adult.
    */
   int getAdultValue();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface SafeSearchAnnotationOrBuilder
    * @return The enum numeric value on the wire for spoof.
    */
   int getSpoofValue();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface SafeSearchAnnotationOrBuilder
    * @return The enum numeric value on the wire for medical.
    */
   int getMedicalValue();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface SafeSearchAnnotationOrBuilder
    * @return The enum numeric value on the wire for violence.
    */
   int getViolenceValue();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface SafeSearchAnnotationOrBuilder
    * @return The enum numeric value on the wire for racy.
    */
   int getRacyValue();
+
   /**
    *
    *

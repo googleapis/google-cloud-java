@@ -33,6 +33,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.networkservices.v1.CreateMeshRequest)
     CreateMeshRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateMeshRequest.newBuilder() to construct.
   private CreateMeshRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object meshId_ = "";
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int MESH_FIELD_NUMBER = 3;
   private com.google.cloud.networkservices.v1.Mesh mesh_;
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasMesh() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.networkservices.v1.Mesh getMesh() {
     return mesh_ == null ? com.google.cloud.networkservices.v1.Mesh.getDefaultInstance() : mesh_;
   }
+
   /**
    *
    *
@@ -405,6 +413,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -633,6 +642,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -658,6 +668,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -683,6 +694,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -707,6 +719,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +740,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object meshId_ = "";
+
     /**
      *
      *
@@ -776,6 +791,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -798,6 +814,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -819,6 +836,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +854,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +884,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.networkservices.v1.Mesh.Builder,
             com.google.cloud.networkservices.v1.MeshOrBuilder>
         meshBuilder_;
+
     /**
      *
      *
@@ -881,6 +901,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasMesh() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -903,6 +924,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
         return meshBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -927,6 +949,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -948,6 +971,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -977,6 +1001,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1023,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1040,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getMeshFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1034,6 +1061,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
             : mesh_;
       }
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface ConversationDataSourceOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ConversationDataSourceOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.contactcenterinsights.v1.GcsSource getGcsSource();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ConversationDataSourceOrBuilder
    * @return Whether the dialogflowSource field is set.
    */
   boolean hasDialogflowSource();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface ConversationDataSourceOrBuilder
    * @return The dialogflowSource.
    */
   com.google.cloud.contactcenterinsights.v1.DialogflowSource getDialogflowSource();
+
   /**
    *
    *

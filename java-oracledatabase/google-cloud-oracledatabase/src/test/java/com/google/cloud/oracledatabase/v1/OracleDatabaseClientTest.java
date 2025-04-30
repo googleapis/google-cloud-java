@@ -2500,6 +2500,378 @@ public class OracleDatabaseClientTest {
   }
 
   @Test
+  public void stopAutonomousDatabaseTest() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AutonomousDatabaseName name =
+        AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+
+    AutonomousDatabase actualResponse = client.stopAutonomousDatabaseAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void stopAutonomousDatabaseExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutonomousDatabaseName name =
+          AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+      client.stopAutonomousDatabaseAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void stopAutonomousDatabaseTest2() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+
+    AutonomousDatabase actualResponse = client.stopAutonomousDatabaseAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void stopAutonomousDatabaseExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+      client.stopAutonomousDatabaseAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void startAutonomousDatabaseTest() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AutonomousDatabaseName name =
+        AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+
+    AutonomousDatabase actualResponse = client.startAutonomousDatabaseAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void startAutonomousDatabaseExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutonomousDatabaseName name =
+          AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+      client.startAutonomousDatabaseAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void startAutonomousDatabaseTest2() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+
+    AutonomousDatabase actualResponse = client.startAutonomousDatabaseAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void startAutonomousDatabaseExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+      client.startAutonomousDatabaseAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void restartAutonomousDatabaseTest() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("restartAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AutonomousDatabaseName name =
+        AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+
+    AutonomousDatabase actualResponse = client.restartAutonomousDatabaseAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void restartAutonomousDatabaseExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutonomousDatabaseName name =
+          AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+      client.restartAutonomousDatabaseAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void restartAutonomousDatabaseTest2() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("restartAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+
+    AutonomousDatabase actualResponse = client.restartAutonomousDatabaseAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void restartAutonomousDatabaseExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+      client.restartAutonomousDatabaseAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

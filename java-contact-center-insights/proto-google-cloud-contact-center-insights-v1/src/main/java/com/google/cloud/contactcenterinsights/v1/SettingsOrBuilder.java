@@ -38,6 +38,7 @@ public interface SettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface SettingsOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface SettingsOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface SettingsOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface SettingsOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface SettingsOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public interface SettingsOrBuilder
    * @return Whether the conversationTtl field is set.
    */
   boolean hasConversationTtl();
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public interface SettingsOrBuilder
    * @return The conversationTtl.
    */
   com.google.protobuf.Duration getConversationTtl();
+
   /**
    *
    *
@@ -229,6 +237,7 @@ public interface SettingsOrBuilder
    * <code>map&lt;string, string&gt; pubsub_notification_settings = 6;</code>
    */
   int getPubsubNotificationSettingsCount();
+
   /**
    *
    *
@@ -256,9 +265,11 @@ public interface SettingsOrBuilder
    * <code>map&lt;string, string&gt; pubsub_notification_settings = 6;</code>
    */
   boolean containsPubsubNotificationSettings(java.lang.String key);
+
   /** Use {@link #getPubsubNotificationSettingsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getPubsubNotificationSettings();
+
   /**
    *
    *
@@ -286,6 +297,7 @@ public interface SettingsOrBuilder
    * <code>map&lt;string, string&gt; pubsub_notification_settings = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPubsubNotificationSettingsMap();
+
   /**
    *
    *
@@ -317,6 +329,7 @@ public interface SettingsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -358,6 +371,7 @@ public interface SettingsOrBuilder
    * @return Whether the analysisConfig field is set.
    */
   boolean hasAnalysisConfig();
+
   /**
    *
    *
@@ -371,6 +385,7 @@ public interface SettingsOrBuilder
    * @return The analysisConfig.
    */
   com.google.cloud.contactcenterinsights.v1.Settings.AnalysisConfig getAnalysisConfig();
+
   /**
    *
    *
@@ -399,6 +414,7 @@ public interface SettingsOrBuilder
    * @return Whether the redactionConfig field is set.
    */
   boolean hasRedactionConfig();
+
   /**
    *
    *
@@ -414,6 +430,7 @@ public interface SettingsOrBuilder
    * @return The redactionConfig.
    */
   com.google.cloud.contactcenterinsights.v1.RedactionConfig getRedactionConfig();
+
   /**
    *
    *
@@ -446,6 +463,7 @@ public interface SettingsOrBuilder
    * @return Whether the speechConfig field is set.
    */
   boolean hasSpeechConfig();
+
   /**
    *
    *
@@ -464,6 +482,7 @@ public interface SettingsOrBuilder
    * @return The speechConfig.
    */
   com.google.cloud.contactcenterinsights.v1.SpeechConfig getSpeechConfig();
+
   /**
    *
    *

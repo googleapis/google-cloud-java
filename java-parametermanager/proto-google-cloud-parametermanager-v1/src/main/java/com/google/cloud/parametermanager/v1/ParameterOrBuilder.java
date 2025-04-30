@@ -37,6 +37,7 @@ public interface ParameterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ParameterOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface ParameterOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface ParameterOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface ParameterOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface ParameterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -147,9 +153,11 @@ public interface ParameterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -160,6 +168,7 @@ public interface ParameterOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -174,6 +183,7 @@ public interface ParameterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public interface ParameterOrBuilder
    * @return The enum numeric value on the wire for format.
    */
   int getFormatValue();
+
   /**
    *
    *
@@ -229,6 +240,7 @@ public interface ParameterOrBuilder
    * @return Whether the policyMember field is set.
    */
   boolean hasPolicyMember();
+
   /**
    *
    *
@@ -244,6 +256,7 @@ public interface ParameterOrBuilder
    * @return The policyMember.
    */
   com.google.iam.v1.ResourcePolicyMember getPolicyMember();
+
   /**
    *
    *
@@ -257,4 +270,55 @@ public interface ParameterOrBuilder
    * </code>
    */
   com.google.iam.v1.ResourcePolicyMemberOrBuilder getPolicyMemberOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * Parameter Versions. If not set, the default Google-managed encryption key
+   * will be used. Cloud KMS CryptoKeys must reside in the same location as the
+   * Parameter. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the kmsKey field is set.
+   */
+  boolean hasKmsKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * Parameter Versions. If not set, the default Google-managed encryption key
+   * will be used. Cloud KMS CryptoKeys must reside in the same location as the
+   * Parameter. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The kmsKey.
+   */
+  java.lang.String getKmsKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * Parameter Versions. If not set, the default Google-managed encryption key
+   * will be used. Cloud KMS CryptoKeys must reside in the same location as the
+   * Parameter. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for kmsKey.
+   */
+  com.google.protobuf.ByteString getKmsKeyBytes();
 }

@@ -39,6 +39,7 @@ public interface ListGenerativeQuestionConfigsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

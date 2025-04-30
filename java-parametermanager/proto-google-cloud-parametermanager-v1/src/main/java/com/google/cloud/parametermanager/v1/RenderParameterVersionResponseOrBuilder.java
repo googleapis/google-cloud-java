@@ -39,6 +39,7 @@ public interface RenderParameterVersionResponseOrBuilder
    * @return The parameterVersion.
    */
   java.lang.String getParameterVersion();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface RenderParameterVersionResponseOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface RenderParameterVersionResponseOrBuilder
    * @return The payload.
    */
   com.google.cloud.parametermanager.v1.ParameterVersionPayload getPayload();
+
   /**
    *
    *
@@ -96,7 +99,7 @@ public interface RenderParameterVersionResponseOrBuilder
    * <pre>
    * Output only. Server generated rendered version of the user provided payload
    * data (ParameterVersionPayload) which has substitutions of all (if any)
-   * references to a SecretManager SecretVersion resources. This substituion
+   * references to a SecretManager SecretVersion resources. This substitution
    * only works for a Parameter which is in JSON or YAML format.
    * </pre>
    *

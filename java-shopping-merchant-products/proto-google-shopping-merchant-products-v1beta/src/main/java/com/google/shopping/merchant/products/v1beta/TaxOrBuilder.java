@@ -51,6 +51,7 @@ public interface TaxOrBuilder
    * @return The country.
    */
   java.lang.String getCountry();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface TaxOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -134,6 +136,7 @@ public interface TaxOrBuilder
    * @return The postalCode.
    */
   java.lang.String getPostalCode();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface BgpRouteAsPathOrBuilder
    * @return A list containing the asns.
    */
   java.util.List<java.lang.Integer> getAsnsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface BgpRouteAsPathOrBuilder
    * @return The count of asns.
    */
   int getAsnsCount();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface BgpRouteAsPathOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface BgpRouteAsPathOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface ListToolVersionsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface ListToolVersionsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

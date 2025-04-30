@@ -39,6 +39,7 @@ public interface DataEncryptionStateOrBuilder
    * @return The kmsKeyVersionName.
    */
   java.lang.String getKmsKeyVersionName();
+
   /**
    *
    *

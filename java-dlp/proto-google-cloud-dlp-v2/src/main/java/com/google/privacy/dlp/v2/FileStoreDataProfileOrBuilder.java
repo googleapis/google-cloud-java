@@ -36,6 +36,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return Whether the dataSourceType field is set.
    */
   boolean hasDataSourceType();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The dataSourceType.
    */
   com.google.privacy.dlp.v2.DataSourceType getDataSourceType();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The projectDataProfile.
    */
   java.lang.String getProjectDataProfile();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The fileStoreLocation.
    */
   java.lang.String getFileStoreLocation();
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return A list containing the dataStorageLocations.
    */
   java.util.List<java.lang.String> getDataStorageLocationsList();
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The count of dataStorageLocations.
    */
   int getDataStorageLocationsCount();
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The dataStorageLocations at the given index.
    */
   java.lang.String getDataStorageLocations(int index);
+
   /**
    *
    *
@@ -255,6 +264,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The locationType.
    */
   java.lang.String getLocationType();
+
   /**
    *
    *
@@ -286,6 +296,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The fileStorePath.
    */
   java.lang.String getFileStorePath();
+
   /**
    *
    *
@@ -320,6 +331,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The fullResource.
    */
   java.lang.String getFullResource();
+
   /**
    *
    *
@@ -349,6 +361,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return Whether the configSnapshot field is set.
    */
   boolean hasConfigSnapshot();
+
   /**
    *
    *
@@ -361,6 +374,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The configSnapshot.
    */
   com.google.privacy.dlp.v2.DataProfileConfigSnapshot getConfigSnapshot();
+
   /**
    *
    *
@@ -385,6 +399,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return Whether the profileStatus field is set.
    */
   boolean hasProfileStatus();
+
   /**
    *
    *
@@ -398,6 +413,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The profileStatus.
    */
   com.google.privacy.dlp.v2.ProfileStatus getProfileStatus();
+
   /**
    *
    *
@@ -422,6 +438,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -447,6 +464,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return Whether the profileLastGenerated field is set.
    */
   boolean hasProfileLastGenerated();
+
   /**
    *
    *
@@ -459,6 +477,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The profileLastGenerated.
    */
   com.google.protobuf.Timestamp getProfileLastGenerated();
+
   /**
    *
    *
@@ -482,6 +501,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The enum numeric value on the wire for resourceVisibility.
    */
   int getResourceVisibilityValue();
+
   /**
    *
    *
@@ -507,6 +527,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return Whether the sensitivityScore field is set.
    */
   boolean hasSensitivityScore();
+
   /**
    *
    *
@@ -519,6 +540,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The sensitivityScore.
    */
   com.google.privacy.dlp.v2.SensitivityScore getSensitivityScore();
+
   /**
    *
    *
@@ -542,6 +564,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return Whether the dataRiskLevel field is set.
    */
   boolean hasDataRiskLevel();
+
   /**
    *
    *
@@ -554,6 +577,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The dataRiskLevel.
    */
   com.google.privacy.dlp.v2.DataRiskLevel getDataRiskLevel();
+
   /**
    *
    *
@@ -577,6 +601,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -589,6 +614,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -612,6 +638,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return Whether the lastModifiedTime field is set.
    */
   boolean hasLastModifiedTime();
+
   /**
    *
    *
@@ -624,6 +651,7 @@ public interface FileStoreDataProfileOrBuilder
    * @return The lastModifiedTime.
    */
   com.google.protobuf.Timestamp getLastModifiedTime();
+
   /**
    *
    *
@@ -645,6 +673,7 @@ public interface FileStoreDataProfileOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FileClusterSummary file_cluster_summaries = 16;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.FileClusterSummary> getFileClusterSummariesList();
+
   /**
    *
    *
@@ -655,6 +684,7 @@ public interface FileStoreDataProfileOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FileClusterSummary file_cluster_summaries = 16;</code>
    */
   com.google.privacy.dlp.v2.FileClusterSummary getFileClusterSummaries(int index);
+
   /**
    *
    *
@@ -665,6 +695,7 @@ public interface FileStoreDataProfileOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FileClusterSummary file_cluster_summaries = 16;</code>
    */
   int getFileClusterSummariesCount();
+
   /**
    *
    *
@@ -676,6 +707,7 @@ public interface FileStoreDataProfileOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.FileClusterSummaryOrBuilder>
       getFileClusterSummariesOrBuilderList();
+
   /**
    *
    *
@@ -702,6 +734,7 @@ public interface FileStoreDataProfileOrBuilder
    * <code>map&lt;string, .google.privacy.dlp.v2.Value&gt; resource_attributes = 17;</code>
    */
   int getResourceAttributesCount();
+
   /**
    *
    *
@@ -717,9 +750,11 @@ public interface FileStoreDataProfileOrBuilder
    * <code>map&lt;string, .google.privacy.dlp.v2.Value&gt; resource_attributes = 17;</code>
    */
   boolean containsResourceAttributes(java.lang.String key);
+
   /** Use {@link #getResourceAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.privacy.dlp.v2.Value> getResourceAttributes();
+
   /**
    *
    *
@@ -735,6 +770,7 @@ public interface FileStoreDataProfileOrBuilder
    * <code>map&lt;string, .google.privacy.dlp.v2.Value&gt; resource_attributes = 17;</code>
    */
   java.util.Map<java.lang.String, com.google.privacy.dlp.v2.Value> getResourceAttributesMap();
+
   /**
    *
    *
@@ -754,6 +790,7 @@ public interface FileStoreDataProfileOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.privacy.dlp.v2.Value defaultValue);
+
   /**
    *
    *
@@ -780,6 +817,7 @@ public interface FileStoreDataProfileOrBuilder
    * <code>map&lt;string, string&gt; resource_labels = 18;</code>
    */
   int getResourceLabelsCount();
+
   /**
    *
    *
@@ -790,9 +828,11 @@ public interface FileStoreDataProfileOrBuilder
    * <code>map&lt;string, string&gt; resource_labels = 18;</code>
    */
   boolean containsResourceLabels(java.lang.String key);
+
   /** Use {@link #getResourceLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getResourceLabels();
+
   /**
    *
    *
@@ -803,6 +843,7 @@ public interface FileStoreDataProfileOrBuilder
    * <code>map&lt;string, string&gt; resource_labels = 18;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getResourceLabelsMap();
+
   /**
    *
    *
@@ -817,6 +858,7 @@ public interface FileStoreDataProfileOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -841,6 +883,7 @@ public interface FileStoreDataProfileOrBuilder
    */
   java.util.List<com.google.privacy.dlp.v2.FileStoreInfoTypeSummary>
       getFileStoreInfoTypeSummariesList();
+
   /**
    *
    *
@@ -853,6 +896,7 @@ public interface FileStoreDataProfileOrBuilder
    * </code>
    */
   com.google.privacy.dlp.v2.FileStoreInfoTypeSummary getFileStoreInfoTypeSummaries(int index);
+
   /**
    *
    *
@@ -865,6 +909,7 @@ public interface FileStoreDataProfileOrBuilder
    * </code>
    */
   int getFileStoreInfoTypeSummariesCount();
+
   /**
    *
    *
@@ -878,6 +923,7 @@ public interface FileStoreDataProfileOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.FileStoreInfoTypeSummaryOrBuilder>
       getFileStoreInfoTypeSummariesOrBuilderList();
+
   /**
    *
    *
@@ -896,6 +942,43 @@ public interface FileStoreDataProfileOrBuilder
    *
    *
    * <pre>
+   * The BigQuery table to which the sample findings are written.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 22;</code>
+   *
+   * @return Whether the sampleFindingsTable field is set.
+   */
+  boolean hasSampleFindingsTable();
+
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery table to which the sample findings are written.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 22;</code>
+   *
+   * @return The sampleFindingsTable.
+   */
+  com.google.privacy.dlp.v2.BigQueryTable getSampleFindingsTable();
+
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery table to which the sample findings are written.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BigQueryTable sample_findings_table = 22;</code>
+   */
+  com.google.privacy.dlp.v2.BigQueryTableOrBuilder getSampleFindingsTableOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The file store does not have any files.
    * </pre>
    *
@@ -909,12 +992,73 @@ public interface FileStoreDataProfileOrBuilder
    *
    *
    * <pre>
+   * The tags attached to the resource, including any tags attached during
+   * profiling.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 25;</code>
+   */
+  java.util.List<com.google.privacy.dlp.v2.Tag> getTagsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the resource, including any tags attached during
+   * profiling.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 25;</code>
+   */
+  com.google.privacy.dlp.v2.Tag getTags(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the resource, including any tags attached during
+   * profiling.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 25;</code>
+   */
+  int getTagsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the resource, including any tags attached during
+   * profiling.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 25;</code>
+   */
+  java.util.List<? extends com.google.privacy.dlp.v2.TagOrBuilder> getTagsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The tags attached to the resource, including any tags attached during
+   * profiling.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Tag tags = 25;</code>
+   */
+  com.google.privacy.dlp.v2.TagOrBuilder getTagsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Resources related to this profile.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.RelatedResource> getRelatedResourcesList();
+
   /**
    *
    *
@@ -925,6 +1069,7 @@ public interface FileStoreDataProfileOrBuilder
    * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
    */
   com.google.privacy.dlp.v2.RelatedResource getRelatedResources(int index);
+
   /**
    *
    *
@@ -935,6 +1080,7 @@ public interface FileStoreDataProfileOrBuilder
    * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
    */
   int getRelatedResourcesCount();
+
   /**
    *
    *
@@ -946,6 +1092,7 @@ public interface FileStoreDataProfileOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.RelatedResourceOrBuilder>
       getRelatedResourcesOrBuilderList();
+
   /**
    *
    *

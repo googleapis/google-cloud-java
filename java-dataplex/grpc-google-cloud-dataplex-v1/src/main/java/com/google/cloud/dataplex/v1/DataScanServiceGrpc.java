@@ -458,6 +458,19 @@ public final class DataScanServiceGrpc {
     return DataScanServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DataScanServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DataScanServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DataScanServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public DataScanServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DataScanServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DataScanServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -821,6 +834,148 @@ public final class DataScanServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DataScanService.
+   *
+   * <pre>
+   * DataScanService manages DataScan resources which can be configured to run
+   * various types of data scanning workload and generate enriched metadata (e.g.
+   * Data Profile, Data Quality) for the data source.
+   * </pre>
+   */
+  public static final class DataScanServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DataScanServiceBlockingV2Stub> {
+    private DataScanServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DataScanServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DataScanServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DataScan resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDataScan(
+        com.google.cloud.dataplex.v1.CreateDataScanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDataScanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DataScan resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDataScan(
+        com.google.cloud.dataplex.v1.UpdateDataScanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDataScanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DataScan resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDataScan(
+        com.google.cloud.dataplex.v1.DeleteDataScanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDataScanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a DataScan resource.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.DataScan getDataScan(
+        com.google.cloud.dataplex.v1.GetDataScanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataScanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataScans.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.ListDataScansResponse listDataScans(
+        com.google.cloud.dataplex.v1.ListDataScansRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDataScansMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs an on-demand execution of a DataScan
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.RunDataScanResponse runDataScan(
+        com.google.cloud.dataplex.v1.RunDataScanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunDataScanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a DataScanJob resource.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.DataScanJob getDataScanJob(
+        com.google.cloud.dataplex.v1.GetDataScanJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataScanJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataScanJobs under the given DataScan.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.ListDataScanJobsResponse listDataScanJobs(
+        com.google.cloud.dataplex.v1.ListDataScanJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDataScanJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates recommended data quality rules based on the results of a data
+     * profiling scan.
+     * Use the recommendations to build rules for a data quality scan.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse generateDataQualityRules(
+        com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateDataQualityRulesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DataScanService.
    *
    * <pre>
    * DataScanService manages DataScan resources which can be configured to run

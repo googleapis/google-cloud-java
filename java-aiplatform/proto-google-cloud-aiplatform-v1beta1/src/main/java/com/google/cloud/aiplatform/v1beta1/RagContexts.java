@@ -33,6 +33,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagContexts)
     RagContextsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RagContexts.newBuilder() to construct.
   private RagContexts(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      * @return The sourceUri.
      */
     java.lang.String getSourceUri();
+
     /**
      *
      *
@@ -109,6 +111,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      * @return The sourceDisplayName.
      */
     java.lang.String getSourceDisplayName();
+
     /**
      *
      *
@@ -134,6 +137,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      * @return The text.
      */
     java.lang.String getText();
+
     /**
      *
      *
@@ -158,7 +162,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      * <code>double distance = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.distance is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=181
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=182
      * @return The distance.
      */
     @java.lang.Deprecated
@@ -175,7 +179,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      * <code>double sparse_distance = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.sparse_distance is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=185
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=186
      * @return The sparseDistance.
      */
     @java.lang.Deprecated
@@ -200,6 +204,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the score field is set.
      */
     boolean hasScore();
+
     /**
      *
      *
@@ -219,7 +224,45 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      * @return The score.
      */
     double getScore();
+
+    /**
+     *
+     *
+     * <pre>
+     * Context of the retrieved chunk.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+     *
+     * @return Whether the chunk field is set.
+     */
+    boolean hasChunk();
+
+    /**
+     *
+     *
+     * <pre>
+     * Context of the retrieved chunk.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+     *
+     * @return The chunk.
+     */
+    com.google.cloud.aiplatform.v1beta1.RagChunk getChunk();
+
+    /**
+     *
+     *
+     * <pre>
+     * Context of the retrieved chunk.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+     */
+    com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder getChunkOrBuilder();
   }
+
   /**
    *
    *
@@ -234,6 +277,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagContexts.Context)
       ContextOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Context.newBuilder() to construct.
     private Context(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -271,6 +315,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sourceUri_ = "";
+
     /**
      *
      *
@@ -296,6 +341,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -326,6 +372,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sourceDisplayName_ = "";
+
     /**
      *
      *
@@ -349,6 +396,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -377,6 +425,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object text_ = "";
+
     /**
      *
      *
@@ -400,6 +449,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -426,6 +476,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DISTANCE_FIELD_NUMBER = 3;
     private double distance_ = 0D;
+
     /**
      *
      *
@@ -437,7 +488,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      * <code>double distance = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.distance is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=181
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=182
      * @return The distance.
      */
     @java.lang.Override
@@ -448,6 +499,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SPARSE_DISTANCE_FIELD_NUMBER = 4;
     private double sparseDistance_ = 0D;
+
     /**
      *
      *
@@ -459,7 +511,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
      * <code>double sparse_distance = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.sparse_distance is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=185
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=186
      * @return The sparseDistance.
      */
     @java.lang.Override
@@ -470,6 +522,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SCORE_FIELD_NUMBER = 6;
     private double score_ = 0D;
+
     /**
      *
      *
@@ -492,6 +545,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -513,6 +567,59 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public double getScore() {
       return score_;
+    }
+
+    public static final int CHUNK_FIELD_NUMBER = 7;
+    private com.google.cloud.aiplatform.v1beta1.RagChunk chunk_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Context of the retrieved chunk.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+     *
+     * @return Whether the chunk field is set.
+     */
+    @java.lang.Override
+    public boolean hasChunk() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context of the retrieved chunk.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+     *
+     * @return The chunk.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagChunk getChunk() {
+      return chunk_ == null
+          ? com.google.cloud.aiplatform.v1beta1.RagChunk.getDefaultInstance()
+          : chunk_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Context of the retrieved chunk.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder getChunkOrBuilder() {
+      return chunk_ == null
+          ? com.google.cloud.aiplatform.v1beta1.RagChunk.getDefaultInstance()
+          : chunk_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -547,6 +654,9 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeDouble(6, score_);
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(7, getChunk());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -573,6 +683,9 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(6, score_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getChunk());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -601,6 +714,10 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       if (hasScore()) {
         if (java.lang.Double.doubleToLongBits(getScore())
             != java.lang.Double.doubleToLongBits(other.getScore())) return false;
+      }
+      if (hasChunk() != other.hasChunk()) return false;
+      if (hasChunk()) {
+        if (!getChunk().equals(other.getChunk())) return false;
       }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -635,6 +752,10 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
             (53 * hash)
                 + com.google.protobuf.Internal.hashLong(
                     java.lang.Double.doubleToLongBits(getScore()));
+      }
+      if (hasChunk()) {
+        hash = (37 * hash) + CHUNK_FIELD_NUMBER;
+        hash = (53 * hash) + getChunk().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -738,6 +859,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -768,10 +890,19 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.aiplatform.v1beta1.RagContexts.Context.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getChunkFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -784,6 +915,11 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         distance_ = 0D;
         sparseDistance_ = 0D;
         score_ = 0D;
+        chunk_ = null;
+        if (chunkBuilder_ != null) {
+          chunkBuilder_.dispose();
+          chunkBuilder_ = null;
+        }
         return this;
       }
 
@@ -839,6 +975,10 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000020) != 0)) {
           result.score_ = score_;
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.chunk_ = chunkBuilder_ == null ? chunk_ : chunkBuilder_.build();
+          to_bitField0_ |= 0x00000002;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -915,6 +1055,9 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         if (other.hasScore()) {
           setScore(other.getScore());
         }
+        if (other.hasChunk()) {
+          mergeChunk(other.getChunk());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -977,6 +1120,12 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000020;
                   break;
                 } // case 49
+              case 58:
+                {
+                  input.readMessage(getChunkFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -997,6 +1146,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object sourceUri_ = "";
+
       /**
        *
        *
@@ -1021,6 +1171,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1045,6 +1196,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1068,6 +1220,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1087,6 +1240,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1113,6 +1267,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object sourceDisplayName_ = "";
+
       /**
        *
        *
@@ -1135,6 +1290,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1157,6 +1313,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1178,6 +1335,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1195,6 +1353,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1219,6 +1378,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object text_ = "";
+
       /**
        *
        *
@@ -1241,6 +1401,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1263,6 +1424,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1284,6 +1446,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1301,6 +1464,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1325,6 +1489,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double distance_;
+
       /**
        *
        *
@@ -1336,7 +1501,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        * <code>double distance = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.distance is deprecated. See
-       *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=181
+       *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=182
        * @return The distance.
        */
       @java.lang.Override
@@ -1344,6 +1509,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       public double getDistance() {
         return distance_;
       }
+
       /**
        *
        *
@@ -1355,7 +1521,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        * <code>double distance = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.distance is deprecated. See
-       *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=181
+       *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=182
        * @param value The distance to set.
        * @return This builder for chaining.
        */
@@ -1367,6 +1533,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1378,7 +1545,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        * <code>double distance = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.distance is deprecated. See
-       *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=181
+       *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=182
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1390,6 +1557,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double sparseDistance_;
+
       /**
        *
        *
@@ -1401,7 +1569,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        * <code>double sparse_distance = 4 [deprecated = true];</code>
        *
        * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.sparse_distance is
-       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=185
+       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=186
        * @return The sparseDistance.
        */
       @java.lang.Override
@@ -1409,6 +1577,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       public double getSparseDistance() {
         return sparseDistance_;
       }
+
       /**
        *
        *
@@ -1420,7 +1589,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        * <code>double sparse_distance = 4 [deprecated = true];</code>
        *
        * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.sparse_distance is
-       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=185
+       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=186
        * @param value The sparseDistance to set.
        * @return This builder for chaining.
        */
@@ -1432,6 +1601,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1443,7 +1613,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
        * <code>double sparse_distance = 4 [deprecated = true];</code>
        *
        * @deprecated google.cloud.aiplatform.v1beta1.RagContexts.Context.sparse_distance is
-       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=185
+       *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=186
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1455,6 +1625,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double score_;
+
       /**
        *
        *
@@ -1477,6 +1648,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       public boolean hasScore() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        *
        *
@@ -1499,6 +1671,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       public double getScore() {
         return score_;
       }
+
       /**
        *
        *
@@ -1525,6 +1698,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1548,6 +1722,201 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         score_ = 0D;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.aiplatform.v1beta1.RagChunk chunk_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.RagChunk,
+              com.google.cloud.aiplatform.v1beta1.RagChunk.Builder,
+              com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder>
+          chunkBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Context of the retrieved chunk.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+       *
+       * @return Whether the chunk field is set.
+       */
+      public boolean hasChunk() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Context of the retrieved chunk.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+       *
+       * @return The chunk.
+       */
+      public com.google.cloud.aiplatform.v1beta1.RagChunk getChunk() {
+        if (chunkBuilder_ == null) {
+          return chunk_ == null
+              ? com.google.cloud.aiplatform.v1beta1.RagChunk.getDefaultInstance()
+              : chunk_;
+        } else {
+          return chunkBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Context of the retrieved chunk.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+       */
+      public Builder setChunk(com.google.cloud.aiplatform.v1beta1.RagChunk value) {
+        if (chunkBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          chunk_ = value;
+        } else {
+          chunkBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Context of the retrieved chunk.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+       */
+      public Builder setChunk(
+          com.google.cloud.aiplatform.v1beta1.RagChunk.Builder builderForValue) {
+        if (chunkBuilder_ == null) {
+          chunk_ = builderForValue.build();
+        } else {
+          chunkBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Context of the retrieved chunk.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+       */
+      public Builder mergeChunk(com.google.cloud.aiplatform.v1beta1.RagChunk value) {
+        if (chunkBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0)
+              && chunk_ != null
+              && chunk_ != com.google.cloud.aiplatform.v1beta1.RagChunk.getDefaultInstance()) {
+            getChunkBuilder().mergeFrom(value);
+          } else {
+            chunk_ = value;
+          }
+        } else {
+          chunkBuilder_.mergeFrom(value);
+        }
+        if (chunk_ != null) {
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Context of the retrieved chunk.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+       */
+      public Builder clearChunk() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        chunk_ = null;
+        if (chunkBuilder_ != null) {
+          chunkBuilder_.dispose();
+          chunkBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Context of the retrieved chunk.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.RagChunk.Builder getChunkBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getChunkFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Context of the retrieved chunk.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder getChunkOrBuilder() {
+        if (chunkBuilder_ != null) {
+          return chunkBuilder_.getMessageOrBuilder();
+        } else {
+          return chunk_ == null
+              ? com.google.cloud.aiplatform.v1beta1.RagChunk.getDefaultInstance()
+              : chunk_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Context of the retrieved chunk.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.RagChunk chunk = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.RagChunk,
+              com.google.cloud.aiplatform.v1beta1.RagChunk.Builder,
+              com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder>
+          getChunkFieldBuilder() {
+        if (chunkBuilder_ == null) {
+          chunkBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.RagChunk,
+                  com.google.cloud.aiplatform.v1beta1.RagChunk.Builder,
+                  com.google.cloud.aiplatform.v1beta1.RagChunkOrBuilder>(
+                  getChunk(), getParentForChildren(), isClean());
+          chunk_ = null;
+        }
+        return chunkBuilder_;
       }
 
       @java.lang.Override
@@ -1618,6 +1987,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.RagContexts.Context> contexts_;
+
   /**
    *
    *
@@ -1631,6 +2001,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.aiplatform.v1beta1.RagContexts.Context> getContextsList() {
     return contexts_;
   }
+
   /**
    *
    *
@@ -1645,6 +2016,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       getContextsOrBuilderList() {
     return contexts_;
   }
+
   /**
    *
    *
@@ -1658,6 +2030,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
   public int getContextsCount() {
     return contexts_.size();
   }
+
   /**
    *
    *
@@ -1671,6 +2044,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1beta1.RagContexts.Context getContexts(int index) {
     return contexts_.get(index);
   }
+
   /**
    *
    *
@@ -1847,6 +2221,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2112,6 +2487,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         return contextsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2128,6 +2504,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         return contextsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2144,6 +2521,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         return contextsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2167,6 +2545,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2188,6 +2567,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2210,6 +2590,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2233,6 +2614,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2253,6 +2635,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2274,6 +2657,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2295,6 +2679,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2314,6 +2699,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2333,6 +2719,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2346,6 +2733,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getContextsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2363,6 +2751,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         return contextsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2381,6 +2770,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(contexts_);
       }
     }
+
     /**
      *
      *
@@ -2394,6 +2784,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
       return getContextsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.RagContexts.Context.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2409,6 +2800,7 @@ public final class RagContexts extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.aiplatform.v1beta1.RagContexts.Context.getDefaultInstance());
     }
+
     /**
      *
      *

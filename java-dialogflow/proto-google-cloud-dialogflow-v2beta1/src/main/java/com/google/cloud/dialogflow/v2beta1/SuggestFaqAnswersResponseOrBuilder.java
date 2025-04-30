@@ -34,6 +34,7 @@ public interface SuggestFaqAnswersResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.FaqAnswer faq_answers = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.FaqAnswer> getFaqAnswersList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface SuggestFaqAnswersResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.FaqAnswer faq_answers = 1;</code>
    */
   com.google.cloud.dialogflow.v2beta1.FaqAnswer getFaqAnswers(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface SuggestFaqAnswersResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.FaqAnswer faq_answers = 1;</code>
    */
   int getFaqAnswersCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface SuggestFaqAnswersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.FaqAnswerOrBuilder>
       getFaqAnswersOrBuilderList();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface SuggestFaqAnswersResponseOrBuilder
    * @return The latestMessage.
    */
   java.lang.String getLatestMessage();
+
   /**
    *
    *

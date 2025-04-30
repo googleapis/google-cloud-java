@@ -25,6 +25,7 @@ public final class GetErrorFrameRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.GetErrorFrameRequest)
     GetErrorFrameRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetErrorFrameRequest.newBuilder() to construct.
   private GetErrorFrameRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -60,6 +61,7 @@ public final class GetErrorFrameRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class GetErrorFrameRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class GetErrorFrameRequest extends com.google.protobuf.GeneratedMes
 
   public static final int VIEW_FIELD_NUMBER = 2;
   private int view_ = 0;
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class GetErrorFrameRequest extends com.google.protobuf.GeneratedMes
   public int getViewValue() {
     return view_;
   }
+
   /**
    *
    *
@@ -331,6 +336,7 @@ public final class GetErrorFrameRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.migrationcenter.v1.GetErrorFrameRequest} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -520,6 +526,7 @@ public final class GetErrorFrameRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -546,6 +553,7 @@ public final class GetErrorFrameRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -572,6 +580,7 @@ public final class GetErrorFrameRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -597,6 +606,7 @@ public final class GetErrorFrameRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -618,6 +628,7 @@ public final class GetErrorFrameRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +657,7 @@ public final class GetErrorFrameRequest extends com.google.protobuf.GeneratedMes
     }
 
     private int view_ = 0;
+
     /**
      *
      *
@@ -664,6 +676,7 @@ public final class GetErrorFrameRequest extends com.google.protobuf.GeneratedMes
     public int getViewValue() {
       return view_;
     }
+
     /**
      *
      *
@@ -685,6 +698,7 @@ public final class GetErrorFrameRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +721,7 @@ public final class GetErrorFrameRequest extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.migrationcenter.v1.ErrorFrameView.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -731,6 +746,7 @@ public final class GetErrorFrameRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

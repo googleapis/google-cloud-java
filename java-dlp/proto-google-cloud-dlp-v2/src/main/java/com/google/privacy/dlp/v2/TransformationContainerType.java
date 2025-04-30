@@ -82,6 +82,7 @@ public enum TransformationContainerType implements com.google.protobuf.ProtocolM
    * <code>TRANSFORM_UNKNOWN_CONTAINER = 0;</code>
    */
   public static final int TRANSFORM_UNKNOWN_CONTAINER_VALUE = 0;
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public enum TransformationContainerType implements com.google.protobuf.ProtocolM
    * <code>TRANSFORM_BODY = 1;</code>
    */
   public static final int TRANSFORM_BODY_VALUE = 1;
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public enum TransformationContainerType implements com.google.protobuf.ProtocolM
    * <code>TRANSFORM_METADATA = 2;</code>
    */
   public static final int TRANSFORM_METADATA_VALUE = 2;
+
   /**
    *
    *

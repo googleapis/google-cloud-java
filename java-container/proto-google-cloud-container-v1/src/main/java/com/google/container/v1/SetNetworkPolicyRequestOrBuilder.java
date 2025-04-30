@@ -41,6 +41,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
+
   /**
    *
    *
@@ -143,6 +146,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    * @return Whether the networkPolicy field is set.
    */
   boolean hasNetworkPolicy();
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    * @return The networkPolicy.
    */
   com.google.container.v1.NetworkPolicy getNetworkPolicy();
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -52,6 +52,7 @@ public class SyncAnswerQuery {
                       .toString())
               .setSafetySpec(AnswerQueryRequest.SafetySpec.newBuilder().build())
               .setRelatedQuestionsSpec(AnswerQueryRequest.RelatedQuestionsSpec.newBuilder().build())
+              .setGroundingSpec(AnswerQueryRequest.GroundingSpec.newBuilder().build())
               .setAnswerGenerationSpec(AnswerQueryRequest.AnswerGenerationSpec.newBuilder().build())
               .setSearchSpec(AnswerQueryRequest.SearchSpec.newBuilder().build())
               .setQueryUnderstandingSpec(
@@ -59,6 +60,7 @@ public class SyncAnswerQuery {
               .setAsynchronousMode(true)
               .setUserPseudoId("userPseudoId-1155274652")
               .putAllUserLabels(new HashMap<String, String>())
+              .setEndUserSpec(AnswerQueryRequest.EndUserSpec.newBuilder().build())
               .build();
       AnswerQueryResponse response = conversationalSearchServiceClient.answerQuery(request);
     }

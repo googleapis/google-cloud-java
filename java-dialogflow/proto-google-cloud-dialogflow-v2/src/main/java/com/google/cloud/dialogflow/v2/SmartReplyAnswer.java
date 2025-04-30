@@ -33,6 +33,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SmartReplyAnswer)
     SmartReplyAnswerOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SmartReplyAnswer.newBuilder() to construct.
   private SmartReplyAnswer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reply_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
   private float confidence_ = 0F;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object answerRecord_ = "";
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -369,6 +375,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -581,6 +588,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object reply_ = "";
+
     /**
      *
      *
@@ -603,6 +611,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -625,6 +634,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -646,6 +656,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -663,6 +674,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -687,6 +699,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
     }
 
     private float confidence_;
+
     /**
      *
      *
@@ -705,6 +718,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
     public float getConfidence() {
       return confidence_;
     }
+
     /**
      *
      *
@@ -727,6 +741,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +764,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object answerRecord_ = "";
+
     /**
      *
      *
@@ -773,6 +789,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -797,6 +814,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -820,6 +838,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +858,7 @@ public final class SmartReplyAnswer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

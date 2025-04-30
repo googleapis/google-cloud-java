@@ -202,7 +202,8 @@ public class EffectiveSecurityHealthAnalyticsCustomModuleName implements Resourc
           matchMap.get("project"), matchMap.get("effective_custom_module"));
     }
     throw new ValidationException(
-        "EffectiveSecurityHealthAnalyticsCustomModuleName.parse: formattedString not in valid format");
+        "EffectiveSecurityHealthAnalyticsCustomModuleName.parse: formattedString not in valid"
+            + " format");
   }
 
   public static List<EffectiveSecurityHealthAnalyticsCustomModuleName> parseList(
@@ -335,7 +336,9 @@ public class EffectiveSecurityHealthAnalyticsCustomModuleName implements Resourc
           Objects.equals(
               effectiveSecurityHealthAnalyticsCustomModuleName.pathTemplate,
               ORGANIZATION_EFFECTIVE_CUSTOM_MODULE),
-          "toBuilder is only supported when EffectiveSecurityHealthAnalyticsCustomModuleName has the pattern of organizations/{organization}/securityHealthAnalyticsSettings/effectiveCustomModules/{effective_custom_module}");
+          "toBuilder is only supported when EffectiveSecurityHealthAnalyticsCustomModuleName has"
+              + " the pattern of"
+              + " organizations/{organization}/securityHealthAnalyticsSettings/effectiveCustomModules/{effective_custom_module}");
       this.organization = effectiveSecurityHealthAnalyticsCustomModuleName.organization;
       this.effectiveCustomModule =
           effectiveSecurityHealthAnalyticsCustomModuleName.effectiveCustomModule;

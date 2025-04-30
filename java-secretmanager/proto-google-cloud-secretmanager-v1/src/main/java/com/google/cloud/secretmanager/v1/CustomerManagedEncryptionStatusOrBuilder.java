@@ -38,6 +38,7 @@ public interface CustomerManagedEncryptionStatusOrBuilder
    * @return The kmsKeyVersionName.
    */
   java.lang.String getKmsKeyVersionName();
+
   /**
    *
    *

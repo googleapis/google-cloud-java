@@ -34,6 +34,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.SearchRequest)
     SearchRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchRequest.newBuilder() to construct.
   private SearchRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -53,6 +54,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     pageCategories_ = com.google.protobuf.LazyStringArrayList.emptyList();
     searchMode_ = 0;
     entity_ = "";
+    languageCode_ = "";
+    regionCode_ = "";
+    placeId_ = "";
   }
 
   @java.lang.Override
@@ -171,6 +175,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>SEARCH_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int SEARCH_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -192,6 +197,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>PRODUCT_SEARCH_ONLY = 1;</code>
      */
     public static final int PRODUCT_SEARCH_ONLY_VALUE = 1;
+
     /**
      *
      *
@@ -316,6 +322,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the facetKey field is set.
      */
     boolean hasFacetKey();
+
     /**
      *
      *
@@ -330,6 +337,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return The facetKey.
      */
     com.google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey getFacetKey();
+
     /**
      *
      *
@@ -366,7 +374,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * List of keys to exclude when faceting.
      *
-     *
      * By default,
      * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
@@ -399,12 +406,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the excludedFilterKeys.
      */
     java.util.List<java.lang.String> getExcludedFilterKeysList();
+
     /**
      *
      *
      * <pre>
      * List of keys to exclude when faceting.
-     *
      *
      * By default,
      * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -438,12 +445,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return The count of excludedFilterKeys.
      */
     int getExcludedFilterKeysCount();
+
     /**
      *
      *
      * <pre>
      * List of keys to exclude when faceting.
-     *
      *
      * By default,
      * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -478,12 +485,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return The excludedFilterKeys at the given index.
      */
     java.lang.String getExcludedFilterKeys(int index);
+
     /**
      *
      *
      * <pre>
      * List of keys to exclude when faceting.
-     *
      *
      * By default,
      * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -559,6 +566,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getEnableDynamicPosition();
   }
+
   /**
    *
    *
@@ -573,6 +581,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.SearchRequest.FacetSpec)
       FacetSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FacetSpec.newBuilder() to construct.
     private FacetSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -660,6 +669,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return The key.
        */
       java.lang.String getKey();
+
       /**
        *
        *
@@ -734,6 +744,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated .google.cloud.retail.v2.Interval intervals = 2;</code>
        */
       java.util.List<com.google.cloud.retail.v2.Interval> getIntervalsList();
+
       /**
        *
        *
@@ -755,6 +766,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated .google.cloud.retail.v2.Interval intervals = 2;</code>
        */
       com.google.cloud.retail.v2.Interval getIntervals(int index);
+
       /**
        *
        *
@@ -776,6 +788,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated .google.cloud.retail.v2.Interval intervals = 2;</code>
        */
       int getIntervalsCount();
+
       /**
        *
        *
@@ -798,6 +811,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        */
       java.util.List<? extends com.google.cloud.retail.v2.IntervalOrBuilder>
           getIntervalsOrBuilderList();
+
       /**
        *
        *
@@ -856,6 +870,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the restrictedValues.
        */
       java.util.List<java.lang.String> getRestrictedValuesList();
+
       /**
        *
        *
@@ -892,6 +907,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return The count of restrictedValues.
        */
       int getRestrictedValuesCount();
+
       /**
        *
        *
@@ -929,6 +945,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return The restrictedValues at the given index.
        */
       java.lang.String getRestrictedValues(int index);
+
       /**
        *
        *
@@ -983,6 +1000,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the prefixes.
        */
       java.util.List<java.lang.String> getPrefixesList();
+
       /**
        *
        *
@@ -999,6 +1017,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return The count of prefixes.
        */
       int getPrefixesCount();
+
       /**
        *
        *
@@ -1016,6 +1035,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return The prefixes at the given index.
        */
       java.lang.String getPrefixes(int index);
+
       /**
        *
        *
@@ -1050,6 +1070,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the contains.
        */
       java.util.List<java.lang.String> getContainsList();
+
       /**
        *
        *
@@ -1066,6 +1087,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return The count of contains.
        */
       int getContainsCount();
+
       /**
        *
        *
@@ -1083,6 +1105,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return The contains at the given index.
        */
       java.lang.String getContains(int index);
+
       /**
        *
        *
@@ -1148,6 +1171,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return The orderBy.
        */
       java.lang.String getOrderBy();
+
       /**
        *
        *
@@ -1215,6 +1239,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return The query.
        */
       java.lang.String getQuery();
+
       /**
        *
        *
@@ -1263,6 +1288,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        */
       boolean getReturnMinMax();
     }
+
     /**
      *
      *
@@ -1277,6 +1303,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey)
         FacetKeyOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use FacetKey.newBuilder() to construct.
       private FacetKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1317,6 +1344,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object key_ = "";
+
       /**
        *
        *
@@ -1380,6 +1408,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -1448,6 +1477,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.retail.v2.Interval> intervals_;
+
       /**
        *
        *
@@ -1472,6 +1502,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public java.util.List<com.google.cloud.retail.v2.Interval> getIntervalsList() {
         return intervals_;
       }
+
       /**
        *
        *
@@ -1497,6 +1528,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           getIntervalsOrBuilderList() {
         return intervals_;
       }
+
       /**
        *
        *
@@ -1521,6 +1553,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public int getIntervalsCount() {
         return intervals_.size();
       }
+
       /**
        *
        *
@@ -1545,6 +1578,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.retail.v2.Interval getIntervals(int index) {
         return intervals_.get(index);
       }
+
       /**
        *
        *
@@ -1575,6 +1609,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList restrictedValues_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -1613,6 +1648,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ProtocolStringList getRestrictedValuesList() {
         return restrictedValues_;
       }
+
       /**
        *
        *
@@ -1651,6 +1687,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public int getRestrictedValuesCount() {
         return restrictedValues_.size();
       }
+
       /**
        *
        *
@@ -1690,6 +1727,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getRestrictedValues(int index) {
         return restrictedValues_.get(index);
       }
+
       /**
        *
        *
@@ -1735,6 +1773,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList prefixes_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -1753,6 +1792,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ProtocolStringList getPrefixesList() {
         return prefixes_;
       }
+
       /**
        *
        *
@@ -1771,6 +1811,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public int getPrefixesCount() {
         return prefixes_.size();
       }
+
       /**
        *
        *
@@ -1790,6 +1831,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getPrefixes(int index) {
         return prefixes_.get(index);
       }
+
       /**
        *
        *
@@ -1815,6 +1857,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList contains_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -1833,6 +1876,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ProtocolStringList getContainsList() {
         return contains_;
       }
+
       /**
        *
        *
@@ -1851,6 +1895,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public int getContainsCount() {
         return contains_.size();
       }
+
       /**
        *
        *
@@ -1870,6 +1915,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getContains(int index) {
         return contains_.get(index);
       }
+
       /**
        *
        *
@@ -1892,6 +1938,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
       public static final int CASE_INSENSITIVE_FIELD_NUMBER = 10;
       private boolean caseInsensitive_ = false;
+
       /**
        *
        *
@@ -1913,6 +1960,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object orderBy_ = "";
+
       /**
        *
        *
@@ -1957,6 +2005,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -2006,6 +2055,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object query_ = "";
+
       /**
        *
        *
@@ -2050,6 +2100,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -2097,6 +2148,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
       public static final int RETURN_MIN_MAX_FIELD_NUMBER = 11;
       private boolean returnMinMax_ = false;
+
       /**
        *
        *
@@ -2371,6 +2423,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2745,6 +2798,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object key_ = "";
+
         /**
          *
          *
@@ -2807,6 +2861,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2869,6 +2924,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2930,6 +2986,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2987,6 +3044,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3093,6 +3151,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             return intervalsBuilder_.getMessageList();
           }
         }
+
         /**
          *
          *
@@ -3120,6 +3179,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             return intervalsBuilder_.getCount();
           }
         }
+
         /**
          *
          *
@@ -3147,6 +3207,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             return intervalsBuilder_.getMessage(index);
           }
         }
+
         /**
          *
          *
@@ -3180,6 +3241,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -3211,6 +3273,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -3244,6 +3307,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -3277,6 +3341,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -3307,6 +3372,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -3338,6 +3404,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -3369,6 +3436,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -3399,6 +3467,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -3429,6 +3498,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -3452,6 +3522,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.retail.v2.Interval.Builder getIntervalsBuilder(int index) {
           return getIntervalsFieldBuilder().getBuilder(index);
         }
+
         /**
          *
          *
@@ -3479,6 +3550,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             return intervalsBuilder_.getMessageOrBuilder(index);
           }
         }
+
         /**
          *
          *
@@ -3507,6 +3579,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             return java.util.Collections.unmodifiableList(intervals_);
           }
         }
+
         /**
          *
          *
@@ -3531,6 +3604,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return getIntervalsFieldBuilder()
               .addBuilder(com.google.cloud.retail.v2.Interval.getDefaultInstance());
         }
+
         /**
          *
          *
@@ -3555,6 +3629,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return getIntervalsFieldBuilder()
               .addBuilder(index, com.google.cloud.retail.v2.Interval.getDefaultInstance());
         }
+
         /**
          *
          *
@@ -3609,6 +3684,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           bitField0_ |= 0x00000004;
         }
+
         /**
          *
          *
@@ -3648,6 +3724,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           restrictedValues_.makeImmutable();
           return restrictedValues_;
         }
+
         /**
          *
          *
@@ -3686,6 +3763,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public int getRestrictedValuesCount() {
           return restrictedValues_.size();
         }
+
         /**
          *
          *
@@ -3725,6 +3803,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getRestrictedValues(int index) {
           return restrictedValues_.get(index);
         }
+
         /**
          *
          *
@@ -3764,6 +3843,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ByteString getRestrictedValuesBytes(int index) {
           return restrictedValues_.getByteString(index);
         }
+
         /**
          *
          *
@@ -3811,6 +3891,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3857,6 +3938,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3900,6 +3982,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3942,6 +4025,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3999,6 +4083,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           bitField0_ |= 0x00000008;
         }
+
         /**
          *
          *
@@ -4018,6 +4103,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           prefixes_.makeImmutable();
           return prefixes_;
         }
+
         /**
          *
          *
@@ -4036,6 +4122,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public int getPrefixesCount() {
           return prefixes_.size();
         }
+
         /**
          *
          *
@@ -4055,6 +4142,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getPrefixes(int index) {
           return prefixes_.get(index);
         }
+
         /**
          *
          *
@@ -4074,6 +4162,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ByteString getPrefixesBytes(int index) {
           return prefixes_.getByteString(index);
         }
+
         /**
          *
          *
@@ -4101,6 +4190,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4127,6 +4217,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4150,6 +4241,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4172,6 +4264,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4209,6 +4302,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           bitField0_ |= 0x00000010;
         }
+
         /**
          *
          *
@@ -4228,6 +4322,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           contains_.makeImmutable();
           return contains_;
         }
+
         /**
          *
          *
@@ -4246,6 +4341,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public int getContainsCount() {
           return contains_.size();
         }
+
         /**
          *
          *
@@ -4265,6 +4361,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getContains(int index) {
           return contains_.get(index);
         }
+
         /**
          *
          *
@@ -4284,6 +4381,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ByteString getContainsBytes(int index) {
           return contains_.getByteString(index);
         }
+
         /**
          *
          *
@@ -4311,6 +4409,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4337,6 +4436,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4360,6 +4460,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4382,6 +4483,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4411,6 +4513,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
 
         private boolean caseInsensitive_;
+
         /**
          *
          *
@@ -4427,6 +4530,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public boolean getCaseInsensitive() {
           return caseInsensitive_;
         }
+
         /**
          *
          *
@@ -4447,6 +4551,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4467,6 +4572,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object orderBy_ = "";
+
         /**
          *
          *
@@ -4510,6 +4616,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -4553,6 +4660,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -4595,6 +4703,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4633,6 +4742,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4678,6 +4788,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object query_ = "";
+
         /**
          *
          *
@@ -4721,6 +4832,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -4764,6 +4876,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -4806,6 +4919,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4844,6 +4958,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -4889,6 +5004,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
 
         private boolean returnMinMax_;
+
         /**
          *
          *
@@ -4905,6 +5021,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public boolean getReturnMinMax() {
           return returnMinMax_;
         }
+
         /**
          *
          *
@@ -4925,6 +5042,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -5014,6 +5132,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int FACET_KEY_FIELD_NUMBER = 1;
     private com.google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey facetKey_;
+
     /**
      *
      *
@@ -5031,6 +5150,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFacetKey() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -5050,6 +5170,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.getDefaultInstance()
           : facetKey_;
     }
+
     /**
      *
      *
@@ -5071,6 +5192,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LIMIT_FIELD_NUMBER = 2;
     private int limit_ = 0;
+
     /**
      *
      *
@@ -5096,12 +5218,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList excludedFilterKeys_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
      * <pre>
      * List of keys to exclude when faceting.
-     *
      *
      * By default,
      * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -5137,12 +5259,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getExcludedFilterKeysList() {
       return excludedFilterKeys_;
     }
+
     /**
      *
      *
      * <pre>
      * List of keys to exclude when faceting.
-     *
      *
      * By default,
      * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -5178,12 +5300,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public int getExcludedFilterKeysCount() {
       return excludedFilterKeys_.size();
     }
+
     /**
      *
      *
      * <pre>
      * List of keys to exclude when faceting.
-     *
      *
      * By default,
      * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -5220,12 +5342,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getExcludedFilterKeys(int index) {
       return excludedFilterKeys_.get(index);
     }
+
     /**
      *
      *
      * <pre>
      * List of keys to exclude when faceting.
-     *
      *
      * By default,
      * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -5265,6 +5387,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ENABLE_DYNAMIC_POSITION_FIELD_NUMBER = 4;
     private boolean enableDynamicPosition_ = false;
+
     /**
      *
      *
@@ -5508,6 +5631,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5762,6 +5886,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.Builder,
               com.google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKeyOrBuilder>
           facetKeyBuilder_;
+
       /**
        *
        *
@@ -5778,6 +5903,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public boolean hasFacetKey() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -5800,6 +5926,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return facetKeyBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5825,6 +5952,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5847,6 +5975,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5879,6 +6008,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -5900,6 +6030,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5917,6 +6048,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getFacetKeyFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5938,6 +6070,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               : facetKey_;
         }
       }
+
       /**
        *
        *
@@ -5967,6 +6100,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int limit_;
+
       /**
        *
        *
@@ -5986,6 +6120,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public int getLimit() {
         return limit_;
       }
+
       /**
        *
        *
@@ -6009,6 +6144,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6040,12 +6176,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000004;
       }
+
       /**
        *
        *
        * <pre>
        * List of keys to exclude when faceting.
-       *
        *
        * By default,
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -6082,12 +6218,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         excludedFilterKeys_.makeImmutable();
         return excludedFilterKeys_;
       }
+
       /**
        *
        *
        * <pre>
        * List of keys to exclude when faceting.
-       *
        *
        * By default,
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -6123,12 +6259,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public int getExcludedFilterKeysCount() {
         return excludedFilterKeys_.size();
       }
+
       /**
        *
        *
        * <pre>
        * List of keys to exclude when faceting.
-       *
        *
        * By default,
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -6165,12 +6301,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getExcludedFilterKeys(int index) {
         return excludedFilterKeys_.get(index);
       }
+
       /**
        *
        *
        * <pre>
        * List of keys to exclude when faceting.
-       *
        *
        * By default,
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -6207,12 +6343,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getExcludedFilterKeysBytes(int index) {
         return excludedFilterKeys_.getByteString(index);
       }
+
       /**
        *
        *
        * <pre>
        * List of keys to exclude when faceting.
-       *
        *
        * By default,
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -6257,12 +6393,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * List of keys to exclude when faceting.
-       *
        *
        * By default,
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -6306,12 +6442,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * List of keys to exclude when faceting.
-       *
        *
        * By default,
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -6352,12 +6488,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * List of keys to exclude when faceting.
-       *
        *
        * By default,
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -6397,12 +6533,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * List of keys to exclude when faceting.
-       *
        *
        * By default,
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -6449,6 +6585,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean enableDynamicPosition_;
+
       /**
        *
        *
@@ -6491,6 +6628,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public boolean getEnableDynamicPosition() {
         return enableDynamicPosition_;
       }
+
       /**
        *
        *
@@ -6537,6 +6675,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6666,6 +6805,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for mode.
      */
     int getModeValue();
+
     /**
      *
      *
@@ -6682,6 +6822,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec.Mode getMode();
   }
+
   /**
    *
    *
@@ -6696,6 +6837,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.SearchRequest.DynamicFacetSpec)
       DynamicFacetSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DynamicFacetSpec.newBuilder() to construct.
     private DynamicFacetSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6779,6 +6921,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <code>MODE_UNSPECIFIED = 0;</code>
        */
       public static final int MODE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -6789,6 +6932,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <code>DISABLED = 1;</code>
        */
       public static final int DISABLED_VALUE = 1;
+
       /**
        *
        *
@@ -6887,6 +7031,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MODE_FIELD_NUMBER = 1;
     private int mode_ = 0;
+
     /**
      *
      *
@@ -6905,6 +7050,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public int getModeValue() {
       return mode_;
     }
+
     /**
      *
      *
@@ -7093,6 +7239,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -7278,6 +7425,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int mode_ = 0;
+
       /**
        *
        *
@@ -7296,6 +7444,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public int getModeValue() {
         return mode_;
       }
+
       /**
        *
        *
@@ -7317,6 +7466,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7339,6 +7489,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec.Mode.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -7363,6 +7514,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7458,7 +7610,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -7469,12 +7621,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec>
         getConditionBoostSpecsList();
+
     /**
      *
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -7485,12 +7638,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec getConditionBoostSpecs(
         int index);
+
     /**
      *
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -7500,12 +7654,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getConditionBoostSpecsCount();
+
     /**
      *
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -7518,12 +7673,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             ? extends
                 com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpecOrBuilder>
         getConditionBoostSpecsOrBuilderList();
+
     /**
      *
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -7552,6 +7708,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the skipBoostSpecValidation field is set.
      */
     boolean hasSkipBoostSpecValidation();
+
     /**
      *
      *
@@ -7570,6 +7727,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getSkipBoostSpecValidation();
   }
+
   /**
    *
    *
@@ -7584,6 +7742,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.SearchRequest.BoostSpec)
       BoostSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BoostSpec.newBuilder() to construct.
     private BoostSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7642,6 +7801,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return The condition.
        */
       java.lang.String getCondition();
+
       /**
        *
        *
@@ -7695,6 +7855,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        */
       float getBoost();
     }
+
     /**
      *
      *
@@ -7709,6 +7870,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec)
         ConditionBoostSpecOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use ConditionBoostSpec.newBuilder() to construct.
       private ConditionBoostSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -7744,6 +7906,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object condition_ = "";
+
       /**
        *
        *
@@ -7778,6 +7941,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -7815,6 +7979,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
       public static final int BOOST_FIELD_NUMBER = 2;
       private float boost_ = 0F;
+
       /**
        *
        *
@@ -8021,6 +8186,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -8232,6 +8398,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object condition_ = "";
+
         /**
          *
          *
@@ -8265,6 +8432,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -8298,6 +8466,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -8330,6 +8499,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8358,6 +8528,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8393,6 +8564,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
 
         private float boost_;
+
         /**
          *
          *
@@ -8424,6 +8596,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public float getBoost() {
           return boost_;
         }
+
         /**
          *
          *
@@ -8459,6 +8632,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -8567,12 +8741,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec>
         conditionBoostSpecs_;
+
     /**
      *
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -8586,12 +8761,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         getConditionBoostSpecsList() {
       return conditionBoostSpecs_;
     }
+
     /**
      *
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -8607,12 +8783,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         getConditionBoostSpecsOrBuilderList() {
       return conditionBoostSpecs_;
     }
+
     /**
      *
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -8625,12 +8802,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public int getConditionBoostSpecsCount() {
       return conditionBoostSpecs_.size();
     }
+
     /**
      *
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -8644,12 +8822,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         getConditionBoostSpecs(int index) {
       return conditionBoostSpecs_.get(index);
     }
+
     /**
      *
      *
      * <pre>
      * Condition boost specifications. If a product matches multiple conditions
-     * in the specifictions, boost scores from these specifications are all
+     * in the specifications, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      * </pre>
@@ -8666,6 +8845,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SKIP_BOOST_SPEC_VALIDATION_FIELD_NUMBER = 2;
     private boolean skipBoostSpecValidation_ = false;
+
     /**
      *
      *
@@ -8686,6 +8866,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSkipBoostSpecValidation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -8885,6 +9066,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -9159,7 +9341,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9176,12 +9358,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return conditionBoostSpecsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9197,12 +9380,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return conditionBoostSpecsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9219,12 +9403,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return conditionBoostSpecsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9247,12 +9432,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9274,12 +9460,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9302,12 +9489,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9330,12 +9518,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9356,12 +9545,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9383,12 +9573,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9410,12 +9601,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9434,12 +9626,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9458,12 +9651,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9476,12 +9670,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           getConditionBoostSpecsBuilder(int index) {
         return getConditionBoostSpecsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9498,12 +9693,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return conditionBoostSpecsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9522,12 +9718,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(conditionBoostSpecs_);
         }
       }
+
       /**
        *
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9543,12 +9740,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec
                     .getDefaultInstance());
       }
+
       /**
        *
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9565,12 +9763,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpec
                     .getDefaultInstance());
       }
+
       /**
        *
        *
        * <pre>
        * Condition boost specifications. If a product matches multiple conditions
-       * in the specifictions, boost scores from these specifications are all
+       * in the specifications, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        * </pre>
@@ -9606,6 +9805,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean skipBoostSpecValidation_;
+
       /**
        *
        *
@@ -9626,6 +9826,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSkipBoostSpecValidation() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -9646,6 +9847,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public boolean getSkipBoostSpecValidation() {
         return skipBoostSpecValidation_;
       }
+
       /**
        *
        *
@@ -9670,6 +9872,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9776,6 +9979,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for condition.
      */
     int getConditionValue();
+
     /**
      *
      *
@@ -9806,6 +10010,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getPinUnexpandedResults();
   }
+
   /**
    *
    *
@@ -9821,6 +10026,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.SearchRequest.QueryExpansionSpec)
       QueryExpansionSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use QueryExpansionSpec.newBuilder() to construct.
     private QueryExpansionSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9910,6 +10116,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <code>CONDITION_UNSPECIFIED = 0;</code>
        */
       public static final int CONDITION_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -9922,6 +10129,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <code>DISABLED = 1;</code>
        */
       public static final int DISABLED_VALUE = 1;
+
       /**
        *
        *
@@ -10020,6 +10228,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CONDITION_FIELD_NUMBER = 1;
     private int condition_ = 0;
+
     /**
      *
      *
@@ -10037,6 +10246,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public int getConditionValue() {
       return condition_;
     }
+
     /**
      *
      *
@@ -10062,6 +10272,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
     public static final int PIN_UNEXPANDED_RESULTS_FIELD_NUMBER = 2;
     private boolean pinUnexpandedResults_ = false;
+
     /**
      *
      *
@@ -10256,6 +10467,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -10458,6 +10670,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int condition_ = 0;
+
       /**
        *
        *
@@ -10475,6 +10688,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public int getConditionValue() {
         return condition_;
       }
+
       /**
        *
        *
@@ -10495,6 +10709,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10517,6 +10732,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec.Condition.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -10541,6 +10757,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10562,6 +10779,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean pinUnexpandedResults_;
+
       /**
        *
        *
@@ -10579,6 +10797,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public boolean getPinUnexpandedResults() {
         return pinUnexpandedResults_;
       }
+
       /**
        *
        *
@@ -10600,6 +10819,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10703,6 +10923,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for mode.
      */
     int getModeValue();
+
     /**
      *
      *
@@ -10717,6 +10938,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode getMode();
   }
+
   /**
    *
    *
@@ -10731,6 +10953,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.SearchRequest.PersonalizationSpec)
       PersonalizationSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PersonalizationSpec.newBuilder() to construct.
     private PersonalizationSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10817,6 +11040,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <code>MODE_UNSPECIFIED = 0;</code>
        */
       public static final int MODE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -10828,6 +11052,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <code>AUTO = 1;</code>
        */
       public static final int AUTO_VALUE = 1;
+
       /**
        *
        *
@@ -10926,6 +11151,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MODE_FIELD_NUMBER = 1;
     private int mode_ = 0;
+
     /**
      *
      *
@@ -10942,6 +11168,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public int getModeValue() {
       return mode_;
     }
+
     /**
      *
      *
@@ -11128,6 +11355,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -11316,6 +11544,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int mode_ = 0;
+
       /**
        *
        *
@@ -11332,6 +11561,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public int getModeValue() {
         return mode_;
       }
+
       /**
        *
        *
@@ -11351,6 +11581,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11371,6 +11602,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -11394,6 +11626,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11499,6 +11732,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for mode.
      */
     int getModeValue();
+
     /**
      *
      *
@@ -11514,6 +11748,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.retail.v2.SearchRequest.SpellCorrectionSpec.Mode getMode();
   }
+
   /**
    *
    *
@@ -11528,6 +11763,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.SearchRequest.SpellCorrectionSpec)
       SpellCorrectionSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SpellCorrectionSpec.newBuilder() to construct.
     private SpellCorrectionSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -11619,6 +11855,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <code>MODE_UNSPECIFIED = 0;</code>
        */
       public static final int MODE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -11632,6 +11869,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <code>SUGGESTION_ONLY = 1;</code>
        */
       public static final int SUGGESTION_ONLY_VALUE = 1;
+
       /**
        *
        *
@@ -11731,6 +11969,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MODE_FIELD_NUMBER = 1;
     private int mode_ = 0;
+
     /**
      *
      *
@@ -11748,6 +11987,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public int getModeValue() {
       return mode_;
     }
+
     /**
      *
      *
@@ -11935,6 +12175,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -12123,6 +12364,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int mode_ = 0;
+
       /**
        *
        *
@@ -12140,6 +12382,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public int getModeValue() {
         return mode_;
       }
+
       /**
        *
        *
@@ -12160,6 +12403,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12181,6 +12425,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.retail.v2.SearchRequest.SpellCorrectionSpec.Mode.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -12205,6 +12450,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12328,6 +12574,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return The conversationId.
      */
     java.lang.String getConversationId();
+
     /**
      *
      *
@@ -12360,6 +12607,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the userAnswer field is set.
      */
     boolean hasUserAnswer();
+
     /**
      *
      *
@@ -12376,6 +12624,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return The userAnswer.
      */
     com.google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec.UserAnswer getUserAnswer();
+
     /**
      *
      *
@@ -12392,6 +12641,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec.UserAnswerOrBuilder
         getUserAnswerOrBuilder();
   }
+
   /**
    *
    *
@@ -12407,6 +12657,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec)
       ConversationalSearchSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ConversationalSearchSpec.newBuilder() to construct.
     private ConversationalSearchSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -12455,6 +12706,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the textAnswer field is set.
        */
       boolean hasTextAnswer();
+
       /**
        *
        *
@@ -12468,6 +12720,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return The textAnswer.
        */
       java.lang.String getTextAnswer();
+
       /**
        *
        *
@@ -12498,6 +12751,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the selectedAnswer field is set.
        */
       boolean hasSelectedAnswer();
+
       /**
        *
        *
@@ -12515,6 +12769,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer
           getSelectedAnswer();
+
       /**
        *
        *
@@ -12535,6 +12790,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec.UserAnswer.TypeCase
           getTypeCase();
     }
+
     /**
      *
      *
@@ -12552,6 +12808,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec.UserAnswer)
         UserAnswerOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use UserAnswer.newBuilder() to construct.
       private UserAnswer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -12600,6 +12857,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Deprecated
         java.util.List<com.google.cloud.retail.v2.ProductAttributeValue>
             getProductAttributeValuesList();
+
         /**
          *
          *
@@ -12613,6 +12871,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          */
         @java.lang.Deprecated
         com.google.cloud.retail.v2.ProductAttributeValue getProductAttributeValues(int index);
+
         /**
          *
          *
@@ -12626,6 +12885,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          */
         @java.lang.Deprecated
         int getProductAttributeValuesCount();
+
         /**
          *
          *
@@ -12640,6 +12900,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Deprecated
         java.util.List<? extends com.google.cloud.retail.v2.ProductAttributeValueOrBuilder>
             getProductAttributeValuesOrBuilderList();
+
         /**
          *
          *
@@ -12668,6 +12929,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the productAttributeValue field is set.
          */
         boolean hasProductAttributeValue();
+
         /**
          *
          *
@@ -12681,6 +12943,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * @return The productAttributeValue.
          */
         com.google.cloud.retail.v2.ProductAttributeValue getProductAttributeValue();
+
         /**
          *
          *
@@ -12694,6 +12957,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.retail.v2.ProductAttributeValueOrBuilder
             getProductAttributeValueOrBuilder();
       }
+
       /**
        *
        *
@@ -12710,6 +12974,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec.UserAnswer.SelectedAnswer)
           SelectedAnswerOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use SelectedAnswer.newBuilder() to construct.
         private SelectedAnswer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -12748,6 +13013,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings("serial")
         private java.util.List<com.google.cloud.retail.v2.ProductAttributeValue>
             productAttributeValues_;
+
         /**
          *
          *
@@ -12765,6 +13031,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             getProductAttributeValuesList() {
           return productAttributeValues_;
         }
+
         /**
          *
          *
@@ -12782,6 +13049,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             getProductAttributeValuesOrBuilderList() {
           return productAttributeValues_;
         }
+
         /**
          *
          *
@@ -12798,6 +13066,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public int getProductAttributeValuesCount() {
           return productAttributeValues_.size();
         }
+
         /**
          *
          *
@@ -12815,6 +13084,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             int index) {
           return productAttributeValues_.get(index);
         }
+
         /**
          *
          *
@@ -12835,6 +13105,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
         public static final int PRODUCT_ATTRIBUTE_VALUE_FIELD_NUMBER = 2;
         private com.google.cloud.retail.v2.ProductAttributeValue productAttributeValue_;
+
         /**
          *
          *
@@ -12851,6 +13122,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public boolean hasProductAttributeValue() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -12869,6 +13141,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               ? com.google.cloud.retail.v2.ProductAttributeValue.getDefaultInstance()
               : productAttributeValue_;
         }
+
         /**
          *
          *
@@ -13101,6 +13374,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -13440,6 +13714,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               return productAttributeValuesBuilder_.getMessageList();
             }
           }
+
           /**
            *
            *
@@ -13459,6 +13734,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               return productAttributeValuesBuilder_.getCount();
             }
           }
+
           /**
            *
            *
@@ -13479,6 +13755,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               return productAttributeValuesBuilder_.getMessage(index);
             }
           }
+
           /**
            *
            *
@@ -13505,6 +13782,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             }
             return this;
           }
+
           /**
            *
            *
@@ -13528,6 +13806,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             }
             return this;
           }
+
           /**
            *
            *
@@ -13554,6 +13833,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             }
             return this;
           }
+
           /**
            *
            *
@@ -13580,6 +13860,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             }
             return this;
           }
+
           /**
            *
            *
@@ -13603,6 +13884,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             }
             return this;
           }
+
           /**
            *
            *
@@ -13626,6 +13908,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             }
             return this;
           }
+
           /**
            *
            *
@@ -13651,6 +13934,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             }
             return this;
           }
+
           /**
            *
            *
@@ -13673,6 +13957,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             }
             return this;
           }
+
           /**
            *
            *
@@ -13695,6 +13980,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             }
             return this;
           }
+
           /**
            *
            *
@@ -13711,6 +13997,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               getProductAttributeValuesBuilder(int index) {
             return getProductAttributeValuesFieldBuilder().getBuilder(index);
           }
+
           /**
            *
            *
@@ -13731,6 +14018,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               return productAttributeValuesBuilder_.getMessageOrBuilder(index);
             }
           }
+
           /**
            *
            *
@@ -13751,6 +14039,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               return java.util.Collections.unmodifiableList(productAttributeValues_);
             }
           }
+
           /**
            *
            *
@@ -13768,6 +14057,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             return getProductAttributeValuesFieldBuilder()
                 .addBuilder(com.google.cloud.retail.v2.ProductAttributeValue.getDefaultInstance());
           }
+
           /**
            *
            *
@@ -13786,6 +14076,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 .addBuilder(
                     index, com.google.cloud.retail.v2.ProductAttributeValue.getDefaultInstance());
           }
+
           /**
            *
            *
@@ -13829,6 +14120,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.retail.v2.ProductAttributeValue.Builder,
                   com.google.cloud.retail.v2.ProductAttributeValueOrBuilder>
               productAttributeValueBuilder_;
+
           /**
            *
            *
@@ -13844,6 +14136,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           public boolean hasProductAttributeValue() {
             return ((bitField0_ & 0x00000002) != 0);
           }
+
           /**
            *
            *
@@ -13865,6 +14158,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               return productAttributeValueBuilder_.getMessage();
             }
           }
+
           /**
            *
            *
@@ -13889,6 +14183,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -13910,6 +14205,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -13940,6 +14236,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             }
             return this;
           }
+
           /**
            *
            *
@@ -13960,6 +14257,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -13976,6 +14274,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return getProductAttributeValueFieldBuilder().getBuilder();
           }
+
           /**
            *
            *
@@ -13996,6 +14295,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                   : productAttributeValue_;
             }
           }
+
           /**
            *
            *
@@ -14112,6 +14412,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         private TypeCase(int value) {
           this.value = value;
         }
+
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -14145,6 +14446,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int TEXT_ANSWER_FIELD_NUMBER = 1;
+
       /**
        *
        *
@@ -14160,6 +14462,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTextAnswer() {
         return typeCase_ == 1;
       }
+
       /**
        *
        *
@@ -14188,6 +14491,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -14218,6 +14522,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int SELECTED_ANSWER_FIELD_NUMBER = 2;
+
       /**
        *
        *
@@ -14237,6 +14542,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSelectedAnswer() {
         return typeCase_ == 2;
       }
+
       /**
        *
        *
@@ -14264,6 +14570,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec.UserAnswer
             .SelectedAnswer.getDefaultInstance();
       }
+
       /**
        *
        *
@@ -14496,6 +14803,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -14763,6 +15071,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public boolean hasTextAnswer() {
           return typeCase_ == 1;
         }
+
         /**
          *
          *
@@ -14792,6 +15101,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -14821,6 +15131,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -14843,6 +15154,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -14863,6 +15175,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -14895,6 +15208,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec.UserAnswer
                     .SelectedAnswerOrBuilder>
             selectedAnswerBuilder_;
+
         /**
          *
          *
@@ -14914,6 +15228,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public boolean hasSelectedAnswer() {
           return typeCase_ == 2;
         }
+
         /**
          *
          *
@@ -14949,6 +15264,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 .SelectedAnswer.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -14978,6 +15294,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           typeCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -15004,6 +15321,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           typeCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -15048,6 +15366,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           typeCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -15077,6 +15396,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -15095,6 +15415,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             getSelectedAnswerBuilder() {
           return getSelectedAnswerFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -15124,6 +15445,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 .SelectedAnswer.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -15243,6 +15565,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int FOLLOWUP_CONVERSATION_REQUESTED_FIELD_NUMBER = 1;
     private boolean followupConversationRequested_ = false;
+
     /**
      *
      *
@@ -15266,6 +15589,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object conversationId_ = "";
+
     /**
      *
      *
@@ -15292,6 +15616,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -15322,6 +15647,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public static final int USER_ANSWER_FIELD_NUMBER = 3;
     private com.google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec.UserAnswer
         userAnswer_;
+
     /**
      *
      *
@@ -15341,6 +15667,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUserAnswer() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -15364,6 +15691,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : userAnswer_;
     }
+
     /**
      *
      *
@@ -15576,6 +15904,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -15814,6 +16143,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private boolean followupConversationRequested_;
+
       /**
        *
        *
@@ -15832,6 +16162,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public boolean getFollowupConversationRequested() {
         return followupConversationRequested_;
       }
+
       /**
        *
        *
@@ -15854,6 +16185,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -15876,6 +16208,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object conversationId_ = "";
+
       /**
        *
        *
@@ -15901,6 +16234,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -15926,6 +16260,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -15950,6 +16285,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -15970,6 +16306,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16003,6 +16340,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec.UserAnswer.Builder,
               com.google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec.UserAnswerOrBuilder>
           userAnswerBuilder_;
+
       /**
        *
        *
@@ -16021,6 +16359,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUserAnswer() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -16047,6 +16386,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return userAnswerBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -16074,6 +16414,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16099,6 +16440,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16133,6 +16475,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -16156,6 +16499,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16175,6 +16519,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getUserAnswerFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -16199,6 +16544,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               : userAnswer_;
         }
       }
+
       /**
        *
        *
@@ -16320,48 +16666,71 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.Tile applied_tiles = 2;</code>
      */
     java.util.List<com.google.cloud.retail.v2.Tile> getAppliedTilesList();
+
     /**
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.Tile applied_tiles = 2;</code>
      */
     com.google.cloud.retail.v2.Tile getAppliedTiles(int index);
+
     /**
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
      * <code>repeated .google.cloud.retail.v2.Tile applied_tiles = 2;</code>
      */
     int getAppliedTilesCount();
+
     /**
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
@@ -16369,13 +16738,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.cloud.retail.v2.TileOrBuilder>
         getAppliedTilesOrBuilderList();
+
     /**
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
@@ -16383,6 +16758,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.retail.v2.TileOrBuilder getAppliedTilesOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -16397,6 +16773,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.SearchRequest.TileNavigationSpec)
       TileNavigationSpecOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TileNavigationSpec.newBuilder() to construct.
     private TileNavigationSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -16429,6 +16806,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TILE_NAVIGATION_REQUESTED_FIELD_NUMBER = 1;
     private boolean tileNavigationRequested_ = false;
+
     /**
      *
      *
@@ -16450,13 +16828,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.retail.v2.Tile> appliedTiles_;
+
     /**
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
@@ -16466,13 +16850,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.cloud.retail.v2.Tile> getAppliedTilesList() {
       return appliedTiles_;
     }
+
     /**
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
@@ -16483,13 +16873,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         getAppliedTilesOrBuilderList() {
       return appliedTiles_;
     }
+
     /**
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
@@ -16499,13 +16895,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public int getAppliedTilesCount() {
       return appliedTiles_.size();
     }
+
     /**
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
@@ -16515,13 +16917,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2.Tile getAppliedTiles(int index) {
       return appliedTiles_.get(index);
     }
+
     /**
      *
      *
      * <pre>
-     * This field specifies the tiles which are already clicked in client side.
-     * NOTE: This field is not being used for filtering search products. Client
-     * side should also put all the applied tiles in
+     * This optional field specifies the tiles which are already clicked in
+     * client side. While the feature works without this field set, particularly
+     * for an initial query, it is highly recommended to set this field because
+     * it can improve the quality of the search response and removes possible
+     * duplicate tiles.
+     *
+     * NOTE: This field is not being used for filtering search
+     * products. Client side should also put all the applied tiles in
      * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
      * </pre>
      *
@@ -16704,6 +17112,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -16953,6 +17362,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private boolean tileNavigationRequested_;
+
       /**
        *
        *
@@ -16969,6 +17379,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public boolean getTileNavigationRequested() {
         return tileNavigationRequested_;
       }
+
       /**
        *
        *
@@ -16989,6 +17400,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -17028,9 +17440,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17043,13 +17460,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return appliedTilesBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17062,13 +17485,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return appliedTilesBuilder_.getCount();
         }
       }
+
       /**
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17081,13 +17510,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return appliedTilesBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17106,13 +17541,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17129,13 +17570,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17154,13 +17601,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17179,13 +17632,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17201,13 +17660,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17224,13 +17689,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17247,13 +17718,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17269,13 +17746,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17291,13 +17774,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17306,13 +17795,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.retail.v2.Tile.Builder getAppliedTilesBuilder(int index) {
         return getAppliedTilesFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17325,13 +17820,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return appliedTilesBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17345,13 +17846,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(appliedTiles_);
         }
       }
+
       /**
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17361,13 +17868,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return getAppliedTilesFieldBuilder()
             .addBuilder(com.google.cloud.retail.v2.Tile.getDefaultInstance());
       }
+
       /**
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17377,13 +17890,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return getAppliedTilesFieldBuilder()
             .addBuilder(index, com.google.cloud.retail.v2.Tile.getDefaultInstance());
       }
+
       /**
        *
        *
        * <pre>
-       * This field specifies the tiles which are already clicked in client side.
-       * NOTE: This field is not being used for filtering search products. Client
-       * side should also put all the applied tiles in
+       * This optional field specifies the tiles which are already clicked in
+       * client side. While the feature works without this field set, particularly
+       * for an initial query, it is highly recommended to set this field because
+       * it can improve the quality of the search response and removes possible
+       * duplicate tiles.
+       *
+       * NOTE: This field is not being used for filtering search
+       * products. Client side should also put all the applied tiles in
        * [SearchRequest.filter][google.cloud.retail.v2.SearchRequest.filter].
        * </pre>
        *
@@ -17483,6 +18002,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object placement_ = "";
+
   /**
    *
    *
@@ -17511,6 +18031,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -17544,6 +18065,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object branch_ = "";
+
   /**
    *
    *
@@ -17571,6 +18093,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -17603,6 +18126,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object query_ = "";
+
   /**
    *
    *
@@ -17631,6 +18155,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -17664,6 +18189,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object visitorId_ = "";
+
   /**
    *
    *
@@ -17696,6 +18222,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -17731,6 +18258,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USER_INFO_FIELD_NUMBER = 5;
   private com.google.cloud.retail.v2.UserInfo userInfo_;
+
   /**
    *
    *
@@ -17746,6 +18274,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUserInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -17761,6 +18290,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.retail.v2.UserInfo getUserInfo() {
     return userInfo_ == null ? com.google.cloud.retail.v2.UserInfo.getDefaultInstance() : userInfo_;
   }
+
   /**
    *
    *
@@ -17777,6 +18307,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 7;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -17801,6 +18332,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -17833,6 +18365,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -17868,6 +18401,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OFFSET_FIELD_NUMBER = 9;
   private int offset_ = 0;
+
   /**
    *
    *
@@ -17894,6 +18428,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -17922,6 +18457,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -17955,6 +18491,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object canonicalFilter_ = "";
+
   /**
    *
    *
@@ -17989,6 +18526,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -18028,6 +18566,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
+
   /**
    *
    *
@@ -18057,6 +18596,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -18091,6 +18631,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2.SearchRequest.FacetSpec> facetSpecs_;
+
   /**
    *
    *
@@ -18107,6 +18648,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.retail.v2.SearchRequest.FacetSpec> getFacetSpecsList() {
     return facetSpecs_;
   }
+
   /**
    *
    *
@@ -18124,6 +18666,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       getFacetSpecsOrBuilderList() {
     return facetSpecs_;
   }
+
   /**
    *
    *
@@ -18140,6 +18683,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public int getFacetSpecsCount() {
     return facetSpecs_.size();
   }
+
   /**
    *
    *
@@ -18156,6 +18700,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.retail.v2.SearchRequest.FacetSpec getFacetSpecs(int index) {
     return facetSpecs_.get(index);
   }
+
   /**
    *
    *
@@ -18176,6 +18721,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DYNAMIC_FACET_SPEC_FIELD_NUMBER = 21;
   private com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec dynamicFacetSpec_;
+
   /**
    *
    *
@@ -18192,7 +18738,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2/search_service.proto;l=696
+   *     google/cloud/retail/v2/search_service.proto;l=700
    * @return Whether the dynamicFacetSpec field is set.
    */
   @java.lang.Override
@@ -18200,6 +18746,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDynamicFacetSpec() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -18216,7 +18763,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2/search_service.proto;l=696
+   *     google/cloud/retail/v2/search_service.proto;l=700
    * @return The dynamicFacetSpec.
    */
   @java.lang.Override
@@ -18226,6 +18773,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec.getDefaultInstance()
         : dynamicFacetSpec_;
   }
+
   /**
    *
    *
@@ -18252,6 +18800,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BOOST_SPEC_FIELD_NUMBER = 13;
   private com.google.cloud.retail.v2.SearchRequest.BoostSpec boostSpec_;
+
   /**
    *
    *
@@ -18276,6 +18825,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBoostSpec() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -18302,6 +18852,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.retail.v2.SearchRequest.BoostSpec.getDefaultInstance()
         : boostSpec_;
   }
+
   /**
    *
    *
@@ -18329,6 +18880,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int QUERY_EXPANSION_SPEC_FIELD_NUMBER = 14;
   private com.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec queryExpansionSpec_;
+
   /**
    *
    *
@@ -18347,6 +18899,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQueryExpansionSpec() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -18367,6 +18920,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec.getDefaultInstance()
         : queryExpansionSpec_;
   }
+
   /**
    *
    *
@@ -18392,6 +18946,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList variantRollupKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -18475,6 +19030,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getVariantRollupKeysList() {
     return variantRollupKeys_;
   }
+
   /**
    *
    *
@@ -18558,6 +19114,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public int getVariantRollupKeysCount() {
     return variantRollupKeys_.size();
   }
+
   /**
    *
    *
@@ -18642,6 +19199,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getVariantRollupKeys(int index) {
     return variantRollupKeys_.get(index);
   }
+
   /**
    *
    *
@@ -18732,6 +19290,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList pageCategories_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -18757,6 +19316,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getPageCategoriesList() {
     return pageCategories_;
   }
+
   /**
    *
    *
@@ -18782,6 +19342,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public int getPageCategoriesCount() {
     return pageCategories_.size();
   }
+
   /**
    *
    *
@@ -18808,6 +19369,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getPageCategories(int index) {
     return pageCategories_.get(index);
   }
+
   /**
    *
    *
@@ -18837,6 +19399,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SEARCH_MODE_FIELD_NUMBER = 31;
   private int searchMode_ = 0;
+
   /**
    *
    *
@@ -18853,6 +19416,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public int getSearchModeValue() {
     return searchMode_;
   }
+
   /**
    *
    *
@@ -18876,6 +19440,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PERSONALIZATION_SPEC_FIELD_NUMBER = 32;
   private com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec personalizationSpec_;
+
   /**
    *
    *
@@ -18901,6 +19466,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPersonalizationSpec() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -18928,6 +19494,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.getDefaultInstance()
         : personalizationSpec_;
   }
+
   /**
    *
    *
@@ -18981,6 +19548,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -19013,12 +19581,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -19048,6 +19618,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -19084,6 +19655,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -19123,6 +19695,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPELL_CORRECTION_SPEC_FIELD_NUMBER = 35;
   private com.google.cloud.retail.v2.SearchRequest.SpellCorrectionSpec spellCorrectionSpec_;
+
   /**
    *
    *
@@ -19141,6 +19714,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSpellCorrectionSpec() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -19161,6 +19735,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.retail.v2.SearchRequest.SpellCorrectionSpec.getDefaultInstance()
         : spellCorrectionSpec_;
   }
+
   /**
    *
    *
@@ -19185,6 +19760,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entity_ = "";
+
   /**
    *
    *
@@ -19213,6 +19789,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -19245,6 +19822,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public static final int CONVERSATIONAL_SEARCH_SPEC_FIELD_NUMBER = 40;
   private com.google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec
       conversationalSearchSpec_;
+
   /**
    *
    *
@@ -19263,6 +19841,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasConversationalSearchSpec() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -19284,6 +19863,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec.getDefaultInstance()
         : conversationalSearchSpec_;
   }
+
   /**
    *
    *
@@ -19306,6 +19886,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TILE_NAVIGATION_SPEC_FIELD_NUMBER = 41;
   private com.google.cloud.retail.v2.SearchRequest.TileNavigationSpec tileNavigationSpec_;
+
   /**
    *
    *
@@ -19323,6 +19904,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTileNavigationSpec() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -19342,6 +19924,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.retail.v2.SearchRequest.TileNavigationSpec.getDefaultInstance()
         : tileNavigationSpec_;
   }
+
   /**
    *
    *
@@ -19359,6 +19942,189 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     return tileNavigationSpec_ == null
         ? com.google.cloud.retail.v2.SearchRequest.TileNavigationSpec.getDefaultInstance()
         : tileNavigationSpec_;
+  }
+
+  public static final int LANGUAGE_CODE_FIELD_NUMBER = 43;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn"
+   * [list](https://www.unicode.org/cldr/charts/46/summary/root.html). For more
+   * information, see [Standardized codes](https://google.aip.dev/143). This
+   * field helps to better interpret the query. If a value isn't specified, the
+   * query language code is automatically detected, which may not be accurate.
+   * </pre>
+   *
+   * <code>string language_code = 43 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
+   */
+  @java.lang.Override
+  public java.lang.String getLanguageCode() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      languageCode_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn"
+   * [list](https://www.unicode.org/cldr/charts/46/summary/root.html). For more
+   * information, see [Standardized codes](https://google.aip.dev/143). This
+   * field helps to better interpret the query. If a value isn't specified, the
+   * query language code is automatically detected, which may not be accurate.
+   * </pre>
+   *
+   * <code>string language_code = 43 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLanguageCodeBytes() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      languageCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REGION_CODE_FIELD_NUMBER = 44;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object regionCode_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Unicode country/region code (CLDR) of a location, such as
+   * "US" and "419"
+   * [list](https://www.unicode.org/cldr/charts/46/supplemental/territory_information.html).
+   * For more information, see [Standardized codes](https://google.aip.dev/143).
+   * If set, then results will be boosted based on the region_code provided.
+   * </pre>
+   *
+   * <code>string region_code = 44 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The regionCode.
+   */
+  @java.lang.Override
+  public java.lang.String getRegionCode() {
+    java.lang.Object ref = regionCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      regionCode_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Unicode country/region code (CLDR) of a location, such as
+   * "US" and "419"
+   * [list](https://www.unicode.org/cldr/charts/46/supplemental/territory_information.html).
+   * For more information, see [Standardized codes](https://google.aip.dev/143).
+   * If set, then results will be boosted based on the region_code provided.
+   * </pre>
+   *
+   * <code>string region_code = 44 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for regionCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRegionCodeBytes() {
+    java.lang.Object ref = regionCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      regionCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PLACE_ID_FIELD_NUMBER = 46;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object placeId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An id corresponding to a place, such as a store id or region id.
+   * When specified, we use the price from the local inventory with the matching
+   * product's
+   * [LocalInventory.place_id][google.cloud.retail.v2.LocalInventory.place_id]
+   * for revenue optimization.
+   * </pre>
+   *
+   * <code>string place_id = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The placeId.
+   */
+  @java.lang.Override
+  public java.lang.String getPlaceId() {
+    java.lang.Object ref = placeId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      placeId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An id corresponding to a place, such as a store id or region id.
+   * When specified, we use the price from the local inventory with the matching
+   * product's
+   * [LocalInventory.place_id][google.cloud.retail.v2.LocalInventory.place_id]
+   * for revenue optimization.
+   * </pre>
+   *
+   * <code>string place_id = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for placeId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPlaceIdBytes() {
+    java.lang.Object ref = placeId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      placeId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -19447,6 +20213,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(41, getTileNavigationSpec());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 43, languageCode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regionCode_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 44, regionCode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(placeId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 46, placeId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -19552,6 +20327,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(41, getTileNavigationSpec());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(43, languageCode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regionCode_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(44, regionCode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(placeId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(46, placeId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -19615,6 +20399,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasTileNavigationSpec()) {
       if (!getTileNavigationSpec().equals(other.getTileNavigationSpec())) return false;
     }
+    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (!getRegionCode().equals(other.getRegionCode())) return false;
+    if (!getPlaceId().equals(other.getPlaceId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -19698,6 +20485,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TILE_NAVIGATION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getTileNavigationSpec().hashCode();
     }
+    hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguageCode().hashCode();
+    hash = (37 * hash) + REGION_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getRegionCode().hashCode();
+    hash = (37 * hash) + PLACE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getPlaceId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -19798,6 +20591,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -19939,6 +20733,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         tileNavigationSpecBuilder_.dispose();
         tileNavigationSpecBuilder_ = null;
       }
+      languageCode_ = "";
+      regionCode_ = "";
+      placeId_ = "";
       return this;
     }
 
@@ -20084,6 +20881,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 ? tileNavigationSpec_
                 : tileNavigationSpecBuilder_.build();
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.regionCode_ = regionCode_;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.placeId_ = placeId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -20259,6 +21065,21 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasTileNavigationSpec()) {
         mergeTileNavigationSpec(other.getTileNavigationSpec());
+      }
+      if (!other.getLanguageCode().isEmpty()) {
+        languageCode_ = other.languageCode_;
+        bitField0_ |= 0x01000000;
+        onChanged();
+      }
+      if (!other.getRegionCode().isEmpty()) {
+        regionCode_ = other.regionCode_;
+        bitField0_ |= 0x02000000;
+        onChanged();
+      }
+      if (!other.getPlaceId().isEmpty()) {
+        placeId_ = other.placeId_;
+        bitField0_ |= 0x04000000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -20452,6 +21273,24 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00800000;
                 break;
               } // case 330
+            case 346:
+              {
+                languageCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 346
+            case 354:
+              {
+                regionCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 354
+            case 370:
+              {
+                placeId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 370
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -20472,6 +21311,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object placement_ = "";
+
     /**
      *
      *
@@ -20499,6 +21339,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -20526,6 +21367,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -20552,6 +21394,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -20574,6 +21417,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -20603,6 +21447,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object branch_ = "";
+
     /**
      *
      *
@@ -20629,6 +21474,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -20655,6 +21501,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -20680,6 +21527,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -20701,6 +21549,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -20729,6 +21578,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object query_ = "";
+
     /**
      *
      *
@@ -20756,6 +21606,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -20783,6 +21634,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -20809,6 +21661,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -20831,6 +21684,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -20860,6 +21714,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object visitorId_ = "";
+
     /**
      *
      *
@@ -20891,6 +21746,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -20922,6 +21778,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -20952,6 +21809,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -20978,6 +21836,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21016,6 +21875,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2.UserInfo.Builder,
             com.google.cloud.retail.v2.UserInfoOrBuilder>
         userInfoBuilder_;
+
     /**
      *
      *
@@ -21030,6 +21890,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUserInfo() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -21050,6 +21911,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return userInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -21072,6 +21934,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21091,6 +21954,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21118,6 +21982,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -21137,6 +22002,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21151,6 +22017,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUserInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -21169,6 +22036,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             : userInfo_;
       }
     }
+
     /**
      *
      *
@@ -21196,6 +22064,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -21215,6 +22084,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -21238,6 +22108,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21261,6 +22132,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -21292,6 +22164,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -21323,6 +22196,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -21353,6 +22227,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21379,6 +22254,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21412,6 +22288,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int offset_;
+
     /**
      *
      *
@@ -21433,6 +22310,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public int getOffset() {
       return offset_;
     }
+
     /**
      *
      *
@@ -21458,6 +22336,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21483,6 +22362,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -21510,6 +22390,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -21537,6 +22418,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -21563,6 +22445,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21585,6 +22468,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21614,6 +22498,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object canonicalFilter_ = "";
+
     /**
      *
      *
@@ -21647,6 +22532,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -21680,6 +22566,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -21712,6 +22599,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21740,6 +22628,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21775,6 +22664,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object orderBy_ = "";
+
     /**
      *
      *
@@ -21803,6 +22693,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -21831,6 +22722,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -21858,6 +22750,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21881,6 +22774,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -21947,6 +22841,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return facetSpecsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -21966,6 +22861,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return facetSpecsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -21985,6 +22881,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return facetSpecsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -22011,6 +22908,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -22034,6 +22932,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -22059,6 +22958,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -22085,6 +22985,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -22108,6 +23009,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -22131,6 +23033,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -22154,6 +23057,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -22176,6 +23080,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -22198,6 +23103,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -22214,6 +23120,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getFacetSpecsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -22234,6 +23141,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return facetSpecsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -22254,6 +23162,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(facetSpecs_);
       }
     }
+
     /**
      *
      *
@@ -22270,6 +23179,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return getFacetSpecsFieldBuilder()
           .addBuilder(com.google.cloud.retail.v2.SearchRequest.FacetSpec.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -22288,6 +23198,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.retail.v2.SearchRequest.FacetSpec.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -22328,6 +23239,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpec.Builder,
             com.google.cloud.retail.v2.SearchRequest.DynamicFacetSpecOrBuilder>
         dynamicFacetSpecBuilder_;
+
     /**
      *
      *
@@ -22344,13 +23256,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-     *     google/cloud/retail/v2/search_service.proto;l=696
+     *     google/cloud/retail/v2/search_service.proto;l=700
      * @return Whether the dynamicFacetSpec field is set.
      */
     @java.lang.Deprecated
     public boolean hasDynamicFacetSpec() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -22367,7 +23280,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-     *     google/cloud/retail/v2/search_service.proto;l=696
+     *     google/cloud/retail/v2/search_service.proto;l=700
      * @return The dynamicFacetSpec.
      */
     @java.lang.Deprecated
@@ -22380,6 +23293,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return dynamicFacetSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -22410,6 +23324,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22437,6 +23352,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22473,6 +23389,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -22499,6 +23416,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22521,6 +23439,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDynamicFacetSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -22547,6 +23466,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             : dynamicFacetSpec_;
       }
     }
+
     /**
      *
      *
@@ -22585,6 +23505,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2.SearchRequest.BoostSpec.Builder,
             com.google.cloud.retail.v2.SearchRequest.BoostSpecOrBuilder>
         boostSpecBuilder_;
+
     /**
      *
      *
@@ -22608,6 +23529,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBoostSpec() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -22637,6 +23559,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return boostSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -22668,6 +23591,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22697,6 +23621,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22734,6 +23659,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -22762,6 +23688,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22785,6 +23712,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBoostSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -22812,6 +23740,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             : boostSpec_;
       }
     }
+
     /**
      *
      *
@@ -22853,6 +23782,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2.SearchRequest.QueryExpansionSpec.Builder,
             com.google.cloud.retail.v2.SearchRequest.QueryExpansionSpecOrBuilder>
         queryExpansionSpecBuilder_;
+
     /**
      *
      *
@@ -22870,6 +23800,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQueryExpansionSpec() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -22893,6 +23824,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return queryExpansionSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -22919,6 +23851,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22942,6 +23875,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -22975,6 +23909,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -22997,6 +23932,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23015,6 +23951,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getQueryExpansionSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -23037,6 +23974,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             : queryExpansionSpec_;
       }
     }
+
     /**
      *
      *
@@ -23075,6 +24013,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00008000;
     }
+
     /**
      *
      *
@@ -23159,6 +24098,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       variantRollupKeys_.makeImmutable();
       return variantRollupKeys_;
     }
+
     /**
      *
      *
@@ -23242,6 +24182,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public int getVariantRollupKeysCount() {
       return variantRollupKeys_.size();
     }
+
     /**
      *
      *
@@ -23326,6 +24267,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getVariantRollupKeys(int index) {
       return variantRollupKeys_.get(index);
     }
+
     /**
      *
      *
@@ -23410,6 +24352,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getVariantRollupKeysBytes(int index) {
       return variantRollupKeys_.getByteString(index);
     }
+
     /**
      *
      *
@@ -23502,6 +24445,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23593,6 +24537,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23681,6 +24626,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23768,6 +24714,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -23870,6 +24817,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00010000;
     }
+
     /**
      *
      *
@@ -23896,6 +24844,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       pageCategories_.makeImmutable();
       return pageCategories_;
     }
+
     /**
      *
      *
@@ -23921,6 +24870,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public int getPageCategoriesCount() {
       return pageCategories_.size();
     }
+
     /**
      *
      *
@@ -23947,6 +24897,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getPageCategories(int index) {
       return pageCategories_.get(index);
     }
+
     /**
      *
      *
@@ -23973,6 +24924,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPageCategoriesBytes(int index) {
       return pageCategories_.getByteString(index);
     }
+
     /**
      *
      *
@@ -24007,6 +24959,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -24040,6 +24993,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -24070,6 +25024,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -24099,6 +25054,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -24135,6 +25091,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int searchMode_ = 0;
+
     /**
      *
      *
@@ -24151,6 +25108,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public int getSearchModeValue() {
       return searchMode_;
     }
+
     /**
      *
      *
@@ -24170,6 +25128,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -24190,6 +25149,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.retail.v2.SearchRequest.SearchMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -24212,6 +25172,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -24237,6 +25198,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Builder,
             com.google.cloud.retail.v2.SearchRequest.PersonalizationSpecOrBuilder>
         personalizationSpecBuilder_;
+
     /**
      *
      *
@@ -24261,6 +25223,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPersonalizationSpec() {
       return ((bitField0_ & 0x00040000) != 0);
     }
+
     /**
      *
      *
@@ -24291,6 +25254,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return personalizationSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -24324,6 +25288,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -24354,6 +25319,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -24394,6 +25360,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -24423,6 +25390,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -24448,6 +25416,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPersonalizationSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -24477,6 +25446,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             : personalizationSpec_;
       }
     }
+
     /**
      *
      *
@@ -24538,6 +25508,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -24570,12 +25541,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -24605,6 +25578,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -24641,6 +25615,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -24683,6 +25658,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -24715,12 +25691,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00080000;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -24757,6 +25735,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00080000;
       return this;
     }
+
     /**
      *
      *
@@ -24794,6 +25773,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2.SearchRequest.SpellCorrectionSpec.Builder,
             com.google.cloud.retail.v2.SearchRequest.SpellCorrectionSpecOrBuilder>
         spellCorrectionSpecBuilder_;
+
     /**
      *
      *
@@ -24811,6 +25791,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSpellCorrectionSpec() {
       return ((bitField0_ & 0x00100000) != 0);
     }
+
     /**
      *
      *
@@ -24834,6 +25815,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return spellCorrectionSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -24860,6 +25842,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -24883,6 +25866,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -24916,6 +25900,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -24938,6 +25923,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -24956,6 +25942,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSpellCorrectionSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -24978,6 +25965,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             : spellCorrectionSpec_;
       }
     }
+
     /**
      *
      *
@@ -25008,6 +25996,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object entity_ = "";
+
     /**
      *
      *
@@ -25035,6 +26024,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -25062,6 +26052,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -25088,6 +26079,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -25110,6 +26102,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -25145,6 +26138,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2.SearchRequest.ConversationalSearchSpec.Builder,
             com.google.cloud.retail.v2.SearchRequest.ConversationalSearchSpecOrBuilder>
         conversationalSearchSpecBuilder_;
+
     /**
      *
      *
@@ -25162,6 +26156,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasConversationalSearchSpec() {
       return ((bitField0_ & 0x00400000) != 0);
     }
+
     /**
      *
      *
@@ -25186,6 +26181,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return conversationalSearchSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -25212,6 +26208,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -25235,6 +26232,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -25268,6 +26266,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -25290,6 +26289,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -25308,6 +26308,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getConversationalSearchSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -25330,6 +26331,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             : conversationalSearchSpec_;
       }
     }
+
     /**
      *
      *
@@ -25365,6 +26367,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2.SearchRequest.TileNavigationSpec.Builder,
             com.google.cloud.retail.v2.SearchRequest.TileNavigationSpecOrBuilder>
         tileNavigationSpecBuilder_;
+
     /**
      *
      *
@@ -25381,6 +26384,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTileNavigationSpec() {
       return ((bitField0_ & 0x00800000) != 0);
     }
+
     /**
      *
      *
@@ -25403,6 +26407,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return tileNavigationSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -25428,6 +26433,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -25450,6 +26456,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -25482,6 +26489,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -25503,6 +26511,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -25520,6 +26529,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTileNavigationSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -25541,6 +26551,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             : tileNavigationSpec_;
       }
     }
+
     /**
      *
      *
@@ -25567,6 +26578,399 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         tileNavigationSpec_ = null;
       }
       return tileNavigationSpecBuilder_;
+    }
+
+    private java.lang.Object languageCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn"
+     * [list](https://www.unicode.org/cldr/charts/46/summary/root.html). For more
+     * information, see [Standardized codes](https://google.aip.dev/143). This
+     * field helps to better interpret the query. If a value isn't specified, the
+     * query language code is automatically detected, which may not be accurate.
+     * </pre>
+     *
+     * <code>string language_code = 43 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The languageCode.
+     */
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn"
+     * [list](https://www.unicode.org/cldr/charts/46/summary/root.html). For more
+     * information, see [Standardized codes](https://google.aip.dev/143). This
+     * field helps to better interpret the query. If a value isn't specified, the
+     * query language code is automatically detected, which may not be accurate.
+     * </pre>
+     *
+     * <code>string language_code = 43 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn"
+     * [list](https://www.unicode.org/cldr/charts/46/summary/root.html). For more
+     * information, see [Standardized codes](https://google.aip.dev/143). This
+     * field helps to better interpret the query. If a value isn't specified, the
+     * query language code is automatically detected, which may not be accurate.
+     * </pre>
+     *
+     * <code>string language_code = 43 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      languageCode_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn"
+     * [list](https://www.unicode.org/cldr/charts/46/summary/root.html). For more
+     * information, see [Standardized codes](https://google.aip.dev/143). This
+     * field helps to better interpret the query. If a value isn't specified, the
+     * query language code is automatically detected, which may not be accurate.
+     * </pre>
+     *
+     * <code>string language_code = 43 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguageCode() {
+      languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x01000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn"
+     * [list](https://www.unicode.org/cldr/charts/46/summary/root.html). For more
+     * information, see [Standardized codes](https://google.aip.dev/143). This
+     * field helps to better interpret the query. If a value isn't specified, the
+     * query language code is automatically detected, which may not be accurate.
+     * </pre>
+     *
+     * <code>string language_code = 43 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      languageCode_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object regionCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Unicode country/region code (CLDR) of a location, such as
+     * "US" and "419"
+     * [list](https://www.unicode.org/cldr/charts/46/supplemental/territory_information.html).
+     * For more information, see [Standardized codes](https://google.aip.dev/143).
+     * If set, then results will be boosted based on the region_code provided.
+     * </pre>
+     *
+     * <code>string region_code = 44 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The regionCode.
+     */
+    public java.lang.String getRegionCode() {
+      java.lang.Object ref = regionCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        regionCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Unicode country/region code (CLDR) of a location, such as
+     * "US" and "419"
+     * [list](https://www.unicode.org/cldr/charts/46/supplemental/territory_information.html).
+     * For more information, see [Standardized codes](https://google.aip.dev/143).
+     * If set, then results will be boosted based on the region_code provided.
+     * </pre>
+     *
+     * <code>string region_code = 44 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for regionCode.
+     */
+    public com.google.protobuf.ByteString getRegionCodeBytes() {
+      java.lang.Object ref = regionCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        regionCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Unicode country/region code (CLDR) of a location, such as
+     * "US" and "419"
+     * [list](https://www.unicode.org/cldr/charts/46/supplemental/territory_information.html).
+     * For more information, see [Standardized codes](https://google.aip.dev/143).
+     * If set, then results will be boosted based on the region_code provided.
+     * </pre>
+     *
+     * <code>string region_code = 44 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The regionCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      regionCode_ = value;
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Unicode country/region code (CLDR) of a location, such as
+     * "US" and "419"
+     * [list](https://www.unicode.org/cldr/charts/46/supplemental/territory_information.html).
+     * For more information, see [Standardized codes](https://google.aip.dev/143).
+     * If set, then results will be boosted based on the region_code provided.
+     * </pre>
+     *
+     * <code>string region_code = 44 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRegionCode() {
+      regionCode_ = getDefaultInstance().getRegionCode();
+      bitField0_ = (bitField0_ & ~0x02000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Unicode country/region code (CLDR) of a location, such as
+     * "US" and "419"
+     * [list](https://www.unicode.org/cldr/charts/46/supplemental/territory_information.html).
+     * For more information, see [Standardized codes](https://google.aip.dev/143).
+     * If set, then results will be boosted based on the region_code provided.
+     * </pre>
+     *
+     * <code>string region_code = 44 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for regionCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      regionCode_ = value;
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object placeId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An id corresponding to a place, such as a store id or region id.
+     * When specified, we use the price from the local inventory with the matching
+     * product's
+     * [LocalInventory.place_id][google.cloud.retail.v2.LocalInventory.place_id]
+     * for revenue optimization.
+     * </pre>
+     *
+     * <code>string place_id = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The placeId.
+     */
+    public java.lang.String getPlaceId() {
+      java.lang.Object ref = placeId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        placeId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An id corresponding to a place, such as a store id or region id.
+     * When specified, we use the price from the local inventory with the matching
+     * product's
+     * [LocalInventory.place_id][google.cloud.retail.v2.LocalInventory.place_id]
+     * for revenue optimization.
+     * </pre>
+     *
+     * <code>string place_id = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for placeId.
+     */
+    public com.google.protobuf.ByteString getPlaceIdBytes() {
+      java.lang.Object ref = placeId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        placeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An id corresponding to a place, such as a store id or region id.
+     * When specified, we use the price from the local inventory with the matching
+     * product's
+     * [LocalInventory.place_id][google.cloud.retail.v2.LocalInventory.place_id]
+     * for revenue optimization.
+     * </pre>
+     *
+     * <code>string place_id = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The placeId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlaceId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      placeId_ = value;
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An id corresponding to a place, such as a store id or region id.
+     * When specified, we use the price from the local inventory with the matching
+     * product's
+     * [LocalInventory.place_id][google.cloud.retail.v2.LocalInventory.place_id]
+     * for revenue optimization.
+     * </pre>
+     *
+     * <code>string place_id = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPlaceId() {
+      placeId_ = getDefaultInstance().getPlaceId();
+      bitField0_ = (bitField0_ & ~0x04000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An id corresponding to a place, such as a store id or region id.
+     * When specified, we use the price from the local inventory with the matching
+     * product's
+     * [LocalInventory.place_id][google.cloud.retail.v2.LocalInventory.place_id]
+     * for revenue optimization.
+     * </pre>
+     *
+     * <code>string place_id = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for placeId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlaceIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      placeId_ = value;
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

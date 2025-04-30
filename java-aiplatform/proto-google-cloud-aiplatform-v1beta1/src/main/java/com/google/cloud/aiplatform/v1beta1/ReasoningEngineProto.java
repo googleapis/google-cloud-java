@@ -37,6 +37,10 @@ public final class ReasoningEngineProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_PackageSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_DeploymentSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_DeploymentSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_fieldAccessorTable;
@@ -49,37 +53,47 @@ public final class ReasoningEngineProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n6google/cloud/aiplatform/v1beta1/reason"
-          + "ing_engine.proto\022\037google.cloud.aiplatfor"
+      "\n"
+          + "6google/cloud/aiplatform/v1beta1/reasoning_engine.proto\022\037google.cloud.aiplatfor"
           + "m.v1beta1\032\037google/api/field_behavior.pro"
-          + "to\032\031google/api/resource.proto\032\034google/pr"
-          + "otobuf/struct.proto\032\037google/protobuf/tim"
-          + "estamp.proto\"\302\002\n\023ReasoningEngineSpec\022[\n\014"
-          + "package_spec\030\002 \001(\0132@.google.cloud.aiplat"
-          + "form.v1beta1.ReasoningEngineSpec.Package"
-          + "SpecB\003\340A\002\0223\n\rclass_methods\030\003 \003(\0132\027.googl"
-          + "e.protobuf.StructB\003\340A\001\032\230\001\n\013PackageSpec\022\""
-          + "\n\025pickle_object_gcs_uri\030\001 \001(\tB\003\340A\001\022%\n\030de"
-          + "pendency_files_gcs_uri\030\002 \001(\tB\003\340A\001\022!\n\024req"
-          + "uirements_gcs_uri\030\003 \001(\tB\003\340A\001\022\033\n\016python_v"
-          + "ersion\030\004 \001(\tB\003\340A\001\"\303\003\n\017ReasoningEngine\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\010\022\031\n\014display_name\030\002 \001(\tB\003"
-          + "\340A\002\022\030\n\013description\030\007 \001(\tB\003\340A\001\022G\n\004spec\030\003 "
-          + "\001(\01324.google.cloud.aiplatform.v1beta1.Re"
-          + "asoningEngineSpecB\003\340A\002\0224\n\013create_time\030\004 "
-          + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013"
-          + "update_time\030\005 \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\022\021\n\004etag\030\006 \001(\tB\003\340A\001:\237\001\352A\233\001\n)ai"
-          + "platform.googleapis.com/ReasoningEngine\022"
-          + "Kprojects/{project}/locations/{location}"
-          + "/reasoningEngines/{reasoning_engine}*\020re"
-          + "asoningEngines2\017reasoningEngineB\353\001\n#com."
-          + "google.cloud.aiplatform.v1beta1B\024Reasoni"
-          + "ngEngineProtoP\001ZCcloud.google.com/go/aip"
-          + "latform/apiv1beta1/aiplatformpb;aiplatfo"
-          + "rmpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002"
-          + "\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Googl"
-          + "e::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "to\032\031google/api/resource.proto\032-google/cl"
+          + "oud/aiplatform/v1beta1/env_var.proto\032\034go"
+          + "ogle/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\331\004\n"
+          + "\023ReasoningEngineSpec\022[\n"
+          + "\014package_spec\030\002 \001(\0132@.google.cloud"
+          + ".aiplatform.v1beta1.ReasoningEngineSpec.PackageSpecB\003\340A\001\022a\n"
+          + "\017deployment_spec\030\004 \001("
+          + "\0132C.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpecB\003\340A\001\0223\n\r"
+          + "class_methods\030\003 \003(\0132\027.google.protobuf.StructB\003\340A\001\022\034\n"
+          + "\017agent_framework\030\005 \001(\tB\003\340A\001\032\230\001\n"
+          + "\013PackageSpec\022\"\n"
+          + "\025pickle_object_gcs_uri\030\001 \001(\tB\003\340A\001\022%\n"
+          + "\030dependency_files_gcs_uri\030\002 \001(\tB\003\340A\001\022!\n"
+          + "\024requirements_gcs_uri\030\003 \001(\tB\003\340A\001\022\033\n"
+          + "\016python_version\030\004 \001(\tB\003\340A\001\032\223\001\n"
+          + "\016DeploymentSpec\0229\n"
+          + "\003env\030\001"
+          + " \003(\0132\'.google.cloud.aiplatform.v1beta1.EnvVarB\003\340A\001\022F\n\n"
+          + "secret_env\030\002"
+          + " \003(\0132-.google.cloud.aiplatform.v1beta1.SecretEnvVarB\003\340A\001\"\303\003\n"
+          + "\017ReasoningEngine\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
+          + "\014display_name\030\002 \001(\tB\003\340A\002\022\030\n"
+          + "\013description\030\007 \001(\tB\003\340A\001\022G\n"
+          + "\004spec\030\003"
+          + " \001(\01324.google.cloud.aiplatform.v1beta1.ReasoningEngineSpecB\003\340A\001\0224\n"
+          + "\013create_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\005"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
+          + "\004etag\030\006 \001(\tB\003\340A\001:\237\001\352A\233\001\n"
+          + ")aiplatform.googleapis.com/ReasoningEngine\022Kprojects/{project}/locations/{loc"
+          + "ation}/reasoningEngines/{reasoning_engin"
+          + "e}*\020reasoningEngines2\017reasoningEngineB\353\001\n"
+          + "#com.google.cloud.aiplatform.v1beta1B\024ReasoningEngineProtoP\001ZCcloud.google.com/"
+          + "go/aiplatform/apiv1beta1/aiplatformpb;ai"
+          + "platformpb\252\002\037Google.Cloud.AIPlatform.V1B"
+          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
+          + "\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -87,6 +101,7 @@ public final class ReasoningEngineProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.EnvVarProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -96,7 +111,7 @@ public final class ReasoningEngineProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_descriptor,
             new java.lang.String[] {
-              "PackageSpec", "ClassMethods",
+              "PackageSpec", "DeploymentSpec", "ClassMethods", "AgentFramework",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_PackageSpec_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_descriptor
@@ -107,6 +122,16 @@ public final class ReasoningEngineProto {
             internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_PackageSpec_descriptor,
             new java.lang.String[] {
               "PickleObjectGcsUri", "DependencyFilesGcsUri", "RequirementsGcsUri", "PythonVersion",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_DeploymentSpec_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_DeploymentSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_DeploymentSpec_descriptor,
+            new java.lang.String[] {
+              "Env", "SecretEnv",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -124,6 +149,7 @@ public final class ReasoningEngineProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.EnvVarProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

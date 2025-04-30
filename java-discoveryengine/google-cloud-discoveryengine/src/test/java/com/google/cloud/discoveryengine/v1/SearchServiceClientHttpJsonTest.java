@@ -121,11 +121,13 @@ public class SearchServiceClientHttpJsonTest {
             .setSafeSearch(true)
             .putAllUserLabels(new HashMap<String, String>())
             .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+            .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
             .setSession(
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
             .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+            .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -191,11 +193,13 @@ public class SearchServiceClientHttpJsonTest {
               .setSafeSearch(true)
               .putAllUserLabels(new HashMap<String, String>())
               .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+              .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
               .setSession(
                   SessionName.ofProjectLocationDataStoreSessionName(
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+              .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
               .build();
       client.search(request);
       Assert.fail("No exception raised");
@@ -246,11 +250,13 @@ public class SearchServiceClientHttpJsonTest {
             .setSafeSearch(true)
             .putAllUserLabels(new HashMap<String, String>())
             .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+            .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
             .setSession(
                 SessionName.ofProjectLocationDataStoreSessionName(
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
             .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+            .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
             .build();
 
     SearchLitePagedResponse pagedListResponse = client.searchLite(request);
@@ -316,11 +322,13 @@ public class SearchServiceClientHttpJsonTest {
               .setSafeSearch(true)
               .putAllUserLabels(new HashMap<String, String>())
               .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+              .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
               .setSession(
                   SessionName.ofProjectLocationDataStoreSessionName(
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+              .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
               .build();
       client.searchLite(request);
       Assert.fail("No exception raised");

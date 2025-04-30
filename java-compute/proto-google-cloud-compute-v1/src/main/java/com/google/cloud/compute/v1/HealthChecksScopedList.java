@@ -32,6 +32,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.HealthChecksScopedList)
     HealthChecksScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HealthChecksScopedList.newBuilder() to construct.
   private HealthChecksScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.HealthCheck> healthChecks_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.compute.v1.HealthCheck> getHealthChecksList() {
     return healthChecks_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
       getHealthChecksOrBuilderList() {
     return healthChecks_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
   public int getHealthChecksCount() {
     return healthChecks_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
   public com.google.cloud.compute.v1.HealthCheck getHealthChecks(int index) {
     return healthChecks_.get(index);
   }
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -151,6 +158,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -166,6 +174,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -356,6 +365,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -647,6 +657,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
         return healthChecksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -663,6 +674,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
         return healthChecksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -679,6 +691,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
         return healthChecksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -701,6 +714,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +735,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +758,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +781,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +802,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +823,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +844,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +864,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +884,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +897,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.HealthCheck.Builder getHealthChecksBuilder(int index) {
       return getHealthChecksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -891,6 +914,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
         return healthChecksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -908,6 +932,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(healthChecks_);
       }
     }
+
     /**
      *
      *
@@ -921,6 +946,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
       return getHealthChecksFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.HealthCheck.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -934,6 +960,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
       return getHealthChecksFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.HealthCheck.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -971,6 +998,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -985,6 +1013,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1005,6 +1034,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1027,6 +1057,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1046,6 +1077,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1105,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1125,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1106,6 +1140,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1124,6 +1159,7 @@ public final class HealthChecksScopedList extends com.google.protobuf.GeneratedM
             : warning_;
       }
     }
+
     /**
      *
      *

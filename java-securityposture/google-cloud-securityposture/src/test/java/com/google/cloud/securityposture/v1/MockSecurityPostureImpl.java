@@ -95,7 +95,8 @@ public class MockSecurityPostureImpl extends SecurityPostureImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListPostureRevisions, expected %s or %s",
+                  "Unrecognized response type %s for method ListPostureRevisions, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListPostureRevisionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -221,7 +222,8 @@ public class MockSecurityPostureImpl extends SecurityPostureImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListPostureDeployments, expected %s or %s",
+                  "Unrecognized response type %s for method ListPostureDeployments, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListPostureDeploymentsResponse.class.getName(),
                   Exception.class.getName())));
@@ -242,7 +244,8 @@ public class MockSecurityPostureImpl extends SecurityPostureImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetPostureDeployment, expected %s or %s",
+                  "Unrecognized response type %s for method GetPostureDeployment, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   PostureDeployment.class.getName(),
                   Exception.class.getName())));
@@ -263,7 +266,8 @@ public class MockSecurityPostureImpl extends SecurityPostureImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreatePostureDeployment, expected %s or %s",
+                  "Unrecognized response type %s for method CreatePostureDeployment, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -284,7 +288,8 @@ public class MockSecurityPostureImpl extends SecurityPostureImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdatePostureDeployment, expected %s or %s",
+                  "Unrecognized response type %s for method UpdatePostureDeployment, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -305,7 +310,8 @@ public class MockSecurityPostureImpl extends SecurityPostureImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeletePostureDeployment, expected %s or %s",
+                  "Unrecognized response type %s for method DeletePostureDeployment, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -327,7 +333,8 @@ public class MockSecurityPostureImpl extends SecurityPostureImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListPostureTemplates, expected %s or %s",
+                  "Unrecognized response type %s for method ListPostureTemplates, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListPostureTemplatesResponse.class.getName(),
                   Exception.class.getName())));

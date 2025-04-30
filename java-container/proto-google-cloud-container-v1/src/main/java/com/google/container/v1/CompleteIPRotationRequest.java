@@ -33,6 +33,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.container.v1.CompleteIPRotationRequest)
     CompleteIPRotationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CompleteIPRotationRequest.newBuilder() to construct.
   private CompleteIPRotationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -194,6 +199,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterId_ = "";
+
   /**
    *
    *
@@ -221,6 +227,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -253,6 +260,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -277,6 +285,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -488,6 +497,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -717,6 +727,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -744,6 +755,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -771,6 +783,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -797,6 +810,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +833,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +863,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -876,6 +892,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -904,6 +921,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -931,6 +949,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +973,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1004,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object clusterId_ = "";
+
     /**
      *
      *
@@ -1010,6 +1031,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1036,6 +1058,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1061,6 +1084,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1082,6 +1106,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1110,6 +1135,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1133,6 +1159,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1156,6 +1183,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1178,6 +1206,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1196,6 +1225,7 @@ public final class CompleteIPRotationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

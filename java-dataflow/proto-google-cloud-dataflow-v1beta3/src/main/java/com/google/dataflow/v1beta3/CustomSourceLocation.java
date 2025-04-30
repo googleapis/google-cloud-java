@@ -33,6 +33,7 @@ public final class CustomSourceLocation extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.CustomSourceLocation)
     CustomSourceLocationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomSourceLocation.newBuilder() to construct.
   private CustomSourceLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class CustomSourceLocation extends com.google.protobuf.GeneratedMes
 
   public static final int STATEFUL_FIELD_NUMBER = 1;
   private boolean stateful_ = false;
+
   /**
    *
    *
@@ -238,6 +240,7 @@ public final class CustomSourceLocation extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -420,6 +423,7 @@ public final class CustomSourceLocation extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean stateful_;
+
     /**
      *
      *
@@ -435,6 +439,7 @@ public final class CustomSourceLocation extends com.google.protobuf.GeneratedMes
     public boolean getStateful() {
       return stateful_;
     }
+
     /**
      *
      *
@@ -454,6 +459,7 @@ public final class CustomSourceLocation extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
