@@ -36,6 +36,7 @@ public interface CitationMetadataOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vertexai.api.Citation> getCitationsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CitationMetadataOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.Citation getCitations(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface CitationMetadataOrBuilder
    * </code>
    */
   int getCitationsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface CitationMetadataOrBuilder
    */
   java.util.List<? extends com.google.cloud.vertexai.api.CitationOrBuilder>
       getCitationsOrBuilderList();
+
   /**
    *
    *

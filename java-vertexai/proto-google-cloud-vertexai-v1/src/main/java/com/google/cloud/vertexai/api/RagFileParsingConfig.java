@@ -33,6 +33,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.RagFileParsingConfig)
     RagFileParsingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RagFileParsingConfig.newBuilder() to construct.
   private RagFileParsingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      * @return The processorName.
      */
     java.lang.String getProcessorName();
+
     /**
      *
      *
@@ -118,6 +120,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
      */
     int getMaxParsingRequestsPerMin();
   }
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.RagFileParsingConfig.LayoutParser)
       LayoutParserOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use LayoutParser.newBuilder() to construct.
     private LayoutParser(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -166,6 +170,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object processorName_ = "";
+
     /**
      *
      *
@@ -194,6 +199,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -225,6 +231,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
 
     public static final int MAX_PARSING_REQUESTS_PER_MIN_FIELD_NUMBER = 2;
     private int maxParsingRequestsPerMin_ = 0;
+
     /**
      *
      *
@@ -417,6 +424,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -622,6 +630,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private java.lang.Object processorName_ = "";
+
       /**
        *
        *
@@ -649,6 +658,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -676,6 +686,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -702,6 +713,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -724,6 +736,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -753,6 +766,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       }
 
       private int maxParsingRequestsPerMin_;
+
       /**
        *
        *
@@ -772,6 +786,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       public int getMaxParsingRequestsPerMin() {
         return maxParsingRequestsPerMin_;
       }
+
       /**
        *
        *
@@ -795,6 +810,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -900,6 +916,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
     private ParserCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -931,6 +948,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int LAYOUT_PARSER_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -946,6 +964,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
   public boolean hasLayoutParser() {
     return parserCase_ == 4;
   }
+
   /**
    *
    *
@@ -964,6 +983,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.vertexai.api.RagFileParsingConfig.LayoutParser.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1157,6 +1177,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1375,6 +1396,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.vertexai.api.RagFileParsingConfig.LayoutParser.Builder,
             com.google.cloud.vertexai.api.RagFileParsingConfig.LayoutParserOrBuilder>
         layoutParserBuilder_;
+
     /**
      *
      *
@@ -1390,6 +1412,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
     public boolean hasLayoutParser() {
       return parserCase_ == 4;
     }
+
     /**
      *
      *
@@ -1415,6 +1438,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.vertexai.api.RagFileParsingConfig.LayoutParser.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1438,6 +1462,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       parserCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1458,6 +1483,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       parserCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1493,6 +1519,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       parserCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1518,6 +1545,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1531,6 +1559,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
         getLayoutParserBuilder() {
       return getLayoutParserFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1552,6 +1581,7 @@ public final class RagFileParsingConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.vertexai.api.RagFileParsingConfig.LayoutParser.getDefaultInstance();
       }
     }
+
     /**
      *
      *

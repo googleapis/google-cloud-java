@@ -33,6 +33,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.UploadRagFileConfig)
     UploadRagFileConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UploadRagFileConfig.newBuilder() to construct.
   private UploadRagFileConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int RAG_FILE_TRANSFORMATION_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.vertexai.api.RagFileTransformationConfig ragFileTransformationConfig_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
   public boolean hasRagFileTransformationConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.vertexai.api.RagFileTransformationConfig.getDefaultInstance()
         : ragFileTransformationConfig_;
   }
+
   /**
    *
    *
@@ -284,6 +288,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -491,6 +496,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.vertexai.api.RagFileTransformationConfig.Builder,
             com.google.cloud.vertexai.api.RagFileTransformationConfigOrBuilder>
         ragFileTransformationConfigBuilder_;
+
     /**
      *
      *
@@ -507,6 +513,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
     public boolean hasRagFileTransformationConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -530,6 +537,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
         return ragFileTransformationConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -555,6 +563,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -577,6 +586,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -608,6 +618,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -629,6 +640,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +658,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return getRagFileTransformationConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -667,6 +680,7 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
             : ragFileTransformationConfig_;
       }
     }
+
     /**
      *
      *

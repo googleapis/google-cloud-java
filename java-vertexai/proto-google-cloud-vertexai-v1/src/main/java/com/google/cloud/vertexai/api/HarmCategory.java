@@ -104,6 +104,7 @@ public enum HarmCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HARM_CATEGORY_UNSPECIFIED = 0;</code>
    */
   public static final int HARM_CATEGORY_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -114,6 +115,7 @@ public enum HarmCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HARM_CATEGORY_HATE_SPEECH = 1;</code>
    */
   public static final int HARM_CATEGORY_HATE_SPEECH_VALUE = 1;
+
   /**
    *
    *
@@ -124,6 +126,7 @@ public enum HarmCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HARM_CATEGORY_DANGEROUS_CONTENT = 2;</code>
    */
   public static final int HARM_CATEGORY_DANGEROUS_CONTENT_VALUE = 2;
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public enum HarmCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HARM_CATEGORY_HARASSMENT = 3;</code>
    */
   public static final int HARM_CATEGORY_HARASSMENT_VALUE = 3;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public enum HarmCategory implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HARM_CATEGORY_SEXUALLY_EXPLICIT = 4;</code>
    */
   public static final int HARM_CATEGORY_SEXUALLY_EXPLICIT_VALUE = 4;
+
   /**
    *
    *

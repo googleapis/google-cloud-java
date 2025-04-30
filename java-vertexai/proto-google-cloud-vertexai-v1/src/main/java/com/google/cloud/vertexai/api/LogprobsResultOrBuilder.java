@@ -35,6 +35,7 @@ public interface LogprobsResultOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vertexai.api.LogprobsResult.TopCandidates> getTopCandidatesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface LogprobsResultOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.LogprobsResult.TopCandidates getTopCandidates(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface LogprobsResultOrBuilder
    * </code>
    */
   int getTopCandidatesCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface LogprobsResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.vertexai.api.LogprobsResult.TopCandidatesOrBuilder>
       getTopCandidatesOrBuilderList();
+
   /**
    *
    *
@@ -93,6 +97,7 @@ public interface LogprobsResultOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.LogprobsResult.Candidate chosen_candidates = 2;</code>
    */
   java.util.List<com.google.cloud.vertexai.api.LogprobsResult.Candidate> getChosenCandidatesList();
+
   /**
    *
    *
@@ -104,6 +109,7 @@ public interface LogprobsResultOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.LogprobsResult.Candidate chosen_candidates = 2;</code>
    */
   com.google.cloud.vertexai.api.LogprobsResult.Candidate getChosenCandidates(int index);
+
   /**
    *
    *
@@ -115,6 +121,7 @@ public interface LogprobsResultOrBuilder
    * <code>repeated .google.cloud.vertexai.v1.LogprobsResult.Candidate chosen_candidates = 2;</code>
    */
   int getChosenCandidatesCount();
+
   /**
    *
    *
@@ -127,6 +134,7 @@ public interface LogprobsResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.vertexai.api.LogprobsResult.CandidateOrBuilder>
       getChosenCandidatesOrBuilderList();
+
   /**
    *
    *

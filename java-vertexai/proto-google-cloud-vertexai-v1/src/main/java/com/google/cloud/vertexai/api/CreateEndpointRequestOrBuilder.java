@@ -39,6 +39,7 @@ public interface CreateEndpointRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateEndpointRequestOrBuilder
    * @return Whether the endpoint field is set.
    */
   boolean hasEndpoint();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateEndpointRequestOrBuilder
    * @return The endpoint.
    */
   com.google.cloud.vertexai.api.Endpoint getEndpoint();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface CreateEndpointRequestOrBuilder
    * @return The endpointId.
    */
   java.lang.String getEndpointId();
+
   /**
    *
    *

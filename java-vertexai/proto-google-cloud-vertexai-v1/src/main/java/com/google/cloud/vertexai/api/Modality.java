@@ -102,6 +102,7 @@ public enum Modality implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MODALITY_UNSPECIFIED = 0;</code>
    */
   public static final int MODALITY_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -112,6 +113,7 @@ public enum Modality implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TEXT = 1;</code>
    */
   public static final int TEXT_VALUE = 1;
+
   /**
    *
    *
@@ -122,6 +124,7 @@ public enum Modality implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMAGE = 2;</code>
    */
   public static final int IMAGE_VALUE = 2;
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public enum Modality implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VIDEO = 3;</code>
    */
   public static final int VIDEO_VALUE = 3;
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public enum Modality implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AUDIO = 4;</code>
    */
   public static final int AUDIO_VALUE = 4;
+
   /**
    *
    *

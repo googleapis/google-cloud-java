@@ -34,6 +34,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.DirectRawPredictRequest)
     DirectRawPredictRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DirectRawPredictRequest.newBuilder() to construct.
   private DirectRawPredictRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object endpoint_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object methodName_ = "";
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -190,6 +195,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
 
   public static final int INPUT_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString input_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -384,6 +390,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -597,6 +604,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object endpoint_ = "";
+
     /**
      *
      *
@@ -623,6 +631,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -649,6 +658,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -674,6 +684,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -695,6 +706,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +735,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object methodName_ = "";
+
     /**
      *
      *
@@ -751,6 +764,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -779,6 +793,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -806,6 +821,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +845,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +876,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
     }
 
     private com.google.protobuf.ByteString input_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -874,6 +892,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getInput() {
       return input_;
     }
+
     /**
      *
      *
@@ -895,6 +914,7 @@ public final class DirectRawPredictRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface RagVectorDbConfigOrBuilder
    * @return Whether the ragManagedDb field is set.
    */
   boolean hasRagManagedDb();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RagVectorDbConfigOrBuilder
    * @return The ragManagedDb.
    */
   com.google.cloud.vertexai.api.RagVectorDbConfig.RagManagedDb getRagManagedDb();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface RagVectorDbConfigOrBuilder
    * @return Whether the pinecone field is set.
    */
   boolean hasPinecone();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface RagVectorDbConfigOrBuilder
    * @return The pinecone.
    */
   com.google.cloud.vertexai.api.RagVectorDbConfig.Pinecone getPinecone();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface RagVectorDbConfigOrBuilder
    * @return Whether the vertexVectorSearch field is set.
    */
   boolean hasVertexVectorSearch();
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public interface RagVectorDbConfigOrBuilder
    * @return The vertexVectorSearch.
    */
   com.google.cloud.vertexai.api.RagVectorDbConfig.VertexVectorSearch getVertexVectorSearch();
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface RagVectorDbConfigOrBuilder
    * @return Whether the apiAuth field is set.
    */
   boolean hasApiAuth();
+
   /**
    *
    *
@@ -157,6 +164,7 @@ public interface RagVectorDbConfigOrBuilder
    * @return The apiAuth.
    */
   com.google.cloud.vertexai.api.ApiAuth getApiAuth();
+
   /**
    *
    *
@@ -182,6 +190,7 @@ public interface RagVectorDbConfigOrBuilder
    * @return Whether the ragEmbeddingModelConfig field is set.
    */
   boolean hasRagEmbeddingModelConfig();
+
   /**
    *
    *
@@ -196,6 +205,7 @@ public interface RagVectorDbConfigOrBuilder
    * @return The ragEmbeddingModelConfig.
    */
   com.google.cloud.vertexai.api.RagEmbeddingModelConfig getRagEmbeddingModelConfig();
+
   /**
    *
    *

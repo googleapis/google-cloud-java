@@ -37,6 +37,7 @@ public interface PresetsOrBuilder
    * @return Whether the query field is set.
    */
   boolean hasQuery();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface PresetsOrBuilder
    * @return The enum numeric value on the wire for query.
    */
   int getQueryValue();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface PresetsOrBuilder
    * @return The enum numeric value on the wire for modality.
    */
   int getModalityValue();
+
   /**
    *
    *

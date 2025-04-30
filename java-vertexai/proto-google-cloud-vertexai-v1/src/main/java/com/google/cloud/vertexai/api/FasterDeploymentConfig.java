@@ -33,6 +33,7 @@ public final class FasterDeploymentConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.FasterDeploymentConfig)
     FasterDeploymentConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FasterDeploymentConfig.newBuilder() to construct.
   private FasterDeploymentConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class FasterDeploymentConfig extends com.google.protobuf.GeneratedM
 
   public static final int FAST_TRYOUT_ENABLED_FIELD_NUMBER = 2;
   private boolean fastTryoutEnabled_ = false;
+
   /**
    *
    *
@@ -238,6 +240,7 @@ public final class FasterDeploymentConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -420,6 +423,7 @@ public final class FasterDeploymentConfig extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private boolean fastTryoutEnabled_;
+
     /**
      *
      *
@@ -435,6 +439,7 @@ public final class FasterDeploymentConfig extends com.google.protobuf.GeneratedM
     public boolean getFastTryoutEnabled() {
       return fastTryoutEnabled_;
     }
+
     /**
      *
      *
@@ -454,6 +459,7 @@ public final class FasterDeploymentConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface GoogleDriveSourceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vertexai.api.GoogleDriveSource.ResourceId> getResourceIdsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface GoogleDriveSourceOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.GoogleDriveSource.ResourceId getResourceIds(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface GoogleDriveSourceOrBuilder
    * </code>
    */
   int getResourceIdsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface GoogleDriveSourceOrBuilder
    */
   java.util.List<? extends com.google.cloud.vertexai.api.GoogleDriveSource.ResourceIdOrBuilder>
       getResourceIdsOrBuilderList();
+
   /**
    *
    *

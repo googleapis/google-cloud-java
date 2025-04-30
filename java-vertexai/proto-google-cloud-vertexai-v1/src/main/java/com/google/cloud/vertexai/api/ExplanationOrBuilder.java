@@ -62,6 +62,7 @@ public interface ExplanationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vertexai.api.Attribution> getAttributionsList();
+
   /**
    *
    *
@@ -100,6 +101,7 @@ public interface ExplanationOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.Attribution getAttributions(int index);
+
   /**
    *
    *
@@ -138,6 +140,7 @@ public interface ExplanationOrBuilder
    * </code>
    */
   int getAttributionsCount();
+
   /**
    *
    *
@@ -177,6 +180,7 @@ public interface ExplanationOrBuilder
    */
   java.util.List<? extends com.google.cloud.vertexai.api.AttributionOrBuilder>
       getAttributionsOrBuilderList();
+
   /**
    *
    *
@@ -231,6 +235,7 @@ public interface ExplanationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vertexai.api.Neighbor> getNeighborsList();
+
   /**
    *
    *
@@ -246,6 +251,7 @@ public interface ExplanationOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.Neighbor getNeighbors(int index);
+
   /**
    *
    *
@@ -261,6 +267,7 @@ public interface ExplanationOrBuilder
    * </code>
    */
   int getNeighborsCount();
+
   /**
    *
    *
@@ -277,6 +284,7 @@ public interface ExplanationOrBuilder
    */
   java.util.List<? extends com.google.cloud.vertexai.api.NeighborOrBuilder>
       getNeighborsOrBuilderList();
+
   /**
    *
    *

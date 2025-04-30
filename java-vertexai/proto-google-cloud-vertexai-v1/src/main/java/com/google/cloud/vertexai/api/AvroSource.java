@@ -33,6 +33,7 @@ public final class AvroSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.AvroSource)
     AvroSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AvroSource.newBuilder() to construct.
   private AvroSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class AvroSource extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int GCS_SOURCE_FIELD_NUMBER = 1;
   private com.google.cloud.vertexai.api.GcsSource gcsSource_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class AvroSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcsSource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class AvroSource extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vertexai.api.GcsSource.getDefaultInstance()
         : gcsSource_;
   }
+
   /**
    *
    *
@@ -281,6 +285,7 @@ public final class AvroSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -483,6 +488,7 @@ public final class AvroSource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.GcsSource.Builder,
             com.google.cloud.vertexai.api.GcsSourceOrBuilder>
         gcsSourceBuilder_;
+
     /**
      *
      *
@@ -499,6 +505,7 @@ public final class AvroSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcsSource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -521,6 +528,7 @@ public final class AvroSource extends com.google.protobuf.GeneratedMessageV3
         return gcsSourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -545,6 +553,7 @@ public final class AvroSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -566,6 +575,7 @@ public final class AvroSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -595,6 +605,7 @@ public final class AvroSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -616,6 +627,7 @@ public final class AvroSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -632,6 +644,7 @@ public final class AvroSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGcsSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -652,6 +665,7 @@ public final class AvroSource extends com.google.protobuf.GeneratedMessageV3
             : gcsSource_;
       }
     }
+
     /**
      *
      *

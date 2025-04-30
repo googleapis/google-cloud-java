@@ -36,6 +36,7 @@ public interface DeployModelOperationMetadataOrBuilder
    * @return Whether the genericMetadata field is set.
    */
   boolean hasGenericMetadata();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DeployModelOperationMetadataOrBuilder
    * @return The genericMetadata.
    */
   com.google.cloud.vertexai.api.GenericOperationMetadata getGenericMetadata();
+
   /**
    *
    *

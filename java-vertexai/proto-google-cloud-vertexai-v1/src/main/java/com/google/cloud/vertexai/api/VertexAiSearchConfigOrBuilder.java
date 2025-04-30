@@ -39,6 +39,7 @@ public interface VertexAiSearchConfigOrBuilder
    * @return The servingConfig.
    */
   java.lang.String getServingConfig();
+
   /**
    *
    *

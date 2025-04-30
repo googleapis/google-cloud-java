@@ -36,6 +36,7 @@ public interface RagFileParsingConfigOrBuilder
    * @return Whether the layoutParser field is set.
    */
   boolean hasLayoutParser();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RagFileParsingConfigOrBuilder
    * @return The layoutParser.
    */
   com.google.cloud.vertexai.api.RagFileParsingConfig.LayoutParser getLayoutParser();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.RagFileChunkingConfig)
     RagFileChunkingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RagFileChunkingConfig.newBuilder() to construct.
   private RagFileChunkingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -92,6 +93,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
      */
     int getChunkOverlap();
   }
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.RagFileChunkingConfig.FixedLengthChunking)
       FixedLengthChunkingOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FixedLengthChunking.newBuilder() to construct.
     private FixedLengthChunking(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -137,6 +140,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
 
     public static final int CHUNK_SIZE_FIELD_NUMBER = 1;
     private int chunkSize_ = 0;
+
     /**
      *
      *
@@ -155,6 +159,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
 
     public static final int CHUNK_OVERLAP_FIELD_NUMBER = 2;
     private int chunkOverlap_ = 0;
+
     /**
      *
      *
@@ -343,6 +348,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -552,6 +558,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private int chunkSize_;
+
       /**
        *
        *
@@ -567,6 +574,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       public int getChunkSize() {
         return chunkSize_;
       }
+
       /**
        *
        *
@@ -586,6 +594,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -605,6 +614,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       }
 
       private int chunkOverlap_;
+
       /**
        *
        *
@@ -620,6 +630,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       public int getChunkOverlap() {
         return chunkOverlap_;
       }
+
       /**
        *
        *
@@ -639,6 +650,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -741,6 +753,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     private ChunkingConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -772,6 +785,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int FIXED_LENGTH_CHUNKING_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -789,6 +803,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
   public boolean hasFixedLengthChunking() {
     return chunkingConfigCase_ == 3;
   }
+
   /**
    *
    *
@@ -812,6 +827,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     return com.google.cloud.vertexai.api.RagFileChunkingConfig.FixedLengthChunking
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1013,6 +1029,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1232,6 +1249,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
             com.google.cloud.vertexai.api.RagFileChunkingConfig.FixedLengthChunking.Builder,
             com.google.cloud.vertexai.api.RagFileChunkingConfig.FixedLengthChunkingOrBuilder>
         fixedLengthChunkingBuilder_;
+
     /**
      *
      *
@@ -1249,6 +1267,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
     public boolean hasFixedLengthChunking() {
       return chunkingConfigCase_ == 3;
     }
+
     /**
      *
      *
@@ -1280,6 +1299,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1305,6 +1325,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       chunkingConfigCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1328,6 +1349,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       chunkingConfigCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1366,6 +1388,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       chunkingConfigCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1393,6 +1416,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1408,6 +1432,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
         getFixedLengthChunkingBuilder() {
       return getFixedLengthChunkingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1433,6 +1458,7 @@ public final class RagFileChunkingConfig extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

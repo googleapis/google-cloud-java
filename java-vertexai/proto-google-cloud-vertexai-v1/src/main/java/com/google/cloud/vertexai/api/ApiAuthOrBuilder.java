@@ -36,6 +36,7 @@ public interface ApiAuthOrBuilder
    * @return Whether the apiKeyConfig field is set.
    */
   boolean hasApiKeyConfig();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ApiAuthOrBuilder
    * @return The apiKeyConfig.
    */
   com.google.cloud.vertexai.api.ApiAuth.ApiKeyConfig getApiKeyConfig();
+
   /**
    *
    *

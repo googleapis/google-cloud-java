@@ -36,6 +36,7 @@ public interface RetrievalConfigOrBuilder
    * @return Whether the latLng field is set.
    */
   boolean hasLatLng();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RetrievalConfigOrBuilder
    * @return The latLng.
    */
   com.google.type.LatLng getLatLng();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface RetrievalConfigOrBuilder
    * @return Whether the languageCode field is set.
    */
   boolean hasLanguageCode();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface RetrievalConfigOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
