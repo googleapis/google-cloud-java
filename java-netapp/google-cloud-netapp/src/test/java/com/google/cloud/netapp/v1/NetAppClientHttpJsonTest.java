@@ -4230,6 +4230,12 @@ public class NetAppClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
+            .setSourceRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSourceBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setDestinationBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4287,6 +4293,12 @@ public class NetAppClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
+            .setSourceRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSourceBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setDestinationBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4344,6 +4356,12 @@ public class NetAppClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
+            .setSourceRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSourceBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setDestinationBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4391,6 +4409,12 @@ public class NetAppClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
+            .setSourceRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSourceBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setDestinationBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4538,6 +4562,12 @@ public class NetAppClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
+            .setSourceRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSourceBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setDestinationBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4553,6 +4583,12 @@ public class NetAppClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
+            .setSourceRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSourceBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setDestinationBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -4588,6 +4624,12 @@ public class NetAppClientHttpJsonTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .setDescription("description-1724546052")
               .putAllLabels(new HashMap<String, String>())
+              .setSourceRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setSourceBackupVault(
+                  BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+              .setDestinationBackupVault(
+                  BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupVaultAsync(backupVault, updateMask).get();
@@ -4702,6 +4744,8 @@ public class NetAppClientHttpJsonTest {
             .setChainStorageBytes(1614651561)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4766,6 +4810,8 @@ public class NetAppClientHttpJsonTest {
             .setChainStorageBytes(1614651561)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4830,6 +4876,8 @@ public class NetAppClientHttpJsonTest {
             .setChainStorageBytes(1614651561)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4885,6 +4933,8 @@ public class NetAppClientHttpJsonTest {
             .setChainStorageBytes(1614651561)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5134,6 +5184,8 @@ public class NetAppClientHttpJsonTest {
             .setChainStorageBytes(1614651561)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5157,6 +5209,8 @@ public class NetAppClientHttpJsonTest {
             .setChainStorageBytes(1614651561)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -5200,6 +5254,8 @@ public class NetAppClientHttpJsonTest {
               .setChainStorageBytes(1614651561)
               .setSatisfiesPzs(true)
               .setSatisfiesPzi(true)
+              .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupAsync(backup, updateMask).get();

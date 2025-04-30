@@ -23,6 +23,7 @@ import com.google.cloud.aiplatform.v1beta1.AssessDataRequest;
 import com.google.cloud.aiplatform.v1beta1.AssessDataResponse;
 import com.google.cloud.aiplatform.v1beta1.DatasetName;
 import com.google.cloud.aiplatform.v1beta1.DatasetServiceClient;
+import com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig;
 
 public class AsyncAssessDataLRO {
 
@@ -40,6 +41,7 @@ public class AsyncAssessDataLRO {
       AssessDataRequest request =
           AssessDataRequest.newBuilder()
               .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+              .setGeminiRequestReadConfig(GeminiRequestReadConfig.newBuilder().build())
               .build();
       OperationFuture<AssessDataResponse, AssessDataOperationMetadata> future =
           datasetServiceClient.assessDataOperationCallable().futureCall(request);

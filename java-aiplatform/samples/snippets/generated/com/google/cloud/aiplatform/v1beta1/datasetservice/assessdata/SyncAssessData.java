@@ -21,6 +21,7 @@ import com.google.cloud.aiplatform.v1beta1.AssessDataRequest;
 import com.google.cloud.aiplatform.v1beta1.AssessDataResponse;
 import com.google.cloud.aiplatform.v1beta1.DatasetName;
 import com.google.cloud.aiplatform.v1beta1.DatasetServiceClient;
+import com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig;
 
 public class SyncAssessData {
 
@@ -38,6 +39,7 @@ public class SyncAssessData {
       AssessDataRequest request =
           AssessDataRequest.newBuilder()
               .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+              .setGeminiRequestReadConfig(GeminiRequestReadConfig.newBuilder().build())
               .build();
       AssessDataResponse response = datasetServiceClient.assessDataAsync(request).get();
     }
