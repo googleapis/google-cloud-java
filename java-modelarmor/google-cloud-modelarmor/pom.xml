@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-modelarmor</artifactId>
-  <version>0.2.0</version><!-- {x-version-update:google-cloud-modelarmor:current} -->
+  <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-modelarmor:current} -->
   <packaging>jar</packaging>
   <name>Google Model Armor API</name>
   <description>Model Armor API Model Armor helps you protect against risks like prompt injection, harmful content, and data leakage in generative AI applications by letting you define policies that filter user prompts and model responses.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-modelarmor-parent</artifactId>
-    <version>0.2.0</version><!-- {x-version-update:google-cloud-modelarmor:current} -->
+    <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-modelarmor:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-modelarmor</site.installationModule>
