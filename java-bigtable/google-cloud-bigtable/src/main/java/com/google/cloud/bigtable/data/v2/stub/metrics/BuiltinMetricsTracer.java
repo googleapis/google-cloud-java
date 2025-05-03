@@ -122,8 +122,8 @@ class BuiltinMetricsTracer extends BigtableTracer {
 
   private TransportAttrs transportAttrs = null;
 
-  // Server histogram buckets use [start, end), however OpenTelemetry uses (start, end]. To work
-  // around this, we measure all the latencies in nanoseconds and convert them
+  // OpenCensus (and server) histogram buckets use [start, end), however OpenTelemetry uses (start,
+  // end]. To work around this, we measure all the latencies in nanoseconds and convert them
   // to milliseconds and use DoubleHistogram. This should minimize the chance of a data
   // point fall on the bucket boundary that causes off by one errors.
   private final DoubleHistogram operationLatenciesHistogram;

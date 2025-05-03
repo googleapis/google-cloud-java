@@ -30,9 +30,9 @@ import javax.annotation.Nonnull;
  * This callable will:
  * <li>- Inject a {@link GrpcResponseMetadata} to access the headers returned by gRPC methods upon
  *     completion. The {@link BigtableTracer} will process metrics that were injected in the
- *     header/trailer and publish them. If {@link GrpcResponseMetadata#getMetadata()} returned null,
- *     it probably means that the request has never reached GFE, and it'll increment the
- *     gfe_header_missing_counter in this case.
+ *     header/trailer and publish them to OpenCensus. If {@link GrpcResponseMetadata#getMetadata()}
+ *     returned null, it probably means that the request has never reached GFE, and it'll increment
+ *     the gfe_header_missing_counter in this case.
  * <li>-This class will also access trailers from {@link GrpcResponseMetadata} to record zone and
  *     cluster ids.
  * <li>-This class will also inject a {@link BigtableGrpcStreamTracer} that'll record the time an

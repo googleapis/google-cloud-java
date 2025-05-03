@@ -382,23 +382,4 @@
         <method>*</method>
         <to>*</to>
     </difference>
-    <!-- OpenCensus removal -->
-    <difference>
-        <differenceType>7002</differenceType>
-        <className>com/google/cloud/bigtable/data/v2/BigtableDataSettings</className>
-        <method>*OpenCensusStats*</method>
-    </difference>
-    <difference>
-        <differenceType>8001</differenceType>
-        <className>com/google/cloud/bigtable/data/v2/stub/metrics/MetricsTracerFactory*</className>
-    </difference>
-    <difference>
-        <differenceType>8001</differenceType>
-        <className>com/google/cloud/bigtable/data/v2/stub/metrics/RpcMeasureConstants*</className>
-    </difference>
-    <difference>
-        <differenceType>8001</differenceType>
-        <className>com/google/cloud/bigtable/data/v2/stub/metrics/RpcViews*</className>
-    </difference>
-    <!-- /OpenCensus removal -->
 </differences>
