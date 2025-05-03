@@ -35,7 +35,7 @@ public enum DetectionConfidenceLevel implements com.google.protobuf.ProtocolMess
    *
    *
    * <pre>
-   * Same as MEDIUM_AND_ABOVE.
+   * Same as LOW_AND_ABOVE.
    * </pre>
    *
    * <code>DETECTION_CONFIDENCE_LEVEL_UNSPECIFIED = 0;</code>
@@ -78,7 +78,7 @@ public enum DetectionConfidenceLevel implements com.google.protobuf.ProtocolMess
    *
    *
    * <pre>
-   * Same as MEDIUM_AND_ABOVE.
+   * Same as LOW_AND_ABOVE.
    * </pre>
    *
    * <code>DETECTION_CONFIDENCE_LEVEL_UNSPECIFIED = 0;</code>

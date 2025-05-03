@@ -43,6 +43,7 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
     version_ = "";
     versionDisplayName_ = "";
     sdkSupportStatus_ = 0;
+    bugs_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -420,6 +421,92 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int BUGS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.dataflow.v1beta3.SdkBug> bugs_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Known bugs found in this SDK version.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.dataflow.v1beta3.SdkBug> getBugsList() {
+    return bugs_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Known bugs found in this SDK version.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.dataflow.v1beta3.SdkBugOrBuilder>
+      getBugsOrBuilderList() {
+    return bugs_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Known bugs found in this SDK version.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getBugsCount() {
+    return bugs_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Known bugs found in this SDK version.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.dataflow.v1beta3.SdkBug getBugs(int index) {
+    return bugs_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Known bugs found in this SDK version.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.dataflow.v1beta3.SdkBugOrBuilder getBugsOrBuilder(int index) {
+    return bugs_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -444,6 +531,9 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
         != com.google.dataflow.v1beta3.SdkVersion.SdkSupportStatus.UNKNOWN.getNumber()) {
       output.writeEnum(3, sdkSupportStatus_);
     }
+    for (int i = 0; i < bugs_.size(); i++) {
+      output.writeMessage(4, bugs_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -463,6 +553,9 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
         != com.google.dataflow.v1beta3.SdkVersion.SdkSupportStatus.UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, sdkSupportStatus_);
     }
+    for (int i = 0; i < bugs_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, bugs_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -481,6 +574,7 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
     if (!getVersion().equals(other.getVersion())) return false;
     if (!getVersionDisplayName().equals(other.getVersionDisplayName())) return false;
     if (sdkSupportStatus_ != other.sdkSupportStatus_) return false;
+    if (!getBugsList().equals(other.getBugsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -498,6 +592,10 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getVersionDisplayName().hashCode();
     hash = (37 * hash) + SDK_SUPPORT_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + sdkSupportStatus_;
+    if (getBugsCount() > 0) {
+      hash = (37 * hash) + BUGS_FIELD_NUMBER;
+      hash = (53 * hash) + getBugsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -641,6 +739,13 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
       version_ = "";
       versionDisplayName_ = "";
       sdkSupportStatus_ = 0;
+      if (bugsBuilder_ == null) {
+        bugs_ = java.util.Collections.emptyList();
+      } else {
+        bugs_ = null;
+        bugsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -668,11 +773,24 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.SdkVersion buildPartial() {
       com.google.dataflow.v1beta3.SdkVersion result =
           new com.google.dataflow.v1beta3.SdkVersion(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.SdkVersion result) {
+      if (bugsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          bugs_ = java.util.Collections.unmodifiableList(bugs_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.bugs_ = bugs_;
+      } else {
+        result.bugs_ = bugsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.dataflow.v1beta3.SdkVersion result) {
@@ -746,6 +864,33 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
       if (other.sdkSupportStatus_ != 0) {
         setSdkSupportStatusValue(other.getSdkSupportStatusValue());
       }
+      if (bugsBuilder_ == null) {
+        if (!other.bugs_.isEmpty()) {
+          if (bugs_.isEmpty()) {
+            bugs_ = other.bugs_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureBugsIsMutable();
+            bugs_.addAll(other.bugs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.bugs_.isEmpty()) {
+          if (bugsBuilder_.isEmpty()) {
+            bugsBuilder_.dispose();
+            bugsBuilder_ = null;
+            bugs_ = other.bugs_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            bugsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getBugsFieldBuilder()
+                    : null;
+          } else {
+            bugsBuilder_.addAllMessages(other.bugs_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -790,6 +935,19 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 34:
+              {
+                com.google.dataflow.v1beta3.SdkBug m =
+                    input.readMessage(
+                        com.google.dataflow.v1beta3.SdkBug.parser(), extensionRegistry);
+                if (bugsBuilder_ == null) {
+                  ensureBugsIsMutable();
+                  bugs_.add(m);
+                } else {
+                  bugsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1127,6 +1285,405 @@ public final class SdkVersion extends com.google.protobuf.GeneratedMessageV3
       sdkSupportStatus_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.dataflow.v1beta3.SdkBug> bugs_ =
+        java.util.Collections.emptyList();
+
+    private void ensureBugsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        bugs_ = new java.util.ArrayList<com.google.dataflow.v1beta3.SdkBug>(bugs_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.dataflow.v1beta3.SdkBug,
+            com.google.dataflow.v1beta3.SdkBug.Builder,
+            com.google.dataflow.v1beta3.SdkBugOrBuilder>
+        bugsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Known bugs found in this SDK version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.dataflow.v1beta3.SdkBug> getBugsList() {
+      if (bugsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(bugs_);
+      } else {
+        return bugsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Known bugs found in this SDK version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getBugsCount() {
+      if (bugsBuilder_ == null) {
+        return bugs_.size();
+      } else {
+        return bugsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Known bugs found in this SDK version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.dataflow.v1beta3.SdkBug getBugs(int index) {
+      if (bugsBuilder_ == null) {
+        return bugs_.get(index);
+      } else {
+        return bugsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Known bugs found in this SDK version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setBugs(int index, com.google.dataflow.v1beta3.SdkBug value) {
+      if (bugsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBugsIsMutable();
+        bugs_.set(index, value);
+        onChanged();
+      } else {
+        bugsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Known bugs found in this SDK version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setBugs(int index, com.google.dataflow.v1beta3.SdkBug.Builder builderForValue) {
+      if (bugsBuilder_ == null) {
+        ensureBugsIsMutable();
+        bugs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        bugsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Known bugs found in this SDK version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addBugs(com.google.dataflow.v1beta3.SdkBug value) {
+      if (bugsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBugsIsMutable();
+        bugs_.add(value);
+        onChanged();
+      } else {
+        bugsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Known bugs found in this SDK version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addBugs(int index, com.google.dataflow.v1beta3.SdkBug value) {
+      if (bugsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBugsIsMutable();
+        bugs_.add(index, value);
+        onChanged();
+      } else {
+        bugsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Known bugs found in this SDK version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addBugs(com.google.dataflow.v1beta3.SdkBug.Builder builderForValue) {
+      if (bugsBuilder_ == null) {
+        ensureBugsIsMutable();
+        bugs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        bugsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Known bugs found in this SDK version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addBugs(int index, com.google.dataflow.v1beta3.SdkBug.Builder builderForValue) {
+      if (bugsBuilder_ == null) {
+        ensureBugsIsMutable();
+        bugs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        bugsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Known bugs found in this SDK version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllBugs(
+        java.lang.Iterable<? extends com.google.dataflow.v1beta3.SdkBug> values) {
+      if (bugsBuilder_ == null) {
+        ensureBugsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, bugs_);
+        onChanged();
+      } else {
+        bugsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Known bugs found in this SDK version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearBugs() {
+      if (bugsBuilder_ == null) {
+        bugs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        bugsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Known bugs found in this SDK version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeBugs(int index) {
+      if (bugsBuilder_ == null) {
+        ensureBugsIsMutable();
+        bugs_.remove(index);
+        onChanged();
+      } else {
+        bugsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Known bugs found in this SDK version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.dataflow.v1beta3.SdkBug.Builder getBugsBuilder(int index) {
+      return getBugsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Known bugs found in this SDK version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.dataflow.v1beta3.SdkBugOrBuilder getBugsOrBuilder(int index) {
+      if (bugsBuilder_ == null) {
+        return bugs_.get(index);
+      } else {
+        return bugsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Known bugs found in this SDK version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.dataflow.v1beta3.SdkBugOrBuilder>
+        getBugsOrBuilderList() {
+      if (bugsBuilder_ != null) {
+        return bugsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(bugs_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Known bugs found in this SDK version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.dataflow.v1beta3.SdkBug.Builder addBugsBuilder() {
+      return getBugsFieldBuilder()
+          .addBuilder(com.google.dataflow.v1beta3.SdkBug.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Known bugs found in this SDK version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.dataflow.v1beta3.SdkBug.Builder addBugsBuilder(int index) {
+      return getBugsFieldBuilder()
+          .addBuilder(index, com.google.dataflow.v1beta3.SdkBug.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Known bugs found in this SDK version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.dataflow.v1beta3.SdkBug.Builder> getBugsBuilderList() {
+      return getBugsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.dataflow.v1beta3.SdkBug,
+            com.google.dataflow.v1beta3.SdkBug.Builder,
+            com.google.dataflow.v1beta3.SdkBugOrBuilder>
+        getBugsFieldBuilder() {
+      if (bugsBuilder_ == null) {
+        bugsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.dataflow.v1beta3.SdkBug,
+                com.google.dataflow.v1beta3.SdkBug.Builder,
+                com.google.dataflow.v1beta3.SdkBugOrBuilder>(
+                bugs_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+        bugs_ = null;
+      }
+      return bugsBuilder_;
     }
 
     @java.lang.Override

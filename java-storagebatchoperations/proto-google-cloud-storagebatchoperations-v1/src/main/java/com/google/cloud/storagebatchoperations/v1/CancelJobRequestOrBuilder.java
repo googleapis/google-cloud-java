@@ -29,7 +29,7 @@ public interface CancelJobRequestOrBuilder
    *
    * <pre>
    * Required. The `name` of the job to cancel.
-   * Format: projects/{project_id}/locations/{location_id}/jobs/{job_id}.
+   * Format: projects/{project_id}/locations/global/jobs/{job_id}.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface CancelJobRequestOrBuilder
    *
    * <pre>
    * Required. The `name` of the job to cancel.
-   * Format: projects/{project_id}/locations/{location_id}/jobs/{job_id}.
+   * Format: projects/{project_id}/locations/global/jobs/{job_id}.
    * </pre>
    *
    * <code>

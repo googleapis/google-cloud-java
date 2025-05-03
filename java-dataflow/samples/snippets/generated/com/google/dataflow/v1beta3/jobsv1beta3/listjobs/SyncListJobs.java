@@ -42,6 +42,7 @@ public class SyncListJobs {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setLocation("location1901043637")
+              .setName("name3373707")
               .build();
       for (Job element : jobsV1Beta3Client.listJobs(request).iterateAll()) {
         // doThingsWith(element);

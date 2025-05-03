@@ -846,3 +846,4 @@ grpc-google-cloud-lustre-v1:0.1.0:0.2.0-SNAPSHOT
 google-shopping-merchant-order-tracking:0.1.0:0.2.0-SNAPSHOT
 proto-google-shopping-merchant-order-tracking-v1beta:0.1.0:0.2.0-SNAPSHOT
 grpc-google-shopping-merchant-order-tracking-v1beta:0.1.0:0.2.0-SNAPSHOT
+grpc-google-cloud-oracledatabase-v1:0.10.0:0.11.0-SNAPSHOT

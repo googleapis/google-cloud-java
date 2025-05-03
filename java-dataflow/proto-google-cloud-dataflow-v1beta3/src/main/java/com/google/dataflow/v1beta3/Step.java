@@ -29,6 +29,8 @@ package com.google.dataflow.v1beta3;
  * specific operation as part of the overall job.  Data is typically
  * passed from one step to another as part of the job.
  *
+ * **Note:** The properties of this object are not stable and might change.
+ *
  * Here's an example of a sequence of steps which together implement a
  * Map-Reduce job:
  *
@@ -442,6 +444,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    * A job consists of multiple steps, each of which performs some
    * specific operation as part of the overall job.  Data is typically
    * passed from one step to another as part of the job.
+   *
+   * **Note:** The properties of this object are not stable and might change.
    *
    * Here's an example of a sequence of steps which together implement a
    * Map-Reduce job:

@@ -16,6 +16,8 @@
 
 package com.google.cloud.memorystore.v1.stub;
 
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupCollectionsPagedResponse;
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListInstancesPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListLocationsPagedResponse;
 
@@ -27,15 +29,27 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.memorystore.v1.Backup;
+import com.google.cloud.memorystore.v1.BackupCollection;
+import com.google.cloud.memorystore.v1.BackupInstanceRequest;
 import com.google.cloud.memorystore.v1.CertificateAuthority;
 import com.google.cloud.memorystore.v1.CreateInstanceRequest;
+import com.google.cloud.memorystore.v1.DeleteBackupRequest;
 import com.google.cloud.memorystore.v1.DeleteInstanceRequest;
+import com.google.cloud.memorystore.v1.ExportBackupRequest;
+import com.google.cloud.memorystore.v1.GetBackupCollectionRequest;
+import com.google.cloud.memorystore.v1.GetBackupRequest;
 import com.google.cloud.memorystore.v1.GetCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1.GetInstanceRequest;
 import com.google.cloud.memorystore.v1.Instance;
+import com.google.cloud.memorystore.v1.ListBackupCollectionsRequest;
+import com.google.cloud.memorystore.v1.ListBackupCollectionsResponse;
+import com.google.cloud.memorystore.v1.ListBackupsRequest;
+import com.google.cloud.memorystore.v1.ListBackupsResponse;
 import com.google.cloud.memorystore.v1.ListInstancesRequest;
 import com.google.cloud.memorystore.v1.ListInstancesResponse;
 import com.google.cloud.memorystore.v1.OperationMetadata;
+import com.google.cloud.memorystore.v1.RescheduleMaintenanceRequest;
 import com.google.cloud.memorystore.v1.UpdateInstanceRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -97,6 +111,70 @@ public abstract class MemorystoreStub implements BackgroundResource {
   public UnaryCallable<GetCertificateAuthorityRequest, CertificateAuthority>
       getCertificateAuthorityCallable() {
     throw new UnsupportedOperationException("Not implemented: getCertificateAuthorityCallable()");
+  }
+
+  public OperationCallable<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: rescheduleMaintenanceOperationCallable()");
+  }
+
+  public UnaryCallable<RescheduleMaintenanceRequest, Operation> rescheduleMaintenanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: rescheduleMaintenanceCallable()");
+  }
+
+  public UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsPagedResponse>
+      listBackupCollectionsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listBackupCollectionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsResponse>
+      listBackupCollectionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupCollectionsCallable()");
+  }
+
+  public UnaryCallable<GetBackupCollectionRequest, BackupCollection> getBackupCollectionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getBackupCollectionCallable()");
+  }
+
+  public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupsPagedCallable()");
+  }
+
+  public UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupsCallable()");
+  }
+
+  public UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
+    throw new UnsupportedOperationException("Not implemented: getBackupCallable()");
+  }
+
+  public OperationCallable<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteBackupOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteBackupCallable()");
+  }
+
+  public OperationCallable<ExportBackupRequest, Backup, OperationMetadata>
+      exportBackupOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportBackupOperationCallable()");
+  }
+
+  public UnaryCallable<ExportBackupRequest, Operation> exportBackupCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportBackupCallable()");
+  }
+
+  public OperationCallable<BackupInstanceRequest, Instance, OperationMetadata>
+      backupInstanceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: backupInstanceOperationCallable()");
+  }
+
+  public UnaryCallable<BackupInstanceRequest, Operation> backupInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: backupInstanceCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

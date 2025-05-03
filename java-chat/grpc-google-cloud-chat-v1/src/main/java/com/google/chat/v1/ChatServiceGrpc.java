@@ -998,6 +998,170 @@ public final class ChatServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.CreateCustomEmojiRequest, com.google.chat.v1.CustomEmoji>
+      getCreateCustomEmojiMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCustomEmoji",
+      requestType = com.google.chat.v1.CreateCustomEmojiRequest.class,
+      responseType = com.google.chat.v1.CustomEmoji.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.CreateCustomEmojiRequest, com.google.chat.v1.CustomEmoji>
+      getCreateCustomEmojiMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.CreateCustomEmojiRequest, com.google.chat.v1.CustomEmoji>
+        getCreateCustomEmojiMethod;
+    if ((getCreateCustomEmojiMethod = ChatServiceGrpc.getCreateCustomEmojiMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getCreateCustomEmojiMethod = ChatServiceGrpc.getCreateCustomEmojiMethod) == null) {
+          ChatServiceGrpc.getCreateCustomEmojiMethod =
+              getCreateCustomEmojiMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.CreateCustomEmojiRequest, com.google.chat.v1.CustomEmoji>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateCustomEmoji"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.CreateCustomEmojiRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.CustomEmoji.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("CreateCustomEmoji"))
+                      .build();
+        }
+      }
+    }
+    return getCreateCustomEmojiMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.GetCustomEmojiRequest, com.google.chat.v1.CustomEmoji>
+      getGetCustomEmojiMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCustomEmoji",
+      requestType = com.google.chat.v1.GetCustomEmojiRequest.class,
+      responseType = com.google.chat.v1.CustomEmoji.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.GetCustomEmojiRequest, com.google.chat.v1.CustomEmoji>
+      getGetCustomEmojiMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.GetCustomEmojiRequest, com.google.chat.v1.CustomEmoji>
+        getGetCustomEmojiMethod;
+    if ((getGetCustomEmojiMethod = ChatServiceGrpc.getGetCustomEmojiMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getGetCustomEmojiMethod = ChatServiceGrpc.getGetCustomEmojiMethod) == null) {
+          ChatServiceGrpc.getGetCustomEmojiMethod =
+              getGetCustomEmojiMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.GetCustomEmojiRequest, com.google.chat.v1.CustomEmoji>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCustomEmoji"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.GetCustomEmojiRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.CustomEmoji.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("GetCustomEmoji"))
+                      .build();
+        }
+      }
+    }
+    return getGetCustomEmojiMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.ListCustomEmojisRequest, com.google.chat.v1.ListCustomEmojisResponse>
+      getListCustomEmojisMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCustomEmojis",
+      requestType = com.google.chat.v1.ListCustomEmojisRequest.class,
+      responseType = com.google.chat.v1.ListCustomEmojisResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.ListCustomEmojisRequest, com.google.chat.v1.ListCustomEmojisResponse>
+      getListCustomEmojisMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.ListCustomEmojisRequest, com.google.chat.v1.ListCustomEmojisResponse>
+        getListCustomEmojisMethod;
+    if ((getListCustomEmojisMethod = ChatServiceGrpc.getListCustomEmojisMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getListCustomEmojisMethod = ChatServiceGrpc.getListCustomEmojisMethod) == null) {
+          ChatServiceGrpc.getListCustomEmojisMethod =
+              getListCustomEmojisMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.ListCustomEmojisRequest,
+                          com.google.chat.v1.ListCustomEmojisResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListCustomEmojis"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.ListCustomEmojisRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.ListCustomEmojisResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("ListCustomEmojis"))
+                      .build();
+        }
+      }
+    }
+    return getListCustomEmojisMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.DeleteCustomEmojiRequest, com.google.protobuf.Empty>
+      getDeleteCustomEmojiMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteCustomEmoji",
+      requestType = com.google.chat.v1.DeleteCustomEmojiRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.DeleteCustomEmojiRequest, com.google.protobuf.Empty>
+      getDeleteCustomEmojiMethod() {
+    io.grpc.MethodDescriptor<com.google.chat.v1.DeleteCustomEmojiRequest, com.google.protobuf.Empty>
+        getDeleteCustomEmojiMethod;
+    if ((getDeleteCustomEmojiMethod = ChatServiceGrpc.getDeleteCustomEmojiMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getDeleteCustomEmojiMethod = ChatServiceGrpc.getDeleteCustomEmojiMethod) == null) {
+          ChatServiceGrpc.getDeleteCustomEmojiMethod =
+              getDeleteCustomEmojiMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.DeleteCustomEmojiRequest, com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteCustomEmoji"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.DeleteCustomEmojiRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("DeleteCustomEmoji"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteCustomEmojiMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.chat.v1.GetSpaceReadStateRequest, com.google.chat.v1.SpaceReadState>
       getGetSpaceReadStateMethod;
 
@@ -2010,6 +2174,98 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Creates a custom emoji.
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    default void createCustomEmoji(
+        com.google.chat.v1.CreateCustomEmojiRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.CustomEmoji> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateCustomEmojiMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details about a custom emoji.
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    default void getCustomEmoji(
+        com.google.chat.v1.GetCustomEmojiRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.CustomEmoji> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetCustomEmojiMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists custom emojis visible to the authenticated user.
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    default void listCustomEmojis(
+        com.google.chat.v1.ListCustomEmojisRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.ListCustomEmojisResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListCustomEmojisMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a custom emoji. By default, users can only delete custom emoji they
+     * created. [Emoji managers](https://support.google.com/a/answer/12850085)
+     * assigned by the administrator can delete any custom emoji in the
+     * organization. See [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149).
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    default void deleteCustomEmoji(
+        com.google.chat.v1.DeleteCustomEmojiRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteCustomEmojiMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns details about a user's read state within a space, used to identify
      * read and unread messages. For an example, see [Get details about a user's
      * space read
@@ -2870,6 +3126,106 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Creates a custom emoji.
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public void createCustomEmoji(
+        com.google.chat.v1.CreateCustomEmojiRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.CustomEmoji> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateCustomEmojiMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details about a custom emoji.
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public void getCustomEmoji(
+        com.google.chat.v1.GetCustomEmojiRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.CustomEmoji> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCustomEmojiMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists custom emojis visible to the authenticated user.
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public void listCustomEmojis(
+        com.google.chat.v1.ListCustomEmojisRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.ListCustomEmojisResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListCustomEmojisMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a custom emoji. By default, users can only delete custom emoji they
+     * created. [Emoji managers](https://support.google.com/a/answer/12850085)
+     * assigned by the administrator can delete any custom emoji in the
+     * organization. See [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149).
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public void deleteCustomEmoji(
+        com.google.chat.v1.DeleteCustomEmojiRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteCustomEmojiMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns details about a user's read state within a space, used to identify
      * read and unread messages. For an example, see [Get details about a user's
      * space read
@@ -3657,6 +4013,94 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Creates a custom emoji.
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public com.google.chat.v1.CustomEmoji createCustomEmoji(
+        com.google.chat.v1.CreateCustomEmojiRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCustomEmojiMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details about a custom emoji.
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public com.google.chat.v1.CustomEmoji getCustomEmoji(
+        com.google.chat.v1.GetCustomEmojiRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCustomEmojiMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists custom emojis visible to the authenticated user.
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public com.google.chat.v1.ListCustomEmojisResponse listCustomEmojis(
+        com.google.chat.v1.ListCustomEmojisRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCustomEmojisMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a custom emoji. By default, users can only delete custom emoji they
+     * created. [Emoji managers](https://support.google.com/a/answer/12850085)
+     * assigned by the administrator can delete any custom emoji in the
+     * organization. See [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149).
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteCustomEmoji(
+        com.google.chat.v1.DeleteCustomEmojiRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCustomEmojiMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns details about a user's read state within a space, used to identify
      * read and unread messages. For an example, see [Get details about a user's
      * space read
@@ -4417,6 +4861,94 @@ public final class ChatServiceGrpc {
         com.google.chat.v1.DeleteReactionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteReactionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a custom emoji.
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public com.google.chat.v1.CustomEmoji createCustomEmoji(
+        com.google.chat.v1.CreateCustomEmojiRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCustomEmojiMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details about a custom emoji.
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public com.google.chat.v1.CustomEmoji getCustomEmoji(
+        com.google.chat.v1.GetCustomEmojiRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCustomEmojiMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists custom emojis visible to the authenticated user.
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public com.google.chat.v1.ListCustomEmojisResponse listCustomEmojis(
+        com.google.chat.v1.ListCustomEmojisRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCustomEmojisMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a custom emoji. By default, users can only delete custom emoji they
+     * created. [Emoji managers](https://support.google.com/a/answer/12850085)
+     * assigned by the administrator can delete any custom emoji in the
+     * organization. See [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149).
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteCustomEmoji(
+        com.google.chat.v1.DeleteCustomEmojiRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCustomEmojiMethod(), getCallOptions(), request);
     }
 
     /**
@@ -5201,6 +5733,95 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Creates a custom emoji.
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.CustomEmoji>
+        createCustomEmoji(com.google.chat.v1.CreateCustomEmojiRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateCustomEmojiMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details about a custom emoji.
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.CustomEmoji>
+        getCustomEmoji(com.google.chat.v1.GetCustomEmojiRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCustomEmojiMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists custom emojis visible to the authenticated user.
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.chat.v1.ListCustomEmojisResponse>
+        listCustomEmojis(com.google.chat.v1.ListCustomEmojisRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListCustomEmojisMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a custom emoji. By default, users can only delete custom emoji they
+     * created. [Emoji managers](https://support.google.com/a/answer/12850085)
+     * assigned by the administrator can delete any custom emoji in the
+     * organization. See [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149).
+     * Custom emojis are only available for Google Workspace accounts, and the
+     * administrator must turn custom emojis on for the organization. For more
+     * information, see [Learn about custom emojis in Google
+     * Chat](https://support.google.com/chat/answer/12800149) and
+     * [Manage custom emoji
+     * permissions](https://support.google.com/a/answer/12850085).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteCustomEmoji(com.google.chat.v1.DeleteCustomEmojiRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteCustomEmojiMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns details about a user's read state within a space, used to identify
      * read and unread messages. For an example, see [Get details about a user's
      * space read
@@ -5364,13 +5985,17 @@ public final class ChatServiceGrpc {
   private static final int METHODID_CREATE_REACTION = 21;
   private static final int METHODID_LIST_REACTIONS = 22;
   private static final int METHODID_DELETE_REACTION = 23;
-  private static final int METHODID_GET_SPACE_READ_STATE = 24;
-  private static final int METHODID_UPDATE_SPACE_READ_STATE = 25;
-  private static final int METHODID_GET_THREAD_READ_STATE = 26;
-  private static final int METHODID_GET_SPACE_EVENT = 27;
-  private static final int METHODID_LIST_SPACE_EVENTS = 28;
-  private static final int METHODID_GET_SPACE_NOTIFICATION_SETTING = 29;
-  private static final int METHODID_UPDATE_SPACE_NOTIFICATION_SETTING = 30;
+  private static final int METHODID_CREATE_CUSTOM_EMOJI = 24;
+  private static final int METHODID_GET_CUSTOM_EMOJI = 25;
+  private static final int METHODID_LIST_CUSTOM_EMOJIS = 26;
+  private static final int METHODID_DELETE_CUSTOM_EMOJI = 27;
+  private static final int METHODID_GET_SPACE_READ_STATE = 28;
+  private static final int METHODID_UPDATE_SPACE_READ_STATE = 29;
+  private static final int METHODID_GET_THREAD_READ_STATE = 30;
+  private static final int METHODID_GET_SPACE_EVENT = 31;
+  private static final int METHODID_LIST_SPACE_EVENTS = 32;
+  private static final int METHODID_GET_SPACE_NOTIFICATION_SETTING = 33;
+  private static final int METHODID_UPDATE_SPACE_NOTIFICATION_SETTING = 34;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -5514,6 +6139,27 @@ public final class ChatServiceGrpc {
         case METHODID_DELETE_REACTION:
           serviceImpl.deleteReaction(
               (com.google.chat.v1.DeleteReactionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_CUSTOM_EMOJI:
+          serviceImpl.createCustomEmoji(
+              (com.google.chat.v1.CreateCustomEmojiRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.CustomEmoji>) responseObserver);
+          break;
+        case METHODID_GET_CUSTOM_EMOJI:
+          serviceImpl.getCustomEmoji(
+              (com.google.chat.v1.GetCustomEmojiRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.CustomEmoji>) responseObserver);
+          break;
+        case METHODID_LIST_CUSTOM_EMOJIS:
+          serviceImpl.listCustomEmojis(
+              (com.google.chat.v1.ListCustomEmojisRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.ListCustomEmojisResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_CUSTOM_EMOJI:
+          serviceImpl.deleteCustomEmoji(
+              (com.google.chat.v1.DeleteCustomEmojiRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_GET_SPACE_READ_STATE:
@@ -5716,6 +6362,31 @@ public final class ChatServiceGrpc {
                     com.google.chat.v1.DeleteReactionRequest, com.google.protobuf.Empty>(
                     service, METHODID_DELETE_REACTION)))
         .addMethod(
+            getCreateCustomEmojiMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.CreateCustomEmojiRequest, com.google.chat.v1.CustomEmoji>(
+                    service, METHODID_CREATE_CUSTOM_EMOJI)))
+        .addMethod(
+            getGetCustomEmojiMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.GetCustomEmojiRequest, com.google.chat.v1.CustomEmoji>(
+                    service, METHODID_GET_CUSTOM_EMOJI)))
+        .addMethod(
+            getListCustomEmojisMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.ListCustomEmojisRequest,
+                    com.google.chat.v1.ListCustomEmojisResponse>(
+                    service, METHODID_LIST_CUSTOM_EMOJIS)))
+        .addMethod(
+            getDeleteCustomEmojiMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.DeleteCustomEmojiRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_CUSTOM_EMOJI)))
+        .addMethod(
             getGetSpaceReadStateMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -5835,6 +6506,10 @@ public final class ChatServiceGrpc {
                       .addMethod(getCreateReactionMethod())
                       .addMethod(getListReactionsMethod())
                       .addMethod(getDeleteReactionMethod())
+                      .addMethod(getCreateCustomEmojiMethod())
+                      .addMethod(getGetCustomEmojiMethod())
+                      .addMethod(getListCustomEmojisMethod())
+                      .addMethod(getDeleteCustomEmojiMethod())
                       .addMethod(getGetSpaceReadStateMethod())
                       .addMethod(getUpdateSpaceReadStateMethod())
                       .addMethod(getGetThreadReadStateMethod())

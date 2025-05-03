@@ -76,7 +76,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. Format: projects/{project_id}/locations/{location_id} .
+   * Required. Format: projects/{project_id}/locations/global.
    * </pre>
    *
    * <code>
@@ -102,7 +102,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. Format: projects/{project_id}/locations/{location_id} .
+   * Required. Format: projects/{project_id}/locations/global.
    * </pre>
    *
    * <code>
@@ -746,7 +746,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Format: projects/{project_id}/locations/{location_id} .
+     * Required. Format: projects/{project_id}/locations/global.
      * </pre>
      *
      * <code>
@@ -771,7 +771,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Format: projects/{project_id}/locations/{location_id} .
+     * Required. Format: projects/{project_id}/locations/global.
      * </pre>
      *
      * <code>
@@ -796,7 +796,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Format: projects/{project_id}/locations/{location_id} .
+     * Required. Format: projects/{project_id}/locations/global.
      * </pre>
      *
      * <code>
@@ -820,7 +820,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Format: projects/{project_id}/locations/{location_id} .
+     * Required. Format: projects/{project_id}/locations/global.
      * </pre>
      *
      * <code>
@@ -840,7 +840,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Format: projects/{project_id}/locations/{location_id} .
+     * Required. Format: projects/{project_id}/locations/global.
      * </pre>
      *
      * <code>

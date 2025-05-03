@@ -62,5 +62,42 @@ public interface RagFileParsingConfigOrBuilder
   com.google.cloud.aiplatform.v1.RagFileParsingConfig.LayoutParserOrBuilder
       getLayoutParserOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The LLM Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+   *
+   * @return Whether the llmParser field is set.
+   */
+  boolean hasLlmParser();
+
+  /**
+   *
+   *
+   * <pre>
+   * The LLM Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+   *
+   * @return The llmParser.
+   */
+  com.google.cloud.aiplatform.v1.RagFileParsingConfig.LlmParser getLlmParser();
+
+  /**
+   *
+   *
+   * <pre>
+   * The LLM Parser to use for RagFiles.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.RagFileParsingConfig.LlmParser llm_parser = 5;</code>
+   */
+  com.google.cloud.aiplatform.v1.RagFileParsingConfig.LlmParserOrBuilder getLlmParserOrBuilder();
+
   com.google.cloud.aiplatform.v1.RagFileParsingConfig.ParserCase getParserCase();
 }

@@ -66,6 +66,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.aiplatform.v1beta1.AssembleDataRequest.Builder.class);
   }
 
+  private int bitField0_;
   private int readConfigCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -317,6 +318,66 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int GEMINI_REQUEST_READ_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig geminiRequestReadConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The read config for the dataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig gemini_request_read_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the geminiRequestReadConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGeminiRequestReadConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The read config for the dataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig gemini_request_read_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The geminiRequestReadConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig getGeminiRequestReadConfig() {
+    return geminiRequestReadConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig.getDefaultInstance()
+        : geminiRequestReadConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The read config for the dataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig gemini_request_read_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfigOrBuilder
+      getGeminiRequestReadConfigOrBuilder() {
+    return geminiRequestReadConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig.getDefaultInstance()
+        : geminiRequestReadConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -341,6 +402,9 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
     if (readConfigCase_ == 5) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, readConfig_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(6, getGeminiRequestReadConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -361,6 +425,10 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
     if (readConfigCase_ == 5) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, readConfig_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(6, getGeminiRequestReadConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -378,6 +446,10 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
         (com.google.cloud.aiplatform.v1beta1.AssembleDataRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (hasGeminiRequestReadConfig() != other.hasGeminiRequestReadConfig()) return false;
+    if (hasGeminiRequestReadConfig()) {
+      if (!getGeminiRequestReadConfig().equals(other.getGeminiRequestReadConfig())) return false;
+    }
     if (!getReadConfigCase().equals(other.getReadConfigCase())) return false;
     switch (readConfigCase_) {
       case 2:
@@ -402,6 +474,10 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (hasGeminiRequestReadConfig()) {
+      hash = (37 * hash) + GEMINI_REQUEST_READ_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGeminiRequestReadConfig().hashCode();
+    }
     switch (readConfigCase_) {
       case 2:
         hash = (37 * hash) + GEMINI_TEMPLATE_CONFIG_FIELD_NUMBER;
@@ -547,10 +623,19 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.AssembleDataRequest.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getGeminiRequestReadConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -561,6 +646,11 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
         geminiTemplateConfigBuilder_.clear();
       }
       name_ = "";
+      geminiRequestReadConfig_ = null;
+      if (geminiRequestReadConfigBuilder_ != null) {
+        geminiRequestReadConfigBuilder_.dispose();
+        geminiRequestReadConfigBuilder_ = null;
+      }
       readConfigCase_ = 0;
       readConfig_ = null;
       return this;
@@ -603,6 +693,15 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.name_ = name_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.geminiRequestReadConfig_ =
+            geminiRequestReadConfigBuilder_ == null
+                ? geminiRequestReadConfig_
+                : geminiRequestReadConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(
@@ -664,6 +763,9 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
         name_ = other.name_;
         bitField0_ |= 0x00000004;
         onChanged();
+      }
+      if (other.hasGeminiRequestReadConfig()) {
+        mergeGeminiRequestReadConfig(other.getGeminiRequestReadConfig());
       }
       switch (other.getReadConfigCase()) {
         case GEMINI_TEMPLATE_CONFIG:
@@ -729,6 +831,13 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
                 readConfig_ = s;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getGeminiRequestReadConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1284,6 +1393,226 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig geminiRequestReadConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig,
+            com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfigOrBuilder>
+        geminiRequestReadConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The read config for the dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig gemini_request_read_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the geminiRequestReadConfig field is set.
+     */
+    public boolean hasGeminiRequestReadConfig() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The read config for the dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig gemini_request_read_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The geminiRequestReadConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig
+        getGeminiRequestReadConfig() {
+      if (geminiRequestReadConfigBuilder_ == null) {
+        return geminiRequestReadConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig.getDefaultInstance()
+            : geminiRequestReadConfig_;
+      } else {
+        return geminiRequestReadConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The read config for the dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig gemini_request_read_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGeminiRequestReadConfig(
+        com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig value) {
+      if (geminiRequestReadConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        geminiRequestReadConfig_ = value;
+      } else {
+        geminiRequestReadConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The read config for the dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig gemini_request_read_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGeminiRequestReadConfig(
+        com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig.Builder builderForValue) {
+      if (geminiRequestReadConfigBuilder_ == null) {
+        geminiRequestReadConfig_ = builderForValue.build();
+      } else {
+        geminiRequestReadConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The read config for the dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig gemini_request_read_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGeminiRequestReadConfig(
+        com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig value) {
+      if (geminiRequestReadConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && geminiRequestReadConfig_ != null
+            && geminiRequestReadConfig_
+                != com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig
+                    .getDefaultInstance()) {
+          getGeminiRequestReadConfigBuilder().mergeFrom(value);
+        } else {
+          geminiRequestReadConfig_ = value;
+        }
+      } else {
+        geminiRequestReadConfigBuilder_.mergeFrom(value);
+      }
+      if (geminiRequestReadConfig_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The read config for the dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig gemini_request_read_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGeminiRequestReadConfig() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      geminiRequestReadConfig_ = null;
+      if (geminiRequestReadConfigBuilder_ != null) {
+        geminiRequestReadConfigBuilder_.dispose();
+        geminiRequestReadConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The read config for the dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig gemini_request_read_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig.Builder
+        getGeminiRequestReadConfigBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getGeminiRequestReadConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The read config for the dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig gemini_request_read_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfigOrBuilder
+        getGeminiRequestReadConfigOrBuilder() {
+      if (geminiRequestReadConfigBuilder_ != null) {
+        return geminiRequestReadConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return geminiRequestReadConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig.getDefaultInstance()
+            : geminiRequestReadConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The read config for the dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig gemini_request_read_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig,
+            com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfigOrBuilder>
+        getGeminiRequestReadConfigFieldBuilder() {
+      if (geminiRequestReadConfigBuilder_ == null) {
+        geminiRequestReadConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig,
+                com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfigOrBuilder>(
+                getGeminiRequestReadConfig(), getParentForChildren(), isClean());
+        geminiRequestReadConfig_ = null;
+      }
+      return geminiRequestReadConfigBuilder_;
     }
 
     @java.lang.Override

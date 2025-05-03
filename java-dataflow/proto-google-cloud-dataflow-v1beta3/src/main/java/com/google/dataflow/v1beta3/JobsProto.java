@@ -41,6 +41,14 @@ public final class JobsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_dataflow_v1beta3_Job_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_dataflow_v1beta3_ServiceResources_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_dataflow_v1beta3_ServiceResources_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_dataflow_v1beta3_RuntimeUpdatableParams_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_dataflow_v1beta3_RuntimeUpdatableParams_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_dataflow_v1beta3_DatastoreIODetails_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_dataflow_v1beta3_DatastoreIODetails_fieldAccessorTable;
@@ -69,9 +77,17 @@ public final class JobsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_dataflow_v1beta3_SdkVersion_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_dataflow_v1beta3_SdkBug_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_dataflow_v1beta3_SdkBug_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_dataflow_v1beta3_JobMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_dataflow_v1beta3_JobMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_dataflow_v1beta3_JobMetadata_UserDisplayPropertiesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_dataflow_v1beta3_JobMetadata_UserDisplayPropertiesEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_dataflow_v1beta3_ExecutionStageState_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -168,16 +184,19 @@ public final class JobsProto {
       "\n"
           + "\"google/dataflow/v1beta3/jobs.proto\022\027go"
           + "ogle.dataflow.v1beta3\032\034google/api/annota"
-          + "tions.proto\032\027google/api/client.proto\032)go"
-          + "ogle/dataflow/v1beta3/environment.proto\032\'google/dataflow/v1beta3/snapshots.proto"
-          + "\032\036google/protobuf/duration.proto\032\034google"
-          + "/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\256\t\n"
+          + "tions.proto\032\027google/api/client.proto\032\037go"
+          + "ogle/api/field_behavior.proto\032)google/da"
+          + "taflow/v1beta3/environment.proto\032\'google"
+          + "/dataflow/v1beta3/snapshots.proto\032\036google/protobuf/duration.proto\032"
+          + " google/protobuf/field_mask.proto\032\034google/protobuf/str"
+          + "uct.proto\032\037google/protobuf/timestamp.proto\"\325\013\n"
           + "\003Job\022\n\n"
           + "\002id\030\001 \001(\t\022\022\n\n"
-          + "project_id\030\002 \001(\t\022\014\n"
-          + "\004name\030\003 \001(\t\022.\n"
-          + "\004type\030\004 \001(\0162 .google.dataflow.v1beta3.JobType\0229\n"
-          + "\013environment\030\005 \001(\0132$.google.dataflow.v1beta3.Environment\022,\n"
+          + "project_id\030\002 \001(\t\022\021\n"
+          + "\004name\030\003 \001(\tB\003\340A\001\0223\n"
+          + "\004type\030\004 \001(\0162 .google.dataflow.v1beta3.JobTypeB\003\340A\001\022>\n"
+          + "\013environment\030\005"
+          + " \001(\0132$.google.dataflow.v1beta3.EnvironmentB\003\340A\001\022,\n"
           + "\005steps\030\006 \003(\0132\035.google.dataflow.v1beta3.Step\022\026\n"
           + "\016steps_location\030\030 \001(\t\0228\n\r"
           + "current_state\030\007 \001(\0162!.google.dataflow.v1beta3.JobState\0226\n"
@@ -186,28 +205,46 @@ public final class JobsProto {
           + "\016execution_info\030\n"
           + " \001(\0132).google.dataflow.v1beta3.JobExecutionInfo\022/\n"
           + "\013create_time\030\013 \001(\0132\032.google.protobuf.Timestamp\022\026\n"
-          + "\016replace_job_id\030\014 \001(\t\022V\n"
+          + "\016replace_job_id\030\014 \001(\t\022[\n"
           + "\026transform_name_mapping\030\r"
-          + " \003(\01326.google.dataflow.v1beta3.Job.TransformNameMappingEntry\022\031\n"
+          + " \003(\01326.goo"
+          + "gle.dataflow.v1beta3.Job.TransformNameMappingEntryB\003\340A\001\022\031\n"
           + "\021client_request_id\030\016 \001(\t\022\032\n"
           + "\022replaced_by_job_id\030\017 \001(\t\022\022\n\n"
           + "temp_files\030\020 \003(\t\0228\n"
-          + "\006labels\030\021 \003(\0132(.google.dataflow.v1beta3.Job.LabelsEntry\022\020\n"
-          + "\010location\030\022 \001(\t\022J\n"
-          + "\024pipeline_description\030\023"
-          + " \001(\0132,.google.dataflow.v1beta3.PipelineDescription\022B\n"
+          + "\006labels\030\021 \003(\0132(.google.dataflow.v1beta3.Job.LabelsEntry\022\025\n"
+          + "\010location\030\022 \001(\tB\003\340A\001\022J\n"
+          + "\024pipeline_description\030\023 \001("
+          + "\0132,.google.dataflow.v1beta3.PipelineDescription\022B\n"
           + "\014stage_states\030\024"
           + " \003(\0132,.google.dataflow.v1beta3.ExecutionStageState\022:\n"
           + "\014job_metadata\030\025 \001(\0132$.google.dataflow.v1beta3.JobMetadata\022.\n\n"
           + "start_time\030\026 \001(\0132\032.google.protobuf.Timestamp\022 \n"
           + "\030created_from_snapshot_id\030\027 \001(\t\022\025\n\r"
-          + "satisfies_pzs\030\031 \001(\010\032;\n"
+          + "satisfies_pzs\030\031 \001(\010\022V\n"
+          + "\030runtime_updatable_params\030\032 \001(\0132/.goo"
+          + "gle.dataflow.v1beta3.RuntimeUpdatableParamsH\000\210\001\001\022\037\n\r"
+          + "satisfies_pzi\030\033 \001(\010B\003\340A\003H\001\210\001\001\022N\n"
+          + "\021service_resources\030\034 \001(\0132).google.da"
+          + "taflow.v1beta3.ServiceResourcesB\003\340A\003H\002\210\001\001\032;\n"
           + "\031TransformNameMappingEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\";\n"
+          + "\005value\030\002 \001(\t:\0028\001B\033\n"
+          + "\031_runtime_updatable_paramsB\020\n"
+          + "\016_satisfies_pziB\024\n"
+          + "\022_service_resources\"&\n"
+          + "\020ServiceResources\022\022\n"
+          + "\005zones\030\001 \003(\tB\003\340A\003\"\276\001\n"
+          + "\026RuntimeUpdatableParams\022\034\n"
+          + "\017max_num_workers\030\001 \001(\005H\000\210\001\001\022\034\n"
+          + "\017min_num_workers\030\002 \001(\005H\001\210\001\001\022$\n"
+          + "\027worker_utilization_hint\030\003 \001(\001H\002\210\001\001B\022\n"
+          + "\020_max_num_workersB\022\n"
+          + "\020_min_num_workersB\032\n"
+          + "\030_worker_utilization_hint\";\n"
           + "\022DatastoreIODetails\022\021\n"
           + "\tnamespace\030\001 \001(\t\022\022\n\n"
           + "project_id\030\002 \001(\t\"6\n"
@@ -228,40 +265,62 @@ public final class JobsProto {
           + "\020SpannerIODetails\022\022\n\n"
           + "project_id\030\001 \001(\t\022\023\n"
           + "\013instance_id\030\002 \001(\t\022\023\n"
-          + "\013database_id\030\003 \001(\t\"\351\001\n\n"
+          + "\013database_id\030\003 \001(\t\"\235\002\n\n"
           + "SdkVersion\022\017\n"
           + "\007version\030\001 \001(\t\022\034\n"
           + "\024version_display_name\030\002 \001(\t\022P\n"
-          + "\022sdk_support_status\030\003 \001(\01624.googl"
-          + "e.dataflow.v1beta3.SdkVersion.SdkSupportStatus\"Z\n"
+          + "\022sdk_support_status\030\003 \001(\01624.google.dat"
+          + "aflow.v1beta3.SdkVersion.SdkSupportStatus\0222\n"
+          + "\004bugs\030\004 \003(\0132\037.google.dataflow.v1beta3.SdkBugB\003\340A\003\"Z\n"
           + "\020SdkSupportStatus\022\013\n"
           + "\007UNKNOWN\020\000\022\r\n"
           + "\tSUPPORTED\020\001\022\t\n"
           + "\005STALE\020\002\022\016\n\n"
           + "DEPRECATED\020\003\022\017\n"
-          + "\013UNSUPPORTED\020\004\"\340\003\n"
+          + "\013UNSUPPORTED\020\004\"\251\002\n"
+          + "\006SdkBug\0227\n"
+          + "\004type\030\001 \001(\0162$.google.dataflow.v1beta3.SdkBug.TypeB\003\340A\003\022?\n"
+          + "\010severity\030\002 \001(\0162(.google"
+          + ".dataflow.v1beta3.SdkBug.SeverityB\003\340A\003\022\020\n"
+          + "\003uri\030\003 \001(\tB\003\340A\003\"H\n"
+          + "\004Type\022\024\n"
+          + "\020TYPE_UNSPECIFIED\020\000\022\013\n"
+          + "\007GENERAL\020\001\022\017\n"
+          + "\013PERFORMANCE\020\002\022\014\n"
+          + "\010DATALOSS\020\003\"I\n"
+          + "\010Severity\022\030\n"
+          + "\024SEVERITY_UNSPECIFIED\020\000\022\n\n"
+          + "\006NOTICE\020\001\022\013\n"
+          + "\007WARNING\020\002\022\n\n"
+          + "\006SEVERE\020\003\"\200\005\n"
           + "\013JobMetadata\0228\n"
           + "\013sdk_version\030\001 \001(\0132#.google.dataflow.v1beta3.SdkVersion\022B\n"
-          + "\017spanner_details\030\002 \003(\0132)."
-          + "google.dataflow.v1beta3.SpannerIODetails\022D\n"
+          + "\017spanner_details\030\002"
+          + " \003(\0132).google.dataflow.v1beta3.SpannerIODetails\022D\n"
           + "\020bigquery_details\030\003"
           + " \003(\0132*.google.dataflow.v1beta3.BigQueryIODetails\022E\n"
           + "\021big_table_details\030\004"
           + " \003(\0132*.google.dataflow.v1beta3.BigTableIODetails\022@\n"
           + "\016pubsub_details\030\005 \003(\0132(.google.dataflow.v1beta3.PubSubIODetails\022<\n"
           + "\014file_details\030\006 \003(\0132&.google.dataflow.v1beta3.FileIODetails\022F\n"
-          + "\021datastore_details\030\007"
-          + " \003(\0132+.google.dataflow.v1beta3.DatastoreIODetails\"\255\001\n"
+          + "\021datastore_details\030\007 "
+          + "\003(\0132+.google.dataflow.v1beta3.DatastoreIODetails\022`\n"
+          + "\027user_display_properties\030\010 \003("
+          + "\0132?.google.dataflow.v1beta3.JobMetadata.UserDisplayPropertiesEntry\032<\n"
+          + "\032UserDisplayPropertiesEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\255\001\n"
           + "\023ExecutionStageState\022\034\n"
           + "\024execution_stage_name\030\001 \001(\t\022@\n"
           + "\025execution_stage_state\030\002 \001(\0162!.google.dataflow.v1beta3.JobState\0226\n"
-          + "\022current_state_time\030\003 \001(\0132\032.google.protobuf.Timestamp\"\363\001\n"
+          + "\022current_state_time\030\003 \001(\0132\032.google.protobuf.Timestamp\"\214\002\n"
           + "\023PipelineDescription\022N\n"
           + "\033original_pipeline_transform\030\001"
           + " \003(\0132).google.dataflow.v1beta3.TransformSummary\022P\n"
-          + "\030execution_pipeline_stage\030\002"
-          + " \003(\0132..google.dataflow.v1beta3.ExecutionStageSummary\022:\n"
-          + "\014display_data\030\003 \003(\0132$.google.dataflow.v1beta3.DisplayData\"\330\001\n"
+          + "\030execution_pipeline_stage\030\002 \003"
+          + "(\0132..google.dataflow.v1beta3.ExecutionStageSummary\022:\n"
+          + "\014display_data\030\003 \003(\0132$.google.dataflow.v1beta3.DisplayData\022\027\n"
+          + "\017step_names_hash\030\004 \001(\t\"\330\001\n"
           + "\020TransformSummary\022/\n"
           + "\004kind\030\001 \001(\0162!.google.dataflow.v1beta3.KindType\022\n\n"
           + "\002id\030\002 \001(\t\022\014\n"
@@ -273,15 +332,15 @@ public final class JobsProto {
           + "\004name\030\001 \001(\t\022\n\n"
           + "\002id\030\002 \001(\t\022/\n"
           + "\004kind\030\003 \001(\0162!.google.dataflow.v1beta3.KindType\022P\n"
-          + "\014input_source\030\004 \003(\0132:.google.dataf"
-          + "low.v1beta3.ExecutionStageSummary.StageSource\022Q\n\r"
-          + "output_source\030\005 \003(\0132:.google.da"
-          + "taflow.v1beta3.ExecutionStageSummary.StageSource\022\032\n"
+          + "\014input_source\030\004 \003(\0132:."
+          + "google.dataflow.v1beta3.ExecutionStageSummary.StageSource\022Q\n\r"
+          + "output_source\030\005 \003(\013"
+          + "2:.google.dataflow.v1beta3.ExecutionStageSummary.StageSource\022\032\n"
           + "\022prerequisite_stage\030\010 \003(\t\022^\n"
-          + "\023component_transform\030\006 \003(\0132A.google.dataf"
-          + "low.v1beta3.ExecutionStageSummary.ComponentTransform\022X\n"
-          + "\020component_source\030\007 \003(\0132>"
-          + ".google.dataflow.v1beta3.ExecutionStageSummary.ComponentSource\032l\n"
+          + "\023component_transform\030\006 \003(\0132A."
+          + "google.dataflow.v1beta3.ExecutionStageSummary.ComponentTransform\022X\n"
+          + "\020component_source\030\007"
+          + " \003(\0132>.google.dataflow.v1beta3.ExecutionStageSummary.ComponentSource\032l\n"
           + "\013StageSource\022\021\n"
           + "\tuser_name\030\001 \001(\t\022\014\n"
           + "\004name\030\002 \001(\t\022(\n"
@@ -316,12 +375,12 @@ public final class JobsProto {
           + "\004name\030\002 \001(\t\022+\n\n"
           + "properties\030\003 \001(\0132\027.google.protobuf.Struct\"\270\001\n"
           + "\020JobExecutionInfo\022E\n"
-          + "\006stages\030\001 \003"
-          + "(\01325.google.dataflow.v1beta3.JobExecutionInfo.StagesEntry\032]\n"
+          + "\006stages\030\001"
+          + " \003(\01325.google.dataflow.v1beta3.JobExecutionInfo.StagesEntry\032]\n"
           + "\013StagesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022=\n"
-          + "\005value\030\002"
-          + " \001(\0132..google.dataflow.v1beta3.JobExecutionStageInfo:\0028\001\"*\n"
+          + "\005value\030\002 \001(\0132..googl"
+          + "e.dataflow.v1beta3.JobExecutionStageInfo:\0028\001\"*\n"
           + "\025JobExecutionStageInfo\022\021\n"
           + "\tstep_name\030\001 \003(\t\"\253\001\n"
           + "\020CreateJobRequest\022\022\n\n"
@@ -334,25 +393,30 @@ public final class JobsProto {
           + "project_id\030\001 \001(\t\022\016\n"
           + "\006job_id\030\002 \001(\t\022.\n"
           + "\004view\030\003 \001(\0162 .google.dataflow.v1beta3.JobView\022\020\n"
-          + "\010location\030\004 \001(\t\"s\n"
+          + "\010location\030\004 \001(\t\"\271\001\n"
           + "\020UpdateJobRequest\022\022\n\n"
           + "project_id\030\001 \001(\t\022\016\n"
           + "\006job_id\030\002 \001(\t\022)\n"
           + "\003job\030\003 \001(\0132\034.google.dataflow.v1beta3.Job\022\020\n"
-          + "\010location\030\004 \001(\t\"\217\002\n"
+          + "\010location\030\004 \001(\t\0224\n"
+          + "\013update_mask\030\005"
+          + " \001(\0132\032.google.protobuf.FieldMaskH\000\210\001\001B\016\n"
+          + "\014_update_mask\"\260\002\n"
           + "\017ListJobsRequest\022?\n"
-          + "\006filter\030\005 \001"
-          + "(\0162/.google.dataflow.v1beta3.ListJobsRequest.Filter\022\022\n\n"
+          + "\006filter\030\005"
+          + " \001(\0162/.google.dataflow.v1beta3.ListJobsRequest.Filter\022\022\n\n"
           + "project_id\030\001 \001(\t\0222\n"
           + "\004view\030\002 \001(\0162 .google.dataflow.v1beta3.JobViewB\002\030\001\022\021\n"
           + "\tpage_size\030\003 \001(\005\022\022\n\n"
           + "page_token\030\004 \001(\t\022\020\n"
-          + "\010location\030\021 \001(\t\":\n"
+          + "\010location\030\021 \001(\t\022\026\n"
+          + "\004name\030\013 \001(\tB\003\340A\001H\000\210\001\001\":\n"
           + "\006Filter\022\013\n"
           + "\007UNKNOWN\020\000\022\007\n"
           + "\003ALL\020\001\022\016\n\n"
           + "TERMINATED\020\002\022\n\n"
-          + "\006ACTIVE\020\003\"\036\n"
+          + "\006ACTIVE\020\003B\007\n"
+          + "\005_name\"\036\n"
           + "\016FailedLocation\022\014\n"
           + "\004name\030\001 \001(\t\"\231\001\n"
           + "\020ListJobsResponse\022*\n"
@@ -400,42 +464,40 @@ public final class JobsProto {
           + "\020JOB_VIEW_UNKNOWN\020\000\022\024\n"
           + "\020JOB_VIEW_SUMMARY\020\001\022\020\n"
           + "\014JOB_VIEW_ALL\020\002\022\030\n"
-          + "\024JOB_VIEW_DESCRIPTION\020\0032\221\014\n"
+          + "\024JOB_VIEW_DESCRIPTION\020\0032\257\013\n"
           + "\013JobsV1Beta3\022\301\001\n"
-          + "\tCreateJob\022).google.dataflow.v1beta3.CreateJob"
-          + "Request\032\034.google.dataflow.v1beta3.Job\"k\202"
-          + "\323\344\223\002e\"5/v1b3/projects/{project_id}/locations/{location}/jobs:\003jobZ\'\""
+          + "\tCreateJob\022).google.dataflow.v1beta3.CreateJobRequ"
+          + "est\032\034.google.dataflow.v1beta3.Job\"k\202\323\344\223\002"
+          + "e\"5/v1b3/projects/{project_id}/locations/{location}/jobs:\003jobZ\'\""
           + " /v1b3/projects/{project_id}/jobs:\003job\022\303\001\n"
-          + "\006GetJob\022&.google.dataflow.v1beta3.GetJobRequest\032\034."
-          + "google.dataflow.v1beta3.Job\"s\202\323\344\223\002m\022>/v1"
+          + "\006GetJob\022&.google.dataflow.v1beta3.GetJobRequest\032\034.goog"
+          + "le.dataflow.v1beta3.Job\"s\202\323\344\223\002m\022>/v1b3/p"
+          + "rojects/{project_id}/locations/{location"
+          + "}/jobs/{job_id}Z+\022)/v1b3/projects/{project_id}/jobs/{job_id}\022\323\001\n"
+          + "\tUpdateJob\022).google.dataflow.v1beta3.UpdateJobRequest\032\034."
+          + "google.dataflow.v1beta3.Job\"}\202\323\344\223\002w\032>/v1"
           + "b3/projects/{project_id}/locations/{loca"
-          + "tion}/jobs/{job_id}Z+\022)/v1b3/projects/{project_id}/jobs/{job_id}\022\323\001\n"
-          + "\tUpdateJob\022).google.dataflow.v1beta3.UpdateJobReques"
-          + "t\032\034.google.dataflow.v1beta3.Job\"}\202\323\344\223\002w\032"
-          + ">/v1b3/projects/{project_id}/locations/{location}/jobs/{job_id}:\003jobZ0\032)/v1b3/pr"
-          + "ojects/{project_id}/jobs/{job_id}:\003job\022\302\001\n"
-          + "\010ListJobs\022(.google.dataflow.v1beta3.Li"
-          + "stJobsRequest\032).google.dataflow.v1beta3."
-          + "ListJobsResponse\"a\202\323\344\223\002[\0225/v1b3/projects"
-          + "/{project_id}/locations/{location}/jobsZ\"\022"
+          + "tion}/jobs/{job_id}:\003jobZ0\032)/v1b3/projects/{project_id}/jobs/{job_id}:\003job\022\302\001\n"
+          + "\010ListJobs\022(.google.dataflow.v1beta3.ListJo"
+          + "bsRequest\032).google.dataflow.v1beta3.List"
+          + "JobsResponse\"a\202\323\344\223\002[\0225/v1b3/projects/{project_id}/locations/{location}/jobsZ\"\022"
           + " /v1b3/projects/{project_id}/jobs\022\236\001\n"
-          + "\022AggregatedListJobs\022(.google.dataflow.v1b"
-          + "eta3.ListJobsRequest\032).google.dataflow.v"
-          + "1beta3.ListJobsResponse\"3\202\323\344\223\002-\022+/v1b3/projects/{project_id}/jobs:aggregated\022v\n"
-          + "\017CheckActiveJobs\022/.google.dataflow.v1beta"
-          + "3.CheckActiveJobsRequest\0320.google.dataflow.v1beta3.CheckActiveJobsResponse\"\000\022\354\001\n"
-          + "\013SnapshotJob\022+.google.dataflow.v1beta3.S"
-          + "napshotJobRequest\032!.google.dataflow.v1be"
-          + "ta3.Snapshot\"\214\001\202\323\344\223\002\205\001\"G/v1b3/projects/{"
-          + "project_id}/locations/{location}/jobs/{job_id}:snapshot:\001*Z7\"2/v1b3/projects/{pr"
-          + "oject_id}/jobs/{job_id}:snapshot:\001*\032\324\001\312A"
-          + "\027dataflow.googleapis.com\322A\266\001https://www."
-          + "googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/compute,https"
-          + "://www.googleapis.com/auth/compute.reado"
-          + "nly,https://www.googleapis.com/auth/userinfo.emailB\314\001\n"
-          + "\033com.google.dataflow.v1beta3B\tJobsProtoP\001Z=cloud.google.com/go/dat"
-          + "aflow/apiv1beta3/dataflowpb;dataflowpb\252\002"
-          + "\035Google.Cloud.Dataflow.V1Beta3\312\002\035Google\\Cloud\\Dataflow\\V1beta3\352\002"
+          + "\022AggregatedListJobs\022(.google.dataflow.v1beta3"
+          + ".ListJobsRequest\032).google.dataflow.v1bet"
+          + "a3.ListJobsResponse\"3\202\323\344\223\002-\022+/v1b3/projects/{project_id}/jobs:aggregated\022v\n"
+          + "\017CheckActiveJobs\022/.google.dataflow.v1beta3.Ch"
+          + "eckActiveJobsRequest\0320.google.dataflow.v1beta3.CheckActiveJobsResponse\"\000\022\354\001\n"
+          + "\013SnapshotJob\022+.google.dataflow.v1beta3.Snaps"
+          + "hotJobRequest\032!.google.dataflow.v1beta3."
+          + "Snapshot\"\214\001\202\323\344\223\002\205\001\"G/v1b3/projects/{proj"
+          + "ect_id}/locations/{location}/jobs/{job_id}:snapshot:\001*Z7\"2/v1b3/projects/{projec"
+          + "t_id}/jobs/{job_id}:snapshot:\001*\032s\312A\027data"
+          + "flow.googleapis.com\322AVhttps://www.google"
+          + "apis.com/auth/cloud-platform,https://www.googleapis.com/auth/computeB\314\001\n"
+          + "\033com.google.dataflow.v1beta3B\tJobsProtoP\001Z=cloud"
+          + ".google.com/go/dataflow/apiv1beta3/dataf"
+          + "lowpb;dataflowpb\252\002\035Google.Cloud.Dataflow"
+          + ".V1Beta3\312\002\035Google\\Cloud\\Dataflow\\V1beta3\352\002"
           + " Google::Cloud::Dataflow::V1beta3b\006proto3"
     };
     descriptor =
@@ -444,9 +506,11 @@ public final class JobsProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.dataflow.v1beta3.EnvironmentProto.getDescriptor(),
               com.google.dataflow.v1beta3.SnapshotsProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -481,6 +545,9 @@ public final class JobsProto {
               "StartTime",
               "CreatedFromSnapshotId",
               "SatisfiesPzs",
+              "RuntimeUpdatableParams",
+              "SatisfiesPzi",
+              "ServiceResources",
             });
     internal_static_google_dataflow_v1beta3_Job_TransformNameMappingEntry_descriptor =
         internal_static_google_dataflow_v1beta3_Job_descriptor.getNestedTypes().get(0);
@@ -498,8 +565,24 @@ public final class JobsProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_dataflow_v1beta3_DatastoreIODetails_descriptor =
+    internal_static_google_dataflow_v1beta3_ServiceResources_descriptor =
         getDescriptor().getMessageTypes().get(1);
+    internal_static_google_dataflow_v1beta3_ServiceResources_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_dataflow_v1beta3_ServiceResources_descriptor,
+            new java.lang.String[] {
+              "Zones",
+            });
+    internal_static_google_dataflow_v1beta3_RuntimeUpdatableParams_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_dataflow_v1beta3_RuntimeUpdatableParams_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_dataflow_v1beta3_RuntimeUpdatableParams_descriptor,
+            new java.lang.String[] {
+              "MaxNumWorkers", "MinNumWorkers", "WorkerUtilizationHint",
+            });
+    internal_static_google_dataflow_v1beta3_DatastoreIODetails_descriptor =
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_dataflow_v1beta3_DatastoreIODetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_DatastoreIODetails_descriptor,
@@ -507,7 +590,7 @@ public final class JobsProto {
               "Namespace", "ProjectId",
             });
     internal_static_google_dataflow_v1beta3_PubSubIODetails_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_dataflow_v1beta3_PubSubIODetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_PubSubIODetails_descriptor,
@@ -515,7 +598,7 @@ public final class JobsProto {
               "Topic", "Subscription",
             });
     internal_static_google_dataflow_v1beta3_FileIODetails_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_dataflow_v1beta3_FileIODetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_FileIODetails_descriptor,
@@ -523,7 +606,7 @@ public final class JobsProto {
               "FilePattern",
             });
     internal_static_google_dataflow_v1beta3_BigTableIODetails_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_dataflow_v1beta3_BigTableIODetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_BigTableIODetails_descriptor,
@@ -531,7 +614,7 @@ public final class JobsProto {
               "ProjectId", "InstanceId", "TableId",
             });
     internal_static_google_dataflow_v1beta3_BigQueryIODetails_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_dataflow_v1beta3_BigQueryIODetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_BigQueryIODetails_descriptor,
@@ -539,7 +622,7 @@ public final class JobsProto {
               "Table", "Dataset", "ProjectId", "Query",
             });
     internal_static_google_dataflow_v1beta3_SpannerIODetails_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_dataflow_v1beta3_SpannerIODetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_SpannerIODetails_descriptor,
@@ -547,15 +630,23 @@ public final class JobsProto {
               "ProjectId", "InstanceId", "DatabaseId",
             });
     internal_static_google_dataflow_v1beta3_SdkVersion_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_dataflow_v1beta3_SdkVersion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_SdkVersion_descriptor,
             new java.lang.String[] {
-              "Version", "VersionDisplayName", "SdkSupportStatus",
+              "Version", "VersionDisplayName", "SdkSupportStatus", "Bugs",
+            });
+    internal_static_google_dataflow_v1beta3_SdkBug_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_dataflow_v1beta3_SdkBug_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_dataflow_v1beta3_SdkBug_descriptor,
+            new java.lang.String[] {
+              "Type", "Severity", "Uri",
             });
     internal_static_google_dataflow_v1beta3_JobMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_dataflow_v1beta3_JobMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_JobMetadata_descriptor,
@@ -567,9 +658,18 @@ public final class JobsProto {
               "PubsubDetails",
               "FileDetails",
               "DatastoreDetails",
+              "UserDisplayProperties",
+            });
+    internal_static_google_dataflow_v1beta3_JobMetadata_UserDisplayPropertiesEntry_descriptor =
+        internal_static_google_dataflow_v1beta3_JobMetadata_descriptor.getNestedTypes().get(0);
+    internal_static_google_dataflow_v1beta3_JobMetadata_UserDisplayPropertiesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_dataflow_v1beta3_JobMetadata_UserDisplayPropertiesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_dataflow_v1beta3_ExecutionStageState_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_dataflow_v1beta3_ExecutionStageState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_ExecutionStageState_descriptor,
@@ -577,15 +677,15 @@ public final class JobsProto {
               "ExecutionStageName", "ExecutionStageState", "CurrentStateTime",
             });
     internal_static_google_dataflow_v1beta3_PipelineDescription_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_dataflow_v1beta3_PipelineDescription_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_PipelineDescription_descriptor,
             new java.lang.String[] {
-              "OriginalPipelineTransform", "ExecutionPipelineStage", "DisplayData",
+              "OriginalPipelineTransform", "ExecutionPipelineStage", "DisplayData", "StepNamesHash",
             });
     internal_static_google_dataflow_v1beta3_TransformSummary_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_dataflow_v1beta3_TransformSummary_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_TransformSummary_descriptor,
@@ -593,7 +693,7 @@ public final class JobsProto {
               "Kind", "Id", "Name", "DisplayData", "OutputCollectionName", "InputCollectionName",
             });
     internal_static_google_dataflow_v1beta3_ExecutionStageSummary_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_dataflow_v1beta3_ExecutionStageSummary_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_ExecutionStageSummary_descriptor,
@@ -638,7 +738,7 @@ public final class JobsProto {
               "UserName", "Name", "OriginalTransformOrCollection",
             });
     internal_static_google_dataflow_v1beta3_DisplayData_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_dataflow_v1beta3_DisplayData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_DisplayData_descriptor,
@@ -658,7 +758,7 @@ public final class JobsProto {
               "Value",
             });
     internal_static_google_dataflow_v1beta3_Step_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_dataflow_v1beta3_Step_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_Step_descriptor,
@@ -666,7 +766,7 @@ public final class JobsProto {
               "Kind", "Name", "Properties",
             });
     internal_static_google_dataflow_v1beta3_JobExecutionInfo_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_dataflow_v1beta3_JobExecutionInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_JobExecutionInfo_descriptor,
@@ -682,7 +782,7 @@ public final class JobsProto {
               "Key", "Value",
             });
     internal_static_google_dataflow_v1beta3_JobExecutionStageInfo_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_dataflow_v1beta3_JobExecutionStageInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_JobExecutionStageInfo_descriptor,
@@ -690,7 +790,7 @@ public final class JobsProto {
               "StepName",
             });
     internal_static_google_dataflow_v1beta3_CreateJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_dataflow_v1beta3_CreateJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_CreateJobRequest_descriptor,
@@ -698,7 +798,7 @@ public final class JobsProto {
               "ProjectId", "Job", "View", "ReplaceJobId", "Location",
             });
     internal_static_google_dataflow_v1beta3_GetJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_dataflow_v1beta3_GetJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_GetJobRequest_descriptor,
@@ -706,23 +806,23 @@ public final class JobsProto {
               "ProjectId", "JobId", "View", "Location",
             });
     internal_static_google_dataflow_v1beta3_UpdateJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_dataflow_v1beta3_UpdateJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_UpdateJobRequest_descriptor,
             new java.lang.String[] {
-              "ProjectId", "JobId", "Job", "Location",
+              "ProjectId", "JobId", "Job", "Location", "UpdateMask",
             });
     internal_static_google_dataflow_v1beta3_ListJobsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_dataflow_v1beta3_ListJobsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_ListJobsRequest_descriptor,
             new java.lang.String[] {
-              "Filter", "ProjectId", "View", "PageSize", "PageToken", "Location",
+              "Filter", "ProjectId", "View", "PageSize", "PageToken", "Location", "Name",
             });
     internal_static_google_dataflow_v1beta3_FailedLocation_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_dataflow_v1beta3_FailedLocation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_FailedLocation_descriptor,
@@ -730,7 +830,7 @@ public final class JobsProto {
               "Name",
             });
     internal_static_google_dataflow_v1beta3_ListJobsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_dataflow_v1beta3_ListJobsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_ListJobsResponse_descriptor,
@@ -738,7 +838,7 @@ public final class JobsProto {
               "Jobs", "NextPageToken", "FailedLocation",
             });
     internal_static_google_dataflow_v1beta3_SnapshotJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_dataflow_v1beta3_SnapshotJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_SnapshotJobRequest_descriptor,
@@ -746,7 +846,7 @@ public final class JobsProto {
               "ProjectId", "JobId", "Ttl", "Location", "SnapshotSources", "Description",
             });
     internal_static_google_dataflow_v1beta3_CheckActiveJobsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_dataflow_v1beta3_CheckActiveJobsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_CheckActiveJobsRequest_descriptor,
@@ -754,7 +854,7 @@ public final class JobsProto {
               "ProjectId",
             });
     internal_static_google_dataflow_v1beta3_CheckActiveJobsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_dataflow_v1beta3_CheckActiveJobsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_CheckActiveJobsResponse_descriptor,
@@ -764,15 +864,18 @@ public final class JobsProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.dataflow.v1beta3.EnvironmentProto.getDescriptor();
     com.google.dataflow.v1beta3.SnapshotsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

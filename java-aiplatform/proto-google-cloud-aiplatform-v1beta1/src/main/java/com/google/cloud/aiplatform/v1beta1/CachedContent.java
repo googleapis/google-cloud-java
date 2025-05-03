@@ -1362,9 +1362,9 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The name of the publisher model to use for cached content.
-   * Format:
-   * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+   * Immutable. The name of the `Model` to use for cached content. Currently,
+   * only the published Gemini base models are supported, in form of
+   * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
    * </pre>
    *
    * <code>string model = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1388,9 +1388,9 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The name of the publisher model to use for cached content.
-   * Format:
-   * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+   * Immutable. The name of the `Model` to use for cached content. Currently,
+   * only the published Gemini base models are supported, in form of
+   * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
    * </pre>
    *
    * <code>string model = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1718,7 +1718,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Creatation time of the cache entry.
+   * Output only. Creation time of the cache entry.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1735,7 +1735,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Creatation time of the cache entry.
+   * Output only. Creation time of the cache entry.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1752,7 +1752,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Creatation time of the cache entry.
+   * Output only. Creation time of the cache entry.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1875,6 +1875,71 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         : usageMetadata_;
   }
 
+  public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 13;
+  private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Immutable. Customer-managed encryption key spec for a
+   * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+   * will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionSpec() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Immutable. Customer-managed encryption key spec for a
+   * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+   * will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Immutable. Customer-managed encryption key spec for a
+   * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+   * will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1925,6 +1990,9 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(12, getUsageMetadata());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(13, getEncryptionSpec());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1974,6 +2042,9 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getUsageMetadata());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getEncryptionSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2014,6 +2085,10 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     if (hasUsageMetadata() != other.hasUsageMetadata()) return false;
     if (hasUsageMetadata()) {
       if (!getUsageMetadata().equals(other.getUsageMetadata())) return false;
+    }
+    if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
+    if (hasEncryptionSpec()) {
+      if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
     }
     if (!getExpirationCase().equals(other.getExpirationCase())) return false;
     switch (expirationCase_) {
@@ -2070,6 +2145,10 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     if (hasUsageMetadata()) {
       hash = (37 * hash) + USAGE_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getUsageMetadata().hashCode();
+    }
+    if (hasEncryptionSpec()) {
+      hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
     switch (expirationCase_) {
       case 9:
@@ -2232,6 +2311,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getUsageMetadataFieldBuilder();
+        getEncryptionSpecFieldBuilder();
       }
     }
 
@@ -2286,6 +2366,11 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       if (usageMetadataBuilder_ != null) {
         usageMetadataBuilder_.dispose();
         usageMetadataBuilder_ = null;
+      }
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
       }
       expirationCase_ = 0;
       expiration_ = null;
@@ -2382,6 +2467,11 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         result.usageMetadata_ =
             usageMetadataBuilder_ == null ? usageMetadata_ : usageMetadataBuilder_.build();
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.encryptionSpec_ =
+            encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2527,6 +2617,9 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUsageMetadata()) {
         mergeUsageMetadata(other.getUsageMetadata());
       }
+      if (other.hasEncryptionSpec()) {
+        mergeEncryptionSpec(other.getEncryptionSpec());
+      }
       switch (other.getExpirationCase()) {
         case EXPIRE_TIME:
           {
@@ -2656,6 +2749,12 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 98
+            case 106:
+              {
+                input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3407,9 +3506,9 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The name of the publisher model to use for cached content.
-     * Format:
-     * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+     * Immutable. The name of the `Model` to use for cached content. Currently,
+     * only the published Gemini base models are supported, in form of
+     * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3432,9 +3531,9 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The name of the publisher model to use for cached content.
-     * Format:
-     * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+     * Immutable. The name of the `Model` to use for cached content. Currently,
+     * only the published Gemini base models are supported, in form of
+     * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3457,9 +3556,9 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The name of the publisher model to use for cached content.
-     * Format:
-     * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+     * Immutable. The name of the `Model` to use for cached content. Currently,
+     * only the published Gemini base models are supported, in form of
+     * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3481,9 +3580,9 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The name of the publisher model to use for cached content.
-     * Format:
-     * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+     * Immutable. The name of the `Model` to use for cached content. Currently,
+     * only the published Gemini base models are supported, in form of
+     * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3501,9 +3600,9 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The name of the publisher model to use for cached content.
-     * Format:
-     * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+     * Immutable. The name of the `Model` to use for cached content. Currently,
+     * only the published Gemini base models are supported, in form of
+     * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4800,7 +4899,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Creatation time of the cache entry.
+     * Output only. Creation time of the cache entry.
      * </pre>
      *
      * <code>
@@ -4817,7 +4916,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Creatation time of the cache entry.
+     * Output only. Creation time of the cache entry.
      * </pre>
      *
      * <code>
@@ -4840,7 +4939,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Creatation time of the cache entry.
+     * Output only. Creation time of the cache entry.
      * </pre>
      *
      * <code>
@@ -4865,7 +4964,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Creatation time of the cache entry.
+     * Output only. Creation time of the cache entry.
      * </pre>
      *
      * <code>
@@ -4887,7 +4986,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Creatation time of the cache entry.
+     * Output only. Creation time of the cache entry.
      * </pre>
      *
      * <code>
@@ -4917,7 +5016,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Creatation time of the cache entry.
+     * Output only. Creation time of the cache entry.
      * </pre>
      *
      * <code>
@@ -4939,7 +5038,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Creatation time of the cache entry.
+     * Output only. Creation time of the cache entry.
      * </pre>
      *
      * <code>
@@ -4956,7 +5055,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Creatation time of the cache entry.
+     * Output only. Creation time of the cache entry.
      * </pre>
      *
      * <code>
@@ -4977,7 +5076,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Creatation time of the cache entry.
+     * Output only. Creation time of the cache entry.
      * </pre>
      *
      * <code>
@@ -5430,6 +5529,239 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         usageMetadata_ = null;
       }
       return usageMetadataBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>
+        encryptionSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Customer-managed encryption key spec for a
+     * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+     * will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the encryptionSpec field is set.
+     */
+    public boolean hasEncryptionSpec() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Customer-managed encryption key spec for a
+     * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+     * will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The encryptionSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      } else {
+        return encryptionSpecBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Customer-managed encryption key spec for a
+     * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+     * will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionSpec_ = value;
+      } else {
+        encryptionSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Customer-managed encryption key spec for a
+     * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+     * will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setEncryptionSpec(
+        com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder builderForValue) {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = builderForValue.build();
+      } else {
+        encryptionSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Customer-managed encryption key spec for a
+     * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+     * will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && encryptionSpec_ != null
+            && encryptionSpec_
+                != com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()) {
+          getEncryptionSpecBuilder().mergeFrom(value);
+        } else {
+          encryptionSpec_ = value;
+        }
+      } else {
+        encryptionSpecBuilder_.mergeFrom(value);
+      }
+      if (encryptionSpec_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Customer-managed encryption key spec for a
+     * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+     * will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearEncryptionSpec() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Customer-managed encryption key spec for a
+     * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+     * will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getEncryptionSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Customer-managed encryption key spec for a
+     * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+     * will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder
+        getEncryptionSpecOrBuilder() {
+      if (encryptionSpecBuilder_ != null) {
+        return encryptionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Customer-managed encryption key spec for a
+     * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+     * will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>
+        getEncryptionSpecFieldBuilder() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.EncryptionSpec,
+                com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>(
+                getEncryptionSpec(), getParentForChildren(), isClean());
+        encryptionSpec_ = null;
+      }
+      return encryptionSpecBuilder_;
     }
 
     @java.lang.Override

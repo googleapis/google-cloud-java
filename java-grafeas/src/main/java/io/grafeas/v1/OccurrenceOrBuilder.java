@@ -655,6 +655,43 @@ public interface OccurrenceOrBuilder
    *
    *
    * <pre>
+   * Describes a secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+   *
+   * @return Whether the secret field is set.
+   */
+  boolean hasSecret();
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes a secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+   *
+   * @return The secret.
+   */
+  io.grafeas.v1.SecretOccurrence getSecret();
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes a secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+   */
+  io.grafeas.v1.SecretOccurrenceOrBuilder getSecretOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * https://github.com/secure-systems-lab/dsse
    * </pre>
    *

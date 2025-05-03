@@ -58,6 +58,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     autoscalingAlgorithm_ = 0;
     saveHeapDumpsToGcsPath_ = "";
     launcherMachineType_ = "";
+    streamingMode_ = 0;
   }
 
   @java.lang.Override
@@ -93,6 +94,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
             com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NUM_WORKERS_FIELD_NUMBER = 1;
   private int numWorkers_ = 0;
 
@@ -1126,9 +1128,12 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * If true, save a heap dump before killing a thread or process which is GC
-   * thrashing or out of memory. The location of the heap file will either be
-   * echoed back to the user, or the user will be given the opportunity to
+   * If true, when processing time is spent almost entirely
+   * on garbage collection (GC), saves a heap dump before ending the thread
+   * or process. If false, ends the thread or process without saving a heap
+   * dump. Does not save a heap dump when the Java Virtual Machine (JVM) has an
+   * out of memory error during processing. The location of the heap file is
+   * either echoed back to the user, or the user is given the opportunity to
    * download the heap file.
    * </pre>
    *
@@ -1150,9 +1155,8 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Cloud Storage bucket (directory) to upload heap dumps to the given
-   * location. Enabling this implies that heap dumps should be generated on OOM
-   * (dump_heap_on_oom is set to true).
+   * Cloud Storage bucket (directory) to upload heap dumps to.
+   * Enabling this field implies that `dump_heap_on_oom` is set to true.
    * </pre>
    *
    * <code>string save_heap_dumps_to_gcs_path = 23;</code>
@@ -1176,9 +1180,8 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Cloud Storage bucket (directory) to upload heap dumps to the given
-   * location. Enabling this implies that heap dumps should be generated on OOM
-   * (dump_heap_on_oom is set to true).
+   * Cloud Storage bucket (directory) to upload heap dumps to.
+   * Enabling this field implies that `dump_heap_on_oom` is set to true.
    * </pre>
    *
    * <code>string save_heap_dumps_to_gcs_path = 23;</code>
@@ -1251,6 +1254,102 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int ENABLE_LAUNCHER_VM_SERIAL_PORT_LOGGING_FIELD_NUMBER = 25;
+  private boolean enableLauncherVmSerialPortLogging_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * If true serial port logging will be enabled for the launcher VM.
+   * </pre>
+   *
+   * <code>bool enable_launcher_vm_serial_port_logging = 25;</code>
+   *
+   * @return The enableLauncherVmSerialPortLogging.
+   */
+  @java.lang.Override
+  public boolean getEnableLauncherVmSerialPortLogging() {
+    return enableLauncherVmSerialPortLogging_;
+  }
+
+  public static final int STREAMING_MODE_FIELD_NUMBER = 26;
+  private int streamingMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the streamingMode field is set.
+   */
+  @java.lang.Override
+  public boolean hasStreamingMode() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for streamingMode.
+   */
+  @java.lang.Override
+  public int getStreamingModeValue() {
+    return streamingMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The streamingMode.
+   */
+  @java.lang.Override
+  public com.google.dataflow.v1beta3.StreamingMode getStreamingMode() {
+    com.google.dataflow.v1beta3.StreamingMode result =
+        com.google.dataflow.v1beta3.StreamingMode.forNumber(streamingMode_);
+    return result == null ? com.google.dataflow.v1beta3.StreamingMode.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1343,6 +1442,12 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(launcherMachineType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 24, launcherMachineType_);
+    }
+    if (enableLauncherVmSerialPortLogging_ != false) {
+      output.writeBool(25, enableLauncherVmSerialPortLogging_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(26, streamingMode_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1439,6 +1544,14 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(launcherMachineType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, launcherMachineType_);
     }
+    if (enableLauncherVmSerialPortLogging_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              25, enableLauncherVmSerialPortLogging_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(26, streamingMode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1479,6 +1592,12 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     if (getDumpHeapOnOom() != other.getDumpHeapOnOom()) return false;
     if (!getSaveHeapDumpsToGcsPath().equals(other.getSaveHeapDumpsToGcsPath())) return false;
     if (!getLauncherMachineType().equals(other.getLauncherMachineType())) return false;
+    if (getEnableLauncherVmSerialPortLogging() != other.getEnableLauncherVmSerialPortLogging())
+      return false;
+    if (hasStreamingMode() != other.hasStreamingMode()) return false;
+    if (hasStreamingMode()) {
+      if (streamingMode_ != other.streamingMode_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1540,6 +1659,14 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     hash = (53 * hash) + getSaveHeapDumpsToGcsPath().hashCode();
     hash = (37 * hash) + LAUNCHER_MACHINE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getLauncherMachineType().hashCode();
+    hash = (37 * hash) + ENABLE_LAUNCHER_VM_SERIAL_PORT_LOGGING_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashBoolean(getEnableLauncherVmSerialPortLogging());
+    if (hasStreamingMode()) {
+      hash = (37 * hash) + STREAMING_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + streamingMode_;
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1726,6 +1853,8 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       dumpHeapOnOom_ = false;
       saveHeapDumpsToGcsPath_ = "";
       launcherMachineType_ = "";
+      enableLauncherVmSerialPortLogging_ = false;
+      streamingMode_ = 0;
       return this;
     }
 
@@ -1833,6 +1962,15 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       if (((from_bitField0_ & 0x00400000) != 0)) {
         result.launcherMachineType_ = launcherMachineType_;
       }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.enableLauncherVmSerialPortLogging_ = enableLauncherVmSerialPortLogging_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.streamingMode_ = streamingMode_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1981,6 +2119,12 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         launcherMachineType_ = other.launcherMachineType_;
         bitField0_ |= 0x00400000;
         onChanged();
+      }
+      if (other.getEnableLauncherVmSerialPortLogging() != false) {
+        setEnableLauncherVmSerialPortLogging(other.getEnableLauncherVmSerialPortLogging());
+      }
+      if (other.hasStreamingMode()) {
+        setStreamingMode(other.getStreamingMode());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2154,6 +2298,18 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
                 bitField0_ |= 0x00400000;
                 break;
               } // case 194
+            case 200:
+              {
+                enableLauncherVmSerialPortLogging_ = input.readBool();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 200
+            case 208:
+              {
+                streamingMode_ = input.readEnum();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 208
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4447,9 +4603,12 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If true, save a heap dump before killing a thread or process which is GC
-     * thrashing or out of memory. The location of the heap file will either be
-     * echoed back to the user, or the user will be given the opportunity to
+     * If true, when processing time is spent almost entirely
+     * on garbage collection (GC), saves a heap dump before ending the thread
+     * or process. If false, ends the thread or process without saving a heap
+     * dump. Does not save a heap dump when the Java Virtual Machine (JVM) has an
+     * out of memory error during processing. The location of the heap file is
+     * either echoed back to the user, or the user is given the opportunity to
      * download the heap file.
      * </pre>
      *
@@ -4466,9 +4625,12 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If true, save a heap dump before killing a thread or process which is GC
-     * thrashing or out of memory. The location of the heap file will either be
-     * echoed back to the user, or the user will be given the opportunity to
+     * If true, when processing time is spent almost entirely
+     * on garbage collection (GC), saves a heap dump before ending the thread
+     * or process. If false, ends the thread or process without saving a heap
+     * dump. Does not save a heap dump when the Java Virtual Machine (JVM) has an
+     * out of memory error during processing. The location of the heap file is
+     * either echoed back to the user, or the user is given the opportunity to
      * download the heap file.
      * </pre>
      *
@@ -4489,9 +4651,12 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If true, save a heap dump before killing a thread or process which is GC
-     * thrashing or out of memory. The location of the heap file will either be
-     * echoed back to the user, or the user will be given the opportunity to
+     * If true, when processing time is spent almost entirely
+     * on garbage collection (GC), saves a heap dump before ending the thread
+     * or process. If false, ends the thread or process without saving a heap
+     * dump. Does not save a heap dump when the Java Virtual Machine (JVM) has an
+     * out of memory error during processing. The location of the heap file is
+     * either echoed back to the user, or the user is given the opportunity to
      * download the heap file.
      * </pre>
      *
@@ -4512,9 +4677,8 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Cloud Storage bucket (directory) to upload heap dumps to the given
-     * location. Enabling this implies that heap dumps should be generated on OOM
-     * (dump_heap_on_oom is set to true).
+     * Cloud Storage bucket (directory) to upload heap dumps to.
+     * Enabling this field implies that `dump_heap_on_oom` is set to true.
      * </pre>
      *
      * <code>string save_heap_dumps_to_gcs_path = 23;</code>
@@ -4537,9 +4701,8 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Cloud Storage bucket (directory) to upload heap dumps to the given
-     * location. Enabling this implies that heap dumps should be generated on OOM
-     * (dump_heap_on_oom is set to true).
+     * Cloud Storage bucket (directory) to upload heap dumps to.
+     * Enabling this field implies that `dump_heap_on_oom` is set to true.
      * </pre>
      *
      * <code>string save_heap_dumps_to_gcs_path = 23;</code>
@@ -4562,9 +4725,8 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Cloud Storage bucket (directory) to upload heap dumps to the given
-     * location. Enabling this implies that heap dumps should be generated on OOM
-     * (dump_heap_on_oom is set to true).
+     * Cloud Storage bucket (directory) to upload heap dumps to.
+     * Enabling this field implies that `dump_heap_on_oom` is set to true.
      * </pre>
      *
      * <code>string save_heap_dumps_to_gcs_path = 23;</code>
@@ -4586,9 +4748,8 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Cloud Storage bucket (directory) to upload heap dumps to the given
-     * location. Enabling this implies that heap dumps should be generated on OOM
-     * (dump_heap_on_oom is set to true).
+     * Cloud Storage bucket (directory) to upload heap dumps to.
+     * Enabling this field implies that `dump_heap_on_oom` is set to true.
      * </pre>
      *
      * <code>string save_heap_dumps_to_gcs_path = 23;</code>
@@ -4606,9 +4767,8 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Cloud Storage bucket (directory) to upload heap dumps to the given
-     * location. Enabling this implies that heap dumps should be generated on OOM
-     * (dump_heap_on_oom is set to true).
+     * Cloud Storage bucket (directory) to upload heap dumps to.
+     * Enabling this field implies that `dump_heap_on_oom` is set to true.
      * </pre>
      *
      * <code>string save_heap_dumps_to_gcs_path = 23;</code>
@@ -4739,6 +4899,221 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       checkByteStringIsUtf8(value);
       launcherMachineType_ = value;
       bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableLauncherVmSerialPortLogging_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If true serial port logging will be enabled for the launcher VM.
+     * </pre>
+     *
+     * <code>bool enable_launcher_vm_serial_port_logging = 25;</code>
+     *
+     * @return The enableLauncherVmSerialPortLogging.
+     */
+    @java.lang.Override
+    public boolean getEnableLauncherVmSerialPortLogging() {
+      return enableLauncherVmSerialPortLogging_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true serial port logging will be enabled for the launcher VM.
+     * </pre>
+     *
+     * <code>bool enable_launcher_vm_serial_port_logging = 25;</code>
+     *
+     * @param value The enableLauncherVmSerialPortLogging to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableLauncherVmSerialPortLogging(boolean value) {
+
+      enableLauncherVmSerialPortLogging_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true serial port logging will be enabled for the launcher VM.
+     * </pre>
+     *
+     * <code>bool enable_launcher_vm_serial_port_logging = 25;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableLauncherVmSerialPortLogging() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      enableLauncherVmSerialPortLogging_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int streamingMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the streamingMode field is set.
+     */
+    @java.lang.Override
+    public boolean hasStreamingMode() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for streamingMode.
+     */
+    @java.lang.Override
+    public int getStreamingModeValue() {
+      return streamingMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for streamingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStreamingModeValue(int value) {
+      streamingMode_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The streamingMode.
+     */
+    @java.lang.Override
+    public com.google.dataflow.v1beta3.StreamingMode getStreamingMode() {
+      com.google.dataflow.v1beta3.StreamingMode result =
+          com.google.dataflow.v1beta3.StreamingMode.forNumber(streamingMode_);
+      return result == null ? com.google.dataflow.v1beta3.StreamingMode.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The streamingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStreamingMode(com.google.dataflow.v1beta3.StreamingMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x01000000;
+      streamingMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStreamingMode() {
+      bitField0_ = (bitField0_ & ~0x01000000);
+      streamingMode_ = 0;
       onChanged();
       return this;
     }

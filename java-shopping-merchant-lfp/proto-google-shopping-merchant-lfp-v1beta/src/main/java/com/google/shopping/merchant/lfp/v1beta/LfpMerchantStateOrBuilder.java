@@ -70,7 +70,8 @@ public interface LfpMerchantStateOrBuilder
    *
    *
    * <pre>
-   * Output only. The state per store from the specified merchant.
+   * Output only. The state per store from the specified merchant. The field
+   * will be absent if the merchant has no stores submitted through LFP.
    * </pre>
    *
    * <code>
@@ -84,7 +85,8 @@ public interface LfpMerchantStateOrBuilder
    *
    *
    * <pre>
-   * Output only. The state per store from the specified merchant.
+   * Output only. The state per store from the specified merchant. The field
+   * will be absent if the merchant has no stores submitted through LFP.
    * </pre>
    *
    * <code>
@@ -97,7 +99,8 @@ public interface LfpMerchantStateOrBuilder
    *
    *
    * <pre>
-   * Output only. The state per store from the specified merchant.
+   * Output only. The state per store from the specified merchant. The field
+   * will be absent if the merchant has no stores submitted through LFP.
    * </pre>
    *
    * <code>
@@ -110,7 +113,8 @@ public interface LfpMerchantStateOrBuilder
    *
    *
    * <pre>
-   * Output only. The state per store from the specified merchant.
+   * Output only. The state per store from the specified merchant. The field
+   * will be absent if the merchant has no stores submitted through LFP.
    * </pre>
    *
    * <code>
@@ -125,7 +129,8 @@ public interface LfpMerchantStateOrBuilder
    *
    *
    * <pre>
-   * Output only. The state per store from the specified merchant.
+   * Output only. The state per store from the specified merchant. The field
+   * will be absent if the merchant has no stores submitted through LFP.
    * </pre>
    *
    * <code>
@@ -139,7 +144,8 @@ public interface LfpMerchantStateOrBuilder
    *
    *
    * <pre>
-   * The inventory statistics for the merchant.
+   * The inventory statistics for the merchant. The field will be absent if the
+   * merchant has no inventory submitted through LFP.
    * </pre>
    *
    * <code>.google.shopping.merchant.lfp.v1beta.LfpMerchantState.InventoryStats inventory_stats = 4;
@@ -153,7 +159,8 @@ public interface LfpMerchantStateOrBuilder
    *
    *
    * <pre>
-   * The inventory statistics for the merchant.
+   * The inventory statistics for the merchant. The field will be absent if the
+   * merchant has no inventory submitted through LFP.
    * </pre>
    *
    * <code>.google.shopping.merchant.lfp.v1beta.LfpMerchantState.InventoryStats inventory_stats = 4;
@@ -167,7 +174,8 @@ public interface LfpMerchantStateOrBuilder
    *
    *
    * <pre>
-   * The inventory statistics for the merchant.
+   * The inventory statistics for the merchant. The field will be absent if the
+   * merchant has no inventory submitted through LFP.
    * </pre>
    *
    * <code>.google.shopping.merchant.lfp.v1beta.LfpMerchantState.InventoryStats inventory_stats = 4;

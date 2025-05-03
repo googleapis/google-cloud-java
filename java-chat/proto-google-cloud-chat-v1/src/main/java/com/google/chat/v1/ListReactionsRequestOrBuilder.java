@@ -157,8 +157,7 @@ public interface ListReactionsRequestOrBuilder
    * AND user.name = "users/{user}"
    * ```
    *
-   * Invalid queries are rejected by the server with an `INVALID_ARGUMENT`
-   * error.
+   * Invalid queries are rejected with an `INVALID_ARGUMENT` error.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -213,8 +212,7 @@ public interface ListReactionsRequestOrBuilder
    * AND user.name = "users/{user}"
    * ```
    *
-   * Invalid queries are rejected by the server with an `INVALID_ARGUMENT`
-   * error.
+   * Invalid queries are rejected with an `INVALID_ARGUMENT` error.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

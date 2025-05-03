@@ -43,6 +43,7 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
     name_ = "";
     description_ = "";
     parameters_ = java.util.Collections.emptyList();
+    defaultStreamingMode_ = "";
   }
 
   @java.lang.Override
@@ -248,6 +249,120 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
     return parameters_.get(index);
   }
 
+  public static final int STREAMING_FIELD_NUMBER = 5;
+  private boolean streaming_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates if the template is streaming or not.
+   * </pre>
+   *
+   * <code>bool streaming = 5;</code>
+   *
+   * @return The streaming.
+   */
+  @java.lang.Override
+  public boolean getStreaming() {
+    return streaming_;
+  }
+
+  public static final int SUPPORTS_AT_LEAST_ONCE_FIELD_NUMBER = 6;
+  private boolean supportsAtLeastOnce_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates if the streaming template supports at least once mode.
+   * </pre>
+   *
+   * <code>bool supports_at_least_once = 6;</code>
+   *
+   * @return The supportsAtLeastOnce.
+   */
+  @java.lang.Override
+  public boolean getSupportsAtLeastOnce() {
+    return supportsAtLeastOnce_;
+  }
+
+  public static final int SUPPORTS_EXACTLY_ONCE_FIELD_NUMBER = 7;
+  private boolean supportsExactlyOnce_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates if the streaming template supports exactly once mode.
+   * </pre>
+   *
+   * <code>bool supports_exactly_once = 7;</code>
+   *
+   * @return The supportsExactlyOnce.
+   */
+  @java.lang.Override
+  public boolean getSupportsExactlyOnce() {
+    return supportsExactlyOnce_;
+  }
+
+  public static final int DEFAULT_STREAMING_MODE_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object defaultStreamingMode_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates the default streaming mode for a streaming template.
+   * Only valid if both supports_at_least_once and supports_exactly_once are
+   * true. Possible values: UNSPECIFIED, EXACTLY_ONCE and AT_LEAST_ONCE
+   * </pre>
+   *
+   * <code>string default_streaming_mode = 8;</code>
+   *
+   * @return The defaultStreamingMode.
+   */
+  @java.lang.Override
+  public java.lang.String getDefaultStreamingMode() {
+    java.lang.Object ref = defaultStreamingMode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      defaultStreamingMode_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates the default streaming mode for a streaming template.
+   * Only valid if both supports_at_least_once and supports_exactly_once are
+   * true. Possible values: UNSPECIFIED, EXACTLY_ONCE and AT_LEAST_ONCE
+   * </pre>
+   *
+   * <code>string default_streaming_mode = 8;</code>
+   *
+   * @return The bytes for defaultStreamingMode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDefaultStreamingModeBytes() {
+    java.lang.Object ref = defaultStreamingMode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      defaultStreamingMode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -271,6 +386,18 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < parameters_.size(); i++) {
       output.writeMessage(3, parameters_.get(i));
     }
+    if (streaming_ != false) {
+      output.writeBool(5, streaming_);
+    }
+    if (supportsAtLeastOnce_ != false) {
+      output.writeBool(6, supportsAtLeastOnce_);
+    }
+    if (supportsExactlyOnce_ != false) {
+      output.writeBool(7, supportsExactlyOnce_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultStreamingMode_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, defaultStreamingMode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -288,6 +415,18 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < parameters_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, parameters_.get(i));
+    }
+    if (streaming_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, streaming_);
+    }
+    if (supportsAtLeastOnce_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, supportsAtLeastOnce_);
+    }
+    if (supportsExactlyOnce_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, supportsExactlyOnce_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultStreamingMode_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, defaultStreamingMode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -308,6 +447,10 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
     if (!getName().equals(other.getName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getParametersList().equals(other.getParametersList())) return false;
+    if (getStreaming() != other.getStreaming()) return false;
+    if (getSupportsAtLeastOnce() != other.getSupportsAtLeastOnce()) return false;
+    if (getSupportsExactlyOnce() != other.getSupportsExactlyOnce()) return false;
+    if (!getDefaultStreamingMode().equals(other.getDefaultStreamingMode())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -327,6 +470,14 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getParametersList().hashCode();
     }
+    hash = (37 * hash) + STREAMING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStreaming());
+    hash = (37 * hash) + SUPPORTS_AT_LEAST_ONCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSupportsAtLeastOnce());
+    hash = (37 * hash) + SUPPORTS_EXACTLY_ONCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSupportsExactlyOnce());
+    hash = (37 * hash) + DEFAULT_STREAMING_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + getDefaultStreamingMode().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -476,6 +627,10 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
         parametersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
+      streaming_ = false;
+      supportsAtLeastOnce_ = false;
+      supportsExactlyOnce_ = false;
+      defaultStreamingMode_ = "";
       return this;
     }
 
@@ -530,6 +685,18 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.streaming_ = streaming_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.supportsAtLeastOnce_ = supportsAtLeastOnce_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.supportsExactlyOnce_ = supportsExactlyOnce_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.defaultStreamingMode_ = defaultStreamingMode_;
       }
     }
 
@@ -615,6 +782,20 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.getStreaming() != false) {
+        setStreaming(other.getStreaming());
+      }
+      if (other.getSupportsAtLeastOnce() != false) {
+        setSupportsAtLeastOnce(other.getSupportsAtLeastOnce());
+      }
+      if (other.getSupportsExactlyOnce() != false) {
+        setSupportsExactlyOnce(other.getSupportsExactlyOnce());
+      }
+      if (!other.getDefaultStreamingMode().isEmpty()) {
+        defaultStreamingMode_ = other.defaultStreamingMode_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -666,6 +847,30 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 26
+            case 40:
+              {
+                streaming_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
+            case 48:
+              {
+                supportsAtLeastOnce_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
+            case 56:
+              {
+                supportsExactlyOnce_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
+            case 66:
+              {
+                defaultStreamingMode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1274,6 +1479,295 @@ public final class TemplateMetadata extends com.google.protobuf.GeneratedMessage
         parameters_ = null;
       }
       return parametersBuilder_;
+    }
+
+    private boolean streaming_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the template is streaming or not.
+     * </pre>
+     *
+     * <code>bool streaming = 5;</code>
+     *
+     * @return The streaming.
+     */
+    @java.lang.Override
+    public boolean getStreaming() {
+      return streaming_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the template is streaming or not.
+     * </pre>
+     *
+     * <code>bool streaming = 5;</code>
+     *
+     * @param value The streaming to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStreaming(boolean value) {
+
+      streaming_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the template is streaming or not.
+     * </pre>
+     *
+     * <code>bool streaming = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStreaming() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      streaming_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean supportsAtLeastOnce_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the streaming template supports at least once mode.
+     * </pre>
+     *
+     * <code>bool supports_at_least_once = 6;</code>
+     *
+     * @return The supportsAtLeastOnce.
+     */
+    @java.lang.Override
+    public boolean getSupportsAtLeastOnce() {
+      return supportsAtLeastOnce_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the streaming template supports at least once mode.
+     * </pre>
+     *
+     * <code>bool supports_at_least_once = 6;</code>
+     *
+     * @param value The supportsAtLeastOnce to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSupportsAtLeastOnce(boolean value) {
+
+      supportsAtLeastOnce_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the streaming template supports at least once mode.
+     * </pre>
+     *
+     * <code>bool supports_at_least_once = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSupportsAtLeastOnce() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      supportsAtLeastOnce_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean supportsExactlyOnce_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the streaming template supports exactly once mode.
+     * </pre>
+     *
+     * <code>bool supports_exactly_once = 7;</code>
+     *
+     * @return The supportsExactlyOnce.
+     */
+    @java.lang.Override
+    public boolean getSupportsExactlyOnce() {
+      return supportsExactlyOnce_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the streaming template supports exactly once mode.
+     * </pre>
+     *
+     * <code>bool supports_exactly_once = 7;</code>
+     *
+     * @param value The supportsExactlyOnce to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSupportsExactlyOnce(boolean value) {
+
+      supportsExactlyOnce_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the streaming template supports exactly once mode.
+     * </pre>
+     *
+     * <code>bool supports_exactly_once = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSupportsExactlyOnce() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      supportsExactlyOnce_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object defaultStreamingMode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the default streaming mode for a streaming template.
+     * Only valid if both supports_at_least_once and supports_exactly_once are
+     * true. Possible values: UNSPECIFIED, EXACTLY_ONCE and AT_LEAST_ONCE
+     * </pre>
+     *
+     * <code>string default_streaming_mode = 8;</code>
+     *
+     * @return The defaultStreamingMode.
+     */
+    public java.lang.String getDefaultStreamingMode() {
+      java.lang.Object ref = defaultStreamingMode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        defaultStreamingMode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the default streaming mode for a streaming template.
+     * Only valid if both supports_at_least_once and supports_exactly_once are
+     * true. Possible values: UNSPECIFIED, EXACTLY_ONCE and AT_LEAST_ONCE
+     * </pre>
+     *
+     * <code>string default_streaming_mode = 8;</code>
+     *
+     * @return The bytes for defaultStreamingMode.
+     */
+    public com.google.protobuf.ByteString getDefaultStreamingModeBytes() {
+      java.lang.Object ref = defaultStreamingMode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        defaultStreamingMode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the default streaming mode for a streaming template.
+     * Only valid if both supports_at_least_once and supports_exactly_once are
+     * true. Possible values: UNSPECIFIED, EXACTLY_ONCE and AT_LEAST_ONCE
+     * </pre>
+     *
+     * <code>string default_streaming_mode = 8;</code>
+     *
+     * @param value The defaultStreamingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultStreamingMode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      defaultStreamingMode_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the default streaming mode for a streaming template.
+     * Only valid if both supports_at_least_once and supports_exactly_once are
+     * true. Possible values: UNSPECIFIED, EXACTLY_ONCE and AT_LEAST_ONCE
+     * </pre>
+     *
+     * <code>string default_streaming_mode = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDefaultStreamingMode() {
+      defaultStreamingMode_ = getDefaultInstance().getDefaultStreamingMode();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the default streaming mode for a streaming template.
+     * Only valid if both supports_at_least_once and supports_exactly_once are
+     * true. Possible values: UNSPECIFIED, EXACTLY_ONCE and AT_LEAST_ONCE
+     * </pre>
+     *
+     * <code>string default_streaming_mode = 8;</code>
+     *
+     * @param value The bytes for defaultStreamingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultStreamingModeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      defaultStreamingMode_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
