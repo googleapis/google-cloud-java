@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.13.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.13.0...v3.13.1) (2025-05-05)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.56.3 ([5a62a1a](https://github.com/googleapis/java-bigquerystorage/commit/5a62a1a35b741426d4208980f39bc3f082f9091d))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.49.2 ([#2954](https://github.com/googleapis/java-bigquerystorage/issues/2954)) ([9cfe7d8](https://github.com/googleapis/java-bigquerystorage/commit/9cfe7d81d6a98905335fb892c84f3031d6fea008))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.46.3 ([#2958](https://github.com/googleapis/java-bigquerystorage/issues/2958)) ([f4b1d93](https://github.com/googleapis/java-bigquerystorage/commit/f4b1d932ec9addae2241da93ba4dcf3d2199d64a))
+* Update dependency com.google.http-client:google-http-client to v1.47.0 ([#2955](https://github.com/googleapis/java-bigquerystorage/issues/2955)) ([02d5fa2](https://github.com/googleapis/java-bigquerystorage/commit/02d5fa23d8bc2ae1908ef527940bd0236d2a318b))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.25.7 ([#2949](https://github.com/googleapis/java-bigquerystorage/issues/2949)) ([0a6f744](https://github.com/googleapis/java-bigquerystorage/commit/0a6f744ebe08d6cd038f18f9cdbeec1c714b6005))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.25.7 ([#2949](https://github.com/googleapis/java-bigquerystorage/issues/2949)) ([09db7cd](https://github.com/googleapis/java-bigquerystorage/commit/09db7cdc1268f7ff7292cd70df65b42cede11fde))
+
 ## [3.13.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.12.0...v3.13.0) (2025-04-25)
 
 
