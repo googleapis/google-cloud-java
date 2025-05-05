@@ -803,5 +803,42 @@ public interface NoteOrBuilder
    */
   io.grafeas.v1.SBOMReferenceNoteOrBuilder getSbomReferenceOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SecretNote secret = 22;</code>
+   *
+   * @return Whether the secret field is set.
+   */
+  boolean hasSecret();
+
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SecretNote secret = 22;</code>
+   *
+   * @return The secret.
+   */
+  io.grafeas.v1.SecretNote getSecret();
+
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SecretNote secret = 22;</code>
+   */
+  io.grafeas.v1.SecretNoteOrBuilder getSecretOrBuilder();
+
   io.grafeas.v1.Note.TypeCase getTypeCase();
 }

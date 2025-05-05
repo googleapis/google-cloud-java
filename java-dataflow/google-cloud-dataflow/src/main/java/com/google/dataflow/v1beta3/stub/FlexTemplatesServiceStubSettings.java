@@ -105,8 +105,6 @@ public class FlexTemplatesServiceStubSettings
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/compute")
-          .add("https://www.googleapis.com/auth/compute.readonly")
-          .add("https://www.googleapis.com/auth/userinfo.email")
           .build();
 
   private final UnaryCallSettings<LaunchFlexTemplateRequest, LaunchFlexTemplateResponse>

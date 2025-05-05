@@ -639,9 +639,12 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * If true, save a heap dump before killing a thread or process which is GC
-   * thrashing or out of memory. The location of the heap file will either be
-   * echoed back to the user, or the user will be given the opportunity to
+   * If true, when processing time is spent almost entirely
+   * on garbage collection (GC), saves a heap dump before ending the thread
+   * or process. If false, ends the thread or process without saving a heap
+   * dump. Does not save a heap dump when the Java Virtual Machine (JVM) has an
+   * out of memory error during processing. The location of the heap file is
+   * either echoed back to the user, or the user is given the opportunity to
    * download the heap file.
    * </pre>
    *
@@ -655,9 +658,8 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * Cloud Storage bucket (directory) to upload heap dumps to the given
-   * location. Enabling this implies that heap dumps should be generated on OOM
-   * (dump_heap_on_oom is set to true).
+   * Cloud Storage bucket (directory) to upload heap dumps to.
+   * Enabling this field implies that `dump_heap_on_oom` is set to true.
    * </pre>
    *
    * <code>string save_heap_dumps_to_gcs_path = 23;</code>
@@ -670,9 +672,8 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * Cloud Storage bucket (directory) to upload heap dumps to the given
-   * location. Enabling this implies that heap dumps should be generated on OOM
-   * (dump_heap_on_oom is set to true).
+   * Cloud Storage bucket (directory) to upload heap dumps to.
+   * Enabling this field implies that `dump_heap_on_oom` is set to true.
    * </pre>
    *
    * <code>string save_heap_dumps_to_gcs_path = 23;</code>
@@ -708,4 +709,80 @@ public interface FlexTemplateRuntimeEnvironmentOrBuilder
    * @return The bytes for launcherMachineType.
    */
   com.google.protobuf.ByteString getLauncherMachineTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true serial port logging will be enabled for the launcher VM.
+   * </pre>
+   *
+   * <code>bool enable_launcher_vm_serial_port_logging = 25;</code>
+   *
+   * @return The enableLauncherVmSerialPortLogging.
+   */
+  boolean getEnableLauncherVmSerialPortLogging();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the streamingMode field is set.
+   */
+  boolean hasStreamingMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for streamingMode.
+   */
+  int getStreamingModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The streamingMode.
+   */
+  com.google.dataflow.v1beta3.StreamingMode getStreamingMode();
 }

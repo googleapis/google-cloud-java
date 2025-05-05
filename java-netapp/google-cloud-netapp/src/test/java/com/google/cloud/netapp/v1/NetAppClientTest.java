@@ -3755,6 +3755,12 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
+            .setSourceRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSourceBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setDestinationBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3811,6 +3817,12 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
+            .setSourceRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSourceBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setDestinationBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3867,6 +3879,12 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
+            .setSourceRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSourceBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setDestinationBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -3908,6 +3926,12 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
+            .setSourceRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSourceBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setDestinationBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -4037,6 +4061,12 @@ public class NetAppClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDescription("description-1724546052")
             .putAllLabels(new HashMap<String, String>())
+            .setSourceRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSourceBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setDestinationBackupVault(
+                BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4181,6 +4211,8 @@ public class NetAppClientTest {
             .setChainStorageBytes(1614651561)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4244,6 +4276,8 @@ public class NetAppClientTest {
             .setChainStorageBytes(1614651561)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4307,6 +4341,8 @@ public class NetAppClientTest {
             .setChainStorageBytes(1614651561)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -4356,6 +4392,8 @@ public class NetAppClientTest {
             .setChainStorageBytes(1614651561)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -4577,6 +4615,8 @@ public class NetAppClientTest {
             .setChainStorageBytes(1614651561)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

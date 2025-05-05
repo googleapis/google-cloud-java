@@ -16,6 +16,7 @@
 
 package com.google.chat.v1;
 
+import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
@@ -1848,6 +1849,246 @@ public class ChatServiceClientTest {
     try {
       String name = "name3373707";
       client.deleteReaction(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCustomEmojiTest() throws Exception {
+    CustomEmoji expectedResponse =
+        CustomEmoji.newBuilder()
+            .setName(CustomEmojiName.of("[CUSTOM_EMOJI]").toString())
+            .setUid("uid115792")
+            .setEmojiName("emojiName1686232049")
+            .setTemporaryImageUri("temporaryImageUri-1892195454")
+            .setPayload(CustomEmoji.CustomEmojiPayload.newBuilder().build())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    CustomEmoji customEmoji = CustomEmoji.newBuilder().build();
+
+    CustomEmoji actualResponse = client.createCustomEmoji(customEmoji);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateCustomEmojiRequest actualRequest = ((CreateCustomEmojiRequest) actualRequests.get(0));
+
+    Assert.assertEquals(customEmoji, actualRequest.getCustomEmoji());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createCustomEmojiExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      CustomEmoji customEmoji = CustomEmoji.newBuilder().build();
+      client.createCustomEmoji(customEmoji);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCustomEmojiTest() throws Exception {
+    CustomEmoji expectedResponse =
+        CustomEmoji.newBuilder()
+            .setName(CustomEmojiName.of("[CUSTOM_EMOJI]").toString())
+            .setUid("uid115792")
+            .setEmojiName("emojiName1686232049")
+            .setTemporaryImageUri("temporaryImageUri-1892195454")
+            .setPayload(CustomEmoji.CustomEmojiPayload.newBuilder().build())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    CustomEmojiName name = CustomEmojiName.of("[CUSTOM_EMOJI]");
+
+    CustomEmoji actualResponse = client.getCustomEmoji(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetCustomEmojiRequest actualRequest = ((GetCustomEmojiRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getCustomEmojiExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      CustomEmojiName name = CustomEmojiName.of("[CUSTOM_EMOJI]");
+      client.getCustomEmoji(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCustomEmojiTest2() throws Exception {
+    CustomEmoji expectedResponse =
+        CustomEmoji.newBuilder()
+            .setName(CustomEmojiName.of("[CUSTOM_EMOJI]").toString())
+            .setUid("uid115792")
+            .setEmojiName("emojiName1686232049")
+            .setTemporaryImageUri("temporaryImageUri-1892195454")
+            .setPayload(CustomEmoji.CustomEmojiPayload.newBuilder().build())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    CustomEmoji actualResponse = client.getCustomEmoji(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetCustomEmojiRequest actualRequest = ((GetCustomEmojiRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getCustomEmojiExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getCustomEmoji(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listCustomEmojisTest() throws Exception {
+    CustomEmoji responsesElement = CustomEmoji.newBuilder().build();
+    ListCustomEmojisResponse expectedResponse =
+        ListCustomEmojisResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCustomEmojis(Arrays.asList(responsesElement))
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    ListCustomEmojisPagedResponse pagedListResponse = client.listCustomEmojis();
+
+    List<CustomEmoji> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCustomEmojisList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListCustomEmojisRequest actualRequest = ((ListCustomEmojisRequest) actualRequests.get(0));
+
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listCustomEmojisExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      ListCustomEmojisRequest request =
+          ListCustomEmojisRequest.newBuilder()
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setFilter("filter-1274492040")
+              .build();
+      client.listCustomEmojis(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteCustomEmojiTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockChatService.addResponse(expectedResponse);
+
+    CustomEmojiName name = CustomEmojiName.of("[CUSTOM_EMOJI]");
+
+    client.deleteCustomEmoji(name);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteCustomEmojiRequest actualRequest = ((DeleteCustomEmojiRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteCustomEmojiExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      CustomEmojiName name = CustomEmojiName.of("[CUSTOM_EMOJI]");
+      client.deleteCustomEmoji(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteCustomEmojiTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockChatService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteCustomEmoji(name);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteCustomEmojiRequest actualRequest = ((DeleteCustomEmojiRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteCustomEmojiExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteCustomEmoji(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

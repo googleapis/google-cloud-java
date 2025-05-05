@@ -131,4 +131,73 @@ public interface TemplateMetadataOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ParameterMetadata parameters = 3;</code>
    */
   com.google.dataflow.v1beta3.ParameterMetadataOrBuilder getParametersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates if the template is streaming or not.
+   * </pre>
+   *
+   * <code>bool streaming = 5;</code>
+   *
+   * @return The streaming.
+   */
+  boolean getStreaming();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates if the streaming template supports at least once mode.
+   * </pre>
+   *
+   * <code>bool supports_at_least_once = 6;</code>
+   *
+   * @return The supportsAtLeastOnce.
+   */
+  boolean getSupportsAtLeastOnce();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates if the streaming template supports exactly once mode.
+   * </pre>
+   *
+   * <code>bool supports_exactly_once = 7;</code>
+   *
+   * @return The supportsExactlyOnce.
+   */
+  boolean getSupportsExactlyOnce();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates the default streaming mode for a streaming template.
+   * Only valid if both supports_at_least_once and supports_exactly_once are
+   * true. Possible values: UNSPECIFIED, EXACTLY_ONCE and AT_LEAST_ONCE
+   * </pre>
+   *
+   * <code>string default_streaming_mode = 8;</code>
+   *
+   * @return The defaultStreamingMode.
+   */
+  java.lang.String getDefaultStreamingMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates the default streaming mode for a streaming template.
+   * Only valid if both supports_at_least_once and supports_exactly_once are
+   * true. Possible values: UNSPECIFIED, EXACTLY_ONCE and AT_LEAST_ONCE
+   * </pre>
+   *
+   * <code>string default_streaming_mode = 8;</code>
+   *
+   * @return The bytes for defaultStreamingMode.
+   */
+  com.google.protobuf.ByteString getDefaultStreamingModeBytes();
 }

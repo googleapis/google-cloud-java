@@ -338,7 +338,7 @@ public final class StorageBatchOperationsGrpc {
      *
      *
      * <pre>
-     * Lists Jobs in a given project and location.
+     * Lists Jobs in a given project.
      * </pre>
      */
     default void listJobs(
@@ -448,7 +448,7 @@ public final class StorageBatchOperationsGrpc {
      *
      *
      * <pre>
-     * Lists Jobs in a given project and location.
+     * Lists Jobs in a given project.
      * </pre>
      */
     public void listJobs(
@@ -545,7 +545,7 @@ public final class StorageBatchOperationsGrpc {
      *
      *
      * <pre>
-     * Lists Jobs in a given project and location.
+     * Lists Jobs in a given project.
      * </pre>
      */
     public com.google.cloud.storagebatchoperations.v1.ListJobsResponse listJobs(
@@ -634,7 +634,7 @@ public final class StorageBatchOperationsGrpc {
      *
      *
      * <pre>
-     * Lists Jobs in a given project and location.
+     * Lists Jobs in a given project.
      * </pre>
      */
     public com.google.cloud.storagebatchoperations.v1.ListJobsResponse listJobs(
@@ -724,7 +724,7 @@ public final class StorageBatchOperationsGrpc {
      *
      *
      * <pre>
-     * Lists Jobs in a given project and location.
+     * Lists Jobs in a given project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

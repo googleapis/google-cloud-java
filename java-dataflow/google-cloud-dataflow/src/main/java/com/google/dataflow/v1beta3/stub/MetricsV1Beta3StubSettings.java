@@ -120,8 +120,6 @@ public class MetricsV1Beta3StubSettings extends StubSettings<MetricsV1Beta3StubS
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/compute")
-          .add("https://www.googleapis.com/auth/compute.readonly")
-          .add("https://www.googleapis.com/auth/userinfo.email")
           .build();
 
   private final UnaryCallSettings<GetJobMetricsRequest, JobMetrics> getJobMetricsSettings;

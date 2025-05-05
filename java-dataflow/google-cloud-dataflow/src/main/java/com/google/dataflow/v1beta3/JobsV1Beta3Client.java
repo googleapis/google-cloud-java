@@ -73,7 +73,8 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> CreateJob</td>
  *      <td><p> Creates a Cloud Dataflow job.
- * <p>  To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`.</td>
+ * <p>  To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`.
+ * <p>  Do not enter confidential information when you supply string values using the API.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -118,7 +119,8 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListJobs</td>
  *      <td><p> List the jobs of a project.
- * <p>  To list the jobs of a project in a region, we recommend using `projects.locations.jobs.list` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To list the all jobs across all regions, use `projects.jobs.aggregated`. Using `projects.jobs.list` is not recommended, as you can only get the list of jobs that are running in `us-central1`.</td>
+ * <p>  To list the jobs of a project in a region, we recommend using `projects.locations.jobs.list` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To list the all jobs across all regions, use `projects.jobs.aggregated`. Using `projects.jobs.list` is not recommended, because you can only get the list of jobs that are running in `us-central1`.
+ * <p>  `projects.locations.jobs.list` and `projects.jobs.list` support filtering the list of jobs by name. Filtering by name isn't supported by `projects.jobs.aggregated`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -133,7 +135,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AggregatedListJobs</td>
- *      <td><p> List the jobs of a project across all regions.</td>
+ *      <td><p> List the jobs of a project across all regions.
+ * <p>  &#42;&#42;Note:&#42;&#42; This method doesn't support filtering the list of jobs by name.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -286,6 +289,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
    * `projects.jobs.create` is not recommended, as your job will always start in `us-central1`.
    *
+   * <p>Do not enter confidential information when you supply string values using the API.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -321,6 +326,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * <p>To create a job, we recommend using `projects.locations.jobs.create` with a [regional
    * endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
    * `projects.jobs.create` is not recommended, as your job will always start in `us-central1`.
+   *
+   * <p>Do not enter confidential information when you supply string values using the API.
    *
    * <p>Sample code:
    *
@@ -445,6 +452,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
    *           .setJobId("jobId101296568")
    *           .setJob(Job.newBuilder().build())
    *           .setLocation("location1901043637")
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   Job response = jobsV1Beta3Client.updateJob(request);
    * }
@@ -482,6 +490,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
    *           .setJobId("jobId101296568")
    *           .setJob(Job.newBuilder().build())
    *           .setLocation("location1901043637")
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Job> future = jobsV1Beta3Client.updateJobCallable().futureCall(request);
    *   // Do something.
@@ -501,7 +510,10 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * with a [regional endpoint]
    * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To list the all jobs
    * across all regions, use `projects.jobs.aggregated`. Using `projects.jobs.list` is not
-   * recommended, as you can only get the list of jobs that are running in `us-central1`.
+   * recommended, because you can only get the list of jobs that are running in `us-central1`.
+   *
+   * <p>`projects.locations.jobs.list` and `projects.jobs.list` support filtering the list of jobs
+   * by name. Filtering by name isn't supported by `projects.jobs.aggregated`.
    *
    * <p>Sample code:
    *
@@ -519,6 +531,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setLocation("location1901043637")
+   *           .setName("name3373707")
    *           .build();
    *   for (Job element : jobsV1Beta3Client.listJobs(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -541,7 +554,10 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * with a [regional endpoint]
    * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To list the all jobs
    * across all regions, use `projects.jobs.aggregated`. Using `projects.jobs.list` is not
-   * recommended, as you can only get the list of jobs that are running in `us-central1`.
+   * recommended, because you can only get the list of jobs that are running in `us-central1`.
+   *
+   * <p>`projects.locations.jobs.list` and `projects.jobs.list` support filtering the list of jobs
+   * by name. Filtering by name isn't supported by `projects.jobs.aggregated`.
    *
    * <p>Sample code:
    *
@@ -559,6 +575,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setLocation("location1901043637")
+   *           .setName("name3373707")
    *           .build();
    *   ApiFuture<Job> future = jobsV1Beta3Client.listJobsPagedCallable().futureCall(request);
    *   // Do something.
@@ -580,7 +597,10 @@ public class JobsV1Beta3Client implements BackgroundResource {
    * with a [regional endpoint]
    * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To list the all jobs
    * across all regions, use `projects.jobs.aggregated`. Using `projects.jobs.list` is not
-   * recommended, as you can only get the list of jobs that are running in `us-central1`.
+   * recommended, because you can only get the list of jobs that are running in `us-central1`.
+   *
+   * <p>`projects.locations.jobs.list` and `projects.jobs.list` support filtering the list of jobs
+   * by name. Filtering by name isn't supported by `projects.jobs.aggregated`.
    *
    * <p>Sample code:
    *
@@ -598,6 +618,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setLocation("location1901043637")
+   *           .setName("name3373707")
    *           .build();
    *   while (true) {
    *     ListJobsResponse response = jobsV1Beta3Client.listJobsCallable().call(request);
@@ -622,6 +643,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
   /**
    * List the jobs of a project across all regions.
    *
+   * <p>&#42;&#42;Note:&#42;&#42; This method doesn't support filtering the list of jobs by name.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -638,6 +661,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setLocation("location1901043637")
+   *           .setName("name3373707")
    *           .build();
    *   for (Job element : jobsV1Beta3Client.aggregatedListJobs(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -656,6 +680,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
   /**
    * List the jobs of a project across all regions.
    *
+   * <p>&#42;&#42;Note:&#42;&#42; This method doesn't support filtering the list of jobs by name.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -672,6 +698,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setLocation("location1901043637")
+   *           .setName("name3373707")
    *           .build();
    *   ApiFuture<Job> future =
    *       jobsV1Beta3Client.aggregatedListJobsPagedCallable().futureCall(request);
@@ -691,6 +718,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
   /**
    * List the jobs of a project across all regions.
    *
+   * <p>&#42;&#42;Note:&#42;&#42; This method doesn't support filtering the list of jobs by name.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -707,6 +736,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setLocation("location1901043637")
+   *           .setName("name3373707")
    *           .build();
    *   while (true) {
    *     ListJobsResponse response = jobsV1Beta3Client.aggregatedListJobsCallable().call(request);

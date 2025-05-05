@@ -212,4 +212,168 @@ public interface BackupVaultOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of backup vault to be created.
+   * Default is IN_REGION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.BackupVault.BackupVaultType backup_vault_type = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for backupVaultType.
+   */
+  int getBackupVaultTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of backup vault to be created.
+   * Default is IN_REGION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.BackupVault.BackupVaultType backup_vault_type = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The backupVaultType.
+   */
+  com.google.cloud.netapp.v1.BackupVault.BackupVaultType getBackupVaultType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Region in which the backup vault is created.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string source_region = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The sourceRegion.
+   */
+  java.lang.String getSourceRegion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Region in which the backup vault is created.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string source_region = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for sourceRegion.
+   */
+  com.google.protobuf.ByteString getSourceRegionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Region where the backups are stored.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string backup_region = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The backupRegion.
+   */
+  java.lang.String getBackupRegion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Region where the backups are stored.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string backup_region = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for backupRegion.
+   */
+  com.google.protobuf.ByteString getBackupRegionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the Backup vault created in source region.
+   * Format:
+   * `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+   * </pre>
+   *
+   * <code>
+   * string source_backup_vault = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The sourceBackupVault.
+   */
+  java.lang.String getSourceBackupVault();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the Backup vault created in source region.
+   * Format:
+   * `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+   * </pre>
+   *
+   * <code>
+   * string source_backup_vault = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for sourceBackupVault.
+   */
+  com.google.protobuf.ByteString getSourceBackupVaultBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the Backup vault created in backup region.
+   * Format:
+   * `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+   * </pre>
+   *
+   * <code>
+   * string destination_backup_vault = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The destinationBackupVault.
+   */
+  java.lang.String getDestinationBackupVault();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the Backup vault created in backup region.
+   * Format:
+   * `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+   * </pre>
+   *
+   * <code>
+   * string destination_backup_vault = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for destinationBackupVault.
+   */
+  com.google.protobuf.ByteString getDestinationBackupVaultBytes();
 }

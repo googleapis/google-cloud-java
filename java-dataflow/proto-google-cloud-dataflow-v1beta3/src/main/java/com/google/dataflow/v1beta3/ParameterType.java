@@ -129,6 +129,141 @@ public enum ParameterType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PUBSUB_SUBSCRIPTION = 9;</code>
    */
   PUBSUB_SUBSCRIPTION(9),
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies a BigQuery table.
+   * </pre>
+   *
+   * <code>BIGQUERY_TABLE = 10;</code>
+   */
+  BIGQUERY_TABLE(10),
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies a JavaScript UDF in Cloud Storage.
+   * </pre>
+   *
+   * <code>JAVASCRIPT_UDF_FILE = 11;</code>
+   */
+  JAVASCRIPT_UDF_FILE(11),
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies a Service Account email.
+   * </pre>
+   *
+   * <code>SERVICE_ACCOUNT = 12;</code>
+   */
+  SERVICE_ACCOUNT(12),
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies a Machine Type.
+   * </pre>
+   *
+   * <code>MACHINE_TYPE = 13;</code>
+   */
+  MACHINE_TYPE(13),
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies a KMS Key name.
+   * </pre>
+   *
+   * <code>KMS_KEY_NAME = 14;</code>
+   */
+  KMS_KEY_NAME(14),
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies a Worker Region.
+   * </pre>
+   *
+   * <code>WORKER_REGION = 15;</code>
+   */
+  WORKER_REGION(15),
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies a Worker Zone.
+   * </pre>
+   *
+   * <code>WORKER_ZONE = 16;</code>
+   */
+  WORKER_ZONE(16),
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies a boolean input.
+   * </pre>
+   *
+   * <code>BOOLEAN = 17;</code>
+   */
+  BOOLEAN(17),
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies an enum input.
+   * </pre>
+   *
+   * <code>ENUM = 18;</code>
+   */
+  ENUM(18),
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies a number input.
+   * </pre>
+   *
+   * <code>NUMBER = 19;</code>
+   */
+  NUMBER(19),
+  /**
+   *
+   *
+   * <pre>
+   * Deprecated. Please use KAFKA_READ_TOPIC instead.
+   * </pre>
+   *
+   * <code>KAFKA_TOPIC = 20 [deprecated = true];</code>
+   */
+  @java.lang.Deprecated
+  KAFKA_TOPIC(20),
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies the fully-qualified name of an Apache Kafka topic.
+   * This can be either a Google Managed Kafka topic or a non-managed Kafka
+   * topic.
+   * </pre>
+   *
+   * <code>KAFKA_READ_TOPIC = 21;</code>
+   */
+  KAFKA_READ_TOPIC(21),
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies the fully-qualified name of an Apache Kafka topic.
+   * This can be an existing Google Managed Kafka topic, the name for a new
+   * Google Managed Kafka topic, or an existing non-managed Kafka topic.
+   * </pre>
+   *
+   * <code>KAFKA_WRITE_TOPIC = 22;</code>
+   */
+  KAFKA_WRITE_TOPIC(22),
   UNRECOGNIZED(-1),
   ;
 
@@ -242,6 +377,153 @@ public enum ParameterType implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int PUBSUB_SUBSCRIPTION_VALUE = 9;
 
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies a BigQuery table.
+   * </pre>
+   *
+   * <code>BIGQUERY_TABLE = 10;</code>
+   */
+  public static final int BIGQUERY_TABLE_VALUE = 10;
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies a JavaScript UDF in Cloud Storage.
+   * </pre>
+   *
+   * <code>JAVASCRIPT_UDF_FILE = 11;</code>
+   */
+  public static final int JAVASCRIPT_UDF_FILE_VALUE = 11;
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies a Service Account email.
+   * </pre>
+   *
+   * <code>SERVICE_ACCOUNT = 12;</code>
+   */
+  public static final int SERVICE_ACCOUNT_VALUE = 12;
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies a Machine Type.
+   * </pre>
+   *
+   * <code>MACHINE_TYPE = 13;</code>
+   */
+  public static final int MACHINE_TYPE_VALUE = 13;
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies a KMS Key name.
+   * </pre>
+   *
+   * <code>KMS_KEY_NAME = 14;</code>
+   */
+  public static final int KMS_KEY_NAME_VALUE = 14;
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies a Worker Region.
+   * </pre>
+   *
+   * <code>WORKER_REGION = 15;</code>
+   */
+  public static final int WORKER_REGION_VALUE = 15;
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies a Worker Zone.
+   * </pre>
+   *
+   * <code>WORKER_ZONE = 16;</code>
+   */
+  public static final int WORKER_ZONE_VALUE = 16;
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies a boolean input.
+   * </pre>
+   *
+   * <code>BOOLEAN = 17;</code>
+   */
+  public static final int BOOLEAN_VALUE = 17;
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies an enum input.
+   * </pre>
+   *
+   * <code>ENUM = 18;</code>
+   */
+  public static final int ENUM_VALUE = 18;
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies a number input.
+   * </pre>
+   *
+   * <code>NUMBER = 19;</code>
+   */
+  public static final int NUMBER_VALUE = 19;
+
+  /**
+   *
+   *
+   * <pre>
+   * Deprecated. Please use KAFKA_READ_TOPIC instead.
+   * </pre>
+   *
+   * <code>KAFKA_TOPIC = 20 [deprecated = true];</code>
+   */
+  @java.lang.Deprecated public static final int KAFKA_TOPIC_VALUE = 20;
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies the fully-qualified name of an Apache Kafka topic.
+   * This can be either a Google Managed Kafka topic or a non-managed Kafka
+   * topic.
+   * </pre>
+   *
+   * <code>KAFKA_READ_TOPIC = 21;</code>
+   */
+  public static final int KAFKA_READ_TOPIC_VALUE = 21;
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameter specifies the fully-qualified name of an Apache Kafka topic.
+   * This can be an existing Google Managed Kafka topic, the name for a new
+   * Google Managed Kafka topic, or an existing non-managed Kafka topic.
+   * </pre>
+   *
+   * <code>KAFKA_WRITE_TOPIC = 22;</code>
+   */
+  public static final int KAFKA_WRITE_TOPIC_VALUE = 22;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -286,6 +568,32 @@ public enum ParameterType implements com.google.protobuf.ProtocolMessageEnum {
         return PUBSUB_TOPIC;
       case 9:
         return PUBSUB_SUBSCRIPTION;
+      case 10:
+        return BIGQUERY_TABLE;
+      case 11:
+        return JAVASCRIPT_UDF_FILE;
+      case 12:
+        return SERVICE_ACCOUNT;
+      case 13:
+        return MACHINE_TYPE;
+      case 14:
+        return KMS_KEY_NAME;
+      case 15:
+        return WORKER_REGION;
+      case 16:
+        return WORKER_ZONE;
+      case 17:
+        return BOOLEAN;
+      case 18:
+        return ENUM;
+      case 19:
+        return NUMBER;
+      case 20:
+        return KAFKA_TOPIC;
+      case 21:
+        return KAFKA_READ_TOPIC;
+      case 22:
+        return KAFKA_WRITE_TOPIC;
       default:
         return null;
     }

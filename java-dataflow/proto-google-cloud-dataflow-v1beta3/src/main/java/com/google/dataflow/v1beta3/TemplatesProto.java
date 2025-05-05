@@ -73,6 +73,10 @@ public final class TemplatesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_dataflow_v1beta3_RuntimeEnvironment_AdditionalUserLabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_dataflow_v1beta3_ParameterMetadataEnumOption_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_dataflow_v1beta3_ParameterMetadataEnumOption_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_dataflow_v1beta3_ParameterMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_dataflow_v1beta3_ParameterMetadata_fieldAccessorTable;
@@ -153,30 +157,34 @@ public final class TemplatesProto {
           + "\'google/dataflow/v1beta3/templates.prot"
           + "o\022\027google.dataflow.v1beta3\032\034google/api/a"
           + "nnotations.proto\032\027google/api/client.prot"
-          + "o\032)google/dataflow/v1beta3/environment.p"
-          + "roto\032\"google/dataflow/v1beta3/jobs.proto\032\027google/rpc/status.proto\"G\n"
+          + "o\032\037google/api/field_behavior.proto\032)goog"
+          + "le/dataflow/v1beta3/environment.proto\032\"g"
+          + "oogle/dataflow/v1beta3/jobs.proto\032\027google/rpc/status.proto\"G\n"
           + "\032LaunchFlexTemplateResponse\022)\n"
-          + "\003job\030\001 \001(\0132\034.google.dataflow.v1beta3.Job\"\345\001\n\r"
+          + "\003job\030\001 \001(\0132\034.google.dataflow.v1beta3.Job\"\343\002\n\r"
           + "ContainerSpec\022\r\n"
           + "\005image\030\001 \001(\t\022;\n"
           + "\010metadata\030\002 \001(\0132).google.dataflow.v1beta3.TemplateMetadata\0222\n"
           + "\010sdk_info\030\003 \001(\0132 .google.dataflow.v1beta3.SDKInfo\022T\n"
-          + "\023default_environment\030\004 \001(\01327.goog"
-          + "le.dataflow.v1beta3.FlexTemplateRuntimeEnvironment\"\322\005\n"
+          + "\023default_environment\030\004 \001(\01327.google.data"
+          + "flow.v1beta3.FlexTemplateRuntimeEnvironment\022+\n"
+          + "#image_repository_username_secret_id\030\005 \001(\t\022+\n"
+          + "#image_repository_password_secret_id\030\006 \001(\t\022\"\n"
+          + "\032image_repository_cert_path\030\007 \001(\t\"\322\005\n"
           + "\033LaunchFlexTemplateParameter\022\020\n"
           + "\010job_name\030\001 \001(\t\022@\n"
-          + "\016container_spec\030\004"
-          + " \001(\0132&.google.dataflow.v1beta3.ContainerSpecH\000\022!\n"
+          + "\016container_spec\030\004 "
+          + "\001(\0132&.google.dataflow.v1beta3.ContainerSpecH\000\022!\n"
           + "\027container_spec_gcs_path\030\005 \001(\tH\000\022X\n\n"
-          + "parameters\030\002 \003(\0132D.google.dataflow."
-          + "v1beta3.LaunchFlexTemplateParameter.ParametersEntry\022_\n"
-          + "\016launch_options\030\006 \003(\0132G.go"
-          + "ogle.dataflow.v1beta3.LaunchFlexTemplateParameter.LaunchOptionsEntry\022L\n"
+          + "parameters\030\002 \003(\0132D.google.dataflow.v"
+          + "1beta3.LaunchFlexTemplateParameter.ParametersEntry\022_\n"
+          + "\016launch_options\030\006 \003(\0132G.goo"
+          + "gle.dataflow.v1beta3.LaunchFlexTemplateParameter.LaunchOptionsEntry\022L\n"
           + "\013environment\030\007"
           + " \001(\01327.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment\022\016\n"
           + "\006update\030\010 \001(\010\022p\n"
-          + "\027transform_name_mappings\030\t \003(\0132O.go"
-          + "ogle.dataflow.v1beta3.LaunchFlexTemplateParameter.TransformNameMappingsEntry\0321\n"
+          + "\027transform_name_mappings\030\t \003(\0132O.goo"
+          + "gle.dataflow.v1beta3.LaunchFlexTemplateParameter.TransformNameMappingsEntry\0321\n"
           + "\017ParametersEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\0324\n"
@@ -186,7 +194,7 @@ public final class TemplatesProto {
           + "\032TransformNameMappingsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001B\n\n"
-          + "\010template\"\220\007\n"
+          + "\010template\"\235\010\n"
           + "\036FlexTemplateRuntimeEnvironment\022\023\n"
           + "\013num_workers\030\001 \001(\005\022\023\n"
           + "\013max_workers\030\002 \001(\005\022\014\n"
@@ -198,8 +206,8 @@ public final class TemplatesProto {
           + "\007network\030\010 \001(\t\022\022\n\n"
           + "subnetwork\030\t \001(\t\022q\n"
           + "\026additional_user_labels\030\n"
-          + " \003(\0132Q.google.dataflow.v1beta3.FlexTempla"
-          + "teRuntimeEnvironment.AdditionalUserLabelsEntry\022\024\n"
+          + " \003(\0132Q.google.dataflow.v1beta3.FlexTemplat"
+          + "eRuntimeEnvironment.AdditionalUserLabelsEntry\022\024\n"
           + "\014kms_key_name\030\013 \001(\t\022O\n"
           + "\020ip_configuration\030\014"
           + " \001(\01625.google.dataflow.v1beta3.WorkerIPAddressConfiguration\022\025\n\r"
@@ -216,16 +224,20 @@ public final class TemplatesProto {
           + " \001(\0162-.google.dataflow.v1beta3.AutoscalingAlgorithm\022\030\n"
           + "\020dump_heap_on_oom\030\026 \001(\010\022#\n"
           + "\033save_heap_dumps_to_gcs_path\030\027 \001(\t\022\035\n"
-          + "\025launcher_machine_type\030\030 \001(\t\032;\n"
+          + "\025launcher_machine_type\030\030 \001(\t\022.\n"
+          + "&enable_launcher_vm_serial_port_logging\030\031 \001(\010\022H\n"
+          + "\016streaming_mode\030\032"
+          + " \001(\0162&.google.dataflow.v1beta3.StreamingModeB\003\340A\001H\000\210\001\001\032;\n"
           + "\031AdditionalUserLabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"\250\001\n"
+          + "\005value\030\002 \001(\t:\0028\001B\021\n"
+          + "\017_streaming_mode\"\250\001\n"
           + "\031LaunchFlexTemplateRequest\022\022\n\n"
           + "project_id\030\001 \001(\t\022N\n"
-          + "\020launch_parameter\030\002"
-          + " \001(\01324.google.dataflow.v1beta3.LaunchFlexTemplateParameter\022\020\n"
+          + "\020launch_parameter\030\002 \001(\01324.google.data"
+          + "flow.v1beta3.LaunchFlexTemplateParameter\022\020\n"
           + "\010location\030\003 \001(\t\022\025\n\r"
-          + "validate_only\030\004 \001(\010\"\331\004\n"
+          + "validate_only\030\004 \001(\010\"\314\005\n"
           + "\022RuntimeEnvironment\022\023\n"
           + "\013num_workers\030\013 \001(\005\022\023\n"
           + "\013max_workers\030\001 \001(\005\022\014\n"
@@ -238,17 +250,25 @@ public final class TemplatesProto {
           + "\007network\030\010 \001(\t\022\022\n\n"
           + "subnetwork\030\t \001(\t\022e\n"
           + "\026additional_user_labels\030\n"
-          + " \003(\0132E.goog"
-          + "le.dataflow.v1beta3.RuntimeEnvironment.AdditionalUserLabelsEntry\022\024\n"
+          + " \003(\0132E.google.dataflow.v1beta3."
+          + "RuntimeEnvironment.AdditionalUserLabelsEntry\022\024\n"
           + "\014kms_key_name\030\014 \001(\t\022O\n"
-          + "\020ip_configuration\030\016 \001(\01625.googl"
-          + "e.dataflow.v1beta3.WorkerIPAddressConfiguration\022\025\n\r"
+          + "\020ip_configuration\030\016"
+          + " \001(\01625.google.dataflow.v1beta3.WorkerIPAddressConfiguration\022\025\n\r"
           + "worker_region\030\017 \001(\t\022\023\n"
           + "\013worker_zone\030\020 \001(\t\022\037\n"
-          + "\027enable_streaming_engine\030\021 \001(\010\032;\n"
+          + "\027enable_streaming_engine\030\021 \001(\010\022\024\n"
+          + "\014disk_size_gb\030\022 \001(\005\022H\n"
+          + "\016streaming_mode\030\023 \001(\0162&.google."
+          + "dataflow.v1beta3.StreamingModeB\003\340A\001H\000\210\001\001\032;\n"
           + "\031AdditionalUserLabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"\265\002\n"
+          + "\005value\030\002 \001(\t:\0028\001B\021\n"
+          + "\017_streaming_mode\"_\n"
+          + "\033ParameterMetadataEnumOption\022\022\n"
+          + "\005value\030\001 \001(\tB\003\340A\002\022\022\n"
+          + "\005label\030\002 \001(\tB\003\340A\001\022\030\n"
+          + "\013description\030\003 \001(\tB\003\340A\001\"\363\003\n"
           + "\021ParameterMetadata\022\014\n"
           + "\004name\030\001 \001(\t\022\r\n"
           + "\005label\030\002 \001(\t\022\021\n"
@@ -256,23 +276,37 @@ public final class TemplatesProto {
           + "\013is_optional\030\004 \001(\010\022\017\n"
           + "\007regexes\030\005 \003(\t\022:\n\n"
           + "param_type\030\006 \001(\0162&.google.dataflow.v1beta3.ParameterType\022W\n"
-          + "\017custom_metadata\030\007 \003(\0132>.google.dataflow.v1b"
-          + "eta3.ParameterMetadata.CustomMetadataEntry\0325\n"
+          + "\017custom_metadata\030\007"
+          + " \003(\0132>.google.dataflow.v1beta3.ParameterMetadata.CustomMetadataEntry\022\022\n\n"
+          + "group_name\030\010 \001(\t\022\023\n"
+          + "\013parent_name\030\t \001(\t\022\035\n"
+          + "\025parent_trigger_values\030\n"
+          + " \003(\t\022J\n"
+          + "\014enum_options\030\013"
+          + " \003(\01324.google.dataflow.v1beta3.ParameterMetadataEnumOption\022\025\n\r"
+          + "default_value\030\014 \001(\t\022\021\n"
+          + "\thidden_ui\030\r"
+          + " \001(\010\0325\n"
           + "\023CustomMetadataEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r"
-          + "\n"
-          + "\005value\030\002 \001(\t:\0028\001\"u\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\347\001\n"
           + "\020TemplateMetadata\022\014\n"
           + "\004name\030\001 \001(\t\022\023\n"
           + "\013description\030\002 \001(\t\022>\n\n"
-          + "parameters\030\003 \003(\0132*.google.dataflow.v1beta3.ParameterMetadata\"\206\001\n"
+          + "parameters\030\003 \003(\0132*.google.dataflow.v1beta3.ParameterMetadata\022\021\n"
+          + "\tstreaming\030\005 \001(\010\022\036\n"
+          + "\026supports_at_least_once\030\006 \001(\010\022\035\n"
+          + "\025supports_exactly_once\030\007 \001(\010\022\036\n"
+          + "\026default_streaming_mode\030\010 \001(\t\"\216\001\n"
           + "\007SDKInfo\022;\n"
           + "\010language\030\001 \001(\0162).google.dataflow.v1beta3.SDKInfo.Language\022\017\n"
-          + "\007version\030\002 \001(\t\"-\n"
+          + "\007version\030\002 \001(\t\"5\n"
           + "\010Language\022\013\n"
           + "\007UNKNOWN\020\000\022\010\n"
-          + "\004JAVA\020\001\022\n\n"
-          + "\006PYTHON\020\002\"\205\001\n"
+          + "\004JAVA\020\001\022\n"
+          + "\n"
+          + "\006PYTHON\020\002\022\006\n"
+          + "\002GO\020\003\"\205\001\n"
           + "\017RuntimeMetadata\0222\n"
           + "\010sdk_info\030\001 \001(\0132 .google.dataflow.v1beta3.SDKInfo\022>\n\n"
           + "parameters\030\002 \003(\0132*.google.dataflow.v1beta3.ParameterMetadata\"\306\002\n"
@@ -280,10 +314,10 @@ public final class TemplatesProto {
           + "project_id\030\001 \001(\t\022\020\n"
           + "\010job_name\030\004 \001(\t\022\022\n"
           + "\010gcs_path\030\002 \001(\tH\000\022Y\n\n"
-          + "parameters\030\003 \003(\013"
-          + "2E.google.dataflow.v1beta3.CreateJobFromTemplateRequest.ParametersEntry\022@\n"
-          + "\013environment\030\005"
-          + " \001(\0132+.google.dataflow.v1beta3.RuntimeEnvironment\022\020\n"
+          + "parameters\030\003 \003(\0132E.google.dataf"
+          + "low.v1beta3.CreateJobFromTemplateRequest.ParametersEntry\022@\n"
+          + "\013environment\030\005 \001(\0132+."
+          + "google.dataflow.v1beta3.RuntimeEnvironment\022\020\n"
           + "\010location\030\006 \001(\t\0321\n"
           + "\017ParametersEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
@@ -292,8 +326,8 @@ public final class TemplatesProto {
           + "\022GetTemplateRequest\022\022\n\n"
           + "project_id\030\001 \001(\t\022\022\n"
           + "\010gcs_path\030\002 \001(\tH\000\022F\n"
-          + "\004view\030\003"
-          + " \001(\01628.google.dataflow.v1beta3.GetTemplateRequest.TemplateView\022\020\n"
+          + "\004view\030\003 \001(\016"
+          + "28.google.dataflow.v1beta3.GetTemplateRequest.TemplateView\022\020\n"
           + "\010location\030\004 \001(\t\"!\n"
           + "\014TemplateView\022\021\n\r"
           + "METADATA_ONLY\020\000B\n\n"
@@ -301,95 +335,103 @@ public final class TemplatesProto {
           + "\023GetTemplateResponse\022\"\n"
           + "\006status\030\001 \001(\0132\022.google.rpc.Status\022;\n"
           + "\010metadata\030\002 \001(\0132).google.dataflow.v1beta3.TemplateMetadata\022P\n\r"
-          + "template_type\030\003 \001"
-          + "(\01629.google.dataflow.v1beta3.GetTemplateResponse.TemplateType\022B\n"
+          + "template_type\030\003 \001(\01629.google.dat"
+          + "aflow.v1beta3.GetTemplateResponse.TemplateType\022B\n"
           + "\020runtime_metadata\030\004 \001(\0132(.google.dataflow.v1beta3.RuntimeMetadata\"1\n"
           + "\014TemplateType\022\013\n"
-          + "\007UNKNOWN\020\000\022\n"
-          + "\n"
+          + "\007UNKNOWN\020\000\022\n\n"
           + "\006LEGACY\020\001\022\010\n"
           + "\004FLEX\020\002\"\262\003\n"
           + "\030LaunchTemplateParameters\022\020\n"
           + "\010job_name\030\001 \001(\t\022U\n\n"
-          + "parameters\030\002"
-          + " \003(\0132A.google.dataflow.v1beta3.LaunchTemplateParameters.ParametersEntry\022@\n"
-          + "\013environment\030\003"
-          + " \001(\0132+.google.dataflow.v1beta3.RuntimeEnvironment\022\016\n"
+          + "parameters\030\002 \003(\0132A.googl"
+          + "e.dataflow.v1beta3.LaunchTemplateParameters.ParametersEntry\022@\n"
+          + "\013environment\030\003 \001(\013"
+          + "2+.google.dataflow.v1beta3.RuntimeEnvironment\022\016\n"
           + "\006update\030\004 \001(\010\022k\n"
-          + "\026transform_name_mapping\030\005 \003(\0132K.google.da"
-          + "taflow.v1beta3.LaunchTemplateParameters.TransformNameMappingEntry\0321\n"
+          + "\026transform_name_mapping\030\005 \003(\0132K.google.dataflow.v1beta3."
+          + "LaunchTemplateParameters.TransformNameMappingEntry\0321\n"
           + "\017ParametersEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\032;\n"
           + "\031TransformNameMappingEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r"
-          + "\n"
+          + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"\224\002\n"
           + "\025LaunchTemplateRequest\022\022\n\n"
           + "project_id\030\001 \001(\t\022\025\n\r"
           + "validate_only\030\002 \001(\010\022\022\n"
           + "\010gcs_path\030\003 \001(\tH\000\022P\n"
-          + "\020dynamic_template\030\006"
-          + " \001(\01324.google.dataflow.v1beta3.DynamicTemplateLaunchParamsH\000\022L\n"
-          + "\021launch_parameters\030\004"
-          + " \001(\01321.google.dataflow.v1beta3.LaunchTemplateParameters\022\020\n"
+          + "\020dynamic_template\030\006 \001(\01324."
+          + "google.dataflow.v1beta3.DynamicTemplateLaunchParamsH\000\022L\n"
+          + "\021launch_parameters\030\004 \001(\013"
+          + "21.google.dataflow.v1beta3.LaunchTemplateParameters\022\020\n"
           + "\010location\030\005 \001(\tB\n\n"
           + "\010template\"C\n"
           + "\026LaunchTemplateResponse\022)\n"
           + "\003job\030\001 \001(\0132\034.google.dataflow.v1beta3.Job\"\276\001\n"
           + "\031InvalidTemplateParameters\022c\n"
-          + "\024parameter_violations\030\001 \003(\0132E.google.dataf"
-          + "low.v1beta3.InvalidTemplateParameters.ParameterViolation\032<\n"
+          + "\024parameter_violations\030\001 \003(\0132E.google.dataflow.v1beta3.Inv"
+          + "alidTemplateParameters.ParameterViolation\032<\n"
           + "\022ParameterViolation\022\021\n"
           + "\tparameter\030\001 \001(\t\022\023\n"
           + "\013description\030\002 \001(\t\"I\n"
           + "\033DynamicTemplateLaunchParams\022\020\n"
           + "\010gcs_path\030\001 \001(\t\022\030\n"
-          + "\020staging_location\030\002 \001(\t*\316\001\n\r"
+          + "\020staging_location\030\002 \001(\t*\275\003\n\r"
           + "ParameterType\022\013\n"
           + "\007DEFAULT\020\000\022\010\n"
           + "\004TEXT\020\001\022\023\n"
           + "\017GCS_READ_BUCKET\020\002\022\024\n"
-          + "\020GCS_WRITE_BUCKET\020\003\022\021\n"
-          + "\r"
+          + "\020GCS_WRITE_BUCKET\020\003\022\021\n\r"
           + "GCS_READ_FILE\020\004\022\022\n"
           + "\016GCS_WRITE_FILE\020\005\022\023\n"
           + "\017GCS_READ_FOLDER\020\006\022\024\n"
           + "\020GCS_WRITE_FOLDER\020\007\022\020\n"
           + "\014PUBSUB_TOPIC\020\010\022\027\n"
-          + "\023PUBSUB_SUBSCRIPTION\020\t2\302\007\n"
+          + "\023PUBSUB_SUBSCRIPTION\020\t\022\022\n"
+          + "\016BIGQUERY_TABLE\020\n"
+          + "\022\027\n"
+          + "\023JAVASCRIPT_UDF_FILE\020\013\022\023\n"
+          + "\017SERVICE_ACCOUNT\020\014\022\020\n"
+          + "\014MACHINE_TYPE\020\r"
+          + "\022\020\n"
+          + "\014KMS_KEY_NAME\020\016\022\021\n\r"
+          + "WORKER_REGION\020\017\022\017\n"
+          + "\013WORKER_ZONE\020\020\022\013\n"
+          + "\007BOOLEAN\020\021\022\010\n"
+          + "\004ENUM\020\022\022\n\n"
+          + "\006NUMBER\020\023\022\023\n"
+          + "\013KAFKA_TOPIC\020\024\032\002\010\001\022\024\n"
+          + "\020KAFKA_READ_TOPIC\020\025\022\025\n"
+          + "\021KAFKA_WRITE_TOPIC\020\0262\340\006\n"
           + "\020TemplatesService\022\337\001\n"
-          + "\025CreateJobFromTemplate\0225.google.dataflow.v1beta3.Crea"
-          + "teJobFromTemplateRequest\032\034.google.datafl"
-          + "ow.v1beta3.Job\"q\202\323\344\223\002k\":/v1b3/projects/{"
-          + "project_id}/locations/{location}/templat"
-          + "es:\001*Z*\"%/v1b3/projects/{project_id}/templates:\001*\022\224\002\n"
-          + "\016LaunchTemplate\022..google.dataflow.v1beta3.LaunchTemplateRequest\032/.g"
-          + "oogle.dataflow.v1beta3.LaunchTemplateRes"
-          + "ponse\"\240\001\202\323\344\223\002\231\001\"A/v1b3/projects/{project"
-          + "_id}/locations/{location}/templates:launch:\021launch_parametersZA\",/v1b3/projects/"
-          + "{project_id}/templates:launch:\021launch_parameters\022\335\001\n"
-          + "\013GetTemplate\022+.google.dataflow.v1beta3.GetTemplateRequest\032,.google.d"
-          + "ataflow.v1beta3.GetTemplateResponse\"s\202\323\344"
-          + "\223\002m\022>/v1b3/projects/{project_id}/locatio"
-          + "ns/{location}/templates:getZ+\022)/v1b3/pro"
-          + "jects/{project_id}/templates:get\032\324\001\312A\027da"
-          + "taflow.googleapis.com\322A\266\001https://www.goo"
-          + "gleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/compute,https://"
-          + "www.googleapis.com/auth/compute.readonly"
-          + ",https://www.googleapis.com/auth/userinfo.email2\277\003\n"
+          + "\025CreateJobFromTemplate\0225.google.dataflow.v1beta3.CreateJobFromTemplat"
+          + "eRequest\032\034.google.dataflow.v1beta3.Job\"q"
+          + "\202\323\344\223\002k\":/v1b3/projects/{project_id}/loca"
+          + "tions/{location}/templates:\001*Z*\"%/v1b3/projects/{project_id}/templates:\001*\022\224\002\n"
+          + "\016LaunchTemplate\022..google.dataflow.v1beta3.L"
+          + "aunchTemplateRequest\032/.google.dataflow.v"
+          + "1beta3.LaunchTemplateResponse\"\240\001\202\323\344\223\002\231\001\""
+          + "A/v1b3/projects/{project_id}/locations/{location}/templates:launch:\021launch_param"
+          + "etersZA\",/v1b3/projects/{project_id}/templates:launch:\021launch_parameters\022\335\001\n"
+          + "\013GetTemplate\022+.google.dataflow.v1beta3.GetTe"
+          + "mplateRequest\032,.google.dataflow.v1beta3."
+          + "GetTemplateResponse\"s\202\323\344\223\002m\022>/v1b3/proje"
+          + "cts/{project_id}/locations/{location}/templates:getZ+\022)/v1b3/projects/{project_i"
+          + "d}/templates:get\032s\312A\027dataflow.googleapis"
+          + ".com\322AVhttps://www.googleapis.com/auth/c"
+          + "loud-platform,https://www.googleapis.com/auth/compute2\335\002\n"
           + "\024FlexTemplatesService\022\317\001\n"
-          + "\022LaunchFlexTemplate\0222.google.dataflow.v1beta"
-          + "3.LaunchFlexTemplateRequest\0323.google.dataflow.v1beta3.LaunchFlexTemplateResponse"
-          + "\"P\202\323\344\223\002J\"E/v1b3/projects/{project_id}/lo"
-          + "cations/{location}/flexTemplates:launch:"
-          + "\001*\032\324\001\312A\027dataflow.googleapis.com\322A\266\001https"
-          + "://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/comput"
-          + "e,https://www.googleapis.com/auth/comput"
-          + "e.readonly,https://www.googleapis.com/auth/userinfo.emailB\321\001\n"
-          + "\033com.google.dataflow.v1beta3B\016TemplatesProtoP\001Z=cloud.googl"
-          + "e.com/go/dataflow/apiv1beta3/dataflowpb;"
-          + "dataflowpb\252\002\035Google.Cloud.Dataflow.V1Beta3\312\002\035Google\\Cloud\\Dataflow\\V1beta3\352\002"
+          + "\022LaunchFlexTemplate\0222.google.dataflow."
+          + "v1beta3.LaunchFlexTemplateRequest\0323.google.dataflow.v1beta3.LaunchFlexTemplateRe"
+          + "sponse\"P\202\323\344\223\002J\"E/v1b3/projects/{project_"
+          + "id}/locations/{location}/flexTemplates:l"
+          + "aunch:\001*\032s\312A\027dataflow.googleapis.com\322AVh"
+          + "ttps://www.googleapis.com/auth/cloud-pla"
+          + "tform,https://www.googleapis.com/auth/computeB\321\001\n"
+          + "\033com.google.dataflow.v1beta3B\016TemplatesProtoP\001Z=cloud.google.com/go/dat"
+          + "aflow/apiv1beta3/dataflowpb;dataflowpb\252\002"
+          + "\035Google.Cloud.Dataflow.V1Beta3\312\002\035Google\\Cloud\\Dataflow\\V1beta3\352\002"
           + " Google::Cloud::Dataflow::V1beta3b\006proto3"
     };
     descriptor =
@@ -398,6 +440,7 @@ public final class TemplatesProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.dataflow.v1beta3.EnvironmentProto.getDescriptor(),
               com.google.dataflow.v1beta3.JobsProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
@@ -416,7 +459,13 @@ public final class TemplatesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_ContainerSpec_descriptor,
             new java.lang.String[] {
-              "Image", "Metadata", "SdkInfo", "DefaultEnvironment",
+              "Image",
+              "Metadata",
+              "SdkInfo",
+              "DefaultEnvironment",
+              "ImageRepositoryUsernameSecretId",
+              "ImageRepositoryPasswordSecretId",
+              "ImageRepositoryCertPath",
             });
     internal_static_google_dataflow_v1beta3_LaunchFlexTemplateParameter_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -493,6 +542,8 @@ public final class TemplatesProto {
               "DumpHeapOnOom",
               "SaveHeapDumpsToGcsPath",
               "LauncherMachineType",
+              "EnableLauncherVmSerialPortLogging",
+              "StreamingMode",
             });
     internal_static_google_dataflow_v1beta3_FlexTemplateRuntimeEnvironment_AdditionalUserLabelsEntry_descriptor =
         internal_static_google_dataflow_v1beta3_FlexTemplateRuntimeEnvironment_descriptor
@@ -534,6 +585,8 @@ public final class TemplatesProto {
               "WorkerRegion",
               "WorkerZone",
               "EnableStreamingEngine",
+              "DiskSizeGb",
+              "StreamingMode",
             });
     internal_static_google_dataflow_v1beta3_RuntimeEnvironment_AdditionalUserLabelsEntry_descriptor =
         internal_static_google_dataflow_v1beta3_RuntimeEnvironment_descriptor
@@ -545,13 +598,33 @@ public final class TemplatesProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_dataflow_v1beta3_ParameterMetadata_descriptor =
+    internal_static_google_dataflow_v1beta3_ParameterMetadataEnumOption_descriptor =
         getDescriptor().getMessageTypes().get(6);
+    internal_static_google_dataflow_v1beta3_ParameterMetadataEnumOption_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_dataflow_v1beta3_ParameterMetadataEnumOption_descriptor,
+            new java.lang.String[] {
+              "Value", "Label", "Description",
+            });
+    internal_static_google_dataflow_v1beta3_ParameterMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_dataflow_v1beta3_ParameterMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_ParameterMetadata_descriptor,
             new java.lang.String[] {
-              "Name", "Label", "HelpText", "IsOptional", "Regexes", "ParamType", "CustomMetadata",
+              "Name",
+              "Label",
+              "HelpText",
+              "IsOptional",
+              "Regexes",
+              "ParamType",
+              "CustomMetadata",
+              "GroupName",
+              "ParentName",
+              "ParentTriggerValues",
+              "EnumOptions",
+              "DefaultValue",
+              "HiddenUi",
             });
     internal_static_google_dataflow_v1beta3_ParameterMetadata_CustomMetadataEntry_descriptor =
         internal_static_google_dataflow_v1beta3_ParameterMetadata_descriptor
@@ -564,15 +637,21 @@ public final class TemplatesProto {
               "Key", "Value",
             });
     internal_static_google_dataflow_v1beta3_TemplateMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_dataflow_v1beta3_TemplateMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_TemplateMetadata_descriptor,
             new java.lang.String[] {
-              "Name", "Description", "Parameters",
+              "Name",
+              "Description",
+              "Parameters",
+              "Streaming",
+              "SupportsAtLeastOnce",
+              "SupportsExactlyOnce",
+              "DefaultStreamingMode",
             });
     internal_static_google_dataflow_v1beta3_SDKInfo_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_dataflow_v1beta3_SDKInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_SDKInfo_descriptor,
@@ -580,7 +659,7 @@ public final class TemplatesProto {
               "Language", "Version",
             });
     internal_static_google_dataflow_v1beta3_RuntimeMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_dataflow_v1beta3_RuntimeMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_RuntimeMetadata_descriptor,
@@ -588,7 +667,7 @@ public final class TemplatesProto {
               "SdkInfo", "Parameters",
             });
     internal_static_google_dataflow_v1beta3_CreateJobFromTemplateRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_dataflow_v1beta3_CreateJobFromTemplateRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_CreateJobFromTemplateRequest_descriptor,
@@ -612,7 +691,7 @@ public final class TemplatesProto {
               "Key", "Value",
             });
     internal_static_google_dataflow_v1beta3_GetTemplateRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_dataflow_v1beta3_GetTemplateRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_GetTemplateRequest_descriptor,
@@ -620,7 +699,7 @@ public final class TemplatesProto {
               "ProjectId", "GcsPath", "View", "Location", "Template",
             });
     internal_static_google_dataflow_v1beta3_GetTemplateResponse_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_dataflow_v1beta3_GetTemplateResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_GetTemplateResponse_descriptor,
@@ -628,7 +707,7 @@ public final class TemplatesProto {
               "Status", "Metadata", "TemplateType", "RuntimeMetadata",
             });
     internal_static_google_dataflow_v1beta3_LaunchTemplateParameters_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_dataflow_v1beta3_LaunchTemplateParameters_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_LaunchTemplateParameters_descriptor,
@@ -656,7 +735,7 @@ public final class TemplatesProto {
               "Key", "Value",
             });
     internal_static_google_dataflow_v1beta3_LaunchTemplateRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_dataflow_v1beta3_LaunchTemplateRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_LaunchTemplateRequest_descriptor,
@@ -670,7 +749,7 @@ public final class TemplatesProto {
               "Template",
             });
     internal_static_google_dataflow_v1beta3_LaunchTemplateResponse_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_dataflow_v1beta3_LaunchTemplateResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_LaunchTemplateResponse_descriptor,
@@ -678,7 +757,7 @@ public final class TemplatesProto {
               "Job",
             });
     internal_static_google_dataflow_v1beta3_InvalidTemplateParameters_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_dataflow_v1beta3_InvalidTemplateParameters_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_InvalidTemplateParameters_descriptor,
@@ -696,7 +775,7 @@ public final class TemplatesProto {
               "Parameter", "Description",
             });
     internal_static_google_dataflow_v1beta3_DynamicTemplateLaunchParams_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_dataflow_v1beta3_DynamicTemplateLaunchParams_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_dataflow_v1beta3_DynamicTemplateLaunchParams_descriptor,
@@ -706,12 +785,14 @@ public final class TemplatesProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.dataflow.v1beta3.EnvironmentProto.getDescriptor();
     com.google.dataflow.v1beta3.JobsProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();

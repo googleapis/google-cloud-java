@@ -77,7 +77,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListJobs</td>
- *      <td><p> Lists Jobs in a given project and location.</td>
+ *      <td><p> Lists Jobs in a given project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -337,7 +337,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Jobs in a given project and location.
+   * Lists Jobs in a given project.
    *
    * <p>Sample code:
    *
@@ -356,7 +356,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Format: projects/{project_id}/locations/{location_id} .
+   * @param parent Required. Format: projects/{project_id}/locations/global.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListJobsPagedResponse listJobs(LocationName parent) {
@@ -367,7 +367,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Jobs in a given project and location.
+   * Lists Jobs in a given project.
    *
    * <p>Sample code:
    *
@@ -386,7 +386,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Format: projects/{project_id}/locations/{location_id} .
+   * @param parent Required. Format: projects/{project_id}/locations/global.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListJobsPagedResponse listJobs(String parent) {
@@ -396,7 +396,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Jobs in a given project and location.
+   * Lists Jobs in a given project.
    *
    * <p>Sample code:
    *
@@ -431,7 +431,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Jobs in a given project and location.
+   * Lists Jobs in a given project.
    *
    * <p>Sample code:
    *
@@ -466,7 +466,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Jobs in a given project and location.
+   * Lists Jobs in a given project.
    *
    * <p>Sample code:
    *
@@ -525,7 +525,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. `name` of the job to retrieve. Format:
-   *     projects/{project_id}/locations/{location_id}/jobs/{job_id} .
+   *     projects/{project_id}/locations/global/jobs/{job_id} .
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job getJob(JobName name) {
@@ -554,7 +554,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. `name` of the job to retrieve. Format:
-   *     projects/{project_id}/locations/{location_id}/jobs/{job_id} .
+   *     projects/{project_id}/locations/global/jobs/{job_id} .
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job getJob(String name) {
@@ -810,7 +810,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The `name` of the job to delete. Format:
-   *     projects/{project_id}/locations/{location_id}/jobs/{job_id} .
+   *     projects/{project_id}/locations/global/jobs/{job_id} .
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteJob(JobName name) {
@@ -839,7 +839,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The `name` of the job to delete. Format:
-   *     projects/{project_id}/locations/{location_id}/jobs/{job_id} .
+   *     projects/{project_id}/locations/global/jobs/{job_id} .
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteJob(String name) {
@@ -927,7 +927,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The `name` of the job to cancel. Format:
-   *     projects/{project_id}/locations/{location_id}/jobs/{job_id}.
+   *     projects/{project_id}/locations/global/jobs/{job_id}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CancelJobResponse cancelJob(JobName name) {
@@ -956,7 +956,7 @@ public class StorageBatchOperationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The `name` of the job to cancel. Format:
-   *     projects/{project_id}/locations/{location_id}/jobs/{job_id}.
+   *     projects/{project_id}/locations/global/jobs/{job_id}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CancelJobResponse cancelJob(String name) {

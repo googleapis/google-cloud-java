@@ -23,7 +23,8 @@ package com.google.dataflow.v1beta3;
  *
  *
  * <pre>
- * Describes the overall state of a [google.dataflow.v1beta3.Job][google.dataflow.v1beta3.Job].
+ * Describes the overall state of a
+ * [google.dataflow.v1beta3.Job][google.dataflow.v1beta3.Job].
  * </pre>
  *
  * Protobuf enum {@code google.dataflow.v1beta3.JobState}

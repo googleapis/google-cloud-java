@@ -160,6 +160,16 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SBOM_REFERENCE = 12;</code>
    */
   SBOM_REFERENCE(12),
+  /**
+   *
+   *
+   * <pre>
+   * This represents a secret.
+   * </pre>
+   *
+   * <code>SECRET = 13;</code>
+   */
+  SECRET(13),
   UNRECOGNIZED(-1),
   ;
 
@@ -306,6 +316,17 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int SBOM_REFERENCE_VALUE = 12;
 
+  /**
+   *
+   *
+   * <pre>
+   * This represents a secret.
+   * </pre>
+   *
+   * <code>SECRET = 13;</code>
+   */
+  public static final int SECRET_VALUE = 13;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -356,6 +377,8 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
         return VULNERABILITY_ASSESSMENT;
       case 12:
         return SBOM_REFERENCE;
+      case 13:
+        return SECRET;
       default:
         return null;
     }

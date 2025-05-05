@@ -3450,6 +3450,7 @@ public class DatasetServiceClient implements BackgroundResource {
    *   AssessDataRequest request =
    *       AssessDataRequest.newBuilder()
    *           .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setGeminiRequestReadConfig(GeminiRequestReadConfig.newBuilder().build())
    *           .build();
    *   AssessDataResponse response = datasetServiceClient.assessDataAsync(request).get();
    * }
@@ -3479,6 +3480,7 @@ public class DatasetServiceClient implements BackgroundResource {
    *   AssessDataRequest request =
    *       AssessDataRequest.newBuilder()
    *           .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setGeminiRequestReadConfig(GeminiRequestReadConfig.newBuilder().build())
    *           .build();
    *   OperationFuture<AssessDataResponse, AssessDataOperationMetadata> future =
    *       datasetServiceClient.assessDataOperationCallable().futureCall(request);
@@ -3508,6 +3510,7 @@ public class DatasetServiceClient implements BackgroundResource {
    *   AssessDataRequest request =
    *       AssessDataRequest.newBuilder()
    *           .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setGeminiRequestReadConfig(GeminiRequestReadConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future = datasetServiceClient.assessDataCallable().futureCall(request);
    *   // Do something.
@@ -3535,6 +3538,7 @@ public class DatasetServiceClient implements BackgroundResource {
    *   AssembleDataRequest request =
    *       AssembleDataRequest.newBuilder()
    *           .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setGeminiRequestReadConfig(GeminiRequestReadConfig.newBuilder().build())
    *           .build();
    *   AssembleDataResponse response = datasetServiceClient.assembleDataAsync(request).get();
    * }
@@ -3564,6 +3568,7 @@ public class DatasetServiceClient implements BackgroundResource {
    *   AssembleDataRequest request =
    *       AssembleDataRequest.newBuilder()
    *           .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setGeminiRequestReadConfig(GeminiRequestReadConfig.newBuilder().build())
    *           .build();
    *   OperationFuture<AssembleDataResponse, AssembleDataOperationMetadata> future =
    *       datasetServiceClient.assembleDataOperationCallable().futureCall(request);
@@ -3594,6 +3599,7 @@ public class DatasetServiceClient implements BackgroundResource {
    *   AssembleDataRequest request =
    *       AssembleDataRequest.newBuilder()
    *           .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setGeminiRequestReadConfig(GeminiRequestReadConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future = datasetServiceClient.assembleDataCallable().futureCall(request);
    *   // Do something.

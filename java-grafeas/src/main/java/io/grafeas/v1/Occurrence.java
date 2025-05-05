@@ -87,6 +87,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     COMPLIANCE(16),
     DSSE_ATTESTATION(17),
     SBOM_REFERENCE(19),
+    SECRET(20),
     DETAILS_NOT_SET(0);
     private final int value;
 
@@ -128,6 +129,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
           return DSSE_ATTESTATION;
         case 19:
           return SBOM_REFERENCE;
+        case 20:
+          return SECRET;
         case 0:
           return DETAILS_NOT_SET;
         default:
@@ -1099,6 +1102,60 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     return io.grafeas.v1.SBOMReferenceOccurrence.getDefaultInstance();
   }
 
+  public static final int SECRET_FIELD_NUMBER = 20;
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes a secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+   *
+   * @return Whether the secret field is set.
+   */
+  @java.lang.Override
+  public boolean hasSecret() {
+    return detailsCase_ == 20;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes a secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+   *
+   * @return The secret.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.SecretOccurrence getSecret() {
+    if (detailsCase_ == 20) {
+      return (io.grafeas.v1.SecretOccurrence) details_;
+    }
+    return io.grafeas.v1.SecretOccurrence.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes a secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.SecretOccurrenceOrBuilder getSecretOrBuilder() {
+    if (detailsCase_ == 20) {
+      return (io.grafeas.v1.SecretOccurrence) details_;
+    }
+    return io.grafeas.v1.SecretOccurrence.getDefaultInstance();
+  }
+
   public static final int ENVELOPE_FIELD_NUMBER = 18;
   private io.grafeas.v1.Envelope envelope_;
 
@@ -1219,6 +1276,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     if (detailsCase_ == 19) {
       output.writeMessage(19, (io.grafeas.v1.SBOMReferenceOccurrence) details_);
     }
+    if (detailsCase_ == 20) {
+      output.writeMessage(20, (io.grafeas.v1.SecretOccurrence) details_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1307,6 +1367,11 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               19, (io.grafeas.v1.SBOMReferenceOccurrence) details_);
     }
+    if (detailsCase_ == 20) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              20, (io.grafeas.v1.SecretOccurrence) details_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1373,6 +1438,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         break;
       case 19:
         if (!getSbomReference().equals(other.getSbomReference())) return false;
+        break;
+      case 20:
+        if (!getSecret().equals(other.getSecret())) return false;
         break;
       case 0:
       default:
@@ -1454,6 +1522,10 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       case 19:
         hash = (37 * hash) + SBOM_REFERENCE_FIELD_NUMBER;
         hash = (53 * hash) + getSbomReference().hashCode();
+        break;
+      case 20:
+        hash = (37 * hash) + SECRET_FIELD_NUMBER;
+        hash = (53 * hash) + getSecret().hashCode();
         break;
       case 0:
       default:
@@ -1654,6 +1726,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       if (sbomReferenceBuilder_ != null) {
         sbomReferenceBuilder_.clear();
       }
+      if (secretBuilder_ != null) {
+        secretBuilder_.clear();
+      }
       envelope_ = null;
       if (envelopeBuilder_ != null) {
         envelopeBuilder_.dispose();
@@ -1720,7 +1795,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.envelope_ = envelopeBuilder_ == null ? envelope_ : envelopeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
@@ -1762,6 +1837,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       if (detailsCase_ == 19 && sbomReferenceBuilder_ != null) {
         result.details_ = sbomReferenceBuilder_.build();
+      }
+      if (detailsCase_ == 20 && secretBuilder_ != null) {
+        result.details_ = secretBuilder_.build();
       }
     }
 
@@ -1896,6 +1974,11 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         case SBOM_REFERENCE:
           {
             mergeSbomReference(other.getSbomReference());
+            break;
+          }
+        case SECRET:
+          {
+            mergeSecret(other.getSecret());
             break;
           }
         case DETAILS_NOT_SET:
@@ -2034,7 +2117,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             case 146:
               {
                 input.readMessage(getEnvelopeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 146
             case 154:
@@ -2043,6 +2126,12 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
                 detailsCase_ = 19;
                 break;
               } // case 154
+            case 162:
+              {
+                input.readMessage(getSecretFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 20;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5407,6 +5496,219 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       return sbomReferenceBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.SecretOccurrence,
+            io.grafeas.v1.SecretOccurrence.Builder,
+            io.grafeas.v1.SecretOccurrenceOrBuilder>
+        secretBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+     *
+     * @return Whether the secret field is set.
+     */
+    @java.lang.Override
+    public boolean hasSecret() {
+      return detailsCase_ == 20;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+     *
+     * @return The secret.
+     */
+    @java.lang.Override
+    public io.grafeas.v1.SecretOccurrence getSecret() {
+      if (secretBuilder_ == null) {
+        if (detailsCase_ == 20) {
+          return (io.grafeas.v1.SecretOccurrence) details_;
+        }
+        return io.grafeas.v1.SecretOccurrence.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 20) {
+          return secretBuilder_.getMessage();
+        }
+        return io.grafeas.v1.SecretOccurrence.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+     */
+    public Builder setSecret(io.grafeas.v1.SecretOccurrence value) {
+      if (secretBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        secretBuilder_.setMessage(value);
+      }
+      detailsCase_ = 20;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+     */
+    public Builder setSecret(io.grafeas.v1.SecretOccurrence.Builder builderForValue) {
+      if (secretBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        secretBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 20;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+     */
+    public Builder mergeSecret(io.grafeas.v1.SecretOccurrence value) {
+      if (secretBuilder_ == null) {
+        if (detailsCase_ == 20 && details_ != io.grafeas.v1.SecretOccurrence.getDefaultInstance()) {
+          details_ =
+              io.grafeas.v1.SecretOccurrence.newBuilder((io.grafeas.v1.SecretOccurrence) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 20) {
+          secretBuilder_.mergeFrom(value);
+        } else {
+          secretBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 20;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+     */
+    public Builder clearSecret() {
+      if (secretBuilder_ == null) {
+        if (detailsCase_ == 20) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 20) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        secretBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+     */
+    public io.grafeas.v1.SecretOccurrence.Builder getSecretBuilder() {
+      return getSecretFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+     */
+    @java.lang.Override
+    public io.grafeas.v1.SecretOccurrenceOrBuilder getSecretOrBuilder() {
+      if ((detailsCase_ == 20) && (secretBuilder_ != null)) {
+        return secretBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 20) {
+          return (io.grafeas.v1.SecretOccurrence) details_;
+        }
+        return io.grafeas.v1.SecretOccurrence.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.SecretOccurrence,
+            io.grafeas.v1.SecretOccurrence.Builder,
+            io.grafeas.v1.SecretOccurrenceOrBuilder>
+        getSecretFieldBuilder() {
+      if (secretBuilder_ == null) {
+        if (!(detailsCase_ == 20)) {
+          details_ = io.grafeas.v1.SecretOccurrence.getDefaultInstance();
+        }
+        secretBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.SecretOccurrence,
+                io.grafeas.v1.SecretOccurrence.Builder,
+                io.grafeas.v1.SecretOccurrenceOrBuilder>(
+                (io.grafeas.v1.SecretOccurrence) details_, getParentForChildren(), isClean());
+        details_ = null;
+      }
+      detailsCase_ = 20;
+      onChanged();
+      return secretBuilder_;
+    }
+
     private io.grafeas.v1.Envelope envelope_;
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.Envelope, io.grafeas.v1.Envelope.Builder, io.grafeas.v1.EnvelopeOrBuilder>
@@ -5424,7 +5726,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the envelope field is set.
      */
     public boolean hasEnvelope() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -5464,7 +5766,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       } else {
         envelopeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5484,7 +5786,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       } else {
         envelopeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5500,7 +5802,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEnvelope(io.grafeas.v1.Envelope value) {
       if (envelopeBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && envelope_ != null
             && envelope_ != io.grafeas.v1.Envelope.getDefaultInstance()) {
           getEnvelopeBuilder().mergeFrom(value);
@@ -5511,7 +5813,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         envelopeBuilder_.mergeFrom(value);
       }
       if (envelope_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -5527,7 +5829,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.Envelope envelope = 18;</code>
      */
     public Builder clearEnvelope() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       envelope_ = null;
       if (envelopeBuilder_ != null) {
         envelopeBuilder_.dispose();
@@ -5547,7 +5849,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.Envelope envelope = 18;</code>
      */
     public io.grafeas.v1.Envelope.Builder getEnvelopeBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getEnvelopeFieldBuilder().getBuilder();
     }

@@ -28,13 +28,10 @@ public interface PscAutoConnectionOrBuilder
    *
    *
    * <pre>
-   * Optional. Output only. port will only be set for Primary/Reader or
-   * Discovery endpoint.
+   * Optional. port will only be set for Primary/Reader or Discovery endpoint.
    * </pre>
    *
-   * <code>
-   * int32 port = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the port field is set.
    */
@@ -44,13 +41,10 @@ public interface PscAutoConnectionOrBuilder
    *
    *
    * <pre>
-   * Optional. Output only. port will only be set for Primary/Reader or
-   * Discovery endpoint.
+   * Optional. port will only be set for Primary/Reader or Discovery endpoint.
    * </pre>
    *
-   * <code>
-   * int32 port = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The port.
    */

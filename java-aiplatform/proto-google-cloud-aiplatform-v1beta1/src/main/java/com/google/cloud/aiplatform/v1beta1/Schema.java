@@ -52,6 +52,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     required_ = com.google.protobuf.LazyStringArrayList.emptyList();
     pattern_ = "";
     anyOf_ = java.util.Collections.emptyList();
+    ref_ = "";
   }
 
   @java.lang.Override
@@ -72,6 +73,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     switch (number) {
       case 3:
         return internalGetProperties();
+      case 28:
+        return internalGetDefs();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -1124,6 +1127,225 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     return anyOf_.get(index);
   }
 
+  public static final int REF_FIELD_NUMBER = 27;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ref_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Allows indirect references between schema nodes. The value should
+   * be a valid reference to a child of the root `defs`.
+   *
+   * For example, the following schema defines a reference to a schema node
+   * named "Pet":
+   *
+   * type: object
+   * properties:
+   *   pet:
+   *     ref: #/defs/Pet
+   * defs:
+   *   Pet:
+   *     type: object
+   *     properties:
+   *       name:
+   *         type: string
+   *
+   * The value of the "pet" property is a reference to the schema node
+   * named "Pet".
+   * See details in
+   * https://json-schema.org/understanding-json-schema/structuring
+   * </pre>
+   *
+   * <code>string ref = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ref.
+   */
+  @java.lang.Override
+  public java.lang.String getRef() {
+    java.lang.Object ref = ref_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ref_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Allows indirect references between schema nodes. The value should
+   * be a valid reference to a child of the root `defs`.
+   *
+   * For example, the following schema defines a reference to a schema node
+   * named "Pet":
+   *
+   * type: object
+   * properties:
+   *   pet:
+   *     ref: #/defs/Pet
+   * defs:
+   *   Pet:
+   *     type: object
+   *     properties:
+   *       name:
+   *         type: string
+   *
+   * The value of the "pet" property is a reference to the schema node
+   * named "Pet".
+   * See details in
+   * https://json-schema.org/understanding-json-schema/structuring
+   * </pre>
+   *
+   * <code>string ref = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for ref.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRefBytes() {
+    java.lang.Object ref = ref_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ref_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DEFS_FIELD_NUMBER = 28;
+
+  private static final class DefsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema>newDefaultInstance(
+                    com.google.cloud.aiplatform.v1beta1.OpenApiProto
+                        .internal_static_google_cloud_aiplatform_v1beta1_Schema_DefsEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.google.cloud.aiplatform.v1beta1.Schema.getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema>
+      defs_;
+
+  private com.google.protobuf.MapField<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema>
+      internalGetDefs() {
+    if (defs_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(DefsDefaultEntryHolder.defaultEntry);
+    }
+    return defs_;
+  }
+
+  public int getDefsCount() {
+    return internalGetDefs().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A map of definitions for use by `ref`
+   * Only allowed at the root of the schema.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsDefs(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetDefs().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getDefsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema> getDefs() {
+    return getDefsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A map of definitions for use by `ref`
+   * Only allowed at the root of the schema.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema> getDefsMap() {
+    return internalGetDefs().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A map of definitions for use by `ref`
+   * Only allowed at the root of the schema.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.aiplatform.v1beta1.Schema getDefsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.aiplatform.v1beta1.Schema defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema> map =
+        internalGetDefs().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A map of definitions for use by `ref`
+   * Only allowed at the root of the schema.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Schema getDefsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema> map =
+        internalGetDefs().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1203,6 +1425,11 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < propertyOrdering_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 25, propertyOrdering_.getRaw(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ref_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 27, ref_);
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetDefs(), DefsDefaultEntryHolder.defaultEntry, 28);
     getUnknownFields().writeTo(output);
   }
 
@@ -1301,6 +1528,20 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 2 * getPropertyOrderingList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ref_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, ref_);
+    }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema> entry :
+        internalGetDefs().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema>
+          defs__ =
+              DefsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, defs__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1350,6 +1591,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       if (!getExample().equals(other.getExample())) return false;
     }
     if (!getAnyOfList().equals(other.getAnyOfList())) return false;
+    if (!getRef().equals(other.getRef())) return false;
+    if (!internalGetDefs().equals(other.internalGetDefs())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1426,6 +1669,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     if (getAnyOfCount() > 0) {
       hash = (37 * hash) + ANY_OF_FIELD_NUMBER;
       hash = (53 * hash) + getAnyOfList().hashCode();
+    }
+    hash = (37 * hash) + REF_FIELD_NUMBER;
+    hash = (53 * hash) + getRef().hashCode();
+    if (!internalGetDefs().getMap().isEmpty()) {
+      hash = (37 * hash) + DEFS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetDefs().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1555,6 +1804,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 3:
           return internalGetProperties();
+        case 28:
+          return internalGetDefs();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1566,6 +1817,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       switch (number) {
         case 3:
           return internalGetMutableProperties();
+        case 28:
+          return internalGetMutableDefs();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1644,6 +1897,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         anyOfBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00200000);
+      ref_ = "";
+      internalGetMutableDefs().clear();
       return this;
     }
 
@@ -1763,6 +2018,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00100000) != 0)) {
         result.example_ = exampleBuilder_ == null ? example_ : exampleBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.ref_ = ref_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.defs_ = internalGetDefs().build(DefsDefaultEntryHolder.defaultEntry);
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1930,6 +2191,13 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (!other.getRef().isEmpty()) {
+        ref_ = other.ref_;
+        bitField0_ |= 0x00400000;
+        onChanged();
+      }
+      internalGetMutableDefs().mergeFrom(other.internalGetDefs());
+      bitField0_ |= 0x00800000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2106,6 +2374,24 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
                 propertyOrdering_.add(s);
                 break;
               } // case 202
+            case 218:
+              {
+                ref_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 218
+            case 226:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema>
+                    defs__ =
+                        input.readMessage(
+                            DefsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableDefs().ensureBuilderMap().put(defs__.getKey(), defs__.getValue());
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5101,6 +5387,485 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         anyOf_ = null;
       }
       return anyOfBuilder_;
+    }
+
+    private java.lang.Object ref_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allows indirect references between schema nodes. The value should
+     * be a valid reference to a child of the root `defs`.
+     *
+     * For example, the following schema defines a reference to a schema node
+     * named "Pet":
+     *
+     * type: object
+     * properties:
+     *   pet:
+     *     ref: #/defs/Pet
+     * defs:
+     *   Pet:
+     *     type: object
+     *     properties:
+     *       name:
+     *         type: string
+     *
+     * The value of the "pet" property is a reference to the schema node
+     * named "Pet".
+     * See details in
+     * https://json-schema.org/understanding-json-schema/structuring
+     * </pre>
+     *
+     * <code>string ref = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The ref.
+     */
+    public java.lang.String getRef() {
+      java.lang.Object ref = ref_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ref_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allows indirect references between schema nodes. The value should
+     * be a valid reference to a child of the root `defs`.
+     *
+     * For example, the following schema defines a reference to a schema node
+     * named "Pet":
+     *
+     * type: object
+     * properties:
+     *   pet:
+     *     ref: #/defs/Pet
+     * defs:
+     *   Pet:
+     *     type: object
+     *     properties:
+     *       name:
+     *         type: string
+     *
+     * The value of the "pet" property is a reference to the schema node
+     * named "Pet".
+     * See details in
+     * https://json-schema.org/understanding-json-schema/structuring
+     * </pre>
+     *
+     * <code>string ref = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for ref.
+     */
+    public com.google.protobuf.ByteString getRefBytes() {
+      java.lang.Object ref = ref_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ref_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allows indirect references between schema nodes. The value should
+     * be a valid reference to a child of the root `defs`.
+     *
+     * For example, the following schema defines a reference to a schema node
+     * named "Pet":
+     *
+     * type: object
+     * properties:
+     *   pet:
+     *     ref: #/defs/Pet
+     * defs:
+     *   Pet:
+     *     type: object
+     *     properties:
+     *       name:
+     *         type: string
+     *
+     * The value of the "pet" property is a reference to the schema node
+     * named "Pet".
+     * See details in
+     * https://json-schema.org/understanding-json-schema/structuring
+     * </pre>
+     *
+     * <code>string ref = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The ref to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRef(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ref_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allows indirect references between schema nodes. The value should
+     * be a valid reference to a child of the root `defs`.
+     *
+     * For example, the following schema defines a reference to a schema node
+     * named "Pet":
+     *
+     * type: object
+     * properties:
+     *   pet:
+     *     ref: #/defs/Pet
+     * defs:
+     *   Pet:
+     *     type: object
+     *     properties:
+     *       name:
+     *         type: string
+     *
+     * The value of the "pet" property is a reference to the schema node
+     * named "Pet".
+     * See details in
+     * https://json-schema.org/understanding-json-schema/structuring
+     * </pre>
+     *
+     * <code>string ref = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRef() {
+      ref_ = getDefaultInstance().getRef();
+      bitField0_ = (bitField0_ & ~0x00400000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allows indirect references between schema nodes. The value should
+     * be a valid reference to a child of the root `defs`.
+     *
+     * For example, the following schema defines a reference to a schema node
+     * named "Pet":
+     *
+     * type: object
+     * properties:
+     *   pet:
+     *     ref: #/defs/Pet
+     * defs:
+     *   Pet:
+     *     type: object
+     *     properties:
+     *       name:
+     *         type: string
+     *
+     * The value of the "pet" property is a reference to the schema node
+     * named "Pet".
+     * See details in
+     * https://json-schema.org/understanding-json-schema/structuring
+     * </pre>
+     *
+     * <code>string ref = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for ref to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRefBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ref_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    private static final class DefsConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder,
+            com.google.cloud.aiplatform.v1beta1.Schema> {
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Schema build(
+          com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder val) {
+        if (val instanceof com.google.cloud.aiplatform.v1beta1.Schema) {
+          return (com.google.cloud.aiplatform.v1beta1.Schema) val;
+        }
+        return ((com.google.cloud.aiplatform.v1beta1.Schema.Builder) val).build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema>
+          defaultEntry() {
+        return DefsDefaultEntryHolder.defaultEntry;
+      }
+    }
+    ;
+
+    private static final DefsConverter defsConverter = new DefsConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder,
+            com.google.cloud.aiplatform.v1beta1.Schema,
+            com.google.cloud.aiplatform.v1beta1.Schema.Builder>
+        defs_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder,
+            com.google.cloud.aiplatform.v1beta1.Schema,
+            com.google.cloud.aiplatform.v1beta1.Schema.Builder>
+        internalGetDefs() {
+      if (defs_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(defsConverter);
+      }
+      return defs_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder,
+            com.google.cloud.aiplatform.v1beta1.Schema,
+            com.google.cloud.aiplatform.v1beta1.Schema.Builder>
+        internalGetMutableDefs() {
+      if (defs_ == null) {
+        defs_ = new com.google.protobuf.MapFieldBuilder<>(defsConverter);
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return defs_;
+    }
+
+    public int getDefsCount() {
+      return internalGetDefs().ensureBuilderMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A map of definitions for use by `ref`
+     * Only allowed at the root of the schema.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsDefs(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetDefs().ensureBuilderMap().containsKey(key);
+    }
+
+    /** Use {@link #getDefsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema> getDefs() {
+      return getDefsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A map of definitions for use by `ref`
+     * Only allowed at the root of the schema.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema>
+        getDefsMap() {
+      return internalGetDefs().getImmutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A map of definitions for use by `ref`
+     * Only allowed at the root of the schema.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.aiplatform.v1beta1.Schema getDefsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.aiplatform.v1beta1.Schema defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder> map =
+          internalGetMutableDefs().ensureBuilderMap();
+      return map.containsKey(key) ? defsConverter.build(map.get(key)) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A map of definitions for use by `ref`
+     * Only allowed at the root of the schema.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Schema getDefsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder> map =
+          internalGetMutableDefs().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return defsConverter.build(map.get(key));
+    }
+
+    public Builder clearDefs() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      internalGetMutableDefs().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A map of definitions for use by `ref`
+     * Only allowed at the root of the schema.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeDefs(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableDefs().ensureBuilderMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema>
+        getMutableDefs() {
+      bitField0_ |= 0x00800000;
+      return internalGetMutableDefs().ensureMessageMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A map of definitions for use by `ref`
+     * Only allowed at the root of the schema.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putDefs(java.lang.String key, com.google.cloud.aiplatform.v1beta1.Schema value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableDefs().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00800000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A map of definitions for use by `ref`
+     * Only allowed at the root of the schema.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllDefs(
+        java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema> values) {
+      for (java.util.Map.Entry<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema> e :
+          values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableDefs().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00800000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A map of definitions for use by `ref`
+     * Only allowed at the root of the schema.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Schema.Builder putDefsBuilderIfAbsent(
+        java.lang.String key) {
+      java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder>
+          builderMap = internalGetMutableDefs().ensureBuilderMap();
+      com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder entry = builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.cloud.aiplatform.v1beta1.Schema.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.cloud.aiplatform.v1beta1.Schema) {
+        entry = ((com.google.cloud.aiplatform.v1beta1.Schema) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.cloud.aiplatform.v1beta1.Schema.Builder) entry;
     }
 
     @java.lang.Override

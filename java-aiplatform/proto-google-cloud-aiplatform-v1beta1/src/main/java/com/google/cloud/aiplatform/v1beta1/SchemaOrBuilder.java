@@ -734,4 +734,148 @@ public interface SchemaOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder getAnyOfOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Allows indirect references between schema nodes. The value should
+   * be a valid reference to a child of the root `defs`.
+   *
+   * For example, the following schema defines a reference to a schema node
+   * named "Pet":
+   *
+   * type: object
+   * properties:
+   *   pet:
+   *     ref: #/defs/Pet
+   * defs:
+   *   Pet:
+   *     type: object
+   *     properties:
+   *       name:
+   *         type: string
+   *
+   * The value of the "pet" property is a reference to the schema node
+   * named "Pet".
+   * See details in
+   * https://json-schema.org/understanding-json-schema/structuring
+   * </pre>
+   *
+   * <code>string ref = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ref.
+   */
+  java.lang.String getRef();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Allows indirect references between schema nodes. The value should
+   * be a valid reference to a child of the root `defs`.
+   *
+   * For example, the following schema defines a reference to a schema node
+   * named "Pet":
+   *
+   * type: object
+   * properties:
+   *   pet:
+   *     ref: #/defs/Pet
+   * defs:
+   *   Pet:
+   *     type: object
+   *     properties:
+   *       name:
+   *         type: string
+   *
+   * The value of the "pet" property is a reference to the schema node
+   * named "Pet".
+   * See details in
+   * https://json-schema.org/understanding-json-schema/structuring
+   * </pre>
+   *
+   * <code>string ref = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for ref.
+   */
+  com.google.protobuf.ByteString getRefBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A map of definitions for use by `ref`
+   * Only allowed at the root of the schema.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getDefsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A map of definitions for use by `ref`
+   * Only allowed at the root of the schema.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsDefs(java.lang.String key);
+
+  /** Use {@link #getDefsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema> getDefs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A map of definitions for use by `ref`
+   * Only allowed at the root of the schema.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema> getDefsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A map of definitions for use by `ref`
+   * Only allowed at the root of the schema.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.aiplatform.v1beta1.Schema getDefsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.aiplatform.v1beta1.Schema defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A map of definitions for use by `ref`
+   * Only allowed at the root of the schema.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Schema getDefsOrThrow(java.lang.String key);
 }

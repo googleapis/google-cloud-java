@@ -16,6 +16,8 @@
 
 package com.google.cloud.memorystore.v1;
 
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupCollectionsPagedResponse;
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListInstancesPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListLocationsPagedResponse;
 
@@ -166,6 +168,77 @@ public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
   public UnaryCallSettings<GetCertificateAuthorityRequest, CertificateAuthority>
       getCertificateAuthoritySettings() {
     return ((MemorystoreStubSettings) getStubSettings()).getCertificateAuthoritySettings();
+  }
+
+  /** Returns the object with the settings used for calls to rescheduleMaintenance. */
+  public UnaryCallSettings<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).rescheduleMaintenanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rescheduleMaintenance. */
+  public OperationCallSettings<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).rescheduleMaintenanceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBackupCollections. */
+  public PagedCallSettings<
+          ListBackupCollectionsRequest,
+          ListBackupCollectionsResponse,
+          ListBackupCollectionsPagedResponse>
+      listBackupCollectionsSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).listBackupCollectionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBackupCollection. */
+  public UnaryCallSettings<GetBackupCollectionRequest, BackupCollection>
+      getBackupCollectionSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).getBackupCollectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBackups. */
+  public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).listBackupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBackup. */
+  public UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).getBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public UnaryCallSettings<DeleteBackupRequest, Operation> deleteBackupSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).deleteBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public OperationCallSettings<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).deleteBackupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportBackup. */
+  public UnaryCallSettings<ExportBackupRequest, Operation> exportBackupSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).exportBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportBackup. */
+  public OperationCallSettings<ExportBackupRequest, Backup, OperationMetadata>
+      exportBackupOperationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).exportBackupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to backupInstance. */
+  public UnaryCallSettings<BackupInstanceRequest, Operation> backupInstanceSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).backupInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to backupInstance. */
+  public OperationCallSettings<BackupInstanceRequest, Instance, OperationMetadata>
+      backupInstanceOperationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).backupInstanceOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -324,6 +397,78 @@ public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
     public UnaryCallSettings.Builder<GetCertificateAuthorityRequest, CertificateAuthority>
         getCertificateAuthoritySettings() {
       return getStubSettingsBuilder().getCertificateAuthoritySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rescheduleMaintenance. */
+    public UnaryCallSettings.Builder<RescheduleMaintenanceRequest, Operation>
+        rescheduleMaintenanceSettings() {
+      return getStubSettingsBuilder().rescheduleMaintenanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rescheduleMaintenance. */
+    public OperationCallSettings.Builder<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+        rescheduleMaintenanceOperationSettings() {
+      return getStubSettingsBuilder().rescheduleMaintenanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupCollections. */
+    public PagedCallSettings.Builder<
+            ListBackupCollectionsRequest,
+            ListBackupCollectionsResponse,
+            ListBackupCollectionsPagedResponse>
+        listBackupCollectionsSettings() {
+      return getStubSettingsBuilder().listBackupCollectionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBackupCollection. */
+    public UnaryCallSettings.Builder<GetBackupCollectionRequest, BackupCollection>
+        getBackupCollectionSettings() {
+      return getStubSettingsBuilder().getBackupCollectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBackups. */
+    public PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings() {
+      return getStubSettingsBuilder().listBackupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBackup. */
+    public UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings() {
+      return getStubSettingsBuilder().getBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public UnaryCallSettings.Builder<DeleteBackupRequest, Operation> deleteBackupSettings() {
+      return getStubSettingsBuilder().deleteBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
+        deleteBackupOperationSettings() {
+      return getStubSettingsBuilder().deleteBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportBackup. */
+    public UnaryCallSettings.Builder<ExportBackupRequest, Operation> exportBackupSettings() {
+      return getStubSettingsBuilder().exportBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportBackup. */
+    public OperationCallSettings.Builder<ExportBackupRequest, Backup, OperationMetadata>
+        exportBackupOperationSettings() {
+      return getStubSettingsBuilder().exportBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to backupInstance. */
+    public UnaryCallSettings.Builder<BackupInstanceRequest, Operation> backupInstanceSettings() {
+      return getStubSettingsBuilder().backupInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to backupInstance. */
+    public OperationCallSettings.Builder<BackupInstanceRequest, Instance, OperationMetadata>
+        backupInstanceOperationSettings() {
+      return getStubSettingsBuilder().backupInstanceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

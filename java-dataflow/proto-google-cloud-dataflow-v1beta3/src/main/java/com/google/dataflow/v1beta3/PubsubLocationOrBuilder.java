@@ -189,4 +189,17 @@ public interface PubsubLocationOrBuilder
    * @return The withAttributes.
    */
   boolean getWithAttributes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, then this location represents dynamic topics.
+   * </pre>
+   *
+   * <code>bool dynamic_destinations = 8;</code>
+   *
+   * @return The dynamicDestinations.
+   */
+  boolean getDynamicDestinations();
 }

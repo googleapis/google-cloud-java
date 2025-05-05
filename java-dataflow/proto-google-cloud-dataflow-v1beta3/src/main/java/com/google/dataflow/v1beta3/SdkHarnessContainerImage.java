@@ -23,7 +23,7 @@ package com.google.dataflow.v1beta3;
  *
  *
  * <pre>
- * Defines a SDK harness container for executing Dataflow pipelines.
+ * Defines an SDK harness container for executing Dataflow pipelines.
  * </pre>
  *
  * Protobuf type {@code google.dataflow.v1beta3.SdkHarnessContainerImage}
@@ -208,7 +208,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
    *
    * <pre>
    * The set of capabilities enumerated in the above Environment proto. See also
-   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
    * </pre>
    *
    * <code>repeated string capabilities = 4;</code>
@@ -224,7 +224,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
    *
    * <pre>
    * The set of capabilities enumerated in the above Environment proto. See also
-   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
    * </pre>
    *
    * <code>repeated string capabilities = 4;</code>
@@ -240,7 +240,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
    *
    * <pre>
    * The set of capabilities enumerated in the above Environment proto. See also
-   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
    * </pre>
    *
    * <code>repeated string capabilities = 4;</code>
@@ -257,7 +257,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
    *
    * <pre>
    * The set of capabilities enumerated in the above Environment proto. See also
-   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
    * </pre>
    *
    * <code>repeated string capabilities = 4;</code>
@@ -467,7 +467,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Defines a SDK harness container for executing Dataflow pipelines.
+   * Defines an SDK harness container for executing Dataflow pipelines.
    * </pre>
    *
    * Protobuf type {@code google.dataflow.v1beta3.SdkHarnessContainerImage}
@@ -1006,7 +1006,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
      *
      * <pre>
      * The set of capabilities enumerated in the above Environment proto. See also
-     * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+     * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
      * </pre>
      *
      * <code>repeated string capabilities = 4;</code>
@@ -1023,7 +1023,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
      *
      * <pre>
      * The set of capabilities enumerated in the above Environment proto. See also
-     * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+     * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
      * </pre>
      *
      * <code>repeated string capabilities = 4;</code>
@@ -1039,7 +1039,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
      *
      * <pre>
      * The set of capabilities enumerated in the above Environment proto. See also
-     * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+     * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
      * </pre>
      *
      * <code>repeated string capabilities = 4;</code>
@@ -1056,7 +1056,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
      *
      * <pre>
      * The set of capabilities enumerated in the above Environment proto. See also
-     * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+     * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
      * </pre>
      *
      * <code>repeated string capabilities = 4;</code>
@@ -1073,7 +1073,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
      *
      * <pre>
      * The set of capabilities enumerated in the above Environment proto. See also
-     * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+     * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
      * </pre>
      *
      * <code>repeated string capabilities = 4;</code>
@@ -1098,7 +1098,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
      *
      * <pre>
      * The set of capabilities enumerated in the above Environment proto. See also
-     * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+     * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
      * </pre>
      *
      * <code>repeated string capabilities = 4;</code>
@@ -1122,7 +1122,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
      *
      * <pre>
      * The set of capabilities enumerated in the above Environment proto. See also
-     * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+     * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
      * </pre>
      *
      * <code>repeated string capabilities = 4;</code>
@@ -1143,7 +1143,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
      *
      * <pre>
      * The set of capabilities enumerated in the above Environment proto. See also
-     * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+     * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
      * </pre>
      *
      * <code>repeated string capabilities = 4;</code>
@@ -1163,7 +1163,7 @@ public final class SdkHarnessContainerImage extends com.google.protobuf.Generate
      *
      * <pre>
      * The set of capabilities enumerated in the above Environment proto. See also
-     * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+     * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
      * </pre>
      *
      * <code>repeated string capabilities = 4;</code>

@@ -45,6 +45,11 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     helpText_ = "";
     regexes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     paramType_ = 0;
+    groupName_ = "";
+    parentName_ = "";
+    parentTriggerValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    enumOptions_ = java.util.Collections.emptyList();
+    defaultValue_ = "";
   }
 
   @java.lang.Override
@@ -474,6 +479,358 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     return map.get(key);
   }
 
+  public static final int GROUP_NAME_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object groupName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a group name for this parameter to be rendered under.
+   * Group header text will be rendered exactly as specified in this field. Only
+   * considered when parent_name is NOT provided.
+   * </pre>
+   *
+   * <code>string group_name = 8;</code>
+   *
+   * @return The groupName.
+   */
+  @java.lang.Override
+  public java.lang.String getGroupName() {
+    java.lang.Object ref = groupName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      groupName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a group name for this parameter to be rendered under.
+   * Group header text will be rendered exactly as specified in this field. Only
+   * considered when parent_name is NOT provided.
+   * </pre>
+   *
+   * <code>string group_name = 8;</code>
+   *
+   * @return The bytes for groupName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getGroupNameBytes() {
+    java.lang.Object ref = groupName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      groupName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PARENT_NAME_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parentName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the name of the parent parameter. Used in conjunction
+   * with 'parent_trigger_values' to make this parameter conditional (will only
+   * be rendered conditionally). Should be mappable to a ParameterMetadata.name
+   * field.
+   * </pre>
+   *
+   * <code>string parent_name = 9;</code>
+   *
+   * @return The parentName.
+   */
+  @java.lang.Override
+  public java.lang.String getParentName() {
+    java.lang.Object ref = parentName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parentName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the name of the parent parameter. Used in conjunction
+   * with 'parent_trigger_values' to make this parameter conditional (will only
+   * be rendered conditionally). Should be mappable to a ParameterMetadata.name
+   * field.
+   * </pre>
+   *
+   * <code>string parent_name = 9;</code>
+   *
+   * @return The bytes for parentName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getParentNameBytes() {
+    java.lang.Object ref = parentName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      parentName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PARENT_TRIGGER_VALUES_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList parentTriggerValues_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value(s) of the 'parent_name' parameter which will trigger
+   * this parameter to be shown. If left empty, ANY non-empty value in
+   * parent_name will trigger this parameter to be shown. Only considered when
+   * this parameter is conditional (when 'parent_name' has been provided).
+   * </pre>
+   *
+   * <code>repeated string parent_trigger_values = 10;</code>
+   *
+   * @return A list containing the parentTriggerValues.
+   */
+  public com.google.protobuf.ProtocolStringList getParentTriggerValuesList() {
+    return parentTriggerValues_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value(s) of the 'parent_name' parameter which will trigger
+   * this parameter to be shown. If left empty, ANY non-empty value in
+   * parent_name will trigger this parameter to be shown. Only considered when
+   * this parameter is conditional (when 'parent_name' has been provided).
+   * </pre>
+   *
+   * <code>repeated string parent_trigger_values = 10;</code>
+   *
+   * @return The count of parentTriggerValues.
+   */
+  public int getParentTriggerValuesCount() {
+    return parentTriggerValues_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value(s) of the 'parent_name' parameter which will trigger
+   * this parameter to be shown. If left empty, ANY non-empty value in
+   * parent_name will trigger this parameter to be shown. Only considered when
+   * this parameter is conditional (when 'parent_name' has been provided).
+   * </pre>
+   *
+   * <code>repeated string parent_trigger_values = 10;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The parentTriggerValues at the given index.
+   */
+  public java.lang.String getParentTriggerValues(int index) {
+    return parentTriggerValues_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The value(s) of the 'parent_name' parameter which will trigger
+   * this parameter to be shown. If left empty, ANY non-empty value in
+   * parent_name will trigger this parameter to be shown. Only considered when
+   * this parameter is conditional (when 'parent_name' has been provided).
+   * </pre>
+   *
+   * <code>repeated string parent_trigger_values = 10;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the parentTriggerValues at the given index.
+   */
+  public com.google.protobuf.ByteString getParentTriggerValuesBytes(int index) {
+    return parentTriggerValues_.getByteString(index);
+  }
+
+  public static final int ENUM_OPTIONS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.dataflow.v1beta3.ParameterMetadataEnumOption> enumOptions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The options shown when ENUM ParameterType is specified.
+   * </pre>
+   *
+   * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.dataflow.v1beta3.ParameterMetadataEnumOption>
+      getEnumOptionsList() {
+    return enumOptions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The options shown when ENUM ParameterType is specified.
+   * </pre>
+   *
+   * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.dataflow.v1beta3.ParameterMetadataEnumOptionOrBuilder>
+      getEnumOptionsOrBuilderList() {
+    return enumOptions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The options shown when ENUM ParameterType is specified.
+   * </pre>
+   *
+   * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+   */
+  @java.lang.Override
+  public int getEnumOptionsCount() {
+    return enumOptions_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The options shown when ENUM ParameterType is specified.
+   * </pre>
+   *
+   * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.dataflow.v1beta3.ParameterMetadataEnumOption getEnumOptions(int index) {
+    return enumOptions_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The options shown when ENUM ParameterType is specified.
+   * </pre>
+   *
+   * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.dataflow.v1beta3.ParameterMetadataEnumOptionOrBuilder getEnumOptionsOrBuilder(
+      int index) {
+    return enumOptions_.get(index);
+  }
+
+  public static final int DEFAULT_VALUE_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object defaultValue_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default values will pre-populate the parameter with the
+   * given value from the proto. If default_value is left empty, the parameter
+   * will be populated with a default of the relevant type, e.g. false for a
+   * boolean.
+   * </pre>
+   *
+   * <code>string default_value = 12;</code>
+   *
+   * @return The defaultValue.
+   */
+  @java.lang.Override
+  public java.lang.String getDefaultValue() {
+    java.lang.Object ref = defaultValue_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      defaultValue_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default values will pre-populate the parameter with the
+   * given value from the proto. If default_value is left empty, the parameter
+   * will be populated with a default of the relevant type, e.g. false for a
+   * boolean.
+   * </pre>
+   *
+   * <code>string default_value = 12;</code>
+   *
+   * @return The bytes for defaultValue.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDefaultValueBytes() {
+    java.lang.Object ref = defaultValue_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      defaultValue_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int HIDDEN_UI_FIELD_NUMBER = 13;
+  private boolean hiddenUi_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the parameter should be hidden in the UI.
+   * </pre>
+   *
+   * <code>bool hidden_ui = 13;</code>
+   *
+   * @return The hiddenUi.
+   */
+  @java.lang.Override
+  public boolean getHiddenUi() {
+    return hiddenUi_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -508,6 +865,25 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetCustomMetadata(), CustomMetadataDefaultEntryHolder.defaultEntry, 7);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, groupName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, parentName_);
+    }
+    for (int i = 0; i < parentTriggerValues_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 10, parentTriggerValues_.getRaw(i));
+    }
+    for (int i = 0; i < enumOptions_.size(); i++) {
+      output.writeMessage(11, enumOptions_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultValue_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, defaultValue_);
+    }
+    if (hiddenUi_ != false) {
+      output.writeBool(13, hiddenUi_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -550,6 +926,29 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, customMetadata__);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, groupName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, parentName_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < parentTriggerValues_.size(); i++) {
+        dataSize += computeStringSizeNoTag(parentTriggerValues_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getParentTriggerValuesList().size();
+    }
+    for (int i = 0; i < enumOptions_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, enumOptions_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultValue_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, defaultValue_);
+    }
+    if (hiddenUi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, hiddenUi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -573,6 +972,12 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     if (!getRegexesList().equals(other.getRegexesList())) return false;
     if (paramType_ != other.paramType_) return false;
     if (!internalGetCustomMetadata().equals(other.internalGetCustomMetadata())) return false;
+    if (!getGroupName().equals(other.getGroupName())) return false;
+    if (!getParentName().equals(other.getParentName())) return false;
+    if (!getParentTriggerValuesList().equals(other.getParentTriggerValuesList())) return false;
+    if (!getEnumOptionsList().equals(other.getEnumOptionsList())) return false;
+    if (!getDefaultValue().equals(other.getDefaultValue())) return false;
+    if (getHiddenUi() != other.getHiddenUi()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -602,6 +1007,22 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + CUSTOM_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + internalGetCustomMetadata().hashCode();
     }
+    hash = (37 * hash) + GROUP_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getGroupName().hashCode();
+    hash = (37 * hash) + PARENT_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getParentName().hashCode();
+    if (getParentTriggerValuesCount() > 0) {
+      hash = (37 * hash) + PARENT_TRIGGER_VALUES_FIELD_NUMBER;
+      hash = (53 * hash) + getParentTriggerValuesList().hashCode();
+    }
+    if (getEnumOptionsCount() > 0) {
+      hash = (37 * hash) + ENUM_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getEnumOptionsList().hashCode();
+    }
+    hash = (37 * hash) + DEFAULT_VALUE_FIELD_NUMBER;
+    hash = (53 * hash) + getDefaultValue().hashCode();
+    hash = (37 * hash) + HIDDEN_UI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHiddenUi());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -771,6 +1192,18 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       regexes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       paramType_ = 0;
       internalGetMutableCustomMetadata().clear();
+      groupName_ = "";
+      parentName_ = "";
+      parentTriggerValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      if (enumOptionsBuilder_ == null) {
+        enumOptions_ = java.util.Collections.emptyList();
+      } else {
+        enumOptions_ = null;
+        enumOptionsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000400);
+      defaultValue_ = "";
+      hiddenUi_ = false;
       return this;
     }
 
@@ -798,11 +1231,24 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.dataflow.v1beta3.ParameterMetadata buildPartial() {
       com.google.dataflow.v1beta3.ParameterMetadata result =
           new com.google.dataflow.v1beta3.ParameterMetadata(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.dataflow.v1beta3.ParameterMetadata result) {
+      if (enumOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)) {
+          enumOptions_ = java.util.Collections.unmodifiableList(enumOptions_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.enumOptions_ = enumOptions_;
+      } else {
+        result.enumOptions_ = enumOptionsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.dataflow.v1beta3.ParameterMetadata result) {
@@ -829,6 +1275,22 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.customMetadata_ = internalGetCustomMetadata();
         result.customMetadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.groupName_ = groupName_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.parentName_ = parentName_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        parentTriggerValues_.makeImmutable();
+        result.parentTriggerValues_ = parentTriggerValues_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.defaultValue_ = defaultValue_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.hiddenUi_ = hiddenUi_;
       }
     }
 
@@ -910,6 +1372,61 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
       }
       internalGetMutableCustomMetadata().mergeFrom(other.internalGetCustomMetadata());
       bitField0_ |= 0x00000040;
+      if (!other.getGroupName().isEmpty()) {
+        groupName_ = other.groupName_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (!other.getParentName().isEmpty()) {
+        parentName_ = other.parentName_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      if (!other.parentTriggerValues_.isEmpty()) {
+        if (parentTriggerValues_.isEmpty()) {
+          parentTriggerValues_ = other.parentTriggerValues_;
+          bitField0_ |= 0x00000200;
+        } else {
+          ensureParentTriggerValuesIsMutable();
+          parentTriggerValues_.addAll(other.parentTriggerValues_);
+        }
+        onChanged();
+      }
+      if (enumOptionsBuilder_ == null) {
+        if (!other.enumOptions_.isEmpty()) {
+          if (enumOptions_.isEmpty()) {
+            enumOptions_ = other.enumOptions_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureEnumOptionsIsMutable();
+            enumOptions_.addAll(other.enumOptions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.enumOptions_.isEmpty()) {
+          if (enumOptionsBuilder_.isEmpty()) {
+            enumOptionsBuilder_.dispose();
+            enumOptionsBuilder_ = null;
+            enumOptions_ = other.enumOptions_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            enumOptionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getEnumOptionsFieldBuilder()
+                    : null;
+          } else {
+            enumOptionsBuilder_.addAllMessages(other.enumOptions_);
+          }
+        }
+      }
+      if (!other.getDefaultValue().isEmpty()) {
+        defaultValue_ = other.defaultValue_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      if (other.getHiddenUi() != false) {
+        setHiddenUi(other.getHiddenUi());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -985,6 +1502,51 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                groupName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+            case 74:
+              {
+                parentName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+            case 82:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureParentTriggerValuesIsMutable();
+                parentTriggerValues_.add(s);
+                break;
+              } // case 82
+            case 90:
+              {
+                com.google.dataflow.v1beta3.ParameterMetadataEnumOption m =
+                    input.readMessage(
+                        com.google.dataflow.v1beta3.ParameterMetadataEnumOption.parser(),
+                        extensionRegistry);
+                if (enumOptionsBuilder_ == null) {
+                  ensureEnumOptionsIsMutable();
+                  enumOptions_.add(m);
+                } else {
+                  enumOptionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+            case 98:
+              {
+                defaultValue_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
+            case 104:
+              {
+                hiddenUi_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 104
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1848,6 +2410,1025 @@ public final class ParameterMetadata extends com.google.protobuf.GeneratedMessag
     public Builder putAllCustomMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableCustomMetadata().getMutableMap().putAll(values);
       bitField0_ |= 0x00000040;
+      return this;
+    }
+
+    private java.lang.Object groupName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a group name for this parameter to be rendered under.
+     * Group header text will be rendered exactly as specified in this field. Only
+     * considered when parent_name is NOT provided.
+     * </pre>
+     *
+     * <code>string group_name = 8;</code>
+     *
+     * @return The groupName.
+     */
+    public java.lang.String getGroupName() {
+      java.lang.Object ref = groupName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        groupName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a group name for this parameter to be rendered under.
+     * Group header text will be rendered exactly as specified in this field. Only
+     * considered when parent_name is NOT provided.
+     * </pre>
+     *
+     * <code>string group_name = 8;</code>
+     *
+     * @return The bytes for groupName.
+     */
+    public com.google.protobuf.ByteString getGroupNameBytes() {
+      java.lang.Object ref = groupName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        groupName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a group name for this parameter to be rendered under.
+     * Group header text will be rendered exactly as specified in this field. Only
+     * considered when parent_name is NOT provided.
+     * </pre>
+     *
+     * <code>string group_name = 8;</code>
+     *
+     * @param value The groupName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGroupName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      groupName_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a group name for this parameter to be rendered under.
+     * Group header text will be rendered exactly as specified in this field. Only
+     * considered when parent_name is NOT provided.
+     * </pre>
+     *
+     * <code>string group_name = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGroupName() {
+      groupName_ = getDefaultInstance().getGroupName();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a group name for this parameter to be rendered under.
+     * Group header text will be rendered exactly as specified in this field. Only
+     * considered when parent_name is NOT provided.
+     * </pre>
+     *
+     * <code>string group_name = 8;</code>
+     *
+     * @param value The bytes for groupName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGroupNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      groupName_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object parentName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the name of the parent parameter. Used in conjunction
+     * with 'parent_trigger_values' to make this parameter conditional (will only
+     * be rendered conditionally). Should be mappable to a ParameterMetadata.name
+     * field.
+     * </pre>
+     *
+     * <code>string parent_name = 9;</code>
+     *
+     * @return The parentName.
+     */
+    public java.lang.String getParentName() {
+      java.lang.Object ref = parentName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parentName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the name of the parent parameter. Used in conjunction
+     * with 'parent_trigger_values' to make this parameter conditional (will only
+     * be rendered conditionally). Should be mappable to a ParameterMetadata.name
+     * field.
+     * </pre>
+     *
+     * <code>string parent_name = 9;</code>
+     *
+     * @return The bytes for parentName.
+     */
+    public com.google.protobuf.ByteString getParentNameBytes() {
+      java.lang.Object ref = parentName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        parentName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the name of the parent parameter. Used in conjunction
+     * with 'parent_trigger_values' to make this parameter conditional (will only
+     * be rendered conditionally). Should be mappable to a ParameterMetadata.name
+     * field.
+     * </pre>
+     *
+     * <code>string parent_name = 9;</code>
+     *
+     * @param value The parentName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      parentName_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the name of the parent parameter. Used in conjunction
+     * with 'parent_trigger_values' to make this parameter conditional (will only
+     * be rendered conditionally). Should be mappable to a ParameterMetadata.name
+     * field.
+     * </pre>
+     *
+     * <code>string parent_name = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearParentName() {
+      parentName_ = getDefaultInstance().getParentName();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the name of the parent parameter. Used in conjunction
+     * with 'parent_trigger_values' to make this parameter conditional (will only
+     * be rendered conditionally). Should be mappable to a ParameterMetadata.name
+     * field.
+     * </pre>
+     *
+     * <code>string parent_name = 9;</code>
+     *
+     * @param value The bytes for parentName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      parentName_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList parentTriggerValues_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureParentTriggerValuesIsMutable() {
+      if (!parentTriggerValues_.isModifiable()) {
+        parentTriggerValues_ = new com.google.protobuf.LazyStringArrayList(parentTriggerValues_);
+      }
+      bitField0_ |= 0x00000200;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value(s) of the 'parent_name' parameter which will trigger
+     * this parameter to be shown. If left empty, ANY non-empty value in
+     * parent_name will trigger this parameter to be shown. Only considered when
+     * this parameter is conditional (when 'parent_name' has been provided).
+     * </pre>
+     *
+     * <code>repeated string parent_trigger_values = 10;</code>
+     *
+     * @return A list containing the parentTriggerValues.
+     */
+    public com.google.protobuf.ProtocolStringList getParentTriggerValuesList() {
+      parentTriggerValues_.makeImmutable();
+      return parentTriggerValues_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value(s) of the 'parent_name' parameter which will trigger
+     * this parameter to be shown. If left empty, ANY non-empty value in
+     * parent_name will trigger this parameter to be shown. Only considered when
+     * this parameter is conditional (when 'parent_name' has been provided).
+     * </pre>
+     *
+     * <code>repeated string parent_trigger_values = 10;</code>
+     *
+     * @return The count of parentTriggerValues.
+     */
+    public int getParentTriggerValuesCount() {
+      return parentTriggerValues_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value(s) of the 'parent_name' parameter which will trigger
+     * this parameter to be shown. If left empty, ANY non-empty value in
+     * parent_name will trigger this parameter to be shown. Only considered when
+     * this parameter is conditional (when 'parent_name' has been provided).
+     * </pre>
+     *
+     * <code>repeated string parent_trigger_values = 10;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The parentTriggerValues at the given index.
+     */
+    public java.lang.String getParentTriggerValues(int index) {
+      return parentTriggerValues_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value(s) of the 'parent_name' parameter which will trigger
+     * this parameter to be shown. If left empty, ANY non-empty value in
+     * parent_name will trigger this parameter to be shown. Only considered when
+     * this parameter is conditional (when 'parent_name' has been provided).
+     * </pre>
+     *
+     * <code>repeated string parent_trigger_values = 10;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the parentTriggerValues at the given index.
+     */
+    public com.google.protobuf.ByteString getParentTriggerValuesBytes(int index) {
+      return parentTriggerValues_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value(s) of the 'parent_name' parameter which will trigger
+     * this parameter to be shown. If left empty, ANY non-empty value in
+     * parent_name will trigger this parameter to be shown. Only considered when
+     * this parameter is conditional (when 'parent_name' has been provided).
+     * </pre>
+     *
+     * <code>repeated string parent_trigger_values = 10;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The parentTriggerValues to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentTriggerValues(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureParentTriggerValuesIsMutable();
+      parentTriggerValues_.set(index, value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value(s) of the 'parent_name' parameter which will trigger
+     * this parameter to be shown. If left empty, ANY non-empty value in
+     * parent_name will trigger this parameter to be shown. Only considered when
+     * this parameter is conditional (when 'parent_name' has been provided).
+     * </pre>
+     *
+     * <code>repeated string parent_trigger_values = 10;</code>
+     *
+     * @param value The parentTriggerValues to add.
+     * @return This builder for chaining.
+     */
+    public Builder addParentTriggerValues(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureParentTriggerValuesIsMutable();
+      parentTriggerValues_.add(value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value(s) of the 'parent_name' parameter which will trigger
+     * this parameter to be shown. If left empty, ANY non-empty value in
+     * parent_name will trigger this parameter to be shown. Only considered when
+     * this parameter is conditional (when 'parent_name' has been provided).
+     * </pre>
+     *
+     * <code>repeated string parent_trigger_values = 10;</code>
+     *
+     * @param values The parentTriggerValues to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllParentTriggerValues(java.lang.Iterable<java.lang.String> values) {
+      ensureParentTriggerValuesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, parentTriggerValues_);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value(s) of the 'parent_name' parameter which will trigger
+     * this parameter to be shown. If left empty, ANY non-empty value in
+     * parent_name will trigger this parameter to be shown. Only considered when
+     * this parameter is conditional (when 'parent_name' has been provided).
+     * </pre>
+     *
+     * <code>repeated string parent_trigger_values = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearParentTriggerValues() {
+      parentTriggerValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The value(s) of the 'parent_name' parameter which will trigger
+     * this parameter to be shown. If left empty, ANY non-empty value in
+     * parent_name will trigger this parameter to be shown. Only considered when
+     * this parameter is conditional (when 'parent_name' has been provided).
+     * </pre>
+     *
+     * <code>repeated string parent_trigger_values = 10;</code>
+     *
+     * @param value The bytes of the parentTriggerValues to add.
+     * @return This builder for chaining.
+     */
+    public Builder addParentTriggerValuesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureParentTriggerValuesIsMutable();
+      parentTriggerValues_.add(value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.dataflow.v1beta3.ParameterMetadataEnumOption> enumOptions_ =
+        java.util.Collections.emptyList();
+
+    private void ensureEnumOptionsIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        enumOptions_ =
+            new java.util.ArrayList<com.google.dataflow.v1beta3.ParameterMetadataEnumOption>(
+                enumOptions_);
+        bitField0_ |= 0x00000400;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.dataflow.v1beta3.ParameterMetadataEnumOption,
+            com.google.dataflow.v1beta3.ParameterMetadataEnumOption.Builder,
+            com.google.dataflow.v1beta3.ParameterMetadataEnumOptionOrBuilder>
+        enumOptionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options shown when ENUM ParameterType is specified.
+     * </pre>
+     *
+     * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+     */
+    public java.util.List<com.google.dataflow.v1beta3.ParameterMetadataEnumOption>
+        getEnumOptionsList() {
+      if (enumOptionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(enumOptions_);
+      } else {
+        return enumOptionsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options shown when ENUM ParameterType is specified.
+     * </pre>
+     *
+     * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+     */
+    public int getEnumOptionsCount() {
+      if (enumOptionsBuilder_ == null) {
+        return enumOptions_.size();
+      } else {
+        return enumOptionsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options shown when ENUM ParameterType is specified.
+     * </pre>
+     *
+     * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+     */
+    public com.google.dataflow.v1beta3.ParameterMetadataEnumOption getEnumOptions(int index) {
+      if (enumOptionsBuilder_ == null) {
+        return enumOptions_.get(index);
+      } else {
+        return enumOptionsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options shown when ENUM ParameterType is specified.
+     * </pre>
+     *
+     * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+     */
+    public Builder setEnumOptions(
+        int index, com.google.dataflow.v1beta3.ParameterMetadataEnumOption value) {
+      if (enumOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEnumOptionsIsMutable();
+        enumOptions_.set(index, value);
+        onChanged();
+      } else {
+        enumOptionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options shown when ENUM ParameterType is specified.
+     * </pre>
+     *
+     * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+     */
+    public Builder setEnumOptions(
+        int index,
+        com.google.dataflow.v1beta3.ParameterMetadataEnumOption.Builder builderForValue) {
+      if (enumOptionsBuilder_ == null) {
+        ensureEnumOptionsIsMutable();
+        enumOptions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        enumOptionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options shown when ENUM ParameterType is specified.
+     * </pre>
+     *
+     * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+     */
+    public Builder addEnumOptions(com.google.dataflow.v1beta3.ParameterMetadataEnumOption value) {
+      if (enumOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEnumOptionsIsMutable();
+        enumOptions_.add(value);
+        onChanged();
+      } else {
+        enumOptionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options shown when ENUM ParameterType is specified.
+     * </pre>
+     *
+     * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+     */
+    public Builder addEnumOptions(
+        int index, com.google.dataflow.v1beta3.ParameterMetadataEnumOption value) {
+      if (enumOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEnumOptionsIsMutable();
+        enumOptions_.add(index, value);
+        onChanged();
+      } else {
+        enumOptionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options shown when ENUM ParameterType is specified.
+     * </pre>
+     *
+     * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+     */
+    public Builder addEnumOptions(
+        com.google.dataflow.v1beta3.ParameterMetadataEnumOption.Builder builderForValue) {
+      if (enumOptionsBuilder_ == null) {
+        ensureEnumOptionsIsMutable();
+        enumOptions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        enumOptionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options shown when ENUM ParameterType is specified.
+     * </pre>
+     *
+     * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+     */
+    public Builder addEnumOptions(
+        int index,
+        com.google.dataflow.v1beta3.ParameterMetadataEnumOption.Builder builderForValue) {
+      if (enumOptionsBuilder_ == null) {
+        ensureEnumOptionsIsMutable();
+        enumOptions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        enumOptionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options shown when ENUM ParameterType is specified.
+     * </pre>
+     *
+     * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+     */
+    public Builder addAllEnumOptions(
+        java.lang.Iterable<? extends com.google.dataflow.v1beta3.ParameterMetadataEnumOption>
+            values) {
+      if (enumOptionsBuilder_ == null) {
+        ensureEnumOptionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, enumOptions_);
+        onChanged();
+      } else {
+        enumOptionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options shown when ENUM ParameterType is specified.
+     * </pre>
+     *
+     * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+     */
+    public Builder clearEnumOptions() {
+      if (enumOptionsBuilder_ == null) {
+        enumOptions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        enumOptionsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options shown when ENUM ParameterType is specified.
+     * </pre>
+     *
+     * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+     */
+    public Builder removeEnumOptions(int index) {
+      if (enumOptionsBuilder_ == null) {
+        ensureEnumOptionsIsMutable();
+        enumOptions_.remove(index);
+        onChanged();
+      } else {
+        enumOptionsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options shown when ENUM ParameterType is specified.
+     * </pre>
+     *
+     * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+     */
+    public com.google.dataflow.v1beta3.ParameterMetadataEnumOption.Builder getEnumOptionsBuilder(
+        int index) {
+      return getEnumOptionsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options shown when ENUM ParameterType is specified.
+     * </pre>
+     *
+     * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+     */
+    public com.google.dataflow.v1beta3.ParameterMetadataEnumOptionOrBuilder getEnumOptionsOrBuilder(
+        int index) {
+      if (enumOptionsBuilder_ == null) {
+        return enumOptions_.get(index);
+      } else {
+        return enumOptionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options shown when ENUM ParameterType is specified.
+     * </pre>
+     *
+     * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+     */
+    public java.util.List<
+            ? extends com.google.dataflow.v1beta3.ParameterMetadataEnumOptionOrBuilder>
+        getEnumOptionsOrBuilderList() {
+      if (enumOptionsBuilder_ != null) {
+        return enumOptionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(enumOptions_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options shown when ENUM ParameterType is specified.
+     * </pre>
+     *
+     * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+     */
+    public com.google.dataflow.v1beta3.ParameterMetadataEnumOption.Builder addEnumOptionsBuilder() {
+      return getEnumOptionsFieldBuilder()
+          .addBuilder(com.google.dataflow.v1beta3.ParameterMetadataEnumOption.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options shown when ENUM ParameterType is specified.
+     * </pre>
+     *
+     * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+     */
+    public com.google.dataflow.v1beta3.ParameterMetadataEnumOption.Builder addEnumOptionsBuilder(
+        int index) {
+      return getEnumOptionsFieldBuilder()
+          .addBuilder(
+              index, com.google.dataflow.v1beta3.ParameterMetadataEnumOption.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options shown when ENUM ParameterType is specified.
+     * </pre>
+     *
+     * <code>repeated .google.dataflow.v1beta3.ParameterMetadataEnumOption enum_options = 11;</code>
+     */
+    public java.util.List<com.google.dataflow.v1beta3.ParameterMetadataEnumOption.Builder>
+        getEnumOptionsBuilderList() {
+      return getEnumOptionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.dataflow.v1beta3.ParameterMetadataEnumOption,
+            com.google.dataflow.v1beta3.ParameterMetadataEnumOption.Builder,
+            com.google.dataflow.v1beta3.ParameterMetadataEnumOptionOrBuilder>
+        getEnumOptionsFieldBuilder() {
+      if (enumOptionsBuilder_ == null) {
+        enumOptionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.dataflow.v1beta3.ParameterMetadataEnumOption,
+                com.google.dataflow.v1beta3.ParameterMetadataEnumOption.Builder,
+                com.google.dataflow.v1beta3.ParameterMetadataEnumOptionOrBuilder>(
+                enumOptions_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+        enumOptions_ = null;
+      }
+      return enumOptionsBuilder_;
+    }
+
+    private java.lang.Object defaultValue_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default values will pre-populate the parameter with the
+     * given value from the proto. If default_value is left empty, the parameter
+     * will be populated with a default of the relevant type, e.g. false for a
+     * boolean.
+     * </pre>
+     *
+     * <code>string default_value = 12;</code>
+     *
+     * @return The defaultValue.
+     */
+    public java.lang.String getDefaultValue() {
+      java.lang.Object ref = defaultValue_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        defaultValue_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default values will pre-populate the parameter with the
+     * given value from the proto. If default_value is left empty, the parameter
+     * will be populated with a default of the relevant type, e.g. false for a
+     * boolean.
+     * </pre>
+     *
+     * <code>string default_value = 12;</code>
+     *
+     * @return The bytes for defaultValue.
+     */
+    public com.google.protobuf.ByteString getDefaultValueBytes() {
+      java.lang.Object ref = defaultValue_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        defaultValue_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default values will pre-populate the parameter with the
+     * given value from the proto. If default_value is left empty, the parameter
+     * will be populated with a default of the relevant type, e.g. false for a
+     * boolean.
+     * </pre>
+     *
+     * <code>string default_value = 12;</code>
+     *
+     * @param value The defaultValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultValue(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      defaultValue_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default values will pre-populate the parameter with the
+     * given value from the proto. If default_value is left empty, the parameter
+     * will be populated with a default of the relevant type, e.g. false for a
+     * boolean.
+     * </pre>
+     *
+     * <code>string default_value = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDefaultValue() {
+      defaultValue_ = getDefaultInstance().getDefaultValue();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default values will pre-populate the parameter with the
+     * given value from the proto. If default_value is left empty, the parameter
+     * will be populated with a default of the relevant type, e.g. false for a
+     * boolean.
+     * </pre>
+     *
+     * <code>string default_value = 12;</code>
+     *
+     * @param value The bytes for defaultValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultValueBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      defaultValue_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private boolean hiddenUi_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the parameter should be hidden in the UI.
+     * </pre>
+     *
+     * <code>bool hidden_ui = 13;</code>
+     *
+     * @return The hiddenUi.
+     */
+    @java.lang.Override
+    public boolean getHiddenUi() {
+      return hiddenUi_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the parameter should be hidden in the UI.
+     * </pre>
+     *
+     * <code>bool hidden_ui = 13;</code>
+     *
+     * @param value The hiddenUi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHiddenUi(boolean value) {
+
+      hiddenUi_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the parameter should be hidden in the UI.
+     * </pre>
+     *
+     * <code>bool hidden_ui = 13;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHiddenUi() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      hiddenUi_ = false;
+      onChanged();
       return this;
     }
 
