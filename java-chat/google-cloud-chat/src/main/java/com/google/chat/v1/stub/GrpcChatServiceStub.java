@@ -16,6 +16,7 @@
 
 package com.google.chat.v1.stub;
 
+import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
@@ -33,16 +34,20 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.chat.v1.Attachment;
 import com.google.chat.v1.CompleteImportSpaceRequest;
 import com.google.chat.v1.CompleteImportSpaceResponse;
+import com.google.chat.v1.CreateCustomEmojiRequest;
 import com.google.chat.v1.CreateMembershipRequest;
 import com.google.chat.v1.CreateMessageRequest;
 import com.google.chat.v1.CreateReactionRequest;
 import com.google.chat.v1.CreateSpaceRequest;
+import com.google.chat.v1.CustomEmoji;
+import com.google.chat.v1.DeleteCustomEmojiRequest;
 import com.google.chat.v1.DeleteMembershipRequest;
 import com.google.chat.v1.DeleteMessageRequest;
 import com.google.chat.v1.DeleteReactionRequest;
 import com.google.chat.v1.DeleteSpaceRequest;
 import com.google.chat.v1.FindDirectMessageRequest;
 import com.google.chat.v1.GetAttachmentRequest;
+import com.google.chat.v1.GetCustomEmojiRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
 import com.google.chat.v1.GetSpaceEventRequest;
@@ -50,6 +55,8 @@ import com.google.chat.v1.GetSpaceNotificationSettingRequest;
 import com.google.chat.v1.GetSpaceReadStateRequest;
 import com.google.chat.v1.GetSpaceRequest;
 import com.google.chat.v1.GetThreadReadStateRequest;
+import com.google.chat.v1.ListCustomEmojisRequest;
+import com.google.chat.v1.ListCustomEmojisResponse;
 import com.google.chat.v1.ListMembershipsRequest;
 import com.google.chat.v1.ListMembershipsResponse;
 import com.google.chat.v1.ListMessagesRequest;
@@ -323,6 +330,47 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateCustomEmojiRequest, CustomEmoji>
+      createCustomEmojiMethodDescriptor =
+          MethodDescriptor.<CreateCustomEmojiRequest, CustomEmoji>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/CreateCustomEmoji")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateCustomEmojiRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CustomEmoji.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetCustomEmojiRequest, CustomEmoji>
+      getCustomEmojiMethodDescriptor =
+          MethodDescriptor.<GetCustomEmojiRequest, CustomEmoji>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/GetCustomEmoji")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetCustomEmojiRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CustomEmoji.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListCustomEmojisRequest, ListCustomEmojisResponse>
+      listCustomEmojisMethodDescriptor =
+          MethodDescriptor.<ListCustomEmojisRequest, ListCustomEmojisResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/ListCustomEmojis")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListCustomEmojisRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListCustomEmojisResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteCustomEmojiRequest, Empty>
+      deleteCustomEmojiMethodDescriptor =
+          MethodDescriptor.<DeleteCustomEmojiRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/DeleteCustomEmoji")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteCustomEmojiRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetSpaceReadStateRequest, SpaceReadState>
       getSpaceReadStateMethodDescriptor =
           MethodDescriptor.<GetSpaceReadStateRequest, SpaceReadState>newBuilder()
@@ -436,6 +484,13 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   private final UnaryCallable<ListReactionsRequest, ListReactionsPagedResponse>
       listReactionsPagedCallable;
   private final UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable;
+  private final UnaryCallable<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiCallable;
+  private final UnaryCallable<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiCallable;
+  private final UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisResponse>
+      listCustomEmojisCallable;
+  private final UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisPagedResponse>
+      listCustomEmojisPagedCallable;
+  private final UnaryCallable<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiCallable;
   private final UnaryCallable<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateCallable;
   private final UnaryCallable<UpdateSpaceReadStateRequest, SpaceReadState>
       updateSpaceReadStateCallable;
@@ -706,6 +761,35 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiTransportSettings =
+        GrpcCallSettings.<CreateCustomEmojiRequest, CustomEmoji>newBuilder()
+            .setMethodDescriptor(createCustomEmojiMethodDescriptor)
+            .build();
+    GrpcCallSettings<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiTransportSettings =
+        GrpcCallSettings.<GetCustomEmojiRequest, CustomEmoji>newBuilder()
+            .setMethodDescriptor(getCustomEmojiMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListCustomEmojisRequest, ListCustomEmojisResponse>
+        listCustomEmojisTransportSettings =
+            GrpcCallSettings.<ListCustomEmojisRequest, ListCustomEmojisResponse>newBuilder()
+                .setMethodDescriptor(listCustomEmojisMethodDescriptor)
+                .build();
+    GrpcCallSettings<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiTransportSettings =
+        GrpcCallSettings.<DeleteCustomEmojiRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteCustomEmojiMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateTransportSettings =
         GrpcCallSettings.<GetSpaceReadStateRequest, SpaceReadState>newBuilder()
             .setMethodDescriptor(getSpaceReadStateMethodDescriptor)
@@ -879,6 +963,25 @@ public class GrpcChatServiceStub extends ChatServiceStub {
     this.deleteReactionCallable =
         callableFactory.createUnaryCallable(
             deleteReactionTransportSettings, settings.deleteReactionSettings(), clientContext);
+    this.createCustomEmojiCallable =
+        callableFactory.createUnaryCallable(
+            createCustomEmojiTransportSettings,
+            settings.createCustomEmojiSettings(),
+            clientContext);
+    this.getCustomEmojiCallable =
+        callableFactory.createUnaryCallable(
+            getCustomEmojiTransportSettings, settings.getCustomEmojiSettings(), clientContext);
+    this.listCustomEmojisCallable =
+        callableFactory.createUnaryCallable(
+            listCustomEmojisTransportSettings, settings.listCustomEmojisSettings(), clientContext);
+    this.listCustomEmojisPagedCallable =
+        callableFactory.createPagedCallable(
+            listCustomEmojisTransportSettings, settings.listCustomEmojisSettings(), clientContext);
+    this.deleteCustomEmojiCallable =
+        callableFactory.createUnaryCallable(
+            deleteCustomEmojiTransportSettings,
+            settings.deleteCustomEmojiSettings(),
+            clientContext);
     this.getSpaceReadStateCallable =
         callableFactory.createUnaryCallable(
             getSpaceReadStateTransportSettings,
@@ -1069,6 +1172,33 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable() {
     return deleteReactionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiCallable() {
+    return createCustomEmojiCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiCallable() {
+    return getCustomEmojiCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisResponse>
+      listCustomEmojisCallable() {
+    return listCustomEmojisCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisPagedResponse>
+      listCustomEmojisPagedCallable() {
+    return listCustomEmojisPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiCallable() {
+    return deleteCustomEmojiCallable;
   }
 
   @Override

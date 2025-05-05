@@ -120,6 +120,20 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
      * @return The bytes for errorMessage.
      */
     com.google.protobuf.ByteString getErrorMessageBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Passthrough field defined in TemplateMetadata to indicate whether to
+     * ignore partial invocation failures.
+     * </pre>
+     *
+     * <code>bool ignore_partial_invocation_failures = 3;</code>
+     *
+     * @return The ignorePartialInvocationFailures.
+     */
+    boolean getIgnorePartialInvocationFailures();
   }
 
   /**
@@ -239,6 +253,26 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       }
     }
 
+    public static final int IGNORE_PARTIAL_INVOCATION_FAILURES_FIELD_NUMBER = 3;
+    private boolean ignorePartialInvocationFailures_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Passthrough field defined in TemplateMetadata to indicate whether to
+     * ignore partial invocation failures.
+     * </pre>
+     *
+     * <code>bool ignore_partial_invocation_failures = 3;</code>
+     *
+     * @return The ignorePartialInvocationFailures.
+     */
+    @java.lang.Override
+    public boolean getIgnorePartialInvocationFailures() {
+      return ignorePartialInvocationFailures_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -259,6 +293,9 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorMessage_);
       }
+      if (ignorePartialInvocationFailures_ != false) {
+        output.writeBool(3, ignorePartialInvocationFailures_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -273,6 +310,11 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorMessage_);
+      }
+      if (ignorePartialInvocationFailures_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(
+                3, ignorePartialInvocationFailures_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -293,6 +335,8 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
 
       if (getErrorCode() != other.getErrorCode()) return false;
       if (!getErrorMessage().equals(other.getErrorMessage())) return false;
+      if (getIgnorePartialInvocationFailures() != other.getIgnorePartialInvocationFailures())
+        return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -308,6 +352,10 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getErrorCode());
       hash = (37 * hash) + ERROR_MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getErrorMessage().hashCode();
+      hash = (37 * hash) + IGNORE_PARTIAL_INVOCATION_FAILURES_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getIgnorePartialInvocationFailures());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -456,6 +504,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         bitField0_ = 0;
         errorCode_ = 0L;
         errorMessage_ = "";
+        ignorePartialInvocationFailures_ = false;
         return this;
       }
 
@@ -501,6 +550,9 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.errorMessage_ = errorMessage_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.ignorePartialInvocationFailures_ = ignorePartialInvocationFailures_;
         }
       }
 
@@ -564,6 +616,9 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (other.getIgnorePartialInvocationFailures() != false) {
+          setIgnorePartialInvocationFailures(other.getIgnorePartialInvocationFailures());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -602,6 +657,12 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 24:
+                {
+                  ignorePartialInvocationFailures_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -784,6 +845,65 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         checkByteStringIsUtf8(value);
         errorMessage_ = value;
         bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private boolean ignorePartialInvocationFailures_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Passthrough field defined in TemplateMetadata to indicate whether to
+       * ignore partial invocation failures.
+       * </pre>
+       *
+       * <code>bool ignore_partial_invocation_failures = 3;</code>
+       *
+       * @return The ignorePartialInvocationFailures.
+       */
+      @java.lang.Override
+      public boolean getIgnorePartialInvocationFailures() {
+        return ignorePartialInvocationFailures_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Passthrough field defined in TemplateMetadata to indicate whether to
+       * ignore partial invocation failures.
+       * </pre>
+       *
+       * <code>bool ignore_partial_invocation_failures = 3;</code>
+       *
+       * @param value The ignorePartialInvocationFailures to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIgnorePartialInvocationFailures(boolean value) {
+
+        ignorePartialInvocationFailures_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Passthrough field defined in TemplateMetadata to indicate whether to
+       * ignore partial invocation failures.
+       * </pre>
+       *
+       * <code>bool ignore_partial_invocation_failures = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIgnorePartialInvocationFailures() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        ignorePartialInvocationFailures_ = false;
         onChanged();
         return this;
       }

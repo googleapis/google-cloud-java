@@ -43,6 +43,11 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     state_ = 0;
     description_ = "";
+    backupVaultType_ = 0;
+    sourceRegion_ = "";
+    backupRegion_ = "";
+    sourceBackupVault_ = "";
+    destinationBackupVault_ = "";
   }
 
   @java.lang.Override
@@ -304,6 +309,167 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.netapp.v1.BackupVault.State)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Backup Vault Type.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.netapp.v1.BackupVault.BackupVaultType}
+   */
+  public enum BackupVaultType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * BackupVault type not set.
+     * </pre>
+     *
+     * <code>BACKUP_VAULT_TYPE_UNSPECIFIED = 0;</code>
+     */
+    BACKUP_VAULT_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * BackupVault type is IN_REGION.
+     * </pre>
+     *
+     * <code>IN_REGION = 1;</code>
+     */
+    IN_REGION(1),
+    /**
+     *
+     *
+     * <pre>
+     * BackupVault type is CROSS_REGION.
+     * </pre>
+     *
+     * <code>CROSS_REGION = 2;</code>
+     */
+    CROSS_REGION(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * BackupVault type not set.
+     * </pre>
+     *
+     * <code>BACKUP_VAULT_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int BACKUP_VAULT_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * BackupVault type is IN_REGION.
+     * </pre>
+     *
+     * <code>IN_REGION = 1;</code>
+     */
+    public static final int IN_REGION_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * BackupVault type is CROSS_REGION.
+     * </pre>
+     *
+     * <code>CROSS_REGION = 2;</code>
+     */
+    public static final int CROSS_REGION_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static BackupVaultType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static BackupVaultType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return BACKUP_VAULT_TYPE_UNSPECIFIED;
+        case 1:
+          return IN_REGION;
+        case 2:
+          return CROSS_REGION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BackupVaultType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<BackupVaultType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<BackupVaultType>() {
+              public BackupVaultType findValueByNumber(int number) {
+                return BackupVaultType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.netapp.v1.BackupVault.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final BackupVaultType[] VALUES = values();
+
+    public static BackupVaultType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private BackupVaultType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.netapp.v1.BackupVault.BackupVaultType)
   }
 
   private int bitField0_;
@@ -617,6 +783,291 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int BACKUP_VAULT_TYPE_FIELD_NUMBER = 6;
+  private int backupVaultType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of backup vault to be created.
+   * Default is IN_REGION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.BackupVault.BackupVaultType backup_vault_type = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for backupVaultType.
+   */
+  @java.lang.Override
+  public int getBackupVaultTypeValue() {
+    return backupVaultType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of backup vault to be created.
+   * Default is IN_REGION.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.BackupVault.BackupVaultType backup_vault_type = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The backupVaultType.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.BackupVault.BackupVaultType getBackupVaultType() {
+    com.google.cloud.netapp.v1.BackupVault.BackupVaultType result =
+        com.google.cloud.netapp.v1.BackupVault.BackupVaultType.forNumber(backupVaultType_);
+    return result == null
+        ? com.google.cloud.netapp.v1.BackupVault.BackupVaultType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int SOURCE_REGION_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceRegion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Region in which the backup vault is created.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string source_region = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The sourceRegion.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceRegion() {
+    java.lang.Object ref = sourceRegion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceRegion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Region in which the backup vault is created.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string source_region = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for sourceRegion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceRegionBytes() {
+    java.lang.Object ref = sourceRegion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceRegion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BACKUP_REGION_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backupRegion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Region where the backups are stored.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string backup_region = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The backupRegion.
+   */
+  @java.lang.Override
+  public java.lang.String getBackupRegion() {
+    java.lang.Object ref = backupRegion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      backupRegion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Region where the backups are stored.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string backup_region = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for backupRegion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBackupRegionBytes() {
+    java.lang.Object ref = backupRegion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      backupRegion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SOURCE_BACKUP_VAULT_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceBackupVault_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the Backup vault created in source region.
+   * Format:
+   * `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+   * </pre>
+   *
+   * <code>
+   * string source_backup_vault = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The sourceBackupVault.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceBackupVault() {
+    java.lang.Object ref = sourceBackupVault_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceBackupVault_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the Backup vault created in source region.
+   * Format:
+   * `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+   * </pre>
+   *
+   * <code>
+   * string source_backup_vault = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for sourceBackupVault.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceBackupVaultBytes() {
+    java.lang.Object ref = sourceBackupVault_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceBackupVault_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESTINATION_BACKUP_VAULT_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object destinationBackupVault_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the Backup vault created in backup region.
+   * Format:
+   * `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+   * </pre>
+   *
+   * <code>
+   * string destination_backup_vault = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The destinationBackupVault.
+   */
+  @java.lang.Override
+  public java.lang.String getDestinationBackupVault() {
+    java.lang.Object ref = destinationBackupVault_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      destinationBackupVault_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the Backup vault created in backup region.
+   * Format:
+   * `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+   * </pre>
+   *
+   * <code>
+   * string destination_backup_vault = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for destinationBackupVault.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDestinationBackupVaultBytes() {
+    java.lang.Object ref = destinationBackupVault_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      destinationBackupVault_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -645,6 +1096,23 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 5);
+    if (backupVaultType_
+        != com.google.cloud.netapp.v1.BackupVault.BackupVaultType.BACKUP_VAULT_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, backupVaultType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceRegion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, sourceRegion_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupRegion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, backupRegion_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceBackupVault_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, sourceBackupVault_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationBackupVault_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, destinationBackupVault_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -676,6 +1144,23 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, labels__);
     }
+    if (backupVaultType_
+        != com.google.cloud.netapp.v1.BackupVault.BackupVaultType.BACKUP_VAULT_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, backupVaultType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceRegion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, sourceRegion_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupRegion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, backupRegion_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceBackupVault_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, sourceBackupVault_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationBackupVault_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, destinationBackupVault_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -699,6 +1184,11 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getDescription().equals(other.getDescription())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (backupVaultType_ != other.backupVaultType_) return false;
+    if (!getSourceRegion().equals(other.getSourceRegion())) return false;
+    if (!getBackupRegion().equals(other.getBackupRegion())) return false;
+    if (!getSourceBackupVault().equals(other.getSourceBackupVault())) return false;
+    if (!getDestinationBackupVault().equals(other.getDestinationBackupVault())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -724,6 +1214,16 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
+    hash = (37 * hash) + BACKUP_VAULT_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + backupVaultType_;
+    hash = (37 * hash) + SOURCE_REGION_FIELD_NUMBER;
+    hash = (53 * hash) + getSourceRegion().hashCode();
+    hash = (37 * hash) + BACKUP_REGION_FIELD_NUMBER;
+    hash = (53 * hash) + getBackupRegion().hashCode();
+    hash = (37 * hash) + SOURCE_BACKUP_VAULT_FIELD_NUMBER;
+    hash = (53 * hash) + getSourceBackupVault().hashCode();
+    hash = (37 * hash) + DESTINATION_BACKUP_VAULT_FIELD_NUMBER;
+    hash = (53 * hash) + getDestinationBackupVault().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -904,6 +1404,11 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
       }
       description_ = "";
       internalGetMutableLabels().clear();
+      backupVaultType_ = 0;
+      sourceRegion_ = "";
+      backupRegion_ = "";
+      sourceBackupVault_ = "";
+      destinationBackupVault_ = "";
       return this;
     }
 
@@ -957,6 +1462,21 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.backupVaultType_ = backupVaultType_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.sourceRegion_ = sourceRegion_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.backupRegion_ = backupRegion_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.sourceBackupVault_ = sourceBackupVault_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.destinationBackupVault_ = destinationBackupVault_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1024,6 +1544,29 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       bitField0_ |= 0x00000010;
+      if (other.backupVaultType_ != 0) {
+        setBackupVaultTypeValue(other.getBackupVaultTypeValue());
+      }
+      if (!other.getSourceRegion().isEmpty()) {
+        sourceRegion_ = other.sourceRegion_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (!other.getBackupRegion().isEmpty()) {
+        backupRegion_ = other.backupRegion_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (!other.getSourceBackupVault().isEmpty()) {
+        sourceBackupVault_ = other.sourceBackupVault_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      if (!other.getDestinationBackupVault().isEmpty()) {
+        destinationBackupVault_ = other.destinationBackupVault_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1086,6 +1629,36 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 48:
+              {
+                backupVaultType_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+            case 58:
+              {
+                sourceRegion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+            case 66:
+              {
+                backupRegion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+            case 74:
+              {
+                sourceBackupVault_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+            case 82:
+              {
+                destinationBackupVault_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1823,6 +2396,633 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       bitField0_ |= 0x00000010;
+      return this;
+    }
+
+    private int backupVaultType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of backup vault to be created.
+     * Default is IN_REGION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.BackupVaultType backup_vault_type = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for backupVaultType.
+     */
+    @java.lang.Override
+    public int getBackupVaultTypeValue() {
+      return backupVaultType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of backup vault to be created.
+     * Default is IN_REGION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.BackupVaultType backup_vault_type = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for backupVaultType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupVaultTypeValue(int value) {
+      backupVaultType_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of backup vault to be created.
+     * Default is IN_REGION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.BackupVaultType backup_vault_type = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The backupVaultType.
+     */
+    @java.lang.Override
+    public com.google.cloud.netapp.v1.BackupVault.BackupVaultType getBackupVaultType() {
+      com.google.cloud.netapp.v1.BackupVault.BackupVaultType result =
+          com.google.cloud.netapp.v1.BackupVault.BackupVaultType.forNumber(backupVaultType_);
+      return result == null
+          ? com.google.cloud.netapp.v1.BackupVault.BackupVaultType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of backup vault to be created.
+     * Default is IN_REGION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.BackupVaultType backup_vault_type = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The backupVaultType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupVaultType(
+        com.google.cloud.netapp.v1.BackupVault.BackupVaultType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      backupVaultType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of backup vault to be created.
+     * Default is IN_REGION.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.BackupVaultType backup_vault_type = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBackupVaultType() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      backupVaultType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sourceRegion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Region in which the backup vault is created.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string source_region = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The sourceRegion.
+     */
+    public java.lang.String getSourceRegion() {
+      java.lang.Object ref = sourceRegion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceRegion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Region in which the backup vault is created.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string source_region = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for sourceRegion.
+     */
+    public com.google.protobuf.ByteString getSourceRegionBytes() {
+      java.lang.Object ref = sourceRegion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceRegion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Region in which the backup vault is created.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string source_region = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The sourceRegion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceRegion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceRegion_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Region in which the backup vault is created.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string source_region = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceRegion() {
+      sourceRegion_ = getDefaultInstance().getSourceRegion();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Region in which the backup vault is created.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string source_region = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for sourceRegion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceRegionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceRegion_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object backupRegion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Region where the backups are stored.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string backup_region = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The backupRegion.
+     */
+    public java.lang.String getBackupRegion() {
+      java.lang.Object ref = backupRegion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        backupRegion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Region where the backups are stored.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string backup_region = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for backupRegion.
+     */
+    public com.google.protobuf.ByteString getBackupRegionBytes() {
+      java.lang.Object ref = backupRegion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        backupRegion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Region where the backups are stored.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string backup_region = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The backupRegion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupRegion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      backupRegion_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Region where the backups are stored.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string backup_region = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBackupRegion() {
+      backupRegion_ = getDefaultInstance().getBackupRegion();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Region where the backups are stored.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string backup_region = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for backupRegion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupRegionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      backupRegion_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sourceBackupVault_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the Backup vault created in source region.
+     * Format:
+     * `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+     * </pre>
+     *
+     * <code>
+     * string source_backup_vault = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The sourceBackupVault.
+     */
+    public java.lang.String getSourceBackupVault() {
+      java.lang.Object ref = sourceBackupVault_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceBackupVault_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the Backup vault created in source region.
+     * Format:
+     * `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+     * </pre>
+     *
+     * <code>
+     * string source_backup_vault = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for sourceBackupVault.
+     */
+    public com.google.protobuf.ByteString getSourceBackupVaultBytes() {
+      java.lang.Object ref = sourceBackupVault_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceBackupVault_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the Backup vault created in source region.
+     * Format:
+     * `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+     * </pre>
+     *
+     * <code>
+     * string source_backup_vault = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The sourceBackupVault to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceBackupVault(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceBackupVault_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the Backup vault created in source region.
+     * Format:
+     * `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+     * </pre>
+     *
+     * <code>
+     * string source_backup_vault = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceBackupVault() {
+      sourceBackupVault_ = getDefaultInstance().getSourceBackupVault();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the Backup vault created in source region.
+     * Format:
+     * `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+     * </pre>
+     *
+     * <code>
+     * string source_backup_vault = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for sourceBackupVault to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceBackupVaultBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceBackupVault_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object destinationBackupVault_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the Backup vault created in backup region.
+     * Format:
+     * `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+     * </pre>
+     *
+     * <code>
+     * string destination_backup_vault = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The destinationBackupVault.
+     */
+    public java.lang.String getDestinationBackupVault() {
+      java.lang.Object ref = destinationBackupVault_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        destinationBackupVault_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the Backup vault created in backup region.
+     * Format:
+     * `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+     * </pre>
+     *
+     * <code>
+     * string destination_backup_vault = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for destinationBackupVault.
+     */
+    public com.google.protobuf.ByteString getDestinationBackupVaultBytes() {
+      java.lang.Object ref = destinationBackupVault_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        destinationBackupVault_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the Backup vault created in backup region.
+     * Format:
+     * `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+     * </pre>
+     *
+     * <code>
+     * string destination_backup_vault = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The destinationBackupVault to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDestinationBackupVault(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      destinationBackupVault_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the Backup vault created in backup region.
+     * Format:
+     * `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+     * </pre>
+     *
+     * <code>
+     * string destination_backup_vault = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDestinationBackupVault() {
+      destinationBackupVault_ = getDefaultInstance().getDestinationBackupVault();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the Backup vault created in backup region.
+     * Format:
+     * `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+     * </pre>
+     *
+     * <code>
+     * string destination_backup_vault = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for destinationBackupVault to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDestinationBackupVaultBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      destinationBackupVault_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
 

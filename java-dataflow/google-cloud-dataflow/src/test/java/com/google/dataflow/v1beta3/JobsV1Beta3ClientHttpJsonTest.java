@@ -31,6 +31,7 @@ import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
 import com.google.dataflow.v1beta3.stub.HttpJsonJobsV1Beta3Stub;
 import com.google.protobuf.Duration;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -109,6 +110,9 @@ public class JobsV1Beta3ClientHttpJsonTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setCreatedFromSnapshotId("createdFromSnapshotId851802705")
             .setSatisfiesPzs(true)
+            .setRuntimeUpdatableParams(RuntimeUpdatableParams.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setServiceResources(ServiceResources.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -191,6 +195,9 @@ public class JobsV1Beta3ClientHttpJsonTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setCreatedFromSnapshotId("createdFromSnapshotId851802705")
             .setSatisfiesPzs(true)
+            .setRuntimeUpdatableParams(RuntimeUpdatableParams.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setServiceResources(ServiceResources.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -271,6 +278,9 @@ public class JobsV1Beta3ClientHttpJsonTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setCreatedFromSnapshotId("createdFromSnapshotId851802705")
             .setSatisfiesPzs(true)
+            .setRuntimeUpdatableParams(RuntimeUpdatableParams.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setServiceResources(ServiceResources.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -280,6 +290,7 @@ public class JobsV1Beta3ClientHttpJsonTest {
             .setJobId("jobId-3646")
             .setJob(Job.newBuilder().build())
             .setLocation("location-9355")
+            .setUpdateMask(FieldMask.newBuilder().build())
             .build();
 
     Job actualResponse = client.updateJob(request);
@@ -314,6 +325,7 @@ public class JobsV1Beta3ClientHttpJsonTest {
               .setJobId("jobId-3646")
               .setJob(Job.newBuilder().build())
               .setLocation("location-9355")
+              .setUpdateMask(FieldMask.newBuilder().build())
               .build();
       client.updateJob(request);
       Assert.fail("No exception raised");
@@ -339,6 +351,7 @@ public class JobsV1Beta3ClientHttpJsonTest {
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
             .setLocation("location-9355")
+            .setName("name3373707")
             .build();
 
     ListJobsPagedResponse pagedListResponse = client.listJobs(request);
@@ -378,6 +391,7 @@ public class JobsV1Beta3ClientHttpJsonTest {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setLocation("location-9355")
+              .setName("name3373707")
               .build();
       client.listJobs(request);
       Assert.fail("No exception raised");
@@ -403,6 +417,7 @@ public class JobsV1Beta3ClientHttpJsonTest {
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
             .setLocation("location1901043637")
+            .setName("name3373707")
             .build();
 
     AggregatedListJobsPagedResponse pagedListResponse = client.aggregatedListJobs(request);
@@ -442,6 +457,7 @@ public class JobsV1Beta3ClientHttpJsonTest {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setLocation("location1901043637")
+              .setName("name3373707")
               .build();
       client.aggregatedListJobs(request);
       Assert.fail("No exception raised");

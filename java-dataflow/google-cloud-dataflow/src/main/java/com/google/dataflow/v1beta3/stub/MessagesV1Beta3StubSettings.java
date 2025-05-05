@@ -114,8 +114,6 @@ public class MessagesV1Beta3StubSettings extends StubSettings<MessagesV1Beta3Stu
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/compute")
-          .add("https://www.googleapis.com/auth/compute.readonly")
-          .add("https://www.googleapis.com/auth/userinfo.email")
           .build();
 
   private final PagedCallSettings<

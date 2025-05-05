@@ -100,7 +100,7 @@ public interface SdkHarnessContainerImageOrBuilder
    *
    * <pre>
    * The set of capabilities enumerated in the above Environment proto. See also
-   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
    * </pre>
    *
    * <code>repeated string capabilities = 4;</code>
@@ -114,7 +114,7 @@ public interface SdkHarnessContainerImageOrBuilder
    *
    * <pre>
    * The set of capabilities enumerated in the above Environment proto. See also
-   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
    * </pre>
    *
    * <code>repeated string capabilities = 4;</code>
@@ -128,7 +128,7 @@ public interface SdkHarnessContainerImageOrBuilder
    *
    * <pre>
    * The set of capabilities enumerated in the above Environment proto. See also
-   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
    * </pre>
    *
    * <code>repeated string capabilities = 4;</code>
@@ -143,7 +143,7 @@ public interface SdkHarnessContainerImageOrBuilder
    *
    * <pre>
    * The set of capabilities enumerated in the above Environment proto. See also
-   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
    * </pre>
    *
    * <code>repeated string capabilities = 4;</code>

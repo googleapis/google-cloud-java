@@ -57,6 +57,10 @@ public final class ModelGardenServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_DeployConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_DeployConfig_SystemLabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_DeployConfig_SystemLabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_DeployPublisherModelRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_DeployPublisherModelRequest_fieldAccessorTable;
@@ -141,7 +145,7 @@ public final class ModelGardenServiceProto {
           + "\033ListPublisherModelsResponse\022I\n"
           + "\020publisher_models\030\001 \003("
           + "\0132/.google.cloud.aiplatform.v1beta1.PublisherModel\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\260\007\n\r"
+          + "\017next_page_token\030\002 \001(\t\"\320\010\n\r"
           + "DeployRequest\022M\n"
           + "\024publisher_model_name\030\001 \001(\tB-\372A*\n"
           + "(aiplatform.googleapis.com/PublisherModelH\000\022\037\n"
@@ -163,11 +167,16 @@ public final class ModelGardenServiceProto {
           + ".google.cloud.aiplatform.v1beta1.ModelContainerSpecB\003\340A\001\032]\n"
           + "\016EndpointConfig\022\"\n"
           + "\025endpoint_display_name\030\001 \001(\tB\003\340A\001\022\'\n"
-          + "\032dedicated_endpoint_enabled\030\002 \001(\010B\003\340A\001\032\207\001\n"
+          + "\032dedicated_endpoint_enabled\030\002 \001(\010B\003\340A\001\032\247\002\n"
           + "\014DeployConfig\022U\n"
           + "\023dedicated_resources\030\001 \001(\01323."
           + "google.cloud.aiplatform.v1beta1.DedicatedResourcesB\003\340A\001\022 \n"
-          + "\023fast_tryout_enabled\030\002 \001(\010B\003\340A\001B\013\n"
+          + "\023fast_tryout_enabled\030\002 \001(\010B\003\340A\001\022i\n\r"
+          + "system_labels\030\003 \003(\0132M.googl"
+          + "e.cloud.aiplatform.v1beta1.DeployRequest.DeployConfig.SystemLabelsEntryB\003\340A\001\0323\n"
+          + "\021SystemLabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001B\013\n"
           + "\tartifacts\"\323\002\n"
           + "\033DeployPublisherModelRequest\022\022\n"
           + "\005model\030\001 \001(\tB\003\340A\002\022>\n"
@@ -377,7 +386,17 @@ public final class ModelGardenServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_DeployConfig_descriptor,
             new java.lang.String[] {
-              "DedicatedResources", "FastTryoutEnabled",
+              "DedicatedResources", "FastTryoutEnabled", "SystemLabels",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_DeployConfig_SystemLabelsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_DeployConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_DeployConfig_SystemLabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_DeployConfig_SystemLabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DeployPublisherModelRequest_descriptor =
         getDescriptor().getMessageTypes().get(4);

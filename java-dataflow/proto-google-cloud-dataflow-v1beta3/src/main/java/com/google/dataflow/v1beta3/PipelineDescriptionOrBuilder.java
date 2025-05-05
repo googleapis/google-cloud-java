@@ -203,4 +203,30 @@ public interface PipelineDescriptionOrBuilder
    * <code>repeated .google.dataflow.v1beta3.DisplayData display_data = 3;</code>
    */
   com.google.dataflow.v1beta3.DisplayDataOrBuilder getDisplayDataOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A hash value of the submitted pipeline portable graph step names if exists.
+   * </pre>
+   *
+   * <code>string step_names_hash = 4;</code>
+   *
+   * @return The stepNamesHash.
+   */
+  java.lang.String getStepNamesHash();
+
+  /**
+   *
+   *
+   * <pre>
+   * A hash value of the submitted pipeline portable graph step names if exists.
+   * </pre>
+   *
+   * <code>string step_names_hash = 4;</code>
+   *
+   * @return The bytes for stepNamesHash.
+   */
+  com.google.protobuf.ByteString getStepNamesHashBytes();
 }

@@ -29,7 +29,7 @@ public interface OperationMetadataOrBuilder
    *
    * <pre>
    * Output only. The unique operation resource name.
-   * Format: projects/{project}/locations/{location}/operations/{operation}.
+   * Format: projects/{project}/locations/global/operations/{operation}.
    * </pre>
    *
    * <code>string operation = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -43,7 +43,7 @@ public interface OperationMetadataOrBuilder
    *
    * <pre>
    * Output only. The unique operation resource name.
-   * Format: projects/{project}/locations/{location}/operations/{operation}.
+   * Format: projects/{project}/locations/global/operations/{operation}.
    * </pre>
    *
    * <code>string operation = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

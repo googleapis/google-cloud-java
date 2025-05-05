@@ -282,6 +282,70 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int UPDATE_MASK_FIELD_NUMBER = 5;
+  private com.google.protobuf.FieldMask updateMask_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of fields to update relative to Job. If empty, only
+   * RequestedJobState will be considered for update. If the FieldMask is not
+   * empty and RequestedJobState is none/empty, The fields specified in the
+   * update mask will be the only ones considered for update. If both
+   * RequestedJobState and update_mask are specified, an error will be returned
+   * as we cannot update both state and mask.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.FieldMask update_mask = 5;</code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of fields to update relative to Job. If empty, only
+   * RequestedJobState will be considered for update. If the FieldMask is not
+   * empty and RequestedJobState is none/empty, The fields specified in the
+   * update mask will be the only ones considered for update. If both
+   * RequestedJobState and update_mask are specified, an error will be returned
+   * as we cannot update both state and mask.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.FieldMask update_mask = 5;</code>
+   *
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getUpdateMask() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of fields to update relative to Job. If empty, only
+   * RequestedJobState will be considered for update. If the FieldMask is not
+   * empty and RequestedJobState is none/empty, The fields specified in the
+   * update mask will be the only ones considered for update. If both
+   * RequestedJobState and update_mask are specified, an error will be returned
+   * as we cannot update both state and mask.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.FieldMask update_mask = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -308,6 +372,9 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, location_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(5, getUpdateMask());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -328,6 +395,9 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, location_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getUpdateMask());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -352,6 +422,10 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       if (!getJob().equals(other.getJob())) return false;
     }
     if (!getLocation().equals(other.getLocation())) return false;
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask().equals(other.getUpdateMask())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -373,6 +447,10 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + LOCATION_FIELD_NUMBER;
     hash = (53 * hash) + getLocation().hashCode();
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -515,6 +593,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getJobFieldBuilder();
+        getUpdateMaskFieldBuilder();
       }
     }
 
@@ -530,6 +609,11 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
         jobBuilder_ = null;
       }
       location_ = "";
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
+        updateMaskBuilder_ = null;
+      }
       return this;
     }
 
@@ -579,6 +663,10 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.location_ = location_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -646,6 +734,9 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.hasUpdateMask()) {
+        mergeUpdateMask(other.getUpdateMask());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -696,6 +787,12 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1255,6 +1352,245 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000008;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.FieldMask updateMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        updateMaskBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of fields to update relative to Job. If empty, only
+     * RequestedJobState will be considered for update. If the FieldMask is not
+     * empty and RequestedJobState is none/empty, The fields specified in the
+     * update mask will be the only ones considered for update. If both
+     * RequestedJobState and update_mask are specified, an error will be returned
+     * as we cannot update both state and mask.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.FieldMask update_mask = 5;</code>
+     *
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of fields to update relative to Job. If empty, only
+     * RequestedJobState will be considered for update. If the FieldMask is not
+     * empty and RequestedJobState is none/empty, The fields specified in the
+     * update mask will be the only ones considered for update. If both
+     * RequestedJobState and update_mask are specified, an error will be returned
+     * as we cannot update both state and mask.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.FieldMask update_mask = 5;</code>
+     *
+     * @return The updateMask.
+     */
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
+      } else {
+        return updateMaskBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of fields to update relative to Job. If empty, only
+     * RequestedJobState will be considered for update. If the FieldMask is not
+     * empty and RequestedJobState is none/empty, The fields specified in the
+     * update mask will be the only ones considered for update. If both
+     * RequestedJobState and update_mask are specified, an error will be returned
+     * as we cannot update both state and mask.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.FieldMask update_mask = 5;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateMask_ = value;
+      } else {
+        updateMaskBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of fields to update relative to Job. If empty, only
+     * RequestedJobState will be considered for update. If the FieldMask is not
+     * empty and RequestedJobState is none/empty, The fields specified in the
+     * update mask will be the only ones considered for update. If both
+     * RequestedJobState and update_mask are specified, an error will be returned
+     * as we cannot update both state and mask.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.FieldMask update_mask = 5;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = builderForValue.build();
+      } else {
+        updateMaskBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of fields to update relative to Job. If empty, only
+     * RequestedJobState will be considered for update. If the FieldMask is not
+     * empty and RequestedJobState is none/empty, The fields specified in the
+     * update mask will be the only ones considered for update. If both
+     * RequestedJobState and update_mask are specified, an error will be returned
+     * as we cannot update both state and mask.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.FieldMask update_mask = 5;</code>
+     */
+    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
+        } else {
+          updateMask_ = value;
+        }
+      } else {
+        updateMaskBuilder_.mergeFrom(value);
+      }
+      if (updateMask_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of fields to update relative to Job. If empty, only
+     * RequestedJobState will be considered for update. If the FieldMask is not
+     * empty and RequestedJobState is none/empty, The fields specified in the
+     * update mask will be the only ones considered for update. If both
+     * RequestedJobState and update_mask are specified, an error will be returned
+     * as we cannot update both state and mask.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.FieldMask update_mask = 5;</code>
+     */
+    public Builder clearUpdateMask() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
+        updateMaskBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of fields to update relative to Job. If empty, only
+     * RequestedJobState will be considered for update. If the FieldMask is not
+     * empty and RequestedJobState is none/empty, The fields specified in the
+     * update mask will be the only ones considered for update. If both
+     * RequestedJobState and update_mask are specified, an error will be returned
+     * as we cannot update both state and mask.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.FieldMask update_mask = 5;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getUpdateMaskFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of fields to update relative to Job. If empty, only
+     * RequestedJobState will be considered for update. If the FieldMask is not
+     * empty and RequestedJobState is none/empty, The fields specified in the
+     * update mask will be the only ones considered for update. If both
+     * RequestedJobState and update_mask are specified, an error will be returned
+     * as we cannot update both state and mask.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.FieldMask update_mask = 5;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      if (updateMaskBuilder_ != null) {
+        return updateMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of fields to update relative to Job. If empty, only
+     * RequestedJobState will be considered for update. If the FieldMask is not
+     * empty and RequestedJobState is none/empty, The fields specified in the
+     * update mask will be the only ones considered for update. If both
+     * RequestedJobState and update_mask are specified, an error will be returned
+     * as we cannot update both state and mask.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.FieldMask update_mask = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        getUpdateMaskFieldBuilder() {
+      if (updateMaskBuilder_ == null) {
+        updateMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(), getParentForChildren(), isClean());
+        updateMask_ = null;
+      }
+      return updateMaskBuilder_;
     }
 
     @java.lang.Override

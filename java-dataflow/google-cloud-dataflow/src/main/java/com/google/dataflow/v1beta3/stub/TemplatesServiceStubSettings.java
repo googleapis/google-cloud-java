@@ -108,8 +108,6 @@ public class TemplatesServiceStubSettings extends StubSettings<TemplatesServiceS
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/compute")
-          .add("https://www.googleapis.com/auth/compute.readonly")
-          .add("https://www.googleapis.com/auth/userinfo.email")
           .build();
 
   private final UnaryCallSettings<CreateJobFromTemplateRequest, Job> createJobFromTemplateSettings;

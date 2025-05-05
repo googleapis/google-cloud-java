@@ -379,4 +379,68 @@ public interface BackupOrBuilder
    * @return The satisfiesPzi.
    */
   boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Region of the volume from which the backup was created.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string volume_region = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The volumeRegion.
+   */
+  java.lang.String getVolumeRegion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Region of the volume from which the backup was created.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string volume_region = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for volumeRegion.
+   */
+  com.google.protobuf.ByteString getVolumeRegionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Region in which backup is stored.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string backup_region = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The backupRegion.
+   */
+  java.lang.String getBackupRegion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Region in which backup is stored.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string backup_region = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for backupRegion.
+   */
+  com.google.protobuf.ByteString getBackupRegionBytes();
 }

@@ -396,4 +396,67 @@ public interface JobMetadataOrBuilder
    * <code>repeated .google.dataflow.v1beta3.DatastoreIODetails datastore_details = 7;</code>
    */
   com.google.dataflow.v1beta3.DatastoreIODetailsOrBuilder getDatastoreDetailsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * List of display properties to help UI filter jobs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_display_properties = 8;</code>
+   */
+  int getUserDisplayPropertiesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of display properties to help UI filter jobs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_display_properties = 8;</code>
+   */
+  boolean containsUserDisplayProperties(java.lang.String key);
+
+  /** Use {@link #getUserDisplayPropertiesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getUserDisplayProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of display properties to help UI filter jobs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_display_properties = 8;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getUserDisplayPropertiesMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of display properties to help UI filter jobs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_display_properties = 8;</code>
+   */
+  /* nullable */
+  java.lang.String getUserDisplayPropertiesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * List of display properties to help UI filter jobs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_display_properties = 8;</code>
+   */
+  java.lang.String getUserDisplayPropertiesOrThrow(java.lang.String key);
 }

@@ -76,7 +76,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Output only. The unique operation resource name.
-   * Format: projects/{project}/locations/{location}/operations/{operation}.
+   * Format: projects/{project}/locations/global/operations/{operation}.
    * </pre>
    *
    * <code>string operation = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -101,7 +101,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Output only. The unique operation resource name.
-   * Format: projects/{project}/locations/{location}/operations/{operation}.
+   * Format: projects/{project}/locations/global/operations/{operation}.
    * </pre>
    *
    * <code>string operation = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -870,7 +870,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Output only. The unique operation resource name.
-     * Format: projects/{project}/locations/{location}/operations/{operation}.
+     * Format: projects/{project}/locations/global/operations/{operation}.
      * </pre>
      *
      * <code>string operation = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -894,7 +894,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Output only. The unique operation resource name.
-     * Format: projects/{project}/locations/{location}/operations/{operation}.
+     * Format: projects/{project}/locations/global/operations/{operation}.
      * </pre>
      *
      * <code>string operation = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -918,7 +918,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Output only. The unique operation resource name.
-     * Format: projects/{project}/locations/{location}/operations/{operation}.
+     * Format: projects/{project}/locations/global/operations/{operation}.
      * </pre>
      *
      * <code>string operation = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -941,7 +941,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Output only. The unique operation resource name.
-     * Format: projects/{project}/locations/{location}/operations/{operation}.
+     * Format: projects/{project}/locations/global/operations/{operation}.
      * </pre>
      *
      * <code>string operation = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -960,7 +960,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Output only. The unique operation resource name.
-     * Format: projects/{project}/locations/{location}/operations/{operation}.
+     * Format: projects/{project}/locations/global/operations/{operation}.
      * </pre>
      *
      * <code>string operation = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

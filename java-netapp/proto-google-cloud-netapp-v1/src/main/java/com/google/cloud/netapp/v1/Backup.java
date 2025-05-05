@@ -46,6 +46,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     backupType_ = 0;
     sourceVolume_ = "";
     sourceSnapshot_ = "";
+    volumeRegion_ = "";
+    backupRegion_ = "";
   }
 
   @java.lang.Override
@@ -1069,6 +1071,124 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzi_;
   }
 
+  public static final int VOLUME_REGION_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object volumeRegion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Region of the volume from which the backup was created.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string volume_region = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The volumeRegion.
+   */
+  @java.lang.Override
+  public java.lang.String getVolumeRegion() {
+    java.lang.Object ref = volumeRegion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      volumeRegion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Region of the volume from which the backup was created.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string volume_region = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for volumeRegion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVolumeRegionBytes() {
+    java.lang.Object ref = volumeRegion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      volumeRegion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BACKUP_REGION_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backupRegion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Region in which backup is stored.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string backup_region = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The backupRegion.
+   */
+  @java.lang.Override
+  public java.lang.String getBackupRegion() {
+    java.lang.Object ref = backupRegion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      backupRegion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Region in which backup is stored.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string backup_region = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for backupRegion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBackupRegionBytes() {
+    java.lang.Object ref = backupRegion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      backupRegion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1117,6 +1237,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
     if (satisfiesPzi_ != false) {
       output.writeBool(12, satisfiesPzi_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(volumeRegion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, volumeRegion_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupRegion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, backupRegion_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1170,6 +1296,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzi_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, satisfiesPzi_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(volumeRegion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, volumeRegion_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupRegion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, backupRegion_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1203,6 +1335,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (getChainStorageBytes() != other.getChainStorageBytes()) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
+    if (!getVolumeRegion().equals(other.getVolumeRegion())) return false;
+    if (!getBackupRegion().equals(other.getBackupRegion())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1244,6 +1378,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
+    hash = (37 * hash) + VOLUME_REGION_FIELD_NUMBER;
+    hash = (53 * hash) + getVolumeRegion().hashCode();
+    hash = (37 * hash) + BACKUP_REGION_FIELD_NUMBER;
+    hash = (53 * hash) + getBackupRegion().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1430,6 +1568,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       chainStorageBytes_ = 0L;
       satisfiesPzs_ = false;
       satisfiesPzi_ = false;
+      volumeRegion_ = "";
+      backupRegion_ = "";
       return this;
     }
 
@@ -1504,6 +1644,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.satisfiesPzi_ = satisfiesPzi_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.volumeRegion_ = volumeRegion_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.backupRegion_ = backupRegion_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1595,6 +1741,16 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getSatisfiesPzi() != false) {
         setSatisfiesPzi(other.getSatisfiesPzi());
+      }
+      if (!other.getVolumeRegion().isEmpty()) {
+        volumeRegion_ = other.volumeRegion_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      if (!other.getBackupRegion().isEmpty()) {
+        backupRegion_ = other.backupRegion_;
+        bitField0_ |= 0x00002000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1700,6 +1856,18 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 96
+            case 106:
+              {
+                volumeRegion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
+            case 114:
+              {
+                backupRegion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3049,6 +3217,258 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSatisfiesPzi() {
       bitField0_ = (bitField0_ & ~0x00000800);
       satisfiesPzi_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object volumeRegion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Region of the volume from which the backup was created.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string volume_region = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The volumeRegion.
+     */
+    public java.lang.String getVolumeRegion() {
+      java.lang.Object ref = volumeRegion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        volumeRegion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Region of the volume from which the backup was created.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string volume_region = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for volumeRegion.
+     */
+    public com.google.protobuf.ByteString getVolumeRegionBytes() {
+      java.lang.Object ref = volumeRegion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        volumeRegion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Region of the volume from which the backup was created.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string volume_region = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The volumeRegion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVolumeRegion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      volumeRegion_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Region of the volume from which the backup was created.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string volume_region = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVolumeRegion() {
+      volumeRegion_ = getDefaultInstance().getVolumeRegion();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Region of the volume from which the backup was created.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string volume_region = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for volumeRegion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVolumeRegionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      volumeRegion_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object backupRegion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Region in which backup is stored.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string backup_region = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The backupRegion.
+     */
+    public java.lang.String getBackupRegion() {
+      java.lang.Object ref = backupRegion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        backupRegion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Region in which backup is stored.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string backup_region = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for backupRegion.
+     */
+    public com.google.protobuf.ByteString getBackupRegionBytes() {
+      java.lang.Object ref = backupRegion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        backupRegion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Region in which backup is stored.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string backup_region = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The backupRegion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupRegion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      backupRegion_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Region in which backup is stored.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string backup_region = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBackupRegion() {
+      backupRegion_ = getDefaultInstance().getBackupRegion();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Region in which backup is stored.
+     * Format: `projects/{project_id}/locations/{location}`
+     * </pre>
+     *
+     * <code>
+     * string backup_region = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for backupRegion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupRegionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      backupRegion_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

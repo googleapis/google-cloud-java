@@ -13,6 +13,9 @@
             "CompleteImportSpace": {
               "methods": ["completeImportSpace", "completeImportSpaceCallable"]
             },
+            "CreateCustomEmoji": {
+              "methods": ["createCustomEmoji", "createCustomEmoji", "createCustomEmojiCallable"]
+            },
             "CreateMembership": {
               "methods": ["createMembership", "createMembership", "createMembership", "createMembershipCallable"]
             },
@@ -24,6 +27,9 @@
             },
             "CreateSpace": {
               "methods": ["createSpace", "createSpace", "createSpaceCallable"]
+            },
+            "DeleteCustomEmoji": {
+              "methods": ["deleteCustomEmoji", "deleteCustomEmoji", "deleteCustomEmoji", "deleteCustomEmojiCallable"]
             },
             "DeleteMembership": {
               "methods": ["deleteMembership", "deleteMembership", "deleteMembership", "deleteMembershipCallable"]
@@ -42,6 +48,9 @@
             },
             "GetAttachment": {
               "methods": ["getAttachment", "getAttachment", "getAttachment", "getAttachmentCallable"]
+            },
+            "GetCustomEmoji": {
+              "methods": ["getCustomEmoji", "getCustomEmoji", "getCustomEmoji", "getCustomEmojiCallable"]
             },
             "GetMembership": {
               "methods": ["getMembership", "getMembership", "getMembership", "getMembershipCallable"]
@@ -63,6 +72,9 @@
             },
             "GetThreadReadState": {
               "methods": ["getThreadReadState", "getThreadReadState", "getThreadReadState", "getThreadReadStateCallable"]
+            },
+            "ListCustomEmojis": {
+              "methods": ["listCustomEmojis", "listCustomEmojis", "listCustomEmojisPagedCallable", "listCustomEmojisCallable"]
             },
             "ListMemberships": {
               "methods": ["listMemberships", "listMemberships", "listMemberships", "listMembershipsPagedCallable", "listMembershipsCallable"]

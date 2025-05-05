@@ -21,7 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Provides a service for Flex templates. This feature is not ready yet.
+ * Provides a service for Flex templates.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -143,7 +143,7 @@ public final class FlexTemplatesServiceGrpc {
    *
    *
    * <pre>
-   * Provides a service for Flex templates. This feature is not ready yet.
+   * Provides a service for Flex templates.
    * </pre>
    */
   public interface AsyncService {
@@ -168,7 +168,7 @@ public final class FlexTemplatesServiceGrpc {
    * Base class for the server implementation of the service FlexTemplatesService.
    *
    * <pre>
-   * Provides a service for Flex templates. This feature is not ready yet.
+   * Provides a service for Flex templates.
    * </pre>
    */
   public abstract static class FlexTemplatesServiceImplBase
@@ -184,7 +184,7 @@ public final class FlexTemplatesServiceGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service FlexTemplatesService.
    *
    * <pre>
-   * Provides a service for Flex templates. This feature is not ready yet.
+   * Provides a service for Flex templates.
    * </pre>
    */
   public static final class FlexTemplatesServiceStub
@@ -221,7 +221,7 @@ public final class FlexTemplatesServiceGrpc {
    * A stub to allow clients to do synchronous rpc calls to service FlexTemplatesService.
    *
    * <pre>
-   * Provides a service for Flex templates. This feature is not ready yet.
+   * Provides a service for Flex templates.
    * </pre>
    */
   public static final class FlexTemplatesServiceBlockingV2Stub
@@ -255,7 +255,7 @@ public final class FlexTemplatesServiceGrpc {
    * A stub to allow clients to do limited synchronous rpc calls to service FlexTemplatesService.
    *
    * <pre>
-   * Provides a service for Flex templates. This feature is not ready yet.
+   * Provides a service for Flex templates.
    * </pre>
    */
   public static final class FlexTemplatesServiceBlockingStub
@@ -289,7 +289,7 @@ public final class FlexTemplatesServiceGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service FlexTemplatesService.
    *
    * <pre>
-   * Provides a service for Flex templates. This feature is not ready yet.
+   * Provides a service for Flex templates.
    * </pre>
    */
   public static final class FlexTemplatesServiceFutureStub

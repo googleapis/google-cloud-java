@@ -1300,13 +1300,13 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   public static final HttpJsonOracleDatabaseStub create(ClientContext clientContext)
       throws IOException {
     return new HttpJsonOracleDatabaseStub(
-        OracleDatabaseStubSettings.newBuilder().build(), clientContext);
+        OracleDatabaseStubSettings.newHttpJsonBuilder().build(), clientContext);
   }
 
   public static final HttpJsonOracleDatabaseStub create(
       ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
     return new HttpJsonOracleDatabaseStub(
-        OracleDatabaseStubSettings.newBuilder().build(), clientContext, callableFactory);
+        OracleDatabaseStubSettings.newHttpJsonBuilder().build(), clientContext, callableFactory);
   }
 
   /**

@@ -332,6 +332,50 @@ public interface AssessDataRequestOrBuilder
    */
   com.google.protobuf.ByteString getNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Gemini request read config for the dataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig gemini_request_read_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the geminiRequestReadConfig field is set.
+   */
+  boolean hasGeminiRequestReadConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Gemini request read config for the dataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig gemini_request_read_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The geminiRequestReadConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig getGeminiRequestReadConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Gemini request read config for the dataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig gemini_request_read_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfigOrBuilder
+      getGeminiRequestReadConfigOrBuilder();
+
   com.google.cloud.aiplatform.v1beta1.AssessDataRequest.AssessmentConfigCase
       getAssessmentConfigCase();
 

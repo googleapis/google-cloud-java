@@ -50,6 +50,14 @@ public final class Common {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_FileLocation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_BaseImage_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_BaseImage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_LayerDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_LayerDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_grafeas_v1_License_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_License_fieldAccessorTable;
@@ -66,25 +74,61 @@ public final class Common {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n\027grafeas/v1/common.proto\022\ngrafeas.v1\"(\n"
-          + "\nRelatedUrl\022\013\n\003url\030\001 \001(\t\022\r\n\005label\030\002 \001(\t\""
-          + "5\n\tSignature\022\021\n\tsignature\030\001 \001(\014\022\025\n\rpubli"
-          + "c_key_id\030\002 \001(\t\"d\n\010Envelope\022\017\n\007payload\030\001 "
-          + "\001(\014\022\024\n\014payload_type\030\002 \001(\t\0221\n\nsignatures\030"
-          + "\003 \003(\0132\035.grafeas.v1.EnvelopeSignature\"/\n\021"
-          + "EnvelopeSignature\022\013\n\003sig\030\001 \001(\014\022\r\n\005keyid\030"
-          + "\002 \001(\t\"!\n\014FileLocation\022\021\n\tfile_path\030\001 \001(\t"
-          + "\"/\n\007License\022\022\n\nexpression\030\001 \001(\t\022\020\n\010comme"
-          + "nts\030\002 \001(\t\",\n\006Digest\022\014\n\004algo\030\001 \001(\t\022\024\n\014dig"
-          + "est_bytes\030\002 \001(\014*\360\001\n\010NoteKind\022\031\n\025NOTE_KIN"
-          + "D_UNSPECIFIED\020\000\022\021\n\rVULNERABILITY\020\001\022\t\n\005BU"
-          + "ILD\020\002\022\t\n\005IMAGE\020\003\022\013\n\007PACKAGE\020\004\022\016\n\nDEPLOYM"
-          + "ENT\020\005\022\r\n\tDISCOVERY\020\006\022\017\n\013ATTESTATION\020\007\022\013\n"
-          + "\007UPGRADE\020\010\022\016\n\nCOMPLIANCE\020\t\022\024\n\020DSSE_ATTES"
-          + "TATION\020\n\022\034\n\030VULNERABILITY_ASSESSMENT\020\013\022\022"
-          + "\n\016SBOM_REFERENCE\020\014BQ\n\rio.grafeas.v1P\001Z8g"
-          + "oogle.golang.org/genproto/googleapis/gra"
-          + "feas/v1;grafeas\242\002\003GRAb\006proto3"
+      "\n"
+          + "\027grafeas/v1/common.proto\022\n"
+          + "grafeas.v1\"(\n"
+          + "\n"
+          + "RelatedUrl\022\013\n"
+          + "\003url\030\001 \001(\t\022\r\n"
+          + "\005label\030\002 \001(\t\"5\n"
+          + "\tSignature\022\021\n"
+          + "\tsignature\030\001 \001(\014\022\025\n\r"
+          + "public_key_id\030\002 \001(\t\"d\n"
+          + "\010Envelope\022\017\n"
+          + "\007payload\030\001 \001(\014\022\024\n"
+          + "\014payload_type\030\002 \001(\t\0221\n\n"
+          + "signatures\030\003 \003(\0132\035.grafeas.v1.EnvelopeSignature\"/\n"
+          + "\021EnvelopeSignature\022\013\n"
+          + "\003sig\030\001 \001(\014\022\r\n"
+          + "\005keyid\030\002 \001(\t\"R\n"
+          + "\014FileLocation\022\021\n"
+          + "\tfile_path\030\001 \001(\t\022/\n\r"
+          + "layer_details\030\002 \001(\0132\030.grafeas.v1.LayerDetails\"B\n"
+          + "\tBaseImage\022\014\n"
+          + "\004name\030\001 \001(\t\022\022\n\n"
+          + "repository\030\002 \001(\t\022\023\n"
+          + "\013layer_count\030\003 \001(\005\"}\n"
+          + "\014LayerDetails\022\r\n"
+          + "\005index\030\001 \001(\005\022\017\n"
+          + "\007diff_id\030\002 \001(\t\022\020\n"
+          + "\010chain_id\030\005 \001(\t\022\017\n"
+          + "\007command\030\003 \001(\t\022*\n"
+          + "\013base_images\030\004 \003(\0132\025.grafeas.v1.BaseImage\"/\n"
+          + "\007License\022\022\n\n"
+          + "expression\030\001 \001(\t\022\020\n"
+          + "\010comments\030\002 \001(\t\",\n"
+          + "\006Digest\022\014\n"
+          + "\004algo\030\001 \001(\t\022\024\n"
+          + "\014digest_bytes\030\002 \001(\014*\374\001\n"
+          + "\010NoteKind\022\031\n"
+          + "\025NOTE_KIND_UNSPECIFIED\020\000\022\021\n\r"
+          + "VULNERABILITY\020\001\022\t\n"
+          + "\005BUILD\020\002\022\t\n"
+          + "\005IMAGE\020\003\022\013\n"
+          + "\007PACKAGE\020\004\022\016\n\n"
+          + "DEPLOYMENT\020\005\022\r\n"
+          + "\tDISCOVERY\020\006\022\017\n"
+          + "\013ATTESTATION\020\007\022\013\n"
+          + "\007UPGRADE\020\010\022\016\n\n"
+          + "COMPLIANCE\020\t\022\024\n"
+          + "\020DSSE_ATTESTATION\020\n"
+          + "\022\034\n"
+          + "\030VULNERABILITY_ASSESSMENT\020\013\022\022\n"
+          + "\016SBOM_REFERENCE\020\014\022\n\n"
+          + "\006SECRET\020\r"
+          + "BQ\n\r"
+          + "io.grafeas.v1P\001Z8google.golang.org/genprot"
+          + "o/googleapis/grafeas/v1;grafeas\242\002\003GRAb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -123,16 +167,30 @@ public final class Common {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_grafeas_v1_FileLocation_descriptor,
             new java.lang.String[] {
-              "FilePath",
+              "FilePath", "LayerDetails",
             });
-    internal_static_grafeas_v1_License_descriptor = getDescriptor().getMessageTypes().get(5);
+    internal_static_grafeas_v1_BaseImage_descriptor = getDescriptor().getMessageTypes().get(5);
+    internal_static_grafeas_v1_BaseImage_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_BaseImage_descriptor,
+            new java.lang.String[] {
+              "Name", "Repository", "LayerCount",
+            });
+    internal_static_grafeas_v1_LayerDetails_descriptor = getDescriptor().getMessageTypes().get(6);
+    internal_static_grafeas_v1_LayerDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_LayerDetails_descriptor,
+            new java.lang.String[] {
+              "Index", "DiffId", "ChainId", "Command", "BaseImages",
+            });
+    internal_static_grafeas_v1_License_descriptor = getDescriptor().getMessageTypes().get(7);
     internal_static_grafeas_v1_License_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_grafeas_v1_License_descriptor,
             new java.lang.String[] {
               "Expression", "Comments",
             });
-    internal_static_grafeas_v1_Digest_descriptor = getDescriptor().getMessageTypes().get(6);
+    internal_static_grafeas_v1_Digest_descriptor = getDescriptor().getMessageTypes().get(8);
     internal_static_grafeas_v1_Digest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_grafeas_v1_Digest_descriptor,

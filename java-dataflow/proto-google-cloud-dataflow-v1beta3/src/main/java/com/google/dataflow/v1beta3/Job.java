@@ -23,7 +23,8 @@ package com.google.dataflow.v1beta3;
  *
  *
  * <pre>
- * Defines a job to be run by the Cloud Dataflow service.
+ * Defines a job to be run by the Cloud Dataflow service. Do not enter
+ * confidential information when you supply string values using the API.
  * </pre>
  *
  * Protobuf type {@code google.dataflow.v1beta3.Job}
@@ -103,7 +104,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The unique ID of this job.
    *
-   * This field is set by the Cloud Dataflow service when the Job is
+   * This field is set by the Dataflow service when the job is
    * created, and is immutable for the life of the job.
    * </pre>
    *
@@ -130,7 +131,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The unique ID of this job.
    *
-   * This field is set by the Cloud Dataflow service when the Job is
+   * This field is set by the Dataflow service when the job is
    * created, and is immutable for the life of the job.
    * </pre>
    *
@@ -160,7 +161,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The ID of the Cloud Platform project that the job belongs to.
+   * The ID of the Google Cloud project that the job belongs to.
    * </pre>
    *
    * <code>string project_id = 2;</code>
@@ -184,7 +185,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The ID of the Cloud Platform project that the job belongs to.
+   * The ID of the Google Cloud project that the job belongs to.
    * </pre>
    *
    * <code>string project_id = 2;</code>
@@ -213,18 +214,20 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The user-specified Cloud Dataflow job name.
+   * Optional. The user-specified Dataflow job name.
    *
-   * Only one Job with a given name may exist in a project at any
-   * given time. If a caller attempts to create a Job with the same
-   * name as an already-existing Job, the attempt returns the
-   * existing Job.
+   * Only one active job with a given name can exist in a project within one
+   * region at
+   * any given time. Jobs in different regions can have the same name.
+   * If a caller attempts to create a job with the same
+   * name as an active job that already exists, the attempt returns the
+   * existing job.
    *
    * The name must match the regular expression
    * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>string name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -245,18 +248,20 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The user-specified Cloud Dataflow job name.
+   * Optional. The user-specified Dataflow job name.
    *
-   * Only one Job with a given name may exist in a project at any
-   * given time. If a caller attempts to create a Job with the same
-   * name as an already-existing Job, the attempt returns the
-   * existing Job.
+   * Only one active job with a given name can exist in a project within one
+   * region at
+   * any given time. Jobs in different regions can have the same name.
+   * If a caller attempts to create a job with the same
+   * name as an active job that already exists, the attempt returns the
+   * existing job.
    *
    * The name must match the regular expression
    * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>string name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -280,10 +285,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of Cloud Dataflow job.
+   * Optional. The type of Dataflow job.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.JobType type = 4;</code>
+   * <code>.google.dataflow.v1beta3.JobType type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for type.
    */
@@ -296,10 +302,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of Cloud Dataflow job.
+   * Optional. The type of Dataflow job.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.JobType type = 4;</code>
+   * <code>.google.dataflow.v1beta3.JobType type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The type.
    */
@@ -317,10 +324,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The environment for the job.
+   * Optional. The environment for the job.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.Environment environment = 5;</code>
+   * <code>
+   * .google.dataflow.v1beta3.Environment environment = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the environment field is set.
    */
@@ -333,10 +342,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The environment for the job.
+   * Optional. The environment for the job.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.Environment environment = 5;</code>
+   * <code>
+   * .google.dataflow.v1beta3.Environment environment = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The environment.
    */
@@ -351,10 +362,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The environment for the job.
+   * Optional. The environment for the job.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.Environment environment = 5;</code>
+   * <code>
+   * .google.dataflow.v1beta3.Environment environment = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.EnvironmentOrBuilder getEnvironmentOrBuilder() {
@@ -523,7 +536,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * terminal state. After a job has reached a terminal state, no
    * further state updates may be made.
    *
-   * This field may be mutated by the Cloud Dataflow service;
+   * This field might be mutated by the Dataflow service;
    * callers cannot mutate it.
    * </pre>
    *
@@ -549,7 +562,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * terminal state. After a job has reached a terminal state, no
    * further state updates may be made.
    *
-   * This field may be mutated by the Cloud Dataflow service;
+   * This field might be mutated by the Dataflow service;
    * callers cannot mutate it.
    * </pre>
    *
@@ -624,13 +637,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The job's requested state.
+   * The job's requested state. Applies to `UpdateJob` requests.
    *
-   * `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and
-   * `JOB_STATE_RUNNING` states, by setting requested_state.  `UpdateJob` may
-   * also be used to directly set a job's requested state to
-   * `JOB_STATE_CANCELLED` or `JOB_STATE_DONE`, irrevocably terminating the
-   * job if it has not already reached a terminal state.
+   * Set `requested_state` with `UpdateJob` requests to switch between the
+   * states `JOB_STATE_STOPPED` and `JOB_STATE_RUNNING`. You can also use
+   * `UpdateJob` requests to change a job's
+   * state from `JOB_STATE_RUNNING` to `JOB_STATE_CANCELLED`,
+   * `JOB_STATE_DONE`,  or `JOB_STATE_DRAINED`. These states irrevocably
+   * terminate the job if it hasn't already reached a terminal state.
+   *
+   * This field has no effect on `CreateJob` requests.
    * </pre>
    *
    * <code>.google.dataflow.v1beta3.JobState requested_state = 9;</code>
@@ -646,13 +662,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The job's requested state.
+   * The job's requested state. Applies to `UpdateJob` requests.
    *
-   * `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and
-   * `JOB_STATE_RUNNING` states, by setting requested_state.  `UpdateJob` may
-   * also be used to directly set a job's requested state to
-   * `JOB_STATE_CANCELLED` or `JOB_STATE_DONE`, irrevocably terminating the
-   * job if it has not already reached a terminal state.
+   * Set `requested_state` with `UpdateJob` requests to switch between the
+   * states `JOB_STATE_STOPPED` and `JOB_STATE_RUNNING`. You can also use
+   * `UpdateJob` requests to change a job's
+   * state from `JOB_STATE_RUNNING` to `JOB_STATE_CANCELLED`,
+   * `JOB_STATE_DONE`,  or `JOB_STATE_DRAINED`. These states irrevocably
+   * terminate the job if it hasn't already reached a terminal state.
+   *
+   * This field has no effect on `CreateJob` requests.
    * </pre>
    *
    * <code>.google.dataflow.v1beta3.JobState requested_state = 9;</code>
@@ -867,11 +886,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The map of transform name prefixes of the job to be replaced to the
-   * corresponding name prefixes of the new job.
+   * Optional. The map of transform name prefixes of the job to be replaced to
+   * the corresponding name prefixes of the new job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
+   * <code>
+   * map&lt;string, string&gt; transform_name_mapping = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public boolean containsTransformNameMapping(java.lang.String key) {
@@ -892,11 +913,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The map of transform name prefixes of the job to be replaced to the
-   * corresponding name prefixes of the new job.
+   * Optional. The map of transform name prefixes of the job to be replaced to
+   * the corresponding name prefixes of the new job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
+   * <code>
+   * map&lt;string, string&gt; transform_name_mapping = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getTransformNameMappingMap() {
@@ -907,11 +930,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The map of transform name prefixes of the job to be replaced to the
-   * corresponding name prefixes of the new job.
+   * Optional. The map of transform name prefixes of the job to be replaced to
+   * the corresponding name prefixes of the new job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
+   * <code>
+   * map&lt;string, string&gt; transform_name_mapping = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getTransformNameMappingOrDefault(
@@ -930,11 +955,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The map of transform name prefixes of the job to be replaced to the
-   * corresponding name prefixes of the new job.
+   * Optional. The map of transform name prefixes of the job to be replaced to
+   * the corresponding name prefixes of the new job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
+   * <code>
+   * map&lt;string, string&gt; transform_name_mapping = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getTransformNameMappingOrThrow(java.lang.String key) {
@@ -1329,12 +1356,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The [regional endpoint]
+   * Optional. The [regional endpoint]
    * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
    * contains this job.
    * </pre>
    *
-   * <code>string location = 18;</code>
+   * <code>string location = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The location.
    */
@@ -1355,12 +1382,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The [regional endpoint]
+   * Optional. The [regional endpoint]
    * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
    * contains this job.
    * </pre>
    *
-   * <code>string location = 18;</code>
+   * <code>string location = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for location.
    */
@@ -1720,6 +1747,165 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzs_;
   }
 
+  public static final int RUNTIME_UPDATABLE_PARAMS_FIELD_NUMBER = 26;
+  private com.google.dataflow.v1beta3.RuntimeUpdatableParams runtimeUpdatableParams_;
+
+  /**
+   *
+   *
+   * <pre>
+   * This field may ONLY be modified at runtime using the projects.jobs.update
+   * method to adjust job behavior. This field has no effect when specified at
+   * job creation.
+   * </pre>
+   *
+   * <code>optional .google.dataflow.v1beta3.RuntimeUpdatableParams runtime_updatable_params = 26;
+   * </code>
+   *
+   * @return Whether the runtimeUpdatableParams field is set.
+   */
+  @java.lang.Override
+  public boolean hasRuntimeUpdatableParams() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This field may ONLY be modified at runtime using the projects.jobs.update
+   * method to adjust job behavior. This field has no effect when specified at
+   * job creation.
+   * </pre>
+   *
+   * <code>optional .google.dataflow.v1beta3.RuntimeUpdatableParams runtime_updatable_params = 26;
+   * </code>
+   *
+   * @return The runtimeUpdatableParams.
+   */
+  @java.lang.Override
+  public com.google.dataflow.v1beta3.RuntimeUpdatableParams getRuntimeUpdatableParams() {
+    return runtimeUpdatableParams_ == null
+        ? com.google.dataflow.v1beta3.RuntimeUpdatableParams.getDefaultInstance()
+        : runtimeUpdatableParams_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This field may ONLY be modified at runtime using the projects.jobs.update
+   * method to adjust job behavior. This field has no effect when specified at
+   * job creation.
+   * </pre>
+   *
+   * <code>optional .google.dataflow.v1beta3.RuntimeUpdatableParams runtime_updatable_params = 26;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.dataflow.v1beta3.RuntimeUpdatableParamsOrBuilder
+      getRuntimeUpdatableParamsOrBuilder() {
+    return runtimeUpdatableParams_ == null
+        ? com.google.dataflow.v1beta3.RuntimeUpdatableParams.getDefaultInstance()
+        : runtimeUpdatableParams_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 27;
+  private boolean satisfiesPzi_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use. This field is set only in responses
+   * from the server; it is ignored if it is set in any requests.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzi() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use. This field is set only in responses
+   * from the server; it is ignored if it is set in any requests.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
+  public static final int SERVICE_RESOURCES_FIELD_NUMBER = 28;
+  private com.google.dataflow.v1beta3.ServiceResources serviceResources_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resources used by the Dataflow Service to run the job.
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.ServiceResources service_resources = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the serviceResources field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceResources() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resources used by the Dataflow Service to run the job.
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.ServiceResources service_resources = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The serviceResources.
+   */
+  @java.lang.Override
+  public com.google.dataflow.v1beta3.ServiceResources getServiceResources() {
+    return serviceResources_ == null
+        ? com.google.dataflow.v1beta3.ServiceResources.getDefaultInstance()
+        : serviceResources_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resources used by the Dataflow Service to run the job.
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.ServiceResources service_resources = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.dataflow.v1beta3.ServiceResourcesOrBuilder getServiceResourcesOrBuilder() {
+    return serviceResources_ == null
+        ? com.google.dataflow.v1beta3.ServiceResources.getDefaultInstance()
+        : serviceResources_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1809,6 +1995,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     if (satisfiesPzs_ != false) {
       output.writeBool(25, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(26, getRuntimeUpdatableParams());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeBool(27, satisfiesPzi_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(28, getServiceResources());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1914,6 +2109,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzs_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(25, satisfiesPzs_);
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(26, getRuntimeUpdatableParams());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(27, satisfiesPzi_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getServiceResources());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1976,6 +2181,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getCreatedFromSnapshotId().equals(other.getCreatedFromSnapshotId())) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (hasRuntimeUpdatableParams() != other.hasRuntimeUpdatableParams()) return false;
+    if (hasRuntimeUpdatableParams()) {
+      if (!getRuntimeUpdatableParams().equals(other.getRuntimeUpdatableParams())) return false;
+    }
+    if (hasSatisfiesPzi() != other.hasSatisfiesPzi()) return false;
+    if (hasSatisfiesPzi()) {
+      if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
+    }
+    if (hasServiceResources() != other.hasServiceResources()) return false;
+    if (hasServiceResources()) {
+      if (!getServiceResources().equals(other.getServiceResources())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2061,6 +2278,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getCreatedFromSnapshotId().hashCode();
     hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    if (hasRuntimeUpdatableParams()) {
+      hash = (37 * hash) + RUNTIME_UPDATABLE_PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getRuntimeUpdatableParams().hashCode();
+    }
+    if (hasSatisfiesPzi()) {
+      hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
+    }
+    if (hasServiceResources()) {
+      hash = (37 * hash) + SERVICE_RESOURCES_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceResources().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2165,7 +2394,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines a job to be run by the Cloud Dataflow service.
+   * Defines a job to be run by the Cloud Dataflow service. Do not enter
+   * confidential information when you supply string values using the API.
    * </pre>
    *
    * Protobuf type {@code google.dataflow.v1beta3.Job}
@@ -2235,6 +2465,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         getStageStatesFieldBuilder();
         getJobMetadataFieldBuilder();
         getStartTimeFieldBuilder();
+        getRuntimeUpdatableParamsFieldBuilder();
+        getServiceResourcesFieldBuilder();
       }
     }
 
@@ -2307,6 +2539,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       createdFromSnapshotId_ = "";
       satisfiesPzs_ = false;
+      runtimeUpdatableParams_ = null;
+      if (runtimeUpdatableParamsBuilder_ != null) {
+        runtimeUpdatableParamsBuilder_.dispose();
+        runtimeUpdatableParamsBuilder_ = null;
+      }
+      satisfiesPzi_ = false;
+      serviceResources_ = null;
+      if (serviceResourcesBuilder_ != null) {
+        serviceResourcesBuilder_.dispose();
+        serviceResourcesBuilder_ = null;
+      }
       return this;
     }
 
@@ -2450,6 +2693,22 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x01000000) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.runtimeUpdatableParams_ =
+            runtimeUpdatableParamsBuilder_ == null
+                ? runtimeUpdatableParams_
+                : runtimeUpdatableParamsBuilder_.build();
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.serviceResources_ =
+            serviceResourcesBuilder_ == null ? serviceResources_ : serviceResourcesBuilder_.build();
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2644,6 +2903,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getSatisfiesPzs() != false) {
         setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.hasRuntimeUpdatableParams()) {
+        mergeRuntimeUpdatableParams(other.getRuntimeUpdatableParams());
+      }
+      if (other.hasSatisfiesPzi()) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
+      }
+      if (other.hasServiceResources()) {
+        mergeServiceResources(other.getServiceResources());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2851,6 +3119,26 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x01000000;
                 break;
               } // case 200
+            case 210:
+              {
+                input.readMessage(
+                    getRuntimeUpdatableParamsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 210
+            case 216:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 216
+            case 226:
+              {
+                input.readMessage(
+                    getServiceResourcesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2878,7 +3166,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The unique ID of this job.
      *
-     * This field is set by the Cloud Dataflow service when the Job is
+     * This field is set by the Dataflow service when the job is
      * created, and is immutable for the life of the job.
      * </pre>
      *
@@ -2904,7 +3192,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The unique ID of this job.
      *
-     * This field is set by the Cloud Dataflow service when the Job is
+     * This field is set by the Dataflow service when the job is
      * created, and is immutable for the life of the job.
      * </pre>
      *
@@ -2930,7 +3218,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The unique ID of this job.
      *
-     * This field is set by the Cloud Dataflow service when the Job is
+     * This field is set by the Dataflow service when the job is
      * created, and is immutable for the life of the job.
      * </pre>
      *
@@ -2955,7 +3243,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The unique ID of this job.
      *
-     * This field is set by the Cloud Dataflow service when the Job is
+     * This field is set by the Dataflow service when the job is
      * created, and is immutable for the life of the job.
      * </pre>
      *
@@ -2976,7 +3264,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The unique ID of this job.
      *
-     * This field is set by the Cloud Dataflow service when the Job is
+     * This field is set by the Dataflow service when the job is
      * created, and is immutable for the life of the job.
      * </pre>
      *
@@ -3002,7 +3290,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the Cloud Platform project that the job belongs to.
+     * The ID of the Google Cloud project that the job belongs to.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -3025,7 +3313,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the Cloud Platform project that the job belongs to.
+     * The ID of the Google Cloud project that the job belongs to.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -3048,7 +3336,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the Cloud Platform project that the job belongs to.
+     * The ID of the Google Cloud project that the job belongs to.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -3070,7 +3358,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the Cloud Platform project that the job belongs to.
+     * The ID of the Google Cloud project that the job belongs to.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -3088,7 +3376,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ID of the Cloud Platform project that the job belongs to.
+     * The ID of the Google Cloud project that the job belongs to.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -3113,18 +3401,20 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user-specified Cloud Dataflow job name.
+     * Optional. The user-specified Dataflow job name.
      *
-     * Only one Job with a given name may exist in a project at any
-     * given time. If a caller attempts to create a Job with the same
-     * name as an already-existing Job, the attempt returns the
-     * existing Job.
+     * Only one active job with a given name can exist in a project within one
+     * region at
+     * any given time. Jobs in different regions can have the same name.
+     * If a caller attempts to create a job with the same
+     * name as an active job that already exists, the attempt returns the
+     * existing job.
      *
      * The name must match the regular expression
      * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>string name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The name.
      */
@@ -3144,18 +3434,20 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user-specified Cloud Dataflow job name.
+     * Optional. The user-specified Dataflow job name.
      *
-     * Only one Job with a given name may exist in a project at any
-     * given time. If a caller attempts to create a Job with the same
-     * name as an already-existing Job, the attempt returns the
-     * existing Job.
+     * Only one active job with a given name can exist in a project within one
+     * region at
+     * any given time. Jobs in different regions can have the same name.
+     * If a caller attempts to create a job with the same
+     * name as an active job that already exists, the attempt returns the
+     * existing job.
      *
      * The name must match the regular expression
      * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>string name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for name.
      */
@@ -3175,18 +3467,20 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user-specified Cloud Dataflow job name.
+     * Optional. The user-specified Dataflow job name.
      *
-     * Only one Job with a given name may exist in a project at any
-     * given time. If a caller attempts to create a Job with the same
-     * name as an already-existing Job, the attempt returns the
-     * existing Job.
+     * Only one active job with a given name can exist in a project within one
+     * region at
+     * any given time. Jobs in different regions can have the same name.
+     * If a caller attempts to create a job with the same
+     * name as an active job that already exists, the attempt returns the
+     * existing job.
      *
      * The name must match the regular expression
      * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>string name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3205,18 +3499,20 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user-specified Cloud Dataflow job name.
+     * Optional. The user-specified Dataflow job name.
      *
-     * Only one Job with a given name may exist in a project at any
-     * given time. If a caller attempts to create a Job with the same
-     * name as an already-existing Job, the attempt returns the
-     * existing Job.
+     * Only one active job with a given name can exist in a project within one
+     * region at
+     * any given time. Jobs in different regions can have the same name.
+     * If a caller attempts to create a job with the same
+     * name as an active job that already exists, the attempt returns the
+     * existing job.
      *
      * The name must match the regular expression
      * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>string name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -3231,18 +3527,20 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user-specified Cloud Dataflow job name.
+     * Optional. The user-specified Dataflow job name.
      *
-     * Only one Job with a given name may exist in a project at any
-     * given time. If a caller attempts to create a Job with the same
-     * name as an already-existing Job, the attempt returns the
-     * existing Job.
+     * Only one active job with a given name can exist in a project within one
+     * region at
+     * any given time. Jobs in different regions can have the same name.
+     * If a caller attempts to create a job with the same
+     * name as an active job that already exists, the attempt returns the
+     * existing job.
      *
      * The name must match the regular expression
      * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
      * </pre>
      *
-     * <code>string name = 3;</code>
+     * <code>string name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -3264,10 +3562,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of Cloud Dataflow job.
+     * Optional. The type of Dataflow job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.JobType type = 4;</code>
+     * <code>.google.dataflow.v1beta3.JobType type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for type.
      */
@@ -3280,10 +3579,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of Cloud Dataflow job.
+     * Optional. The type of Dataflow job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.JobType type = 4;</code>
+     * <code>.google.dataflow.v1beta3.JobType type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
@@ -3299,10 +3599,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of Cloud Dataflow job.
+     * Optional. The type of Dataflow job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.JobType type = 4;</code>
+     * <code>.google.dataflow.v1beta3.JobType type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The type.
      */
@@ -3317,10 +3618,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of Cloud Dataflow job.
+     * Optional. The type of Dataflow job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.JobType type = 4;</code>
+     * <code>.google.dataflow.v1beta3.JobType type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The type to set.
      * @return This builder for chaining.
@@ -3339,10 +3641,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of Cloud Dataflow job.
+     * Optional. The type of Dataflow job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.JobType type = 4;</code>
+     * <code>.google.dataflow.v1beta3.JobType type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -3364,10 +3667,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The environment for the job.
+     * Optional. The environment for the job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.Environment environment = 5;</code>
+     * <code>
+     * .google.dataflow.v1beta3.Environment environment = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the environment field is set.
      */
@@ -3379,10 +3684,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The environment for the job.
+     * Optional. The environment for the job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.Environment environment = 5;</code>
+     * <code>
+     * .google.dataflow.v1beta3.Environment environment = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The environment.
      */
@@ -3400,10 +3707,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The environment for the job.
+     * Optional. The environment for the job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.Environment environment = 5;</code>
+     * <code>
+     * .google.dataflow.v1beta3.Environment environment = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setEnvironment(com.google.dataflow.v1beta3.Environment value) {
       if (environmentBuilder_ == null) {
@@ -3423,10 +3732,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The environment for the job.
+     * Optional. The environment for the job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.Environment environment = 5;</code>
+     * <code>
+     * .google.dataflow.v1beta3.Environment environment = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setEnvironment(com.google.dataflow.v1beta3.Environment.Builder builderForValue) {
       if (environmentBuilder_ == null) {
@@ -3443,10 +3754,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The environment for the job.
+     * Optional. The environment for the job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.Environment environment = 5;</code>
+     * <code>
+     * .google.dataflow.v1beta3.Environment environment = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeEnvironment(com.google.dataflow.v1beta3.Environment value) {
       if (environmentBuilder_ == null) {
@@ -3471,10 +3784,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The environment for the job.
+     * Optional. The environment for the job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.Environment environment = 5;</code>
+     * <code>
+     * .google.dataflow.v1beta3.Environment environment = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearEnvironment() {
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -3491,10 +3806,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The environment for the job.
+     * Optional. The environment for the job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.Environment environment = 5;</code>
+     * <code>
+     * .google.dataflow.v1beta3.Environment environment = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.dataflow.v1beta3.Environment.Builder getEnvironmentBuilder() {
       bitField0_ |= 0x00000010;
@@ -3506,10 +3823,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The environment for the job.
+     * Optional. The environment for the job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.Environment environment = 5;</code>
+     * <code>
+     * .google.dataflow.v1beta3.Environment environment = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.dataflow.v1beta3.EnvironmentOrBuilder getEnvironmentOrBuilder() {
       if (environmentBuilder_ != null) {
@@ -3525,10 +3844,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The environment for the job.
+     * Optional. The environment for the job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.Environment environment = 5;</code>
+     * <code>
+     * .google.dataflow.v1beta3.Environment environment = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.dataflow.v1beta3.Environment,
@@ -4090,7 +4411,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * terminal state. After a job has reached a terminal state, no
      * further state updates may be made.
      *
-     * This field may be mutated by the Cloud Dataflow service;
+     * This field might be mutated by the Dataflow service;
      * callers cannot mutate it.
      * </pre>
      *
@@ -4116,7 +4437,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * terminal state. After a job has reached a terminal state, no
      * further state updates may be made.
      *
-     * This field may be mutated by the Cloud Dataflow service;
+     * This field might be mutated by the Dataflow service;
      * callers cannot mutate it.
      * </pre>
      *
@@ -4145,7 +4466,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * terminal state. After a job has reached a terminal state, no
      * further state updates may be made.
      *
-     * This field may be mutated by the Cloud Dataflow service;
+     * This field might be mutated by the Dataflow service;
      * callers cannot mutate it.
      * </pre>
      *
@@ -4173,7 +4494,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * terminal state. After a job has reached a terminal state, no
      * further state updates may be made.
      *
-     * This field may be mutated by the Cloud Dataflow service;
+     * This field might be mutated by the Dataflow service;
      * callers cannot mutate it.
      * </pre>
      *
@@ -4205,7 +4526,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * terminal state. After a job has reached a terminal state, no
      * further state updates may be made.
      *
-     * This field may be mutated by the Cloud Dataflow service;
+     * This field might be mutated by the Dataflow service;
      * callers cannot mutate it.
      * </pre>
      *
@@ -4420,13 +4741,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job's requested state.
+     * The job's requested state. Applies to `UpdateJob` requests.
      *
-     * `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and
-     * `JOB_STATE_RUNNING` states, by setting requested_state.  `UpdateJob` may
-     * also be used to directly set a job's requested state to
-     * `JOB_STATE_CANCELLED` or `JOB_STATE_DONE`, irrevocably terminating the
-     * job if it has not already reached a terminal state.
+     * Set `requested_state` with `UpdateJob` requests to switch between the
+     * states `JOB_STATE_STOPPED` and `JOB_STATE_RUNNING`. You can also use
+     * `UpdateJob` requests to change a job's
+     * state from `JOB_STATE_RUNNING` to `JOB_STATE_CANCELLED`,
+     * `JOB_STATE_DONE`,  or `JOB_STATE_DRAINED`. These states irrevocably
+     * terminate the job if it hasn't already reached a terminal state.
+     *
+     * This field has no effect on `CreateJob` requests.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.JobState requested_state = 9;</code>
@@ -4442,13 +4766,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job's requested state.
+     * The job's requested state. Applies to `UpdateJob` requests.
      *
-     * `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and
-     * `JOB_STATE_RUNNING` states, by setting requested_state.  `UpdateJob` may
-     * also be used to directly set a job's requested state to
-     * `JOB_STATE_CANCELLED` or `JOB_STATE_DONE`, irrevocably terminating the
-     * job if it has not already reached a terminal state.
+     * Set `requested_state` with `UpdateJob` requests to switch between the
+     * states `JOB_STATE_STOPPED` and `JOB_STATE_RUNNING`. You can also use
+     * `UpdateJob` requests to change a job's
+     * state from `JOB_STATE_RUNNING` to `JOB_STATE_CANCELLED`,
+     * `JOB_STATE_DONE`,  or `JOB_STATE_DRAINED`. These states irrevocably
+     * terminate the job if it hasn't already reached a terminal state.
+     *
+     * This field has no effect on `CreateJob` requests.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.JobState requested_state = 9;</code>
@@ -4467,13 +4794,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job's requested state.
+     * The job's requested state. Applies to `UpdateJob` requests.
      *
-     * `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and
-     * `JOB_STATE_RUNNING` states, by setting requested_state.  `UpdateJob` may
-     * also be used to directly set a job's requested state to
-     * `JOB_STATE_CANCELLED` or `JOB_STATE_DONE`, irrevocably terminating the
-     * job if it has not already reached a terminal state.
+     * Set `requested_state` with `UpdateJob` requests to switch between the
+     * states `JOB_STATE_STOPPED` and `JOB_STATE_RUNNING`. You can also use
+     * `UpdateJob` requests to change a job's
+     * state from `JOB_STATE_RUNNING` to `JOB_STATE_CANCELLED`,
+     * `JOB_STATE_DONE`,  or `JOB_STATE_DRAINED`. These states irrevocably
+     * terminate the job if it hasn't already reached a terminal state.
+     *
+     * This field has no effect on `CreateJob` requests.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.JobState requested_state = 9;</code>
@@ -4491,13 +4821,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job's requested state.
+     * The job's requested state. Applies to `UpdateJob` requests.
      *
-     * `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and
-     * `JOB_STATE_RUNNING` states, by setting requested_state.  `UpdateJob` may
-     * also be used to directly set a job's requested state to
-     * `JOB_STATE_CANCELLED` or `JOB_STATE_DONE`, irrevocably terminating the
-     * job if it has not already reached a terminal state.
+     * Set `requested_state` with `UpdateJob` requests to switch between the
+     * states `JOB_STATE_STOPPED` and `JOB_STATE_RUNNING`. You can also use
+     * `UpdateJob` requests to change a job's
+     * state from `JOB_STATE_RUNNING` to `JOB_STATE_CANCELLED`,
+     * `JOB_STATE_DONE`,  or `JOB_STATE_DRAINED`. These states irrevocably
+     * terminate the job if it hasn't already reached a terminal state.
+     *
+     * This field has no effect on `CreateJob` requests.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.JobState requested_state = 9;</code>
@@ -4519,13 +4852,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job's requested state.
+     * The job's requested state. Applies to `UpdateJob` requests.
      *
-     * `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and
-     * `JOB_STATE_RUNNING` states, by setting requested_state.  `UpdateJob` may
-     * also be used to directly set a job's requested state to
-     * `JOB_STATE_CANCELLED` or `JOB_STATE_DONE`, irrevocably terminating the
-     * job if it has not already reached a terminal state.
+     * Set `requested_state` with `UpdateJob` requests to switch between the
+     * states `JOB_STATE_STOPPED` and `JOB_STATE_RUNNING`. You can also use
+     * `UpdateJob` requests to change a job's
+     * state from `JOB_STATE_RUNNING` to `JOB_STATE_CANCELLED`,
+     * `JOB_STATE_DONE`,  or `JOB_STATE_DRAINED`. These states irrevocably
+     * terminate the job if it hasn't already reached a terminal state.
+     *
+     * This field has no effect on `CreateJob` requests.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.JobState requested_state = 9;</code>
@@ -5108,11 +5444,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The map of transform name prefixes of the job to be replaced to the
-     * corresponding name prefixes of the new job.
+     * Optional. The map of transform name prefixes of the job to be replaced to
+     * the corresponding name prefixes of the new job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
+     * <code>
+     * map&lt;string, string&gt; transform_name_mapping = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsTransformNameMapping(java.lang.String key) {
@@ -5133,11 +5471,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The map of transform name prefixes of the job to be replaced to the
-     * corresponding name prefixes of the new job.
+     * Optional. The map of transform name prefixes of the job to be replaced to
+     * the corresponding name prefixes of the new job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
+     * <code>
+     * map&lt;string, string&gt; transform_name_mapping = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getTransformNameMappingMap() {
@@ -5148,11 +5488,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The map of transform name prefixes of the job to be replaced to the
-     * corresponding name prefixes of the new job.
+     * Optional. The map of transform name prefixes of the job to be replaced to
+     * the corresponding name prefixes of the new job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
+     * <code>
+     * map&lt;string, string&gt; transform_name_mapping = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getTransformNameMappingOrDefault(
@@ -5171,11 +5513,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The map of transform name prefixes of the job to be replaced to the
-     * corresponding name prefixes of the new job.
+     * Optional. The map of transform name prefixes of the job to be replaced to
+     * the corresponding name prefixes of the new job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
+     * <code>
+     * map&lt;string, string&gt; transform_name_mapping = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getTransformNameMappingOrThrow(java.lang.String key) {
@@ -5200,11 +5544,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The map of transform name prefixes of the job to be replaced to the
-     * corresponding name prefixes of the new job.
+     * Optional. The map of transform name prefixes of the job to be replaced to
+     * the corresponding name prefixes of the new job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
+     * <code>
+     * map&lt;string, string&gt; transform_name_mapping = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeTransformNameMapping(java.lang.String key) {
       if (key == null) {
@@ -5225,11 +5571,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The map of transform name prefixes of the job to be replaced to the
-     * corresponding name prefixes of the new job.
+     * Optional. The map of transform name prefixes of the job to be replaced to
+     * the corresponding name prefixes of the new job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
+     * <code>
+     * map&lt;string, string&gt; transform_name_mapping = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putTransformNameMapping(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -5247,11 +5595,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The map of transform name prefixes of the job to be replaced to the
-     * corresponding name prefixes of the new job.
+     * Optional. The map of transform name prefixes of the job to be replaced to
+     * the corresponding name prefixes of the new job.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
+     * <code>
+     * map&lt;string, string&gt; transform_name_mapping = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllTransformNameMapping(
         java.util.Map<java.lang.String, java.lang.String> values) {
@@ -6033,12 +6383,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [regional endpoint]
+     * Optional. The [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
      * contains this job.
      * </pre>
      *
-     * <code>string location = 18;</code>
+     * <code>string location = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The location.
      */
@@ -6058,12 +6408,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [regional endpoint]
+     * Optional. The [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
      * contains this job.
      * </pre>
      *
-     * <code>string location = 18;</code>
+     * <code>string location = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for location.
      */
@@ -6083,12 +6433,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [regional endpoint]
+     * Optional. The [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
      * contains this job.
      * </pre>
      *
-     * <code>string location = 18;</code>
+     * <code>string location = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The location to set.
      * @return This builder for chaining.
@@ -6107,12 +6457,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [regional endpoint]
+     * Optional. The [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
      * contains this job.
      * </pre>
      *
-     * <code>string location = 18;</code>
+     * <code>string location = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -6127,12 +6477,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [regional endpoint]
+     * Optional. The [regional endpoint]
      * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
      * contains this job.
      * </pre>
      *
-     * <code>string location = 18;</code>
+     * <code>string location = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for location to set.
      * @return This builder for chaining.
@@ -7383,6 +7733,523 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       satisfiesPzs_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.dataflow.v1beta3.RuntimeUpdatableParams runtimeUpdatableParams_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.dataflow.v1beta3.RuntimeUpdatableParams,
+            com.google.dataflow.v1beta3.RuntimeUpdatableParams.Builder,
+            com.google.dataflow.v1beta3.RuntimeUpdatableParamsOrBuilder>
+        runtimeUpdatableParamsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * This field may ONLY be modified at runtime using the projects.jobs.update
+     * method to adjust job behavior. This field has no effect when specified at
+     * job creation.
+     * </pre>
+     *
+     * <code>optional .google.dataflow.v1beta3.RuntimeUpdatableParams runtime_updatable_params = 26;
+     * </code>
+     *
+     * @return Whether the runtimeUpdatableParams field is set.
+     */
+    public boolean hasRuntimeUpdatableParams() {
+      return ((bitField0_ & 0x02000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field may ONLY be modified at runtime using the projects.jobs.update
+     * method to adjust job behavior. This field has no effect when specified at
+     * job creation.
+     * </pre>
+     *
+     * <code>optional .google.dataflow.v1beta3.RuntimeUpdatableParams runtime_updatable_params = 26;
+     * </code>
+     *
+     * @return The runtimeUpdatableParams.
+     */
+    public com.google.dataflow.v1beta3.RuntimeUpdatableParams getRuntimeUpdatableParams() {
+      if (runtimeUpdatableParamsBuilder_ == null) {
+        return runtimeUpdatableParams_ == null
+            ? com.google.dataflow.v1beta3.RuntimeUpdatableParams.getDefaultInstance()
+            : runtimeUpdatableParams_;
+      } else {
+        return runtimeUpdatableParamsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field may ONLY be modified at runtime using the projects.jobs.update
+     * method to adjust job behavior. This field has no effect when specified at
+     * job creation.
+     * </pre>
+     *
+     * <code>optional .google.dataflow.v1beta3.RuntimeUpdatableParams runtime_updatable_params = 26;
+     * </code>
+     */
+    public Builder setRuntimeUpdatableParams(
+        com.google.dataflow.v1beta3.RuntimeUpdatableParams value) {
+      if (runtimeUpdatableParamsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        runtimeUpdatableParams_ = value;
+      } else {
+        runtimeUpdatableParamsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field may ONLY be modified at runtime using the projects.jobs.update
+     * method to adjust job behavior. This field has no effect when specified at
+     * job creation.
+     * </pre>
+     *
+     * <code>optional .google.dataflow.v1beta3.RuntimeUpdatableParams runtime_updatable_params = 26;
+     * </code>
+     */
+    public Builder setRuntimeUpdatableParams(
+        com.google.dataflow.v1beta3.RuntimeUpdatableParams.Builder builderForValue) {
+      if (runtimeUpdatableParamsBuilder_ == null) {
+        runtimeUpdatableParams_ = builderForValue.build();
+      } else {
+        runtimeUpdatableParamsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field may ONLY be modified at runtime using the projects.jobs.update
+     * method to adjust job behavior. This field has no effect when specified at
+     * job creation.
+     * </pre>
+     *
+     * <code>optional .google.dataflow.v1beta3.RuntimeUpdatableParams runtime_updatable_params = 26;
+     * </code>
+     */
+    public Builder mergeRuntimeUpdatableParams(
+        com.google.dataflow.v1beta3.RuntimeUpdatableParams value) {
+      if (runtimeUpdatableParamsBuilder_ == null) {
+        if (((bitField0_ & 0x02000000) != 0)
+            && runtimeUpdatableParams_ != null
+            && runtimeUpdatableParams_
+                != com.google.dataflow.v1beta3.RuntimeUpdatableParams.getDefaultInstance()) {
+          getRuntimeUpdatableParamsBuilder().mergeFrom(value);
+        } else {
+          runtimeUpdatableParams_ = value;
+        }
+      } else {
+        runtimeUpdatableParamsBuilder_.mergeFrom(value);
+      }
+      if (runtimeUpdatableParams_ != null) {
+        bitField0_ |= 0x02000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field may ONLY be modified at runtime using the projects.jobs.update
+     * method to adjust job behavior. This field has no effect when specified at
+     * job creation.
+     * </pre>
+     *
+     * <code>optional .google.dataflow.v1beta3.RuntimeUpdatableParams runtime_updatable_params = 26;
+     * </code>
+     */
+    public Builder clearRuntimeUpdatableParams() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      runtimeUpdatableParams_ = null;
+      if (runtimeUpdatableParamsBuilder_ != null) {
+        runtimeUpdatableParamsBuilder_.dispose();
+        runtimeUpdatableParamsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field may ONLY be modified at runtime using the projects.jobs.update
+     * method to adjust job behavior. This field has no effect when specified at
+     * job creation.
+     * </pre>
+     *
+     * <code>optional .google.dataflow.v1beta3.RuntimeUpdatableParams runtime_updatable_params = 26;
+     * </code>
+     */
+    public com.google.dataflow.v1beta3.RuntimeUpdatableParams.Builder
+        getRuntimeUpdatableParamsBuilder() {
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return getRuntimeUpdatableParamsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field may ONLY be modified at runtime using the projects.jobs.update
+     * method to adjust job behavior. This field has no effect when specified at
+     * job creation.
+     * </pre>
+     *
+     * <code>optional .google.dataflow.v1beta3.RuntimeUpdatableParams runtime_updatable_params = 26;
+     * </code>
+     */
+    public com.google.dataflow.v1beta3.RuntimeUpdatableParamsOrBuilder
+        getRuntimeUpdatableParamsOrBuilder() {
+      if (runtimeUpdatableParamsBuilder_ != null) {
+        return runtimeUpdatableParamsBuilder_.getMessageOrBuilder();
+      } else {
+        return runtimeUpdatableParams_ == null
+            ? com.google.dataflow.v1beta3.RuntimeUpdatableParams.getDefaultInstance()
+            : runtimeUpdatableParams_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field may ONLY be modified at runtime using the projects.jobs.update
+     * method to adjust job behavior. This field has no effect when specified at
+     * job creation.
+     * </pre>
+     *
+     * <code>optional .google.dataflow.v1beta3.RuntimeUpdatableParams runtime_updatable_params = 26;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.dataflow.v1beta3.RuntimeUpdatableParams,
+            com.google.dataflow.v1beta3.RuntimeUpdatableParams.Builder,
+            com.google.dataflow.v1beta3.RuntimeUpdatableParamsOrBuilder>
+        getRuntimeUpdatableParamsFieldBuilder() {
+      if (runtimeUpdatableParamsBuilder_ == null) {
+        runtimeUpdatableParamsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.dataflow.v1beta3.RuntimeUpdatableParams,
+                com.google.dataflow.v1beta3.RuntimeUpdatableParams.Builder,
+                com.google.dataflow.v1beta3.RuntimeUpdatableParamsOrBuilder>(
+                getRuntimeUpdatableParams(), getParentForChildren(), isClean());
+        runtimeUpdatableParams_ = null;
+      }
+      return runtimeUpdatableParamsBuilder_;
+    }
+
+    private boolean satisfiesPzi_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use. This field is set only in responses
+     * from the server; it is ignored if it is set in any requests.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the satisfiesPzi field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzi() {
+      return ((bitField0_ & 0x04000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use. This field is set only in responses
+     * from the server; it is ignored if it is set in any requests.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use. This field is set only in responses
+     * from the server; it is ignored if it is set in any requests.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use. This field is set only in responses
+     * from the server; it is ignored if it is set in any requests.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.dataflow.v1beta3.ServiceResources serviceResources_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.dataflow.v1beta3.ServiceResources,
+            com.google.dataflow.v1beta3.ServiceResources.Builder,
+            com.google.dataflow.v1beta3.ServiceResourcesOrBuilder>
+        serviceResourcesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resources used by the Dataflow Service to run the job.
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.ServiceResources service_resources = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the serviceResources field is set.
+     */
+    public boolean hasServiceResources() {
+      return ((bitField0_ & 0x08000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resources used by the Dataflow Service to run the job.
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.ServiceResources service_resources = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The serviceResources.
+     */
+    public com.google.dataflow.v1beta3.ServiceResources getServiceResources() {
+      if (serviceResourcesBuilder_ == null) {
+        return serviceResources_ == null
+            ? com.google.dataflow.v1beta3.ServiceResources.getDefaultInstance()
+            : serviceResources_;
+      } else {
+        return serviceResourcesBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resources used by the Dataflow Service to run the job.
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.ServiceResources service_resources = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setServiceResources(com.google.dataflow.v1beta3.ServiceResources value) {
+      if (serviceResourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceResources_ = value;
+      } else {
+        serviceResourcesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resources used by the Dataflow Service to run the job.
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.ServiceResources service_resources = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setServiceResources(
+        com.google.dataflow.v1beta3.ServiceResources.Builder builderForValue) {
+      if (serviceResourcesBuilder_ == null) {
+        serviceResources_ = builderForValue.build();
+      } else {
+        serviceResourcesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resources used by the Dataflow Service to run the job.
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.ServiceResources service_resources = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeServiceResources(com.google.dataflow.v1beta3.ServiceResources value) {
+      if (serviceResourcesBuilder_ == null) {
+        if (((bitField0_ & 0x08000000) != 0)
+            && serviceResources_ != null
+            && serviceResources_
+                != com.google.dataflow.v1beta3.ServiceResources.getDefaultInstance()) {
+          getServiceResourcesBuilder().mergeFrom(value);
+        } else {
+          serviceResources_ = value;
+        }
+      } else {
+        serviceResourcesBuilder_.mergeFrom(value);
+      }
+      if (serviceResources_ != null) {
+        bitField0_ |= 0x08000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resources used by the Dataflow Service to run the job.
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.ServiceResources service_resources = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearServiceResources() {
+      bitField0_ = (bitField0_ & ~0x08000000);
+      serviceResources_ = null;
+      if (serviceResourcesBuilder_ != null) {
+        serviceResourcesBuilder_.dispose();
+        serviceResourcesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resources used by the Dataflow Service to run the job.
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.ServiceResources service_resources = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.dataflow.v1beta3.ServiceResources.Builder getServiceResourcesBuilder() {
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return getServiceResourcesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resources used by the Dataflow Service to run the job.
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.ServiceResources service_resources = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.dataflow.v1beta3.ServiceResourcesOrBuilder getServiceResourcesOrBuilder() {
+      if (serviceResourcesBuilder_ != null) {
+        return serviceResourcesBuilder_.getMessageOrBuilder();
+      } else {
+        return serviceResources_ == null
+            ? com.google.dataflow.v1beta3.ServiceResources.getDefaultInstance()
+            : serviceResources_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resources used by the Dataflow Service to run the job.
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.ServiceResources service_resources = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.dataflow.v1beta3.ServiceResources,
+            com.google.dataflow.v1beta3.ServiceResources.Builder,
+            com.google.dataflow.v1beta3.ServiceResourcesOrBuilder>
+        getServiceResourcesFieldBuilder() {
+      if (serviceResourcesBuilder_ == null) {
+        serviceResourcesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.dataflow.v1beta3.ServiceResources,
+                com.google.dataflow.v1beta3.ServiceResources.Builder,
+                com.google.dataflow.v1beta3.ServiceResourcesOrBuilder>(
+                getServiceResources(), getParentForChildren(), isClean());
+        serviceResources_ = null;
+      }
+      return serviceResourcesBuilder_;
     }
 
     @java.lang.Override
