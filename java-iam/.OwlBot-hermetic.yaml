@@ -26,5 +26,7 @@ deep-copy-regex:
     dest: "/owl-bot-staging/java-iam/v2beta/google-iam-policy/src"
   - source: "/google/iam/v2/.*-java/gapic-google-.*/src"
     dest: "/owl-bot-staging/java-iam/v2/google-iam-policy/src"
+  - source: "/google/iam/v3/.*-java/gapic-google-.*/src"
+    dest: "/owl-bot-staging/java-iam/v3/google-iam-policy/src"
 
 api-name: iam
