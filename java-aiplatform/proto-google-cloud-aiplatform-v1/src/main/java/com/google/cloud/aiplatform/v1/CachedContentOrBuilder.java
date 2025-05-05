@@ -177,9 +177,9 @@ public interface CachedContentOrBuilder
    *
    *
    * <pre>
-   * Immutable. The name of the publisher model to use for cached content.
-   * Format:
-   * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+   * Immutable. The name of the `Model` to use for cached content. Currently,
+   * only the published Gemini base models are supported, in form of
+   * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
    * </pre>
    *
    * <code>string model = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -192,9 +192,9 @@ public interface CachedContentOrBuilder
    *
    *
    * <pre>
-   * Immutable. The name of the publisher model to use for cached content.
-   * Format:
-   * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+   * Immutable. The name of the `Model` to use for cached content. Currently,
+   * only the published Gemini base models are supported, in form of
+   * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
    * </pre>
    *
    * <code>string model = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -435,7 +435,7 @@ public interface CachedContentOrBuilder
    *
    *
    * <pre>
-   * Output only. Creatation time of the cache entry.
+   * Output only. Creation time of the cache entry.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -449,7 +449,7 @@ public interface CachedContentOrBuilder
    *
    *
    * <pre>
-   * Output only. Creatation time of the cache entry.
+   * Output only. Creation time of the cache entry.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -463,7 +463,7 @@ public interface CachedContentOrBuilder
    *
    *
    * <pre>
-   * Output only. Creatation time of the cache entry.
+   * Output only. Creation time of the cache entry.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -553,6 +553,55 @@ public interface CachedContentOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.CachedContent.UsageMetadataOrBuilder getUsageMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Immutable. Customer-managed encryption key spec for a
+   * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+   * will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Immutable. Customer-managed encryption key spec for a
+   * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+   * will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Immutable. Customer-managed encryption key spec for a
+   * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+   * will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
 
   com.google.cloud.aiplatform.v1.CachedContent.ExpirationCase getExpirationCase();
 }

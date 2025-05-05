@@ -29,6 +29,9 @@ public interface LaunchTemplateParametersOrBuilder
    *
    * <pre>
    * Required. The job name to use for the created job.
+   *
+   * The name must match the regular expression
+   * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
    * </pre>
    *
    * <code>string job_name = 1;</code>
@@ -42,6 +45,9 @@ public interface LaunchTemplateParametersOrBuilder
    *
    * <pre>
    * Required. The job name to use for the created job.
+   *
+   * The name must match the regular expression
+   * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
    * </pre>
    *
    * <code>string job_name = 1;</code>

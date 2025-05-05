@@ -101,4 +101,69 @@ public interface SdkVersionOrBuilder
    * @return The sdkSupportStatus.
    */
   com.google.dataflow.v1beta3.SdkVersion.SdkSupportStatus getSdkSupportStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Known bugs found in this SDK version.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.dataflow.v1beta3.SdkBug> getBugsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Known bugs found in this SDK version.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.dataflow.v1beta3.SdkBug getBugs(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Known bugs found in this SDK version.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getBugsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Known bugs found in this SDK version.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.dataflow.v1beta3.SdkBugOrBuilder> getBugsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Known bugs found in this SDK version.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.dataflow.v1beta3.SdkBug bugs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.dataflow.v1beta3.SdkBugOrBuilder getBugsOrBuilder(int index);
 }

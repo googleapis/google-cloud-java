@@ -277,4 +277,41 @@ public interface WorkItemDetailsOrBuilder
    * <code>repeated .google.dataflow.v1beta3.MetricUpdate metrics = 7;</code>
    */
   com.google.dataflow.v1beta3.MetricUpdateOrBuilder getMetricsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about straggler detections for this work item.
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.StragglerInfo straggler_info = 8;</code>
+   *
+   * @return Whether the stragglerInfo field is set.
+   */
+  boolean hasStragglerInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about straggler detections for this work item.
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.StragglerInfo straggler_info = 8;</code>
+   *
+   * @return The stragglerInfo.
+   */
+  com.google.dataflow.v1beta3.StragglerInfo getStragglerInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about straggler detections for this work item.
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.StragglerInfo straggler_info = 8;</code>
+   */
+  com.google.dataflow.v1beta3.StragglerInfoOrBuilder getStragglerInfoOrBuilder();
 }

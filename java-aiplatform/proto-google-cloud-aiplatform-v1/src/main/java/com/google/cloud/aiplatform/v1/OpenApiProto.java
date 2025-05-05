@@ -36,6 +36,10 @@ public final class OpenApiProto {
       internal_static_google_cloud_aiplatform_v1_Schema_PropertiesEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_Schema_PropertiesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_Schema_DefsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_Schema_DefsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -48,7 +52,7 @@ public final class OpenApiProto {
       "\n"
           + "(google/cloud/aiplatform/v1/openapi.pro"
           + "to\022\032google.cloud.aiplatform.v1\032\037google/a"
-          + "pi/field_behavior.proto\032\034google/protobuf/struct.proto\"\260\006\n"
+          + "pi/field_behavior.proto\032\034google/protobuf/struct.proto\"\324\007\n"
           + "\006Schema\0223\n"
           + "\004type\030\001 \001(\0162 .google.cloud.aiplatform.v1.TypeB\003\340A\001\022\023\n"
           + "\006format\030\007 \001(\tB\003\340A\001\022\022\n"
@@ -73,23 +77,31 @@ public final class OpenApiProto {
           + "max_length\030\023 \001(\003B\003\340A\001\022\024\n"
           + "\007pattern\030\024 \001(\tB\003\340A\001\022,\n"
           + "\007example\030\004 \001(\0132\026.google.protobuf.ValueB\003\340A\001\0227\n"
-          + "\006any_of\030\013 \003(\0132\".google.cloud.aiplatform.v1.SchemaB\003\340A\001\032U\n"
+          + "\006any_of\030\013"
+          + " \003(\0132\".google.cloud.aiplatform.v1.SchemaB\003\340A\001\022\020\n"
+          + "\003ref\030\033 \001(\tB\003\340A\001\022?\n"
+          + "\004defs\030\034"
+          + " \003(\0132,.google.cloud.aiplatform.v1.Schema.DefsEntryB\003\340A\001\032U\n"
           + "\017PropertiesEntry\022\013\n"
+          + "\003key\030\001 \001(\t\0221\n"
+          + "\005value\030\002 \001(\0132\".google.cloud.aiplatform.v1.Schema:\0028\001\032O\n"
+          + "\tDefsEntry\022\013\n"
           + "\003key\030\001 \001(\t\0221\n"
           + "\005value\030\002 \001(\0132\".google.cloud.aiplatform.v1.Schema:\0028\001*e\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\n\n"
-          + "\006STRING\020\001\022\n\n"
+          + "\006STRING\020\001\022\n"
+          + "\n"
           + "\006NUMBER\020\002\022\013\n"
           + "\007INTEGER\020\003\022\013\n"
           + "\007BOOLEAN\020\004\022\t\n"
           + "\005ARRAY\020\005\022\n\n"
           + "\006OBJECT\020\006B\312\001\n"
-          + "\036com.google.cloud.aiplatform.v1B\014OpenApiProtoP\001Z>cloud.google"
-          + ".com/go/aiplatform/apiv1/aiplatformpb;ai"
-          + "platformpb\252\002\032Google.Cloud.AIPlatform.V1\312"
-          + "\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::C"
-          + "loud::AIPlatform::V1b\006proto3"
+          + "\036com.google.cloud.aiplatform.v1B\014OpenApiProtoP\001Z>cloud.go"
+          + "ogle.com/go/aiplatform/apiv1/aiplatformp"
+          + "b;aiplatformpb\252\002\032Google.Cloud.AIPlatform"
+          + ".V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Googl"
+          + "e::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -126,12 +138,22 @@ public final class OpenApiProto {
               "Pattern",
               "Example",
               "AnyOf",
+              "Ref",
+              "Defs",
             });
     internal_static_google_cloud_aiplatform_v1_Schema_PropertiesEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1_Schema_descriptor.getNestedTypes().get(0);
     internal_static_google_cloud_aiplatform_v1_Schema_PropertiesEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_Schema_PropertiesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_aiplatform_v1_Schema_DefsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1_Schema_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_aiplatform_v1_Schema_DefsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_Schema_DefsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });

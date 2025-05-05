@@ -150,7 +150,7 @@
  *
  * <p>======================= FlexTemplatesServiceClient =======================
  *
- * <p>Service Description: Provides a service for Flex templates. This feature is not ready yet.
+ * <p>Service Description: Provides a service for Flex templates.
  *
  * <p>Sample for FlexTemplatesServiceClient:
  *

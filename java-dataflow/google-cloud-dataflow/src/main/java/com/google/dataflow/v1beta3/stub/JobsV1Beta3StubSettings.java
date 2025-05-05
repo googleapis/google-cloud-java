@@ -122,8 +122,6 @@ public class JobsV1Beta3StubSettings extends StubSettings<JobsV1Beta3StubSetting
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/compute")
-          .add("https://www.googleapis.com/auth/compute.readonly")
-          .add("https://www.googleapis.com/auth/userinfo.email")
           .build();
 
   private final UnaryCallSettings<CreateJobRequest, Job> createJobSettings;

@@ -49,8 +49,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     nodeType_ = 0;
     engineVersion_ = "";
     pscAutoConnections_ = java.util.Collections.emptyList();
+    pscAttachmentDetails_ = java.util.Collections.emptyList();
     endpoints_ = java.util.Collections.emptyList();
     mode_ = 0;
+    backupCollection_ = "";
   }
 
   @java.lang.Override
@@ -1161,6 +1163,96 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * @return The targetReplicaCount.
        */
       int getTargetReplicaCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Target engine version for the instance.
+       * </pre>
+       *
+       * <code>
+       * optional string target_engine_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the targetEngineVersion field is set.
+       */
+      boolean hasTargetEngineVersion();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Target engine version for the instance.
+       * </pre>
+       *
+       * <code>
+       * optional string target_engine_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The targetEngineVersion.
+       */
+      java.lang.String getTargetEngineVersion();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Target engine version for the instance.
+       * </pre>
+       *
+       * <code>
+       * optional string target_engine_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for targetEngineVersion.
+       */
+      com.google.protobuf.ByteString getTargetEngineVersionBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Target node type for the instance.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.memorystore.v1.Instance.NodeType target_node_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the targetNodeType field is set.
+       */
+      boolean hasTargetNodeType();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Target node type for the instance.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.memorystore.v1.Instance.NodeType target_node_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for targetNodeType.
+       */
+      int getTargetNodeTypeValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Target node type for the instance.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.memorystore.v1.Instance.NodeType target_node_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The targetNodeType.
+       */
+      com.google.cloud.memorystore.v1.Instance.NodeType getTargetNodeType();
     }
 
     /**
@@ -1183,7 +1275,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         super(builder);
       }
 
-      private UpdateInfo() {}
+      private UpdateInfo() {
+        targetEngineVersion_ = "";
+        targetNodeType_ = 0;
+      }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
@@ -1281,6 +1376,142 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return targetReplicaCount_;
       }
 
+      public static final int TARGET_ENGINE_VERSION_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object targetEngineVersion_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Target engine version for the instance.
+       * </pre>
+       *
+       * <code>
+       * optional string target_engine_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the targetEngineVersion field is set.
+       */
+      @java.lang.Override
+      public boolean hasTargetEngineVersion() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Target engine version for the instance.
+       * </pre>
+       *
+       * <code>
+       * optional string target_engine_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The targetEngineVersion.
+       */
+      @java.lang.Override
+      public java.lang.String getTargetEngineVersion() {
+        java.lang.Object ref = targetEngineVersion_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          targetEngineVersion_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Target engine version for the instance.
+       * </pre>
+       *
+       * <code>
+       * optional string target_engine_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for targetEngineVersion.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getTargetEngineVersionBytes() {
+        java.lang.Object ref = targetEngineVersion_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          targetEngineVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int TARGET_NODE_TYPE_FIELD_NUMBER = 4;
+      private int targetNodeType_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Target node type for the instance.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.memorystore.v1.Instance.NodeType target_node_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the targetNodeType field is set.
+       */
+      @java.lang.Override
+      public boolean hasTargetNodeType() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Target node type for the instance.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.memorystore.v1.Instance.NodeType target_node_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for targetNodeType.
+       */
+      @java.lang.Override
+      public int getTargetNodeTypeValue() {
+        return targetNodeType_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Target node type for the instance.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.memorystore.v1.Instance.NodeType target_node_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The targetNodeType.
+       */
+      @java.lang.Override
+      public com.google.cloud.memorystore.v1.Instance.NodeType getTargetNodeType() {
+        com.google.cloud.memorystore.v1.Instance.NodeType result =
+            com.google.cloud.memorystore.v1.Instance.NodeType.forNumber(targetNodeType_);
+        return result == null
+            ? com.google.cloud.memorystore.v1.Instance.NodeType.UNRECOGNIZED
+            : result;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -1301,6 +1532,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000002) != 0)) {
           output.writeInt32(2, targetReplicaCount_);
         }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, targetEngineVersion_);
+        }
+        if (((bitField0_ & 0x00000008) != 0)) {
+          output.writeEnum(4, targetNodeType_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -1315,6 +1552,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         }
         if (((bitField0_ & 0x00000002) != 0)) {
           size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, targetReplicaCount_);
+        }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, targetEngineVersion_);
+        }
+        if (((bitField0_ & 0x00000008) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, targetNodeType_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -1340,6 +1583,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         if (hasTargetReplicaCount()) {
           if (getTargetReplicaCount() != other.getTargetReplicaCount()) return false;
         }
+        if (hasTargetEngineVersion() != other.hasTargetEngineVersion()) return false;
+        if (hasTargetEngineVersion()) {
+          if (!getTargetEngineVersion().equals(other.getTargetEngineVersion())) return false;
+        }
+        if (hasTargetNodeType() != other.hasTargetNodeType()) return false;
+        if (hasTargetNodeType()) {
+          if (targetNodeType_ != other.targetNodeType_) return false;
+        }
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -1358,6 +1609,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         if (hasTargetReplicaCount()) {
           hash = (37 * hash) + TARGET_REPLICA_COUNT_FIELD_NUMBER;
           hash = (53 * hash) + getTargetReplicaCount();
+        }
+        if (hasTargetEngineVersion()) {
+          hash = (37 * hash) + TARGET_ENGINE_VERSION_FIELD_NUMBER;
+          hash = (53 * hash) + getTargetEngineVersion().hashCode();
+        }
+        if (hasTargetNodeType()) {
+          hash = (37 * hash) + TARGET_NODE_TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + targetNodeType_;
         }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
@@ -1507,6 +1766,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           bitField0_ = 0;
           targetShardCount_ = 0;
           targetReplicaCount_ = 0;
+          targetEngineVersion_ = "";
+          targetNodeType_ = 0;
           return this;
         }
 
@@ -1553,6 +1814,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.targetReplicaCount_ = targetReplicaCount_;
             to_bitField0_ |= 0x00000002;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.targetEngineVersion_ = targetEngineVersion_;
+            to_bitField0_ |= 0x00000004;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.targetNodeType_ = targetNodeType_;
+            to_bitField0_ |= 0x00000008;
           }
           result.bitField0_ |= to_bitField0_;
         }
@@ -1613,6 +1882,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           if (other.hasTargetReplicaCount()) {
             setTargetReplicaCount(other.getTargetReplicaCount());
           }
+          if (other.hasTargetEngineVersion()) {
+            targetEngineVersion_ = other.targetEngineVersion_;
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          if (other.hasTargetNodeType()) {
+            setTargetNodeType(other.getTargetNodeType());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -1651,6 +1928,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000002;
                     break;
                   } // case 16
+                case 26:
+                  {
+                    targetEngineVersion_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                case 32:
+                  {
+                    targetNodeType_ = input.readEnum();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 32
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1822,6 +2111,269 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         public Builder clearTargetReplicaCount() {
           bitField0_ = (bitField0_ & ~0x00000002);
           targetReplicaCount_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object targetEngineVersion_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Target engine version for the instance.
+         * </pre>
+         *
+         * <code>
+         * optional string target_engine_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return Whether the targetEngineVersion field is set.
+         */
+        public boolean hasTargetEngineVersion() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Target engine version for the instance.
+         * </pre>
+         *
+         * <code>
+         * optional string target_engine_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The targetEngineVersion.
+         */
+        public java.lang.String getTargetEngineVersion() {
+          java.lang.Object ref = targetEngineVersion_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            targetEngineVersion_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Target engine version for the instance.
+         * </pre>
+         *
+         * <code>
+         * optional string target_engine_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The bytes for targetEngineVersion.
+         */
+        public com.google.protobuf.ByteString getTargetEngineVersionBytes() {
+          java.lang.Object ref = targetEngineVersion_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            targetEngineVersion_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Target engine version for the instance.
+         * </pre>
+         *
+         * <code>
+         * optional string target_engine_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @param value The targetEngineVersion to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTargetEngineVersion(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          targetEngineVersion_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Target engine version for the instance.
+         * </pre>
+         *
+         * <code>
+         * optional string target_engine_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTargetEngineVersion() {
+          targetEngineVersion_ = getDefaultInstance().getTargetEngineVersion();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Target engine version for the instance.
+         * </pre>
+         *
+         * <code>
+         * optional string target_engine_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @param value The bytes for targetEngineVersion to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTargetEngineVersionBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          targetEngineVersion_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        private int targetNodeType_ = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Target node type for the instance.
+         * </pre>
+         *
+         * <code>
+         * optional .google.cloud.memorystore.v1.Instance.NodeType target_node_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return Whether the targetNodeType field is set.
+         */
+        @java.lang.Override
+        public boolean hasTargetNodeType() {
+          return ((bitField0_ & 0x00000008) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Target node type for the instance.
+         * </pre>
+         *
+         * <code>
+         * optional .google.cloud.memorystore.v1.Instance.NodeType target_node_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for targetNodeType.
+         */
+        @java.lang.Override
+        public int getTargetNodeTypeValue() {
+          return targetNodeType_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Target node type for the instance.
+         * </pre>
+         *
+         * <code>
+         * optional .google.cloud.memorystore.v1.Instance.NodeType target_node_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for targetNodeType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTargetNodeTypeValue(int value) {
+          targetNodeType_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Target node type for the instance.
+         * </pre>
+         *
+         * <code>
+         * optional .google.cloud.memorystore.v1.Instance.NodeType target_node_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The targetNodeType.
+         */
+        @java.lang.Override
+        public com.google.cloud.memorystore.v1.Instance.NodeType getTargetNodeType() {
+          com.google.cloud.memorystore.v1.Instance.NodeType result =
+              com.google.cloud.memorystore.v1.Instance.NodeType.forNumber(targetNodeType_);
+          return result == null
+              ? com.google.cloud.memorystore.v1.Instance.NodeType.UNRECOGNIZED
+              : result;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Target node type for the instance.
+         * </pre>
+         *
+         * <code>
+         * optional .google.cloud.memorystore.v1.Instance.NodeType target_node_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @param value The targetNodeType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTargetNodeType(com.google.cloud.memorystore.v1.Instance.NodeType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000008;
+          targetNodeType_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Target node type for the instance.
+         * </pre>
+         *
+         * <code>
+         * optional .google.cloud.memorystore.v1.Instance.NodeType target_node_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTargetNodeType() {
+          bitField0_ = (bitField0_ & ~0x00000008);
+          targetNodeType_ = 0;
           onChanged();
           return this;
         }
@@ -2697,6 +3249,1494 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.cloud.memorystore.v1.Instance.StateInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface GcsBackupSourceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.memorystore.v1.Instance.GcsBackupSource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+     * </pre>
+     *
+     * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the uris.
+     */
+    java.util.List<java.lang.String> getUrisList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+     * </pre>
+     *
+     * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of uris.
+     */
+    int getUrisCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+     * </pre>
+     *
+     * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The uris at the given index.
+     */
+    java.lang.String getUris(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+     * </pre>
+     *
+     * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the uris at the given index.
+     */
+    com.google.protobuf.ByteString getUrisBytes(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Backups that stored in Cloud Storage buckets.
+   * The Cloud Storage buckets need to be the same region as the instances.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.memorystore.v1.Instance.GcsBackupSource}
+   */
+  public static final class GcsBackupSource extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.memorystore.v1.Instance.GcsBackupSource)
+      GcsBackupSourceOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use GcsBackupSource.newBuilder() to construct.
+    private GcsBackupSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GcsBackupSource() {
+      uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GcsBackupSource();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.memorystore.v1.V1mainProto
+          .internal_static_google_cloud_memorystore_v1_Instance_GcsBackupSource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.memorystore.v1.V1mainProto
+          .internal_static_google_cloud_memorystore_v1_Instance_GcsBackupSource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.memorystore.v1.Instance.GcsBackupSource.class,
+              com.google.cloud.memorystore.v1.Instance.GcsBackupSource.Builder.class);
+    }
+
+    public static final int URIS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList uris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+     * </pre>
+     *
+     * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the uris.
+     */
+    public com.google.protobuf.ProtocolStringList getUrisList() {
+      return uris_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+     * </pre>
+     *
+     * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of uris.
+     */
+    public int getUrisCount() {
+      return uris_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+     * </pre>
+     *
+     * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The uris at the given index.
+     */
+    public java.lang.String getUris(int index) {
+      return uris_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+     * </pre>
+     *
+     * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the uris at the given index.
+     */
+    public com.google.protobuf.ByteString getUrisBytes(int index) {
+      return uris_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < uris_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uris_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < uris_.size(); i++) {
+          dataSize += computeStringSizeNoTag(uris_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getUrisList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.memorystore.v1.Instance.GcsBackupSource)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.memorystore.v1.Instance.GcsBackupSource other =
+          (com.google.cloud.memorystore.v1.Instance.GcsBackupSource) obj;
+
+      if (!getUrisList().equals(other.getUrisList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getUrisCount() > 0) {
+        hash = (37 * hash) + URIS_FIELD_NUMBER;
+        hash = (53 * hash) + getUrisList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.GcsBackupSource parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.GcsBackupSource parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.GcsBackupSource parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.GcsBackupSource parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.GcsBackupSource parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.GcsBackupSource parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.GcsBackupSource parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.GcsBackupSource parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.GcsBackupSource parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.GcsBackupSource parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.GcsBackupSource parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.GcsBackupSource parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.memorystore.v1.Instance.GcsBackupSource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Backups that stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the instances.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.memorystore.v1.Instance.GcsBackupSource}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.memorystore.v1.Instance.GcsBackupSource)
+        com.google.cloud.memorystore.v1.Instance.GcsBackupSourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.memorystore.v1.V1mainProto
+            .internal_static_google_cloud_memorystore_v1_Instance_GcsBackupSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.memorystore.v1.V1mainProto
+            .internal_static_google_cloud_memorystore_v1_Instance_GcsBackupSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.memorystore.v1.Instance.GcsBackupSource.class,
+                com.google.cloud.memorystore.v1.Instance.GcsBackupSource.Builder.class);
+      }
+
+      // Construct using com.google.cloud.memorystore.v1.Instance.GcsBackupSource.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.memorystore.v1.V1mainProto
+            .internal_static_google_cloud_memorystore_v1_Instance_GcsBackupSource_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.memorystore.v1.Instance.GcsBackupSource getDefaultInstanceForType() {
+        return com.google.cloud.memorystore.v1.Instance.GcsBackupSource.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.memorystore.v1.Instance.GcsBackupSource build() {
+        com.google.cloud.memorystore.v1.Instance.GcsBackupSource result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.memorystore.v1.Instance.GcsBackupSource buildPartial() {
+        com.google.cloud.memorystore.v1.Instance.GcsBackupSource result =
+            new com.google.cloud.memorystore.v1.Instance.GcsBackupSource(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.memorystore.v1.Instance.GcsBackupSource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          uris_.makeImmutable();
+          result.uris_ = uris_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.memorystore.v1.Instance.GcsBackupSource) {
+          return mergeFrom((com.google.cloud.memorystore.v1.Instance.GcsBackupSource) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.memorystore.v1.Instance.GcsBackupSource other) {
+        if (other == com.google.cloud.memorystore.v1.Instance.GcsBackupSource.getDefaultInstance())
+          return this;
+        if (!other.uris_.isEmpty()) {
+          if (uris_.isEmpty()) {
+            uris_ = other.uris_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureUrisIsMutable();
+            uris_.addAll(other.uris_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureUrisIsMutable();
+                  uris_.add(s);
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList uris_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureUrisIsMutable() {
+        if (!uris_.isModifiable()) {
+          uris_ = new com.google.protobuf.LazyStringArrayList(uris_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+       * </pre>
+       *
+       * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the uris.
+       */
+      public com.google.protobuf.ProtocolStringList getUrisList() {
+        uris_.makeImmutable();
+        return uris_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+       * </pre>
+       *
+       * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of uris.
+       */
+      public int getUrisCount() {
+        return uris_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+       * </pre>
+       *
+       * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The uris at the given index.
+       */
+      public java.lang.String getUris(int index) {
+        return uris_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+       * </pre>
+       *
+       * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the uris at the given index.
+       */
+      public com.google.protobuf.ByteString getUrisBytes(int index) {
+        return uris_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+       * </pre>
+       *
+       * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The uris to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUris(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUrisIsMutable();
+        uris_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+       * </pre>
+       *
+       * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The uris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUris(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureUrisIsMutable();
+        uris_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+       * </pre>
+       *
+       * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param values The uris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllUris(java.lang.Iterable<java.lang.String> values) {
+        ensureUrisIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, uris_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+       * </pre>
+       *
+       * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUris() {
+        uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+       * </pre>
+       *
+       * <code>repeated string uris = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes of the uris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUrisBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureUrisIsMutable();
+        uris_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.memorystore.v1.Instance.GcsBackupSource)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.memorystore.v1.Instance.GcsBackupSource)
+    private static final com.google.cloud.memorystore.v1.Instance.GcsBackupSource DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.memorystore.v1.Instance.GcsBackupSource();
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.GcsBackupSource getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GcsBackupSource> PARSER =
+        new com.google.protobuf.AbstractParser<GcsBackupSource>() {
+          @java.lang.Override
+          public GcsBackupSource parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GcsBackupSource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GcsBackupSource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.memorystore.v1.Instance.GcsBackupSource getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ManagedBackupSourceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.memorystore.v1.Instance.ManagedBackupSource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Example:
+     * //memorystore.googleapis.com/projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup}
+     * A shorter version (without the prefix) of the backup name is also
+     * supported, like
+     * projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup_id}
+     * In this case, it assumes the backup is under memorystore.googleapis.com.
+     * </pre>
+     *
+     * <code>string backup = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The backup.
+     */
+    java.lang.String getBackup();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Example:
+     * //memorystore.googleapis.com/projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup}
+     * A shorter version (without the prefix) of the backup name is also
+     * supported, like
+     * projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup_id}
+     * In this case, it assumes the backup is under memorystore.googleapis.com.
+     * </pre>
+     *
+     * <code>string backup = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for backup.
+     */
+    com.google.protobuf.ByteString getBackupBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Backups that generated and managed by memorystore.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.memorystore.v1.Instance.ManagedBackupSource}
+   */
+  public static final class ManagedBackupSource extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.memorystore.v1.Instance.ManagedBackupSource)
+      ManagedBackupSourceOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use ManagedBackupSource.newBuilder() to construct.
+    private ManagedBackupSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ManagedBackupSource() {
+      backup_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ManagedBackupSource();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.memorystore.v1.V1mainProto
+          .internal_static_google_cloud_memorystore_v1_Instance_ManagedBackupSource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.memorystore.v1.V1mainProto
+          .internal_static_google_cloud_memorystore_v1_Instance_ManagedBackupSource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.class,
+              com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.Builder.class);
+    }
+
+    public static final int BACKUP_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object backup_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Example:
+     * //memorystore.googleapis.com/projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup}
+     * A shorter version (without the prefix) of the backup name is also
+     * supported, like
+     * projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup_id}
+     * In this case, it assumes the backup is under memorystore.googleapis.com.
+     * </pre>
+     *
+     * <code>string backup = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The backup.
+     */
+    @java.lang.Override
+    public java.lang.String getBackup() {
+      java.lang.Object ref = backup_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        backup_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Example:
+     * //memorystore.googleapis.com/projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup}
+     * A shorter version (without the prefix) of the backup name is also
+     * supported, like
+     * projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup_id}
+     * In this case, it assumes the backup is under memorystore.googleapis.com.
+     * </pre>
+     *
+     * <code>string backup = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for backup.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getBackupBytes() {
+      java.lang.Object ref = backup_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        backup_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backup_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, backup_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backup_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, backup_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.memorystore.v1.Instance.ManagedBackupSource)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.memorystore.v1.Instance.ManagedBackupSource other =
+          (com.google.cloud.memorystore.v1.Instance.ManagedBackupSource) obj;
+
+      if (!getBackup().equals(other.getBackup())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BACKUP_FIELD_NUMBER;
+      hash = (53 * hash) + getBackup().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.ManagedBackupSource parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.ManagedBackupSource parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.ManagedBackupSource parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.ManagedBackupSource parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.ManagedBackupSource parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.ManagedBackupSource parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.ManagedBackupSource parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.ManagedBackupSource parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.ManagedBackupSource parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.ManagedBackupSource parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.ManagedBackupSource parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.ManagedBackupSource parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.memorystore.v1.Instance.ManagedBackupSource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Backups that generated and managed by memorystore.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.memorystore.v1.Instance.ManagedBackupSource}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.memorystore.v1.Instance.ManagedBackupSource)
+        com.google.cloud.memorystore.v1.Instance.ManagedBackupSourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.memorystore.v1.V1mainProto
+            .internal_static_google_cloud_memorystore_v1_Instance_ManagedBackupSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.memorystore.v1.V1mainProto
+            .internal_static_google_cloud_memorystore_v1_Instance_ManagedBackupSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.class,
+                com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.Builder.class);
+      }
+
+      // Construct using com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        backup_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.memorystore.v1.V1mainProto
+            .internal_static_google_cloud_memorystore_v1_Instance_ManagedBackupSource_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.memorystore.v1.Instance.ManagedBackupSource
+          getDefaultInstanceForType() {
+        return com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.memorystore.v1.Instance.ManagedBackupSource build() {
+        com.google.cloud.memorystore.v1.Instance.ManagedBackupSource result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.memorystore.v1.Instance.ManagedBackupSource buildPartial() {
+        com.google.cloud.memorystore.v1.Instance.ManagedBackupSource result =
+            new com.google.cloud.memorystore.v1.Instance.ManagedBackupSource(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.memorystore.v1.Instance.ManagedBackupSource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.backup_ = backup_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.memorystore.v1.Instance.ManagedBackupSource) {
+          return mergeFrom((com.google.cloud.memorystore.v1.Instance.ManagedBackupSource) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.memorystore.v1.Instance.ManagedBackupSource other) {
+        if (other
+            == com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.getDefaultInstance())
+          return this;
+        if (!other.getBackup().isEmpty()) {
+          backup_ = other.backup_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  backup_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object backup_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example:
+       * //memorystore.googleapis.com/projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup}
+       * A shorter version (without the prefix) of the backup name is also
+       * supported, like
+       * projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup_id}
+       * In this case, it assumes the backup is under memorystore.googleapis.com.
+       * </pre>
+       *
+       * <code>string backup = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The backup.
+       */
+      public java.lang.String getBackup() {
+        java.lang.Object ref = backup_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          backup_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example:
+       * //memorystore.googleapis.com/projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup}
+       * A shorter version (without the prefix) of the backup name is also
+       * supported, like
+       * projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup_id}
+       * In this case, it assumes the backup is under memorystore.googleapis.com.
+       * </pre>
+       *
+       * <code>string backup = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for backup.
+       */
+      public com.google.protobuf.ByteString getBackupBytes() {
+        java.lang.Object ref = backup_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          backup_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example:
+       * //memorystore.googleapis.com/projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup}
+       * A shorter version (without the prefix) of the backup name is also
+       * supported, like
+       * projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup_id}
+       * In this case, it assumes the backup is under memorystore.googleapis.com.
+       * </pre>
+       *
+       * <code>string backup = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The backup to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBackup(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        backup_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example:
+       * //memorystore.googleapis.com/projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup}
+       * A shorter version (without the prefix) of the backup name is also
+       * supported, like
+       * projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup_id}
+       * In this case, it assumes the backup is under memorystore.googleapis.com.
+       * </pre>
+       *
+       * <code>string backup = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBackup() {
+        backup_ = getDefaultInstance().getBackup();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Example:
+       * //memorystore.googleapis.com/projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup}
+       * A shorter version (without the prefix) of the backup name is also
+       * supported, like
+       * projects/{project}/locations/{location}/backupCollections/{collection}/backups/{backup_id}
+       * In this case, it assumes the backup is under memorystore.googleapis.com.
+       * </pre>
+       *
+       * <code>string backup = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for backup to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBackupBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        backup_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.memorystore.v1.Instance.ManagedBackupSource)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.memorystore.v1.Instance.ManagedBackupSource)
+    private static final com.google.cloud.memorystore.v1.Instance.ManagedBackupSource
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.memorystore.v1.Instance.ManagedBackupSource();
+    }
+
+    public static com.google.cloud.memorystore.v1.Instance.ManagedBackupSource
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ManagedBackupSource> PARSER =
+        new com.google.protobuf.AbstractParser<ManagedBackupSource>() {
+          @java.lang.Override
+          public ManagedBackupSource parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ManagedBackupSource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ManagedBackupSource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.memorystore.v1.Instance.ManagedBackupSource
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -3833,11 +5873,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed information of a PSC connection that is created through
-     * service connectivity automation.
+     * Immutable. Detailed information of a PSC connection that is created
+     * through service connectivity automation.
      * </pre>
      *
-     * <code>.google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1;</code>
+     * <code>
+     * .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return Whether the pscAutoConnection field is set.
      */
@@ -3847,11 +5889,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed information of a PSC connection that is created through
-     * service connectivity automation.
+     * Immutable. Detailed information of a PSC connection that is created
+     * through service connectivity automation.
      * </pre>
      *
-     * <code>.google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1;</code>
+     * <code>
+     * .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The pscAutoConnection.
      */
@@ -3861,11 +5905,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed information of a PSC connection that is created through
-     * service connectivity automation.
+     * Immutable. Detailed information of a PSC connection that is created
+     * through service connectivity automation.
      * </pre>
      *
-     * <code>.google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1;</code>
+     * <code>
+     * .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      */
     com.google.cloud.memorystore.v1.PscAutoConnectionOrBuilder getPscAutoConnectionOrBuilder();
 
@@ -4008,11 +6054,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed information of a PSC connection that is created through
-     * service connectivity automation.
+     * Immutable. Detailed information of a PSC connection that is created
+     * through service connectivity automation.
      * </pre>
      *
-     * <code>.google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1;</code>
+     * <code>
+     * .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return Whether the pscAutoConnection field is set.
      */
@@ -4025,11 +6073,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed information of a PSC connection that is created through
-     * service connectivity automation.
+     * Immutable. Detailed information of a PSC connection that is created
+     * through service connectivity automation.
      * </pre>
      *
-     * <code>.google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1;</code>
+     * <code>
+     * .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The pscAutoConnection.
      */
@@ -4045,11 +6095,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Detailed information of a PSC connection that is created through
-     * service connectivity automation.
+     * Immutable. Detailed information of a PSC connection that is created
+     * through service connectivity automation.
      * </pre>
      *
-     * <code>.google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1;</code>
+     * <code>
+     * .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.memorystore.v1.PscAutoConnectionOrBuilder
@@ -4551,11 +6603,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detailed information of a PSC connection that is created through
-       * service connectivity automation.
+       * Immutable. Detailed information of a PSC connection that is created
+       * through service connectivity automation.
        * </pre>
        *
-       * <code>.google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1;</code>
+       * <code>
+       * .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1 [(.google.api.field_behavior) = IMMUTABLE];
+       * </code>
        *
        * @return Whether the pscAutoConnection field is set.
        */
@@ -4568,11 +6622,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detailed information of a PSC connection that is created through
-       * service connectivity automation.
+       * Immutable. Detailed information of a PSC connection that is created
+       * through service connectivity automation.
        * </pre>
        *
-       * <code>.google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1;</code>
+       * <code>
+       * .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1 [(.google.api.field_behavior) = IMMUTABLE];
+       * </code>
        *
        * @return The pscAutoConnection.
        */
@@ -4595,11 +6651,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detailed information of a PSC connection that is created through
-       * service connectivity automation.
+       * Immutable. Detailed information of a PSC connection that is created
+       * through service connectivity automation.
        * </pre>
        *
-       * <code>.google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1;</code>
+       * <code>
+       * .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1 [(.google.api.field_behavior) = IMMUTABLE];
+       * </code>
        */
       public Builder setPscAutoConnection(com.google.cloud.memorystore.v1.PscAutoConnection value) {
         if (pscAutoConnectionBuilder_ == null) {
@@ -4619,11 +6677,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detailed information of a PSC connection that is created through
-       * service connectivity automation.
+       * Immutable. Detailed information of a PSC connection that is created
+       * through service connectivity automation.
        * </pre>
        *
-       * <code>.google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1;</code>
+       * <code>
+       * .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1 [(.google.api.field_behavior) = IMMUTABLE];
+       * </code>
        */
       public Builder setPscAutoConnection(
           com.google.cloud.memorystore.v1.PscAutoConnection.Builder builderForValue) {
@@ -4641,11 +6701,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detailed information of a PSC connection that is created through
-       * service connectivity automation.
+       * Immutable. Detailed information of a PSC connection that is created
+       * through service connectivity automation.
        * </pre>
        *
-       * <code>.google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1;</code>
+       * <code>
+       * .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1 [(.google.api.field_behavior) = IMMUTABLE];
+       * </code>
        */
       public Builder mergePscAutoConnection(
           com.google.cloud.memorystore.v1.PscAutoConnection value) {
@@ -4677,11 +6739,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detailed information of a PSC connection that is created through
-       * service connectivity automation.
+       * Immutable. Detailed information of a PSC connection that is created
+       * through service connectivity automation.
        * </pre>
        *
-       * <code>.google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1;</code>
+       * <code>
+       * .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1 [(.google.api.field_behavior) = IMMUTABLE];
+       * </code>
        */
       public Builder clearPscAutoConnection() {
         if (pscAutoConnectionBuilder_ == null) {
@@ -4704,11 +6768,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detailed information of a PSC connection that is created through
-       * service connectivity automation.
+       * Immutable. Detailed information of a PSC connection that is created
+       * through service connectivity automation.
        * </pre>
        *
-       * <code>.google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1;</code>
+       * <code>
+       * .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1 [(.google.api.field_behavior) = IMMUTABLE];
+       * </code>
        */
       public com.google.cloud.memorystore.v1.PscAutoConnection.Builder
           getPscAutoConnectionBuilder() {
@@ -4719,11 +6785,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detailed information of a PSC connection that is created through
-       * service connectivity automation.
+       * Immutable. Detailed information of a PSC connection that is created
+       * through service connectivity automation.
        * </pre>
        *
-       * <code>.google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1;</code>
+       * <code>
+       * .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1 [(.google.api.field_behavior) = IMMUTABLE];
+       * </code>
        */
       @java.lang.Override
       public com.google.cloud.memorystore.v1.PscAutoConnectionOrBuilder
@@ -4742,11 +6810,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detailed information of a PSC connection that is created through
-       * service connectivity automation.
+       * Immutable. Detailed information of a PSC connection that is created
+       * through service connectivity automation.
        * </pre>
        *
-       * <code>.google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1;</code>
+       * <code>
+       * .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connection = 1 [(.google.api.field_behavior) = IMMUTABLE];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.memorystore.v1.PscAutoConnection,
@@ -5056,6 +7126,189 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  private int importSourcesCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object importSources_;
+
+  public enum ImportSourcesCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    GCS_SOURCE(23),
+    MANAGED_BACKUP_SOURCE(24),
+    IMPORTSOURCES_NOT_SET(0);
+    private final int value;
+
+    private ImportSourcesCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ImportSourcesCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ImportSourcesCase forNumber(int value) {
+      switch (value) {
+        case 23:
+          return GCS_SOURCE;
+        case 24:
+          return MANAGED_BACKUP_SOURCE;
+        case 0:
+          return IMPORTSOURCES_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ImportSourcesCase getImportSourcesCase() {
+    return ImportSourcesCase.forNumber(importSourcesCase_);
+  }
+
+  public static final int GCS_SOURCE_FIELD_NUMBER = 23;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Backups that stored in Cloud Storage buckets.
+   * The Cloud Storage buckets need to be the same region as the instances.
+   * Read permission is required to import from the provided Cloud Storage
+   * Objects.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.Instance.GcsBackupSource gcs_source = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the gcsSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasGcsSource() {
+    return importSourcesCase_ == 23;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Backups that stored in Cloud Storage buckets.
+   * The Cloud Storage buckets need to be the same region as the instances.
+   * Read permission is required to import from the provided Cloud Storage
+   * Objects.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.Instance.GcsBackupSource gcs_source = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The gcsSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.Instance.GcsBackupSource getGcsSource() {
+    if (importSourcesCase_ == 23) {
+      return (com.google.cloud.memorystore.v1.Instance.GcsBackupSource) importSources_;
+    }
+    return com.google.cloud.memorystore.v1.Instance.GcsBackupSource.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Backups that stored in Cloud Storage buckets.
+   * The Cloud Storage buckets need to be the same region as the instances.
+   * Read permission is required to import from the provided Cloud Storage
+   * Objects.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.Instance.GcsBackupSource gcs_source = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.Instance.GcsBackupSourceOrBuilder getGcsSourceOrBuilder() {
+    if (importSourcesCase_ == 23) {
+      return (com.google.cloud.memorystore.v1.Instance.GcsBackupSource) importSources_;
+    }
+    return com.google.cloud.memorystore.v1.Instance.GcsBackupSource.getDefaultInstance();
+  }
+
+  public static final int MANAGED_BACKUP_SOURCE_FIELD_NUMBER = 24;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Backups that generated and managed by memorystore
+   * service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.Instance.ManagedBackupSource managed_backup_source = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the managedBackupSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasManagedBackupSource() {
+    return importSourcesCase_ == 24;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Backups that generated and managed by memorystore
+   * service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.Instance.ManagedBackupSource managed_backup_source = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The managedBackupSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.Instance.ManagedBackupSource getManagedBackupSource() {
+    if (importSourcesCase_ == 24) {
+      return (com.google.cloud.memorystore.v1.Instance.ManagedBackupSource) importSources_;
+    }
+    return com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Backups that generated and managed by memorystore
+   * service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.Instance.ManagedBackupSource managed_backup_source = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.Instance.ManagedBackupSourceOrBuilder
+      getManagedBackupSourceOrBuilder() {
+    if (importSourcesCase_ == 24) {
+      return (com.google.cloud.memorystore.v1.Instance.ManagedBackupSource) importSources_;
+    }
+    return com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -5631,15 +7884,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Endpoints clients can connect to the instance through.
-   * Currently only one discovery endpoint is supported.
+   * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+   * or endpoints.connections.psc_connection values instead.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<com.google.cloud.memorystore.v1.DiscoveryEndpoint>
       getDiscoveryEndpointsList() {
     return discoveryEndpoints_;
@@ -5649,15 +7903,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Endpoints clients can connect to the instance through.
-   * Currently only one discovery endpoint is supported.
+   * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+   * or endpoints.connections.psc_connection values instead.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<? extends com.google.cloud.memorystore.v1.DiscoveryEndpointOrBuilder>
       getDiscoveryEndpointsOrBuilderList() {
     return discoveryEndpoints_;
@@ -5667,15 +7922,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Endpoints clients can connect to the instance through.
-   * Currently only one discovery endpoint is supported.
+   * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+   * or endpoints.connections.psc_connection values instead.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getDiscoveryEndpointsCount() {
     return discoveryEndpoints_.size();
   }
@@ -5684,15 +7940,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Endpoints clients can connect to the instance through.
-   * Currently only one discovery endpoint is supported.
+   * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+   * or endpoints.connections.psc_connection values instead.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.memorystore.v1.DiscoveryEndpoint getDiscoveryEndpoints(int index) {
     return discoveryEndpoints_.get(index);
   }
@@ -5701,15 +7958,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Endpoints clients can connect to the instance through.
-   * Currently only one discovery endpoint is supported.
+   * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+   * or endpoints.connections.psc_connection values instead.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.memorystore.v1.DiscoveryEndpointOrBuilder getDiscoveryEndpointsOrBuilder(
       int index) {
     return discoveryEndpoints_.get(index);
@@ -5722,11 +7980,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Immutable. Machine type for individual nodes of the instance.
+   * Optional. Machine type for individual nodes of the instance.
    * </pre>
    *
    * <code>
-   * .google.cloud.memorystore.v1.Instance.NodeType node_type = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.memorystore.v1.Instance.NodeType node_type = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for nodeType.
@@ -5740,11 +7998,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Immutable. Machine type for individual nodes of the instance.
+   * Optional. Machine type for individual nodes of the instance.
    * </pre>
    *
    * <code>
-   * .google.cloud.memorystore.v1.Instance.NodeType node_type = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.memorystore.v1.Instance.NodeType node_type = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The nodeType.
@@ -5825,12 +8083,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Immutable. Engine version of the instance.
+   * Optional. Engine version of the instance.
    * </pre>
    *
-   * <code>
-   * string engine_version = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
+   * <code>string engine_version = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The engineVersion.
    */
@@ -5851,12 +8107,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Immutable. Engine version of the instance.
+   * Optional. Engine version of the instance.
    * </pre>
    *
-   * <code>
-   * string engine_version = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
+   * <code>string engine_version = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for engineVersion.
    */
@@ -6154,15 +8408,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. User inputs and resource details of the auto-created
-   * PSC connections.
+   * Optional. Immutable. Deprecated: Use the
+   * endpoints.connections.psc_auto_connection value instead.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<com.google.cloud.memorystore.v1.PscAutoConnection>
       getPscAutoConnectionsList() {
     return pscAutoConnections_;
@@ -6172,15 +8427,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. User inputs and resource details of the auto-created
-   * PSC connections.
+   * Optional. Immutable. Deprecated: Use the
+   * endpoints.connections.psc_auto_connection value instead.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<? extends com.google.cloud.memorystore.v1.PscAutoConnectionOrBuilder>
       getPscAutoConnectionsOrBuilderList() {
     return pscAutoConnections_;
@@ -6190,15 +8446,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. User inputs and resource details of the auto-created
-   * PSC connections.
+   * Optional. Immutable. Deprecated: Use the
+   * endpoints.connections.psc_auto_connection value instead.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getPscAutoConnectionsCount() {
     return pscAutoConnections_.size();
   }
@@ -6207,15 +8464,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. User inputs and resource details of the auto-created
-   * PSC connections.
+   * Optional. Immutable. Deprecated: Use the
+   * endpoints.connections.psc_auto_connection value instead.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.memorystore.v1.PscAutoConnection getPscAutoConnections(int index) {
     return pscAutoConnections_.get(index);
   }
@@ -6224,18 +8482,107 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. User inputs and resource details of the auto-created
-   * PSC connections.
+   * Optional. Immutable. Deprecated: Use the
+   * endpoints.connections.psc_auto_connection value instead.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.memorystore.v1.PscAutoConnectionOrBuilder getPscAutoConnectionsOrBuilder(
       int index) {
     return pscAutoConnections_.get(index);
+  }
+
+  public static final int PSC_ATTACHMENT_DETAILS_FIELD_NUMBER = 21;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.memorystore.v1.PscAttachmentDetail> pscAttachmentDetails_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure PSC connections.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.memorystore.v1.PscAttachmentDetail>
+      getPscAttachmentDetailsList() {
+    return pscAttachmentDetails_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure PSC connections.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.memorystore.v1.PscAttachmentDetailOrBuilder>
+      getPscAttachmentDetailsOrBuilderList() {
+    return pscAttachmentDetails_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure PSC connections.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPscAttachmentDetailsCount() {
+    return pscAttachmentDetails_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure PSC connections.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.PscAttachmentDetail getPscAttachmentDetails(int index) {
+    return pscAttachmentDetails_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Service attachment details to configure PSC connections.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.PscAttachmentDetailOrBuilder
+      getPscAttachmentDetailsOrBuilder(int index) {
+    return pscAttachmentDetails_.get(index);
   }
 
   public static final int ENDPOINTS_FIELD_NUMBER = 25;
@@ -6368,6 +8715,416 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.memorystore.v1.Instance.Mode.UNRECOGNIZED : result;
   }
 
+  public static final int ONDEMAND_MAINTENANCE_FIELD_NUMBER = 28;
+  private boolean ondemandMaintenance_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Ondemand maintenance for the instance.
+   * </pre>
+   *
+   * <code>
+   * optional bool ondemand_maintenance = 28 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the ondemandMaintenance field is set.
+   */
+  @java.lang.Override
+  public boolean hasOndemandMaintenance() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Ondemand maintenance for the instance.
+   * </pre>
+   *
+   * <code>
+   * optional bool ondemand_maintenance = 28 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The ondemandMaintenance.
+   */
+  @java.lang.Override
+  public boolean getOndemandMaintenance() {
+    return ondemandMaintenance_;
+  }
+
+  public static final int MAINTENANCE_POLICY_FIELD_NUMBER = 31;
+  private com.google.cloud.memorystore.v1.MaintenancePolicy maintenancePolicy_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance policy for the instance. If not provided,
+   * the maintenance event will be performed based on Memorystore
+   * internal rollout schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.MaintenancePolicy maintenance_policy = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenancePolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenancePolicy() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance policy for the instance. If not provided,
+   * the maintenance event will be performed based on Memorystore
+   * internal rollout schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.MaintenancePolicy maintenance_policy = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenancePolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.MaintenancePolicy getMaintenancePolicy() {
+    return maintenancePolicy_ == null
+        ? com.google.cloud.memorystore.v1.MaintenancePolicy.getDefaultInstance()
+        : maintenancePolicy_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance policy for the instance. If not provided,
+   * the maintenance event will be performed based on Memorystore
+   * internal rollout schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.MaintenancePolicy maintenance_policy = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.MaintenancePolicyOrBuilder
+      getMaintenancePolicyOrBuilder() {
+    return maintenancePolicy_ == null
+        ? com.google.cloud.memorystore.v1.MaintenancePolicy.getDefaultInstance()
+        : maintenancePolicy_;
+  }
+
+  public static final int MAINTENANCE_SCHEDULE_FIELD_NUMBER = 32;
+  private com.google.cloud.memorystore.v1.MaintenanceSchedule maintenanceSchedule_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Published maintenance schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.MaintenanceSchedule maintenance_schedule = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the maintenanceSchedule field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenanceSchedule() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Published maintenance schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.MaintenanceSchedule maintenance_schedule = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The maintenanceSchedule.
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.MaintenanceSchedule getMaintenanceSchedule() {
+    return maintenanceSchedule_ == null
+        ? com.google.cloud.memorystore.v1.MaintenanceSchedule.getDefaultInstance()
+        : maintenanceSchedule_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Published maintenance schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.MaintenanceSchedule maintenance_schedule = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.MaintenanceScheduleOrBuilder
+      getMaintenanceScheduleOrBuilder() {
+    return maintenanceSchedule_ == null
+        ? com.google.cloud.memorystore.v1.MaintenanceSchedule.getDefaultInstance()
+        : maintenanceSchedule_;
+  }
+
+  public static final int CROSS_INSTANCE_REPLICATION_CONFIG_FIELD_NUMBER = 33;
+  private com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig
+      crossInstanceReplicationConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The config for cross instance replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.CrossInstanceReplicationConfig cross_instance_replication_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the crossInstanceReplicationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasCrossInstanceReplicationConfig() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The config for cross instance replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.CrossInstanceReplicationConfig cross_instance_replication_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The crossInstanceReplicationConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig
+      getCrossInstanceReplicationConfig() {
+    return crossInstanceReplicationConfig_ == null
+        ? com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig.getDefaultInstance()
+        : crossInstanceReplicationConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The config for cross instance replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.CrossInstanceReplicationConfig cross_instance_replication_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.CrossInstanceReplicationConfigOrBuilder
+      getCrossInstanceReplicationConfigOrBuilder() {
+    return crossInstanceReplicationConfig_ == null
+        ? com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig.getDefaultInstance()
+        : crossInstanceReplicationConfig_;
+  }
+
+  public static final int ASYNC_INSTANCE_ENDPOINTS_DELETION_ENABLED_FIELD_NUMBER = 44;
+  private boolean asyncInstanceEndpointsDeletionEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, instance endpoints that are created and registered by
+   * customers can be deleted asynchronously. That is, such an instance endpoint
+   * can be de-registered before the forwarding rules in the instance endpoint
+   * are deleted.
+   * </pre>
+   *
+   * <code>
+   * optional bool async_instance_endpoints_deletion_enabled = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the asyncInstanceEndpointsDeletionEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasAsyncInstanceEndpointsDeletionEnabled() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, instance endpoints that are created and registered by
+   * customers can be deleted asynchronously. That is, such an instance endpoint
+   * can be de-registered before the forwarding rules in the instance endpoint
+   * are deleted.
+   * </pre>
+   *
+   * <code>
+   * optional bool async_instance_endpoints_deletion_enabled = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The asyncInstanceEndpointsDeletionEnabled.
+   */
+  @java.lang.Override
+  public boolean getAsyncInstanceEndpointsDeletionEnabled() {
+    return asyncInstanceEndpointsDeletionEnabled_;
+  }
+
+  public static final int BACKUP_COLLECTION_FIELD_NUMBER = 47;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backupCollection_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The backup collection full resource name. Example:
+   * projects/{project}/locations/{location}/backupCollections/{collection}
+   * </pre>
+   *
+   * <code>
+   * optional string backup_collection = 47 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the backupCollection field is set.
+   */
+  @java.lang.Override
+  public boolean hasBackupCollection() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The backup collection full resource name. Example:
+   * projects/{project}/locations/{location}/backupCollections/{collection}
+   * </pre>
+   *
+   * <code>
+   * optional string backup_collection = 47 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The backupCollection.
+   */
+  @java.lang.Override
+  public java.lang.String getBackupCollection() {
+    java.lang.Object ref = backupCollection_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      backupCollection_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The backup collection full resource name. Example:
+   * projects/{project}/locations/{location}/backupCollections/{collection}
+   * </pre>
+   *
+   * <code>
+   * optional string backup_collection = 47 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for backupCollection.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBackupCollectionBytes() {
+    java.lang.Object ref = backupCollection_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      backupCollection_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AUTOMATED_BACKUP_CONFIG_FIELD_NUMBER = 48;
+  private com.google.cloud.memorystore.v1.AutomatedBackupConfig automatedBackupConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The automated backup config for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.AutomatedBackupConfig automated_backup_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the automatedBackupConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutomatedBackupConfig() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The automated backup config for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.AutomatedBackupConfig automated_backup_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The automatedBackupConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.AutomatedBackupConfig getAutomatedBackupConfig() {
+    return automatedBackupConfig_ == null
+        ? com.google.cloud.memorystore.v1.AutomatedBackupConfig.getDefaultInstance()
+        : automatedBackupConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The automated backup config for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.AutomatedBackupConfig automated_backup_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1.AutomatedBackupConfigOrBuilder
+      getAutomatedBackupConfigOrBuilder() {
+    return automatedBackupConfig_ == null
+        ? com.google.cloud.memorystore.v1.AutomatedBackupConfig.getDefaultInstance()
+        : automatedBackupConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6446,11 +9203,43 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < pscAutoConnections_.size(); i++) {
       output.writeMessage(20, pscAutoConnections_.get(i));
     }
+    for (int i = 0; i < pscAttachmentDetails_.size(); i++) {
+      output.writeMessage(21, pscAttachmentDetails_.get(i));
+    }
+    if (importSourcesCase_ == 23) {
+      output.writeMessage(
+          23, (com.google.cloud.memorystore.v1.Instance.GcsBackupSource) importSources_);
+    }
+    if (importSourcesCase_ == 24) {
+      output.writeMessage(
+          24, (com.google.cloud.memorystore.v1.Instance.ManagedBackupSource) importSources_);
+    }
     for (int i = 0; i < endpoints_.size(); i++) {
       output.writeMessage(25, endpoints_.get(i));
     }
     if (mode_ != com.google.cloud.memorystore.v1.Instance.Mode.MODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(26, mode_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeBool(28, ondemandMaintenance_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(31, getMaintenancePolicy());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(32, getMaintenanceSchedule());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(33, getCrossInstanceReplicationConfig());
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeBool(44, asyncInstanceEndpointsDeletionEnabled_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 47, backupCollection_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeMessage(48, getAutomatedBackupConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -6544,11 +9333,53 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(20, pscAutoConnections_.get(i));
     }
+    for (int i = 0; i < pscAttachmentDetails_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              21, pscAttachmentDetails_.get(i));
+    }
+    if (importSourcesCase_ == 23) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              23, (com.google.cloud.memorystore.v1.Instance.GcsBackupSource) importSources_);
+    }
+    if (importSourcesCase_ == 24) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              24, (com.google.cloud.memorystore.v1.Instance.ManagedBackupSource) importSources_);
+    }
     for (int i = 0; i < endpoints_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, endpoints_.get(i));
     }
     if (mode_ != com.google.cloud.memorystore.v1.Instance.Mode.MODE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(26, mode_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(28, ondemandMaintenance_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, getMaintenancePolicy());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(32, getMaintenanceSchedule());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              33, getCrossInstanceReplicationConfig());
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              44, asyncInstanceEndpointsDeletionEnabled_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(47, backupCollection_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(48, getAutomatedBackupConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -6609,8 +9440,52 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (getDeletionProtectionEnabled() != other.getDeletionProtectionEnabled()) return false;
     }
     if (!getPscAutoConnectionsList().equals(other.getPscAutoConnectionsList())) return false;
+    if (!getPscAttachmentDetailsList().equals(other.getPscAttachmentDetailsList())) return false;
     if (!getEndpointsList().equals(other.getEndpointsList())) return false;
     if (mode_ != other.mode_) return false;
+    if (hasOndemandMaintenance() != other.hasOndemandMaintenance()) return false;
+    if (hasOndemandMaintenance()) {
+      if (getOndemandMaintenance() != other.getOndemandMaintenance()) return false;
+    }
+    if (hasMaintenancePolicy() != other.hasMaintenancePolicy()) return false;
+    if (hasMaintenancePolicy()) {
+      if (!getMaintenancePolicy().equals(other.getMaintenancePolicy())) return false;
+    }
+    if (hasMaintenanceSchedule() != other.hasMaintenanceSchedule()) return false;
+    if (hasMaintenanceSchedule()) {
+      if (!getMaintenanceSchedule().equals(other.getMaintenanceSchedule())) return false;
+    }
+    if (hasCrossInstanceReplicationConfig() != other.hasCrossInstanceReplicationConfig())
+      return false;
+    if (hasCrossInstanceReplicationConfig()) {
+      if (!getCrossInstanceReplicationConfig().equals(other.getCrossInstanceReplicationConfig()))
+        return false;
+    }
+    if (hasAsyncInstanceEndpointsDeletionEnabled()
+        != other.hasAsyncInstanceEndpointsDeletionEnabled()) return false;
+    if (hasAsyncInstanceEndpointsDeletionEnabled()) {
+      if (getAsyncInstanceEndpointsDeletionEnabled()
+          != other.getAsyncInstanceEndpointsDeletionEnabled()) return false;
+    }
+    if (hasBackupCollection() != other.hasBackupCollection()) return false;
+    if (hasBackupCollection()) {
+      if (!getBackupCollection().equals(other.getBackupCollection())) return false;
+    }
+    if (hasAutomatedBackupConfig() != other.hasAutomatedBackupConfig()) return false;
+    if (hasAutomatedBackupConfig()) {
+      if (!getAutomatedBackupConfig().equals(other.getAutomatedBackupConfig())) return false;
+    }
+    if (!getImportSourcesCase().equals(other.getImportSourcesCase())) return false;
+    switch (importSourcesCase_) {
+      case 23:
+        if (!getGcsSource().equals(other.getGcsSource())) return false;
+        break;
+      case 24:
+        if (!getManagedBackupSource().equals(other.getManagedBackupSource())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -6686,12 +9561,59 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PSC_AUTO_CONNECTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getPscAutoConnectionsList().hashCode();
     }
+    if (getPscAttachmentDetailsCount() > 0) {
+      hash = (37 * hash) + PSC_ATTACHMENT_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getPscAttachmentDetailsList().hashCode();
+    }
     if (getEndpointsCount() > 0) {
       hash = (37 * hash) + ENDPOINTS_FIELD_NUMBER;
       hash = (53 * hash) + getEndpointsList().hashCode();
     }
     hash = (37 * hash) + MODE_FIELD_NUMBER;
     hash = (53 * hash) + mode_;
+    if (hasOndemandMaintenance()) {
+      hash = (37 * hash) + ONDEMAND_MAINTENANCE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOndemandMaintenance());
+    }
+    if (hasMaintenancePolicy()) {
+      hash = (37 * hash) + MAINTENANCE_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenancePolicy().hashCode();
+    }
+    if (hasMaintenanceSchedule()) {
+      hash = (37 * hash) + MAINTENANCE_SCHEDULE_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenanceSchedule().hashCode();
+    }
+    if (hasCrossInstanceReplicationConfig()) {
+      hash = (37 * hash) + CROSS_INSTANCE_REPLICATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getCrossInstanceReplicationConfig().hashCode();
+    }
+    if (hasAsyncInstanceEndpointsDeletionEnabled()) {
+      hash = (37 * hash) + ASYNC_INSTANCE_ENDPOINTS_DELETION_ENABLED_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(
+                  getAsyncInstanceEndpointsDeletionEnabled());
+    }
+    if (hasBackupCollection()) {
+      hash = (37 * hash) + BACKUP_COLLECTION_FIELD_NUMBER;
+      hash = (53 * hash) + getBackupCollection().hashCode();
+    }
+    if (hasAutomatedBackupConfig()) {
+      hash = (37 * hash) + AUTOMATED_BACKUP_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAutomatedBackupConfig().hashCode();
+    }
+    switch (importSourcesCase_) {
+      case 23:
+        hash = (37 * hash) + GCS_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getGcsSource().hashCode();
+        break;
+      case 24:
+        hash = (37 * hash) + MANAGED_BACKUP_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getManagedBackupSource().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -6867,7 +9789,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         getNodeConfigFieldBuilder();
         getZoneDistributionConfigFieldBuilder();
         getPscAutoConnectionsFieldBuilder();
+        getPscAttachmentDetailsFieldBuilder();
         getEndpointsFieldBuilder();
+        getMaintenancePolicyFieldBuilder();
+        getMaintenanceScheduleFieldBuilder();
+        getCrossInstanceReplicationConfigFieldBuilder();
+        getAutomatedBackupConfigFieldBuilder();
       }
     }
 
@@ -6875,6 +9802,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (gcsSourceBuilder_ != null) {
+        gcsSourceBuilder_.clear();
+      }
+      if (managedBackupSourceBuilder_ != null) {
+        managedBackupSourceBuilder_.clear();
+      }
       name_ = "";
       createTime_ = null;
       if (createTimeBuilder_ != null) {
@@ -6904,7 +9837,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         discoveryEndpoints_ = null;
         discoveryEndpointsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       nodeType_ = 0;
       persistenceConfig_ = null;
       if (persistenceConfigBuilder_ != null) {
@@ -6930,15 +9863,47 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         pscAutoConnections_ = null;
         pscAutoConnectionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00200000);
+      if (pscAttachmentDetailsBuilder_ == null) {
+        pscAttachmentDetails_ = java.util.Collections.emptyList();
+      } else {
+        pscAttachmentDetails_ = null;
+        pscAttachmentDetailsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00400000);
       if (endpointsBuilder_ == null) {
         endpoints_ = java.util.Collections.emptyList();
       } else {
         endpoints_ = null;
         endpointsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       mode_ = 0;
+      ondemandMaintenance_ = false;
+      maintenancePolicy_ = null;
+      if (maintenancePolicyBuilder_ != null) {
+        maintenancePolicyBuilder_.dispose();
+        maintenancePolicyBuilder_ = null;
+      }
+      maintenanceSchedule_ = null;
+      if (maintenanceScheduleBuilder_ != null) {
+        maintenanceScheduleBuilder_.dispose();
+        maintenanceScheduleBuilder_ = null;
+      }
+      crossInstanceReplicationConfig_ = null;
+      if (crossInstanceReplicationConfigBuilder_ != null) {
+        crossInstanceReplicationConfigBuilder_.dispose();
+        crossInstanceReplicationConfigBuilder_ = null;
+      }
+      asyncInstanceEndpointsDeletionEnabled_ = false;
+      backupCollection_ = "";
+      automatedBackupConfig_ = null;
+      if (automatedBackupConfigBuilder_ != null) {
+        automatedBackupConfigBuilder_.dispose();
+        automatedBackupConfigBuilder_ = null;
+      }
+      importSourcesCase_ = 0;
+      importSources_ = null;
       return this;
     }
 
@@ -6970,33 +9935,43 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.memorystore.v1.Instance result) {
       if (discoveryEndpointsBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           discoveryEndpoints_ = java.util.Collections.unmodifiableList(discoveryEndpoints_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.discoveryEndpoints_ = discoveryEndpoints_;
       } else {
         result.discoveryEndpoints_ = discoveryEndpointsBuilder_.build();
       }
       if (pscAutoConnectionsBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)) {
+        if (((bitField0_ & 0x00200000) != 0)) {
           pscAutoConnections_ = java.util.Collections.unmodifiableList(pscAutoConnections_);
-          bitField0_ = (bitField0_ & ~0x00080000);
+          bitField0_ = (bitField0_ & ~0x00200000);
         }
         result.pscAutoConnections_ = pscAutoConnections_;
       } else {
         result.pscAutoConnections_ = pscAutoConnectionsBuilder_.build();
       }
+      if (pscAttachmentDetailsBuilder_ == null) {
+        if (((bitField0_ & 0x00400000) != 0)) {
+          pscAttachmentDetails_ = java.util.Collections.unmodifiableList(pscAttachmentDetails_);
+          bitField0_ = (bitField0_ & ~0x00400000);
+        }
+        result.pscAttachmentDetails_ = pscAttachmentDetails_;
+      } else {
+        result.pscAttachmentDetails_ = pscAttachmentDetailsBuilder_.build();
+      }
       if (endpointsBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)) {
+        if (((bitField0_ & 0x00800000) != 0)) {
           endpoints_ = java.util.Collections.unmodifiableList(endpoints_);
-          bitField0_ = (bitField0_ & ~0x00100000);
+          bitField0_ = (bitField0_ & ~0x00800000);
         }
         result.endpoints_ = endpoints_;
       } else {
@@ -7006,81 +9981,132 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.memorystore.v1.Instance result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.name_ = name_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.stateInfo_ = stateInfoBuilder_ == null ? stateInfo_ : stateInfoBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.uid_ = uid_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.replicaCount_ = replicaCount_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.authorizationMode_ = authorizationMode_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.transitEncryptionMode_ = transitEncryptionMode_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.shardCount_ = shardCount_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.nodeType_ = nodeType_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.persistenceConfig_ =
             persistenceConfigBuilder_ == null
                 ? persistenceConfig_
                 : persistenceConfigBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.engineVersion_ = engineVersion_;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.engineConfigs_ = internalGetEngineConfigs();
         result.engineConfigs_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.nodeConfig_ = nodeConfigBuilder_ == null ? nodeConfig_ : nodeConfigBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.zoneDistributionConfig_ =
             zoneDistributionConfigBuilder_ == null
                 ? zoneDistributionConfig_
                 : zoneDistributionConfigBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.deletionProtectionEnabled_ = deletionProtectionEnabled_;
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.mode_ = mode_;
       }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.ondemandMaintenance_ = ondemandMaintenance_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.maintenancePolicy_ =
+            maintenancePolicyBuilder_ == null
+                ? maintenancePolicy_
+                : maintenancePolicyBuilder_.build();
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.maintenanceSchedule_ =
+            maintenanceScheduleBuilder_ == null
+                ? maintenanceSchedule_
+                : maintenanceScheduleBuilder_.build();
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.crossInstanceReplicationConfig_ =
+            crossInstanceReplicationConfigBuilder_ == null
+                ? crossInstanceReplicationConfig_
+                : crossInstanceReplicationConfigBuilder_.build();
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.asyncInstanceEndpointsDeletionEnabled_ = asyncInstanceEndpointsDeletionEnabled_;
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.backupCollection_ = backupCollection_;
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x80000000) != 0)) {
+        result.automatedBackupConfig_ =
+            automatedBackupConfigBuilder_ == null
+                ? automatedBackupConfig_
+                : automatedBackupConfigBuilder_.build();
+        to_bitField0_ |= 0x00004000;
+      }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.memorystore.v1.Instance result) {
+      result.importSourcesCase_ = importSourcesCase_;
+      result.importSources_ = this.importSources_;
+      if (importSourcesCase_ == 23 && gcsSourceBuilder_ != null) {
+        result.importSources_ = gcsSourceBuilder_.build();
+      }
+      if (importSourcesCase_ == 24 && managedBackupSourceBuilder_ != null) {
+        result.importSources_ = managedBackupSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -7130,7 +10156,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.memorystore.v1.Instance.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -7140,7 +10166,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
@@ -7149,7 +10175,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasReplicaCount()) {
@@ -7168,7 +10194,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         if (!other.discoveryEndpoints_.isEmpty()) {
           if (discoveryEndpoints_.isEmpty()) {
             discoveryEndpoints_ = other.discoveryEndpoints_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureDiscoveryEndpointsIsMutable();
             discoveryEndpoints_.addAll(other.discoveryEndpoints_);
@@ -7181,7 +10207,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             discoveryEndpointsBuilder_.dispose();
             discoveryEndpointsBuilder_ = null;
             discoveryEndpoints_ = other.discoveryEndpoints_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00002000);
             discoveryEndpointsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDiscoveryEndpointsFieldBuilder()
@@ -7199,11 +10225,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEngineVersion().isEmpty()) {
         engineVersion_ = other.engineVersion_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       internalGetMutableEngineConfigs().mergeFrom(other.internalGetEngineConfigs());
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       if (other.hasNodeConfig()) {
         mergeNodeConfig(other.getNodeConfig());
       }
@@ -7217,7 +10243,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         if (!other.pscAutoConnections_.isEmpty()) {
           if (pscAutoConnections_.isEmpty()) {
             pscAutoConnections_ = other.pscAutoConnections_;
-            bitField0_ = (bitField0_ & ~0x00080000);
+            bitField0_ = (bitField0_ & ~0x00200000);
           } else {
             ensurePscAutoConnectionsIsMutable();
             pscAutoConnections_.addAll(other.pscAutoConnections_);
@@ -7230,7 +10256,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             pscAutoConnectionsBuilder_.dispose();
             pscAutoConnectionsBuilder_ = null;
             pscAutoConnections_ = other.pscAutoConnections_;
-            bitField0_ = (bitField0_ & ~0x00080000);
+            bitField0_ = (bitField0_ & ~0x00200000);
             pscAutoConnectionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPscAutoConnectionsFieldBuilder()
@@ -7240,11 +10266,38 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (pscAttachmentDetailsBuilder_ == null) {
+        if (!other.pscAttachmentDetails_.isEmpty()) {
+          if (pscAttachmentDetails_.isEmpty()) {
+            pscAttachmentDetails_ = other.pscAttachmentDetails_;
+            bitField0_ = (bitField0_ & ~0x00400000);
+          } else {
+            ensurePscAttachmentDetailsIsMutable();
+            pscAttachmentDetails_.addAll(other.pscAttachmentDetails_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.pscAttachmentDetails_.isEmpty()) {
+          if (pscAttachmentDetailsBuilder_.isEmpty()) {
+            pscAttachmentDetailsBuilder_.dispose();
+            pscAttachmentDetailsBuilder_ = null;
+            pscAttachmentDetails_ = other.pscAttachmentDetails_;
+            bitField0_ = (bitField0_ & ~0x00400000);
+            pscAttachmentDetailsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPscAttachmentDetailsFieldBuilder()
+                    : null;
+          } else {
+            pscAttachmentDetailsBuilder_.addAllMessages(other.pscAttachmentDetails_);
+          }
+        }
+      }
       if (endpointsBuilder_ == null) {
         if (!other.endpoints_.isEmpty()) {
           if (endpoints_.isEmpty()) {
             endpoints_ = other.endpoints_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00800000);
           } else {
             ensureEndpointsIsMutable();
             endpoints_.addAll(other.endpoints_);
@@ -7257,7 +10310,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             endpointsBuilder_.dispose();
             endpointsBuilder_ = null;
             endpoints_ = other.endpoints_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00800000);
             endpointsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEndpointsFieldBuilder()
@@ -7269,6 +10322,45 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.mode_ != 0) {
         setModeValue(other.getModeValue());
+      }
+      if (other.hasOndemandMaintenance()) {
+        setOndemandMaintenance(other.getOndemandMaintenance());
+      }
+      if (other.hasMaintenancePolicy()) {
+        mergeMaintenancePolicy(other.getMaintenancePolicy());
+      }
+      if (other.hasMaintenanceSchedule()) {
+        mergeMaintenanceSchedule(other.getMaintenanceSchedule());
+      }
+      if (other.hasCrossInstanceReplicationConfig()) {
+        mergeCrossInstanceReplicationConfig(other.getCrossInstanceReplicationConfig());
+      }
+      if (other.hasAsyncInstanceEndpointsDeletionEnabled()) {
+        setAsyncInstanceEndpointsDeletionEnabled(other.getAsyncInstanceEndpointsDeletionEnabled());
+      }
+      if (other.hasBackupCollection()) {
+        backupCollection_ = other.backupCollection_;
+        bitField0_ |= 0x40000000;
+        onChanged();
+      }
+      if (other.hasAutomatedBackupConfig()) {
+        mergeAutomatedBackupConfig(other.getAutomatedBackupConfig());
+      }
+      switch (other.getImportSourcesCase()) {
+        case GCS_SOURCE:
+          {
+            mergeGcsSource(other.getGcsSource());
+            break;
+          }
+        case MANAGED_BACKUP_SOURCE:
+          {
+            mergeManagedBackupSource(other.getManagedBackupSource());
+            break;
+          }
+        case IMPORTSOURCES_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -7299,19 +10391,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
@@ -7323,49 +10415,49 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 40:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getStateInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 58:
               {
                 uid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 64:
               {
                 replicaCount_ = input.readInt32();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 64
             case 72:
               {
                 authorizationMode_ = input.readEnum();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 72
             case 80:
               {
                 transitEncryptionMode_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 80
             case 88:
               {
                 shardCount_ = input.readInt32();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 88
             case 98:
@@ -7385,20 +10477,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             case 104:
               {
                 nodeType_ = input.readEnum();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 104
             case 114:
               {
                 input.readMessage(
                     getPersistenceConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 114
             case 122:
               {
                 engineVersion_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 122
             case 130:
@@ -7410,26 +10502,26 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableEngineConfigs()
                     .getMutableMap()
                     .put(engineConfigs__.getKey(), engineConfigs__.getValue());
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 130
             case 138:
               {
                 input.readMessage(getNodeConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 138
             case 146:
               {
                 input.readMessage(
                     getZoneDistributionConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 146
             case 152:
               {
                 deletionProtectionEnabled_ = input.readBool();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 152
             case 162:
@@ -7446,6 +10538,33 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 162
+            case 170:
+              {
+                com.google.cloud.memorystore.v1.PscAttachmentDetail m =
+                    input.readMessage(
+                        com.google.cloud.memorystore.v1.PscAttachmentDetail.parser(),
+                        extensionRegistry);
+                if (pscAttachmentDetailsBuilder_ == null) {
+                  ensurePscAttachmentDetailsIsMutable();
+                  pscAttachmentDetails_.add(m);
+                } else {
+                  pscAttachmentDetailsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 170
+            case 186:
+              {
+                input.readMessage(getGcsSourceFieldBuilder().getBuilder(), extensionRegistry);
+                importSourcesCase_ = 23;
+                break;
+              } // case 186
+            case 194:
+              {
+                input.readMessage(
+                    getManagedBackupSourceFieldBuilder().getBuilder(), extensionRegistry);
+                importSourcesCase_ = 24;
+                break;
+              } // case 194
             case 202:
               {
                 com.google.cloud.memorystore.v1.Instance.InstanceEndpoint m =
@@ -7463,9 +10582,56 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             case 208:
               {
                 mode_ = input.readEnum();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 208
+            case 224:
+              {
+                ondemandMaintenance_ = input.readBool();
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 224
+            case 250:
+              {
+                input.readMessage(
+                    getMaintenancePolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 250
+            case 258:
+              {
+                input.readMessage(
+                    getMaintenanceScheduleFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 258
+            case 266:
+              {
+                input.readMessage(
+                    getCrossInstanceReplicationConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 266
+            case 352:
+              {
+                asyncInstanceEndpointsDeletionEnabled_ = input.readBool();
+                bitField0_ |= 0x20000000;
+                break;
+              } // case 352
+            case 378:
+              {
+                backupCollection_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 378
+            case 386:
+              {
+                input.readMessage(
+                    getAutomatedBackupConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x80000000;
+                break;
+              } // case 386
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7483,7 +10649,539 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int importSourcesCase_ = 0;
+    private java.lang.Object importSources_;
+
+    public ImportSourcesCase getImportSourcesCase() {
+      return ImportSourcesCase.forNumber(importSourcesCase_);
+    }
+
+    public Builder clearImportSources() {
+      importSourcesCase_ = 0;
+      importSources_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memorystore.v1.Instance.GcsBackupSource,
+            com.google.cloud.memorystore.v1.Instance.GcsBackupSource.Builder,
+            com.google.cloud.memorystore.v1.Instance.GcsBackupSourceOrBuilder>
+        gcsSourceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Backups that stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the instances.
+     * Read permission is required to import from the provided Cloud Storage
+     * Objects.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.Instance.GcsBackupSource gcs_source = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the gcsSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasGcsSource() {
+      return importSourcesCase_ == 23;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Backups that stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the instances.
+     * Read permission is required to import from the provided Cloud Storage
+     * Objects.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.Instance.GcsBackupSource gcs_source = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The gcsSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.memorystore.v1.Instance.GcsBackupSource getGcsSource() {
+      if (gcsSourceBuilder_ == null) {
+        if (importSourcesCase_ == 23) {
+          return (com.google.cloud.memorystore.v1.Instance.GcsBackupSource) importSources_;
+        }
+        return com.google.cloud.memorystore.v1.Instance.GcsBackupSource.getDefaultInstance();
+      } else {
+        if (importSourcesCase_ == 23) {
+          return gcsSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.memorystore.v1.Instance.GcsBackupSource.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Backups that stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the instances.
+     * Read permission is required to import from the provided Cloud Storage
+     * Objects.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.Instance.GcsBackupSource gcs_source = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setGcsSource(com.google.cloud.memorystore.v1.Instance.GcsBackupSource value) {
+      if (gcsSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        importSources_ = value;
+        onChanged();
+      } else {
+        gcsSourceBuilder_.setMessage(value);
+      }
+      importSourcesCase_ = 23;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Backups that stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the instances.
+     * Read permission is required to import from the provided Cloud Storage
+     * Objects.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.Instance.GcsBackupSource gcs_source = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setGcsSource(
+        com.google.cloud.memorystore.v1.Instance.GcsBackupSource.Builder builderForValue) {
+      if (gcsSourceBuilder_ == null) {
+        importSources_ = builderForValue.build();
+        onChanged();
+      } else {
+        gcsSourceBuilder_.setMessage(builderForValue.build());
+      }
+      importSourcesCase_ = 23;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Backups that stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the instances.
+     * Read permission is required to import from the provided Cloud Storage
+     * Objects.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.Instance.GcsBackupSource gcs_source = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeGcsSource(com.google.cloud.memorystore.v1.Instance.GcsBackupSource value) {
+      if (gcsSourceBuilder_ == null) {
+        if (importSourcesCase_ == 23
+            && importSources_
+                != com.google.cloud.memorystore.v1.Instance.GcsBackupSource.getDefaultInstance()) {
+          importSources_ =
+              com.google.cloud.memorystore.v1.Instance.GcsBackupSource.newBuilder(
+                      (com.google.cloud.memorystore.v1.Instance.GcsBackupSource) importSources_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          importSources_ = value;
+        }
+        onChanged();
+      } else {
+        if (importSourcesCase_ == 23) {
+          gcsSourceBuilder_.mergeFrom(value);
+        } else {
+          gcsSourceBuilder_.setMessage(value);
+        }
+      }
+      importSourcesCase_ = 23;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Backups that stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the instances.
+     * Read permission is required to import from the provided Cloud Storage
+     * Objects.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.Instance.GcsBackupSource gcs_source = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearGcsSource() {
+      if (gcsSourceBuilder_ == null) {
+        if (importSourcesCase_ == 23) {
+          importSourcesCase_ = 0;
+          importSources_ = null;
+          onChanged();
+        }
+      } else {
+        if (importSourcesCase_ == 23) {
+          importSourcesCase_ = 0;
+          importSources_ = null;
+        }
+        gcsSourceBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Backups that stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the instances.
+     * Read permission is required to import from the provided Cloud Storage
+     * Objects.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.Instance.GcsBackupSource gcs_source = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.Instance.GcsBackupSource.Builder getGcsSourceBuilder() {
+      return getGcsSourceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Backups that stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the instances.
+     * Read permission is required to import from the provided Cloud Storage
+     * Objects.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.Instance.GcsBackupSource gcs_source = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.memorystore.v1.Instance.GcsBackupSourceOrBuilder
+        getGcsSourceOrBuilder() {
+      if ((importSourcesCase_ == 23) && (gcsSourceBuilder_ != null)) {
+        return gcsSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (importSourcesCase_ == 23) {
+          return (com.google.cloud.memorystore.v1.Instance.GcsBackupSource) importSources_;
+        }
+        return com.google.cloud.memorystore.v1.Instance.GcsBackupSource.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Backups that stored in Cloud Storage buckets.
+     * The Cloud Storage buckets need to be the same region as the instances.
+     * Read permission is required to import from the provided Cloud Storage
+     * Objects.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.Instance.GcsBackupSource gcs_source = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memorystore.v1.Instance.GcsBackupSource,
+            com.google.cloud.memorystore.v1.Instance.GcsBackupSource.Builder,
+            com.google.cloud.memorystore.v1.Instance.GcsBackupSourceOrBuilder>
+        getGcsSourceFieldBuilder() {
+      if (gcsSourceBuilder_ == null) {
+        if (!(importSourcesCase_ == 23)) {
+          importSources_ =
+              com.google.cloud.memorystore.v1.Instance.GcsBackupSource.getDefaultInstance();
+        }
+        gcsSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.memorystore.v1.Instance.GcsBackupSource,
+                com.google.cloud.memorystore.v1.Instance.GcsBackupSource.Builder,
+                com.google.cloud.memorystore.v1.Instance.GcsBackupSourceOrBuilder>(
+                (com.google.cloud.memorystore.v1.Instance.GcsBackupSource) importSources_,
+                getParentForChildren(),
+                isClean());
+        importSources_ = null;
+      }
+      importSourcesCase_ = 23;
+      onChanged();
+      return gcsSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memorystore.v1.Instance.ManagedBackupSource,
+            com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.Builder,
+            com.google.cloud.memorystore.v1.Instance.ManagedBackupSourceOrBuilder>
+        managedBackupSourceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Backups that generated and managed by memorystore
+     * service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.Instance.ManagedBackupSource managed_backup_source = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the managedBackupSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasManagedBackupSource() {
+      return importSourcesCase_ == 24;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Backups that generated and managed by memorystore
+     * service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.Instance.ManagedBackupSource managed_backup_source = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The managedBackupSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.memorystore.v1.Instance.ManagedBackupSource getManagedBackupSource() {
+      if (managedBackupSourceBuilder_ == null) {
+        if (importSourcesCase_ == 24) {
+          return (com.google.cloud.memorystore.v1.Instance.ManagedBackupSource) importSources_;
+        }
+        return com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.getDefaultInstance();
+      } else {
+        if (importSourcesCase_ == 24) {
+          return managedBackupSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Backups that generated and managed by memorystore
+     * service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.Instance.ManagedBackupSource managed_backup_source = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setManagedBackupSource(
+        com.google.cloud.memorystore.v1.Instance.ManagedBackupSource value) {
+      if (managedBackupSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        importSources_ = value;
+        onChanged();
+      } else {
+        managedBackupSourceBuilder_.setMessage(value);
+      }
+      importSourcesCase_ = 24;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Backups that generated and managed by memorystore
+     * service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.Instance.ManagedBackupSource managed_backup_source = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setManagedBackupSource(
+        com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.Builder builderForValue) {
+      if (managedBackupSourceBuilder_ == null) {
+        importSources_ = builderForValue.build();
+        onChanged();
+      } else {
+        managedBackupSourceBuilder_.setMessage(builderForValue.build());
+      }
+      importSourcesCase_ = 24;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Backups that generated and managed by memorystore
+     * service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.Instance.ManagedBackupSource managed_backup_source = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeManagedBackupSource(
+        com.google.cloud.memorystore.v1.Instance.ManagedBackupSource value) {
+      if (managedBackupSourceBuilder_ == null) {
+        if (importSourcesCase_ == 24
+            && importSources_
+                != com.google.cloud.memorystore.v1.Instance.ManagedBackupSource
+                    .getDefaultInstance()) {
+          importSources_ =
+              com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.newBuilder(
+                      (com.google.cloud.memorystore.v1.Instance.ManagedBackupSource) importSources_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          importSources_ = value;
+        }
+        onChanged();
+      } else {
+        if (importSourcesCase_ == 24) {
+          managedBackupSourceBuilder_.mergeFrom(value);
+        } else {
+          managedBackupSourceBuilder_.setMessage(value);
+        }
+      }
+      importSourcesCase_ = 24;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Backups that generated and managed by memorystore
+     * service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.Instance.ManagedBackupSource managed_backup_source = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearManagedBackupSource() {
+      if (managedBackupSourceBuilder_ == null) {
+        if (importSourcesCase_ == 24) {
+          importSourcesCase_ = 0;
+          importSources_ = null;
+          onChanged();
+        }
+      } else {
+        if (importSourcesCase_ == 24) {
+          importSourcesCase_ = 0;
+          importSources_ = null;
+        }
+        managedBackupSourceBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Backups that generated and managed by memorystore
+     * service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.Instance.ManagedBackupSource managed_backup_source = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.Builder
+        getManagedBackupSourceBuilder() {
+      return getManagedBackupSourceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Backups that generated and managed by memorystore
+     * service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.Instance.ManagedBackupSource managed_backup_source = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.memorystore.v1.Instance.ManagedBackupSourceOrBuilder
+        getManagedBackupSourceOrBuilder() {
+      if ((importSourcesCase_ == 24) && (managedBackupSourceBuilder_ != null)) {
+        return managedBackupSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (importSourcesCase_ == 24) {
+          return (com.google.cloud.memorystore.v1.Instance.ManagedBackupSource) importSources_;
+        }
+        return com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Backups that generated and managed by memorystore
+     * service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.Instance.ManagedBackupSource managed_backup_source = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memorystore.v1.Instance.ManagedBackupSource,
+            com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.Builder,
+            com.google.cloud.memorystore.v1.Instance.ManagedBackupSourceOrBuilder>
+        getManagedBackupSourceFieldBuilder() {
+      if (managedBackupSourceBuilder_ == null) {
+        if (!(importSourcesCase_ == 24)) {
+          importSources_ =
+              com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.getDefaultInstance();
+        }
+        managedBackupSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.memorystore.v1.Instance.ManagedBackupSource,
+                com.google.cloud.memorystore.v1.Instance.ManagedBackupSource.Builder,
+                com.google.cloud.memorystore.v1.Instance.ManagedBackupSourceOrBuilder>(
+                (com.google.cloud.memorystore.v1.Instance.ManagedBackupSource) importSources_,
+                getParentForChildren(),
+                isClean());
+        importSources_ = null;
+      }
+      importSourcesCase_ = 24;
+      onChanged();
+      return managedBackupSourceBuilder_;
+    }
 
     private java.lang.Object name_ = "";
 
@@ -7553,7 +11251,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -7572,7 +11270,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -7596,7 +11294,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -7622,7 +11320,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -7668,7 +11366,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -7690,7 +11388,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -7708,7 +11406,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -7719,7 +11417,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -7737,7 +11435,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -7759,7 +11457,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -7834,7 +11532,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -7880,7 +11578,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -7902,7 +11600,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -7920,7 +11618,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -7931,7 +11629,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -7949,7 +11647,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -7971,7 +11669,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -8042,7 +11740,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return labels_;
     }
@@ -8132,7 +11830,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -8157,7 +11855,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -8178,7 +11876,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -8193,7 +11891,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -8233,7 +11931,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -8276,7 +11974,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -8296,7 +11994,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       state_ = 0;
       onChanged();
       return this;
@@ -8323,7 +12021,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stateInfo field is set.
      */
     public boolean hasStateInfo() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -8369,7 +12067,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         stateInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -8392,7 +12090,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         stateInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -8410,7 +12108,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStateInfo(com.google.cloud.memorystore.v1.Instance.StateInfo value) {
       if (stateInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && stateInfo_ != null
             && stateInfo_
                 != com.google.cloud.memorystore.v1.Instance.StateInfo.getDefaultInstance()) {
@@ -8422,7 +12120,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         stateInfoBuilder_.mergeFrom(value);
       }
       if (stateInfo_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -8440,7 +12138,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStateInfo() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       stateInfo_ = null;
       if (stateInfoBuilder_ != null) {
         stateInfoBuilder_.dispose();
@@ -8462,7 +12160,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.memorystore.v1.Instance.StateInfo.Builder getStateInfoBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getStateInfoFieldBuilder().getBuilder();
     }
@@ -8587,7 +12285,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       uid_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -8607,7 +12305,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUid() {
       uid_ = getDefaultInstance().getUid();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -8632,7 +12330,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       uid_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -8653,7 +12351,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasReplicaCount() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -8689,7 +12387,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setReplicaCount(int value) {
 
       replicaCount_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -8707,7 +12405,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReplicaCount() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       replicaCount_ = 0;
       onChanged();
       return this;
@@ -8749,7 +12447,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setAuthorizationModeValue(int value) {
       authorizationMode_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -8795,7 +12493,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       authorizationMode_ = value.getNumber();
       onChanged();
       return this;
@@ -8815,7 +12513,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAuthorizationMode() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       authorizationMode_ = 0;
       onChanged();
       return this;
@@ -8857,7 +12555,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setTransitEncryptionModeValue(int value) {
       transitEncryptionMode_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -8905,7 +12603,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       transitEncryptionMode_ = value.getNumber();
       onChanged();
       return this;
@@ -8925,7 +12623,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTransitEncryptionMode() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       transitEncryptionMode_ = 0;
       onChanged();
       return this;
@@ -8964,7 +12662,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setShardCount(int value) {
 
       shardCount_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -8981,7 +12679,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearShardCount() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       shardCount_ = 0;
       onChanged();
       return this;
@@ -8991,11 +12689,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDiscoveryEndpointsIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         discoveryEndpoints_ =
             new java.util.ArrayList<com.google.cloud.memorystore.v1.DiscoveryEndpoint>(
                 discoveryEndpoints_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -9009,14 +12707,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints clients can connect to the instance through.
-     * Currently only one discovery endpoint is supported.
+     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+     * or endpoints.connections.psc_connection values instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.cloud.memorystore.v1.DiscoveryEndpoint>
         getDiscoveryEndpointsList() {
       if (discoveryEndpointsBuilder_ == null) {
@@ -9030,14 +12729,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints clients can connect to the instance through.
-     * Currently only one discovery endpoint is supported.
+     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+     * or endpoints.connections.psc_connection values instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public int getDiscoveryEndpointsCount() {
       if (discoveryEndpointsBuilder_ == null) {
         return discoveryEndpoints_.size();
@@ -9050,14 +12750,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints clients can connect to the instance through.
-     * Currently only one discovery endpoint is supported.
+     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+     * or endpoints.connections.psc_connection values instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.memorystore.v1.DiscoveryEndpoint getDiscoveryEndpoints(int index) {
       if (discoveryEndpointsBuilder_ == null) {
         return discoveryEndpoints_.get(index);
@@ -9070,14 +12771,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints clients can connect to the instance through.
-     * Currently only one discovery endpoint is supported.
+     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+     * or endpoints.connections.psc_connection values instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setDiscoveryEndpoints(
         int index, com.google.cloud.memorystore.v1.DiscoveryEndpoint value) {
       if (discoveryEndpointsBuilder_ == null) {
@@ -9097,14 +12799,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints clients can connect to the instance through.
-     * Currently only one discovery endpoint is supported.
+     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+     * or endpoints.connections.psc_connection values instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setDiscoveryEndpoints(
         int index, com.google.cloud.memorystore.v1.DiscoveryEndpoint.Builder builderForValue) {
       if (discoveryEndpointsBuilder_ == null) {
@@ -9121,14 +12824,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints clients can connect to the instance through.
-     * Currently only one discovery endpoint is supported.
+     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+     * or endpoints.connections.psc_connection values instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addDiscoveryEndpoints(com.google.cloud.memorystore.v1.DiscoveryEndpoint value) {
       if (discoveryEndpointsBuilder_ == null) {
         if (value == null) {
@@ -9147,14 +12851,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints clients can connect to the instance through.
-     * Currently only one discovery endpoint is supported.
+     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+     * or endpoints.connections.psc_connection values instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addDiscoveryEndpoints(
         int index, com.google.cloud.memorystore.v1.DiscoveryEndpoint value) {
       if (discoveryEndpointsBuilder_ == null) {
@@ -9174,14 +12879,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints clients can connect to the instance through.
-     * Currently only one discovery endpoint is supported.
+     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+     * or endpoints.connections.psc_connection values instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addDiscoveryEndpoints(
         com.google.cloud.memorystore.v1.DiscoveryEndpoint.Builder builderForValue) {
       if (discoveryEndpointsBuilder_ == null) {
@@ -9198,14 +12904,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints clients can connect to the instance through.
-     * Currently only one discovery endpoint is supported.
+     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+     * or endpoints.connections.psc_connection values instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addDiscoveryEndpoints(
         int index, com.google.cloud.memorystore.v1.DiscoveryEndpoint.Builder builderForValue) {
       if (discoveryEndpointsBuilder_ == null) {
@@ -9222,14 +12929,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints clients can connect to the instance through.
-     * Currently only one discovery endpoint is supported.
+     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+     * or endpoints.connections.psc_connection values instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addAllDiscoveryEndpoints(
         java.lang.Iterable<? extends com.google.cloud.memorystore.v1.DiscoveryEndpoint> values) {
       if (discoveryEndpointsBuilder_ == null) {
@@ -9246,18 +12954,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints clients can connect to the instance through.
-     * Currently only one discovery endpoint is supported.
+     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+     * or endpoints.connections.psc_connection values instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearDiscoveryEndpoints() {
       if (discoveryEndpointsBuilder_ == null) {
         discoveryEndpoints_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         discoveryEndpointsBuilder_.clear();
@@ -9269,14 +12978,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints clients can connect to the instance through.
-     * Currently only one discovery endpoint is supported.
+     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+     * or endpoints.connections.psc_connection values instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder removeDiscoveryEndpoints(int index) {
       if (discoveryEndpointsBuilder_ == null) {
         ensureDiscoveryEndpointsIsMutable();
@@ -9292,14 +13002,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints clients can connect to the instance through.
-     * Currently only one discovery endpoint is supported.
+     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+     * or endpoints.connections.psc_connection values instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.memorystore.v1.DiscoveryEndpoint.Builder getDiscoveryEndpointsBuilder(
         int index) {
       return getDiscoveryEndpointsFieldBuilder().getBuilder(index);
@@ -9309,14 +13020,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints clients can connect to the instance through.
-     * Currently only one discovery endpoint is supported.
+     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+     * or endpoints.connections.psc_connection values instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.memorystore.v1.DiscoveryEndpointOrBuilder
         getDiscoveryEndpointsOrBuilder(int index) {
       if (discoveryEndpointsBuilder_ == null) {
@@ -9330,14 +13042,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints clients can connect to the instance through.
-     * Currently only one discovery endpoint is supported.
+     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+     * or endpoints.connections.psc_connection values instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<? extends com.google.cloud.memorystore.v1.DiscoveryEndpointOrBuilder>
         getDiscoveryEndpointsOrBuilderList() {
       if (discoveryEndpointsBuilder_ != null) {
@@ -9351,14 +13064,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints clients can connect to the instance through.
-     * Currently only one discovery endpoint is supported.
+     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+     * or endpoints.connections.psc_connection values instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.memorystore.v1.DiscoveryEndpoint.Builder
         addDiscoveryEndpointsBuilder() {
       return getDiscoveryEndpointsFieldBuilder()
@@ -9369,14 +13083,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints clients can connect to the instance through.
-     * Currently only one discovery endpoint is supported.
+     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+     * or endpoints.connections.psc_connection values instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.memorystore.v1.DiscoveryEndpoint.Builder addDiscoveryEndpointsBuilder(
         int index) {
       return getDiscoveryEndpointsFieldBuilder()
@@ -9388,14 +13103,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoints clients can connect to the instance through.
-     * Currently only one discovery endpoint is supported.
+     * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
+     * or endpoints.connections.psc_connection values instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.memorystore.v1.DiscoveryEndpoint discovery_endpoints = 12 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.cloud.memorystore.v1.DiscoveryEndpoint.Builder>
         getDiscoveryEndpointsBuilderList() {
       return getDiscoveryEndpointsFieldBuilder().getBuilderList();
@@ -9413,7 +13129,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.memorystore.v1.DiscoveryEndpoint.Builder,
                 com.google.cloud.memorystore.v1.DiscoveryEndpointOrBuilder>(
                 discoveryEndpoints_,
-                ((bitField0_ & 0x00000800) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         discoveryEndpoints_ = null;
@@ -9427,11 +13143,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Immutable. Machine type for individual nodes of the instance.
+     * Optional. Machine type for individual nodes of the instance.
      * </pre>
      *
      * <code>
-     * .google.cloud.memorystore.v1.Instance.NodeType node_type = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.memorystore.v1.Instance.NodeType node_type = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for nodeType.
@@ -9445,11 +13161,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Immutable. Machine type for individual nodes of the instance.
+     * Optional. Machine type for individual nodes of the instance.
      * </pre>
      *
      * <code>
-     * .google.cloud.memorystore.v1.Instance.NodeType node_type = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.memorystore.v1.Instance.NodeType node_type = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for nodeType to set.
@@ -9457,7 +13173,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setNodeTypeValue(int value) {
       nodeType_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -9466,11 +13182,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Immutable. Machine type for individual nodes of the instance.
+     * Optional. Machine type for individual nodes of the instance.
      * </pre>
      *
      * <code>
-     * .google.cloud.memorystore.v1.Instance.NodeType node_type = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.memorystore.v1.Instance.NodeType node_type = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The nodeType.
@@ -9488,11 +13204,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Immutable. Machine type for individual nodes of the instance.
+     * Optional. Machine type for individual nodes of the instance.
      * </pre>
      *
      * <code>
-     * .google.cloud.memorystore.v1.Instance.NodeType node_type = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.memorystore.v1.Instance.NodeType node_type = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The nodeType to set.
@@ -9502,7 +13218,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       nodeType_ = value.getNumber();
       onChanged();
       return this;
@@ -9512,17 +13228,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Immutable. Machine type for individual nodes of the instance.
+     * Optional. Machine type for individual nodes of the instance.
      * </pre>
      *
      * <code>
-     * .google.cloud.memorystore.v1.Instance.NodeType node_type = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.memorystore.v1.Instance.NodeType node_type = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearNodeType() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       nodeType_ = 0;
       onChanged();
       return this;
@@ -9549,7 +13265,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the persistenceConfig field is set.
      */
     public boolean hasPersistenceConfig() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -9595,7 +13311,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         persistenceConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -9618,7 +13334,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         persistenceConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -9636,7 +13352,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePersistenceConfig(com.google.cloud.memorystore.v1.PersistenceConfig value) {
       if (persistenceConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && persistenceConfig_ != null
             && persistenceConfig_
                 != com.google.cloud.memorystore.v1.PersistenceConfig.getDefaultInstance()) {
@@ -9648,7 +13364,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         persistenceConfigBuilder_.mergeFrom(value);
       }
       if (persistenceConfig_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -9666,7 +13382,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPersistenceConfig() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       persistenceConfig_ = null;
       if (persistenceConfigBuilder_ != null) {
         persistenceConfigBuilder_.dispose();
@@ -9688,7 +13404,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.memorystore.v1.PersistenceConfig.Builder getPersistenceConfigBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getPersistenceConfigFieldBuilder().getBuilder();
     }
@@ -9749,12 +13465,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Immutable. Engine version of the instance.
+     * Optional. Engine version of the instance.
      * </pre>
      *
-     * <code>
-     * string engine_version = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>string engine_version = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The engineVersion.
      */
@@ -9774,12 +13488,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Immutable. Engine version of the instance.
+     * Optional. Engine version of the instance.
      * </pre>
      *
-     * <code>
-     * string engine_version = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>string engine_version = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for engineVersion.
      */
@@ -9799,12 +13511,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Immutable. Engine version of the instance.
+     * Optional. Engine version of the instance.
      * </pre>
      *
-     * <code>
-     * string engine_version = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>string engine_version = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The engineVersion to set.
      * @return This builder for chaining.
@@ -9814,7 +13524,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       engineVersion_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -9823,18 +13533,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Immutable. Engine version of the instance.
+     * Optional. Engine version of the instance.
      * </pre>
      *
-     * <code>
-     * string engine_version = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>string engine_version = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearEngineVersion() {
       engineVersion_ = getDefaultInstance().getEngineVersion();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -9843,12 +13551,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Immutable. Engine version of the instance.
+     * Optional. Engine version of the instance.
      * </pre>
      *
-     * <code>
-     * string engine_version = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>string engine_version = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for engineVersion to set.
      * @return This builder for chaining.
@@ -9859,7 +13565,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       engineVersion_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -9884,7 +13590,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!engineConfigs_.isMutable()) {
         engineConfigs_ = engineConfigs_.copy();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return engineConfigs_;
     }
@@ -9982,7 +13688,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearEngineConfigs() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       internalGetMutableEngineConfigs().getMutableMap().clear();
       return this;
     }
@@ -10009,7 +13715,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableEngineConfigs() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       return internalGetMutableEngineConfigs().getMutableMap();
     }
 
@@ -10032,7 +13738,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableEngineConfigs().getMutableMap().put(key, value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       return this;
     }
 
@@ -10049,7 +13755,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllEngineConfigs(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableEngineConfigs().getMutableMap().putAll(values);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       return this;
     }
 
@@ -10074,7 +13780,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the nodeConfig field is set.
      */
     public boolean hasNodeConfig() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -10120,7 +13826,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         nodeConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -10143,7 +13849,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         nodeConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -10161,7 +13867,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeNodeConfig(com.google.cloud.memorystore.v1.NodeConfig value) {
       if (nodeConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && nodeConfig_ != null
             && nodeConfig_ != com.google.cloud.memorystore.v1.NodeConfig.getDefaultInstance()) {
           getNodeConfigBuilder().mergeFrom(value);
@@ -10172,7 +13878,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         nodeConfigBuilder_.mergeFrom(value);
       }
       if (nodeConfig_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -10190,7 +13896,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearNodeConfig() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       nodeConfig_ = null;
       if (nodeConfigBuilder_ != null) {
         nodeConfigBuilder_.dispose();
@@ -10212,7 +13918,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.memorystore.v1.NodeConfig.Builder getNodeConfigBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getNodeConfigFieldBuilder().getBuilder();
     }
@@ -10288,7 +13994,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the zoneDistributionConfig field is set.
      */
     public boolean hasZoneDistributionConfig() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -10337,7 +14043,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         zoneDistributionConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -10361,7 +14067,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         zoneDistributionConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -10381,7 +14087,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeZoneDistributionConfig(
         com.google.cloud.memorystore.v1.ZoneDistributionConfig value) {
       if (zoneDistributionConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && zoneDistributionConfig_ != null
             && zoneDistributionConfig_
                 != com.google.cloud.memorystore.v1.ZoneDistributionConfig.getDefaultInstance()) {
@@ -10393,7 +14099,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         zoneDistributionConfigBuilder_.mergeFrom(value);
       }
       if (zoneDistributionConfig_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -10412,7 +14118,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearZoneDistributionConfig() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       zoneDistributionConfig_ = null;
       if (zoneDistributionConfigBuilder_ != null) {
         zoneDistributionConfigBuilder_.dispose();
@@ -10436,7 +14142,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.memorystore.v1.ZoneDistributionConfig.Builder
         getZoneDistributionConfigBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getZoneDistributionConfigFieldBuilder().getBuilder();
     }
@@ -10510,7 +14216,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasDeletionProtectionEnabled() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -10548,7 +14254,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setDeletionProtectionEnabled(boolean value) {
 
       deletionProtectionEnabled_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -10567,7 +14273,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDeletionProtectionEnabled() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       deletionProtectionEnabled_ = false;
       onChanged();
       return this;
@@ -10577,11 +14283,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePscAutoConnectionsIsMutable() {
-      if (!((bitField0_ & 0x00080000) != 0)) {
+      if (!((bitField0_ & 0x00200000) != 0)) {
         pscAutoConnections_ =
             new java.util.ArrayList<com.google.cloud.memorystore.v1.PscAutoConnection>(
                 pscAutoConnections_);
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00200000;
       }
     }
 
@@ -10595,14 +14301,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User inputs and resource details of the auto-created
-     * PSC connections.
+     * Optional. Immutable. Deprecated: Use the
+     * endpoints.connections.psc_auto_connection value instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.cloud.memorystore.v1.PscAutoConnection>
         getPscAutoConnectionsList() {
       if (pscAutoConnectionsBuilder_ == null) {
@@ -10616,14 +14323,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User inputs and resource details of the auto-created
-     * PSC connections.
+     * Optional. Immutable. Deprecated: Use the
+     * endpoints.connections.psc_auto_connection value instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public int getPscAutoConnectionsCount() {
       if (pscAutoConnectionsBuilder_ == null) {
         return pscAutoConnections_.size();
@@ -10636,14 +14344,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User inputs and resource details of the auto-created
-     * PSC connections.
+     * Optional. Immutable. Deprecated: Use the
+     * endpoints.connections.psc_auto_connection value instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.memorystore.v1.PscAutoConnection getPscAutoConnections(int index) {
       if (pscAutoConnectionsBuilder_ == null) {
         return pscAutoConnections_.get(index);
@@ -10656,14 +14365,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User inputs and resource details of the auto-created
-     * PSC connections.
+     * Optional. Immutable. Deprecated: Use the
+     * endpoints.connections.psc_auto_connection value instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setPscAutoConnections(
         int index, com.google.cloud.memorystore.v1.PscAutoConnection value) {
       if (pscAutoConnectionsBuilder_ == null) {
@@ -10683,14 +14393,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User inputs and resource details of the auto-created
-     * PSC connections.
+     * Optional. Immutable. Deprecated: Use the
+     * endpoints.connections.psc_auto_connection value instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setPscAutoConnections(
         int index, com.google.cloud.memorystore.v1.PscAutoConnection.Builder builderForValue) {
       if (pscAutoConnectionsBuilder_ == null) {
@@ -10707,14 +14418,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User inputs and resource details of the auto-created
-     * PSC connections.
+     * Optional. Immutable. Deprecated: Use the
+     * endpoints.connections.psc_auto_connection value instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addPscAutoConnections(com.google.cloud.memorystore.v1.PscAutoConnection value) {
       if (pscAutoConnectionsBuilder_ == null) {
         if (value == null) {
@@ -10733,14 +14445,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User inputs and resource details of the auto-created
-     * PSC connections.
+     * Optional. Immutable. Deprecated: Use the
+     * endpoints.connections.psc_auto_connection value instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addPscAutoConnections(
         int index, com.google.cloud.memorystore.v1.PscAutoConnection value) {
       if (pscAutoConnectionsBuilder_ == null) {
@@ -10760,14 +14473,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User inputs and resource details of the auto-created
-     * PSC connections.
+     * Optional. Immutable. Deprecated: Use the
+     * endpoints.connections.psc_auto_connection value instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addPscAutoConnections(
         com.google.cloud.memorystore.v1.PscAutoConnection.Builder builderForValue) {
       if (pscAutoConnectionsBuilder_ == null) {
@@ -10784,14 +14498,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User inputs and resource details of the auto-created
-     * PSC connections.
+     * Optional. Immutable. Deprecated: Use the
+     * endpoints.connections.psc_auto_connection value instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addPscAutoConnections(
         int index, com.google.cloud.memorystore.v1.PscAutoConnection.Builder builderForValue) {
       if (pscAutoConnectionsBuilder_ == null) {
@@ -10808,14 +14523,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User inputs and resource details of the auto-created
-     * PSC connections.
+     * Optional. Immutable. Deprecated: Use the
+     * endpoints.connections.psc_auto_connection value instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addAllPscAutoConnections(
         java.lang.Iterable<? extends com.google.cloud.memorystore.v1.PscAutoConnection> values) {
       if (pscAutoConnectionsBuilder_ == null) {
@@ -10832,18 +14548,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User inputs and resource details of the auto-created
-     * PSC connections.
+     * Optional. Immutable. Deprecated: Use the
+     * endpoints.connections.psc_auto_connection value instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearPscAutoConnections() {
       if (pscAutoConnectionsBuilder_ == null) {
         pscAutoConnections_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         onChanged();
       } else {
         pscAutoConnectionsBuilder_.clear();
@@ -10855,14 +14572,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User inputs and resource details of the auto-created
-     * PSC connections.
+     * Optional. Immutable. Deprecated: Use the
+     * endpoints.connections.psc_auto_connection value instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder removePscAutoConnections(int index) {
       if (pscAutoConnectionsBuilder_ == null) {
         ensurePscAutoConnectionsIsMutable();
@@ -10878,14 +14596,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User inputs and resource details of the auto-created
-     * PSC connections.
+     * Optional. Immutable. Deprecated: Use the
+     * endpoints.connections.psc_auto_connection value instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.memorystore.v1.PscAutoConnection.Builder getPscAutoConnectionsBuilder(
         int index) {
       return getPscAutoConnectionsFieldBuilder().getBuilder(index);
@@ -10895,14 +14614,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User inputs and resource details of the auto-created
-     * PSC connections.
+     * Optional. Immutable. Deprecated: Use the
+     * endpoints.connections.psc_auto_connection value instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.memorystore.v1.PscAutoConnectionOrBuilder
         getPscAutoConnectionsOrBuilder(int index) {
       if (pscAutoConnectionsBuilder_ == null) {
@@ -10916,14 +14636,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User inputs and resource details of the auto-created
-     * PSC connections.
+     * Optional. Immutable. Deprecated: Use the
+     * endpoints.connections.psc_auto_connection value instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<? extends com.google.cloud.memorystore.v1.PscAutoConnectionOrBuilder>
         getPscAutoConnectionsOrBuilderList() {
       if (pscAutoConnectionsBuilder_ != null) {
@@ -10937,14 +14658,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User inputs and resource details of the auto-created
-     * PSC connections.
+     * Optional. Immutable. Deprecated: Use the
+     * endpoints.connections.psc_auto_connection value instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.memorystore.v1.PscAutoConnection.Builder
         addPscAutoConnectionsBuilder() {
       return getPscAutoConnectionsFieldBuilder()
@@ -10955,14 +14677,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User inputs and resource details of the auto-created
-     * PSC connections.
+     * Optional. Immutable. Deprecated: Use the
+     * endpoints.connections.psc_auto_connection value instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.memorystore.v1.PscAutoConnection.Builder addPscAutoConnectionsBuilder(
         int index) {
       return getPscAutoConnectionsFieldBuilder()
@@ -10974,14 +14697,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. User inputs and resource details of the auto-created
-     * PSC connections.
+     * Optional. Immutable. Deprecated: Use the
+     * endpoints.connections.psc_auto_connection value instead.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * repeated .google.cloud.memorystore.v1.PscAutoConnection psc_auto_connections = 20 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.cloud.memorystore.v1.PscAutoConnection.Builder>
         getPscAutoConnectionsBuilderList() {
       return getPscAutoConnectionsFieldBuilder().getBuilderList();
@@ -10999,7 +14723,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.memorystore.v1.PscAutoConnection.Builder,
                 com.google.cloud.memorystore.v1.PscAutoConnectionOrBuilder>(
                 pscAutoConnections_,
-                ((bitField0_ & 0x00080000) != 0),
+                ((bitField0_ & 0x00200000) != 0),
                 getParentForChildren(),
                 isClean());
         pscAutoConnections_ = null;
@@ -11007,15 +14731,432 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return pscAutoConnectionsBuilder_;
     }
 
+    private java.util.List<com.google.cloud.memorystore.v1.PscAttachmentDetail>
+        pscAttachmentDetails_ = java.util.Collections.emptyList();
+
+    private void ensurePscAttachmentDetailsIsMutable() {
+      if (!((bitField0_ & 0x00400000) != 0)) {
+        pscAttachmentDetails_ =
+            new java.util.ArrayList<com.google.cloud.memorystore.v1.PscAttachmentDetail>(
+                pscAttachmentDetails_);
+        bitField0_ |= 0x00400000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.memorystore.v1.PscAttachmentDetail,
+            com.google.cloud.memorystore.v1.PscAttachmentDetail.Builder,
+            com.google.cloud.memorystore.v1.PscAttachmentDetailOrBuilder>
+        pscAttachmentDetailsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure PSC connections.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.memorystore.v1.PscAttachmentDetail>
+        getPscAttachmentDetailsList() {
+      if (pscAttachmentDetailsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(pscAttachmentDetails_);
+      } else {
+        return pscAttachmentDetailsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure PSC connections.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getPscAttachmentDetailsCount() {
+      if (pscAttachmentDetailsBuilder_ == null) {
+        return pscAttachmentDetails_.size();
+      } else {
+        return pscAttachmentDetailsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure PSC connections.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.PscAttachmentDetail getPscAttachmentDetails(int index) {
+      if (pscAttachmentDetailsBuilder_ == null) {
+        return pscAttachmentDetails_.get(index);
+      } else {
+        return pscAttachmentDetailsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure PSC connections.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPscAttachmentDetails(
+        int index, com.google.cloud.memorystore.v1.PscAttachmentDetail value) {
+      if (pscAttachmentDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePscAttachmentDetailsIsMutable();
+        pscAttachmentDetails_.set(index, value);
+        onChanged();
+      } else {
+        pscAttachmentDetailsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure PSC connections.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPscAttachmentDetails(
+        int index, com.google.cloud.memorystore.v1.PscAttachmentDetail.Builder builderForValue) {
+      if (pscAttachmentDetailsBuilder_ == null) {
+        ensurePscAttachmentDetailsIsMutable();
+        pscAttachmentDetails_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        pscAttachmentDetailsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure PSC connections.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPscAttachmentDetails(
+        com.google.cloud.memorystore.v1.PscAttachmentDetail value) {
+      if (pscAttachmentDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePscAttachmentDetailsIsMutable();
+        pscAttachmentDetails_.add(value);
+        onChanged();
+      } else {
+        pscAttachmentDetailsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure PSC connections.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPscAttachmentDetails(
+        int index, com.google.cloud.memorystore.v1.PscAttachmentDetail value) {
+      if (pscAttachmentDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePscAttachmentDetailsIsMutable();
+        pscAttachmentDetails_.add(index, value);
+        onChanged();
+      } else {
+        pscAttachmentDetailsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure PSC connections.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPscAttachmentDetails(
+        com.google.cloud.memorystore.v1.PscAttachmentDetail.Builder builderForValue) {
+      if (pscAttachmentDetailsBuilder_ == null) {
+        ensurePscAttachmentDetailsIsMutable();
+        pscAttachmentDetails_.add(builderForValue.build());
+        onChanged();
+      } else {
+        pscAttachmentDetailsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure PSC connections.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPscAttachmentDetails(
+        int index, com.google.cloud.memorystore.v1.PscAttachmentDetail.Builder builderForValue) {
+      if (pscAttachmentDetailsBuilder_ == null) {
+        ensurePscAttachmentDetailsIsMutable();
+        pscAttachmentDetails_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        pscAttachmentDetailsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure PSC connections.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllPscAttachmentDetails(
+        java.lang.Iterable<? extends com.google.cloud.memorystore.v1.PscAttachmentDetail> values) {
+      if (pscAttachmentDetailsBuilder_ == null) {
+        ensurePscAttachmentDetailsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pscAttachmentDetails_);
+        onChanged();
+      } else {
+        pscAttachmentDetailsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure PSC connections.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPscAttachmentDetails() {
+      if (pscAttachmentDetailsBuilder_ == null) {
+        pscAttachmentDetails_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00400000);
+        onChanged();
+      } else {
+        pscAttachmentDetailsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure PSC connections.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removePscAttachmentDetails(int index) {
+      if (pscAttachmentDetailsBuilder_ == null) {
+        ensurePscAttachmentDetailsIsMutable();
+        pscAttachmentDetails_.remove(index);
+        onChanged();
+      } else {
+        pscAttachmentDetailsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure PSC connections.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.PscAttachmentDetail.Builder
+        getPscAttachmentDetailsBuilder(int index) {
+      return getPscAttachmentDetailsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure PSC connections.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.PscAttachmentDetailOrBuilder
+        getPscAttachmentDetailsOrBuilder(int index) {
+      if (pscAttachmentDetailsBuilder_ == null) {
+        return pscAttachmentDetails_.get(index);
+      } else {
+        return pscAttachmentDetailsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure PSC connections.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.memorystore.v1.PscAttachmentDetailOrBuilder>
+        getPscAttachmentDetailsOrBuilderList() {
+      if (pscAttachmentDetailsBuilder_ != null) {
+        return pscAttachmentDetailsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(pscAttachmentDetails_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure PSC connections.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.PscAttachmentDetail.Builder
+        addPscAttachmentDetailsBuilder() {
+      return getPscAttachmentDetailsFieldBuilder()
+          .addBuilder(com.google.cloud.memorystore.v1.PscAttachmentDetail.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure PSC connections.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.PscAttachmentDetail.Builder
+        addPscAttachmentDetailsBuilder(int index) {
+      return getPscAttachmentDetailsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.memorystore.v1.PscAttachmentDetail.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service attachment details to configure PSC connections.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.memorystore.v1.PscAttachmentDetail psc_attachment_details = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.memorystore.v1.PscAttachmentDetail.Builder>
+        getPscAttachmentDetailsBuilderList() {
+      return getPscAttachmentDetailsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.memorystore.v1.PscAttachmentDetail,
+            com.google.cloud.memorystore.v1.PscAttachmentDetail.Builder,
+            com.google.cloud.memorystore.v1.PscAttachmentDetailOrBuilder>
+        getPscAttachmentDetailsFieldBuilder() {
+      if (pscAttachmentDetailsBuilder_ == null) {
+        pscAttachmentDetailsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.memorystore.v1.PscAttachmentDetail,
+                com.google.cloud.memorystore.v1.PscAttachmentDetail.Builder,
+                com.google.cloud.memorystore.v1.PscAttachmentDetailOrBuilder>(
+                pscAttachmentDetails_,
+                ((bitField0_ & 0x00400000) != 0),
+                getParentForChildren(),
+                isClean());
+        pscAttachmentDetails_ = null;
+      }
+      return pscAttachmentDetailsBuilder_;
+    }
+
     private java.util.List<com.google.cloud.memorystore.v1.Instance.InstanceEndpoint> endpoints_ =
         java.util.Collections.emptyList();
 
     private void ensureEndpointsIsMutable() {
-      if (!((bitField0_ & 0x00100000) != 0)) {
+      if (!((bitField0_ & 0x00800000) != 0)) {
         endpoints_ =
             new java.util.ArrayList<com.google.cloud.memorystore.v1.Instance.InstanceEndpoint>(
                 endpoints_);
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00800000;
       }
     }
 
@@ -11269,7 +15410,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEndpoints() {
       if (endpointsBuilder_ == null) {
         endpoints_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00800000);
         onChanged();
       } else {
         endpointsBuilder_.clear();
@@ -11419,7 +15560,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.memorystore.v1.Instance.InstanceEndpoint,
                 com.google.cloud.memorystore.v1.Instance.InstanceEndpoint.Builder,
                 com.google.cloud.memorystore.v1.Instance.InstanceEndpointOrBuilder>(
-                endpoints_, ((bitField0_ & 0x00100000) != 0), getParentForChildren(), isClean());
+                endpoints_, ((bitField0_ & 0x00800000) != 0), getParentForChildren(), isClean());
         endpoints_ = null;
       }
       return endpointsBuilder_;
@@ -11461,7 +15602,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setModeValue(int value) {
       mode_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -11504,7 +15645,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x01000000;
       mode_ = value.getNumber();
       onChanged();
       return this;
@@ -11524,10 +15665,1216 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMode() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       mode_ = 0;
       onChanged();
       return this;
+    }
+
+    private boolean ondemandMaintenance_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ondemand maintenance for the instance.
+     * </pre>
+     *
+     * <code>
+     * optional bool ondemand_maintenance = 28 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the ondemandMaintenance field is set.
+     */
+    @java.lang.Override
+    public boolean hasOndemandMaintenance() {
+      return ((bitField0_ & 0x02000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ondemand maintenance for the instance.
+     * </pre>
+     *
+     * <code>
+     * optional bool ondemand_maintenance = 28 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The ondemandMaintenance.
+     */
+    @java.lang.Override
+    public boolean getOndemandMaintenance() {
+      return ondemandMaintenance_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ondemand maintenance for the instance.
+     * </pre>
+     *
+     * <code>
+     * optional bool ondemand_maintenance = 28 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @param value The ondemandMaintenance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOndemandMaintenance(boolean value) {
+
+      ondemandMaintenance_ = value;
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ondemand maintenance for the instance.
+     * </pre>
+     *
+     * <code>
+     * optional bool ondemand_maintenance = 28 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOndemandMaintenance() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      ondemandMaintenance_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.memorystore.v1.MaintenancePolicy maintenancePolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memorystore.v1.MaintenancePolicy,
+            com.google.cloud.memorystore.v1.MaintenancePolicy.Builder,
+            com.google.cloud.memorystore.v1.MaintenancePolicyOrBuilder>
+        maintenancePolicyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MaintenancePolicy maintenance_policy = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the maintenancePolicy field is set.
+     */
+    public boolean hasMaintenancePolicy() {
+      return ((bitField0_ & 0x04000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MaintenancePolicy maintenance_policy = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The maintenancePolicy.
+     */
+    public com.google.cloud.memorystore.v1.MaintenancePolicy getMaintenancePolicy() {
+      if (maintenancePolicyBuilder_ == null) {
+        return maintenancePolicy_ == null
+            ? com.google.cloud.memorystore.v1.MaintenancePolicy.getDefaultInstance()
+            : maintenancePolicy_;
+      } else {
+        return maintenancePolicyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MaintenancePolicy maintenance_policy = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaintenancePolicy(com.google.cloud.memorystore.v1.MaintenancePolicy value) {
+      if (maintenancePolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenancePolicy_ = value;
+      } else {
+        maintenancePolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MaintenancePolicy maintenance_policy = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaintenancePolicy(
+        com.google.cloud.memorystore.v1.MaintenancePolicy.Builder builderForValue) {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicy_ = builderForValue.build();
+      } else {
+        maintenancePolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MaintenancePolicy maintenance_policy = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMaintenancePolicy(com.google.cloud.memorystore.v1.MaintenancePolicy value) {
+      if (maintenancePolicyBuilder_ == null) {
+        if (((bitField0_ & 0x04000000) != 0)
+            && maintenancePolicy_ != null
+            && maintenancePolicy_
+                != com.google.cloud.memorystore.v1.MaintenancePolicy.getDefaultInstance()) {
+          getMaintenancePolicyBuilder().mergeFrom(value);
+        } else {
+          maintenancePolicy_ = value;
+        }
+      } else {
+        maintenancePolicyBuilder_.mergeFrom(value);
+      }
+      if (maintenancePolicy_ != null) {
+        bitField0_ |= 0x04000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MaintenancePolicy maintenance_policy = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMaintenancePolicy() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      maintenancePolicy_ = null;
+      if (maintenancePolicyBuilder_ != null) {
+        maintenancePolicyBuilder_.dispose();
+        maintenancePolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MaintenancePolicy maintenance_policy = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.MaintenancePolicy.Builder getMaintenancePolicyBuilder() {
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return getMaintenancePolicyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MaintenancePolicy maintenance_policy = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.MaintenancePolicyOrBuilder
+        getMaintenancePolicyOrBuilder() {
+      if (maintenancePolicyBuilder_ != null) {
+        return maintenancePolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenancePolicy_ == null
+            ? com.google.cloud.memorystore.v1.MaintenancePolicy.getDefaultInstance()
+            : maintenancePolicy_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MaintenancePolicy maintenance_policy = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memorystore.v1.MaintenancePolicy,
+            com.google.cloud.memorystore.v1.MaintenancePolicy.Builder,
+            com.google.cloud.memorystore.v1.MaintenancePolicyOrBuilder>
+        getMaintenancePolicyFieldBuilder() {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.memorystore.v1.MaintenancePolicy,
+                com.google.cloud.memorystore.v1.MaintenancePolicy.Builder,
+                com.google.cloud.memorystore.v1.MaintenancePolicyOrBuilder>(
+                getMaintenancePolicy(), getParentForChildren(), isClean());
+        maintenancePolicy_ = null;
+      }
+      return maintenancePolicyBuilder_;
+    }
+
+    private com.google.cloud.memorystore.v1.MaintenanceSchedule maintenanceSchedule_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memorystore.v1.MaintenanceSchedule,
+            com.google.cloud.memorystore.v1.MaintenanceSchedule.Builder,
+            com.google.cloud.memorystore.v1.MaintenanceScheduleOrBuilder>
+        maintenanceScheduleBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MaintenanceSchedule maintenance_schedule = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the maintenanceSchedule field is set.
+     */
+    public boolean hasMaintenanceSchedule() {
+      return ((bitField0_ & 0x08000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MaintenanceSchedule maintenance_schedule = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The maintenanceSchedule.
+     */
+    public com.google.cloud.memorystore.v1.MaintenanceSchedule getMaintenanceSchedule() {
+      if (maintenanceScheduleBuilder_ == null) {
+        return maintenanceSchedule_ == null
+            ? com.google.cloud.memorystore.v1.MaintenanceSchedule.getDefaultInstance()
+            : maintenanceSchedule_;
+      } else {
+        return maintenanceScheduleBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MaintenanceSchedule maintenance_schedule = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMaintenanceSchedule(
+        com.google.cloud.memorystore.v1.MaintenanceSchedule value) {
+      if (maintenanceScheduleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenanceSchedule_ = value;
+      } else {
+        maintenanceScheduleBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MaintenanceSchedule maintenance_schedule = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMaintenanceSchedule(
+        com.google.cloud.memorystore.v1.MaintenanceSchedule.Builder builderForValue) {
+      if (maintenanceScheduleBuilder_ == null) {
+        maintenanceSchedule_ = builderForValue.build();
+      } else {
+        maintenanceScheduleBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MaintenanceSchedule maintenance_schedule = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeMaintenanceSchedule(
+        com.google.cloud.memorystore.v1.MaintenanceSchedule value) {
+      if (maintenanceScheduleBuilder_ == null) {
+        if (((bitField0_ & 0x08000000) != 0)
+            && maintenanceSchedule_ != null
+            && maintenanceSchedule_
+                != com.google.cloud.memorystore.v1.MaintenanceSchedule.getDefaultInstance()) {
+          getMaintenanceScheduleBuilder().mergeFrom(value);
+        } else {
+          maintenanceSchedule_ = value;
+        }
+      } else {
+        maintenanceScheduleBuilder_.mergeFrom(value);
+      }
+      if (maintenanceSchedule_ != null) {
+        bitField0_ |= 0x08000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MaintenanceSchedule maintenance_schedule = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearMaintenanceSchedule() {
+      bitField0_ = (bitField0_ & ~0x08000000);
+      maintenanceSchedule_ = null;
+      if (maintenanceScheduleBuilder_ != null) {
+        maintenanceScheduleBuilder_.dispose();
+        maintenanceScheduleBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MaintenanceSchedule maintenance_schedule = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.MaintenanceSchedule.Builder
+        getMaintenanceScheduleBuilder() {
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return getMaintenanceScheduleFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MaintenanceSchedule maintenance_schedule = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.MaintenanceScheduleOrBuilder
+        getMaintenanceScheduleOrBuilder() {
+      if (maintenanceScheduleBuilder_ != null) {
+        return maintenanceScheduleBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenanceSchedule_ == null
+            ? com.google.cloud.memorystore.v1.MaintenanceSchedule.getDefaultInstance()
+            : maintenanceSchedule_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.MaintenanceSchedule maintenance_schedule = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memorystore.v1.MaintenanceSchedule,
+            com.google.cloud.memorystore.v1.MaintenanceSchedule.Builder,
+            com.google.cloud.memorystore.v1.MaintenanceScheduleOrBuilder>
+        getMaintenanceScheduleFieldBuilder() {
+      if (maintenanceScheduleBuilder_ == null) {
+        maintenanceScheduleBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.memorystore.v1.MaintenanceSchedule,
+                com.google.cloud.memorystore.v1.MaintenanceSchedule.Builder,
+                com.google.cloud.memorystore.v1.MaintenanceScheduleOrBuilder>(
+                getMaintenanceSchedule(), getParentForChildren(), isClean());
+        maintenanceSchedule_ = null;
+      }
+      return maintenanceScheduleBuilder_;
+    }
+
+    private com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig
+        crossInstanceReplicationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig,
+            com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig.Builder,
+            com.google.cloud.memorystore.v1.CrossInstanceReplicationConfigOrBuilder>
+        crossInstanceReplicationConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The config for cross instance replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.CrossInstanceReplicationConfig cross_instance_replication_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the crossInstanceReplicationConfig field is set.
+     */
+    public boolean hasCrossInstanceReplicationConfig() {
+      return ((bitField0_ & 0x10000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The config for cross instance replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.CrossInstanceReplicationConfig cross_instance_replication_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The crossInstanceReplicationConfig.
+     */
+    public com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig
+        getCrossInstanceReplicationConfig() {
+      if (crossInstanceReplicationConfigBuilder_ == null) {
+        return crossInstanceReplicationConfig_ == null
+            ? com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig.getDefaultInstance()
+            : crossInstanceReplicationConfig_;
+      } else {
+        return crossInstanceReplicationConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The config for cross instance replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.CrossInstanceReplicationConfig cross_instance_replication_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCrossInstanceReplicationConfig(
+        com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig value) {
+      if (crossInstanceReplicationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        crossInstanceReplicationConfig_ = value;
+      } else {
+        crossInstanceReplicationConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The config for cross instance replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.CrossInstanceReplicationConfig cross_instance_replication_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCrossInstanceReplicationConfig(
+        com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig.Builder builderForValue) {
+      if (crossInstanceReplicationConfigBuilder_ == null) {
+        crossInstanceReplicationConfig_ = builderForValue.build();
+      } else {
+        crossInstanceReplicationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The config for cross instance replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.CrossInstanceReplicationConfig cross_instance_replication_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCrossInstanceReplicationConfig(
+        com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig value) {
+      if (crossInstanceReplicationConfigBuilder_ == null) {
+        if (((bitField0_ & 0x10000000) != 0)
+            && crossInstanceReplicationConfig_ != null
+            && crossInstanceReplicationConfig_
+                != com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig
+                    .getDefaultInstance()) {
+          getCrossInstanceReplicationConfigBuilder().mergeFrom(value);
+        } else {
+          crossInstanceReplicationConfig_ = value;
+        }
+      } else {
+        crossInstanceReplicationConfigBuilder_.mergeFrom(value);
+      }
+      if (crossInstanceReplicationConfig_ != null) {
+        bitField0_ |= 0x10000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The config for cross instance replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.CrossInstanceReplicationConfig cross_instance_replication_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCrossInstanceReplicationConfig() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      crossInstanceReplicationConfig_ = null;
+      if (crossInstanceReplicationConfigBuilder_ != null) {
+        crossInstanceReplicationConfigBuilder_.dispose();
+        crossInstanceReplicationConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The config for cross instance replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.CrossInstanceReplicationConfig cross_instance_replication_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig.Builder
+        getCrossInstanceReplicationConfigBuilder() {
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return getCrossInstanceReplicationConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The config for cross instance replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.CrossInstanceReplicationConfig cross_instance_replication_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.CrossInstanceReplicationConfigOrBuilder
+        getCrossInstanceReplicationConfigOrBuilder() {
+      if (crossInstanceReplicationConfigBuilder_ != null) {
+        return crossInstanceReplicationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return crossInstanceReplicationConfig_ == null
+            ? com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig.getDefaultInstance()
+            : crossInstanceReplicationConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The config for cross instance replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.CrossInstanceReplicationConfig cross_instance_replication_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig,
+            com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig.Builder,
+            com.google.cloud.memorystore.v1.CrossInstanceReplicationConfigOrBuilder>
+        getCrossInstanceReplicationConfigFieldBuilder() {
+      if (crossInstanceReplicationConfigBuilder_ == null) {
+        crossInstanceReplicationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig,
+                com.google.cloud.memorystore.v1.CrossInstanceReplicationConfig.Builder,
+                com.google.cloud.memorystore.v1.CrossInstanceReplicationConfigOrBuilder>(
+                getCrossInstanceReplicationConfig(), getParentForChildren(), isClean());
+        crossInstanceReplicationConfig_ = null;
+      }
+      return crossInstanceReplicationConfigBuilder_;
+    }
+
+    private boolean asyncInstanceEndpointsDeletionEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, instance endpoints that are created and registered by
+     * customers can be deleted asynchronously. That is, such an instance endpoint
+     * can be de-registered before the forwarding rules in the instance endpoint
+     * are deleted.
+     * </pre>
+     *
+     * <code>
+     * optional bool async_instance_endpoints_deletion_enabled = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the asyncInstanceEndpointsDeletionEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasAsyncInstanceEndpointsDeletionEnabled() {
+      return ((bitField0_ & 0x20000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, instance endpoints that are created and registered by
+     * customers can be deleted asynchronously. That is, such an instance endpoint
+     * can be de-registered before the forwarding rules in the instance endpoint
+     * are deleted.
+     * </pre>
+     *
+     * <code>
+     * optional bool async_instance_endpoints_deletion_enabled = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The asyncInstanceEndpointsDeletionEnabled.
+     */
+    @java.lang.Override
+    public boolean getAsyncInstanceEndpointsDeletionEnabled() {
+      return asyncInstanceEndpointsDeletionEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, instance endpoints that are created and registered by
+     * customers can be deleted asynchronously. That is, such an instance endpoint
+     * can be de-registered before the forwarding rules in the instance endpoint
+     * are deleted.
+     * </pre>
+     *
+     * <code>
+     * optional bool async_instance_endpoints_deletion_enabled = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The asyncInstanceEndpointsDeletionEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAsyncInstanceEndpointsDeletionEnabled(boolean value) {
+
+      asyncInstanceEndpointsDeletionEnabled_ = value;
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, instance endpoints that are created and registered by
+     * customers can be deleted asynchronously. That is, such an instance endpoint
+     * can be de-registered before the forwarding rules in the instance endpoint
+     * are deleted.
+     * </pre>
+     *
+     * <code>
+     * optional bool async_instance_endpoints_deletion_enabled = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAsyncInstanceEndpointsDeletionEnabled() {
+      bitField0_ = (bitField0_ & ~0x20000000);
+      asyncInstanceEndpointsDeletionEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object backupCollection_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The backup collection full resource name. Example:
+     * projects/{project}/locations/{location}/backupCollections/{collection}
+     * </pre>
+     *
+     * <code>
+     * optional string backup_collection = 47 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the backupCollection field is set.
+     */
+    public boolean hasBackupCollection() {
+      return ((bitField0_ & 0x40000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The backup collection full resource name. Example:
+     * projects/{project}/locations/{location}/backupCollections/{collection}
+     * </pre>
+     *
+     * <code>
+     * optional string backup_collection = 47 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The backupCollection.
+     */
+    public java.lang.String getBackupCollection() {
+      java.lang.Object ref = backupCollection_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        backupCollection_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The backup collection full resource name. Example:
+     * projects/{project}/locations/{location}/backupCollections/{collection}
+     * </pre>
+     *
+     * <code>
+     * optional string backup_collection = 47 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for backupCollection.
+     */
+    public com.google.protobuf.ByteString getBackupCollectionBytes() {
+      java.lang.Object ref = backupCollection_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        backupCollection_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The backup collection full resource name. Example:
+     * projects/{project}/locations/{location}/backupCollections/{collection}
+     * </pre>
+     *
+     * <code>
+     * optional string backup_collection = 47 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The backupCollection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupCollection(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      backupCollection_ = value;
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The backup collection full resource name. Example:
+     * projects/{project}/locations/{location}/backupCollections/{collection}
+     * </pre>
+     *
+     * <code>
+     * optional string backup_collection = 47 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBackupCollection() {
+      backupCollection_ = getDefaultInstance().getBackupCollection();
+      bitField0_ = (bitField0_ & ~0x40000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The backup collection full resource name. Example:
+     * projects/{project}/locations/{location}/backupCollections/{collection}
+     * </pre>
+     *
+     * <code>
+     * optional string backup_collection = 47 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for backupCollection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupCollectionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      backupCollection_ = value;
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.memorystore.v1.AutomatedBackupConfig automatedBackupConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memorystore.v1.AutomatedBackupConfig,
+            com.google.cloud.memorystore.v1.AutomatedBackupConfig.Builder,
+            com.google.cloud.memorystore.v1.AutomatedBackupConfigOrBuilder>
+        automatedBackupConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The automated backup config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.AutomatedBackupConfig automated_backup_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the automatedBackupConfig field is set.
+     */
+    public boolean hasAutomatedBackupConfig() {
+      return ((bitField0_ & 0x80000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The automated backup config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.AutomatedBackupConfig automated_backup_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The automatedBackupConfig.
+     */
+    public com.google.cloud.memorystore.v1.AutomatedBackupConfig getAutomatedBackupConfig() {
+      if (automatedBackupConfigBuilder_ == null) {
+        return automatedBackupConfig_ == null
+            ? com.google.cloud.memorystore.v1.AutomatedBackupConfig.getDefaultInstance()
+            : automatedBackupConfig_;
+      } else {
+        return automatedBackupConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The automated backup config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.AutomatedBackupConfig automated_backup_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutomatedBackupConfig(
+        com.google.cloud.memorystore.v1.AutomatedBackupConfig value) {
+      if (automatedBackupConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        automatedBackupConfig_ = value;
+      } else {
+        automatedBackupConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The automated backup config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.AutomatedBackupConfig automated_backup_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutomatedBackupConfig(
+        com.google.cloud.memorystore.v1.AutomatedBackupConfig.Builder builderForValue) {
+      if (automatedBackupConfigBuilder_ == null) {
+        automatedBackupConfig_ = builderForValue.build();
+      } else {
+        automatedBackupConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The automated backup config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.AutomatedBackupConfig automated_backup_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAutomatedBackupConfig(
+        com.google.cloud.memorystore.v1.AutomatedBackupConfig value) {
+      if (automatedBackupConfigBuilder_ == null) {
+        if (((bitField0_ & 0x80000000) != 0)
+            && automatedBackupConfig_ != null
+            && automatedBackupConfig_
+                != com.google.cloud.memorystore.v1.AutomatedBackupConfig.getDefaultInstance()) {
+          getAutomatedBackupConfigBuilder().mergeFrom(value);
+        } else {
+          automatedBackupConfig_ = value;
+        }
+      } else {
+        automatedBackupConfigBuilder_.mergeFrom(value);
+      }
+      if (automatedBackupConfig_ != null) {
+        bitField0_ |= 0x80000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The automated backup config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.AutomatedBackupConfig automated_backup_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAutomatedBackupConfig() {
+      bitField0_ = (bitField0_ & ~0x80000000);
+      automatedBackupConfig_ = null;
+      if (automatedBackupConfigBuilder_ != null) {
+        automatedBackupConfigBuilder_.dispose();
+        automatedBackupConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The automated backup config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.AutomatedBackupConfig automated_backup_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.AutomatedBackupConfig.Builder
+        getAutomatedBackupConfigBuilder() {
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return getAutomatedBackupConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The automated backup config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.AutomatedBackupConfig automated_backup_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1.AutomatedBackupConfigOrBuilder
+        getAutomatedBackupConfigOrBuilder() {
+      if (automatedBackupConfigBuilder_ != null) {
+        return automatedBackupConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return automatedBackupConfig_ == null
+            ? com.google.cloud.memorystore.v1.AutomatedBackupConfig.getDefaultInstance()
+            : automatedBackupConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The automated backup config for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1.AutomatedBackupConfig automated_backup_config = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memorystore.v1.AutomatedBackupConfig,
+            com.google.cloud.memorystore.v1.AutomatedBackupConfig.Builder,
+            com.google.cloud.memorystore.v1.AutomatedBackupConfigOrBuilder>
+        getAutomatedBackupConfigFieldBuilder() {
+      if (automatedBackupConfigBuilder_ == null) {
+        automatedBackupConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.memorystore.v1.AutomatedBackupConfig,
+                com.google.cloud.memorystore.v1.AutomatedBackupConfig.Builder,
+                com.google.cloud.memorystore.v1.AutomatedBackupConfigOrBuilder>(
+                getAutomatedBackupConfig(), getParentForChildren(), isClean());
+        automatedBackupConfig_ = null;
+      }
+      return automatedBackupConfigBuilder_;
     }
 
     @java.lang.Override

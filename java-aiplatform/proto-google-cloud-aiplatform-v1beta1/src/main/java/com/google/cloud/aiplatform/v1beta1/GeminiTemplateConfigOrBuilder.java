@@ -74,7 +74,7 @@ public interface GeminiTemplateConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Map of template params to the columns in the dataset table.
+   * Required. Map of template parameters to the columns in the dataset table.
    * </pre>
    *
    * <code>map&lt;string, string&gt; field_mapping = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -86,7 +86,7 @@ public interface GeminiTemplateConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Map of template params to the columns in the dataset table.
+   * Required. Map of template parameters to the columns in the dataset table.
    * </pre>
    *
    * <code>map&lt;string, string&gt; field_mapping = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -102,7 +102,7 @@ public interface GeminiTemplateConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Map of template params to the columns in the dataset table.
+   * Required. Map of template parameters to the columns in the dataset table.
    * </pre>
    *
    * <code>map&lt;string, string&gt; field_mapping = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -114,7 +114,7 @@ public interface GeminiTemplateConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Map of template params to the columns in the dataset table.
+   * Required. Map of template parameters to the columns in the dataset table.
    * </pre>
    *
    * <code>map&lt;string, string&gt; field_mapping = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -130,7 +130,7 @@ public interface GeminiTemplateConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Map of template params to the columns in the dataset table.
+   * Required. Map of template parameters to the columns in the dataset table.
    * </pre>
    *
    * <code>map&lt;string, string&gt; field_mapping = 2 [(.google.api.field_behavior) = REQUIRED];

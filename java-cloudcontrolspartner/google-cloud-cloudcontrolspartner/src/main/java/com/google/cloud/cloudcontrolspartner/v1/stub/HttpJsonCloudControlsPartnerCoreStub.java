@@ -32,7 +32,9 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.cloudcontrolspartner.v1.CreateCustomerRequest;
 import com.google.cloud.cloudcontrolspartner.v1.Customer;
+import com.google.cloud.cloudcontrolspartner.v1.DeleteCustomerRequest;
 import com.google.cloud.cloudcontrolspartner.v1.EkmConnections;
 import com.google.cloud.cloudcontrolspartner.v1.GetCustomerRequest;
 import com.google.cloud.cloudcontrolspartner.v1.GetEkmConnectionsRequest;
@@ -47,7 +49,9 @@ import com.google.cloud.cloudcontrolspartner.v1.ListWorkloadsRequest;
 import com.google.cloud.cloudcontrolspartner.v1.ListWorkloadsResponse;
 import com.google.cloud.cloudcontrolspartner.v1.Partner;
 import com.google.cloud.cloudcontrolspartner.v1.PartnerPermissions;
+import com.google.cloud.cloudcontrolspartner.v1.UpdateCustomerRequest;
 import com.google.cloud.cloudcontrolspartner.v1.Workload;
+import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -360,6 +364,120 @@ public class HttpJsonCloudControlsPartnerCoreStub extends CloudControlsPartnerCo
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<CreateCustomerRequest, Customer>
+      createCustomerMethodDescriptor =
+          ApiMethodDescriptor.<CreateCustomerRequest, Customer>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.cloudcontrolspartner.v1.CloudControlsPartnerCore/CreateCustomer")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateCustomerRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=organizations/*/locations/*}/customers",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCustomerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCustomerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "customerId", request.getCustomerId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("customer", request.getCustomer(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Customer>newBuilder()
+                      .setDefaultInstance(Customer.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateCustomerRequest, Customer>
+      updateCustomerMethodDescriptor =
+          ApiMethodDescriptor.<UpdateCustomerRequest, Customer>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.cloudcontrolspartner.v1.CloudControlsPartnerCore/UpdateCustomer")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateCustomerRequest>newBuilder()
+                      .setPath(
+                          "/v1/{customer.name=organizations/*/locations/*/customers/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCustomerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "customer.name", request.getCustomer().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCustomerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("customer", request.getCustomer(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Customer>newBuilder()
+                      .setDefaultInstance(Customer.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteCustomerRequest, Empty>
+      deleteCustomerMethodDescriptor =
+          ApiMethodDescriptor.<DeleteCustomerRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.cloudcontrolspartner.v1.CloudControlsPartnerCore/DeleteCustomer")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteCustomerRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=organizations/*/locations/*/customers/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCustomerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCustomerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetWorkloadRequest, Workload> getWorkloadCallable;
   private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable;
   private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
@@ -377,6 +495,9 @@ public class HttpJsonCloudControlsPartnerCoreStub extends CloudControlsPartnerCo
           ListAccessApprovalRequestsRequest, ListAccessApprovalRequestsPagedResponse>
       listAccessApprovalRequestsPagedCallable;
   private final UnaryCallable<GetPartnerRequest, Partner> getPartnerCallable;
+  private final UnaryCallable<CreateCustomerRequest, Customer> createCustomerCallable;
+  private final UnaryCallable<UpdateCustomerRequest, Customer> updateCustomerCallable;
+  private final UnaryCallable<DeleteCustomerRequest, Empty> deleteCustomerCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -517,6 +638,39 @@ public class HttpJsonCloudControlsPartnerCoreStub extends CloudControlsPartnerCo
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<CreateCustomerRequest, Customer> createCustomerTransportSettings =
+        HttpJsonCallSettings.<CreateCustomerRequest, Customer>newBuilder()
+            .setMethodDescriptor(createCustomerMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateCustomerRequest, Customer> updateCustomerTransportSettings =
+        HttpJsonCallSettings.<UpdateCustomerRequest, Customer>newBuilder()
+            .setMethodDescriptor(updateCustomerMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("customer.name", String.valueOf(request.getCustomer().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteCustomerRequest, Empty> deleteCustomerTransportSettings =
+        HttpJsonCallSettings.<DeleteCustomerRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteCustomerMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.getWorkloadCallable =
         callableFactory.createUnaryCallable(
@@ -559,6 +713,15 @@ public class HttpJsonCloudControlsPartnerCoreStub extends CloudControlsPartnerCo
     this.getPartnerCallable =
         callableFactory.createUnaryCallable(
             getPartnerTransportSettings, settings.getPartnerSettings(), clientContext);
+    this.createCustomerCallable =
+        callableFactory.createUnaryCallable(
+            createCustomerTransportSettings, settings.createCustomerSettings(), clientContext);
+    this.updateCustomerCallable =
+        callableFactory.createUnaryCallable(
+            updateCustomerTransportSettings, settings.updateCustomerSettings(), clientContext);
+    this.deleteCustomerCallable =
+        callableFactory.createUnaryCallable(
+            deleteCustomerTransportSettings, settings.deleteCustomerSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -575,6 +738,9 @@ public class HttpJsonCloudControlsPartnerCoreStub extends CloudControlsPartnerCo
     methodDescriptors.add(getPartnerPermissionsMethodDescriptor);
     methodDescriptors.add(listAccessApprovalRequestsMethodDescriptor);
     methodDescriptors.add(getPartnerMethodDescriptor);
+    methodDescriptors.add(createCustomerMethodDescriptor);
+    methodDescriptors.add(updateCustomerMethodDescriptor);
+    methodDescriptors.add(deleteCustomerMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -636,6 +802,21 @@ public class HttpJsonCloudControlsPartnerCoreStub extends CloudControlsPartnerCo
   @Override
   public UnaryCallable<GetPartnerRequest, Partner> getPartnerCallable() {
     return getPartnerCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCustomerRequest, Customer> createCustomerCallable() {
+    return createCustomerCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCustomerRequest, Customer> updateCustomerCallable() {
+    return updateCustomerCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteCustomerRequest, Empty> deleteCustomerCallable() {
+    return deleteCustomerCallable;
   }
 
   @Override

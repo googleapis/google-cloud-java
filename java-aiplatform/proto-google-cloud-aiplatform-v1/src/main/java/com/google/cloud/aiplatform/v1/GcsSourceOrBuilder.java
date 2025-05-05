@@ -30,7 +30,7 @@ public interface GcsSourceOrBuilder
    * <pre>
    * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
    * wildcards. For more information on wildcards, see
-   * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+   * https://cloud.google.com/storage/docs/wildcards.
    * </pre>
    *
    * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -45,7 +45,7 @@ public interface GcsSourceOrBuilder
    * <pre>
    * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
    * wildcards. For more information on wildcards, see
-   * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+   * https://cloud.google.com/storage/docs/wildcards.
    * </pre>
    *
    * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -60,7 +60,7 @@ public interface GcsSourceOrBuilder
    * <pre>
    * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
    * wildcards. For more information on wildcards, see
-   * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+   * https://cloud.google.com/storage/docs/wildcards.
    * </pre>
    *
    * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -76,7 +76,7 @@ public interface GcsSourceOrBuilder
    * <pre>
    * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
    * wildcards. For more information on wildcards, see
-   * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+   * https://cloud.google.com/storage/docs/wildcards.
    * </pre>
    *
    * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>

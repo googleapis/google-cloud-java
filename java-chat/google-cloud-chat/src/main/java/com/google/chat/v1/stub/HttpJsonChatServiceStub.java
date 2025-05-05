@@ -16,6 +16,7 @@
 
 package com.google.chat.v1.stub;
 
+import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
@@ -38,16 +39,20 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.chat.v1.Attachment;
 import com.google.chat.v1.CompleteImportSpaceRequest;
 import com.google.chat.v1.CompleteImportSpaceResponse;
+import com.google.chat.v1.CreateCustomEmojiRequest;
 import com.google.chat.v1.CreateMembershipRequest;
 import com.google.chat.v1.CreateMessageRequest;
 import com.google.chat.v1.CreateReactionRequest;
 import com.google.chat.v1.CreateSpaceRequest;
+import com.google.chat.v1.CustomEmoji;
+import com.google.chat.v1.DeleteCustomEmojiRequest;
 import com.google.chat.v1.DeleteMembershipRequest;
 import com.google.chat.v1.DeleteMessageRequest;
 import com.google.chat.v1.DeleteReactionRequest;
 import com.google.chat.v1.DeleteSpaceRequest;
 import com.google.chat.v1.FindDirectMessageRequest;
 import com.google.chat.v1.GetAttachmentRequest;
+import com.google.chat.v1.GetCustomEmojiRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
 import com.google.chat.v1.GetSpaceEventRequest;
@@ -55,6 +60,8 @@ import com.google.chat.v1.GetSpaceNotificationSettingRequest;
 import com.google.chat.v1.GetSpaceReadStateRequest;
 import com.google.chat.v1.GetSpaceRequest;
 import com.google.chat.v1.GetThreadReadStateRequest;
+import com.google.chat.v1.ListCustomEmojisRequest;
+import com.google.chat.v1.ListCustomEmojisResponse;
 import com.google.chat.v1.ListMembershipsRequest;
 import com.google.chat.v1.ListMembershipsResponse;
 import com.google.chat.v1.ListMessagesRequest;
@@ -992,6 +999,146 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateCustomEmojiRequest, CustomEmoji>
+      createCustomEmojiMethodDescriptor =
+          ApiMethodDescriptor.<CreateCustomEmojiRequest, CustomEmoji>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/CreateCustomEmoji")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateCustomEmojiRequest>newBuilder()
+                      .setPath(
+                          "/v1/customEmojis",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCustomEmojiRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCustomEmojiRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("customEmoji", request.getCustomEmoji(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CustomEmoji>newBuilder()
+                      .setDefaultInstance(CustomEmoji.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetCustomEmojiRequest, CustomEmoji>
+      getCustomEmojiMethodDescriptor =
+          ApiMethodDescriptor.<GetCustomEmojiRequest, CustomEmoji>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/GetCustomEmoji")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetCustomEmojiRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=customEmojis/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetCustomEmojiRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetCustomEmojiRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CustomEmoji>newBuilder()
+                      .setDefaultInstance(CustomEmoji.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListCustomEmojisRequest, ListCustomEmojisResponse>
+      listCustomEmojisMethodDescriptor =
+          ApiMethodDescriptor.<ListCustomEmojisRequest, ListCustomEmojisResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/ListCustomEmojis")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListCustomEmojisRequest>newBuilder()
+                      .setPath(
+                          "/v1/customEmojis",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListCustomEmojisRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListCustomEmojisRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListCustomEmojisResponse>newBuilder()
+                      .setDefaultInstance(ListCustomEmojisResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteCustomEmojiRequest, Empty>
+      deleteCustomEmojiMethodDescriptor =
+          ApiMethodDescriptor.<DeleteCustomEmojiRequest, Empty>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/DeleteCustomEmoji")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteCustomEmojiRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=customEmojis/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCustomEmojiRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCustomEmojiRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetSpaceReadStateRequest, SpaceReadState>
       getSpaceReadStateMethodDescriptor =
           ApiMethodDescriptor.<GetSpaceReadStateRequest, SpaceReadState>newBuilder()
@@ -1290,6 +1437,13 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   private final UnaryCallable<ListReactionsRequest, ListReactionsPagedResponse>
       listReactionsPagedCallable;
   private final UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable;
+  private final UnaryCallable<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiCallable;
+  private final UnaryCallable<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiCallable;
+  private final UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisResponse>
+      listCustomEmojisCallable;
+  private final UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisPagedResponse>
+      listCustomEmojisPagedCallable;
+  private final UnaryCallable<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiCallable;
   private final UnaryCallable<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateCallable;
   private final UnaryCallable<UpdateSpaceReadStateRequest, SpaceReadState>
       updateSpaceReadStateCallable;
@@ -1586,6 +1740,39 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiTransportSettings =
+        HttpJsonCallSettings.<CreateCustomEmojiRequest, CustomEmoji>newBuilder()
+            .setMethodDescriptor(createCustomEmojiMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiTransportSettings =
+        HttpJsonCallSettings.<GetCustomEmojiRequest, CustomEmoji>newBuilder()
+            .setMethodDescriptor(getCustomEmojiMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListCustomEmojisRequest, ListCustomEmojisResponse>
+        listCustomEmojisTransportSettings =
+            HttpJsonCallSettings.<ListCustomEmojisRequest, ListCustomEmojisResponse>newBuilder()
+                .setMethodDescriptor(listCustomEmojisMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiTransportSettings =
+        HttpJsonCallSettings.<DeleteCustomEmojiRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteCustomEmojiMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<GetSpaceReadStateRequest, SpaceReadState>
         getSpaceReadStateTransportSettings =
             HttpJsonCallSettings.<GetSpaceReadStateRequest, SpaceReadState>newBuilder()
@@ -1767,6 +1954,25 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     this.deleteReactionCallable =
         callableFactory.createUnaryCallable(
             deleteReactionTransportSettings, settings.deleteReactionSettings(), clientContext);
+    this.createCustomEmojiCallable =
+        callableFactory.createUnaryCallable(
+            createCustomEmojiTransportSettings,
+            settings.createCustomEmojiSettings(),
+            clientContext);
+    this.getCustomEmojiCallable =
+        callableFactory.createUnaryCallable(
+            getCustomEmojiTransportSettings, settings.getCustomEmojiSettings(), clientContext);
+    this.listCustomEmojisCallable =
+        callableFactory.createUnaryCallable(
+            listCustomEmojisTransportSettings, settings.listCustomEmojisSettings(), clientContext);
+    this.listCustomEmojisPagedCallable =
+        callableFactory.createPagedCallable(
+            listCustomEmojisTransportSettings, settings.listCustomEmojisSettings(), clientContext);
+    this.deleteCustomEmojiCallable =
+        callableFactory.createUnaryCallable(
+            deleteCustomEmojiTransportSettings,
+            settings.deleteCustomEmojiSettings(),
+            clientContext);
     this.getSpaceReadStateCallable =
         callableFactory.createUnaryCallable(
             getSpaceReadStateTransportSettings,
@@ -1833,6 +2039,10 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     methodDescriptors.add(createReactionMethodDescriptor);
     methodDescriptors.add(listReactionsMethodDescriptor);
     methodDescriptors.add(deleteReactionMethodDescriptor);
+    methodDescriptors.add(createCustomEmojiMethodDescriptor);
+    methodDescriptors.add(getCustomEmojiMethodDescriptor);
+    methodDescriptors.add(listCustomEmojisMethodDescriptor);
+    methodDescriptors.add(deleteCustomEmojiMethodDescriptor);
     methodDescriptors.add(getSpaceReadStateMethodDescriptor);
     methodDescriptors.add(updateSpaceReadStateMethodDescriptor);
     methodDescriptors.add(getThreadReadStateMethodDescriptor);
@@ -1990,6 +2200,33 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable() {
     return deleteReactionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiCallable() {
+    return createCustomEmojiCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiCallable() {
+    return getCustomEmojiCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisResponse>
+      listCustomEmojisCallable() {
+    return listCustomEmojisCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisPagedResponse>
+      listCustomEmojisPagedCallable() {
+    return listCustomEmojisPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiCallable() {
+    return deleteCustomEmojiCallable;
   }
 
   @Override

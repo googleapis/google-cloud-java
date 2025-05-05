@@ -18,6 +18,7 @@ package com.google.cloud.oracledatabase.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
@@ -638,6 +639,20 @@ import javax.annotation.Generated;
  * OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create(oracleDatabaseSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * OracleDatabaseSettings oracleDatabaseSettings =
+ *     OracleDatabaseSettings.newHttpJsonBuilder().build();
+ * OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create(oracleDatabaseSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
@@ -645,6 +660,7 @@ public class OracleDatabaseClient implements BackgroundResource {
   private final OracleDatabaseSettings settings;
   private final OracleDatabaseStub stub;
   private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of OracleDatabaseClient with default settings. */
   public static final OracleDatabaseClient create() throws IOException {
@@ -676,12 +692,16 @@ public class OracleDatabaseClient implements BackgroundResource {
   protected OracleDatabaseClient(OracleDatabaseSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((OracleDatabaseStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected OracleDatabaseClient(OracleDatabaseStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
@@ -697,6 +717,15 @@ public class OracleDatabaseClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
+    return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
   public final OperationsClient getHttpJsonOperationsClient() {
     return httpJsonOperationsClient;
   }

@@ -33,6 +33,11 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-oracledatabase-v1</artifactId>
+        <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-oracledatabase-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-oracledatabase-v1</artifactId>
         <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-oracledatabase-v1:current} -->
       </dependency>
@@ -42,6 +47,7 @@
 
   <modules>
     <module>google-cloud-oracledatabase</module>
+    <module>grpc-google-cloud-oracledatabase-v1</module>
     <module>proto-google-cloud-oracledatabase-v1</module>
     <module>google-cloud-oracledatabase-bom</module>
   </modules>

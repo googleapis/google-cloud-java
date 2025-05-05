@@ -580,6 +580,89 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CreateCustomEmoji</td>
+ *      <td><p> Creates a custom emoji.
+ * <p>  Custom emojis are only available for Google Workspace accounts, and the administrator must turn custom emojis on for the organization. For more information, see [Learn about custom emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom emoji permissions](https://support.google.com/a/answer/12850085).
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createCustomEmoji(CreateCustomEmojiRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createCustomEmoji(CustomEmoji customEmoji)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createCustomEmojiCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetCustomEmoji</td>
+ *      <td><p> Returns details about a custom emoji.
+ * <p>  Custom emojis are only available for Google Workspace accounts, and the administrator must turn custom emojis on for the organization. For more information, see [Learn about custom emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom emoji permissions](https://support.google.com/a/answer/12850085).
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getCustomEmoji(GetCustomEmojiRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getCustomEmoji(CustomEmojiName name)
+ *           <li><p> getCustomEmoji(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getCustomEmojiCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListCustomEmojis</td>
+ *      <td><p> Lists custom emojis visible to the authenticated user.
+ * <p>  Custom emojis are only available for Google Workspace accounts, and the administrator must turn custom emojis on for the organization. For more information, see [Learn about custom emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom emoji permissions](https://support.google.com/a/answer/12850085).
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listCustomEmojis(ListCustomEmojisRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listCustomEmojis()
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listCustomEmojisPagedCallable()
+ *           <li><p> listCustomEmojisCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteCustomEmoji</td>
+ *      <td><p> Deletes a custom emoji. By default, users can only delete custom emoji they created. [Emoji managers](https://support.google.com/a/answer/12850085) assigned by the administrator can delete any custom emoji in the organization. See [Learn about custom emojis in Google Chat](https://support.google.com/chat/answer/12800149).
+ * <p>  Custom emojis are only available for Google Workspace accounts, and the administrator must turn custom emojis on for the organization. For more information, see [Learn about custom emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom emoji permissions](https://support.google.com/a/answer/12850085).
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteCustomEmoji(DeleteCustomEmojiRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteCustomEmoji(CustomEmojiName name)
+ *           <li><p> deleteCustomEmoji(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteCustomEmojiCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetSpaceReadState</td>
  *      <td><p> Returns details about a user's read state within a space, used to identify read and unread messages. For an example, see [Get details about a user's space read state](https://developers.google.com/workspace/chat/get-space-read-state).
  * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).</td>
@@ -4773,6 +4856,588 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a custom emoji.
+   *
+   * <p>Custom emojis are only available for Google Workspace accounts, and the administrator must
+   * turn custom emojis on for the organization. For more information, see [Learn about custom
+   * emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom
+   * emoji permissions](https://support.google.com/a/answer/12850085).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   CustomEmoji customEmoji = CustomEmoji.newBuilder().build();
+   *   CustomEmoji response = chatServiceClient.createCustomEmoji(customEmoji);
+   * }
+   * }</pre>
+   *
+   * @param customEmoji Required. The custom emoji to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomEmoji createCustomEmoji(CustomEmoji customEmoji) {
+    CreateCustomEmojiRequest request =
+        CreateCustomEmojiRequest.newBuilder().setCustomEmoji(customEmoji).build();
+    return createCustomEmoji(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a custom emoji.
+   *
+   * <p>Custom emojis are only available for Google Workspace accounts, and the administrator must
+   * turn custom emojis on for the organization. For more information, see [Learn about custom
+   * emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom
+   * emoji permissions](https://support.google.com/a/answer/12850085).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   CreateCustomEmojiRequest request =
+   *       CreateCustomEmojiRequest.newBuilder()
+   *           .setCustomEmoji(CustomEmoji.newBuilder().build())
+   *           .build();
+   *   CustomEmoji response = chatServiceClient.createCustomEmoji(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomEmoji createCustomEmoji(CreateCustomEmojiRequest request) {
+    return createCustomEmojiCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a custom emoji.
+   *
+   * <p>Custom emojis are only available for Google Workspace accounts, and the administrator must
+   * turn custom emojis on for the organization. For more information, see [Learn about custom
+   * emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom
+   * emoji permissions](https://support.google.com/a/answer/12850085).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   CreateCustomEmojiRequest request =
+   *       CreateCustomEmojiRequest.newBuilder()
+   *           .setCustomEmoji(CustomEmoji.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CustomEmoji> future =
+   *       chatServiceClient.createCustomEmojiCallable().futureCall(request);
+   *   // Do something.
+   *   CustomEmoji response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiCallable() {
+    return stub.createCustomEmojiCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details about a custom emoji.
+   *
+   * <p>Custom emojis are only available for Google Workspace accounts, and the administrator must
+   * turn custom emojis on for the organization. For more information, see [Learn about custom
+   * emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom
+   * emoji permissions](https://support.google.com/a/answer/12850085).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   CustomEmojiName name = CustomEmojiName.of("[CUSTOM_EMOJI]");
+   *   CustomEmoji response = chatServiceClient.getCustomEmoji(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the custom emoji.
+   *     <p>Format: `customEmojis/{customEmoji}`
+   *     <p>You can use the emoji name as an alias for `{customEmoji}`. For example,
+   *     `customEmojis/:example-emoji:` where `:example-emoji:` is the emoji name for a custom
+   *     emoji.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomEmoji getCustomEmoji(CustomEmojiName name) {
+    GetCustomEmojiRequest request =
+        GetCustomEmojiRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getCustomEmoji(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details about a custom emoji.
+   *
+   * <p>Custom emojis are only available for Google Workspace accounts, and the administrator must
+   * turn custom emojis on for the organization. For more information, see [Learn about custom
+   * emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom
+   * emoji permissions](https://support.google.com/a/answer/12850085).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String name = CustomEmojiName.of("[CUSTOM_EMOJI]").toString();
+   *   CustomEmoji response = chatServiceClient.getCustomEmoji(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the custom emoji.
+   *     <p>Format: `customEmojis/{customEmoji}`
+   *     <p>You can use the emoji name as an alias for `{customEmoji}`. For example,
+   *     `customEmojis/:example-emoji:` where `:example-emoji:` is the emoji name for a custom
+   *     emoji.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomEmoji getCustomEmoji(String name) {
+    GetCustomEmojiRequest request = GetCustomEmojiRequest.newBuilder().setName(name).build();
+    return getCustomEmoji(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details about a custom emoji.
+   *
+   * <p>Custom emojis are only available for Google Workspace accounts, and the administrator must
+   * turn custom emojis on for the organization. For more information, see [Learn about custom
+   * emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom
+   * emoji permissions](https://support.google.com/a/answer/12850085).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   GetCustomEmojiRequest request =
+   *       GetCustomEmojiRequest.newBuilder()
+   *           .setName(CustomEmojiName.of("[CUSTOM_EMOJI]").toString())
+   *           .build();
+   *   CustomEmoji response = chatServiceClient.getCustomEmoji(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomEmoji getCustomEmoji(GetCustomEmojiRequest request) {
+    return getCustomEmojiCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details about a custom emoji.
+   *
+   * <p>Custom emojis are only available for Google Workspace accounts, and the administrator must
+   * turn custom emojis on for the organization. For more information, see [Learn about custom
+   * emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom
+   * emoji permissions](https://support.google.com/a/answer/12850085).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   GetCustomEmojiRequest request =
+   *       GetCustomEmojiRequest.newBuilder()
+   *           .setName(CustomEmojiName.of("[CUSTOM_EMOJI]").toString())
+   *           .build();
+   *   ApiFuture<CustomEmoji> future =
+   *       chatServiceClient.getCustomEmojiCallable().futureCall(request);
+   *   // Do something.
+   *   CustomEmoji response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiCallable() {
+    return stub.getCustomEmojiCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists custom emojis visible to the authenticated user.
+   *
+   * <p>Custom emojis are only available for Google Workspace accounts, and the administrator must
+   * turn custom emojis on for the organization. For more information, see [Learn about custom
+   * emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom
+   * emoji permissions](https://support.google.com/a/answer/12850085).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   for (CustomEmoji element : chatServiceClient.listCustomEmojis().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomEmojisPagedResponse listCustomEmojis() {
+    ListCustomEmojisRequest request = ListCustomEmojisRequest.newBuilder().build();
+    return listCustomEmojis(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists custom emojis visible to the authenticated user.
+   *
+   * <p>Custom emojis are only available for Google Workspace accounts, and the administrator must
+   * turn custom emojis on for the organization. For more information, see [Learn about custom
+   * emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom
+   * emoji permissions](https://support.google.com/a/answer/12850085).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ListCustomEmojisRequest request =
+   *       ListCustomEmojisRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (CustomEmoji element : chatServiceClient.listCustomEmojis(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCustomEmojisPagedResponse listCustomEmojis(ListCustomEmojisRequest request) {
+    return listCustomEmojisPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists custom emojis visible to the authenticated user.
+   *
+   * <p>Custom emojis are only available for Google Workspace accounts, and the administrator must
+   * turn custom emojis on for the organization. For more information, see [Learn about custom
+   * emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom
+   * emoji permissions](https://support.google.com/a/answer/12850085).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ListCustomEmojisRequest request =
+   *       ListCustomEmojisRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<CustomEmoji> future =
+   *       chatServiceClient.listCustomEmojisPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (CustomEmoji element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisPagedResponse>
+      listCustomEmojisPagedCallable() {
+    return stub.listCustomEmojisPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists custom emojis visible to the authenticated user.
+   *
+   * <p>Custom emojis are only available for Google Workspace accounts, and the administrator must
+   * turn custom emojis on for the organization. For more information, see [Learn about custom
+   * emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom
+   * emoji permissions](https://support.google.com/a/answer/12850085).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ListCustomEmojisRequest request =
+   *       ListCustomEmojisRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListCustomEmojisResponse response =
+   *         chatServiceClient.listCustomEmojisCallable().call(request);
+   *     for (CustomEmoji element : response.getCustomEmojisList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisResponse>
+      listCustomEmojisCallable() {
+    return stub.listCustomEmojisCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a custom emoji. By default, users can only delete custom emoji they created. [Emoji
+   * managers](https://support.google.com/a/answer/12850085) assigned by the administrator can
+   * delete any custom emoji in the organization. See [Learn about custom emojis in Google
+   * Chat](https://support.google.com/chat/answer/12800149).
+   *
+   * <p>Custom emojis are only available for Google Workspace accounts, and the administrator must
+   * turn custom emojis on for the organization. For more information, see [Learn about custom
+   * emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom
+   * emoji permissions](https://support.google.com/a/answer/12850085).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   CustomEmojiName name = CustomEmojiName.of("[CUSTOM_EMOJI]");
+   *   chatServiceClient.deleteCustomEmoji(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the custom emoji to delete.
+   *     <p>Format: `customEmojis/{customEmoji}`
+   *     <p>You can use the emoji name as an alias for `{customEmoji}`. For example,
+   *     `customEmojis/:example-emoji:` where `:example-emoji:` is the emoji name for a custom
+   *     emoji.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCustomEmoji(CustomEmojiName name) {
+    DeleteCustomEmojiRequest request =
+        DeleteCustomEmojiRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteCustomEmoji(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a custom emoji. By default, users can only delete custom emoji they created. [Emoji
+   * managers](https://support.google.com/a/answer/12850085) assigned by the administrator can
+   * delete any custom emoji in the organization. See [Learn about custom emojis in Google
+   * Chat](https://support.google.com/chat/answer/12800149).
+   *
+   * <p>Custom emojis are only available for Google Workspace accounts, and the administrator must
+   * turn custom emojis on for the organization. For more information, see [Learn about custom
+   * emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom
+   * emoji permissions](https://support.google.com/a/answer/12850085).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String name = CustomEmojiName.of("[CUSTOM_EMOJI]").toString();
+   *   chatServiceClient.deleteCustomEmoji(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the custom emoji to delete.
+   *     <p>Format: `customEmojis/{customEmoji}`
+   *     <p>You can use the emoji name as an alias for `{customEmoji}`. For example,
+   *     `customEmojis/:example-emoji:` where `:example-emoji:` is the emoji name for a custom
+   *     emoji.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCustomEmoji(String name) {
+    DeleteCustomEmojiRequest request = DeleteCustomEmojiRequest.newBuilder().setName(name).build();
+    deleteCustomEmoji(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a custom emoji. By default, users can only delete custom emoji they created. [Emoji
+   * managers](https://support.google.com/a/answer/12850085) assigned by the administrator can
+   * delete any custom emoji in the organization. See [Learn about custom emojis in Google
+   * Chat](https://support.google.com/chat/answer/12800149).
+   *
+   * <p>Custom emojis are only available for Google Workspace accounts, and the administrator must
+   * turn custom emojis on for the organization. For more information, see [Learn about custom
+   * emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom
+   * emoji permissions](https://support.google.com/a/answer/12850085).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   DeleteCustomEmojiRequest request =
+   *       DeleteCustomEmojiRequest.newBuilder()
+   *           .setName(CustomEmojiName.of("[CUSTOM_EMOJI]").toString())
+   *           .build();
+   *   chatServiceClient.deleteCustomEmoji(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteCustomEmoji(DeleteCustomEmojiRequest request) {
+    deleteCustomEmojiCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a custom emoji. By default, users can only delete custom emoji they created. [Emoji
+   * managers](https://support.google.com/a/answer/12850085) assigned by the administrator can
+   * delete any custom emoji in the organization. See [Learn about custom emojis in Google
+   * Chat](https://support.google.com/chat/answer/12800149).
+   *
+   * <p>Custom emojis are only available for Google Workspace accounts, and the administrator must
+   * turn custom emojis on for the organization. For more information, see [Learn about custom
+   * emojis in Google Chat](https://support.google.com/chat/answer/12800149) and [Manage custom
+   * emoji permissions](https://support.google.com/a/answer/12850085).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   DeleteCustomEmojiRequest request =
+   *       DeleteCustomEmojiRequest.newBuilder()
+   *           .setName(CustomEmojiName.of("[CUSTOM_EMOJI]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = chatServiceClient.deleteCustomEmojiCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiCallable() {
+    return stub.deleteCustomEmojiCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Returns details about a user's read state within a space, used to identify read and unread
    * messages. For an example, see [Get details about a user's space read
    * state](https://developers.google.com/workspace/chat/get-space-read-state).
@@ -6306,6 +6971,83 @@ public class ChatServiceClient implements BackgroundResource {
     protected ListReactionsFixedSizeCollection createCollection(
         List<ListReactionsPage> pages, int collectionSize) {
       return new ListReactionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListCustomEmojisPagedResponse
+      extends AbstractPagedListResponse<
+          ListCustomEmojisRequest,
+          ListCustomEmojisResponse,
+          CustomEmoji,
+          ListCustomEmojisPage,
+          ListCustomEmojisFixedSizeCollection> {
+
+    public static ApiFuture<ListCustomEmojisPagedResponse> createAsync(
+        PageContext<ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji> context,
+        ApiFuture<ListCustomEmojisResponse> futureResponse) {
+      ApiFuture<ListCustomEmojisPage> futurePage =
+          ListCustomEmojisPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListCustomEmojisPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListCustomEmojisPagedResponse(ListCustomEmojisPage page) {
+      super(page, ListCustomEmojisFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListCustomEmojisPage
+      extends AbstractPage<
+          ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji, ListCustomEmojisPage> {
+
+    private ListCustomEmojisPage(
+        PageContext<ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji> context,
+        ListCustomEmojisResponse response) {
+      super(context, response);
+    }
+
+    private static ListCustomEmojisPage createEmptyPage() {
+      return new ListCustomEmojisPage(null, null);
+    }
+
+    @Override
+    protected ListCustomEmojisPage createPage(
+        PageContext<ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji> context,
+        ListCustomEmojisResponse response) {
+      return new ListCustomEmojisPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListCustomEmojisPage> createPageAsync(
+        PageContext<ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji> context,
+        ApiFuture<ListCustomEmojisResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListCustomEmojisFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListCustomEmojisRequest,
+          ListCustomEmojisResponse,
+          CustomEmoji,
+          ListCustomEmojisPage,
+          ListCustomEmojisFixedSizeCollection> {
+
+    private ListCustomEmojisFixedSizeCollection(
+        List<ListCustomEmojisPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListCustomEmojisFixedSizeCollection createEmptyCollection() {
+      return new ListCustomEmojisFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListCustomEmojisFixedSizeCollection createCollection(
+        List<ListCustomEmojisPage> pages, int collectionSize) {
+      return new ListCustomEmojisFixedSizeCollection(pages, collectionSize);
     }
   }
 

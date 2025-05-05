@@ -28,13 +28,50 @@ public interface DebugOptionsOrBuilder
    *
    *
    * <pre>
-   * When true, enables the logging of the literal hot key to the user's Cloud
-   * Logging.
+   * Optional. When true, enables the logging of the literal hot key to the
+   * user's Cloud Logging.
    * </pre>
    *
-   * <code>bool enable_hot_key_logging = 1;</code>
+   * <code>bool enable_hot_key_logging = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The enableHotKeyLogging.
    */
   boolean getEnableHotKeyLogging();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for sampling elements from a running pipeline.
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.DataSamplingConfig data_sampling = 2;</code>
+   *
+   * @return Whether the dataSampling field is set.
+   */
+  boolean hasDataSampling();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for sampling elements from a running pipeline.
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.DataSamplingConfig data_sampling = 2;</code>
+   *
+   * @return The dataSampling.
+   */
+  com.google.dataflow.v1beta3.DataSamplingConfig getDataSampling();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for sampling elements from a running pipeline.
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.DataSamplingConfig data_sampling = 2;</code>
+   */
+  com.google.dataflow.v1beta3.DataSamplingConfigOrBuilder getDataSamplingOrBuilder();
 }
