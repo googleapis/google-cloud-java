@@ -33,7 +33,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.GenerationConfig)
     GenerationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerationConfig.newBuilder() to construct.
   private GenerationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the autoMode field is set.
      */
     boolean hasAutoMode();
-
     /**
      *
      *
@@ -97,7 +95,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return The autoMode.
      */
     com.google.cloud.vertexai.api.GenerationConfig.RoutingConfig.AutoRoutingMode getAutoMode();
-
     /**
      *
      *
@@ -125,7 +122,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the manualMode field is set.
      */
     boolean hasManualMode();
-
     /**
      *
      *
@@ -140,7 +136,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return The manualMode.
      */
     com.google.cloud.vertexai.api.GenerationConfig.RoutingConfig.ManualRoutingMode getManualMode();
-
     /**
      *
      *
@@ -158,7 +153,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     com.google.cloud.vertexai.api.GenerationConfig.RoutingConfig.RoutingConfigCase
         getRoutingConfigCase();
   }
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.GenerationConfig.RoutingConfig)
       RoutingConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RoutingConfig.newBuilder() to construct.
     private RoutingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -221,7 +214,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
        * @return Whether the modelRoutingPreference field is set.
        */
       boolean hasModelRoutingPreference();
-
       /**
        *
        *
@@ -236,7 +228,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
        * @return The enum numeric value on the wire for modelRoutingPreference.
        */
       int getModelRoutingPreferenceValue();
-
       /**
        *
        *
@@ -254,7 +245,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
               .ModelRoutingPreference
           getModelRoutingPreference();
     }
-
     /**
      *
      *
@@ -271,7 +261,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.GenerationConfig.RoutingConfig.AutoRoutingMode)
         AutoRoutingModeOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use AutoRoutingMode.newBuilder() to construct.
       private AutoRoutingMode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -367,7 +356,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
          * <code>UNKNOWN = 0;</code>
          */
         public static final int UNKNOWN_VALUE = 0;
-
         /**
          *
          *
@@ -378,7 +366,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
          * <code>PRIORITIZE_QUALITY = 1;</code>
          */
         public static final int PRIORITIZE_QUALITY_VALUE = 1;
-
         /**
          *
          *
@@ -389,7 +376,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
          * <code>BALANCED = 2;</code>
          */
         public static final int BALANCED_VALUE = 2;
-
         /**
          *
          *
@@ -496,7 +482,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
       public static final int MODEL_ROUTING_PREFERENCE_FIELD_NUMBER = 1;
       private int modelRoutingPreference_ = 0;
-
       /**
        *
        *
@@ -514,7 +499,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       public boolean hasModelRoutingPreference() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -532,7 +516,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       public int getModelRoutingPreferenceValue() {
         return modelRoutingPreference_;
       }
-
       /**
        *
        *
@@ -737,7 +720,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -945,7 +927,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         private int bitField0_;
 
         private int modelRoutingPreference_ = 0;
-
         /**
          *
          *
@@ -963,7 +944,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         public boolean hasModelRoutingPreference() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -981,7 +961,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         public int getModelRoutingPreferenceValue() {
           return modelRoutingPreference_;
         }
-
         /**
          *
          *
@@ -1002,7 +981,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1030,7 +1008,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
                   .ModelRoutingPreference.UNRECOGNIZED
               : result;
         }
-
         /**
          *
          *
@@ -1057,7 +1034,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1165,7 +1141,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
        * @return Whether the modelName field is set.
        */
       boolean hasModelName();
-
       /**
        *
        *
@@ -1179,7 +1154,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
        * @return The modelName.
        */
       java.lang.String getModelName();
-
       /**
        *
        *
@@ -1194,7 +1168,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
        */
       com.google.protobuf.ByteString getModelNameBytes();
     }
-
     /**
      *
      *
@@ -1210,7 +1183,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.GenerationConfig.RoutingConfig.ManualRoutingMode)
         ManualRoutingModeOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use ManualRoutingMode.newBuilder() to construct.
       private ManualRoutingMode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1248,7 +1220,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object modelName_ = "";
-
       /**
        *
        *
@@ -1265,7 +1236,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       public boolean hasModelName() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1290,7 +1260,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
           return s;
         }
       }
-
       /**
        *
        *
@@ -1493,7 +1462,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -1701,7 +1669,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         private int bitField0_;
 
         private java.lang.Object modelName_ = "";
-
         /**
          *
          *
@@ -1717,7 +1684,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         public boolean hasModelName() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -1741,7 +1707,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -1765,7 +1730,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -1788,7 +1752,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1807,7 +1770,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1918,7 +1880,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       private RoutingConfigCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1952,7 +1913,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int AUTO_MODE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -1969,7 +1929,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasAutoMode() {
       return routingConfigCase_ == 1;
     }
-
     /**
      *
      *
@@ -1992,7 +1951,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       return com.google.cloud.vertexai.api.GenerationConfig.RoutingConfig.AutoRoutingMode
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -2015,7 +1973,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int MANUAL_MODE_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -2033,7 +1990,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasManualMode() {
       return routingConfigCase_ == 2;
     }
-
     /**
      *
      *
@@ -2057,7 +2013,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       return com.google.cloud.vertexai.api.GenerationConfig.RoutingConfig.ManualRoutingMode
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -2281,7 +2236,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2524,7 +2478,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
               com.google.cloud.vertexai.api.GenerationConfig.RoutingConfig.AutoRoutingMode.Builder,
               com.google.cloud.vertexai.api.GenerationConfig.RoutingConfig.AutoRoutingModeOrBuilder>
           autoModeBuilder_;
-
       /**
        *
        *
@@ -2542,7 +2495,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       public boolean hasAutoMode() {
         return routingConfigCase_ == 1;
       }
-
       /**
        *
        *
@@ -2574,7 +2526,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2600,7 +2551,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         routingConfigCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -2624,7 +2574,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         routingConfigCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -2665,7 +2614,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         routingConfigCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -2693,7 +2641,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -2709,7 +2656,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
           getAutoModeBuilder() {
         return getAutoModeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2735,7 +2681,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2783,7 +2728,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
               com.google.cloud.vertexai.api.GenerationConfig.RoutingConfig
                   .ManualRoutingModeOrBuilder>
           manualModeBuilder_;
-
       /**
        *
        *
@@ -2801,7 +2745,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       public boolean hasManualMode() {
         return routingConfigCase_ == 2;
       }
-
       /**
        *
        *
@@ -2833,7 +2776,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2859,7 +2801,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         routingConfigCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -2883,7 +2824,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         routingConfigCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -2924,7 +2864,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         routingConfigCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -2952,7 +2891,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -2968,7 +2906,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
           getManualModeBuilder() {
         return getManualModeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2994,7 +2931,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -3107,7 +3043,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int TEMPERATURE_FIELD_NUMBER = 1;
   private float temperature_ = 0F;
-
   /**
    *
    *
@@ -3123,7 +3058,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasTemperature() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -3142,7 +3076,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int TOP_P_FIELD_NUMBER = 2;
   private float topP_ = 0F;
-
   /**
    *
    *
@@ -3158,7 +3091,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasTopP() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3177,7 +3109,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int TOP_K_FIELD_NUMBER = 3;
   private float topK_ = 0F;
-
   /**
    *
    *
@@ -3193,7 +3124,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasTopK() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -3212,7 +3142,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int CANDIDATE_COUNT_FIELD_NUMBER = 4;
   private int candidateCount_ = 0;
-
   /**
    *
    *
@@ -3228,7 +3157,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasCandidateCount() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -3247,7 +3175,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int MAX_OUTPUT_TOKENS_FIELD_NUMBER = 5;
   private int maxOutputTokens_ = 0;
-
   /**
    *
    *
@@ -3263,7 +3190,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasMaxOutputTokens() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -3285,7 +3211,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList stopSequences_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -3300,7 +3225,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getStopSequencesList() {
     return stopSequences_;
   }
-
   /**
    *
    *
@@ -3315,7 +3239,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
   public int getStopSequencesCount() {
     return stopSequences_.size();
   }
-
   /**
    *
    *
@@ -3331,7 +3254,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
   public java.lang.String getStopSequences(int index) {
     return stopSequences_.get(index);
   }
-
   /**
    *
    *
@@ -3350,7 +3272,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int RESPONSE_LOGPROBS_FIELD_NUMBER = 18;
   private boolean responseLogprobs_ = false;
-
   /**
    *
    *
@@ -3366,7 +3287,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasResponseLogprobs() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -3385,7 +3305,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int LOGPROBS_FIELD_NUMBER = 7;
   private int logprobs_ = 0;
-
   /**
    *
    *
@@ -3401,7 +3320,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasLogprobs() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -3420,7 +3338,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int PRESENCE_PENALTY_FIELD_NUMBER = 8;
   private float presencePenalty_ = 0F;
-
   /**
    *
    *
@@ -3436,7 +3353,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasPresencePenalty() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -3455,7 +3371,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int FREQUENCY_PENALTY_FIELD_NUMBER = 9;
   private float frequencyPenalty_ = 0F;
-
   /**
    *
    *
@@ -3471,7 +3386,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasFrequencyPenalty() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -3490,7 +3404,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int SEED_FIELD_NUMBER = 12;
   private int seed_ = 0;
-
   /**
    *
    *
@@ -3506,7 +3419,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasSeed() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -3527,7 +3439,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object responseMimeType_ = "";
-
   /**
    *
    *
@@ -3557,7 +3468,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -3590,7 +3500,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int RESPONSE_SCHEMA_FIELD_NUMBER = 16;
   private com.google.cloud.vertexai.api.Schema responseSchema_;
-
   /**
    *
    *
@@ -3614,7 +3523,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasResponseSchema() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -3640,7 +3548,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.vertexai.api.Schema.getDefaultInstance()
         : responseSchema_;
   }
-
   /**
    *
    *
@@ -3667,7 +3574,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int ROUTING_CONFIG_FIELD_NUMBER = 17;
   private com.google.cloud.vertexai.api.GenerationConfig.RoutingConfig routingConfig_;
-
   /**
    *
    *
@@ -3685,7 +3591,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasRoutingConfig() {
     return ((bitField0_ & 0x00000800) != 0);
   }
-
   /**
    *
    *
@@ -3705,7 +3610,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.vertexai.api.GenerationConfig.RoutingConfig.getDefaultInstance()
         : routingConfig_;
   }
-
   /**
    *
    *
@@ -4073,7 +3977,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4469,7 +4372,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private float temperature_;
-
     /**
      *
      *
@@ -4485,7 +4387,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasTemperature() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -4501,7 +4402,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public float getTemperature() {
       return temperature_;
     }
-
     /**
      *
      *
@@ -4521,7 +4421,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4541,7 +4440,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private float topP_;
-
     /**
      *
      *
@@ -4557,7 +4455,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasTopP() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -4573,7 +4470,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public float getTopP() {
       return topP_;
     }
-
     /**
      *
      *
@@ -4593,7 +4489,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4613,7 +4508,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private float topK_;
-
     /**
      *
      *
@@ -4629,7 +4523,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasTopK() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -4645,7 +4538,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public float getTopK() {
       return topK_;
     }
-
     /**
      *
      *
@@ -4665,7 +4557,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4685,7 +4576,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private int candidateCount_;
-
     /**
      *
      *
@@ -4701,7 +4591,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasCandidateCount() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -4717,7 +4606,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public int getCandidateCount() {
       return candidateCount_;
     }
-
     /**
      *
      *
@@ -4737,7 +4625,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4757,7 +4644,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private int maxOutputTokens_;
-
     /**
      *
      *
@@ -4773,7 +4659,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasMaxOutputTokens() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -4789,7 +4674,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public int getMaxOutputTokens() {
       return maxOutputTokens_;
     }
-
     /**
      *
      *
@@ -4809,7 +4693,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4837,7 +4720,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000020;
     }
-
     /**
      *
      *
@@ -4853,7 +4735,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       stopSequences_.makeImmutable();
       return stopSequences_;
     }
-
     /**
      *
      *
@@ -4868,7 +4749,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public int getStopSequencesCount() {
       return stopSequences_.size();
     }
-
     /**
      *
      *
@@ -4884,7 +4764,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public java.lang.String getStopSequences(int index) {
       return stopSequences_.get(index);
     }
-
     /**
      *
      *
@@ -4900,7 +4779,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getStopSequencesBytes(int index) {
       return stopSequences_.getByteString(index);
     }
-
     /**
      *
      *
@@ -4924,7 +4802,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4947,7 +4824,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4967,7 +4843,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4986,7 +4861,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5012,7 +4886,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean responseLogprobs_;
-
     /**
      *
      *
@@ -5028,7 +4901,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasResponseLogprobs() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -5044,7 +4916,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public boolean getResponseLogprobs() {
       return responseLogprobs_;
     }
-
     /**
      *
      *
@@ -5064,7 +4935,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5084,7 +4954,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private int logprobs_;
-
     /**
      *
      *
@@ -5100,7 +4969,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasLogprobs() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -5116,7 +4984,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public int getLogprobs() {
       return logprobs_;
     }
-
     /**
      *
      *
@@ -5136,7 +5003,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5156,7 +5022,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private float presencePenalty_;
-
     /**
      *
      *
@@ -5172,7 +5037,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasPresencePenalty() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -5188,7 +5052,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public float getPresencePenalty() {
       return presencePenalty_;
     }
-
     /**
      *
      *
@@ -5208,7 +5071,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5228,7 +5090,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private float frequencyPenalty_;
-
     /**
      *
      *
@@ -5244,7 +5105,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasFrequencyPenalty() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -5260,7 +5120,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public float getFrequencyPenalty() {
       return frequencyPenalty_;
     }
-
     /**
      *
      *
@@ -5280,7 +5139,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5300,7 +5158,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private int seed_;
-
     /**
      *
      *
@@ -5316,7 +5173,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasSeed() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -5332,7 +5188,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public int getSeed() {
       return seed_;
     }
-
     /**
      *
      *
@@ -5352,7 +5207,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5372,7 +5226,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object responseMimeType_ = "";
-
     /**
      *
      *
@@ -5401,7 +5254,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5430,7 +5282,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5458,7 +5309,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5482,7 +5332,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5518,7 +5367,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.vertexai.api.Schema.Builder,
             com.google.cloud.vertexai.api.SchemaOrBuilder>
         responseSchemaBuilder_;
-
     /**
      *
      *
@@ -5541,7 +5389,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasResponseSchema() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -5570,7 +5417,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         return responseSchemaBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5601,7 +5447,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5629,7 +5474,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5665,7 +5509,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5693,7 +5536,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5716,7 +5558,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getResponseSchemaFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5743,7 +5584,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
             : responseSchema_;
       }
     }
-
     /**
      *
      *
@@ -5784,7 +5624,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.vertexai.api.GenerationConfig.RoutingConfig.Builder,
             com.google.cloud.vertexai.api.GenerationConfig.RoutingConfigOrBuilder>
         routingConfigBuilder_;
-
     /**
      *
      *
@@ -5801,7 +5640,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasRoutingConfig() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -5824,7 +5662,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         return routingConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5850,7 +5687,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5873,7 +5709,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5906,7 +5741,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5928,7 +5762,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5946,7 +5779,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getRoutingConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5968,7 +5800,6 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
             : routingConfig_;
       }
     }
-
     /**
      *
      *

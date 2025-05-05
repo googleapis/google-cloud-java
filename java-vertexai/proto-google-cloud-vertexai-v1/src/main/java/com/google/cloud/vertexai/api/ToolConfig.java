@@ -33,7 +33,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.ToolConfig)
     ToolConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ToolConfig.newBuilder() to construct.
   private ToolConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int FUNCTION_CALLING_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.vertexai.api.FunctionCallingConfig functionCallingConfig_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFunctionCallingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vertexai.api.FunctionCallingConfig.getDefaultInstance()
         : functionCallingConfig_;
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RETRIEVAL_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.vertexai.api.RetrievalConfig retrievalConfig_;
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRetrievalConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vertexai.api.RetrievalConfig.getDefaultInstance()
         : retrievalConfig_;
   }
-
   /**
    *
    *
@@ -360,7 +353,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -587,7 +579,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.FunctionCallingConfig.Builder,
             com.google.cloud.vertexai.api.FunctionCallingConfigOrBuilder>
         functionCallingConfigBuilder_;
-
     /**
      *
      *
@@ -604,7 +595,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFunctionCallingConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -627,7 +617,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
         return functionCallingConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -653,7 +642,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -676,7 +664,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -708,7 +695,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +716,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +733,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFunctionCallingConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -770,7 +754,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
             : functionCallingConfig_;
       }
     }
-
     /**
      *
      *
@@ -805,7 +788,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.RetrievalConfig.Builder,
             com.google.cloud.vertexai.api.RetrievalConfigOrBuilder>
         retrievalConfigBuilder_;
-
     /**
      *
      *
@@ -822,7 +804,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRetrievalConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -845,7 +826,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
         return retrievalConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -870,7 +850,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +872,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +902,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +923,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +939,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRetrievalConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -984,7 +959,6 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
             : retrievalConfig_;
       }
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.DirectPredictResponse)
     DirectPredictResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DirectPredictResponse.newBuilder() to construct.
   private DirectPredictResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vertexai.api.Tensor> outputs_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.vertexai.api.Tensor> getOutputsList() {
     return outputs_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
       getOutputsOrBuilderList() {
     return outputs_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
   public int getOutputsCount() {
     return outputs_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.vertexai.api.Tensor getOutputs(int index) {
     return outputs_.get(index);
   }
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
 
   public static final int PARAMETERS_FIELD_NUMBER = 2;
   private com.google.cloud.vertexai.api.Tensor parameters_;
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
   public boolean hasParameters() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -178,7 +170,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.vertexai.api.Tensor.getDefaultInstance()
         : parameters_;
   }
-
   /**
    *
    *
@@ -370,7 +361,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -663,7 +653,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
         return outputsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -680,7 +669,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
         return outputsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -697,7 +685,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
         return outputsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -720,7 +707,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +727,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +749,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +771,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +790,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +810,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +830,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +849,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +868,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +880,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.vertexai.api.Tensor.Builder getOutputsBuilder(int index) {
       return getOutputsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -919,7 +896,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
         return outputsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -937,7 +913,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(outputs_);
       }
     }
-
     /**
      *
      *
@@ -951,7 +926,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
       return getOutputsFieldBuilder()
           .addBuilder(com.google.cloud.vertexai.api.Tensor.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -965,7 +939,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
       return getOutputsFieldBuilder()
           .addBuilder(index, com.google.cloud.vertexai.api.Tensor.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1002,7 +975,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.vertexai.api.Tensor.Builder,
             com.google.cloud.vertexai.api.TensorOrBuilder>
         parametersBuilder_;
-
     /**
      *
      *
@@ -1017,7 +989,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
     public boolean hasParameters() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1038,7 +1009,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
         return parametersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1061,7 +1031,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1050,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1109,7 +1077,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1129,7 +1096,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1110,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return getParametersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1163,7 +1128,6 @@ public final class DirectPredictResponse extends com.google.protobuf.GeneratedMe
             : parameters_;
       }
     }
-
     /**
      *
      *

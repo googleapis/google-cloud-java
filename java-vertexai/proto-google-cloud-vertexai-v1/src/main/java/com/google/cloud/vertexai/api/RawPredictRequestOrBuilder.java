@@ -40,7 +40,6 @@ public interface RawPredictRequestOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public interface RawPredictRequestOrBuilder
    * @return Whether the httpBody field is set.
    */
   boolean hasHttpBody();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface RawPredictRequestOrBuilder
    * @return The httpBody.
    */
   com.google.api.HttpBody getHttpBody();
-
   /**
    *
    *
