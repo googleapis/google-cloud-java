@@ -71,6 +71,12 @@
 
       <!-- Test dependencies -->
       <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax</artifactId>
+        <classifier>testlib</classifier>
+        <scope>test</scope>
+      </dependency>       
+      <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>4.13.2</version>
