@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.139.2](https://github.com/googleapis/java-pubsub/compare/v1.139.1...v1.139.2) (2025-05-05)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.56.3 ([2b928a8](https://github.com/googleapis/java-pubsub/commit/2b928a8a946ebf84470bd2e2bb064b52c4f11ea2))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.49.2 ([#2399](https://github.com/googleapis/java-pubsub/issues/2399)) ([ff48708](https://github.com/googleapis/java-pubsub/commit/ff4870815864a6216a1ce4b606fcec3df7f58fd4))
+* Update dependency com.google.cloud:google-cloud-core to v2.54.3 ([#2393](https://github.com/googleapis/java-pubsub/issues/2393)) ([0ffa26a](https://github.com/googleapis/java-pubsub/commit/0ffa26ac3abceabcfba5d57cdb36f27f5a164ce3))
+* Update dependency com.google.cloud:google-cloud-storage to v2.52.1 ([#2396](https://github.com/googleapis/java-pubsub/issues/2396)) ([283a6e1](https://github.com/googleapis/java-pubsub/commit/283a6e14f61764c210ed23f4ada23ad21bbdb306))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.46.3 ([#2406](https://github.com/googleapis/java-pubsub/issues/2406)) ([8963ed0](https://github.com/googleapis/java-pubsub/commit/8963ed0acbe8bf3a110a05ced27979f102cd3035))
+
 ## [1.139.1](https://github.com/googleapis/java-pubsub/compare/v1.139.0...v1.139.1) (2025-04-25)
 
 
