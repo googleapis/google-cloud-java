@@ -1,0 +1,63 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.iam.v3",
+  "libraryPackage": "com.google.iam.v3",
+  "services": {
+    "PolicyBindings": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PolicyBindingsClient",
+          "rpcs": {
+            "CreatePolicyBinding": {
+              "methods": ["createPolicyBindingAsync", "createPolicyBindingAsync", "createPolicyBindingAsync", "createPolicyBindingAsync", "createPolicyBindingAsync", "createPolicyBindingOperationCallable", "createPolicyBindingCallable"]
+            },
+            "DeletePolicyBinding": {
+              "methods": ["deletePolicyBindingAsync", "deletePolicyBindingAsync", "deletePolicyBindingAsync", "deletePolicyBindingOperationCallable", "deletePolicyBindingCallable"]
+            },
+            "GetPolicyBinding": {
+              "methods": ["getPolicyBinding", "getPolicyBinding", "getPolicyBinding", "getPolicyBindingCallable"]
+            },
+            "ListPolicyBindings": {
+              "methods": ["listPolicyBindings", "listPolicyBindings", "listPolicyBindings", "listPolicyBindings", "listPolicyBindings", "listPolicyBindingsPagedCallable", "listPolicyBindingsCallable"]
+            },
+            "SearchTargetPolicyBindings": {
+              "methods": ["searchTargetPolicyBindings", "searchTargetPolicyBindings", "searchTargetPolicyBindings", "searchTargetPolicyBindings", "searchTargetPolicyBindings", "searchTargetPolicyBindingsPagedCallable", "searchTargetPolicyBindingsCallable"]
+            },
+            "UpdatePolicyBinding": {
+              "methods": ["updatePolicyBindingAsync", "updatePolicyBindingAsync", "updatePolicyBindingOperationCallable", "updatePolicyBindingCallable"]
+            }
+          }
+        }
+      }
+    },
+    "PrincipalAccessBoundaryPolicies": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PrincipalAccessBoundaryPoliciesClient",
+          "rpcs": {
+            "CreatePrincipalAccessBoundaryPolicy": {
+              "methods": ["createPrincipalAccessBoundaryPolicyAsync", "createPrincipalAccessBoundaryPolicyAsync", "createPrincipalAccessBoundaryPolicyAsync", "createPrincipalAccessBoundaryPolicyOperationCallable", "createPrincipalAccessBoundaryPolicyCallable"]
+            },
+            "DeletePrincipalAccessBoundaryPolicy": {
+              "methods": ["deletePrincipalAccessBoundaryPolicyAsync", "deletePrincipalAccessBoundaryPolicyAsync", "deletePrincipalAccessBoundaryPolicyAsync", "deletePrincipalAccessBoundaryPolicyOperationCallable", "deletePrincipalAccessBoundaryPolicyCallable"]
+            },
+            "GetPrincipalAccessBoundaryPolicy": {
+              "methods": ["getPrincipalAccessBoundaryPolicy", "getPrincipalAccessBoundaryPolicy", "getPrincipalAccessBoundaryPolicy", "getPrincipalAccessBoundaryPolicyCallable"]
+            },
+            "ListPrincipalAccessBoundaryPolicies": {
+              "methods": ["listPrincipalAccessBoundaryPolicies", "listPrincipalAccessBoundaryPolicies", "listPrincipalAccessBoundaryPolicies", "listPrincipalAccessBoundaryPoliciesPagedCallable", "listPrincipalAccessBoundaryPoliciesCallable"]
+            },
+            "SearchPrincipalAccessBoundaryPolicyBindings": {
+              "methods": ["searchPrincipalAccessBoundaryPolicyBindings", "searchPrincipalAccessBoundaryPolicyBindings", "searchPrincipalAccessBoundaryPolicyBindings", "searchPrincipalAccessBoundaryPolicyBindingsPagedCallable", "searchPrincipalAccessBoundaryPolicyBindingsCallable"]
+            },
+            "UpdatePrincipalAccessBoundaryPolicy": {
+              "methods": ["updatePrincipalAccessBoundaryPolicyAsync", "updatePrincipalAccessBoundaryPolicyAsync", "updatePrincipalAccessBoundaryPolicyOperationCallable", "updatePrincipalAccessBoundaryPolicyCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
