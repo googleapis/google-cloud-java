@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.139.3](https://github.com/googleapis/java-pubsub/compare/v1.139.2...v1.139.3) (2025-05-06)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.47.0 ([#2414](https://github.com/googleapis/java-pubsub/issues/2414)) ([d78823f](https://github.com/googleapis/java-pubsub/commit/d78823ffc93307c14f44e992cf13e926880fbe94))
+* Update googleapis/sdk-platform-java action to v2.57.0 ([#2415](https://github.com/googleapis/java-pubsub/issues/2415)) ([1ddf9b8](https://github.com/googleapis/java-pubsub/commit/1ddf9b81e432aeb9af9e6b8bb2d2e9786159faba))
+
 ## [1.139.2](https://github.com/googleapis/java-pubsub/compare/v1.139.1...v1.139.2) (2025-05-05)
 
 
