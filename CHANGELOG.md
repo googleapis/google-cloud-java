@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.14.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.13.1...v3.14.0) (2025-05-06)
+
+
+### Features
+
+* Generate BigQueryStorage v1beta library ([#2962](https://github.com/googleapis/java-bigquerystorage/issues/2962)) ([c31f551](https://github.com/googleapis/java-bigquerystorage/commit/c31f551db95643804bcfad8dbc591f1f03a12854))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.47.0 ([#2966](https://github.com/googleapis/java-bigquerystorage/issues/2966)) ([01e5c04](https://github.com/googleapis/java-bigquerystorage/commit/01e5c0499137231331bd5fc4364ec90679de6529))
+* Update googleapis/sdk-platform-java action to v2.57.0 ([#2967](https://github.com/googleapis/java-bigquerystorage/issues/2967)) ([9e8ddae](https://github.com/googleapis/java-bigquerystorage/commit/9e8ddae6fc6ba0ecdc9299c796cde671f856c2dc))
+
 ## [3.13.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.13.0...v3.13.1) (2025-05-05)
 
 
