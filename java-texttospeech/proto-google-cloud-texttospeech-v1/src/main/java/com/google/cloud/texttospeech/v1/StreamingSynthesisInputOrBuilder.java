@@ -69,5 +69,47 @@ public interface StreamingSynthesisInputOrBuilder
    */
   com.google.protobuf.ByteString getTextBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Markup for HD voices specifically. This field may not be used with any
+   * other voices.
+   * </pre>
+   *
+   * <code>string markup = 5;</code>
+   *
+   * @return Whether the markup field is set.
+   */
+  boolean hasMarkup();
+
+  /**
+   *
+   *
+   * <pre>
+   * Markup for HD voices specifically. This field may not be used with any
+   * other voices.
+   * </pre>
+   *
+   * <code>string markup = 5;</code>
+   *
+   * @return The markup.
+   */
+  java.lang.String getMarkup();
+
+  /**
+   *
+   *
+   * <pre>
+   * Markup for HD voices specifically. This field may not be used with any
+   * other voices.
+   * </pre>
+   *
+   * <code>string markup = 5;</code>
+   *
+   * @return The bytes for markup.
+   */
+  com.google.protobuf.ByteString getMarkupBytes();
+
   com.google.cloud.texttospeech.v1.StreamingSynthesisInput.InputSourceCase getInputSourceCase();
 }
