@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.50.0](https://github.com/googleapis/java-bigquery/compare/v2.49.2...v2.50.0) (2025-05-06)
+
+
+### Features
+
+* Add WRITE_TRUNCATE_DATA as an enum value for write disposition ([#3752](https://github.com/googleapis/java-bigquery/issues/3752)) ([acea61c](https://github.com/googleapis/java-bigquery/commit/acea61c20b69b44c8612ca22745458ad04bc6be4))
+* **bigquery:** Add support for reservation field in jobs. ([#3768](https://github.com/googleapis/java-bigquery/issues/3768)) ([3e97f7c](https://github.com/googleapis/java-bigquery/commit/3e97f7c0c4676fcdda0862929a69bbabc69926f2))
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.63.0 ([#3770](https://github.com/googleapis/java-bigquery/issues/3770)) ([934389e](https://github.com/googleapis/java-bigquery/commit/934389eb114d8fbb10c9c125d21ec26d503dca65))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20250404-2.0.0 ([#3754](https://github.com/googleapis/java-bigquery/issues/3754)) ([1381c8f](https://github.com/googleapis/java-bigquery/commit/1381c8fe6c2552eec4519304c71697302733d6c7))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20250427-2.0.0 ([#3773](https://github.com/googleapis/java-bigquery/issues/3773)) ([c0795fe](https://github.com/googleapis/java-bigquery/commit/c0795fe948e0ca231dbe8fc47c470603cb48ecc8))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.46.3 ([#3772](https://github.com/googleapis/java-bigquery/issues/3772)) ([ab166b6](https://github.com/googleapis/java-bigquery/commit/ab166b6c33c574b4494368709db0443e055b4863))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.47.0 ([#3779](https://github.com/googleapis/java-bigquery/issues/3779)) ([b27434b](https://github.com/googleapis/java-bigquery/commit/b27434b8a75e74184458e920142f5575fed9ba52))
+
 ## [2.49.2](https://github.com/googleapis/java-bigquery/compare/v2.49.1...v2.49.2) (2025-04-26)
 
 
