@@ -24,6 +24,7 @@ package com.google.cloud.vertexai.api;
  *
  * <pre>
  * The generic reusable api auth config.
+ * This is a test change to confirm the 2 way mirror behavior
  * </pre>
  *
  * Protobuf type {@code google.cloud.vertexai.v1.ApiAuth}
