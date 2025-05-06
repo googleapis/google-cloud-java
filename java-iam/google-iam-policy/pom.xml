@@ -54,6 +54,11 @@
       <artifactId>proto-google-iam-v3</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-iam-v3beta</artifactId>
+      <version>1.51.0</version>
+    </dependency>
+    <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
     </dependency>
@@ -94,6 +99,12 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v3</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-iam-v3beta</artifactId>
+      <version>1.51.0</version>
       <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
