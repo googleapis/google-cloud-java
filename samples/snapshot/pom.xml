@@ -30,7 +30,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquerystorage</artifactId>
-      <version>3.14.0</version>
+      <version>3.14.1-SNAPSHOT</version>
     </dependency>
     <!-- {x-version-update-end} -->
 
