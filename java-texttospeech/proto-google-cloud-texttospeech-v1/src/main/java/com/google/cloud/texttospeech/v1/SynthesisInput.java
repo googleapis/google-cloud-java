@@ -76,6 +76,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TEXT(1),
+    MARKUP(5),
     SSML(2),
     MULTI_SPEAKER_MARKUP(4),
     INPUTSOURCE_NOT_SET(0);
@@ -99,6 +100,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 1:
           return TEXT;
+        case 5:
+          return MARKUP;
         case 2:
           return SSML;
         case 4:
@@ -184,6 +187,82 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (inputSourceCase_ == 1) {
+        inputSource_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MARKUP_FIELD_NUMBER = 5;
+
+  /**
+   *
+   *
+   * <pre>
+   * Markup for HD voices specifically. This field may not be used with any
+   * other voices.
+   * </pre>
+   *
+   * <code>string markup = 5;</code>
+   *
+   * @return Whether the markup field is set.
+   */
+  public boolean hasMarkup() {
+    return inputSourceCase_ == 5;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Markup for HD voices specifically. This field may not be used with any
+   * other voices.
+   * </pre>
+   *
+   * <code>string markup = 5;</code>
+   *
+   * @return The markup.
+   */
+  public java.lang.String getMarkup() {
+    java.lang.Object ref = "";
+    if (inputSourceCase_ == 5) {
+      ref = inputSource_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (inputSourceCase_ == 5) {
+        inputSource_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Markup for HD voices specifically. This field may not be used with any
+   * other voices.
+   * </pre>
+   *
+   * <code>string markup = 5;</code>
+   *
+   * @return The bytes for markup.
+   */
+  public com.google.protobuf.ByteString getMarkupBytes() {
+    java.lang.Object ref = "";
+    if (inputSourceCase_ == 5) {
+      ref = inputSource_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (inputSourceCase_ == 5) {
         inputSource_ = b;
       }
       return b;
@@ -448,6 +527,9 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     if (inputSourceCase_ == 4) {
       output.writeMessage(4, (com.google.cloud.texttospeech.v1.MultiSpeakerMarkup) inputSource_);
     }
+    if (inputSourceCase_ == 5) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, inputSource_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -471,6 +553,9 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.cloud.texttospeech.v1.MultiSpeakerMarkup) inputSource_);
+    }
+    if (inputSourceCase_ == 5) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, inputSource_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -496,6 +581,9 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     switch (inputSourceCase_) {
       case 1:
         if (!getText().equals(other.getText())) return false;
+        break;
+      case 5:
+        if (!getMarkup().equals(other.getMarkup())) return false;
         break;
       case 2:
         if (!getSsml().equals(other.getSsml())) return false;
@@ -525,6 +613,10 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       case 1:
         hash = (37 * hash) + TEXT_FIELD_NUMBER;
         hash = (53 * hash) + getText().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + MARKUP_FIELD_NUMBER;
+        hash = (53 * hash) + getMarkup().hashCode();
         break;
       case 2:
         hash = (37 * hash) + SSML_FIELD_NUMBER;
@@ -737,7 +829,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     private void buildPartial0(com.google.cloud.texttospeech.v1.SynthesisInput result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.customPronunciations_ =
             customPronunciationsBuilder_ == null
                 ? customPronunciations_
@@ -812,6 +904,13 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             break;
           }
+        case MARKUP:
+          {
+            inputSourceCase_ = 5;
+            inputSource_ = other.inputSource_;
+            onChanged();
+            break;
+          }
         case SSML:
           {
             inputSourceCase_ = 2;
@@ -873,7 +972,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getCustomPronunciationsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
@@ -883,6 +982,13 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
                 inputSourceCase_ = 4;
                 break;
               } // case 34
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                inputSourceCase_ = 5;
+                inputSource_ = s;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1050,6 +1156,151 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       inputSourceCase_ = 1;
+      inputSource_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Markup for HD voices specifically. This field may not be used with any
+     * other voices.
+     * </pre>
+     *
+     * <code>string markup = 5;</code>
+     *
+     * @return Whether the markup field is set.
+     */
+    @java.lang.Override
+    public boolean hasMarkup() {
+      return inputSourceCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Markup for HD voices specifically. This field may not be used with any
+     * other voices.
+     * </pre>
+     *
+     * <code>string markup = 5;</code>
+     *
+     * @return The markup.
+     */
+    @java.lang.Override
+    public java.lang.String getMarkup() {
+      java.lang.Object ref = "";
+      if (inputSourceCase_ == 5) {
+        ref = inputSource_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (inputSourceCase_ == 5) {
+          inputSource_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Markup for HD voices specifically. This field may not be used with any
+     * other voices.
+     * </pre>
+     *
+     * <code>string markup = 5;</code>
+     *
+     * @return The bytes for markup.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getMarkupBytes() {
+      java.lang.Object ref = "";
+      if (inputSourceCase_ == 5) {
+        ref = inputSource_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (inputSourceCase_ == 5) {
+          inputSource_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Markup for HD voices specifically. This field may not be used with any
+     * other voices.
+     * </pre>
+     *
+     * <code>string markup = 5;</code>
+     *
+     * @param value The markup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMarkup(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      inputSourceCase_ = 5;
+      inputSource_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Markup for HD voices specifically. This field may not be used with any
+     * other voices.
+     * </pre>
+     *
+     * <code>string markup = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMarkup() {
+      if (inputSourceCase_ == 5) {
+        inputSourceCase_ = 0;
+        inputSource_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Markup for HD voices specifically. This field may not be used with any
+     * other voices.
+     * </pre>
+     *
+     * <code>string markup = 5;</code>
+     *
+     * @param value The bytes for markup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMarkupBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      inputSourceCase_ = 5;
       inputSource_ = value;
       onChanged();
       return this;
@@ -1480,7 +1731,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the customPronunciations field is set.
      */
     public boolean hasCustomPronunciations() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1545,7 +1796,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       } else {
         customPronunciationsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1577,7 +1828,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
       } else {
         customPronunciationsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1605,7 +1856,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCustomPronunciations(
         com.google.cloud.texttospeech.v1.CustomPronunciations value) {
       if (customPronunciationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && customPronunciations_ != null
             && customPronunciations_
                 != com.google.cloud.texttospeech.v1.CustomPronunciations.getDefaultInstance()) {
@@ -1617,7 +1868,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
         customPronunciationsBuilder_.mergeFrom(value);
       }
       if (customPronunciations_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1644,7 +1895,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCustomPronunciations() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       customPronunciations_ = null;
       if (customPronunciationsBuilder_ != null) {
         customPronunciationsBuilder_.dispose();
@@ -1676,7 +1927,7 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.texttospeech.v1.CustomPronunciations.Builder
         getCustomPronunciationsBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCustomPronunciationsFieldBuilder().getBuilder();
     }
