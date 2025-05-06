@@ -67,6 +67,48 @@ public interface SynthesisInputOrBuilder
    *
    *
    * <pre>
+   * Markup for HD voices specifically. This field may not be used with any
+   * other voices.
+   * </pre>
+   *
+   * <code>string markup = 5;</code>
+   *
+   * @return Whether the markup field is set.
+   */
+  boolean hasMarkup();
+
+  /**
+   *
+   *
+   * <pre>
+   * Markup for HD voices specifically. This field may not be used with any
+   * other voices.
+   * </pre>
+   *
+   * <code>string markup = 5;</code>
+   *
+   * @return The markup.
+   */
+  java.lang.String getMarkup();
+
+  /**
+   *
+   *
+   * <pre>
+   * Markup for HD voices specifically. This field may not be used with any
+   * other voices.
+   * </pre>
+   *
+   * <code>string markup = 5;</code>
+   *
+   * @return The bytes for markup.
+   */
+  com.google.protobuf.ByteString getMarkupBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The SSML document to be synthesized. The SSML document must be valid
    * and well-formed. Otherwise the RPC will fail and return
    * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. For
