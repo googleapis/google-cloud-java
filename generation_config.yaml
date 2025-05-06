@@ -1121,6 +1121,7 @@ libraries:
   - proto_path: google/iam/v2
   - proto_path: google/iam/v2beta
   - proto_path: google/iam/v3
+  - proto_path: google/iam/v3beta
 
 - api_shortname: iam-admin
   name_pretty: IAM Admin API
