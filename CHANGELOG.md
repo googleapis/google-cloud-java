@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.28.1](https://github.com/googleapis/java-datastore/compare/v2.28.0...v2.28.1) (2025-05-06)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.47.0 ([#1841](https://github.com/googleapis/java-datastore/issues/1841)) ([ac393e6](https://github.com/googleapis/java-datastore/commit/ac393e61e517d30b534be3e99070c210081c4f0b))
+* Update googleapis/sdk-platform-java action to v2.57.0 ([#1842](https://github.com/googleapis/java-datastore/issues/1842)) ([0745906](https://github.com/googleapis/java-datastore/commit/0745906bbdd8819ac2ccaafa301c8f4b4fd20be4))
+
 ## [2.28.0](https://github.com/googleapis/java-datastore/compare/v2.27.2...v2.28.0) (2025-04-29)
 
 
