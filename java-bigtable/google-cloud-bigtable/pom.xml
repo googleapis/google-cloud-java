@@ -34,8 +34,10 @@
     <!-- Use client defined default endpoints -->
     <!-- Can be overriden on the commandline via `-Dbigtable.cfe-data-endpoint=bigtableadmin.googleapis.com:443` -->
     <bigtable.cfe-data-endpoint/>
+    <bigtable.cfe-jwt-audience/>
     <bigtable.cfe-admin-endpoint/>
     <bigtable.directpath-data-endpoint/>
+    <bigtable.directpath-jwt-audience/>
     <bigtable.directpath-admin-endpoint/>
 
     <!-- This is used by bigtable-prod-batch-it profile to ensure that tests work on the batch endpoint.
@@ -425,6 +427,7 @@
                     <bigtable.env>cloud</bigtable.env>
                     <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.data-jwt-audience>${bigtable.cfe-jwt-audience}</bigtable.data-jwt-audience>
                     <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
                     <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/prod-it</bigtable.grpc-log-dir>
                   </systemPropertyVariables>
@@ -475,6 +478,7 @@
                     <bigtable.env>cloud</bigtable.env>
                     <bigtable.data-endpoint>${bigtable.cfe-data-batch-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.data-jwt-audience>${bigtable.cfe-jwt-audience}</bigtable.data-jwt-audience>
                     <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
                     <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/prod-batch-it</bigtable.grpc-log-dir>
                   </systemPropertyVariables>
@@ -510,6 +514,7 @@
                     <bigtable.env>cloud</bigtable.env>
                     <bigtable.data-endpoint>${bigtable.directpath-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.directpath-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.data-jwt-audience>${bigtable.directpath-jwt-audience}</bigtable.data-jwt-audience>
                     <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
                     <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/directpath-it</bigtable.grpc-log-dir>
                     <bigtable.connection-mode>REQUIRE_DIRECT_PATH</bigtable.connection-mode>
@@ -551,6 +556,7 @@
                     <bigtable.env>cloud</bigtable.env>
                     <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.data-jwt-audience>${bigtable.cfe-jwt-audience}</bigtable.data-jwt-audience>
                     <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
                     <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/cfe-it</bigtable.grpc-log-dir>
                     <bigtable.connection-mode>REQUIRE_CFE</bigtable.connection-mode>
@@ -589,6 +595,7 @@
                     <bigtable.env>cloud</bigtable.env>
                     <bigtable.data-endpoint>${bigtable.directpath-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.directpath-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.data-jwt-audience>${bigtable.directpath-jwt-audience}</bigtable.data-jwt-audience>
                     <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
                     <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/directpath-ipv4only-it</bigtable.grpc-log-dir>
                     <bigtable.connection-mode>REQUIRE_DIRECT_PATH_IPV4</bigtable.connection-mode>

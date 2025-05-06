@@ -993,7 +993,6 @@ public class EnhancedBigtableStubSettingsTest {
     "appProfileId",
     "isRefreshingChannel",
     "primedTableIds",
-    "jwtAudienceMapping",
     "enableRoutingCookie",
     "enableRetryInfo",
     "enableSkipTrailers",
@@ -1013,6 +1012,7 @@ public class EnhancedBigtableStubSettingsTest {
     "metricsProvider",
     "metricsEndpoint",
     "areInternalMetricsEnabled",
+    "jwtAudience",
   };
 
   @Test

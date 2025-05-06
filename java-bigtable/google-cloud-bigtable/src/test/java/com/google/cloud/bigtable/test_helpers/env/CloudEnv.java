@@ -79,6 +79,7 @@ public class CloudEnv extends AbstractTestEnv {
 
   private static final String DATA_ENDPOINT_PROPERTY_NAME = "bigtable.data-endpoint";
   private static final String ADMIN_ENDPOINT_PROPERTY_NAME = "bigtable.admin-endpoint";
+  private static final String DATA_JWT_OVERRIDE_PROPERTY_NAME = "bigtable.data-jwt-audience";
 
   private static final String PROJECT_PROPERTY_NAME = "bigtable.project";
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
@@ -106,6 +107,7 @@ public class CloudEnv extends AbstractTestEnv {
     return new CloudEnv(
         getOptionalProperty(DATA_ENDPOINT_PROPERTY_NAME, ""),
         getOptionalProperty(ADMIN_ENDPOINT_PROPERTY_NAME, ""),
+        getOptionalProperty(DATA_JWT_OVERRIDE_PROPERTY_NAME, ""),
         getOptionalProperty(CMEK_KMS_KEY_PROPERTY_NAME, ""),
         getRequiredProperty(PROJECT_PROPERTY_NAME),
         getRequiredProperty(INSTANCE_PROPERTY_NAME),
@@ -117,6 +119,7 @@ public class CloudEnv extends AbstractTestEnv {
   private CloudEnv(
       @Nullable String dataEndpoint,
       @Nullable String adminEndpoint,
+      @Nullable String jwtAudienceOverride,
       @Nullable String kmsKeyName,
       String projectId,
       String instanceId,
@@ -136,6 +139,9 @@ public class CloudEnv extends AbstractTestEnv {
     }
     if (!Strings.isNullOrEmpty(appProfileId)) {
       dataSettings.setAppProfileId(appProfileId);
+    }
+    if (!Strings.isNullOrEmpty(jwtAudienceOverride)) {
+      dataSettings.stubSettings().setJwtAudience(jwtAudienceOverride);
     }
 
     configureConnection(dataSettings.stubSettings());
