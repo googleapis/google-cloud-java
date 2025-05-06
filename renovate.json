@@ -1,23 +1,23 @@
 {
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
   "packageRules": [
     {
       "matchUpdateTypes": [
         "major"
       ],
-      "matchPackagePatterns": [
+      "enabled": false,
+      "matchPackageNames": [
         "*"
-      ],
-      "enabled": false
-    }, 
+      ]
+    },
     {
-      "matchPackagePatterns": [
-        "^com.google.cloud:sdk-platform-java-config"
-      ],
       "semanticCommitType": "fix",
-      "semanticCommitScope": null
+      "semanticCommitScope": null,
+      "matchPackageNames": [
+        "/^com.google.cloud:sdk-platform-java-config/"
+      ]
     }
   ],
   "includePaths": [
@@ -36,8 +36,9 @@
     ".github/workflows/unmanaged_dependency_check.yaml",
     ".github/workflows/hermetic_library_generation.yaml"
   ],
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "fileMatch": [
         "^.kokoro/nightly/graalvm-native.*.cfg$",
         "^.kokoro/presubmit/graalvm-native.*.cfg$",
@@ -51,6 +52,7 @@
       "datasourceTemplate": "maven"
     },
     {
+      "customType": "regex",
       "fileMatch": [
         "java-dns/README.md",
         "java-notification/README.md",
@@ -64,6 +66,7 @@
       "datasourceTemplate": "maven"
     },
     {
+      "customType": "regex",
       "fileMatch": [
         ".github/workflows/ci.yaml",
         ".github/workflows/generated_files_sync.yaml"
@@ -79,7 +82,9 @@
       "fileMatch": [
         "^.github/workflows/unmanaged_dependency_check.yaml$"
       ],
-      "matchStrings": ["uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v(?<currentValue>.+?)\\n"],
+      "matchStrings": [
+        "uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v(?<currentValue>.+?)\\n"
+      ],
       "depNameTemplate": "com.google.cloud:sdk-platform-java-config",
       "datasourceTemplate": "maven"
     }
