@@ -171,6 +171,7 @@
             <ignoredUnusedDeclaredDependency>io.netty:netty-buffer</ignoredUnusedDeclaredDependency>
             <ignoredUnusedDeclaredDependency>io.netty:netty-common</ignoredUnusedDeclaredDependency>
             <ignoredUnusedDeclaredDependency>org.apache.arrow:arrow-memory-netty</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>com.google.api:gax</ignoredUnusedDeclaredDependency>
           </ignoredUnusedDeclaredDependencies>
         </configuration>
       </plugin>
