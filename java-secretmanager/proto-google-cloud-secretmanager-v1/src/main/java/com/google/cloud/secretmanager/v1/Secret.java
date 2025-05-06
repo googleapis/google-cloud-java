@@ -93,6 +93,31 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.lang.Object expiration_;
 
+  private volatile java.lang.String secretId_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Derived from the {@link #getName()} method and extracts the `SECRET_ID`
+   * from `projects/PROJECT_ID&#47;secrets/SECRET_ID`.
+   * </pre>
+   *
+   * @return The secret name part from the whole secret resource name
+   */
+  public java.lang.String getSecretId() {
+    java.lang.String localRef = secretId_;
+    if (localRef == null) {
+      synchronized (this) {
+        localRef = secretId_;
+        if (localRef == null) {
+          secretId_ = localRef = SecretName.parse(this.getName()).getSecret();
+        }
+      }
+    }
+    return localRef;
+  }
+
   public enum ExpirationCase
       implements
           com.google.protobuf.Internal.EnumLite,

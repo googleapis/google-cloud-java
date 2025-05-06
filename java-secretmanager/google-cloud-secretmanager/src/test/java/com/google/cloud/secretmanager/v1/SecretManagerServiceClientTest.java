@@ -587,6 +587,31 @@ public class SecretManagerServiceClientTest {
   }
 
   @Test
+  public void getSecretTest3() throws Exception {
+    SecretName secretName = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
+    Secret secret =
+        Secret.newBuilder()
+            .setName(secretName.toString())
+            .setReplication(Replication.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .addAllTopics(new ArrayList<Topic>())
+            .setEtag("etag3123477")
+            .setRotation(Rotation.newBuilder().build())
+            .putAllVersionAliases(new HashMap<String, Long>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setVersionDestroyTtl(Duration.newBuilder().build())
+            .setCustomerManagedEncryption(CustomerManagedEncryption.newBuilder().build())
+            .build();
+    mockSecretManagerService.addResponse(secret);
+
+    Secret actualResponse = client.getSecret(secretName);
+
+    String secretId = "[SECRET]";
+    Assert.assertEquals(secretId, actualResponse.getSecretId());
+  }
+
+  @Test
   public void updateSecretTest() throws Exception {
     Secret expectedResponse =
         Secret.newBuilder()
