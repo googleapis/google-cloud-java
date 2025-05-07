@@ -61,6 +61,11 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
   @Nullable
   public abstract Schema getSchema();
 
+  /**
+   * Returns the total number of rows in the complete result set, which can be more than the number
+   * of rows in the first page of results. If no rows are returned, this value can still be greater
+   * than 0 if any rows were affected by the query, such as INSERT, UPDATE, or DELETE queries.
+   */
   public abstract long getTotalRows();
 
   public abstract Page<FieldValueList> getPageNoSchema();
