@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ITChatSessionIntegrationTest {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String MODEL_NAME_TEXT = "gemini-pro";
+  private static final String MODEL_NAME_TEXT = "gemini-2.5-pro-preview-03-25";
   private static final String LOCATION = "us-central1";
   private static final Logger logger =
       Logger.getLogger(ITGenerativeModelIntegrationTest.class.getName());
