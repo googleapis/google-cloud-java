@@ -33,6 +33,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.Participant)
     ParticipantOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Participant.newBuilder() to construct.
   private Participant(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     private UserCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,6 +119,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SIGNEDIN_USER_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSignedinUser() {
     return userCase_ == 4;
   }
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.apps.meet.v2beta.SignedinUser.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ANONYMOUS_USER_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAnonymousUser() {
     return userCase_ == 5;
   }
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.apps.meet.v2beta.AnonymousUser.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PHONE_USER_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -234,6 +243,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPhoneUser() {
     return userCase_ == 6;
   }
+
   /**
    *
    *
@@ -252,6 +262,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.apps.meet.v2beta.PhoneUser.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -273,6 +284,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -297,6 +309,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -324,6 +337,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EARLIEST_START_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp earliestStartTime_;
+
   /**
    *
    *
@@ -341,6 +355,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEarliestStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -360,6 +375,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : earliestStartTime_;
   }
+
   /**
    *
    *
@@ -380,6 +396,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LATEST_END_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp latestEndTime_;
+
   /**
    *
    *
@@ -398,6 +415,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLatestEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -418,6 +436,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : latestEndTime_;
   }
+
   /**
    *
    *
@@ -677,6 +696,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -996,6 +1016,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
             com.google.apps.meet.v2beta.SignedinUser.Builder,
             com.google.apps.meet.v2beta.SignedinUserOrBuilder>
         signedinUserBuilder_;
+
     /**
      *
      *
@@ -1011,6 +1032,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSignedinUser() {
       return userCase_ == 4;
     }
+
     /**
      *
      *
@@ -1036,6 +1058,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         return com.google.apps.meet.v2beta.SignedinUser.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1058,6 +1081,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       userCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1078,6 +1102,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       userCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1110,6 +1135,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       userCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1135,6 +1161,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1147,6 +1174,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     public com.google.apps.meet.v2beta.SignedinUser.Builder getSignedinUserBuilder() {
       return getSignedinUserFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1167,6 +1195,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         return com.google.apps.meet.v2beta.SignedinUser.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1205,6 +1234,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
             com.google.apps.meet.v2beta.AnonymousUser.Builder,
             com.google.apps.meet.v2beta.AnonymousUserOrBuilder>
         anonymousUserBuilder_;
+
     /**
      *
      *
@@ -1220,6 +1250,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAnonymousUser() {
       return userCase_ == 5;
     }
+
     /**
      *
      *
@@ -1245,6 +1276,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         return com.google.apps.meet.v2beta.AnonymousUser.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1267,6 +1299,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       userCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1320,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       userCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1319,6 +1353,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       userCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1344,6 +1379,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1356,6 +1392,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     public com.google.apps.meet.v2beta.AnonymousUser.Builder getAnonymousUserBuilder() {
       return getAnonymousUserFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1376,6 +1413,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         return com.google.apps.meet.v2beta.AnonymousUser.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1414,6 +1452,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
             com.google.apps.meet.v2beta.PhoneUser.Builder,
             com.google.apps.meet.v2beta.PhoneUserOrBuilder>
         phoneUserBuilder_;
+
     /**
      *
      *
@@ -1429,6 +1468,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPhoneUser() {
       return userCase_ == 6;
     }
+
     /**
      *
      *
@@ -1454,6 +1494,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         return com.google.apps.meet.v2beta.PhoneUser.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1476,6 +1517,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       userCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1495,6 +1537,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       userCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1526,6 +1569,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       userCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1551,6 +1595,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1563,6 +1608,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     public com.google.apps.meet.v2beta.PhoneUser.Builder getPhoneUserBuilder() {
       return getPhoneUserFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1583,6 +1629,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         return com.google.apps.meet.v2beta.PhoneUser.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1615,6 +1662,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1638,6 +1686,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1661,6 +1710,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1683,6 +1733,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1701,6 +1752,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1731,6 +1783,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         earliestStartTimeBuilder_;
+
     /**
      *
      *
@@ -1747,6 +1800,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEarliestStartTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1769,6 +1823,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         return earliestStartTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1793,6 +1848,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1814,6 +1870,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1843,6 +1900,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1864,6 +1922,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1880,6 +1939,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEarliestStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1900,6 +1960,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
             : earliestStartTime_;
       }
     }
+
     /**
      *
      *
@@ -1934,6 +1995,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         latestEndTimeBuilder_;
+
     /**
      *
      *
@@ -1951,6 +2013,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLatestEndTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1974,6 +2037,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         return latestEndTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1999,6 +2063,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2021,6 +2086,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2051,6 +2117,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2073,6 +2140,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2090,6 +2158,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLatestEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2111,6 +2180,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
             : latestEndTime_;
       }
     }
+
     /**
      *
      *

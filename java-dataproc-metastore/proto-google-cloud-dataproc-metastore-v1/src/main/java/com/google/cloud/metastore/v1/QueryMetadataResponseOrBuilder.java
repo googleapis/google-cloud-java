@@ -39,6 +39,7 @@ public interface QueryMetadataResponseOrBuilder
    * @return The resultManifestUri.
    */
   java.lang.String getResultManifestUri();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.DataUpdateAction)
     DataUpdateActionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataUpdateAction.newBuilder() to construct.
   private DataUpdateAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -99,6 +100,7 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
   public int getEntriesCount() {
     return internalGetEntries().getMap().size();
   }
+
   /**
    *
    *
@@ -119,12 +121,14 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
     }
     return internalGetEntries().getMap().containsKey(key);
   }
+
   /** Use {@link #getEntriesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getEntries() {
     return getEntriesMap();
   }
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
   public java.util.Map<java.lang.String, java.lang.String> getEntriesMap() {
     return internalGetEntries().getMap();
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
     java.util.Map<java.lang.String, java.lang.String> map = internalGetEntries().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -359,6 +365,7 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -593,6 +600,7 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
     public int getEntriesCount() {
       return internalGetEntries().getMap().size();
     }
+
     /**
      *
      *
@@ -613,12 +621,14 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
       }
       return internalGetEntries().getMap().containsKey(key);
     }
+
     /** Use {@link #getEntriesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getEntries() {
       return getEntriesMap();
     }
+
     /**
      *
      *
@@ -636,6 +646,7 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
     public java.util.Map<java.lang.String, java.lang.String> getEntriesMap() {
       return internalGetEntries().getMap();
     }
+
     /**
      *
      *
@@ -660,6 +671,7 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
       java.util.Map<java.lang.String, java.lang.String> map = internalGetEntries().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
       internalGetMutableEntries().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -710,12 +723,14 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
       internalGetMutableEntries().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableEntries() {
       bitField0_ |= 0x00000001;
       return internalGetMutableEntries().getMutableMap();
     }
+
     /**
      *
      *
@@ -740,6 +755,7 @@ public final class DataUpdateAction extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

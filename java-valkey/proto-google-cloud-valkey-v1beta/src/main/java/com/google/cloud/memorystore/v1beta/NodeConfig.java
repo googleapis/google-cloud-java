@@ -33,6 +33,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.memorystore.v1beta.NodeConfig)
     NodeConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NodeConfig.newBuilder() to construct.
   private NodeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SIZE_GB_FIELD_NUMBER = 1;
   private double sizeGb_ = 0D;
+
   /**
    *
    *
@@ -241,6 +243,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -422,6 +425,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private double sizeGb_;
+
     /**
      *
      *
@@ -437,6 +441,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public double getSizeGb() {
       return sizeGb_;
     }
+
     /**
      *
      *
@@ -456,6 +461,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

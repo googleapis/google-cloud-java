@@ -42,6 +42,7 @@ public interface TenantOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface TenantOrBuilder
    * @return The externalId.
    */
   java.lang.String getExternalId();
+
   /**
    *
    *

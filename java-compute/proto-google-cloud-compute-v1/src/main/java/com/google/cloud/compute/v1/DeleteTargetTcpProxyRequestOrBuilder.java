@@ -38,6 +38,7 @@ public interface DeleteTargetTcpProxyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface DeleteTargetTcpProxyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface DeleteTargetTcpProxyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface DeleteTargetTcpProxyRequestOrBuilder
    * @return The targetTcpProxy.
    */
   java.lang.String getTargetTcpProxy();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class EmptyFilter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.EmptyFilter)
     EmptyFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EmptyFilter.newBuilder() to construct.
   private EmptyFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class EmptyFilter extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

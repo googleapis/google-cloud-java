@@ -54,6 +54,7 @@ public interface PrefetchConfigOrBuilder
    * @return Whether the initialAdRequestDuration field is set.
    */
   boolean hasInitialAdRequestDuration();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface PrefetchConfigOrBuilder
    * @return The initialAdRequestDuration.
    */
   com.google.protobuf.Duration getInitialAdRequestDuration();
+
   /**
    *
    *

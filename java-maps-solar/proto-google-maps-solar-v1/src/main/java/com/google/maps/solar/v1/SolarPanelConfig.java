@@ -34,6 +34,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.maps.solar.v1.SolarPanelConfig)
     SolarPanelConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SolarPanelConfig.newBuilder() to construct.
   private SolarPanelConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int PANELS_COUNT_FIELD_NUMBER = 1;
   private int panelsCount_ = 0;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int YEARLY_ENERGY_DC_KWH_FIELD_NUMBER = 2;
   private float yearlyEnergyDcKwh_ = 0F;
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.solar.v1.RoofSegmentSummary> roofSegmentSummaries_;
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.maps.solar.v1.RoofSegmentSummary> getRoofSegmentSummariesList() {
     return roofSegmentSummaries_;
   }
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
       getRoofSegmentSummariesOrBuilderList() {
     return roofSegmentSummaries_;
   }
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
   public int getRoofSegmentSummariesCount() {
     return roofSegmentSummaries_.size();
   }
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
   public com.google.maps.solar.v1.RoofSegmentSummary getRoofSegmentSummaries(int index) {
     return roofSegmentSummaries_.get(index);
   }
+
   /**
    *
    *
@@ -371,6 +379,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -626,6 +635,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int panelsCount_;
+
     /**
      *
      *
@@ -643,6 +653,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
     public int getPanelsCount() {
       return panelsCount_;
     }
+
     /**
      *
      *
@@ -664,6 +675,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -685,6 +697,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private float yearlyEnergyDcKwh_;
+
     /**
      *
      *
@@ -701,6 +714,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
     public float getYearlyEnergyDcKwh() {
       return yearlyEnergyDcKwh_;
     }
+
     /**
      *
      *
@@ -721,6 +735,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +793,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
         return roofSegmentSummariesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -797,6 +813,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
         return roofSegmentSummariesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -816,6 +833,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
         return roofSegmentSummariesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -842,6 +860,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +884,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +910,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +937,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +961,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -962,6 +985,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -985,6 +1009,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1032,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1029,6 +1055,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1072,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
         int index) {
       return getRoofSegmentSummariesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1065,6 +1093,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
         return roofSegmentSummariesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1085,6 +1114,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(roofSegmentSummaries_);
       }
     }
+
     /**
      *
      *
@@ -1101,6 +1131,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
       return getRoofSegmentSummariesFieldBuilder()
           .addBuilder(com.google.maps.solar.v1.RoofSegmentSummary.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1118,6 +1149,7 @@ public final class SolarPanelConfig extends com.google.protobuf.GeneratedMessage
       return getRoofSegmentSummariesFieldBuilder()
           .addBuilder(index, com.google.maps.solar.v1.RoofSegmentSummary.getDefaultInstance());
     }
+
     /**
      *
      *

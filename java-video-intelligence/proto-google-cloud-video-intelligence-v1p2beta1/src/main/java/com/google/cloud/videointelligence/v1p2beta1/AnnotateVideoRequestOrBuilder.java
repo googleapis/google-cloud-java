@@ -45,6 +45,7 @@ public interface AnnotateVideoRequestOrBuilder
    * @return The inputUri.
    */
   java.lang.String getInputUri();
+
   /**
    *
    *
@@ -96,6 +97,7 @@ public interface AnnotateVideoRequestOrBuilder
    * @return A list containing the features.
    */
   java.util.List<com.google.cloud.videointelligence.v1p2beta1.Feature> getFeaturesList();
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public interface AnnotateVideoRequestOrBuilder
    * @return The count of features.
    */
   int getFeaturesCount();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface AnnotateVideoRequestOrBuilder
    * @return The features at the given index.
    */
   com.google.cloud.videointelligence.v1p2beta1.Feature getFeatures(int index);
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface AnnotateVideoRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for features.
    */
   java.util.List<java.lang.Integer> getFeaturesValueList();
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public interface AnnotateVideoRequestOrBuilder
    * @return Whether the videoContext field is set.
    */
   boolean hasVideoContext();
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public interface AnnotateVideoRequestOrBuilder
    * @return The videoContext.
    */
   com.google.cloud.videointelligence.v1p2beta1.VideoContext getVideoContext();
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public interface AnnotateVideoRequestOrBuilder
    * @return The outputUri.
    */
   java.lang.String getOutputUri();
+
   /**
    *
    *
@@ -239,6 +247,7 @@ public interface AnnotateVideoRequestOrBuilder
    * @return The locationId.
    */
   java.lang.String getLocationId();
+
   /**
    *
    *

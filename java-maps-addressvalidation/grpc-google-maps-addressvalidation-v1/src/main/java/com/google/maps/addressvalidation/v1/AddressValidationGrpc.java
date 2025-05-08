@@ -149,6 +149,19 @@ public final class AddressValidationGrpc {
     return AddressValidationStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AddressValidationBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AddressValidationBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AddressValidationBlockingV2Stub>() {
+          @java.lang.Override
+          public AddressValidationBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AddressValidationBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AddressValidationBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -299,6 +312,58 @@ public final class AddressValidationGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AddressValidation.
+   *
+   * <pre>
+   * The service for validating addresses.
+   * </pre>
+   */
+  public static final class AddressValidationBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AddressValidationBlockingV2Stub> {
+    private AddressValidationBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AddressValidationBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AddressValidationBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Validates an address.
+     * </pre>
+     */
+    public com.google.maps.addressvalidation.v1.ValidateAddressResponse validateAddress(
+        com.google.maps.addressvalidation.v1.ValidateAddressRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getValidateAddressMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Feedback about the outcome of the sequence of validation attempts. This
+     * should be the last call made after a sequence of validation calls for the
+     * same address, and should be called once the transaction is concluded. This
+     * should only be sent once for the sequence of `ValidateAddress` requests
+     * needed to validate an address fully.
+     * </pre>
+     */
+    public com.google.maps.addressvalidation.v1.ProvideValidationFeedbackResponse
+        provideValidationFeedback(
+            com.google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getProvideValidationFeedbackMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AddressValidation.
    *
    * <pre>
    * The service for validating addresses.

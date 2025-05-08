@@ -40,6 +40,7 @@ public interface CreateAccessBindingRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateAccessBindingRequestOrBuilder
    * @return Whether the accessBinding field is set.
    */
   boolean hasAccessBinding();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateAccessBindingRequestOrBuilder
    * @return The accessBinding.
    */
   com.google.analytics.admin.v1alpha.AccessBinding getAccessBinding();
+
   /**
    *
    *

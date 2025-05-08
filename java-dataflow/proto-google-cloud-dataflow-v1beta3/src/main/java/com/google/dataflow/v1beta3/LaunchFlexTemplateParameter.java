@@ -33,6 +33,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.LaunchFlexTemplateParameter)
     LaunchFlexTemplateParameterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LaunchFlexTemplateParameter.newBuilder() to construct.
   private LaunchFlexTemplateParameter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -97,6 +98,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     private TemplateCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -133,6 +135,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object jobName_ = "";
+
   /**
    *
    *
@@ -157,6 +160,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -183,6 +187,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   }
 
   public static final int CONTAINER_SPEC_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -198,6 +203,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   public boolean hasContainerSpec() {
     return templateCase_ == 4;
   }
+
   /**
    *
    *
@@ -216,6 +222,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     }
     return com.google.dataflow.v1beta3.ContainerSpec.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -234,6 +241,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   }
 
   public static final int CONTAINER_SPEC_GCS_PATH_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -249,6 +257,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   public boolean hasContainerSpecGcsPath() {
     return templateCase_ == 5;
   }
+
   /**
    *
    *
@@ -277,6 +286,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -332,6 +342,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   public int getParametersCount() {
     return internalGetParameters().getMap().size();
   }
+
   /**
    *
    *
@@ -349,12 +360,14 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     }
     return internalGetParameters().getMap().containsKey(key);
   }
+
   /** Use {@link #getParametersMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParameters() {
     return getParametersMap();
   }
+
   /**
    *
    *
@@ -369,6 +382,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
     return internalGetParameters().getMap();
   }
+
   /**
    *
    *
@@ -390,6 +404,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -440,6 +455,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   public int getLaunchOptionsCount() {
     return internalGetLaunchOptions().getMap().size();
   }
+
   /**
    *
    *
@@ -458,12 +474,14 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     }
     return internalGetLaunchOptions().getMap().containsKey(key);
   }
+
   /** Use {@link #getLaunchOptionsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLaunchOptions() {
     return getLaunchOptionsMap();
   }
+
   /**
    *
    *
@@ -479,6 +497,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   public java.util.Map<java.lang.String, java.lang.String> getLaunchOptionsMap() {
     return internalGetLaunchOptions().getMap();
   }
+
   /**
    *
    *
@@ -501,6 +520,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLaunchOptions().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -526,6 +546,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 7;
   private com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment environment_;
+
   /**
    *
    *
@@ -541,6 +562,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   public boolean hasEnvironment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -558,6 +580,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
         ? com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment.getDefaultInstance()
         : environment_;
   }
+
   /**
    *
    *
@@ -577,6 +600,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
 
   public static final int UPDATE_FIELD_NUMBER = 8;
   private boolean update_ = false;
+
   /**
    *
    *
@@ -623,6 +647,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   public int getTransformNameMappingsCount() {
     return internalGetTransformNameMappings().getMap().size();
   }
+
   /**
    *
    *
@@ -640,12 +665,14 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     }
     return internalGetTransformNameMappings().getMap().containsKey(key);
   }
+
   /** Use {@link #getTransformNameMappingsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getTransformNameMappings() {
     return getTransformNameMappingsMap();
   }
+
   /**
    *
    *
@@ -660,6 +687,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
   public java.util.Map<java.lang.String, java.lang.String> getTransformNameMappingsMap() {
     return internalGetTransformNameMappings().getMap();
   }
+
   /**
    *
    *
@@ -682,6 +710,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
         internalGetTransformNameMappings().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -980,6 +1009,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1355,6 +1385,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object jobName_ = "";
+
     /**
      *
      *
@@ -1378,6 +1409,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1401,6 +1433,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1423,6 +1456,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1441,6 +1475,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1470,6 +1505,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
             com.google.dataflow.v1beta3.ContainerSpec.Builder,
             com.google.dataflow.v1beta3.ContainerSpecOrBuilder>
         containerSpecBuilder_;
+
     /**
      *
      *
@@ -1485,6 +1521,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     public boolean hasContainerSpec() {
       return templateCase_ == 4;
     }
+
     /**
      *
      *
@@ -1510,6 +1547,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
         return com.google.dataflow.v1beta3.ContainerSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1532,6 +1570,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       templateCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1552,6 +1591,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       templateCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1584,6 +1624,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       templateCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1609,6 +1650,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1621,6 +1663,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     public com.google.dataflow.v1beta3.ContainerSpec.Builder getContainerSpecBuilder() {
       return getContainerSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1641,6 +1684,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
         return com.google.dataflow.v1beta3.ContainerSpec.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1690,6 +1734,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     public boolean hasContainerSpecGcsPath() {
       return templateCase_ == 5;
     }
+
     /**
      *
      *
@@ -1719,6 +1764,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1748,6 +1794,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1770,6 +1817,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1790,6 +1838,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1842,6 +1891,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     public int getParametersCount() {
       return internalGetParameters().getMap().size();
     }
+
     /**
      *
      *
@@ -1859,12 +1909,14 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       }
       return internalGetParameters().getMap().containsKey(key);
     }
+
     /** Use {@link #getParametersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParameters() {
       return getParametersMap();
     }
+
     /**
      *
      *
@@ -1879,6 +1931,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
       return internalGetParameters().getMap();
     }
+
     /**
      *
      *
@@ -1900,6 +1953,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1927,6 +1981,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       internalGetMutableParameters().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1944,12 +1999,14 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       internalGetMutableParameters().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableParameters() {
       bitField0_ |= 0x00000008;
       return internalGetMutableParameters().getMutableMap();
     }
+
     /**
      *
      *
@@ -1971,6 +2028,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -2015,6 +2073,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     public int getLaunchOptionsCount() {
       return internalGetLaunchOptions().getMap().size();
     }
+
     /**
      *
      *
@@ -2033,12 +2092,14 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       }
       return internalGetLaunchOptions().getMap().containsKey(key);
     }
+
     /** Use {@link #getLaunchOptionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLaunchOptions() {
       return getLaunchOptionsMap();
     }
+
     /**
      *
      *
@@ -2054,6 +2115,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     public java.util.Map<java.lang.String, java.lang.String> getLaunchOptionsMap() {
       return internalGetLaunchOptions().getMap();
     }
+
     /**
      *
      *
@@ -2076,6 +2138,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLaunchOptions().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2104,6 +2167,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       internalGetMutableLaunchOptions().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2122,12 +2186,14 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       internalGetMutableLaunchOptions().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLaunchOptions() {
       bitField0_ |= 0x00000010;
       return internalGetMutableLaunchOptions().getMutableMap();
     }
+
     /**
      *
      *
@@ -2150,6 +2216,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       bitField0_ |= 0x00000010;
       return this;
     }
+
     /**
      *
      *
@@ -2173,6 +2240,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
             com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment.Builder,
             com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironmentOrBuilder>
         environmentBuilder_;
+
     /**
      *
      *
@@ -2187,6 +2255,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     public boolean hasEnvironment() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2207,6 +2276,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
         return environmentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2230,6 +2300,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2250,6 +2321,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2280,6 +2352,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2299,6 +2372,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2314,6 +2388,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       onChanged();
       return getEnvironmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2333,6 +2408,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
             : environment_;
       }
     }
+
     /**
      *
      *
@@ -2360,6 +2436,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     }
 
     private boolean update_;
+
     /**
      *
      *
@@ -2377,6 +2454,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     public boolean getUpdate() {
       return update_;
     }
+
     /**
      *
      *
@@ -2398,6 +2476,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2447,6 +2526,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     public int getTransformNameMappingsCount() {
       return internalGetTransformNameMappings().getMap().size();
     }
+
     /**
      *
      *
@@ -2464,12 +2544,14 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       }
       return internalGetTransformNameMappings().getMap().containsKey(key);
     }
+
     /** Use {@link #getTransformNameMappingsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getTransformNameMappings() {
       return getTransformNameMappingsMap();
     }
+
     /**
      *
      *
@@ -2484,6 +2566,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     public java.util.Map<java.lang.String, java.lang.String> getTransformNameMappingsMap() {
       return internalGetTransformNameMappings().getMap();
     }
+
     /**
      *
      *
@@ -2506,6 +2589,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
           internalGetTransformNameMappings().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2534,6 +2618,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       internalGetMutableTransformNameMappings().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2551,12 +2636,14 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       internalGetMutableTransformNameMappings().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableTransformNameMappings() {
       bitField0_ |= 0x00000080;
       return internalGetMutableTransformNameMappings().getMutableMap();
     }
+
     /**
      *
      *
@@ -2578,6 +2665,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       bitField0_ |= 0x00000080;
       return this;
     }
+
     /**
      *
      *

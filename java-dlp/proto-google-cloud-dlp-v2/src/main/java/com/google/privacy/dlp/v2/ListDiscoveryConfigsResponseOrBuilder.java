@@ -34,6 +34,7 @@ public interface ListDiscoveryConfigsResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DiscoveryConfig discovery_configs = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.DiscoveryConfig> getDiscoveryConfigsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDiscoveryConfigsResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DiscoveryConfig discovery_configs = 1;</code>
    */
   com.google.privacy.dlp.v2.DiscoveryConfig getDiscoveryConfigs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDiscoveryConfigsResponseOrBuilder
    * <code>repeated .google.privacy.dlp.v2.DiscoveryConfig discovery_configs = 1;</code>
    */
   int getDiscoveryConfigsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDiscoveryConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.DiscoveryConfigOrBuilder>
       getDiscoveryConfigsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListDiscoveryConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

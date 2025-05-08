@@ -36,6 +36,7 @@ public interface EvaluateProcessorVersionMetadataOrBuilder
    * @return Whether the commonMetadata field is set.
    */
   boolean hasCommonMetadata();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface EvaluateProcessorVersionMetadataOrBuilder
    * @return The commonMetadata.
    */
   com.google.cloud.documentai.v1.CommonOperationMetadata getCommonMetadata();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ImportRagFilesConfig)
     ImportRagFilesConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportRagFilesConfig.newBuilder() to construct.
   private ImportRagFilesConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     private ImportSourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -139,6 +141,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     private PartialFailureSinkCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -171,7 +174,58 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     return PartialFailureSinkCase.forNumber(partialFailureSinkCase_);
   }
 
+  private int importResultSinkCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object importResultSink_;
+
+  public enum ImportResultSinkCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    IMPORT_RESULT_GCS_SINK(14),
+    IMPORT_RESULT_BIGQUERY_SINK(15),
+    IMPORTRESULTSINK_NOT_SET(0);
+    private final int value;
+
+    private ImportResultSinkCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ImportResultSinkCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ImportResultSinkCase forNumber(int value) {
+      switch (value) {
+        case 14:
+          return IMPORT_RESULT_GCS_SINK;
+        case 15:
+          return IMPORT_RESULT_BIGQUERY_SINK;
+        case 0:
+          return IMPORTRESULTSINK_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ImportResultSinkCase getImportResultSinkCase() {
+    return ImportResultSinkCase.forNumber(importResultSinkCase_);
+  }
+
   public static final int GCS_SOURCE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -190,6 +244,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasGcsSource() {
     return importSourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -211,6 +266,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1beta1.GcsSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -232,6 +288,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int GOOGLE_DRIVE_SOURCE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -248,6 +305,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasGoogleDriveSource() {
     return importSourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -267,6 +325,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1beta1.GoogleDriveSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -287,6 +346,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SLACK_SOURCE_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -302,6 +362,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasSlackSource() {
     return importSourceCase_ == 6;
   }
+
   /**
    *
    *
@@ -320,6 +381,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -338,6 +400,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int JIRA_SOURCE_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -353,6 +416,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasJiraSource() {
     return importSourceCase_ == 7;
   }
+
   /**
    *
    *
@@ -371,6 +435,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -389,6 +454,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SHARE_POINT_SOURCES_FIELD_NUMBER = 13;
+
   /**
    *
    *
@@ -404,6 +470,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasSharePointSources() {
     return importSourceCase_ == 13;
   }
+
   /**
    *
    *
@@ -422,6 +489,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1beta1.SharePointSources.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -441,6 +509,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARTIAL_FAILURE_GCS_SINK_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -454,7 +523,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=516
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=555
    * @return Whether the partialFailureGcsSink field is set.
    */
   @java.lang.Override
@@ -462,6 +531,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasPartialFailureGcsSink() {
     return partialFailureSinkCase_ == 11;
   }
+
   /**
    *
    *
@@ -475,7 +545,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=516
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=555
    * @return The partialFailureGcsSink.
    */
   @java.lang.Override
@@ -486,6 +556,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -509,6 +580,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARTIAL_FAILURE_BIGQUERY_SINK_FIELD_NUMBER = 12;
+
   /**
    *
    *
@@ -527,7 +599,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
-   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=525
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=564
    * @return Whether the partialFailureBigquerySink field is set.
    */
   @java.lang.Override
@@ -535,6 +607,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasPartialFailureBigquerySink() {
     return partialFailureSinkCase_ == 12;
   }
+
   /**
    *
    *
@@ -553,7 +626,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
-   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=525
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=564
    * @return The partialFailureBigquerySink.
    */
   @java.lang.Override
@@ -564,6 +637,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -591,8 +665,137 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
   }
 
+  public static final int IMPORT_RESULT_GCS_SINK_FIELD_NUMBER = 14;
+
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage path to write import result to.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination import_result_gcs_sink = 14;</code>
+   *
+   * @return Whether the importResultGcsSink field is set.
+   */
+  @java.lang.Override
+  public boolean hasImportResultGcsSink() {
+    return importResultSinkCase_ == 14;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage path to write import result to.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination import_result_gcs_sink = 14;</code>
+   *
+   * @return The importResultGcsSink.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GcsDestination getImportResultGcsSink() {
+    if (importResultSinkCase_ == 14) {
+      return (com.google.cloud.aiplatform.v1beta1.GcsDestination) importResultSink_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage path to write import result to.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GcsDestination import_result_gcs_sink = 14;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder
+      getImportResultGcsSinkOrBuilder() {
+    if (importResultSinkCase_ == 14) {
+      return (com.google.cloud.aiplatform.v1beta1.GcsDestination) importResultSink_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+  }
+
+  public static final int IMPORT_RESULT_BIGQUERY_SINK_FIELD_NUMBER = 15;
+
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery destination to write import result to. It should be a
+   * bigquery table resource name (e.g.
+   * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+   * table does not exist, it will be created with the expected schema. If the
+   * table exists, the schema will be validated and data will be added to this
+   * existing table.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination import_result_bigquery_sink = 15;
+   * </code>
+   *
+   * @return Whether the importResultBigquerySink field is set.
+   */
+  @java.lang.Override
+  public boolean hasImportResultBigquerySink() {
+    return importResultSinkCase_ == 15;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery destination to write import result to. It should be a
+   * bigquery table resource name (e.g.
+   * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+   * table does not exist, it will be created with the expected schema. If the
+   * table exists, the schema will be validated and data will be added to this
+   * existing table.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination import_result_bigquery_sink = 15;
+   * </code>
+   *
+   * @return The importResultBigquerySink.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.BigQueryDestination getImportResultBigquerySink() {
+    if (importResultSinkCase_ == 15) {
+      return (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) importResultSink_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery destination to write import result to. It should be a
+   * bigquery table resource name (e.g.
+   * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+   * table does not exist, it will be created with the expected schema. If the
+   * table exists, the schema will be validated and data will be added to this
+   * existing table.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination import_result_bigquery_sink = 15;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder
+      getImportResultBigquerySinkOrBuilder() {
+    if (importResultSinkCase_ == 15) {
+      return (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) importResultSink_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
+  }
+
   public static final int RAG_FILE_CHUNKING_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig ragFileChunkingConfig_;
+
   /**
    *
    *
@@ -605,7 +808,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=529
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=583
    * @return Whether the ragFileChunkingConfig field is set.
    */
   @java.lang.Override
@@ -613,6 +816,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasRagFileChunkingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -625,7 +829,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=529
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=583
    * @return The ragFileChunkingConfig.
    */
   @java.lang.Override
@@ -635,6 +839,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.getDefaultInstance()
         : ragFileChunkingConfig_;
   }
+
   /**
    *
    *
@@ -658,6 +863,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public static final int RAG_FILE_TRANSFORMATION_CONFIG_FIELD_NUMBER = 16;
   private com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig
       ragFileTransformationConfig_;
+
   /**
    *
    *
@@ -675,6 +881,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasRagFileTransformationConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -695,6 +902,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.getDefaultInstance()
         : ragFileTransformationConfig_;
   }
+
   /**
    *
    *
@@ -716,6 +924,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
 
   public static final int RAG_FILE_PARSING_CONFIG_FIELD_NUMBER = 8;
   private com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig ragFileParsingConfig_;
+
   /**
    *
    *
@@ -734,6 +943,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   public boolean hasRagFileParsingConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -754,6 +964,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.getDefaultInstance()
         : ragFileParsingConfig_;
   }
+
   /**
    *
    *
@@ -776,6 +987,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
 
   public static final int MAX_EMBEDDING_REQUESTS_PER_MIN_FIELD_NUMBER = 5;
   private int maxEmbeddingRequestsPerMin_ = 0;
+
   /**
    *
    *
@@ -795,6 +1007,32 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public int getMaxEmbeddingRequestsPerMin() {
     return maxEmbeddingRequestsPerMin_;
+  }
+
+  public static final int GLOBAL_MAX_EMBEDDING_REQUESTS_PER_MIN_FIELD_NUMBER = 18;
+  private int globalMaxEmbeddingRequestsPerMin_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The max number of queries per minute that the indexing pipeline
+   * job is allowed to make to the embedding model specified in the project.
+   * Please follow the quota usage guideline of the embedding model you use to
+   * set the value properly. If this value is not specified,
+   * max_embedding_requests_per_min will be used by indexing pipeline job as the
+   * global limit.
+   * </pre>
+   *
+   * <code>
+   * int32 global_max_embedding_requests_per_min = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The globalMaxEmbeddingRequestsPerMin.
+   */
+  @java.lang.Override
+  public int getGlobalMaxEmbeddingRequestsPerMin() {
+    return globalMaxEmbeddingRequestsPerMin_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -844,8 +1082,19 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       output.writeMessage(
           13, (com.google.cloud.aiplatform.v1beta1.SharePointSources) importSource_);
     }
+    if (importResultSinkCase_ == 14) {
+      output.writeMessage(
+          14, (com.google.cloud.aiplatform.v1beta1.GcsDestination) importResultSink_);
+    }
+    if (importResultSinkCase_ == 15) {
+      output.writeMessage(
+          15, (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) importResultSink_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(16, getRagFileTransformationConfig());
+    }
+    if (globalMaxEmbeddingRequestsPerMin_ != 0) {
+      output.writeInt32(18, globalMaxEmbeddingRequestsPerMin_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -903,10 +1152,25 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, (com.google.cloud.aiplatform.v1beta1.SharePointSources) importSource_);
     }
+    if (importResultSinkCase_ == 14) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, (com.google.cloud.aiplatform.v1beta1.GcsDestination) importResultSink_);
+    }
+    if (importResultSinkCase_ == 15) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) importResultSink_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               16, getRagFileTransformationConfig());
+    }
+    if (globalMaxEmbeddingRequestsPerMin_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              18, globalMaxEmbeddingRequestsPerMin_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -938,6 +1202,8 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       if (!getRagFileParsingConfig().equals(other.getRagFileParsingConfig())) return false;
     }
     if (getMaxEmbeddingRequestsPerMin() != other.getMaxEmbeddingRequestsPerMin()) return false;
+    if (getGlobalMaxEmbeddingRequestsPerMin() != other.getGlobalMaxEmbeddingRequestsPerMin())
+      return false;
     if (!getImportSourceCase().equals(other.getImportSourceCase())) return false;
     switch (importSourceCase_) {
       case 2:
@@ -970,6 +1236,18 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       case 0:
       default:
     }
+    if (!getImportResultSinkCase().equals(other.getImportResultSinkCase())) return false;
+    switch (importResultSinkCase_) {
+      case 14:
+        if (!getImportResultGcsSink().equals(other.getImportResultGcsSink())) return false;
+        break;
+      case 15:
+        if (!getImportResultBigquerySink().equals(other.getImportResultBigquerySink()))
+          return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -995,6 +1273,8 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + MAX_EMBEDDING_REQUESTS_PER_MIN_FIELD_NUMBER;
     hash = (53 * hash) + getMaxEmbeddingRequestsPerMin();
+    hash = (37 * hash) + GLOBAL_MAX_EMBEDDING_REQUESTS_PER_MIN_FIELD_NUMBER;
+    hash = (53 * hash) + getGlobalMaxEmbeddingRequestsPerMin();
     switch (importSourceCase_) {
       case 2:
         hash = (37 * hash) + GCS_SOURCE_FIELD_NUMBER;
@@ -1027,6 +1307,18 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       case 12:
         hash = (37 * hash) + PARTIAL_FAILURE_BIGQUERY_SINK_FIELD_NUMBER;
         hash = (53 * hash) + getPartialFailureBigquerySink().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (importResultSinkCase_) {
+      case 14:
+        hash = (37 * hash) + IMPORT_RESULT_GCS_SINK_FIELD_NUMBER;
+        hash = (53 * hash) + getImportResultGcsSink().hashCode();
+        break;
+      case 15:
+        hash = (37 * hash) + IMPORT_RESULT_BIGQUERY_SINK_FIELD_NUMBER;
+        hash = (53 * hash) + getImportResultBigquerySink().hashCode();
         break;
       case 0:
       default:
@@ -1132,6 +1424,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1203,6 +1496,12 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       if (partialFailureBigquerySinkBuilder_ != null) {
         partialFailureBigquerySinkBuilder_.clear();
       }
+      if (importResultGcsSinkBuilder_ != null) {
+        importResultGcsSinkBuilder_.clear();
+      }
+      if (importResultBigquerySinkBuilder_ != null) {
+        importResultBigquerySinkBuilder_.clear();
+      }
       ragFileChunkingConfig_ = null;
       if (ragFileChunkingConfigBuilder_ != null) {
         ragFileChunkingConfigBuilder_.dispose();
@@ -1219,10 +1518,13 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         ragFileParsingConfigBuilder_ = null;
       }
       maxEmbeddingRequestsPerMin_ = 0;
+      globalMaxEmbeddingRequestsPerMin_ = 0;
       importSourceCase_ = 0;
       importSource_ = null;
       partialFailureSinkCase_ = 0;
       partialFailureSink_ = null;
+      importResultSinkCase_ = 0;
+      importResultSink_ = null;
       return this;
     }
 
@@ -1261,29 +1563,32 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.ragFileChunkingConfig_ =
             ragFileChunkingConfigBuilder_ == null
                 ? ragFileChunkingConfig_
                 : ragFileChunkingConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.ragFileTransformationConfig_ =
             ragFileTransformationConfigBuilder_ == null
                 ? ragFileTransformationConfig_
                 : ragFileTransformationConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.ragFileParsingConfig_ =
             ragFileParsingConfigBuilder_ == null
                 ? ragFileParsingConfig_
                 : ragFileParsingConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.maxEmbeddingRequestsPerMin_ = maxEmbeddingRequestsPerMin_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.globalMaxEmbeddingRequestsPerMin_ = globalMaxEmbeddingRequestsPerMin_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1314,6 +1619,14 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       if (partialFailureSinkCase_ == 12 && partialFailureBigquerySinkBuilder_ != null) {
         result.partialFailureSink_ = partialFailureBigquerySinkBuilder_.build();
+      }
+      result.importResultSinkCase_ = importResultSinkCase_;
+      result.importResultSink_ = this.importResultSink_;
+      if (importResultSinkCase_ == 14 && importResultGcsSinkBuilder_ != null) {
+        result.importResultSink_ = importResultGcsSinkBuilder_.build();
+      }
+      if (importResultSinkCase_ == 15 && importResultBigquerySinkBuilder_ != null) {
+        result.importResultSink_ = importResultBigquerySinkBuilder_.build();
       }
     }
 
@@ -1375,6 +1688,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       if (other.getMaxEmbeddingRequestsPerMin() != 0) {
         setMaxEmbeddingRequestsPerMin(other.getMaxEmbeddingRequestsPerMin());
       }
+      if (other.getGlobalMaxEmbeddingRequestsPerMin() != 0) {
+        setGlobalMaxEmbeddingRequestsPerMin(other.getGlobalMaxEmbeddingRequestsPerMin());
+      }
       switch (other.getImportSourceCase()) {
         case GCS_SOURCE:
           {
@@ -1422,6 +1738,22 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             break;
           }
       }
+      switch (other.getImportResultSinkCase()) {
+        case IMPORT_RESULT_GCS_SINK:
+          {
+            mergeImportResultGcsSink(other.getImportResultGcsSink());
+            break;
+          }
+        case IMPORT_RESULT_BIGQUERY_SINK:
+          {
+            mergeImportResultBigquerySink(other.getImportResultBigquerySink());
+            break;
+          }
+        case IMPORTRESULTSINK_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1465,13 +1797,13 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     getRagFileChunkingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 34
             case 40:
               {
                 maxEmbeddingRequestsPerMin_ = input.readInt32();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 40
             case 50:
@@ -1490,7 +1822,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     getRagFileParsingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 66
             case 90:
@@ -1514,13 +1846,33 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
                 importSourceCase_ = 13;
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(
+                    getImportResultGcsSinkFieldBuilder().getBuilder(), extensionRegistry);
+                importResultSinkCase_ = 14;
+                break;
+              } // case 114
+            case 122:
+              {
+                input.readMessage(
+                    getImportResultBigquerySinkFieldBuilder().getBuilder(), extensionRegistry);
+                importResultSinkCase_ = 15;
+                break;
+              } // case 122
             case 130:
               {
                 input.readMessage(
                     getRagFileTransformationConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 130
+            case 144:
+              {
+                globalMaxEmbeddingRequestsPerMin_ = input.readInt32();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 144
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1566,6 +1918,20 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private int importResultSinkCase_ = 0;
+    private java.lang.Object importResultSink_;
+
+    public ImportResultSinkCase getImportResultSinkCase() {
+      return ImportResultSinkCase.forNumber(importResultSinkCase_);
+    }
+
+    public Builder clearImportResultSink() {
+      importResultSinkCase_ = 0;
+      importResultSink_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1573,6 +1939,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.GcsSource.Builder,
             com.google.cloud.aiplatform.v1beta1.GcsSourceOrBuilder>
         gcsSourceBuilder_;
+
     /**
      *
      *
@@ -1591,6 +1958,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public boolean hasGcsSource() {
       return importSourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -1619,6 +1987,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1beta1.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1644,6 +2013,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1667,6 +2037,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1703,6 +2074,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1731,6 +2103,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1746,6 +2119,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1beta1.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1769,6 +2143,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1beta1.GcsSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1810,6 +2185,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.GoogleDriveSource.Builder,
             com.google.cloud.aiplatform.v1beta1.GoogleDriveSourceOrBuilder>
         googleDriveSourceBuilder_;
+
     /**
      *
      *
@@ -1826,6 +2202,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public boolean hasGoogleDriveSource() {
       return importSourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -1852,6 +2229,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1beta1.GoogleDriveSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1876,6 +2254,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1897,6 +2276,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1932,6 +2312,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1958,6 +2339,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1972,6 +2354,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         getGoogleDriveSourceBuilder() {
       return getGoogleDriveSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1994,6 +2377,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1beta1.GoogleDriveSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2034,6 +2418,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.SlackSource.Builder,
             com.google.cloud.aiplatform.v1beta1.SlackSourceOrBuilder>
         slackSourceBuilder_;
+
     /**
      *
      *
@@ -2049,6 +2434,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public boolean hasSlackSource() {
       return importSourceCase_ == 6;
     }
+
     /**
      *
      *
@@ -2074,6 +2460,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2096,6 +2483,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2116,6 +2504,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2149,6 +2538,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2174,6 +2564,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2186,6 +2577,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1beta1.SlackSource.Builder getSlackSourceBuilder() {
       return getSlackSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2206,6 +2598,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1beta1.SlackSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2244,6 +2637,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.JiraSource.Builder,
             com.google.cloud.aiplatform.v1beta1.JiraSourceOrBuilder>
         jiraSourceBuilder_;
+
     /**
      *
      *
@@ -2259,6 +2653,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public boolean hasJiraSource() {
       return importSourceCase_ == 7;
     }
+
     /**
      *
      *
@@ -2284,6 +2679,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2306,6 +2702,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2326,6 +2723,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2359,6 +2757,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2384,6 +2783,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2396,6 +2796,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1beta1.JiraSource.Builder getJiraSourceBuilder() {
       return getJiraSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2416,6 +2817,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1beta1.JiraSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2454,6 +2856,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.SharePointSources.Builder,
             com.google.cloud.aiplatform.v1beta1.SharePointSourcesOrBuilder>
         sharePointSourcesBuilder_;
+
     /**
      *
      *
@@ -2469,6 +2872,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public boolean hasSharePointSources() {
       return importSourceCase_ == 13;
     }
+
     /**
      *
      *
@@ -2494,6 +2898,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1beta1.SharePointSources.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2517,6 +2922,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -2537,6 +2943,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -2571,6 +2978,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       importSourceCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -2596,6 +3004,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2609,6 +3018,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         getSharePointSourcesBuilder() {
       return getSharePointSourcesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2630,6 +3040,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1beta1.SharePointSources.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2669,6 +3080,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder,
             com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder>
         partialFailureGcsSinkBuilder_;
+
     /**
      *
      *
@@ -2682,7 +3094,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=516
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=555
      * @return Whether the partialFailureGcsSink field is set.
      */
     @java.lang.Override
@@ -2690,6 +3102,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public boolean hasPartialFailureGcsSink() {
       return partialFailureSinkCase_ == 11;
     }
+
     /**
      *
      *
@@ -2703,7 +3116,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=516
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=555
      * @return The partialFailureGcsSink.
      */
     @java.lang.Override
@@ -2721,6 +3134,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2748,6 +3162,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       partialFailureSinkCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -2772,6 +3187,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       partialFailureSinkCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -2810,6 +3226,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       partialFailureSinkCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -2839,6 +3256,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2856,6 +3274,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         getPartialFailureGcsSinkBuilder() {
       return getPartialFailureGcsSinkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2881,6 +3300,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2923,6 +3343,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder,
             com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder>
         partialFailureBigquerySinkBuilder_;
+
     /**
      *
      *
@@ -2942,7 +3363,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=525
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=564
      * @return Whether the partialFailureBigquerySink field is set.
      */
     @java.lang.Override
@@ -2950,6 +3371,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public boolean hasPartialFailureBigquerySink() {
       return partialFailureSinkCase_ == 12;
     }
+
     /**
      *
      *
@@ -2969,7 +3391,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=525
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=564
      * @return The partialFailureBigquerySink.
      */
     @java.lang.Override
@@ -2987,6 +3409,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3019,6 +3442,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       partialFailureSinkCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -3048,6 +3472,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       partialFailureSinkCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -3091,6 +3516,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       partialFailureSinkCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -3125,6 +3551,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -3147,6 +3574,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         getPartialFailureBigquerySinkBuilder() {
       return getPartialFailureBigquerySinkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3177,6 +3605,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3219,12 +3648,515 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       return partialFailureBigquerySinkBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GcsDestination,
+            com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder,
+            com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder>
+        importResultGcsSinkBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage path to write import result to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination import_result_gcs_sink = 14;</code>
+     *
+     * @return Whether the importResultGcsSink field is set.
+     */
+    @java.lang.Override
+    public boolean hasImportResultGcsSink() {
+      return importResultSinkCase_ == 14;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage path to write import result to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination import_result_gcs_sink = 14;</code>
+     *
+     * @return The importResultGcsSink.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GcsDestination getImportResultGcsSink() {
+      if (importResultGcsSinkBuilder_ == null) {
+        if (importResultSinkCase_ == 14) {
+          return (com.google.cloud.aiplatform.v1beta1.GcsDestination) importResultSink_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+      } else {
+        if (importResultSinkCase_ == 14) {
+          return importResultGcsSinkBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage path to write import result to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination import_result_gcs_sink = 14;</code>
+     */
+    public Builder setImportResultGcsSink(
+        com.google.cloud.aiplatform.v1beta1.GcsDestination value) {
+      if (importResultGcsSinkBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        importResultSink_ = value;
+        onChanged();
+      } else {
+        importResultGcsSinkBuilder_.setMessage(value);
+      }
+      importResultSinkCase_ = 14;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage path to write import result to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination import_result_gcs_sink = 14;</code>
+     */
+    public Builder setImportResultGcsSink(
+        com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder builderForValue) {
+      if (importResultGcsSinkBuilder_ == null) {
+        importResultSink_ = builderForValue.build();
+        onChanged();
+      } else {
+        importResultGcsSinkBuilder_.setMessage(builderForValue.build());
+      }
+      importResultSinkCase_ = 14;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage path to write import result to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination import_result_gcs_sink = 14;</code>
+     */
+    public Builder mergeImportResultGcsSink(
+        com.google.cloud.aiplatform.v1beta1.GcsDestination value) {
+      if (importResultGcsSinkBuilder_ == null) {
+        if (importResultSinkCase_ == 14
+            && importResultSink_
+                != com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance()) {
+          importResultSink_ =
+              com.google.cloud.aiplatform.v1beta1.GcsDestination.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.GcsDestination) importResultSink_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          importResultSink_ = value;
+        }
+        onChanged();
+      } else {
+        if (importResultSinkCase_ == 14) {
+          importResultGcsSinkBuilder_.mergeFrom(value);
+        } else {
+          importResultGcsSinkBuilder_.setMessage(value);
+        }
+      }
+      importResultSinkCase_ = 14;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage path to write import result to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination import_result_gcs_sink = 14;</code>
+     */
+    public Builder clearImportResultGcsSink() {
+      if (importResultGcsSinkBuilder_ == null) {
+        if (importResultSinkCase_ == 14) {
+          importResultSinkCase_ = 0;
+          importResultSink_ = null;
+          onChanged();
+        }
+      } else {
+        if (importResultSinkCase_ == 14) {
+          importResultSinkCase_ = 0;
+          importResultSink_ = null;
+        }
+        importResultGcsSinkBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage path to write import result to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination import_result_gcs_sink = 14;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder
+        getImportResultGcsSinkBuilder() {
+      return getImportResultGcsSinkFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage path to write import result to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination import_result_gcs_sink = 14;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder
+        getImportResultGcsSinkOrBuilder() {
+      if ((importResultSinkCase_ == 14) && (importResultGcsSinkBuilder_ != null)) {
+        return importResultGcsSinkBuilder_.getMessageOrBuilder();
+      } else {
+        if (importResultSinkCase_ == 14) {
+          return (com.google.cloud.aiplatform.v1beta1.GcsDestination) importResultSink_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage path to write import result to.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsDestination import_result_gcs_sink = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GcsDestination,
+            com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder,
+            com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder>
+        getImportResultGcsSinkFieldBuilder() {
+      if (importResultGcsSinkBuilder_ == null) {
+        if (!(importResultSinkCase_ == 14)) {
+          importResultSink_ =
+              com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+        }
+        importResultGcsSinkBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.GcsDestination,
+                com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder,
+                com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.GcsDestination) importResultSink_,
+                getParentForChildren(),
+                isClean());
+        importResultSink_ = null;
+      }
+      importResultSinkCase_ = 14;
+      onChanged();
+      return importResultGcsSinkBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.BigQueryDestination,
+            com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder,
+            com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder>
+        importResultBigquerySinkBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery destination to write import result to. It should be a
+     * bigquery table resource name (e.g.
+     * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+     * table does not exist, it will be created with the expected schema. If the
+     * table exists, the schema will be validated and data will be added to this
+     * existing table.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination import_result_bigquery_sink = 15;
+     * </code>
+     *
+     * @return Whether the importResultBigquerySink field is set.
+     */
+    @java.lang.Override
+    public boolean hasImportResultBigquerySink() {
+      return importResultSinkCase_ == 15;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery destination to write import result to. It should be a
+     * bigquery table resource name (e.g.
+     * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+     * table does not exist, it will be created with the expected schema. If the
+     * table exists, the schema will be validated and data will be added to this
+     * existing table.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination import_result_bigquery_sink = 15;
+     * </code>
+     *
+     * @return The importResultBigquerySink.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.BigQueryDestination getImportResultBigquerySink() {
+      if (importResultBigquerySinkBuilder_ == null) {
+        if (importResultSinkCase_ == 15) {
+          return (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) importResultSink_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
+      } else {
+        if (importResultSinkCase_ == 15) {
+          return importResultBigquerySinkBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery destination to write import result to. It should be a
+     * bigquery table resource name (e.g.
+     * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+     * table does not exist, it will be created with the expected schema. If the
+     * table exists, the schema will be validated and data will be added to this
+     * existing table.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination import_result_bigquery_sink = 15;
+     * </code>
+     */
+    public Builder setImportResultBigquerySink(
+        com.google.cloud.aiplatform.v1beta1.BigQueryDestination value) {
+      if (importResultBigquerySinkBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        importResultSink_ = value;
+        onChanged();
+      } else {
+        importResultBigquerySinkBuilder_.setMessage(value);
+      }
+      importResultSinkCase_ = 15;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery destination to write import result to. It should be a
+     * bigquery table resource name (e.g.
+     * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+     * table does not exist, it will be created with the expected schema. If the
+     * table exists, the schema will be validated and data will be added to this
+     * existing table.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination import_result_bigquery_sink = 15;
+     * </code>
+     */
+    public Builder setImportResultBigquerySink(
+        com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder builderForValue) {
+      if (importResultBigquerySinkBuilder_ == null) {
+        importResultSink_ = builderForValue.build();
+        onChanged();
+      } else {
+        importResultBigquerySinkBuilder_.setMessage(builderForValue.build());
+      }
+      importResultSinkCase_ = 15;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery destination to write import result to. It should be a
+     * bigquery table resource name (e.g.
+     * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+     * table does not exist, it will be created with the expected schema. If the
+     * table exists, the schema will be validated and data will be added to this
+     * existing table.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination import_result_bigquery_sink = 15;
+     * </code>
+     */
+    public Builder mergeImportResultBigquerySink(
+        com.google.cloud.aiplatform.v1beta1.BigQueryDestination value) {
+      if (importResultBigquerySinkBuilder_ == null) {
+        if (importResultSinkCase_ == 15
+            && importResultSink_
+                != com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance()) {
+          importResultSink_ =
+              com.google.cloud.aiplatform.v1beta1.BigQueryDestination.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) importResultSink_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          importResultSink_ = value;
+        }
+        onChanged();
+      } else {
+        if (importResultSinkCase_ == 15) {
+          importResultBigquerySinkBuilder_.mergeFrom(value);
+        } else {
+          importResultBigquerySinkBuilder_.setMessage(value);
+        }
+      }
+      importResultSinkCase_ = 15;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery destination to write import result to. It should be a
+     * bigquery table resource name (e.g.
+     * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+     * table does not exist, it will be created with the expected schema. If the
+     * table exists, the schema will be validated and data will be added to this
+     * existing table.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination import_result_bigquery_sink = 15;
+     * </code>
+     */
+    public Builder clearImportResultBigquerySink() {
+      if (importResultBigquerySinkBuilder_ == null) {
+        if (importResultSinkCase_ == 15) {
+          importResultSinkCase_ = 0;
+          importResultSink_ = null;
+          onChanged();
+        }
+      } else {
+        if (importResultSinkCase_ == 15) {
+          importResultSinkCase_ = 0;
+          importResultSink_ = null;
+        }
+        importResultBigquerySinkBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery destination to write import result to. It should be a
+     * bigquery table resource name (e.g.
+     * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+     * table does not exist, it will be created with the expected schema. If the
+     * table exists, the schema will be validated and data will be added to this
+     * existing table.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination import_result_bigquery_sink = 15;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder
+        getImportResultBigquerySinkBuilder() {
+      return getImportResultBigquerySinkFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery destination to write import result to. It should be a
+     * bigquery table resource name (e.g.
+     * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+     * table does not exist, it will be created with the expected schema. If the
+     * table exists, the schema will be validated and data will be added to this
+     * existing table.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination import_result_bigquery_sink = 15;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder
+        getImportResultBigquerySinkOrBuilder() {
+      if ((importResultSinkCase_ == 15) && (importResultBigquerySinkBuilder_ != null)) {
+        return importResultBigquerySinkBuilder_.getMessageOrBuilder();
+      } else {
+        if (importResultSinkCase_ == 15) {
+          return (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) importResultSink_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The BigQuery destination to write import result to. It should be a
+     * bigquery table resource name (e.g.
+     * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+     * table does not exist, it will be created with the expected schema. If the
+     * table exists, the schema will be validated and data will be added to this
+     * existing table.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination import_result_bigquery_sink = 15;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.BigQueryDestination,
+            com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder,
+            com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder>
+        getImportResultBigquerySinkFieldBuilder() {
+      if (importResultBigquerySinkBuilder_ == null) {
+        if (!(importResultSinkCase_ == 15)) {
+          importResultSink_ =
+              com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
+        }
+        importResultBigquerySinkBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.BigQueryDestination,
+                com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder,
+                com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) importResultSink_,
+                getParentForChildren(),
+                isClean());
+        importResultSink_ = null;
+      }
+      importResultSinkCase_ = 15;
+      onChanged();
+      return importResultBigquerySinkBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig ragFileChunkingConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig,
             com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfigOrBuilder>
         ragFileChunkingConfigBuilder_;
+
     /**
      *
      *
@@ -3237,13 +4169,14 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=529
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=583
      * @return Whether the ragFileChunkingConfig field is set.
      */
     @java.lang.Deprecated
     public boolean hasRagFileChunkingConfig() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3256,7 +4189,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=529
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=583
      * @return The ragFileChunkingConfig.
      */
     @java.lang.Deprecated
@@ -3269,6 +4202,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return ragFileChunkingConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3291,10 +4225,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       } else {
         ragFileChunkingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3314,10 +4249,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       } else {
         ragFileChunkingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3333,7 +4269,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public Builder mergeRagFileChunkingConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig value) {
       if (ragFileChunkingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && ragFileChunkingConfig_ != null
             && ragFileChunkingConfig_
                 != com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.getDefaultInstance()) {
@@ -3345,11 +4281,12 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         ragFileChunkingConfigBuilder_.mergeFrom(value);
       }
       if (ragFileChunkingConfig_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
     }
+
     /**
      *
      *
@@ -3363,7 +4300,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Deprecated
     public Builder clearRagFileChunkingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       ragFileChunkingConfig_ = null;
       if (ragFileChunkingConfigBuilder_ != null) {
         ragFileChunkingConfigBuilder_.dispose();
@@ -3372,6 +4309,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3386,10 +4324,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.Builder
         getRagFileChunkingConfigBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getRagFileChunkingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3412,6 +4351,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             : ragFileChunkingConfig_;
       }
     }
+
     /**
      *
      *
@@ -3447,6 +4387,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfigOrBuilder>
         ragFileTransformationConfigBuilder_;
+
     /**
      *
      *
@@ -3461,8 +4402,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the ragFileTransformationConfig field is set.
      */
     public boolean hasRagFileTransformationConfig() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -3486,6 +4428,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return ragFileTransformationConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3507,10 +4450,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       } else {
         ragFileTransformationConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3529,10 +4473,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       } else {
         ragFileTransformationConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3547,7 +4492,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public Builder mergeRagFileTransformationConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig value) {
       if (ragFileTransformationConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && ragFileTransformationConfig_ != null
             && ragFileTransformationConfig_
                 != com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig
@@ -3560,11 +4505,12 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         ragFileTransformationConfigBuilder_.mergeFrom(value);
       }
       if (ragFileTransformationConfig_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
     }
+
     /**
      *
      *
@@ -3577,7 +4523,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearRagFileTransformationConfig() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       ragFileTransformationConfig_ = null;
       if (ragFileTransformationConfigBuilder_ != null) {
         ragFileTransformationConfigBuilder_.dispose();
@@ -3586,6 +4532,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3599,10 +4546,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.Builder
         getRagFileTransformationConfigBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getRagFileTransformationConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3624,6 +4572,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             : ragFileTransformationConfig_;
       }
     }
+
     /**
      *
      *
@@ -3658,6 +4607,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.RagFileParsingConfigOrBuilder>
         ragFileParsingConfigBuilder_;
+
     /**
      *
      *
@@ -3673,8 +4623,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the ragFileParsingConfig field is set.
      */
     public boolean hasRagFileParsingConfig() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -3698,6 +4649,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         return ragFileParsingConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3720,10 +4672,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       } else {
         ragFileParsingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3743,10 +4696,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       } else {
         ragFileParsingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3762,7 +4716,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public Builder mergeRagFileParsingConfig(
         com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig value) {
       if (ragFileParsingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && ragFileParsingConfig_ != null
             && ragFileParsingConfig_
                 != com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.getDefaultInstance()) {
@@ -3774,11 +4728,12 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
         ragFileParsingConfigBuilder_.mergeFrom(value);
       }
       if (ragFileParsingConfig_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
     }
+
     /**
      *
      *
@@ -3792,7 +4747,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearRagFileParsingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       ragFileParsingConfig_ = null;
       if (ragFileParsingConfigBuilder_ != null) {
         ragFileParsingConfigBuilder_.dispose();
@@ -3801,6 +4756,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3815,10 +4771,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.aiplatform.v1beta1.RagFileParsingConfig.Builder
         getRagFileParsingConfigBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getRagFileParsingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3841,6 +4798,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
             : ragFileParsingConfig_;
       }
     }
+
     /**
      *
      *
@@ -3871,6 +4829,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
 
     private int maxEmbeddingRequestsPerMin_;
+
     /**
      *
      *
@@ -3891,6 +4850,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public int getMaxEmbeddingRequestsPerMin() {
       return maxEmbeddingRequestsPerMin_;
     }
+
     /**
      *
      *
@@ -3911,10 +4871,11 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public Builder setMaxEmbeddingRequestsPerMin(int value) {
 
       maxEmbeddingRequestsPerMin_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3932,8 +4893,85 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMaxEmbeddingRequestsPerMin() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       maxEmbeddingRequestsPerMin_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int globalMaxEmbeddingRequestsPerMin_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The max number of queries per minute that the indexing pipeline
+     * job is allowed to make to the embedding model specified in the project.
+     * Please follow the quota usage guideline of the embedding model you use to
+     * set the value properly. If this value is not specified,
+     * max_embedding_requests_per_min will be used by indexing pipeline job as the
+     * global limit.
+     * </pre>
+     *
+     * <code>
+     * int32 global_max_embedding_requests_per_min = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The globalMaxEmbeddingRequestsPerMin.
+     */
+    @java.lang.Override
+    public int getGlobalMaxEmbeddingRequestsPerMin() {
+      return globalMaxEmbeddingRequestsPerMin_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The max number of queries per minute that the indexing pipeline
+     * job is allowed to make to the embedding model specified in the project.
+     * Please follow the quota usage guideline of the embedding model you use to
+     * set the value properly. If this value is not specified,
+     * max_embedding_requests_per_min will be used by indexing pipeline job as the
+     * global limit.
+     * </pre>
+     *
+     * <code>
+     * int32 global_max_embedding_requests_per_min = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The globalMaxEmbeddingRequestsPerMin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGlobalMaxEmbeddingRequestsPerMin(int value) {
+
+      globalMaxEmbeddingRequestsPerMin_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The max number of queries per minute that the indexing pipeline
+     * job is allowed to make to the embedding model specified in the project.
+     * Please follow the quota usage guideline of the embedding model you use to
+     * set the value properly. If this value is not specified,
+     * max_embedding_requests_per_min will be used by indexing pipeline job as the
+     * global limit.
+     * </pre>
+     *
+     * <code>
+     * int32 global_max_embedding_requests_per_min = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGlobalMaxEmbeddingRequestsPerMin() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      globalMaxEmbeddingRequestsPerMin_ = 0;
       onChanged();
       return this;
     }

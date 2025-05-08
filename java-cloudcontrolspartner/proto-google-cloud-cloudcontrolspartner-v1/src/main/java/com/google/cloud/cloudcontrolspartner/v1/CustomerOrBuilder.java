@@ -37,6 +37,7 @@ public interface CustomerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface CustomerOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface CustomerOrBuilder
    * @return Whether the customerOnboardingState field is set.
    */
   boolean hasCustomerOnboardingState();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface CustomerOrBuilder
    * @return The customerOnboardingState.
    */
   com.google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState getCustomerOnboardingState();
+
   /**
    *
    *
@@ -130,4 +134,32 @@ public interface CustomerOrBuilder
    * @return The isOnboarded.
    */
   boolean getIsOnboarded();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The customer organization domain, extracted from
+   * CRM Organization’s display_name field. e.g. "google.com"
+   * </pre>
+   *
+   * <code>string organization_domain = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The organizationDomain.
+   */
+  java.lang.String getOrganizationDomain();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The customer organization domain, extracted from
+   * CRM Organization’s display_name field. e.g. "google.com"
+   * </pre>
+   *
+   * <code>string organization_domain = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for organizationDomain.
+   */
+  com.google.protobuf.ByteString getOrganizationDomainBytes();
 }

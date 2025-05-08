@@ -36,6 +36,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    * @return Whether the expectedRttMs field is set.
    */
   boolean hasExpectedRttMs();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    * @return Whether the locationPresence field is set.
    */
   boolean hasLocationPresence();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    * @return The locationPresence.
    */
   java.lang.String getLocationPresence();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *

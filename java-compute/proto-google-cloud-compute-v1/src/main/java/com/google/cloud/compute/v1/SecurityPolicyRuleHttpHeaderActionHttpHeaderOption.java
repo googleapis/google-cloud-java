@@ -33,6 +33,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderActionHttpHeaderOption)
     SecurityPolicyRuleHttpHeaderActionHttpHeaderOptionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityPolicyRuleHttpHeaderActionHttpHeaderOption.newBuilder() to construct.
   private SecurityPolicyRuleHttpHeaderActionHttpHeaderOption(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object headerName_ = "";
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
   public boolean hasHeaderName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
       return s;
     }
   }
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object headerValue_ = "";
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
   public boolean hasHeaderValue() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
       return s;
     }
   }
+
   /**
    *
    *
@@ -386,6 +393,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -601,6 +609,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
     private int bitField0_;
 
     private java.lang.Object headerName_ = "";
+
     /**
      *
      *
@@ -615,6 +624,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
     public boolean hasHeaderName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -637,6 +647,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -659,6 +670,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -680,6 +692,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -697,6 +710,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +735,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
     }
 
     private java.lang.Object headerValue_ = "";
+
     /**
      *
      *
@@ -735,6 +750,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
     public boolean hasHeaderValue() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -757,6 +773,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -779,6 +796,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -800,6 +818,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +836,7 @@ public final class SecurityPolicyRuleHttpHeaderActionHttpHeaderOption
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -42,6 +42,7 @@ public interface CreateSnoozeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface CreateSnoozeRequestOrBuilder
    * @return Whether the snooze field is set.
    */
   boolean hasSnooze();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface CreateSnoozeRequestOrBuilder
    * @return The snooze.
    */
   com.google.monitoring.v3.Snooze getSnooze();
+
   /**
    *
    *

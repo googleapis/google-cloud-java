@@ -33,6 +33,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.GcsSource)
     GcsSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GcsSource.newBuilder() to construct.
   private GcsSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,13 +69,14 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList uris_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
    * <pre>
    * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
    * wildcards. For more information on wildcards, see
-   * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+   * https://cloud.google.com/storage/docs/wildcards.
    * </pre>
    *
    * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -84,13 +86,14 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getUrisList() {
     return uris_;
   }
+
   /**
    *
    *
    * <pre>
    * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
    * wildcards. For more information on wildcards, see
-   * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+   * https://cloud.google.com/storage/docs/wildcards.
    * </pre>
    *
    * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -100,13 +103,14 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   public int getUrisCount() {
     return uris_.size();
   }
+
   /**
    *
    *
    * <pre>
    * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
    * wildcards. For more information on wildcards, see
-   * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+   * https://cloud.google.com/storage/docs/wildcards.
    * </pre>
    *
    * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -117,13 +121,14 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getUris(int index) {
     return uris_.get(index);
   }
+
   /**
    *
    *
    * <pre>
    * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
    * wildcards. For more information on wildcards, see
-   * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+   * https://cloud.google.com/storage/docs/wildcards.
    * </pre>
    *
    * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -300,6 +305,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -498,13 +504,14 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
      * <pre>
      * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
      * wildcards. For more information on wildcards, see
-     * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+     * https://cloud.google.com/storage/docs/wildcards.
      * </pre>
      *
      * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -515,13 +522,14 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       uris_.makeImmutable();
       return uris_;
     }
+
     /**
      *
      *
      * <pre>
      * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
      * wildcards. For more information on wildcards, see
-     * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+     * https://cloud.google.com/storage/docs/wildcards.
      * </pre>
      *
      * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -531,13 +539,14 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     public int getUrisCount() {
       return uris_.size();
     }
+
     /**
      *
      *
      * <pre>
      * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
      * wildcards. For more information on wildcards, see
-     * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+     * https://cloud.google.com/storage/docs/wildcards.
      * </pre>
      *
      * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -548,13 +557,14 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getUris(int index) {
       return uris_.get(index);
     }
+
     /**
      *
      *
      * <pre>
      * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
      * wildcards. For more information on wildcards, see
-     * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+     * https://cloud.google.com/storage/docs/wildcards.
      * </pre>
      *
      * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -565,13 +575,14 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getUrisBytes(int index) {
       return uris_.getByteString(index);
     }
+
     /**
      *
      *
      * <pre>
      * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
      * wildcards. For more information on wildcards, see
-     * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+     * https://cloud.google.com/storage/docs/wildcards.
      * </pre>
      *
      * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -590,13 +601,14 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
      * wildcards. For more information on wildcards, see
-     * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+     * https://cloud.google.com/storage/docs/wildcards.
      * </pre>
      *
      * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -614,13 +626,14 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
      * wildcards. For more information on wildcards, see
-     * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+     * https://cloud.google.com/storage/docs/wildcards.
      * </pre>
      *
      * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -635,13 +648,14 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
      * wildcards. For more information on wildcards, see
-     * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+     * https://cloud.google.com/storage/docs/wildcards.
      * </pre>
      *
      * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -655,13 +669,14 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
      * wildcards. For more information on wildcards, see
-     * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+     * https://cloud.google.com/storage/docs/wildcards.
      * </pre>
      *
      * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>

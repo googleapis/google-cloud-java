@@ -71,7 +71,7 @@ jobs:
     - uses: actions/setup-java@v4
       with:
         distribution: temurin
-        java-version: 11
+        java-version: 17
     - run: java -version
     - uses: actions/cache@v4
       id: mvn-cache
@@ -79,7 +79,7 @@ jobs:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: java -version
-    - run: mvn -B -ntp com.coveo:fmt-maven-plugin:check
+    - run: mvn -B -ntp com.spotify.fmt:fmt-maven-plugin:check -T 1C
     - run: mvn -B -ntp checkstyle:check@checkstyle
   enforcer:
     runs-on: ubuntu-latest
@@ -131,7 +131,7 @@ jobs:
           gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
           /src/library_generation/cli/entry_point.py validate-generation-config
       env:
-        library_generation_image_tag: 2.54.0
+        library_generation_image_tag: 2.57.0
         workspace_name: /workspace
 
 # TODO: Uncomment the needed Github Actions

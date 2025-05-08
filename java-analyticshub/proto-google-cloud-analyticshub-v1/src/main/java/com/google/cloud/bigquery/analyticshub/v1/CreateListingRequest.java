@@ -33,6 +33,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.CreateListingRequest)
     CreateListingRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateListingRequest.newBuilder() to construct.
   private CreateListingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,14 +129,13 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object listingId_ = "";
+
   /**
    *
    *
    * <pre>
    * Required. The ID of the listing to create.
-   * Must contain only Unicode letters, numbers (0-9), underscores (_).
-   * Should not use characters that require URL-escaping, or characters
-   * outside of ASCII, spaces.
+   * Must contain only ASCII letters, numbers (0-9), underscores (_).
    * Max length: 100 bytes.
    * </pre>
    *
@@ -153,14 +155,13 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
    * Required. The ID of the listing to create.
-   * Must contain only Unicode letters, numbers (0-9), underscores (_).
-   * Should not use characters that require URL-escaping, or characters
-   * outside of ASCII, spaces.
+   * Must contain only ASCII letters, numbers (0-9), underscores (_).
    * Max length: 100 bytes.
    * </pre>
    *
@@ -183,6 +184,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
 
   public static final int LISTING_FIELD_NUMBER = 3;
   private com.google.cloud.bigquery.analyticshub.v1.Listing listing_;
+
   /**
    *
    *
@@ -200,6 +202,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
   public boolean hasListing() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -219,6 +222,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.bigquery.analyticshub.v1.Listing.getDefaultInstance()
         : listing_;
   }
+
   /**
    *
    *
@@ -420,6 +424,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -651,6 +656,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -676,6 +682,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -701,6 +708,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -725,6 +733,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -745,6 +754,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -772,14 +782,13 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object listingId_ = "";
+
     /**
      *
      *
      * <pre>
      * Required. The ID of the listing to create.
-     * Must contain only Unicode letters, numbers (0-9), underscores (_).
-     * Should not use characters that require URL-escaping, or characters
-     * outside of ASCII, spaces.
+     * Must contain only ASCII letters, numbers (0-9), underscores (_).
      * Max length: 100 bytes.
      * </pre>
      *
@@ -798,14 +807,13 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Required. The ID of the listing to create.
-     * Must contain only Unicode letters, numbers (0-9), underscores (_).
-     * Should not use characters that require URL-escaping, or characters
-     * outside of ASCII, spaces.
+     * Must contain only ASCII letters, numbers (0-9), underscores (_).
      * Max length: 100 bytes.
      * </pre>
      *
@@ -824,14 +832,13 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Required. The ID of the listing to create.
-     * Must contain only Unicode letters, numbers (0-9), underscores (_).
-     * Should not use characters that require URL-escaping, or characters
-     * outside of ASCII, spaces.
+     * Must contain only ASCII letters, numbers (0-9), underscores (_).
      * Max length: 100 bytes.
      * </pre>
      *
@@ -849,14 +856,13 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Required. The ID of the listing to create.
-     * Must contain only Unicode letters, numbers (0-9), underscores (_).
-     * Should not use characters that require URL-escaping, or characters
-     * outside of ASCII, spaces.
+     * Must contain only ASCII letters, numbers (0-9), underscores (_).
      * Max length: 100 bytes.
      * </pre>
      *
@@ -870,14 +876,13 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Required. The ID of the listing to create.
-     * Must contain only Unicode letters, numbers (0-9), underscores (_).
-     * Should not use characters that require URL-escaping, or characters
-     * outside of ASCII, spaces.
+     * Must contain only ASCII letters, numbers (0-9), underscores (_).
      * Max length: 100 bytes.
      * </pre>
      *
@@ -903,6 +908,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.bigquery.analyticshub.v1.Listing.Builder,
             com.google.cloud.bigquery.analyticshub.v1.ListingOrBuilder>
         listingBuilder_;
+
     /**
      *
      *
@@ -919,6 +925,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
     public boolean hasListing() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -941,6 +948,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
         return listingBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -965,6 +973,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -987,6 +996,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1016,6 +1026,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1048,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1065,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getListingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1073,6 +1086,7 @@ public final class CreateListingRequest extends com.google.protobuf.GeneratedMes
             : listing_;
       }
     }
+
     /**
      *
      *

@@ -17,6 +17,7 @@
 package com.google.cloud.workflows.v1.stub;
 
 import static com.google.cloud.workflows.v1.WorkflowsClient.ListLocationsPagedResponse;
+import static com.google.cloud.workflows.v1.WorkflowsClient.ListWorkflowRevisionsPagedResponse;
 import static com.google.cloud.workflows.v1.WorkflowsClient.ListWorkflowsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -56,6 +57,8 @@ import com.google.cloud.location.Location;
 import com.google.cloud.workflows.v1.CreateWorkflowRequest;
 import com.google.cloud.workflows.v1.DeleteWorkflowRequest;
 import com.google.cloud.workflows.v1.GetWorkflowRequest;
+import com.google.cloud.workflows.v1.ListWorkflowRevisionsRequest;
+import com.google.cloud.workflows.v1.ListWorkflowRevisionsResponse;
 import com.google.cloud.workflows.v1.ListWorkflowsRequest;
 import com.google.cloud.workflows.v1.ListWorkflowsResponse;
 import com.google.cloud.workflows.v1.OperationMetadata;
@@ -166,6 +169,11 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
   private final OperationCallSettings<UpdateWorkflowRequest, Workflow, OperationMetadata>
       updateWorkflowOperationSettings;
   private final PagedCallSettings<
+          ListWorkflowRevisionsRequest,
+          ListWorkflowRevisionsResponse,
+          ListWorkflowRevisionsPagedResponse>
+      listWorkflowRevisionsSettings;
+  private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
@@ -200,6 +208,44 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
 
             @Override
             public Iterable<Workflow> extractResources(ListWorkflowsResponse payload) {
+              return payload.getWorkflowsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse, Workflow>
+      LIST_WORKFLOW_REVISIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse, Workflow>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListWorkflowRevisionsRequest injectToken(
+                ListWorkflowRevisionsRequest payload, String token) {
+              return ListWorkflowRevisionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListWorkflowRevisionsRequest injectPageSize(
+                ListWorkflowRevisionsRequest payload, int pageSize) {
+              return ListWorkflowRevisionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListWorkflowRevisionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListWorkflowRevisionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Workflow> extractResources(ListWorkflowRevisionsResponse payload) {
               return payload.getWorkflowsList();
             }
           };
@@ -252,6 +298,29 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
               PageContext<ListWorkflowsRequest, ListWorkflowsResponse, Workflow> pageContext =
                   PageContext.create(callable, LIST_WORKFLOWS_PAGE_STR_DESC, request, context);
               return ListWorkflowsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListWorkflowRevisionsRequest,
+          ListWorkflowRevisionsResponse,
+          ListWorkflowRevisionsPagedResponse>
+      LIST_WORKFLOW_REVISIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListWorkflowRevisionsRequest,
+              ListWorkflowRevisionsResponse,
+              ListWorkflowRevisionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListWorkflowRevisionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse> callable,
+                ListWorkflowRevisionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListWorkflowRevisionsResponse> futureResponse) {
+              PageContext<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse, Workflow>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_WORKFLOW_REVISIONS_PAGE_STR_DESC, request, context);
+              return ListWorkflowRevisionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -314,6 +383,15 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
   public OperationCallSettings<UpdateWorkflowRequest, Workflow, OperationMetadata>
       updateWorkflowOperationSettings() {
     return updateWorkflowOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listWorkflowRevisions. */
+  public PagedCallSettings<
+          ListWorkflowRevisionsRequest,
+          ListWorkflowRevisionsResponse,
+          ListWorkflowRevisionsPagedResponse>
+      listWorkflowRevisionsSettings() {
+    return listWorkflowRevisionsSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -444,6 +522,7 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
     deleteWorkflowOperationSettings = settingsBuilder.deleteWorkflowOperationSettings().build();
     updateWorkflowSettings = settingsBuilder.updateWorkflowSettings().build();
     updateWorkflowOperationSettings = settingsBuilder.updateWorkflowOperationSettings().build();
+    listWorkflowRevisionsSettings = settingsBuilder.listWorkflowRevisionsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -467,6 +546,11 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
         updateWorkflowSettings;
     private final OperationCallSettings.Builder<UpdateWorkflowRequest, Workflow, OperationMetadata>
         updateWorkflowOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListWorkflowRevisionsRequest,
+            ListWorkflowRevisionsResponse,
+            ListWorkflowRevisionsPagedResponse>
+        listWorkflowRevisionsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -506,6 +590,8 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
       deleteWorkflowOperationSettings = OperationCallSettings.newBuilder();
       updateWorkflowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateWorkflowOperationSettings = OperationCallSettings.newBuilder();
+      listWorkflowRevisionsSettings =
+          PagedCallSettings.newBuilder(LIST_WORKFLOW_REVISIONS_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -516,6 +602,7 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
               createWorkflowSettings,
               deleteWorkflowSettings,
               updateWorkflowSettings,
+              listWorkflowRevisionsSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -532,6 +619,7 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
       deleteWorkflowOperationSettings = settings.deleteWorkflowOperationSettings.toBuilder();
       updateWorkflowSettings = settings.updateWorkflowSettings.toBuilder();
       updateWorkflowOperationSettings = settings.updateWorkflowOperationSettings.toBuilder();
+      listWorkflowRevisionsSettings = settings.listWorkflowRevisionsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -542,6 +630,7 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
               createWorkflowSettings,
               deleteWorkflowSettings,
               updateWorkflowSettings,
+              listWorkflowRevisionsSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -593,6 +682,11 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
 
       builder
           .updateWorkflowSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listWorkflowRevisionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -739,6 +833,15 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
     public OperationCallSettings.Builder<UpdateWorkflowRequest, Workflow, OperationMetadata>
         updateWorkflowOperationSettings() {
       return updateWorkflowOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listWorkflowRevisions. */
+    public PagedCallSettings.Builder<
+            ListWorkflowRevisionsRequest,
+            ListWorkflowRevisionsResponse,
+            ListWorkflowRevisionsPagedResponse>
+        listWorkflowRevisionsSettings() {
+      return listWorkflowRevisionsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

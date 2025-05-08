@@ -310,7 +310,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SubscribeDataExchange</td>
- *      <td><p> Creates a Subscription to a Data Exchange. This is a long-running operation as it will create one or more linked datasets.</td>
+ *      <td><p> Creates a Subscription to a Data Clean Room. This is a long-running operation as it will create one or more linked datasets.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -2122,7 +2122,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Subscription to a Data Exchange. This is a long-running operation as it will create
+   * Creates a Subscription to a Data Clean Room. This is a long-running operation as it will create
    * one or more linked datasets.
    *
    * <p>Sample code:
@@ -2155,7 +2155,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Subscription to a Data Exchange. This is a long-running operation as it will create
+   * Creates a Subscription to a Data Clean Room. This is a long-running operation as it will create
    * one or more linked datasets.
    *
    * <p>Sample code:
@@ -2186,7 +2186,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Subscription to a Data Exchange. This is a long-running operation as it will create
+   * Creates a Subscription to a Data Clean Room. This is a long-running operation as it will create
    * one or more linked datasets.
    *
    * <p>Sample code:
@@ -2202,6 +2202,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *       SubscribeDataExchangeRequest.newBuilder()
    *           .setName(DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString())
    *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDestinationDataset(DestinationDataset.newBuilder().build())
    *           .setSubscription("subscription341203229")
    *           .setSubscriberContact("subscriberContact-847205736")
    *           .build();
@@ -2220,7 +2221,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Subscription to a Data Exchange. This is a long-running operation as it will create
+   * Creates a Subscription to a Data Clean Room. This is a long-running operation as it will create
    * one or more linked datasets.
    *
    * <p>Sample code:
@@ -2236,6 +2237,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *       SubscribeDataExchangeRequest.newBuilder()
    *           .setName(DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString())
    *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDestinationDataset(DestinationDataset.newBuilder().build())
    *           .setSubscription("subscription341203229")
    *           .setSubscriberContact("subscriberContact-847205736")
    *           .build();
@@ -2254,7 +2256,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Subscription to a Data Exchange. This is a long-running operation as it will create
+   * Creates a Subscription to a Data Clean Room. This is a long-running operation as it will create
    * one or more linked datasets.
    *
    * <p>Sample code:
@@ -2270,6 +2272,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *       SubscribeDataExchangeRequest.newBuilder()
    *           .setName(DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString())
    *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDestinationDataset(DestinationDataset.newBuilder().build())
    *           .setSubscription("subscription341203229")
    *           .setSubscriberContact("subscriberContact-847205736")
    *           .build();

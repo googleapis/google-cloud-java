@@ -191,7 +191,8 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateServiceLevelObjective, expected %s or %s",
+                  "Unrecognized response type %s for method CreateServiceLevelObjective, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ServiceLevelObjective.class.getName(),
                   Exception.class.getName())));
@@ -213,7 +214,8 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetServiceLevelObjective, expected %s or %s",
+                  "Unrecognized response type %s for method GetServiceLevelObjective, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ServiceLevelObjective.class.getName(),
                   Exception.class.getName())));
@@ -235,7 +237,8 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListServiceLevelObjectives, expected %s or %s",
+                  "Unrecognized response type %s for method ListServiceLevelObjectives, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListServiceLevelObjectivesResponse.class.getName(),
                   Exception.class.getName())));
@@ -257,7 +260,8 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateServiceLevelObjective, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateServiceLevelObjective, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ServiceLevelObjective.class.getName(),
                   Exception.class.getName())));
@@ -278,7 +282,8 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteServiceLevelObjective, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteServiceLevelObjective, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

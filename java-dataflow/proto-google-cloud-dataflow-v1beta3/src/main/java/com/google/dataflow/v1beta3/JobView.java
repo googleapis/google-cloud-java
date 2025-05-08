@@ -57,7 +57,12 @@ public enum JobView implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Request all information available for this job.
+   * Request all information available for this job. When the job is in
+   * `JOB_STATE_PENDING`, the job has been created but is not yet running, and
+   * not all job information is available. For complete
+   * job information, wait until the job in is `JOB_STATE_RUNNING`. For more
+   * information, see
+   * [JobState](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#jobstate).
    * </pre>
    *
    * <code>JOB_VIEW_ALL = 2;</code>
@@ -89,6 +94,7 @@ public enum JobView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_VIEW_UNKNOWN = 0;</code>
    */
   public static final int JOB_VIEW_UNKNOWN_VALUE = 0;
+
   /**
    *
    *
@@ -101,16 +107,23 @@ public enum JobView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_VIEW_SUMMARY = 1;</code>
    */
   public static final int JOB_VIEW_SUMMARY_VALUE = 1;
+
   /**
    *
    *
    * <pre>
-   * Request all information available for this job.
+   * Request all information available for this job. When the job is in
+   * `JOB_STATE_PENDING`, the job has been created but is not yet running, and
+   * not all job information is available. For complete
+   * job information, wait until the job in is `JOB_STATE_RUNNING`. For more
+   * information, see
+   * [JobState](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#jobstate).
    * </pre>
    *
    * <code>JOB_VIEW_ALL = 2;</code>
    */
   public static final int JOB_VIEW_ALL_VALUE = 2;
+
   /**
    *
    *

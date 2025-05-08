@@ -37,6 +37,7 @@ public interface GenerateAttachedClusterInstallManifestResponseOrBuilder
    * @return The manifest.
    */
   java.lang.String getManifest();
+
   /**
    *
    *

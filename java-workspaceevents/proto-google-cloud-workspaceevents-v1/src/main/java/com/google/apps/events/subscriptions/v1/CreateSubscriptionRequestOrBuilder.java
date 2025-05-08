@@ -38,6 +38,7 @@ public interface CreateSubscriptionRequestOrBuilder
    * @return Whether the subscription field is set.
    */
   boolean hasSubscription();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface CreateSubscriptionRequestOrBuilder
    * @return The subscription.
    */
   com.google.apps.events.subscriptions.v1.Subscription getSubscription();
+
   /**
    *
    *

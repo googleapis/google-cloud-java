@@ -30,7 +30,6 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGiVers
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.httpjson.longrunning.stub.OperationsStub;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
@@ -74,8 +73,12 @@ import com.google.cloud.oracledatabase.v1.ListEntitlementsResponse;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsResponse;
 import com.google.cloud.oracledatabase.v1.OperationMetadata;
+import com.google.cloud.oracledatabase.v1.RestartAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RestoreAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.StartAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.StopAutonomousDatabaseRequest;
 import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -88,8 +91,12 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class OracleDatabaseStub implements BackgroundResource {
 
-  public OperationsStub getHttpJsonOperationsStub() {
-    throw new UnsupportedOperationException("Not implemented: getHttpJsonOperationsStub()");
+  public OperationsStub getOperationsStub() {
+    return null;
+  }
+
+  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+    return null;
   }
 
   public UnaryCallable<
@@ -310,6 +317,38 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
       listAutonomousDatabaseBackupsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listAutonomousDatabaseBackupsCallable()");
+  }
+
+  public OperationCallable<StopAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      stopAutonomousDatabaseOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: stopAutonomousDatabaseOperationCallable()");
+  }
+
+  public UnaryCallable<StopAutonomousDatabaseRequest, Operation> stopAutonomousDatabaseCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopAutonomousDatabaseCallable()");
+  }
+
+  public OperationCallable<StartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      startAutonomousDatabaseOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: startAutonomousDatabaseOperationCallable()");
+  }
+
+  public UnaryCallable<StartAutonomousDatabaseRequest, Operation>
+      startAutonomousDatabaseCallable() {
+    throw new UnsupportedOperationException("Not implemented: startAutonomousDatabaseCallable()");
+  }
+
+  public OperationCallable<RestartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      restartAutonomousDatabaseOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: restartAutonomousDatabaseOperationCallable()");
+  }
+
+  public UnaryCallable<RestartAutonomousDatabaseRequest, Operation>
+      restartAutonomousDatabaseCallable() {
+    throw new UnsupportedOperationException("Not implemented: restartAutonomousDatabaseCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

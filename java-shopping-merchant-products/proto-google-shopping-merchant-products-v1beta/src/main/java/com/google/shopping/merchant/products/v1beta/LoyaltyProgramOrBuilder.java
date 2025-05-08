@@ -40,6 +40,7 @@ public interface LoyaltyProgramOrBuilder
    * @return Whether the programLabel field is set.
    */
   boolean hasProgramLabel();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface LoyaltyProgramOrBuilder
    * @return The programLabel.
    */
   java.lang.String getProgramLabel();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface LoyaltyProgramOrBuilder
    * @return Whether the tierLabel field is set.
    */
   boolean hasTierLabel();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface LoyaltyProgramOrBuilder
    * @return The tierLabel.
    */
   java.lang.String getTierLabel();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface LoyaltyProgramOrBuilder
    * @return Whether the price field is set.
    */
   boolean hasPrice();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface LoyaltyProgramOrBuilder
    * @return The price.
    */
   com.google.shopping.type.Price getPrice();
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public interface LoyaltyProgramOrBuilder
    * @return Whether the cashbackForFutureUse field is set.
    */
   boolean hasCashbackForFutureUse();
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public interface LoyaltyProgramOrBuilder
    * @return The cashbackForFutureUse.
    */
   com.google.shopping.type.Price getCashbackForFutureUse();
+
   /**
    *
    *
@@ -198,6 +206,7 @@ public interface LoyaltyProgramOrBuilder
    * @return Whether the loyaltyPoints field is set.
    */
   boolean hasLoyaltyPoints();
+
   /**
    *
    *
@@ -226,6 +235,7 @@ public interface LoyaltyProgramOrBuilder
    * @return Whether the memberPriceEffectiveDate field is set.
    */
   boolean hasMemberPriceEffectiveDate();
+
   /**
    *
    *
@@ -241,6 +251,7 @@ public interface LoyaltyProgramOrBuilder
    * @return The memberPriceEffectiveDate.
    */
   com.google.type.Interval getMemberPriceEffectiveDate();
+
   /**
    *
    *
@@ -269,6 +280,7 @@ public interface LoyaltyProgramOrBuilder
    * @return Whether the shippingLabel field is set.
    */
   boolean hasShippingLabel();
+
   /**
    *
    *
@@ -283,6 +295,7 @@ public interface LoyaltyProgramOrBuilder
    * @return The shippingLabel.
    */
   java.lang.String getShippingLabel();
+
   /**
    *
    *

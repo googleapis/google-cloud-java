@@ -34,6 +34,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.BusinessIdentity)
     BusinessIdentityOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BusinessIdentity.newBuilder() to construct.
   private BusinessIdentity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -122,6 +123,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
      * <code>PROMOTIONS_CONSENT_UNSPECIFIED = 0;</code>
      */
     public static final int PROMOTIONS_CONSENT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -133,6 +135,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
      * <code>PROMOTIONS_CONSENT_GIVEN = 1;</code>
      */
     public static final int PROMOTIONS_CONSENT_GIVEN_VALUE = 1;
+
     /**
      *
      *
@@ -252,6 +255,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
      * @return The enum numeric value on the wire for identityDeclaration.
      */
     int getIdentityDeclarationValue();
+
     /**
      *
      *
@@ -269,6 +273,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
             .IdentityDeclaration
         getIdentityDeclaration();
   }
+
   /**
    *
    *
@@ -284,6 +289,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.BusinessIdentity.IdentityAttribute)
       IdentityAttributeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IdentityAttribute.newBuilder() to construct.
     private IdentityAttribute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -369,6 +375,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
        * <code>IDENTITY_DECLARATION_UNSPECIFIED = 0;</code>
        */
       public static final int IDENTITY_DECLARATION_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -379,6 +386,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
        * <code>SELF_IDENTIFIES_AS = 1;</code>
        */
       public static final int SELF_IDENTIFIES_AS_VALUE = 1;
+
       /**
        *
        *
@@ -481,6 +489,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
 
     public static final int IDENTITY_DECLARATION_FIELD_NUMBER = 1;
     private int identityDeclaration_ = 0;
+
     /**
      *
      *
@@ -498,6 +507,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
     public int getIdentityDeclarationValue() {
       return identityDeclaration_;
     }
+
     /**
      *
      *
@@ -701,6 +711,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -903,6 +914,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private int identityDeclaration_ = 0;
+
       /**
        *
        *
@@ -920,6 +932,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       public int getIdentityDeclarationValue() {
         return identityDeclaration_;
       }
+
       /**
        *
        *
@@ -940,6 +953,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -967,6 +981,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
                 .IdentityDeclaration.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -993,6 +1008,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1087,6 +1103,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1111,6 +1128,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -1138,6 +1156,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
 
   public static final int PROMOTIONS_CONSENT_FIELD_NUMBER = 2;
   private int promotionsConsent_ = 0;
+
   /**
    *
    *
@@ -1155,6 +1174,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
   public int getPromotionsConsentValue() {
     return promotionsConsent_;
   }
+
   /**
    *
    *
@@ -1183,6 +1203,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
   public static final int BLACK_OWNED_FIELD_NUMBER = 3;
   private com.google.shopping.merchant.accounts.v1beta.BusinessIdentity.IdentityAttribute
       blackOwned_;
+
   /**
    *
    *
@@ -1203,6 +1224,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
   public boolean hasBlackOwned() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1227,6 +1249,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance()
         : blackOwned_;
   }
+
   /**
    *
    *
@@ -1253,6 +1276,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
   public static final int WOMEN_OWNED_FIELD_NUMBER = 4;
   private com.google.shopping.merchant.accounts.v1beta.BusinessIdentity.IdentityAttribute
       womenOwned_;
+
   /**
    *
    *
@@ -1273,6 +1297,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
   public boolean hasWomenOwned() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1297,6 +1322,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance()
         : womenOwned_;
   }
+
   /**
    *
    *
@@ -1323,6 +1349,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
   public static final int VETERAN_OWNED_FIELD_NUMBER = 5;
   private com.google.shopping.merchant.accounts.v1beta.BusinessIdentity.IdentityAttribute
       veteranOwned_;
+
   /**
    *
    *
@@ -1343,6 +1370,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
   public boolean hasVeteranOwned() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1367,6 +1395,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance()
         : veteranOwned_;
   }
+
   /**
    *
    *
@@ -1393,6 +1422,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
   public static final int LATINO_OWNED_FIELD_NUMBER = 6;
   private com.google.shopping.merchant.accounts.v1beta.BusinessIdentity.IdentityAttribute
       latinoOwned_;
+
   /**
    *
    *
@@ -1413,6 +1443,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
   public boolean hasLatinoOwned() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1437,6 +1468,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance()
         : latinoOwned_;
   }
+
   /**
    *
    *
@@ -1463,6 +1495,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
   public static final int SMALL_BUSINESS_FIELD_NUMBER = 7;
   private com.google.shopping.merchant.accounts.v1beta.BusinessIdentity.IdentityAttribute
       smallBusiness_;
+
   /**
    *
    *
@@ -1482,6 +1515,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
   public boolean hasSmallBusiness() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1505,6 +1539,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance()
         : smallBusiness_;
   }
+
   /**
    *
    *
@@ -1772,6 +1807,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2081,6 +2117,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2104,6 +2141,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2127,6 +2165,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2149,6 +2188,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2167,6 +2207,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2192,6 +2233,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
     }
 
     private int promotionsConsent_ = 0;
+
     /**
      *
      *
@@ -2209,6 +2251,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
     public int getPromotionsConsentValue() {
       return promotionsConsent_;
     }
+
     /**
      *
      *
@@ -2229,6 +2272,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2253,6 +2297,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2277,6 +2322,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2305,6 +2351,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
             com.google.shopping.merchant.accounts.v1beta.BusinessIdentity
                 .IdentityAttributeOrBuilder>
         blackOwnedBuilder_;
+
     /**
      *
      *
@@ -2324,6 +2371,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
     public boolean hasBlackOwned() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2351,6 +2399,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
         return blackOwnedBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2379,6 +2428,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2405,6 +2455,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2440,6 +2491,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2464,6 +2516,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2484,6 +2537,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getBlackOwnedFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2509,6 +2563,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
             : blackOwned_;
       }
     }
+
     /**
      *
      *
@@ -2551,6 +2606,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
             com.google.shopping.merchant.accounts.v1beta.BusinessIdentity
                 .IdentityAttributeOrBuilder>
         womenOwnedBuilder_;
+
     /**
      *
      *
@@ -2570,6 +2626,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
     public boolean hasWomenOwned() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2597,6 +2654,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
         return womenOwnedBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2625,6 +2683,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2651,6 +2710,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2686,6 +2746,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2710,6 +2771,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2730,6 +2792,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getWomenOwnedFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2755,6 +2818,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
             : womenOwned_;
       }
     }
+
     /**
      *
      *
@@ -2797,6 +2861,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
             com.google.shopping.merchant.accounts.v1beta.BusinessIdentity
                 .IdentityAttributeOrBuilder>
         veteranOwnedBuilder_;
+
     /**
      *
      *
@@ -2816,6 +2881,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
     public boolean hasVeteranOwned() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2843,6 +2909,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
         return veteranOwnedBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2871,6 +2938,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2897,6 +2965,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2932,6 +3001,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2956,6 +3026,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2976,6 +3047,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getVeteranOwnedFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3001,6 +3073,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
             : veteranOwned_;
       }
     }
+
     /**
      *
      *
@@ -3043,6 +3116,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
             com.google.shopping.merchant.accounts.v1beta.BusinessIdentity
                 .IdentityAttributeOrBuilder>
         latinoOwnedBuilder_;
+
     /**
      *
      *
@@ -3062,6 +3136,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
     public boolean hasLatinoOwned() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3089,6 +3164,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
         return latinoOwnedBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3117,6 +3193,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3143,6 +3220,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3178,6 +3256,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3202,6 +3281,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3222,6 +3302,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getLatinoOwnedFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3247,6 +3328,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
             : latinoOwned_;
       }
     }
+
     /**
      *
      *
@@ -3289,6 +3371,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
             com.google.shopping.merchant.accounts.v1beta.BusinessIdentity
                 .IdentityAttributeOrBuilder>
         smallBusinessBuilder_;
+
     /**
      *
      *
@@ -3307,6 +3390,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
     public boolean hasSmallBusiness() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -3333,6 +3417,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
         return smallBusinessBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3360,6 +3445,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3385,6 +3471,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3419,6 +3506,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -3442,6 +3530,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3461,6 +3550,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getSmallBusinessFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3485,6 +3575,7 @@ public final class BusinessIdentity extends com.google.protobuf.GeneratedMessage
             : smallBusiness_;
       }
     }
+
     /**
      *
      *

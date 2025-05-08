@@ -25,7 +25,8 @@ package com.google.dataflow.v1beta3;
  * <pre>
  * JobMetrics contains a collection of metrics describing the detailed progress
  * of a Dataflow job. Metrics correspond to user-defined and system-defined
- * metrics in the job.
+ * metrics in the job. For more information, see [Dataflow job metrics]
+ * (https://cloud.google.com/dataflow/docs/guides/using-monitoring-intf).
  *
  * This resource captures only the most recent values of each metric;
  * time-series data can be queried for them (under the same metric names)
@@ -39,6 +40,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.JobMetrics)
     JobMetricsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use JobMetrics.newBuilder() to construct.
   private JobMetrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +74,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int METRIC_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp metricTime_;
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMetricTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getMetricTime() {
     return metricTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : metricTime_;
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.MetricUpdate> metrics_;
+
   /**
    *
    *
@@ -133,6 +139,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.dataflow.v1beta3.MetricUpdate> getMetricsList() {
     return metrics_;
   }
+
   /**
    *
    *
@@ -147,6 +154,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
       getMetricsOrBuilderList() {
     return metrics_;
   }
+
   /**
    *
    *
@@ -160,6 +168,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
   public int getMetricsCount() {
     return metrics_.size();
   }
+
   /**
    *
    *
@@ -173,6 +182,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.MetricUpdate getMetrics(int index) {
     return metrics_.get(index);
   }
+
   /**
    *
    *
@@ -361,13 +371,15 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
    * <pre>
    * JobMetrics contains a collection of metrics describing the detailed progress
    * of a Dataflow job. Metrics correspond to user-defined and system-defined
-   * metrics in the job.
+   * metrics in the job. For more information, see [Dataflow job metrics]
+   * (https://cloud.google.com/dataflow/docs/guides/using-monitoring-intf).
    *
    * This resource captures only the most recent values of each metric;
    * time-series data can be queried for them (under the same metric names)
@@ -630,6 +642,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         metricTimeBuilder_;
+
     /**
      *
      *
@@ -644,6 +657,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMetricTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -664,6 +678,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
         return metricTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -686,6 +701,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +721,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +749,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +769,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +784,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMetricTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -783,6 +803,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
             : metricTime_;
       }
     }
+
     /**
      *
      *
@@ -841,6 +862,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
         return metricsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -857,6 +879,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
         return metricsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -873,6 +896,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
         return metricsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -895,6 +919,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +940,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +963,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +986,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +1006,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1027,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1048,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1068,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1088,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1101,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.MetricUpdate.Builder getMetricsBuilder(int index) {
       return getMetricsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1084,6 +1118,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
         return metricsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1101,6 +1136,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(metrics_);
       }
     }
+
     /**
      *
      *
@@ -1114,6 +1150,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
       return getMetricsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.MetricUpdate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1127,6 +1164,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
       return getMetricsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.MetricUpdate.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CachedContent)
     CachedContentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CachedContent.newBuilder() to construct.
   private CachedContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -138,6 +139,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
      */
     int getAudioDurationSeconds();
   }
+
   /**
    *
    *
@@ -152,6 +154,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CachedContent.UsageMetadata)
       UsageMetadataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use UsageMetadata.newBuilder() to construct.
     private UsageMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -182,6 +185,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TOTAL_TOKEN_COUNT_FIELD_NUMBER = 1;
     private int totalTokenCount_ = 0;
+
     /**
      *
      *
@@ -200,6 +204,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TEXT_COUNT_FIELD_NUMBER = 2;
     private int textCount_ = 0;
+
     /**
      *
      *
@@ -218,6 +223,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
 
     public static final int IMAGE_COUNT_FIELD_NUMBER = 3;
     private int imageCount_ = 0;
+
     /**
      *
      *
@@ -236,6 +242,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
 
     public static final int VIDEO_DURATION_SECONDS_FIELD_NUMBER = 4;
     private int videoDurationSeconds_ = 0;
+
     /**
      *
      *
@@ -254,6 +261,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
 
     public static final int AUDIO_DURATION_SECONDS_FIELD_NUMBER = 5;
     private int audioDurationSeconds_ = 0;
+
     /**
      *
      *
@@ -467,6 +475,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -707,6 +716,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int totalTokenCount_;
+
       /**
        *
        *
@@ -722,6 +732,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       public int getTotalTokenCount() {
         return totalTokenCount_;
       }
+
       /**
        *
        *
@@ -741,6 +752,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -760,6 +772,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int textCount_;
+
       /**
        *
        *
@@ -775,6 +788,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       public int getTextCount() {
         return textCount_;
       }
+
       /**
        *
        *
@@ -794,6 +808,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -813,6 +828,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int imageCount_;
+
       /**
        *
        *
@@ -828,6 +844,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       public int getImageCount() {
         return imageCount_;
       }
+
       /**
        *
        *
@@ -847,6 +864,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -866,6 +884,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int videoDurationSeconds_;
+
       /**
        *
        *
@@ -881,6 +900,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       public int getVideoDurationSeconds() {
         return videoDurationSeconds_;
       }
+
       /**
        *
        *
@@ -900,6 +920,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -919,6 +940,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int audioDurationSeconds_;
+
       /**
        *
        *
@@ -934,6 +956,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       public int getAudioDurationSeconds() {
         return audioDurationSeconds_;
       }
+
       /**
        *
        *
@@ -953,6 +976,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1054,6 +1078,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     private ExpirationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1087,6 +1112,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -1104,6 +1130,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpireTime() {
     return expirationCase_ == 9;
   }
+
   /**
    *
    *
@@ -1124,6 +1151,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1144,6 +1172,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TTL_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -1160,6 +1189,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTtl() {
     return expirationCase_ == 10;
   }
+
   /**
    *
    *
@@ -1179,6 +1209,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Duration.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1201,6 +1232,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1228,6 +1260,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1260,6 +1293,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -1286,6 +1320,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1317,13 +1352,14 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
+
   /**
    *
    *
    * <pre>
-   * Immutable. The name of the publisher model to use for cached content.
-   * Format:
-   * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+   * Immutable. The name of the `Model` to use for cached content. Currently,
+   * only the published Gemini base models are supported, in form of
+   * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
    * </pre>
    *
    * <code>string model = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1342,13 +1378,14 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Immutable. The name of the publisher model to use for cached content.
-   * Format:
-   * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+   * Immutable. The name of the `Model` to use for cached content. Currently,
+   * only the published Gemini base models are supported, in form of
+   * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
    * </pre>
    *
    * <code>string model = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1370,6 +1407,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SYSTEM_INSTRUCTION_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1.Content systemInstruction_;
+
   /**
    *
    *
@@ -1388,6 +1426,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSystemInstruction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1408,6 +1447,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1.Content.getDefaultInstance()
         : systemInstruction_;
   }
+
   /**
    *
    *
@@ -1431,6 +1471,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.Content> contents_;
+
   /**
    *
    *
@@ -1446,6 +1487,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.aiplatform.v1.Content> getContentsList() {
     return contents_;
   }
+
   /**
    *
    *
@@ -1462,6 +1504,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       getContentsOrBuilderList() {
     return contents_;
   }
+
   /**
    *
    *
@@ -1477,6 +1520,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
   public int getContentsCount() {
     return contents_.size();
   }
+
   /**
    *
    *
@@ -1492,6 +1536,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1.Content getContents(int index) {
     return contents_.get(index);
   }
+
   /**
    *
    *
@@ -1512,6 +1557,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.Tool> tools_;
+
   /**
    *
    *
@@ -1528,6 +1574,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.aiplatform.v1.Tool> getToolsList() {
     return tools_;
   }
+
   /**
    *
    *
@@ -1545,6 +1592,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       getToolsOrBuilderList() {
     return tools_;
   }
+
   /**
    *
    *
@@ -1561,6 +1609,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
   public int getToolsCount() {
     return tools_.size();
   }
+
   /**
    *
    *
@@ -1577,6 +1626,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1.Tool getTools(int index) {
     return tools_.get(index);
   }
+
   /**
    *
    *
@@ -1596,6 +1646,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOOL_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.aiplatform.v1.ToolConfig toolConfig_;
+
   /**
    *
    *
@@ -1614,6 +1665,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasToolConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1634,6 +1686,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1.ToolConfig.getDefaultInstance()
         : toolConfig_;
   }
+
   /**
    *
    *
@@ -1655,11 +1708,12 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
    * <pre>
-   * Output only. Creatation time of the cache entry.
+   * Output only. Creation time of the cache entry.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1671,11 +1725,12 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Output only. Creatation time of the cache entry.
+   * Output only. Creation time of the cache entry.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1687,11 +1742,12 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
    * <pre>
-   * Output only. Creatation time of the cache entry.
+   * Output only. Creation time of the cache entry.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1704,6 +1760,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -1720,6 +1777,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1736,6 +1794,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -1753,6 +1812,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USAGE_METADATA_FIELD_NUMBER = 12;
   private com.google.cloud.aiplatform.v1.CachedContent.UsageMetadata usageMetadata_;
+
   /**
    *
    *
@@ -1770,6 +1830,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUsageMetadata() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1789,6 +1850,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1.CachedContent.UsageMetadata.getDefaultInstance()
         : usageMetadata_;
   }
+
   /**
    *
    *
@@ -1806,6 +1868,71 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     return usageMetadata_ == null
         ? com.google.cloud.aiplatform.v1.CachedContent.UsageMetadata.getDefaultInstance()
         : usageMetadata_;
+  }
+
+  public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 13;
+  private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Immutable. Customer-managed encryption key spec for a
+   * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+   * will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionSpec() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Immutable. Customer-managed encryption key spec for a
+   * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+   * will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Immutable. Customer-managed encryption key spec for a
+   * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+   * will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1858,6 +1985,9 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(12, getUsageMetadata());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(13, getEncryptionSpec());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1907,6 +2037,9 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getUsageMetadata());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getEncryptionSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1947,6 +2080,10 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     if (hasUsageMetadata() != other.hasUsageMetadata()) return false;
     if (hasUsageMetadata()) {
       if (!getUsageMetadata().equals(other.getUsageMetadata())) return false;
+    }
+    if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
+    if (hasEncryptionSpec()) {
+      if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
     }
     if (!getExpirationCase().equals(other.getExpirationCase())) return false;
     switch (expirationCase_) {
@@ -2003,6 +2140,10 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     if (hasUsageMetadata()) {
       hash = (37 * hash) + USAGE_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getUsageMetadata().hashCode();
+    }
+    if (hasEncryptionSpec()) {
+      hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
     switch (expirationCase_) {
       case 9:
@@ -2116,6 +2257,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2164,6 +2306,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getUsageMetadataFieldBuilder();
+        getEncryptionSpecFieldBuilder();
       }
     }
 
@@ -2218,6 +2361,11 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       if (usageMetadataBuilder_ != null) {
         usageMetadataBuilder_.dispose();
         usageMetadataBuilder_ = null;
+      }
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
       }
       expirationCase_ = 0;
       expiration_ = null;
@@ -2313,6 +2461,11 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         result.usageMetadata_ =
             usageMetadataBuilder_ == null ? usageMetadata_ : usageMetadataBuilder_.build();
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.encryptionSpec_ =
+            encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2457,6 +2610,9 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUsageMetadata()) {
         mergeUsageMetadata(other.getUsageMetadata());
       }
+      if (other.hasEncryptionSpec()) {
+        mergeEncryptionSpec(other.getEncryptionSpec());
+      }
       switch (other.getExpirationCase()) {
         case EXPIRE_TIME:
           {
@@ -2586,6 +2742,12 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 98
+            case 106:
+              {
+                input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2624,6 +2786,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
+
     /**
      *
      *
@@ -2641,6 +2804,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpireTime() {
       return expirationCase_ == 9;
     }
+
     /**
      *
      *
@@ -2668,6 +2832,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2692,6 +2857,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       expirationCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -2713,6 +2879,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       expirationCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -2746,6 +2913,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       expirationCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -2773,6 +2941,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2787,6 +2956,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
       return getExpireTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2809,6 +2979,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2847,6 +3018,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         ttlBuilder_;
+
     /**
      *
      *
@@ -2863,6 +3035,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTtl() {
       return expirationCase_ == 10;
     }
+
     /**
      *
      *
@@ -2889,6 +3062,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Duration.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2912,6 +3086,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       expirationCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2932,6 +3107,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       expirationCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2964,6 +3140,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       expirationCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2990,6 +3167,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3003,6 +3181,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Duration.Builder getTtlBuilder() {
       return getTtlFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3024,6 +3203,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Duration.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3057,6 +3237,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3083,6 +3264,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3109,6 +3291,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3134,6 +3317,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3155,6 +3339,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3183,6 +3368,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -3208,6 +3394,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3233,6 +3420,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3257,6 +3445,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3277,6 +3466,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3304,13 +3494,14 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object model_ = "";
+
     /**
      *
      *
      * <pre>
-     * Immutable. The name of the publisher model to use for cached content.
-     * Format:
-     * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+     * Immutable. The name of the `Model` to use for cached content. Currently,
+     * only the published Gemini base models are supported, in form of
+     * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3328,13 +3519,14 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Immutable. The name of the publisher model to use for cached content.
-     * Format:
-     * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+     * Immutable. The name of the `Model` to use for cached content. Currently,
+     * only the published Gemini base models are supported, in form of
+     * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3352,13 +3544,14 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Immutable. The name of the publisher model to use for cached content.
-     * Format:
-     * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+     * Immutable. The name of the `Model` to use for cached content. Currently,
+     * only the published Gemini base models are supported, in form of
+     * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3375,13 +3568,14 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Immutable. The name of the publisher model to use for cached content.
-     * Format:
-     * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+     * Immutable. The name of the `Model` to use for cached content. Currently,
+     * only the published Gemini base models are supported, in form of
+     * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3394,13 +3588,14 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Immutable. The name of the publisher model to use for cached content.
-     * Format:
-     * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+     * Immutable. The name of the `Model` to use for cached content. Currently,
+     * only the published Gemini base models are supported, in form of
+     * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
      * </pre>
      *
      * <code>string model = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3425,6 +3620,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.Content.Builder,
             com.google.cloud.aiplatform.v1.ContentOrBuilder>
         systemInstructionBuilder_;
+
     /**
      *
      *
@@ -3442,6 +3638,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSystemInstruction() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3465,6 +3662,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return systemInstructionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3490,6 +3688,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3513,6 +3712,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3543,6 +3743,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3565,6 +3766,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3582,6 +3784,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSystemInstructionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3603,6 +3806,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
             : systemInstruction_;
       }
     }
+
     /**
      *
      *
@@ -3666,6 +3870,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return contentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3684,6 +3889,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return contentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3702,6 +3908,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return contentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3726,6 +3933,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3748,6 +3956,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3772,6 +3981,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3796,6 +4006,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3817,6 +4028,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3839,6 +4051,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3861,6 +4074,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3882,6 +4096,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3903,6 +4118,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3917,6 +4133,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.Content.Builder getContentsBuilder(int index) {
       return getContentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3935,6 +4152,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return contentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3954,6 +4172,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(contents_);
       }
     }
+
     /**
      *
      *
@@ -3969,6 +4188,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       return getContentsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.Content.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3984,6 +4204,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       return getContentsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.Content.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4051,6 +4272,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return toolsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4070,6 +4292,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return toolsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4089,6 +4312,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return toolsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4114,6 +4338,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4137,6 +4362,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4162,6 +4388,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4187,6 +4414,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4209,6 +4437,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4232,6 +4461,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4255,6 +4485,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4277,6 +4508,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4299,6 +4531,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4314,6 +4547,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.Tool.Builder getToolsBuilder(int index) {
       return getToolsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4333,6 +4567,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return toolsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4353,6 +4588,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(tools_);
       }
     }
+
     /**
      *
      *
@@ -4369,6 +4605,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       return getToolsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.Tool.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4385,6 +4622,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       return getToolsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.Tool.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4424,6 +4662,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.ToolConfig.Builder,
             com.google.cloud.aiplatform.v1.ToolConfigOrBuilder>
         toolConfigBuilder_;
+
     /**
      *
      *
@@ -4441,6 +4680,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasToolConfig() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -4464,6 +4704,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return toolConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4489,6 +4730,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4512,6 +4754,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4542,6 +4785,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4564,6 +4808,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4581,6 +4826,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getToolConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4602,6 +4848,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
             : toolConfig_;
       }
     }
+
     /**
      *
      *
@@ -4637,11 +4884,12 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
      * <pre>
-     * Output only. Creatation time of the cache entry.
+     * Output only. Creation time of the cache entry.
      * </pre>
      *
      * <code>
@@ -4653,11 +4901,12 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. Creatation time of the cache entry.
+     * Output only. Creation time of the cache entry.
      * </pre>
      *
      * <code>
@@ -4675,11 +4924,12 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. Creatation time of the cache entry.
+     * Output only. Creation time of the cache entry.
      * </pre>
      *
      * <code>
@@ -4699,11 +4949,12 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. Creatation time of the cache entry.
+     * Output only. Creation time of the cache entry.
      * </pre>
      *
      * <code>
@@ -4720,11 +4971,12 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. Creatation time of the cache entry.
+     * Output only. Creation time of the cache entry.
      * </pre>
      *
      * <code>
@@ -4749,11 +5001,12 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. Creatation time of the cache entry.
+     * Output only. Creation time of the cache entry.
      * </pre>
      *
      * <code>
@@ -4770,11 +5023,12 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. Creatation time of the cache entry.
+     * Output only. Creation time of the cache entry.
      * </pre>
      *
      * <code>
@@ -4786,11 +5040,12 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. Creatation time of the cache entry.
+     * Output only. Creation time of the cache entry.
      * </pre>
      *
      * <code>
@@ -4806,11 +5061,12 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. Creatation time of the cache entry.
+     * Output only. Creation time of the cache entry.
      * </pre>
      *
      * <code>
@@ -4840,6 +5096,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -4856,6 +5113,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -4878,6 +5136,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4902,6 +5161,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4923,6 +5183,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4952,6 +5213,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4973,6 +5235,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4989,6 +5252,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5009,6 +5273,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -5043,6 +5308,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.CachedContent.UsageMetadata.Builder,
             com.google.cloud.aiplatform.v1.CachedContent.UsageMetadataOrBuilder>
         usageMetadataBuilder_;
+
     /**
      *
      *
@@ -5059,6 +5325,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUsageMetadata() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -5081,6 +5348,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         return usageMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5106,6 +5374,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5128,6 +5397,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5160,6 +5430,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5181,6 +5452,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5198,6 +5470,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUsageMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5219,6 +5492,7 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
             : usageMetadata_;
       }
     }
+
     /**
      *
      *
@@ -5245,6 +5519,238 @@ public final class CachedContent extends com.google.protobuf.GeneratedMessageV3
         usageMetadata_ = null;
       }
       return usageMetadataBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>
+        encryptionSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Customer-managed encryption key spec for a
+     * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+     * will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the encryptionSpec field is set.
+     */
+    public boolean hasEncryptionSpec() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Customer-managed encryption key spec for a
+     * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+     * will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The encryptionSpec.
+     */
+    public com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      } else {
+        return encryptionSpecBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Customer-managed encryption key spec for a
+     * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+     * will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionSpec_ = value;
+      } else {
+        encryptionSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Customer-managed encryption key spec for a
+     * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+     * will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setEncryptionSpec(
+        com.google.cloud.aiplatform.v1.EncryptionSpec.Builder builderForValue) {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = builderForValue.build();
+      } else {
+        encryptionSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Customer-managed encryption key spec for a
+     * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+     * will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && encryptionSpec_ != null
+            && encryptionSpec_
+                != com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()) {
+          getEncryptionSpecBuilder().mergeFrom(value);
+        } else {
+          encryptionSpec_ = value;
+        }
+      } else {
+        encryptionSpecBuilder_.mergeFrom(value);
+      }
+      if (encryptionSpec_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Customer-managed encryption key spec for a
+     * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+     * will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearEncryptionSpec() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Customer-managed encryption key spec for a
+     * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+     * will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getEncryptionSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Customer-managed encryption key spec for a
+     * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+     * will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+      if (encryptionSpecBuilder_ != null) {
+        return encryptionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Customer-managed encryption key spec for a
+     * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+     * will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>
+        getEncryptionSpecFieldBuilder() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.EncryptionSpec,
+                com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
+                com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>(
+                getEncryptionSpec(), getParentForChildren(), isClean());
+        encryptionSpec_ = null;
+      }
+      return encryptionSpecBuilder_;
     }
 
     @java.lang.Override

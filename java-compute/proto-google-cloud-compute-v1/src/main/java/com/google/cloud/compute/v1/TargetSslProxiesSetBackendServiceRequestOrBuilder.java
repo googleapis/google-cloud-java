@@ -36,6 +36,7 @@ public interface TargetSslProxiesSetBackendServiceRequestOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TargetSslProxiesSetBackendServiceRequestOrBuilder
    * @return The service.
    */
   java.lang.String getService();
+
   /**
    *
    *

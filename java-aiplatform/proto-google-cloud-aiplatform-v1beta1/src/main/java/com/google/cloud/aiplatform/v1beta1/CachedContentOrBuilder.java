@@ -38,6 +38,7 @@ public interface CachedContentOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface CachedContentOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface CachedContentOrBuilder
    * @return Whether the ttl field is set.
    */
   boolean hasTtl();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface CachedContentOrBuilder
    * @return The ttl.
    */
   com.google.protobuf.Duration getTtl();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface CachedContentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface CachedContentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -171,9 +177,9 @@ public interface CachedContentOrBuilder
    *
    *
    * <pre>
-   * Immutable. The name of the publisher model to use for cached content.
-   * Format:
-   * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+   * Immutable. The name of the `Model` to use for cached content. Currently,
+   * only the published Gemini base models are supported, in form of
+   * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
    * </pre>
    *
    * <code>string model = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -181,13 +187,14 @@ public interface CachedContentOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *
    * <pre>
-   * Immutable. The name of the publisher model to use for cached content.
-   * Format:
-   * projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+   * Immutable. The name of the `Model` to use for cached content. Currently,
+   * only the published Gemini base models are supported, in form of
+   * projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
    * </pre>
    *
    * <code>string model = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -211,6 +218,7 @@ public interface CachedContentOrBuilder
    * @return Whether the systemInstruction field is set.
    */
   boolean hasSystemInstruction();
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public interface CachedContentOrBuilder
    * @return The systemInstruction.
    */
   com.google.cloud.aiplatform.v1beta1.Content getSystemInstruction();
+
   /**
    *
    *
@@ -252,6 +261,7 @@ public interface CachedContentOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getContentsList();
+
   /**
    *
    *
@@ -264,6 +274,7 @@ public interface CachedContentOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Content getContents(int index);
+
   /**
    *
    *
@@ -276,6 +287,7 @@ public interface CachedContentOrBuilder
    * </code>
    */
   int getContentsCount();
+
   /**
    *
    *
@@ -289,6 +301,7 @@ public interface CachedContentOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ContentOrBuilder>
       getContentsOrBuilderList();
+
   /**
    *
    *
@@ -315,6 +328,7 @@ public interface CachedContentOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Tool> getToolsList();
+
   /**
    *
    *
@@ -328,6 +342,7 @@ public interface CachedContentOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Tool getTools(int index);
+
   /**
    *
    *
@@ -341,6 +356,7 @@ public interface CachedContentOrBuilder
    * </code>
    */
   int getToolsCount();
+
   /**
    *
    *
@@ -355,6 +371,7 @@ public interface CachedContentOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ToolOrBuilder>
       getToolsOrBuilderList();
+
   /**
    *
    *
@@ -384,6 +401,7 @@ public interface CachedContentOrBuilder
    * @return Whether the toolConfig field is set.
    */
   boolean hasToolConfig();
+
   /**
    *
    *
@@ -399,6 +417,7 @@ public interface CachedContentOrBuilder
    * @return The toolConfig.
    */
   com.google.cloud.aiplatform.v1beta1.ToolConfig getToolConfig();
+
   /**
    *
    *
@@ -417,7 +436,7 @@ public interface CachedContentOrBuilder
    *
    *
    * <pre>
-   * Output only. Creatation time of the cache entry.
+   * Output only. Creation time of the cache entry.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -426,11 +445,12 @@ public interface CachedContentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
    * <pre>
-   * Output only. Creatation time of the cache entry.
+   * Output only. Creation time of the cache entry.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -439,11 +459,12 @@ public interface CachedContentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
    * <pre>
-   * Output only. Creatation time of the cache entry.
+   * Output only. Creation time of the cache entry.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -464,6 +485,7 @@ public interface CachedContentOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -477,6 +499,7 @@ public interface CachedContentOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -503,6 +526,7 @@ public interface CachedContentOrBuilder
    * @return Whether the usageMetadata field is set.
    */
   boolean hasUsageMetadata();
+
   /**
    *
    *
@@ -517,6 +541,7 @@ public interface CachedContentOrBuilder
    * @return The usageMetadata.
    */
   com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadata getUsageMetadata();
+
   /**
    *
    *
@@ -530,6 +555,55 @@ public interface CachedContentOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.CachedContent.UsageMetadataOrBuilder
       getUsageMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Immutable. Customer-managed encryption key spec for a
+   * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+   * will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Immutable. Customer-managed encryption key spec for a
+   * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+   * will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Immutable. Customer-managed encryption key spec for a
+   * `CachedContent`. If set, this `CachedContent` and all its sub-resources
+   * will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 13 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
 
   com.google.cloud.aiplatform.v1beta1.CachedContent.ExpirationCase getExpirationCase();
 }

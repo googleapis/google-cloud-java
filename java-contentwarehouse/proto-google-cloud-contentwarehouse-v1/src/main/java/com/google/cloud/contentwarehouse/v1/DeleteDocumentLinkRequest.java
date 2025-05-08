@@ -33,6 +33,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.DeleteDocumentLinkRequest)
     DeleteDocumentLinkRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteDocumentLinkRequest.newBuilder() to construct.
   private DeleteDocumentLinkRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
 
   public static final int REQUEST_METADATA_FIELD_NUMBER = 2;
   private com.google.cloud.contentwarehouse.v1.RequestMetadata requestMetadata_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
   public boolean hasRequestMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
         ? com.google.cloud.contentwarehouse.v1.RequestMetadata.getDefaultInstance()
         : requestMetadata_;
   }
+
   /**
    *
    *
@@ -351,6 +357,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -568,6 +575,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -594,6 +602,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -620,6 +629,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -645,6 +655,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -666,6 +677,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +711,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
             com.google.cloud.contentwarehouse.v1.RequestMetadata.Builder,
             com.google.cloud.contentwarehouse.v1.RequestMetadataOrBuilder>
         requestMetadataBuilder_;
+
     /**
      *
      *
@@ -714,6 +727,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
     public boolean hasRequestMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -735,6 +749,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
         return requestMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -758,6 +773,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +795,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +826,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +847,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +864,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
       onChanged();
       return getRequestMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -865,6 +885,7 @@ public final class DeleteDocumentLinkRequest extends com.google.protobuf.Generat
             : requestMetadata_;
       }
     }
+
     /**
      *
      *

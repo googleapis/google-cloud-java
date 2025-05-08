@@ -35,6 +35,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.KeyRangeLocation)
     KeyRangeLocationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use KeyRangeLocation.newBuilder() to construct.
   private KeyRangeLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object start_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object end_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deliveryEndpoint_ = "";
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -228,6 +235,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataDisk_ = "";
+
   /**
    *
    *
@@ -254,6 +262,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -285,6 +294,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deprecatedPersistentDirectory_ = "";
+
   /**
    *
    *
@@ -296,7 +306,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
    * <code>string deprecated_persistent_directory = 4 [deprecated = true];</code>
    *
    * @deprecated google.dataflow.v1beta3.KeyRangeLocation.deprecated_persistent_directory is
-   *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=170
+   *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=173
    * @return The deprecatedPersistentDirectory.
    */
   @java.lang.Override
@@ -312,6 +322,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -323,7 +334,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
    * <code>string deprecated_persistent_directory = 4 [deprecated = true];</code>
    *
    * @deprecated google.dataflow.v1beta3.KeyRangeLocation.deprecated_persistent_directory is
-   *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=170
+   *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=173
    * @return The bytes for deprecatedPersistentDirectory.
    */
   @java.lang.Override
@@ -538,6 +549,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -783,6 +795,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object start_ = "";
+
     /**
      *
      *
@@ -805,6 +818,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -827,6 +841,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -848,6 +863,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +881,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +906,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object end_ = "";
+
     /**
      *
      *
@@ -911,6 +929,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -933,6 +952,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -954,6 +974,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -971,6 +992,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -995,6 +1017,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object deliveryEndpoint_ = "";
+
     /**
      *
      *
@@ -1018,6 +1041,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1041,6 +1065,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1063,6 +1088,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1081,6 +1107,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1106,6 +1133,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object dataDisk_ = "";
+
     /**
      *
      *
@@ -1131,6 +1159,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1156,6 +1185,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1180,6 +1210,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1231,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1227,6 +1259,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object deprecatedPersistentDirectory_ = "";
+
     /**
      *
      *
@@ -1238,7 +1271,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
      * <code>string deprecated_persistent_directory = 4 [deprecated = true];</code>
      *
      * @deprecated google.dataflow.v1beta3.KeyRangeLocation.deprecated_persistent_directory is
-     *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=170
+     *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=173
      * @return The deprecatedPersistentDirectory.
      */
     @java.lang.Deprecated
@@ -1253,6 +1286,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1264,7 +1298,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
      * <code>string deprecated_persistent_directory = 4 [deprecated = true];</code>
      *
      * @deprecated google.dataflow.v1beta3.KeyRangeLocation.deprecated_persistent_directory is
-     *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=170
+     *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=173
      * @return The bytes for deprecatedPersistentDirectory.
      */
     @java.lang.Deprecated
@@ -1279,6 +1313,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1290,7 +1325,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
      * <code>string deprecated_persistent_directory = 4 [deprecated = true];</code>
      *
      * @deprecated google.dataflow.v1beta3.KeyRangeLocation.deprecated_persistent_directory is
-     *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=170
+     *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=173
      * @param value The deprecatedPersistentDirectory to set.
      * @return This builder for chaining.
      */
@@ -1304,6 +1339,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1315,7 +1351,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
      * <code>string deprecated_persistent_directory = 4 [deprecated = true];</code>
      *
      * @deprecated google.dataflow.v1beta3.KeyRangeLocation.deprecated_persistent_directory is
-     *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=170
+     *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=173
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1325,6 +1361,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1336,7 +1373,7 @@ public final class KeyRangeLocation extends com.google.protobuf.GeneratedMessage
      * <code>string deprecated_persistent_directory = 4 [deprecated = true];</code>
      *
      * @deprecated google.dataflow.v1beta3.KeyRangeLocation.deprecated_persistent_directory is
-     *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=170
+     *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=173
      * @param value The bytes for deprecatedPersistentDirectory to set.
      * @return This builder for chaining.
      */

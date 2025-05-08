@@ -36,6 +36,7 @@ public interface ImageObjectDetectionPredictionInstanceOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ImageObjectDetectionPredictionInstanceOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *

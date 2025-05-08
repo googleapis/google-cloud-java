@@ -33,6 +33,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.DeleteVehicleRequest)
     DeleteVehicleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteVehicleRequest.newBuilder() to construct.
   private DeleteVehicleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int HEADER_FIELD_NUMBER = 1;
   private com.google.maps.fleetengine.v1.RequestHeader header_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
   public boolean hasHeader() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
         ? com.google.maps.fleetengine.v1.RequestHeader.getDefaultInstance()
         : header_;
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -353,6 +359,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -571,6 +578,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
             com.google.maps.fleetengine.v1.RequestHeader.Builder,
             com.google.maps.fleetengine.v1.RequestHeaderOrBuilder>
         headerBuilder_;
+
     /**
      *
      *
@@ -587,6 +595,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
     public boolean hasHeader() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -609,6 +618,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
         return headerBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -633,6 +643,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +665,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +695,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -704,6 +717,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +734,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getHeaderFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -740,6 +755,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
             : header_;
       }
     }
+
     /**
      *
      *
@@ -769,6 +785,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -797,6 +814,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -825,6 +843,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -852,6 +871,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +895,7 @@ public final class DeleteVehicleRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

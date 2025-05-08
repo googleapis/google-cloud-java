@@ -187,6 +187,19 @@ public final class TemplatesServiceGrpc {
     return TemplatesServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TemplatesServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TemplatesServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TemplatesServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public TemplatesServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TemplatesServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TemplatesServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -228,7 +241,13 @@ public final class TemplatesServiceGrpc {
      *
      *
      * <pre>
-     * Creates a Cloud Dataflow job from a template.
+     * Creates a Cloud Dataflow job from a template. Do not enter confidential
+     * information when you supply string values using the API.
+     * To create a job, we recommend using `projects.locations.templates.create`
+     * with a [regional endpoint]
+     * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+     * `projects.templates.create` is not recommended, because your job will
+     * always start in `us-central1`.
      * </pre>
      */
     default void createJobFromTemplate(
@@ -242,7 +261,12 @@ public final class TemplatesServiceGrpc {
      *
      *
      * <pre>
-     * Launch a template.
+     * Launches a template.
+     * To launch a template, we recommend using
+     * `projects.locations.templates.launch` with a [regional endpoint]
+     * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+     * `projects.templates.launch` is not recommended, because jobs launched
+     * from the template will always start in `us-central1`.
      * </pre>
      */
     default void launchTemplate(
@@ -258,6 +282,11 @@ public final class TemplatesServiceGrpc {
      *
      * <pre>
      * Get the template associated with a template.
+     * To get the template, we recommend using `projects.locations.templates.get`
+     * with a [regional endpoint]
+     * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+     * `projects.templates.get` is not recommended, because only
+     * templates that are running in `us-central1` are retrieved.
      * </pre>
      */
     default void getTemplate(
@@ -307,7 +336,13 @@ public final class TemplatesServiceGrpc {
      *
      *
      * <pre>
-     * Creates a Cloud Dataflow job from a template.
+     * Creates a Cloud Dataflow job from a template. Do not enter confidential
+     * information when you supply string values using the API.
+     * To create a job, we recommend using `projects.locations.templates.create`
+     * with a [regional endpoint]
+     * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+     * `projects.templates.create` is not recommended, because your job will
+     * always start in `us-central1`.
      * </pre>
      */
     public void createJobFromTemplate(
@@ -323,7 +358,12 @@ public final class TemplatesServiceGrpc {
      *
      *
      * <pre>
-     * Launch a template.
+     * Launches a template.
+     * To launch a template, we recommend using
+     * `projects.locations.templates.launch` with a [regional endpoint]
+     * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+     * `projects.templates.launch` is not recommended, because jobs launched
+     * from the template will always start in `us-central1`.
      * </pre>
      */
     public void launchTemplate(
@@ -341,6 +381,11 @@ public final class TemplatesServiceGrpc {
      *
      * <pre>
      * Get the template associated with a template.
+     * To get the template, we recommend using `projects.locations.templates.get`
+     * with a [regional endpoint]
+     * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+     * `projects.templates.get` is not recommended, because only
+     * templates that are running in `us-central1` are retrieved.
      * </pre>
      */
     public void getTemplate(
@@ -356,6 +401,82 @@ public final class TemplatesServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TemplatesService.
+   *
+   * <pre>
+   * Provides a method to create Cloud Dataflow jobs from templates.
+   * </pre>
+   */
+  public static final class TemplatesServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TemplatesServiceBlockingV2Stub> {
+    private TemplatesServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TemplatesServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TemplatesServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Cloud Dataflow job from a template. Do not enter confidential
+     * information when you supply string values using the API.
+     * To create a job, we recommend using `projects.locations.templates.create`
+     * with a [regional endpoint]
+     * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+     * `projects.templates.create` is not recommended, because your job will
+     * always start in `us-central1`.
+     * </pre>
+     */
+    public com.google.dataflow.v1beta3.Job createJobFromTemplate(
+        com.google.dataflow.v1beta3.CreateJobFromTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateJobFromTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Launches a template.
+     * To launch a template, we recommend using
+     * `projects.locations.templates.launch` with a [regional endpoint]
+     * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+     * `projects.templates.launch` is not recommended, because jobs launched
+     * from the template will always start in `us-central1`.
+     * </pre>
+     */
+    public com.google.dataflow.v1beta3.LaunchTemplateResponse launchTemplate(
+        com.google.dataflow.v1beta3.LaunchTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLaunchTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the template associated with a template.
+     * To get the template, we recommend using `projects.locations.templates.get`
+     * with a [regional endpoint]
+     * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+     * `projects.templates.get` is not recommended, because only
+     * templates that are running in `us-central1` are retrieved.
+     * </pre>
+     */
+    public com.google.dataflow.v1beta3.GetTemplateResponse getTemplate(
+        com.google.dataflow.v1beta3.GetTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTemplateMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service TemplatesService.
    *
    * <pre>
    * Provides a method to create Cloud Dataflow jobs from templates.
@@ -377,7 +498,13 @@ public final class TemplatesServiceGrpc {
      *
      *
      * <pre>
-     * Creates a Cloud Dataflow job from a template.
+     * Creates a Cloud Dataflow job from a template. Do not enter confidential
+     * information when you supply string values using the API.
+     * To create a job, we recommend using `projects.locations.templates.create`
+     * with a [regional endpoint]
+     * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+     * `projects.templates.create` is not recommended, because your job will
+     * always start in `us-central1`.
      * </pre>
      */
     public com.google.dataflow.v1beta3.Job createJobFromTemplate(
@@ -390,7 +517,12 @@ public final class TemplatesServiceGrpc {
      *
      *
      * <pre>
-     * Launch a template.
+     * Launches a template.
+     * To launch a template, we recommend using
+     * `projects.locations.templates.launch` with a [regional endpoint]
+     * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+     * `projects.templates.launch` is not recommended, because jobs launched
+     * from the template will always start in `us-central1`.
      * </pre>
      */
     public com.google.dataflow.v1beta3.LaunchTemplateResponse launchTemplate(
@@ -404,6 +536,11 @@ public final class TemplatesServiceGrpc {
      *
      * <pre>
      * Get the template associated with a template.
+     * To get the template, we recommend using `projects.locations.templates.get`
+     * with a [regional endpoint]
+     * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+     * `projects.templates.get` is not recommended, because only
+     * templates that are running in `us-central1` are retrieved.
      * </pre>
      */
     public com.google.dataflow.v1beta3.GetTemplateResponse getTemplate(
@@ -436,7 +573,13 @@ public final class TemplatesServiceGrpc {
      *
      *
      * <pre>
-     * Creates a Cloud Dataflow job from a template.
+     * Creates a Cloud Dataflow job from a template. Do not enter confidential
+     * information when you supply string values using the API.
+     * To create a job, we recommend using `projects.locations.templates.create`
+     * with a [regional endpoint]
+     * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+     * `projects.templates.create` is not recommended, because your job will
+     * always start in `us-central1`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.dataflow.v1beta3.Job>
@@ -449,7 +592,12 @@ public final class TemplatesServiceGrpc {
      *
      *
      * <pre>
-     * Launch a template.
+     * Launches a template.
+     * To launch a template, we recommend using
+     * `projects.locations.templates.launch` with a [regional endpoint]
+     * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+     * `projects.templates.launch` is not recommended, because jobs launched
+     * from the template will always start in `us-central1`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -464,6 +612,11 @@ public final class TemplatesServiceGrpc {
      *
      * <pre>
      * Get the template associated with a template.
+     * To get the template, we recommend using `projects.locations.templates.get`
+     * with a [regional endpoint]
+     * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+     * `projects.templates.get` is not recommended, because only
+     * templates that are running in `us-central1` are retrieved.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

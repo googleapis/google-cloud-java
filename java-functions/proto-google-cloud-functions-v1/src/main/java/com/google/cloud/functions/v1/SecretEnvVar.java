@@ -35,6 +35,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.functions.v1.SecretEnvVar)
     SecretEnvVarOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecretEnvVar.newBuilder() to construct.
   private SecretEnvVar(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,11 +126,12 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
    * <pre>
-   * Project identifier (preferrably project number but can also be the project
+   * Project identifier (preferably project number but can also be the project
    * ID) of the project that contains the secret. If not set, it will be
    * populated with the function's project assuming that the secret exists in
    * the same project as of the function.
@@ -149,11 +153,12 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Project identifier (preferrably project number but can also be the project
+   * Project identifier (preferably project number but can also be the project
    * ID) of the project that contains the secret. If not set, it will be
    * populated with the function's project assuming that the secret exists in
    * the same project as of the function.
@@ -180,6 +185,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object secret_ = "";
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -231,6 +238,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
+
   /**
    *
    *
@@ -256,6 +264,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -468,6 +477,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -698,6 +708,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object key_ = "";
+
     /**
      *
      *
@@ -720,6 +731,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -742,6 +754,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -763,6 +776,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +794,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -804,11 +819,12 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
      * <pre>
-     * Project identifier (preferrably project number but can also be the project
+     * Project identifier (preferably project number but can also be the project
      * ID) of the project that contains the secret. If not set, it will be
      * populated with the function's project assuming that the secret exists in
      * the same project as of the function.
@@ -829,11 +845,12 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Project identifier (preferrably project number but can also be the project
+     * Project identifier (preferably project number but can also be the project
      * ID) of the project that contains the secret. If not set, it will be
      * populated with the function's project assuming that the secret exists in
      * the same project as of the function.
@@ -854,11 +871,12 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Project identifier (preferrably project number but can also be the project
+     * Project identifier (preferably project number but can also be the project
      * ID) of the project that contains the secret. If not set, it will be
      * populated with the function's project assuming that the secret exists in
      * the same project as of the function.
@@ -878,11 +896,12 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Project identifier (preferrably project number but can also be the project
+     * Project identifier (preferably project number but can also be the project
      * ID) of the project that contains the secret. If not set, it will be
      * populated with the function's project assuming that the secret exists in
      * the same project as of the function.
@@ -898,11 +917,12 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Project identifier (preferrably project number but can also be the project
+     * Project identifier (preferably project number but can also be the project
      * ID) of the project that contains the secret. If not set, it will be
      * populated with the function's project assuming that the secret exists in
      * the same project as of the function.
@@ -925,6 +945,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object secret_ = "";
+
     /**
      *
      *
@@ -947,6 +968,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -969,6 +991,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -990,6 +1013,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1031,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1031,6 +1056,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object version_ = "";
+
     /**
      *
      *
@@ -1055,6 +1081,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1079,6 +1106,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1102,6 +1130,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1150,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

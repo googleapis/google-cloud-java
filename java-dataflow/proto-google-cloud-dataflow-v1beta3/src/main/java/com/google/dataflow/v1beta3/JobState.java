@@ -23,7 +23,8 @@ package com.google.dataflow.v1beta3;
  *
  *
  * <pre>
- * Describes the overall state of a [google.dataflow.v1beta3.Job][google.dataflow.v1beta3.Job].
+ * Describes the overall state of a
+ * [google.dataflow.v1beta3.Job][google.dataflow.v1beta3.Job].
  * </pre>
  *
  * Protobuf enum {@code google.dataflow.v1beta3.JobState}
@@ -204,6 +205,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_UNKNOWN = 0;</code>
    */
   public static final int JOB_STATE_UNKNOWN_VALUE = 0;
+
   /**
    *
    *
@@ -215,6 +217,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_STOPPED = 1;</code>
    */
   public static final int JOB_STATE_STOPPED_VALUE = 1;
+
   /**
    *
    *
@@ -225,6 +228,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_RUNNING = 2;</code>
    */
   public static final int JOB_STATE_RUNNING_VALUE = 2;
+
   /**
    *
    *
@@ -239,6 +243,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_DONE = 3;</code>
    */
   public static final int JOB_STATE_DONE_VALUE = 3;
+
   /**
    *
    *
@@ -251,6 +256,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_FAILED = 4;</code>
    */
   public static final int JOB_STATE_FAILED_VALUE = 4;
+
   /**
    *
    *
@@ -264,6 +270,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_CANCELLED = 5;</code>
    */
   public static final int JOB_STATE_CANCELLED_VALUE = 5;
+
   /**
    *
    *
@@ -278,6 +285,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_UPDATED = 6;</code>
    */
   public static final int JOB_STATE_UPDATED_VALUE = 6;
+
   /**
    *
    *
@@ -293,6 +301,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_DRAINING = 7;</code>
    */
   public static final int JOB_STATE_DRAINING_VALUE = 7;
+
   /**
    *
    *
@@ -307,6 +316,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_DRAINED = 8;</code>
    */
   public static final int JOB_STATE_DRAINED_VALUE = 8;
+
   /**
    *
    *
@@ -319,6 +329,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_PENDING = 9;</code>
    */
   public static final int JOB_STATE_PENDING_VALUE = 9;
+
   /**
    *
    *
@@ -331,6 +342,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_CANCELLING = 10;</code>
    */
   public static final int JOB_STATE_CANCELLING_VALUE = 10;
+
   /**
    *
    *
@@ -343,6 +355,7 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_QUEUED = 11;</code>
    */
   public static final int JOB_STATE_QUEUED_VALUE = 11;
+
   /**
    *
    *

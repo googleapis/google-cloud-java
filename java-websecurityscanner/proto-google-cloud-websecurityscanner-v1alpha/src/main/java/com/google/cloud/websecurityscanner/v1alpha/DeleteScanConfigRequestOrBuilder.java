@@ -39,6 +39,7 @@ public interface DeleteScanConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

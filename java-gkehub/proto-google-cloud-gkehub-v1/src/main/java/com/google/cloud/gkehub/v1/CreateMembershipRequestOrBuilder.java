@@ -39,6 +39,7 @@ public interface CreateMembershipRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface CreateMembershipRequestOrBuilder
    * @return The membershipId.
    */
   java.lang.String getMembershipId();
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public interface CreateMembershipRequestOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface CreateMembershipRequestOrBuilder
    * @return The resource.
    */
   com.google.cloud.gkehub.v1.Membership getResource();
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public interface CreateMembershipRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

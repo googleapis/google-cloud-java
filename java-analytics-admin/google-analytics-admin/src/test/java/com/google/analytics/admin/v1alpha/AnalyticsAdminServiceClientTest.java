@@ -38,6 +38,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListKeyEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListReportingDataAnnotationsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListRollupPropertySourceLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
@@ -11288,6 +11289,485 @@ public class AnalyticsAdminServiceClientTest {
     try {
       String name = "name3373707";
       client.deleteSubpropertyEventFilter(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createReportingDataAnnotationTest() throws Exception {
+    ReportingDataAnnotation expectedResponse =
+        ReportingDataAnnotation.newBuilder()
+            .setName(
+                ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]")
+                    .toString())
+            .setTitle("title110371416")
+            .setDescription("description-1724546052")
+            .setSystemGenerated(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    ReportingDataAnnotation reportingDataAnnotation = ReportingDataAnnotation.newBuilder().build();
+
+    ReportingDataAnnotation actualResponse =
+        client.createReportingDataAnnotation(parent, reportingDataAnnotation);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateReportingDataAnnotationRequest actualRequest =
+        ((CreateReportingDataAnnotationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(reportingDataAnnotation, actualRequest.getReportingDataAnnotation());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createReportingDataAnnotationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      ReportingDataAnnotation reportingDataAnnotation =
+          ReportingDataAnnotation.newBuilder().build();
+      client.createReportingDataAnnotation(parent, reportingDataAnnotation);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createReportingDataAnnotationTest2() throws Exception {
+    ReportingDataAnnotation expectedResponse =
+        ReportingDataAnnotation.newBuilder()
+            .setName(
+                ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]")
+                    .toString())
+            .setTitle("title110371416")
+            .setDescription("description-1724546052")
+            .setSystemGenerated(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    ReportingDataAnnotation reportingDataAnnotation = ReportingDataAnnotation.newBuilder().build();
+
+    ReportingDataAnnotation actualResponse =
+        client.createReportingDataAnnotation(parent, reportingDataAnnotation);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateReportingDataAnnotationRequest actualRequest =
+        ((CreateReportingDataAnnotationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(reportingDataAnnotation, actualRequest.getReportingDataAnnotation());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createReportingDataAnnotationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      ReportingDataAnnotation reportingDataAnnotation =
+          ReportingDataAnnotation.newBuilder().build();
+      client.createReportingDataAnnotation(parent, reportingDataAnnotation);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getReportingDataAnnotationTest() throws Exception {
+    ReportingDataAnnotation expectedResponse =
+        ReportingDataAnnotation.newBuilder()
+            .setName(
+                ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]")
+                    .toString())
+            .setTitle("title110371416")
+            .setDescription("description-1724546052")
+            .setSystemGenerated(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    ReportingDataAnnotationName name =
+        ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]");
+
+    ReportingDataAnnotation actualResponse = client.getReportingDataAnnotation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetReportingDataAnnotationRequest actualRequest =
+        ((GetReportingDataAnnotationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getReportingDataAnnotationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      ReportingDataAnnotationName name =
+          ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]");
+      client.getReportingDataAnnotation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getReportingDataAnnotationTest2() throws Exception {
+    ReportingDataAnnotation expectedResponse =
+        ReportingDataAnnotation.newBuilder()
+            .setName(
+                ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]")
+                    .toString())
+            .setTitle("title110371416")
+            .setDescription("description-1724546052")
+            .setSystemGenerated(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ReportingDataAnnotation actualResponse = client.getReportingDataAnnotation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetReportingDataAnnotationRequest actualRequest =
+        ((GetReportingDataAnnotationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getReportingDataAnnotationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getReportingDataAnnotation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listReportingDataAnnotationsTest() throws Exception {
+    ReportingDataAnnotation responsesElement = ReportingDataAnnotation.newBuilder().build();
+    ListReportingDataAnnotationsResponse expectedResponse =
+        ListReportingDataAnnotationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllReportingDataAnnotations(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListReportingDataAnnotationsPagedResponse pagedListResponse =
+        client.listReportingDataAnnotations(parent);
+
+    List<ReportingDataAnnotation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getReportingDataAnnotationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListReportingDataAnnotationsRequest actualRequest =
+        ((ListReportingDataAnnotationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listReportingDataAnnotationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listReportingDataAnnotations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listReportingDataAnnotationsTest2() throws Exception {
+    ReportingDataAnnotation responsesElement = ReportingDataAnnotation.newBuilder().build();
+    ListReportingDataAnnotationsResponse expectedResponse =
+        ListReportingDataAnnotationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllReportingDataAnnotations(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListReportingDataAnnotationsPagedResponse pagedListResponse =
+        client.listReportingDataAnnotations(parent);
+
+    List<ReportingDataAnnotation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getReportingDataAnnotationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListReportingDataAnnotationsRequest actualRequest =
+        ((ListReportingDataAnnotationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listReportingDataAnnotationsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listReportingDataAnnotations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateReportingDataAnnotationTest() throws Exception {
+    ReportingDataAnnotation expectedResponse =
+        ReportingDataAnnotation.newBuilder()
+            .setName(
+                ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]")
+                    .toString())
+            .setTitle("title110371416")
+            .setDescription("description-1724546052")
+            .setSystemGenerated(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    ReportingDataAnnotation reportingDataAnnotation = ReportingDataAnnotation.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ReportingDataAnnotation actualResponse =
+        client.updateReportingDataAnnotation(reportingDataAnnotation, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateReportingDataAnnotationRequest actualRequest =
+        ((UpdateReportingDataAnnotationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(reportingDataAnnotation, actualRequest.getReportingDataAnnotation());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateReportingDataAnnotationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      ReportingDataAnnotation reportingDataAnnotation =
+          ReportingDataAnnotation.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateReportingDataAnnotation(reportingDataAnnotation, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteReportingDataAnnotationTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    ReportingDataAnnotationName name =
+        ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]");
+
+    client.deleteReportingDataAnnotation(name);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteReportingDataAnnotationRequest actualRequest =
+        ((DeleteReportingDataAnnotationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteReportingDataAnnotationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      ReportingDataAnnotationName name =
+          ReportingDataAnnotationName.of("[PROPERTY]", "[REPORTING_DATA_ANNOTATION]");
+      client.deleteReportingDataAnnotation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteReportingDataAnnotationTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteReportingDataAnnotation(name);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteReportingDataAnnotationRequest actualRequest =
+        ((DeleteReportingDataAnnotationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteReportingDataAnnotationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteReportingDataAnnotation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void submitUserDeletionTest() throws Exception {
+    SubmitUserDeletionResponse expectedResponse =
+        SubmitUserDeletionResponse.newBuilder()
+            .setDeletionRequestTime(Timestamp.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    PropertyName name = PropertyName.of("[PROPERTY]");
+
+    SubmitUserDeletionResponse actualResponse = client.submitUserDeletion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SubmitUserDeletionRequest actualRequest = ((SubmitUserDeletionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void submitUserDeletionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      PropertyName name = PropertyName.of("[PROPERTY]");
+      client.submitUserDeletion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void submitUserDeletionTest2() throws Exception {
+    SubmitUserDeletionResponse expectedResponse =
+        SubmitUserDeletionResponse.newBuilder()
+            .setDeletionRequestTime(Timestamp.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    SubmitUserDeletionResponse actualResponse = client.submitUserDeletion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SubmitUserDeletionRequest actualRequest = ((SubmitUserDeletionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void submitUserDeletionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.submitUserDeletion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

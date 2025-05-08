@@ -39,6 +39,7 @@ public interface InstanceFlexibilityPolicyOrBuilder
    * @return Whether the provisioningModelMix field is set.
    */
   boolean hasProvisioningModelMix();
+
   /**
    *
    *
@@ -55,6 +56,7 @@ public interface InstanceFlexibilityPolicyOrBuilder
    */
   com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
       getProvisioningModelMix();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface InstanceFlexibilityPolicyOrBuilder
    */
   java.util.List<com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelection>
       getInstanceSelectionListList();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface InstanceFlexibilityPolicyOrBuilder
    */
   com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelection getInstanceSelectionList(
       int index);
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface InstanceFlexibilityPolicyOrBuilder
    * </code>
    */
   int getInstanceSelectionListCount();
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public interface InstanceFlexibilityPolicyOrBuilder
           ? extends
               com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelectionOrBuilder>
       getInstanceSelectionListOrBuilderList();
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public interface InstanceFlexibilityPolicyOrBuilder
    */
   java.util.List<com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelectionResult>
       getInstanceSelectionResultsList();
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface InstanceFlexibilityPolicyOrBuilder
    */
   com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelectionResult
       getInstanceSelectionResults(int index);
+
   /**
    *
    *
@@ -180,6 +188,7 @@ public interface InstanceFlexibilityPolicyOrBuilder
    * </code>
    */
   int getInstanceSelectionResultsCount();
+
   /**
    *
    *
@@ -196,6 +205,7 @@ public interface InstanceFlexibilityPolicyOrBuilder
               com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy
                   .InstanceSelectionResultOrBuilder>
       getInstanceSelectionResultsOrBuilderList();
+
   /**
    *
    *

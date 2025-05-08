@@ -41,6 +41,7 @@ public interface WebServerConfigOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *

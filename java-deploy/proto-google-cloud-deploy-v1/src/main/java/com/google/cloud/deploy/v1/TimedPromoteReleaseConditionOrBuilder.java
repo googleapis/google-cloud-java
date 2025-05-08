@@ -38,6 +38,7 @@ public interface TimedPromoteReleaseConditionOrBuilder
    * @return Whether the nextPromotionTime field is set.
    */
   boolean hasNextPromotionTime();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface TimedPromoteReleaseConditionOrBuilder
    * @return The nextPromotionTime.
    */
   com.google.protobuf.Timestamp getNextPromotionTime();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface TimedPromoteReleaseConditionOrBuilder
    */
   java.util.List<com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.Targets>
       getTargetsListList();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface TimedPromoteReleaseConditionOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.Targets getTargetsList(int index);
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface TimedPromoteReleaseConditionOrBuilder
    * </code>
    */
   int getTargetsListCount();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface TimedPromoteReleaseConditionOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.TimedPromoteReleaseCondition.TargetsOrBuilder>
       getTargetsListOrBuilderList();
+
   /**
    *
    *

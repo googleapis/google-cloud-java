@@ -34,6 +34,7 @@ public interface ListReportDetailsResponseOrBuilder
    * <code>repeated .google.cloud.storageinsights.v1.ReportDetail report_details = 1;</code>
    */
   java.util.List<com.google.cloud.storageinsights.v1.ReportDetail> getReportDetailsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListReportDetailsResponseOrBuilder
    * <code>repeated .google.cloud.storageinsights.v1.ReportDetail report_details = 1;</code>
    */
   com.google.cloud.storageinsights.v1.ReportDetail getReportDetails(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListReportDetailsResponseOrBuilder
    * <code>repeated .google.cloud.storageinsights.v1.ReportDetail report_details = 1;</code>
    */
   int getReportDetailsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListReportDetailsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.storageinsights.v1.ReportDetailOrBuilder>
       getReportDetailsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListReportDetailsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ListReportDetailsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListReportDetailsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface ListReportDetailsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

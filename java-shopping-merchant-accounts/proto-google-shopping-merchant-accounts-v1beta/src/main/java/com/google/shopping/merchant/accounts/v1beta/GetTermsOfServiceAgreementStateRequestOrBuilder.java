@@ -40,6 +40,7 @@ public interface GetTermsOfServiceAgreementStateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

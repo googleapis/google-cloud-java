@@ -35,6 +35,7 @@ public final class DisableAdvancedSiteSearchResponse extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.DisableAdvancedSiteSearchResponse)
     DisableAdvancedSiteSearchResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DisableAdvancedSiteSearchResponse.newBuilder() to construct.
   private DisableAdvancedSiteSearchResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -216,6 +217,7 @@ public final class DisableAdvancedSiteSearchResponse extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

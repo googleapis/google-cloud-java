@@ -33,6 +33,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.ListQuotaRulesResponse)
     ListQuotaRulesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListQuotaRulesResponse.newBuilder() to construct.
   private ListQuotaRulesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.netapp.v1.QuotaRule> quotaRules_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.netapp.v1.QuotaRule> getQuotaRulesList() {
     return quotaRules_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       getQuotaRulesOrBuilderList() {
     return quotaRules_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
   public int getQuotaRulesCount() {
     return quotaRules_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.netapp.v1.QuotaRule getQuotaRules(int index) {
     return quotaRules_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -192,6 +200,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -206,6 +215,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
+
   /**
    *
    *
@@ -220,6 +230,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
   public int getUnreachableCount() {
     return unreachable_.size();
   }
+
   /**
    *
    *
@@ -235,6 +246,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
+
   /**
    *
    *
@@ -437,6 +449,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -735,6 +748,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
         return quotaRulesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -751,6 +765,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
         return quotaRulesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -767,6 +782,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
         return quotaRulesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -789,6 +805,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +826,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +849,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +872,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +892,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +913,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +934,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -931,6 +954,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +974,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -962,6 +987,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.netapp.v1.QuotaRule.Builder getQuotaRulesBuilder(int index) {
       return getQuotaRulesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -978,6 +1004,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
         return quotaRulesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -995,6 +1022,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(quotaRules_);
       }
     }
+
     /**
      *
      *
@@ -1008,6 +1036,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       return getQuotaRulesFieldBuilder()
           .addBuilder(com.google.cloud.netapp.v1.QuotaRule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1021,6 +1050,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       return getQuotaRulesFieldBuilder()
           .addBuilder(index, com.google.cloud.netapp.v1.QuotaRule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1052,6 +1082,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1074,6 +1105,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1096,6 +1128,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1117,6 +1150,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1134,6 +1168,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1166,6 +1201,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1181,6 +1217,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       unreachable_.makeImmutable();
       return unreachable_;
     }
+
     /**
      *
      *
@@ -1195,6 +1232,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
     public int getUnreachableCount() {
       return unreachable_.size();
     }
+
     /**
      *
      *
@@ -1210,6 +1248,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
+
     /**
      *
      *
@@ -1225,6 +1264,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1248,6 +1288,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1270,6 +1311,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1289,6 +1331,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1307,6 +1350,7 @@ public final class ListQuotaRulesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

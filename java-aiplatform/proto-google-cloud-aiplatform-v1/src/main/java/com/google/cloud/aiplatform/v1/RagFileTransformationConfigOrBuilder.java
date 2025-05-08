@@ -36,6 +36,7 @@ public interface RagFileTransformationConfigOrBuilder
    * @return Whether the ragFileChunkingConfig field is set.
    */
   boolean hasRagFileChunkingConfig();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RagFileTransformationConfigOrBuilder
    * @return The ragFileChunkingConfig.
    */
   com.google.cloud.aiplatform.v1.RagFileChunkingConfig getRagFileChunkingConfig();
+
   /**
    *
    *

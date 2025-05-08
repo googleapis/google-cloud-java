@@ -74,7 +74,8 @@ public class MockConversationalSearchServiceImpl extends ConversationalSearchSer
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ConverseConversation, expected %s or %s",
+                  "Unrecognized response type %s for method ConverseConversation, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConverseConversationResponse.class.getName(),
                   Exception.class.getName())));

@@ -37,6 +37,7 @@ public interface GcsSourceOrBuilder
    * @return The inputUri.
    */
   java.lang.String getInputUri();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface GcsSourceOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *

@@ -52,6 +52,7 @@ public interface BuildStepOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -96,6 +97,7 @@ public interface BuildStepOrBuilder
    * @return A list containing the env.
    */
   java.util.List<java.lang.String> getEnvList();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface BuildStepOrBuilder
    * @return The count of env.
    */
   int getEnvCount();
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public interface BuildStepOrBuilder
    * @return The env at the given index.
    */
   java.lang.String getEnv(int index);
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public interface BuildStepOrBuilder
    * @return A list containing the args.
    */
   java.util.List<java.lang.String> getArgsList();
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public interface BuildStepOrBuilder
    * @return The count of args.
    */
   int getArgsCount();
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public interface BuildStepOrBuilder
    * @return The args at the given index.
    */
   java.lang.String getArgs(int index);
+
   /**
    *
    *
@@ -236,6 +243,7 @@ public interface BuildStepOrBuilder
    * @return The dir.
    */
   java.lang.String getDir();
+
   /**
    *
    *
@@ -271,6 +279,7 @@ public interface BuildStepOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -301,6 +310,7 @@ public interface BuildStepOrBuilder
    * @return A list containing the waitFor.
    */
   java.util.List<java.lang.String> getWaitForList();
+
   /**
    *
    *
@@ -317,6 +327,7 @@ public interface BuildStepOrBuilder
    * @return The count of waitFor.
    */
   int getWaitForCount();
+
   /**
    *
    *
@@ -334,6 +345,7 @@ public interface BuildStepOrBuilder
    * @return The waitFor at the given index.
    */
   java.lang.String getWaitFor(int index);
+
   /**
    *
    *
@@ -365,6 +377,7 @@ public interface BuildStepOrBuilder
    * @return The entrypoint.
    */
   java.lang.String getEntrypoint();
+
   /**
    *
    *
@@ -393,6 +406,7 @@ public interface BuildStepOrBuilder
    * @return A list containing the secretEnv.
    */
   java.util.List<java.lang.String> getSecretEnvList();
+
   /**
    *
    *
@@ -407,6 +421,7 @@ public interface BuildStepOrBuilder
    * @return The count of secretEnv.
    */
   int getSecretEnvCount();
+
   /**
    *
    *
@@ -422,6 +437,7 @@ public interface BuildStepOrBuilder
    * @return The secretEnv at the given index.
    */
   java.lang.String getSecretEnv(int index);
+
   /**
    *
    *
@@ -455,6 +471,7 @@ public interface BuildStepOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Volume volumes = 9;</code>
    */
   java.util.List<com.google.cloudbuild.v1.Volume> getVolumesList();
+
   /**
    *
    *
@@ -472,6 +489,7 @@ public interface BuildStepOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Volume volumes = 9;</code>
    */
   com.google.cloudbuild.v1.Volume getVolumes(int index);
+
   /**
    *
    *
@@ -489,6 +507,7 @@ public interface BuildStepOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Volume volumes = 9;</code>
    */
   int getVolumesCount();
+
   /**
    *
    *
@@ -506,6 +525,7 @@ public interface BuildStepOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Volume volumes = 9;</code>
    */
   java.util.List<? extends com.google.cloudbuild.v1.VolumeOrBuilder> getVolumesOrBuilderList();
+
   /**
    *
    *
@@ -538,6 +558,7 @@ public interface BuildStepOrBuilder
    * @return Whether the timing field is set.
    */
   boolean hasTiming();
+
   /**
    *
    *
@@ -552,6 +573,7 @@ public interface BuildStepOrBuilder
    * @return The timing.
    */
   com.google.cloudbuild.v1.TimeSpan getTiming();
+
   /**
    *
    *
@@ -580,6 +602,7 @@ public interface BuildStepOrBuilder
    * @return Whether the pullTiming field is set.
    */
   boolean hasPullTiming();
+
   /**
    *
    *
@@ -595,6 +618,7 @@ public interface BuildStepOrBuilder
    * @return The pullTiming.
    */
   com.google.cloudbuild.v1.TimeSpan getPullTiming();
+
   /**
    *
    *
@@ -623,6 +647,7 @@ public interface BuildStepOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
+
   /**
    *
    *
@@ -637,6 +662,7 @@ public interface BuildStepOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
+
   /**
    *
    *
@@ -666,6 +692,7 @@ public interface BuildStepOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
+
   /**
    *
    *
@@ -727,6 +754,7 @@ public interface BuildStepOrBuilder
    * @return A list containing the allowExitCodes.
    */
   java.util.List<java.lang.Integer> getAllowExitCodesList();
+
   /**
    *
    *
@@ -741,6 +769,7 @@ public interface BuildStepOrBuilder
    * @return The count of allowExitCodes.
    */
   int getAllowExitCodesCount();
+
   /**
    *
    *
@@ -771,6 +800,7 @@ public interface BuildStepOrBuilder
    * @return The script.
    */
   java.lang.String getScript();
+
   /**
    *
    *
@@ -800,6 +830,7 @@ public interface BuildStepOrBuilder
    * @return Whether the automapSubstitutions field is set.
    */
   boolean hasAutomapSubstitutions();
+
   /**
    *
    *

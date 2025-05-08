@@ -38,6 +38,7 @@ public interface DocumentReferenceOrBuilder
    * @return The documentName.
    */
   java.lang.String getDocumentName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface DocumentReferenceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface DocumentReferenceOrBuilder
    * @return The snippet.
    */
   java.lang.String getSnippet();
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public interface DocumentReferenceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface DocumentReferenceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public interface DocumentReferenceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public interface DocumentReferenceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public interface DocumentReferenceOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public interface DocumentReferenceOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *

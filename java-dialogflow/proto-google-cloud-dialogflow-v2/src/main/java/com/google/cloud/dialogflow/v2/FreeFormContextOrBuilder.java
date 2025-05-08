@@ -36,6 +36,7 @@ public interface FreeFormContextOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *

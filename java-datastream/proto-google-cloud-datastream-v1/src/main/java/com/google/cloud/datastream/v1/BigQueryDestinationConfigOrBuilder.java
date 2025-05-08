@@ -38,6 +38,7 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return Whether the singleTargetDataset field is set.
    */
   boolean hasSingleTargetDataset();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface BigQueryDestinationConfigOrBuilder
    */
   com.google.cloud.datastream.v1.BigQueryDestinationConfig.SingleTargetDataset
       getSingleTargetDataset();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return Whether the sourceHierarchyDatasets field is set.
    */
   boolean hasSourceHierarchyDatasets();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface BigQueryDestinationConfigOrBuilder
    */
   com.google.cloud.datastream.v1.BigQueryDestinationConfig.SourceHierarchyDatasets
       getSourceHierarchyDatasets();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return Whether the dataFreshness field is set.
    */
   boolean hasDataFreshness();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return The dataFreshness.
    */
   com.google.protobuf.Duration getDataFreshness();
+
   /**
    *
    *
@@ -158,6 +164,50 @@ public interface BigQueryDestinationConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Big Lake Managed Tables (BLMT) configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the blmtConfig field is set.
+   */
+  boolean hasBlmtConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Big Lake Managed Tables (BLMT) configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The blmtConfig.
+   */
+  com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig getBlmtConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Big Lake Managed Tables (BLMT) configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfigOrBuilder
+      getBlmtConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The standard mode
    * </pre>
    *
@@ -166,6 +216,7 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return Whether the merge field is set.
    */
   boolean hasMerge();
+
   /**
    *
    *
@@ -178,6 +229,7 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return The merge.
    */
   com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge getMerge();
+
   /**
    *
    *
@@ -202,6 +254,7 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return Whether the appendOnly field is set.
    */
   boolean hasAppendOnly();
+
   /**
    *
    *
@@ -215,6 +268,7 @@ public interface BigQueryDestinationConfigOrBuilder
    * @return The appendOnly.
    */
   com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly getAppendOnly();
+
   /**
    *
    *

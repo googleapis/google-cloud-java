@@ -49,6 +49,7 @@ public interface DeleteEventsRequestOrBuilder
    * @return The projectName.
    */
   java.lang.String getProjectName();
+
   /**
    *
    *

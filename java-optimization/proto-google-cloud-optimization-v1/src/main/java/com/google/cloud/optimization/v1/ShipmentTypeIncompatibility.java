@@ -35,6 +35,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.optimization.v1.ShipmentTypeIncompatibility)
     ShipmentTypeIncompatibilityOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ShipmentTypeIncompatibility.newBuilder() to construct.
   private ShipmentTypeIncompatibility(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,6 +130,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
      * <code>INCOMPATIBILITY_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int INCOMPATIBILITY_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -140,6 +142,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
      * <code>NOT_PERFORMED_BY_SAME_VEHICLE = 1;</code>
      */
     public static final int NOT_PERFORMED_BY_SAME_VEHICLE_VALUE = 1;
+
     /**
      *
      *
@@ -251,6 +254,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList types_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -266,6 +270,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
   public com.google.protobuf.ProtocolStringList getTypesList() {
     return types_;
   }
+
   /**
    *
    *
@@ -281,6 +286,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
   public int getTypesCount() {
     return types_.size();
   }
+
   /**
    *
    *
@@ -297,6 +303,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
   public java.lang.String getTypes(int index) {
     return types_.get(index);
   }
+
   /**
    *
    *
@@ -316,6 +323,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
 
   public static final int INCOMPATIBILITY_MODE_FIELD_NUMBER = 2;
   private int incompatibilityMode_ = 0;
+
   /**
    *
    *
@@ -333,6 +341,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
   public int getIncompatibilityModeValue() {
     return incompatibilityMode_;
   }
+
   /**
    *
    *
@@ -540,6 +549,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -757,6 +767,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -773,6 +784,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
       types_.makeImmutable();
       return types_;
     }
+
     /**
      *
      *
@@ -788,6 +800,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
     public int getTypesCount() {
       return types_.size();
     }
+
     /**
      *
      *
@@ -804,6 +817,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
     public java.lang.String getTypes(int index) {
       return types_.get(index);
     }
+
     /**
      *
      *
@@ -820,6 +834,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getTypesBytes(int index) {
       return types_.getByteString(index);
     }
+
     /**
      *
      *
@@ -844,6 +859,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +883,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +904,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +924,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +951,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
     }
 
     private int incompatibilityMode_ = 0;
+
     /**
      *
      *
@@ -949,6 +969,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
     public int getIncompatibilityModeValue() {
       return incompatibilityMode_;
     }
+
     /**
      *
      *
@@ -969,6 +990,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1015,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1017,6 +1040,7 @@ public final class ShipmentTypeIncompatibility extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

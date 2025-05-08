@@ -35,6 +35,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.Replication)
     ReplicationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Replication.newBuilder() to construct.
   private Replication(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -191,6 +192,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -201,6 +203,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
+
     /**
      *
      *
@@ -211,6 +214,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>READY = 2;</code>
      */
     public static final int READY_VALUE = 2;
+
     /**
      *
      *
@@ -221,6 +225,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>UPDATING = 3;</code>
      */
     public static final int UPDATING_VALUE = 3;
+
     /**
      *
      *
@@ -231,6 +236,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 5;</code>
      */
     public static final int DELETING_VALUE = 5;
+
     /**
      *
      *
@@ -241,6 +247,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 6;</code>
      */
     public static final int ERROR_VALUE = 6;
+
     /**
      *
      *
@@ -251,6 +258,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING_CLUSTER_PEERING = 8;</code>
      */
     public static final int PENDING_CLUSTER_PEERING_VALUE = 8;
+
     /**
      *
      *
@@ -409,6 +417,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>REPLICATION_ROLE_UNSPECIFIED = 0;</code>
      */
     public static final int REPLICATION_ROLE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -419,6 +428,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>SOURCE = 1;</code>
      */
     public static final int SOURCE_VALUE = 1;
+
     /**
      *
      *
@@ -580,6 +590,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>REPLICATION_SCHEDULE_UNSPECIFIED = 0;</code>
      */
     public static final int REPLICATION_SCHEDULE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -590,6 +601,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>EVERY_10_MINUTES = 1;</code>
      */
     public static final int EVERY_10_MINUTES_VALUE = 1;
+
     /**
      *
      *
@@ -600,6 +612,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>HOURLY = 2;</code>
      */
     public static final int HOURLY_VALUE = 2;
+
     /**
      *
      *
@@ -794,6 +807,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>MIRROR_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int MIRROR_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -804,6 +818,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>PREPARING = 1;</code>
      */
     public static final int PREPARING_VALUE = 1;
+
     /**
      *
      *
@@ -815,6 +830,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>MIRRORED = 2;</code>
      */
     public static final int MIRRORED_VALUE = 2;
+
     /**
      *
      *
@@ -825,6 +841,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>STOPPED = 3;</code>
      */
     public static final int STOPPED_VALUE = 3;
+
     /**
      *
      *
@@ -835,6 +852,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>TRANSFERRING = 4;</code>
      */
     public static final int TRANSFERRING_VALUE = 4;
+
     /**
      *
      *
@@ -845,6 +863,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>BASELINE_TRANSFERRING = 5;</code>
      */
     public static final int BASELINE_TRANSFERRING_VALUE = 5;
+
     /**
      *
      *
@@ -1000,6 +1019,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>HYBRID_REPLICATION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int HYBRID_REPLICATION_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -1010,6 +1030,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>MIGRATION = 1;</code>
      */
     public static final int MIGRATION_VALUE = 1;
+
     /**
      *
      *
@@ -1112,6 +1133,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1137,6 +1159,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1165,6 +1188,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
+
   /**
    *
    *
@@ -1182,6 +1206,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -1206,6 +1231,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stateDetails_ = "";
+
   /**
    *
    *
@@ -1229,6 +1255,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1255,6 +1282,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROLE_FIELD_NUMBER = 4;
   private int role_ = 0;
+
   /**
    *
    *
@@ -1272,6 +1300,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public int getRoleValue() {
     return role_;
   }
+
   /**
    *
    *
@@ -1296,6 +1325,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REPLICATION_SCHEDULE_FIELD_NUMBER = 5;
   private int replicationSchedule_ = 0;
+
   /**
    *
    *
@@ -1313,6 +1343,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public int getReplicationScheduleValue() {
     return replicationSchedule_;
   }
+
   /**
    *
    *
@@ -1337,6 +1368,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MIRROR_STATE_FIELD_NUMBER = 6;
   private int mirrorState_ = 0;
+
   /**
    *
    *
@@ -1354,6 +1386,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public int getMirrorStateValue() {
     return mirrorState_;
   }
+
   /**
    *
    *
@@ -1378,6 +1411,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HEALTHY_FIELD_NUMBER = 8;
   private boolean healthy_ = false;
+
   /**
    *
    *
@@ -1397,6 +1431,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHealthy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1419,6 +1454,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -1435,6 +1471,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1451,6 +1488,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -1470,6 +1508,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destinationVolume_ = "";
+
   /**
    *
    *
@@ -1496,6 +1535,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1525,6 +1565,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRANSFER_STATS_FIELD_NUMBER = 11;
   private com.google.cloud.netapp.v1.TransferStats transferStats_;
+
   /**
    *
    *
@@ -1542,6 +1583,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTransferStats() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1561,6 +1603,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.netapp.v1.TransferStats.getDefaultInstance()
         : transferStats_;
   }
+
   /**
    *
    *
@@ -1605,6 +1648,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -1621,12 +1665,14 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -1640,6 +1686,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -1660,6 +1707,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1685,6 +1733,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -1700,6 +1749,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1723,6 +1773,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1749,6 +1800,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESTINATION_VOLUME_PARAMETERS_FIELD_NUMBER = 14;
   private com.google.cloud.netapp.v1.DestinationVolumeParameters destinationVolumeParameters_;
+
   /**
    *
    *
@@ -1766,6 +1818,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDestinationVolumeParameters() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1785,6 +1838,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.netapp.v1.DestinationVolumeParameters.getDefaultInstance()
         : destinationVolumeParameters_;
   }
+
   /**
    *
    *
@@ -1808,6 +1862,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceVolume_ = "";
+
   /**
    *
    *
@@ -1834,6 +1889,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1863,6 +1919,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HYBRID_PEERING_DETAILS_FIELD_NUMBER = 16;
   private com.google.cloud.netapp.v1.HybridPeeringDetails hybridPeeringDetails_;
+
   /**
    *
    *
@@ -1880,6 +1937,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHybridPeeringDetails() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -1899,6 +1957,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.netapp.v1.HybridPeeringDetails.getDefaultInstance()
         : hybridPeeringDetails_;
   }
+
   /**
    *
    *
@@ -1922,6 +1981,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterLocation_ = "";
+
   /**
    *
    *
@@ -1945,6 +2005,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1971,6 +2032,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HYBRID_REPLICATION_TYPE_FIELD_NUMBER = 19;
   private int hybridReplicationType_ = 0;
+
   /**
    *
    *
@@ -1988,6 +2050,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
   public int getHybridReplicationTypeValue() {
     return hybridReplicationType_;
   }
+
   /**
    *
    *
@@ -2375,6 +2438,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2851,6 +2915,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2875,6 +2940,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2899,6 +2965,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2922,6 +2989,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2941,6 +3009,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2967,6 +3036,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2984,6 +3054,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -3004,6 +3075,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3023,6 +3095,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.netapp.v1.Replication.State.forNumber(state_);
       return result == null ? com.google.cloud.netapp.v1.Replication.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -3046,6 +3119,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3067,6 +3141,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object stateDetails_ = "";
+
     /**
      *
      *
@@ -3089,6 +3164,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3111,6 +3187,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3132,6 +3209,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3149,6 +3227,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3173,6 +3252,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int role_ = 0;
+
     /**
      *
      *
@@ -3190,6 +3270,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public int getRoleValue() {
       return role_;
     }
+
     /**
      *
      *
@@ -3210,6 +3291,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3231,6 +3313,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.netapp.v1.Replication.ReplicationRole.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3254,6 +3337,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3275,6 +3359,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int replicationSchedule_ = 0;
+
     /**
      *
      *
@@ -3292,6 +3377,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public int getReplicationScheduleValue() {
       return replicationSchedule_;
     }
+
     /**
      *
      *
@@ -3312,6 +3398,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3334,6 +3421,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.netapp.v1.Replication.ReplicationSchedule.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3358,6 +3446,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3379,6 +3468,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int mirrorState_ = 0;
+
     /**
      *
      *
@@ -3396,6 +3486,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public int getMirrorStateValue() {
       return mirrorState_;
     }
+
     /**
      *
      *
@@ -3416,6 +3507,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3437,6 +3529,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.netapp.v1.Replication.MirrorState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3460,6 +3553,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3481,6 +3575,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean healthy_;
+
     /**
      *
      *
@@ -3500,6 +3595,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHealthy() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -3519,6 +3615,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public boolean getHealthy() {
       return healthy_;
     }
+
     /**
      *
      *
@@ -3542,6 +3639,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3570,6 +3668,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -3586,6 +3685,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3608,6 +3708,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3632,6 +3733,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3653,6 +3755,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3682,6 +3785,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3703,6 +3807,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3719,6 +3824,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3739,6 +3845,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -3768,6 +3875,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object destinationVolume_ = "";
+
     /**
      *
      *
@@ -3793,6 +3901,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3818,6 +3927,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3842,6 +3952,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3862,6 +3973,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3894,6 +4006,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.netapp.v1.TransferStats.Builder,
             com.google.cloud.netapp.v1.TransferStatsOrBuilder>
         transferStatsBuilder_;
+
     /**
      *
      *
@@ -3910,6 +4023,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTransferStats() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3932,6 +4046,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return transferStatsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3956,6 +4071,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3978,6 +4094,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4007,6 +4124,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4028,6 +4146,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4044,6 +4163,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTransferStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4064,6 +4184,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             : transferStats_;
       }
     }
+
     /**
      *
      *
@@ -4117,6 +4238,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -4133,12 +4255,14 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -4152,6 +4276,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -4172,6 +4297,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -4198,6 +4324,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -4214,12 +4341,14 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000400;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -4240,6 +4369,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000400;
       return this;
     }
+
     /**
      *
      *
@@ -4256,6 +4386,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -4270,6 +4401,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -4292,6 +4424,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4314,6 +4447,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4335,6 +4469,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4352,6 +4487,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4381,6 +4517,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.netapp.v1.DestinationVolumeParameters.Builder,
             com.google.cloud.netapp.v1.DestinationVolumeParametersOrBuilder>
         destinationVolumeParametersBuilder_;
+
     /**
      *
      *
@@ -4397,6 +4534,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDestinationVolumeParameters() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -4419,6 +4557,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return destinationVolumeParametersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4444,6 +4583,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4466,6 +4606,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4497,6 +4638,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4518,6 +4660,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4535,6 +4678,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDestinationVolumeParametersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4556,6 +4700,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             : destinationVolumeParameters_;
       }
     }
+
     /**
      *
      *
@@ -4585,6 +4730,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sourceVolume_ = "";
+
     /**
      *
      *
@@ -4610,6 +4756,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4635,6 +4782,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4659,6 +4807,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4679,6 +4828,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4711,6 +4861,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.netapp.v1.HybridPeeringDetails.Builder,
             com.google.cloud.netapp.v1.HybridPeeringDetailsOrBuilder>
         hybridPeeringDetailsBuilder_;
+
     /**
      *
      *
@@ -4727,6 +4878,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHybridPeeringDetails() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -4749,6 +4901,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return hybridPeeringDetailsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4773,6 +4926,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4795,6 +4949,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4826,6 +4981,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4847,6 +5003,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4864,6 +5021,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getHybridPeeringDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4885,6 +5043,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             : hybridPeeringDetails_;
       }
     }
+
     /**
      *
      *
@@ -4914,6 +5073,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object clusterLocation_ = "";
+
     /**
      *
      *
@@ -4936,6 +5096,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4958,6 +5119,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4979,6 +5141,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4996,6 +5159,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5020,6 +5184,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int hybridReplicationType_ = 0;
+
     /**
      *
      *
@@ -5037,6 +5202,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     public int getHybridReplicationTypeValue() {
       return hybridReplicationType_;
     }
+
     /**
      *
      *
@@ -5057,6 +5223,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5079,6 +5246,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.netapp.v1.Replication.HybridReplicationType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -5103,6 +5271,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

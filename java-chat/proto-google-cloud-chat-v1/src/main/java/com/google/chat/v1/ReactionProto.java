@@ -41,6 +41,10 @@ public final class ReactionProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_chat_v1_CustomEmoji_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_CustomEmoji_CustomEmojiPayload_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_chat_v1_CustomEmoji_CustomEmojiPayload_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_chat_v1_EmojiReactionSummary_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_chat_v1_EmojiReactionSummary_fieldAccessorTable;
@@ -60,6 +64,26 @@ public final class ReactionProto {
       internal_static_google_chat_v1_DeleteReactionRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_chat_v1_DeleteReactionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_CreateCustomEmojiRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_chat_v1_CreateCustomEmojiRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_GetCustomEmojiRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_chat_v1_GetCustomEmojiRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_ListCustomEmojisRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_chat_v1_ListCustomEmojisRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_ListCustomEmojisResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_chat_v1_ListCustomEmojisResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_DeleteCustomEmojiRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_chat_v1_DeleteCustomEmojiRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -69,38 +93,74 @@ public final class ReactionProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n\035google/chat/v1/reaction.proto\022\016google."
+      "\n"
+          + "\035google/chat/v1/reaction.proto\022\016google."
           + "chat.v1\032\037google/api/field_behavior.proto"
           + "\032\033google/api/field_info.proto\032\031google/ap"
-          + "i/resource.proto\032\031google/chat/v1/user.pr"
-          + "oto\"\314\001\n\010Reaction\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\'\n\004u"
-          + "ser\030\002 \001(\0132\024.google.chat.v1.UserB\003\340A\003\022)\n\005"
-          + "emoji\030\003 \001(\0132\025.google.chat.v1.EmojiB\003\340A\002:"
-          + "Y\352AV\n\034chat.googleapis.com/Reaction\0226spac"
-          + "es/{space}/messages/{message}/reactions/"
-          + "{reaction}\"_\n\005Emoji\022\026\n\007unicode\030\001 \001(\tB\003\340A"
-          + "\001H\000\0223\n\014custom_emoji\030\002 \001(\0132\033.google.chat."
-          + "v1.CustomEmojiH\000B\t\n\007content\"\'\n\013CustomEmo"
-          + "ji\022\030\n\003uid\030\001 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\"v\n\024EmojiRea"
-          + "ctionSummary\022)\n\005emoji\030\001 \001(\0132\025.google.cha"
-          + "t.v1.EmojiB\003\340A\003\022 \n\016reaction_count\030\002 \001(\005B"
-          + "\003\340A\003H\000\210\001\001B\021\n\017_reaction_count\"~\n\025CreateRe"
-          + "actionRequest\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\022\034c"
-          + "hat.googleapis.com/Reaction\022/\n\010reaction\030"
-          + "\002 \001(\0132\030.google.chat.v1.ReactionB\003\340A\002\"\222\001\n"
-          + "\024ListReactionsRequest\0224\n\006parent\030\001 \001(\tB$\340"
-          + "A\002\372A\036\022\034chat.googleapis.com/Reaction\022\026\n\tp"
-          + "age_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB"
-          + "\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\"]\n\025ListReactio"
-          + "nsResponse\022+\n\treactions\030\001 \003(\0132\030.google.c"
-          + "hat.v1.Reaction\022\027\n\017next_page_token\030\002 \001(\t"
-          + "\"K\n\025DeleteReactionRequest\0222\n\004name\030\001 \001(\tB"
-          + "$\340A\002\372A\036\n\034chat.googleapis.com/ReactionB\246\001"
-          + "\n\022com.google.chat.v1B\rReactionProtoP\001Z,c"
-          + "loud.google.com/go/chat/apiv1/chatpb;cha"
-          + "tpb\242\002\013DYNAPIProto\252\002\023Google.Apps.Chat.V1\312"
-          + "\002\023Google\\Apps\\Chat\\V1\352\002\026Google::Apps::Ch"
-          + "at::V1b\006proto3"
+          + "i/resource.proto\032\031google/chat/v1/user.proto\"\314\001\n"
+          + "\010Reaction\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\'\n"
+          + "\004user\030\002 \001(\0132\024.google.chat.v1.UserB\003\340A\003\022)\n"
+          + "\005emoji\030\003 \001(\0132\025.google.chat.v1.EmojiB\003\340A\002:Y\352AV\n"
+          + "\034chat.googleapis.com/Reaction\0226spac"
+          + "es/{space}/messages/{message}/reactions/{reaction}\"_\n"
+          + "\005Emoji\022\026\n"
+          + "\007unicode\030\001 \001(\tB\003\340A\001H\000\0223\n"
+          + "\014custom_emoji\030\002 \001(\0132\033.google.chat.v1.CustomEmojiH\000B\t\n"
+          + "\007content\"\355\002\n"
+          + "\013CustomEmoji\022\021\n"
+          + "\004name\030\002 \001(\tB\003\340A\010\022\030\n"
+          + "\003uid\030\001 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022\032\n\n"
+          + "emoji_name\030\003 \001(\tB\006\340A\001\340A\005\022 \n"
+          + "\023temporary_image_uri\030\004 \001(\tB\003\340A\003\022G\n"
+          + "\007payload\030\005"
+          + " \001(\0132..google.chat.v1.CustomEmoji.CustomEmojiPayloadB\006\340A\004\340A\001\032L\n"
+          + "\022CustomEmojiPayload\022\034\n"
+          + "\014file_content\030\001 \001(\014B\006\340A\004\340A\002\022\030\n"
+          + "\010filename\030\002 \001(\tB\006\340A\004\340A\002:\\\352AY\n"
+          + "\037chat.googlea"
+          + "pis.com/CustomEmoji\022\033customEmojis/{custom_emoji}*\014customEmojis2\013customEmoji\"v\n"
+          + "\024EmojiReactionSummary\022)\n"
+          + "\005emoji\030\001 \001(\0132\025.google.chat.v1.EmojiB\003\340A\003\022 \n"
+          + "\016reaction_count\030\002 \001(\005B\003\340A\003H\000\210\001\001B\021\n"
+          + "\017_reaction_count\"~\n"
+          + "\025CreateReactionRequest\0224\n"
+          + "\006parent\030\001 \001("
+          + "\tB$\340A\002\372A\036\022\034chat.googleapis.com/Reaction\022/\n"
+          + "\010reaction\030\002 \001(\0132\030.google.chat.v1.ReactionB\003\340A\002\"\222\001\n"
+          + "\024ListReactionsRequest\0224\n"
+          + "\006parent\030\001 \001("
+          + "\tB$\340A\002\372A\036\022\034chat.googleapis.com/Reaction\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\"]\n"
+          + "\025ListReactionsResponse\022+\n"
+          + "\treactions\030\001 \003(\0132\030.google.chat.v1.Reaction\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"K\n"
+          + "\025DeleteReactionRequest\0222\n"
+          + "\004name\030\001 \001(\tB$\340A\002\372A\036\n"
+          + "\034chat.googleapis.com/Reaction\"R\n"
+          + "\030CreateCustomEmojiRequest\0226\n"
+          + "\014custom_emoji\030\001 \001(\0132\033.google.chat.v1.CustomEmojiB\003\340A\002\"N\n"
+          + "\025GetCustomEmojiRequest\0225\n"
+          + "\004name\030\001 \001(\tB\'\340A\002\372A!\n"
+          + "\037chat.googleapis.com/CustomEmoji\"_\n"
+          + "\027ListCustomEmojisRequest\022\026\n"
+          + "\tpage_size\030\001 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\002 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\003 \001(\tB\003\340A\001\"l\n"
+          + "\030ListCustomEmojisResponse\0227\n\r"
+          + "custom_emojis\030\001"
+          + " \003(\0132\033.google.chat.v1.CustomEmojiB\003\340A\006\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"Q\n"
+          + "\030DeleteCustomEmojiRequest\0225\n"
+          + "\004name\030\001 \001(\tB\'\340A\002\372A!\n"
+          + "\037chat.googleapis.com/CustomEmojiB\246\001\n"
+          + "\022com.google.chat.v1B\r"
+          + "ReactionProtoP\001Z,cloud.google.com/go/"
+          + "chat/apiv1/chatpb;chatpb\242\002\013DYNAPIProto\252\002"
+          + "\023Google.Apps.Chat.V1\312\002\023Google\\Apps\\Chat\\"
+          + "V1\352\002\026Google::Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -131,7 +191,15 @@ public final class ReactionProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_CustomEmoji_descriptor,
             new java.lang.String[] {
-              "Uid",
+              "Name", "Uid", "EmojiName", "TemporaryImageUri", "Payload",
+            });
+    internal_static_google_chat_v1_CustomEmoji_CustomEmojiPayload_descriptor =
+        internal_static_google_chat_v1_CustomEmoji_descriptor.getNestedTypes().get(0);
+    internal_static_google_chat_v1_CustomEmoji_CustomEmojiPayload_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_chat_v1_CustomEmoji_CustomEmojiPayload_descriptor,
+            new java.lang.String[] {
+              "FileContent", "Filename",
             });
     internal_static_google_chat_v1_EmojiReactionSummary_descriptor =
         getDescriptor().getMessageTypes().get(3);
@@ -170,6 +238,46 @@ public final class ReactionProto {
     internal_static_google_chat_v1_DeleteReactionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_DeleteReactionRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_chat_v1_CreateCustomEmojiRequest_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_chat_v1_CreateCustomEmojiRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_chat_v1_CreateCustomEmojiRequest_descriptor,
+            new java.lang.String[] {
+              "CustomEmoji",
+            });
+    internal_static_google_chat_v1_GetCustomEmojiRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_chat_v1_GetCustomEmojiRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_chat_v1_GetCustomEmojiRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_chat_v1_ListCustomEmojisRequest_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_chat_v1_ListCustomEmojisRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_chat_v1_ListCustomEmojisRequest_descriptor,
+            new java.lang.String[] {
+              "PageSize", "PageToken", "Filter",
+            });
+    internal_static_google_chat_v1_ListCustomEmojisResponse_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_chat_v1_ListCustomEmojisResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_chat_v1_ListCustomEmojisResponse_descriptor,
+            new java.lang.String[] {
+              "CustomEmojis", "NextPageToken",
+            });
+    internal_static_google_chat_v1_DeleteCustomEmojiRequest_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_chat_v1_DeleteCustomEmojiRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_chat_v1_DeleteCustomEmojiRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });

@@ -37,6 +37,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return Whether the origin field is set.
    */
   boolean hasOrigin();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The origin.
    */
   com.google.maps.routing.v2.Waypoint getOrigin();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return Whether the destination field is set.
    */
   boolean hasDestination();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The destination.
    */
   com.google.maps.routing.v2.Waypoint getDestination();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface ComputeRoutesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.maps.routing.v2.Waypoint> getIntermediatesList();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface ComputeRoutesRequestOrBuilder
    * </code>
    */
   com.google.maps.routing.v2.Waypoint getIntermediates(int index);
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface ComputeRoutesRequestOrBuilder
    * </code>
    */
   int getIntermediatesCount();
+
   /**
    *
    *
@@ -160,6 +167,7 @@ public interface ComputeRoutesRequestOrBuilder
    */
   java.util.List<? extends com.google.maps.routing.v2.WaypointOrBuilder>
       getIntermediatesOrBuilderList();
+
   /**
    *
    *
@@ -189,6 +197,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The enum numeric value on the wire for travelMode.
    */
   int getTravelModeValue();
+
   /**
    *
    *
@@ -222,6 +231,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The enum numeric value on the wire for routingPreference.
    */
   int getRoutingPreferenceValue();
+
   /**
    *
    *
@@ -255,6 +265,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The enum numeric value on the wire for polylineQuality.
    */
   int getPolylineQualityValue();
+
   /**
    *
    *
@@ -284,6 +295,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The enum numeric value on the wire for polylineEncoding.
    */
   int getPolylineEncodingValue();
+
   /**
    *
    *
@@ -317,6 +329,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return Whether the departureTime field is set.
    */
   boolean hasDepartureTime();
+
   /**
    *
    *
@@ -335,6 +348,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The departureTime.
    */
   com.google.protobuf.Timestamp getDepartureTime();
+
   /**
    *
    *
@@ -370,6 +384,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return Whether the arrivalTime field is set.
    */
   boolean hasArrivalTime();
+
   /**
    *
    *
@@ -388,6 +403,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The arrivalTime.
    */
   com.google.protobuf.Timestamp getArrivalTime();
+
   /**
    *
    *
@@ -435,6 +451,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return Whether the routeModifiers field is set.
    */
   boolean hasRouteModifiers();
+
   /**
    *
    *
@@ -450,6 +467,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The routeModifiers.
    */
   com.google.maps.routing.v2.RouteModifiers getRouteModifiers();
+
   /**
    *
    *
@@ -482,6 +500,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -515,6 +534,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
+
   /**
    *
    *
@@ -548,6 +568,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The enum numeric value on the wire for units.
    */
   int getUnitsValue();
+
   /**
    *
    *
@@ -611,6 +632,7 @@ public interface ComputeRoutesRequestOrBuilder
    */
   java.util.List<com.google.maps.routing.v2.ComputeRoutesRequest.ReferenceRoute>
       getRequestedReferenceRoutesList();
+
   /**
    *
    *
@@ -632,6 +654,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The count of requestedReferenceRoutes.
    */
   int getRequestedReferenceRoutesCount();
+
   /**
    *
    *
@@ -655,6 +678,7 @@ public interface ComputeRoutesRequestOrBuilder
    */
   com.google.maps.routing.v2.ComputeRoutesRequest.ReferenceRoute getRequestedReferenceRoutes(
       int index);
+
   /**
    *
    *
@@ -676,6 +700,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for requestedReferenceRoutes.
    */
   java.util.List<java.lang.Integer> getRequestedReferenceRoutesValueList();
+
   /**
    *
    *
@@ -717,6 +742,7 @@ public interface ComputeRoutesRequestOrBuilder
    */
   java.util.List<com.google.maps.routing.v2.ComputeRoutesRequest.ExtraComputation>
       getExtraComputationsList();
+
   /**
    *
    *
@@ -734,6 +760,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The count of extraComputations.
    */
   int getExtraComputationsCount();
+
   /**
    *
    *
@@ -752,6 +779,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The extraComputations at the given index.
    */
   com.google.maps.routing.v2.ComputeRoutesRequest.ExtraComputation getExtraComputations(int index);
+
   /**
    *
    *
@@ -769,6 +797,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for extraComputations.
    */
   java.util.List<java.lang.Integer> getExtraComputationsValueList();
+
   /**
    *
    *
@@ -813,6 +842,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The enum numeric value on the wire for trafficModel.
    */
   int getTrafficModelValue();
+
   /**
    *
    *
@@ -856,6 +886,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return Whether the transitPreferences field is set.
    */
   boolean hasTransitPreferences();
+
   /**
    *
    *
@@ -873,6 +904,7 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The transitPreferences.
    */
   com.google.maps.routing.v2.TransitPreferences getTransitPreferences();
+
   /**
    *
    *

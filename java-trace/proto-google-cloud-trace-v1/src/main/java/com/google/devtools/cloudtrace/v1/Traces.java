@@ -33,6 +33,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v1.Traces)
     TracesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Traces.newBuilder() to construct.
   private Traces(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.cloudtrace.v1.Trace> traces_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.devtools.cloudtrace.v1.Trace> getTracesList() {
     return traces_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
       getTracesOrBuilderList() {
     return traces_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
   public int getTracesCount() {
     return traces_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
   public com.google.devtools.cloudtrace.v1.Trace getTraces(int index) {
     return traces_.get(index);
   }
+
   /**
    *
    *
@@ -294,6 +300,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -553,6 +560,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
         return tracesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -569,6 +577,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
         return tracesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -585,6 +594,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
         return tracesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -607,6 +617,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -627,6 +638,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -649,6 +661,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -671,6 +684,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -690,6 +704,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +725,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +746,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +766,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +786,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +799,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.cloudtrace.v1.Trace.Builder getTracesBuilder(int index) {
       return getTracesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -796,6 +816,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
         return tracesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -813,6 +834,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(traces_);
       }
     }
+
     /**
      *
      *
@@ -826,6 +848,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
       return getTracesFieldBuilder()
           .addBuilder(com.google.devtools.cloudtrace.v1.Trace.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -839,6 +862,7 @@ public final class Traces extends com.google.protobuf.GeneratedMessageV3
       return getTracesFieldBuilder()
           .addBuilder(index, com.google.devtools.cloudtrace.v1.Trace.getDefaultInstance());
     }
+
     /**
      *
      *

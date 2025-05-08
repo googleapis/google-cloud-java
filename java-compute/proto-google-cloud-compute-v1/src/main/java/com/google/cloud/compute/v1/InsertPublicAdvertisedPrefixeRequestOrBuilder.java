@@ -38,6 +38,7 @@ public interface InsertPublicAdvertisedPrefixeRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface InsertPublicAdvertisedPrefixeRequestOrBuilder
    * @return Whether the publicAdvertisedPrefixResource field is set.
    */
   boolean hasPublicAdvertisedPrefixResource();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface InsertPublicAdvertisedPrefixeRequestOrBuilder
    * @return The publicAdvertisedPrefixResource.
    */
   com.google.cloud.compute.v1.PublicAdvertisedPrefix getPublicAdvertisedPrefixResource();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface InsertPublicAdvertisedPrefixeRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface InsertPublicAdvertisedPrefixeRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

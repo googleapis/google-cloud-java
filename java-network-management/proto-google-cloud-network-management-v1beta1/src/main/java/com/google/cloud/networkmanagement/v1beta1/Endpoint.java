@@ -33,6 +33,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1beta1.Endpoint)
     EndpointOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Endpoint.newBuilder() to construct.
   private Endpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -114,8 +115,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A network hosted outside of Google Cloud.
-     * This can be an on-premises network, or a network hosted by another cloud
-     * provider.
+     * This can be an on-premises network, an internet resource or a network
+     * hosted by another cloud provider.
      * </pre>
      *
      * <code>NON_GCP_NETWORK = 2;</code>
@@ -134,6 +135,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>NETWORK_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int NETWORK_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -146,13 +148,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>GCP_NETWORK = 1;</code>
      */
     public static final int GCP_NETWORK_VALUE = 1;
+
     /**
      *
      *
      * <pre>
      * A network hosted outside of Google Cloud.
-     * This can be an on-premises network, or a network hosted by another cloud
-     * provider.
+     * This can be an on-premises network, an internet resource or a network
+     * hosted by another cloud provider.
      * </pre>
      *
      * <code>NON_GCP_NETWORK = 2;</code>
@@ -318,6 +321,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>FORWARDING_RULE_TARGET_UNSPECIFIED = 0;</code>
      */
     public static final int FORWARDING_RULE_TARGET_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -328,6 +332,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>INSTANCE = 1;</code>
      */
     public static final int INSTANCE_VALUE = 1;
+
     /**
      *
      *
@@ -339,6 +344,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>LOAD_BALANCER = 2;</code>
      */
     public static final int LOAD_BALANCER_VALUE = 2;
+
     /**
      *
      *
@@ -349,6 +355,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>VPN_GATEWAY = 3;</code>
      */
     public static final int VPN_GATEWAY_VALUE = 3;
+
     /**
      *
      *
@@ -469,6 +476,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
+
     /**
      *
      *
@@ -482,6 +490,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getUriBytes();
   }
+
   /**
    *
    *
@@ -496,6 +505,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint)
       CloudFunctionEndpointOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CloudFunctionEndpoint.newBuilder() to construct.
     private CloudFunctionEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -531,6 +541,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -554,6 +565,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -746,6 +758,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -944,6 +957,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -966,6 +980,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -988,6 +1003,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1009,6 +1025,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1026,6 +1043,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1136,6 +1154,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
+
     /**
      *
      *
@@ -1151,6 +1170,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getUriBytes();
   }
+
   /**
    *
    *
@@ -1165,6 +1185,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1beta1.Endpoint.AppEngineVersionEndpoint)
       AppEngineVersionEndpointOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AppEngineVersionEndpoint.newBuilder() to construct.
     private AppEngineVersionEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1200,6 +1221,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -1225,6 +1247,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1420,6 +1443,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1620,6 +1644,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -1644,6 +1669,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1668,6 +1694,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1691,6 +1718,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1710,6 +1738,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1824,6 +1853,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
+
     /**
      *
      *
@@ -1840,6 +1870,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getUriBytes();
   }
+
   /**
    *
    *
@@ -1854,6 +1885,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1beta1.Endpoint.CloudRunRevisionEndpoint)
       CloudRunRevisionEndpointOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CloudRunRevisionEndpoint.newBuilder() to construct.
     private CloudRunRevisionEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1889,6 +1921,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -1915,6 +1948,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -2111,6 +2145,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2311,6 +2346,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
+
       /**
        *
        *
@@ -2336,6 +2372,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2361,6 +2398,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2385,6 +2423,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2405,6 +2444,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2505,6 +2545,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
+
   /**
    *
    *
@@ -2528,6 +2569,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2554,6 +2596,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PORT_FIELD_NUMBER = 2;
   private int port_ = 0;
+
   /**
    *
    *
@@ -2575,6 +2618,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
+
   /**
    *
    *
@@ -2598,6 +2642,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2626,6 +2671,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object forwardingRule_ = "";
+
   /**
    *
    *
@@ -2633,7 +2679,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * A forwarding rule and its corresponding IP address represent the frontend
    * configuration of a Google Cloud load balancer. Forwarding rules are also
    * used for protocol forwarding, Private Service Connect and other network
-   * services to provide forwarding information in the control plane. Format:
+   * services to provide forwarding information in the control plane. Applicable
+   * only to destination endpoint. Format:
    *  projects/{project}/global/forwardingRules/{id} or
    *  projects/{project}/regions/{region}/forwardingRules/{id}
    * </pre>
@@ -2654,6 +2701,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2661,7 +2709,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * A forwarding rule and its corresponding IP address represent the frontend
    * configuration of a Google Cloud load balancer. Forwarding rules are also
    * used for protocol forwarding, Private Service Connect and other network
-   * services to provide forwarding information in the control plane. Format:
+   * services to provide forwarding information in the control plane. Applicable
+   * only to destination endpoint. Format:
    *  projects/{project}/global/forwardingRules/{id} or
    *  projects/{project}/regions/{region}/forwardingRules/{id}
    * </pre>
@@ -2685,6 +2734,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FORWARDING_RULE_TARGET_FIELD_NUMBER = 14;
   private int forwardingRuleTarget_ = 0;
+
   /**
    *
    *
@@ -2702,6 +2752,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasForwardingRuleTarget() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2719,6 +2770,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public int getForwardingRuleTargetValue() {
     return forwardingRuleTarget_;
   }
+
   /**
    *
    *
@@ -2747,6 +2799,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object loadBalancerId_ = "";
+
   /**
    *
    *
@@ -2764,6 +2817,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLoadBalancerId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2789,6 +2843,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2817,6 +2872,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOAD_BALANCER_TYPE_FIELD_NUMBER = 16;
   private int loadBalancerType_ = 0;
+
   /**
    *
    *
@@ -2834,6 +2890,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLoadBalancerType() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -2851,6 +2908,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public int getLoadBalancerTypeValue() {
     return loadBalancerType_;
   }
+
   /**
    *
    *
@@ -2877,6 +2935,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gkeMasterCluster_ = "";
+
   /**
    *
    *
@@ -2901,6 +2960,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2930,6 +2990,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fqdn_ = "";
+
   /**
    *
    *
@@ -2956,6 +3017,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2987,6 +3049,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cloudSqlInstance_ = "";
+
   /**
    *
    *
@@ -3010,6 +3073,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3038,12 +3102,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object redisInstance_ = "";
+
   /**
    *
    *
    * <pre>
-   * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
-   * URI.
+   * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis) URI.
+   * Applicable only to destination endpoint.
    * </pre>
    *
    * <code>string redis_instance = 17;</code>
@@ -3062,12 +3127,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
-   * URI.
+   * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis) URI.
+   * Applicable only to destination endpoint.
    * </pre>
    *
    * <code>string redis_instance = 17;</code>
@@ -3091,12 +3157,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object redisCluster_ = "";
+
   /**
    *
    *
    * <pre>
-   * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
-   * URI.
+   * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster) URI.
+   * Applicable only to destination endpoint.
    * </pre>
    *
    * <code>string redis_cluster = 18;</code>
@@ -3115,12 +3182,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
-   * URI.
+   * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster) URI.
+   * Applicable only to destination endpoint.
    * </pre>
    *
    * <code>string redis_cluster = 18;</code>
@@ -3142,11 +3210,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLOUD_FUNCTION_FIELD_NUMBER = 10;
   private com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint cloudFunction_;
+
   /**
    *
    *
    * <pre>
-   * A [Cloud Function](https://cloud.google.com/functions).
+   * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
+   * source endpoint.
    * </pre>
    *
    * <code>
@@ -3159,11 +3229,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudFunction() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * A [Cloud Function](https://cloud.google.com/functions).
+   * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
+   * source endpoint.
    * </pre>
    *
    * <code>
@@ -3180,11 +3252,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : cloudFunction_;
   }
+
   /**
    *
    *
    * <pre>
-   * A [Cloud Function](https://cloud.google.com/functions).
+   * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
+   * source endpoint.
    * </pre>
    *
    * <code>
@@ -3203,12 +3277,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public static final int APP_ENGINE_VERSION_FIELD_NUMBER = 11;
   private com.google.cloud.networkmanagement.v1beta1.Endpoint.AppEngineVersionEndpoint
       appEngineVersion_;
+
   /**
    *
    *
    * <pre>
    * An [App Engine](https://cloud.google.com/appengine) [service
    * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+   * Applicable only to source endpoint.
    * </pre>
    *
    * <code>
@@ -3221,12 +3297,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAppEngineVersion() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
    * <pre>
    * An [App Engine](https://cloud.google.com/appengine) [service
    * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+   * Applicable only to source endpoint.
    * </pre>
    *
    * <code>
@@ -3243,12 +3321,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : appEngineVersion_;
   }
+
   /**
    *
    *
    * <pre>
    * An [App Engine](https://cloud.google.com/appengine) [service
    * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+   * Applicable only to source endpoint.
    * </pre>
    *
    * <code>
@@ -3267,12 +3347,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public static final int CLOUD_RUN_REVISION_FIELD_NUMBER = 12;
   private com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudRunRevisionEndpoint
       cloudRunRevision_;
+
   /**
    *
    *
    * <pre>
    * A [Cloud Run](https://cloud.google.com/run)
    * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+   * Applicable only to source endpoint.
    * </pre>
    *
    * <code>
@@ -3285,12 +3367,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudRunRevision() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
    * <pre>
    * A [Cloud Run](https://cloud.google.com/run)
    * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+   * Applicable only to source endpoint.
    * </pre>
    *
    * <code>
@@ -3307,12 +3391,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : cloudRunRevision_;
   }
+
   /**
    *
    *
    * <pre>
    * A [Cloud Run](https://cloud.google.com/run)
    * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+   * Applicable only to source endpoint.
    * </pre>
    *
    * <code>
@@ -3332,11 +3418,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
+
   /**
    *
    *
    * <pre>
-   * A Compute Engine network URI.
+   * A VPC network URI.
    * </pre>
    *
    * <code>string network = 4;</code>
@@ -3355,11 +3442,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * A Compute Engine network URI.
+   * A VPC network URI.
    * </pre>
    *
    * <code>string network = 4;</code>
@@ -3381,6 +3469,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NETWORK_TYPE_FIELD_NUMBER = 5;
   private int networkType_ = 0;
+
   /**
    *
    *
@@ -3398,6 +3487,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   public int getNetworkTypeValue() {
     return networkType_;
   }
+
   /**
    *
    *
@@ -3424,14 +3514,15 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
    * <pre>
    * Project ID where the endpoint is located.
-   * The Project ID can be derived from the URI if you provide a VM instance or
+   * The project ID can be derived from the URI if you provide a endpoint or
    * network URI.
-   * The following are two cases where you must provide the project ID:
+   * The following are two cases where you may need to provide the project ID:
    * 1. Only the IP address is specified, and the IP address is within a Google
    * Cloud project.
    * 2. When you are using Shared VPC and the IP address that you provide is
@@ -3455,14 +3546,15 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
    * Project ID where the endpoint is located.
-   * The Project ID can be derived from the URI if you provide a VM instance or
+   * The project ID can be derived from the URI if you provide a endpoint or
    * network URI.
-   * The following are two cases where you must provide the project ID:
+   * The following are two cases where you may need to provide the project ID:
    * 1. Only the IP address is specified, and the IP address is within a Google
    * Cloud project.
    * 2. When you are using Shared VPC and the IP address that you provide is
@@ -3833,6 +3925,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4294,6 +4387,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object ipAddress_ = "";
+
     /**
      *
      *
@@ -4316,6 +4410,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4338,6 +4433,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4359,6 +4455,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4376,6 +4473,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4400,6 +4498,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int port_;
+
     /**
      *
      *
@@ -4416,6 +4515,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public int getPort() {
       return port_;
     }
+
     /**
      *
      *
@@ -4436,6 +4536,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4456,6 +4557,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object instance_ = "";
+
     /**
      *
      *
@@ -4478,6 +4580,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4500,6 +4603,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4521,6 +4625,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4538,6 +4643,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4562,6 +4668,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object forwardingRule_ = "";
+
     /**
      *
      *
@@ -4569,7 +4676,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * A forwarding rule and its corresponding IP address represent the frontend
      * configuration of a Google Cloud load balancer. Forwarding rules are also
      * used for protocol forwarding, Private Service Connect and other network
-     * services to provide forwarding information in the control plane. Format:
+     * services to provide forwarding information in the control plane. Applicable
+     * only to destination endpoint. Format:
      *  projects/{project}/global/forwardingRules/{id} or
      *  projects/{project}/regions/{region}/forwardingRules/{id}
      * </pre>
@@ -4589,6 +4697,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4596,7 +4705,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * A forwarding rule and its corresponding IP address represent the frontend
      * configuration of a Google Cloud load balancer. Forwarding rules are also
      * used for protocol forwarding, Private Service Connect and other network
-     * services to provide forwarding information in the control plane. Format:
+     * services to provide forwarding information in the control plane. Applicable
+     * only to destination endpoint. Format:
      *  projects/{project}/global/forwardingRules/{id} or
      *  projects/{project}/regions/{region}/forwardingRules/{id}
      * </pre>
@@ -4616,6 +4726,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4623,7 +4734,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * A forwarding rule and its corresponding IP address represent the frontend
      * configuration of a Google Cloud load balancer. Forwarding rules are also
      * used for protocol forwarding, Private Service Connect and other network
-     * services to provide forwarding information in the control plane. Format:
+     * services to provide forwarding information in the control plane. Applicable
+     * only to destination endpoint. Format:
      *  projects/{project}/global/forwardingRules/{id} or
      *  projects/{project}/regions/{region}/forwardingRules/{id}
      * </pre>
@@ -4642,6 +4754,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4649,7 +4762,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * A forwarding rule and its corresponding IP address represent the frontend
      * configuration of a Google Cloud load balancer. Forwarding rules are also
      * used for protocol forwarding, Private Service Connect and other network
-     * services to provide forwarding information in the control plane. Format:
+     * services to provide forwarding information in the control plane. Applicable
+     * only to destination endpoint. Format:
      *  projects/{project}/global/forwardingRules/{id} or
      *  projects/{project}/regions/{region}/forwardingRules/{id}
      * </pre>
@@ -4664,6 +4778,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4671,7 +4786,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * A forwarding rule and its corresponding IP address represent the frontend
      * configuration of a Google Cloud load balancer. Forwarding rules are also
      * used for protocol forwarding, Private Service Connect and other network
-     * services to provide forwarding information in the control plane. Format:
+     * services to provide forwarding information in the control plane. Applicable
+     * only to destination endpoint. Format:
      *  projects/{project}/global/forwardingRules/{id} or
      *  projects/{project}/regions/{region}/forwardingRules/{id}
      * </pre>
@@ -4693,6 +4809,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int forwardingRuleTarget_ = 0;
+
     /**
      *
      *
@@ -4710,6 +4827,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasForwardingRuleTarget() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -4727,6 +4845,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public int getForwardingRuleTargetValue() {
       return forwardingRuleTarget_;
     }
+
     /**
      *
      *
@@ -4747,6 +4866,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4770,6 +4890,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkmanagement.v1beta1.Endpoint.ForwardingRuleTarget.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4794,6 +4915,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4815,6 +4937,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object loadBalancerId_ = "";
+
     /**
      *
      *
@@ -4831,6 +4954,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLoadBalancerId() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -4855,6 +4979,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4879,6 +5004,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4902,6 +5028,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4921,6 +5048,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4947,6 +5075,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int loadBalancerType_ = 0;
+
     /**
      *
      *
@@ -4964,6 +5093,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLoadBalancerType() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -4981,6 +5111,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public int getLoadBalancerTypeValue() {
       return loadBalancerType_;
     }
+
     /**
      *
      *
@@ -5001,6 +5132,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5022,6 +5154,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkmanagement.v1beta1.LoadBalancerType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -5046,6 +5179,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5067,6 +5201,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object gkeMasterCluster_ = "";
+
     /**
      *
      *
@@ -5090,6 +5225,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5113,6 +5249,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5135,6 +5272,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5153,6 +5291,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5178,6 +5317,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object fqdn_ = "";
+
     /**
      *
      *
@@ -5203,6 +5343,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5228,6 +5369,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5252,6 +5394,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5272,6 +5415,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5299,6 +5443,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object cloudSqlInstance_ = "";
+
     /**
      *
      *
@@ -5321,6 +5466,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5343,6 +5489,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5364,6 +5511,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5381,6 +5529,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5405,12 +5554,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object redisInstance_ = "";
+
     /**
      *
      *
      * <pre>
-     * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
-     * URI.
+     * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis) URI.
+     * Applicable only to destination endpoint.
      * </pre>
      *
      * <code>string redis_instance = 17;</code>
@@ -5428,12 +5578,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
-     * URI.
+     * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis) URI.
+     * Applicable only to destination endpoint.
      * </pre>
      *
      * <code>string redis_instance = 17;</code>
@@ -5451,12 +5602,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
-     * URI.
+     * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis) URI.
+     * Applicable only to destination endpoint.
      * </pre>
      *
      * <code>string redis_instance = 17;</code>
@@ -5473,12 +5625,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
-     * URI.
+     * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis) URI.
+     * Applicable only to destination endpoint.
      * </pre>
      *
      * <code>string redis_instance = 17;</code>
@@ -5491,12 +5644,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
-     * URI.
+     * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis) URI.
+     * Applicable only to destination endpoint.
      * </pre>
      *
      * <code>string redis_instance = 17;</code>
@@ -5516,12 +5670,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object redisCluster_ = "";
+
     /**
      *
      *
      * <pre>
-     * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
-     * URI.
+     * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster) URI.
+     * Applicable only to destination endpoint.
      * </pre>
      *
      * <code>string redis_cluster = 18;</code>
@@ -5539,12 +5694,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
-     * URI.
+     * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster) URI.
+     * Applicable only to destination endpoint.
      * </pre>
      *
      * <code>string redis_cluster = 18;</code>
@@ -5562,12 +5718,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
-     * URI.
+     * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster) URI.
+     * Applicable only to destination endpoint.
      * </pre>
      *
      * <code>string redis_cluster = 18;</code>
@@ -5584,12 +5741,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
-     * URI.
+     * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster) URI.
+     * Applicable only to destination endpoint.
      * </pre>
      *
      * <code>string redis_cluster = 18;</code>
@@ -5602,12 +5760,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
-     * URI.
+     * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster) URI.
+     * Applicable only to destination endpoint.
      * </pre>
      *
      * <code>string redis_cluster = 18;</code>
@@ -5633,11 +5792,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint.Builder,
             com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpointOrBuilder>
         cloudFunctionBuilder_;
+
     /**
      *
      *
      * <pre>
-     * A [Cloud Function](https://cloud.google.com/functions).
+     * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
+     * source endpoint.
      * </pre>
      *
      * <code>
@@ -5649,11 +5810,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudFunction() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * A [Cloud Function](https://cloud.google.com/functions).
+     * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
+     * source endpoint.
      * </pre>
      *
      * <code>
@@ -5673,11 +5836,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return cloudFunctionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * A [Cloud Function](https://cloud.google.com/functions).
+     * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
+     * source endpoint.
      * </pre>
      *
      * <code>
@@ -5698,11 +5863,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * A [Cloud Function](https://cloud.google.com/functions).
+     * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
+     * source endpoint.
      * </pre>
      *
      * <code>
@@ -5721,11 +5888,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * A [Cloud Function](https://cloud.google.com/functions).
+     * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
+     * source endpoint.
      * </pre>
      *
      * <code>
@@ -5753,11 +5922,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * A [Cloud Function](https://cloud.google.com/functions).
+     * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
+     * source endpoint.
      * </pre>
      *
      * <code>
@@ -5774,11 +5945,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * A [Cloud Function](https://cloud.google.com/functions).
+     * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
+     * source endpoint.
      * </pre>
      *
      * <code>
@@ -5791,11 +5964,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCloudFunctionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * A [Cloud Function](https://cloud.google.com/functions).
+     * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
+     * source endpoint.
      * </pre>
      *
      * <code>
@@ -5813,11 +5988,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             : cloudFunction_;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * A [Cloud Function](https://cloud.google.com/functions).
+     * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
+     * source endpoint.
      * </pre>
      *
      * <code>
@@ -5848,12 +6025,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1beta1.Endpoint.AppEngineVersionEndpoint.Builder,
             com.google.cloud.networkmanagement.v1beta1.Endpoint.AppEngineVersionEndpointOrBuilder>
         appEngineVersionBuilder_;
+
     /**
      *
      *
      * <pre>
      * An [App Engine](https://cloud.google.com/appengine) [service
      * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+     * Applicable only to source endpoint.
      * </pre>
      *
      * <code>
@@ -5865,12 +6044,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAppEngineVersion() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
      * <pre>
      * An [App Engine](https://cloud.google.com/appengine) [service
      * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+     * Applicable only to source endpoint.
      * </pre>
      *
      * <code>
@@ -5890,12 +6071,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return appEngineVersionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
      * An [App Engine](https://cloud.google.com/appengine) [service
      * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+     * Applicable only to source endpoint.
      * </pre>
      *
      * <code>
@@ -5916,12 +6099,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * An [App Engine](https://cloud.google.com/appengine) [service
      * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+     * Applicable only to source endpoint.
      * </pre>
      *
      * <code>
@@ -5940,12 +6125,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * An [App Engine](https://cloud.google.com/appengine) [service
      * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+     * Applicable only to source endpoint.
      * </pre>
      *
      * <code>
@@ -5973,12 +6160,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * An [App Engine](https://cloud.google.com/appengine) [service
      * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+     * Applicable only to source endpoint.
      * </pre>
      *
      * <code>
@@ -5995,12 +6184,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * An [App Engine](https://cloud.google.com/appengine) [service
      * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+     * Applicable only to source endpoint.
      * </pre>
      *
      * <code>
@@ -6013,12 +6204,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAppEngineVersionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
      * An [App Engine](https://cloud.google.com/appengine) [service
      * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+     * Applicable only to source endpoint.
      * </pre>
      *
      * <code>
@@ -6036,12 +6229,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             : appEngineVersion_;
       }
     }
+
     /**
      *
      *
      * <pre>
      * An [App Engine](https://cloud.google.com/appengine) [service
      * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+     * Applicable only to source endpoint.
      * </pre>
      *
      * <code>
@@ -6074,12 +6269,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudRunRevisionEndpoint.Builder,
             com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudRunRevisionEndpointOrBuilder>
         cloudRunRevisionBuilder_;
+
     /**
      *
      *
      * <pre>
      * A [Cloud Run](https://cloud.google.com/run)
      * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * Applicable only to source endpoint.
      * </pre>
      *
      * <code>
@@ -6091,12 +6288,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudRunRevision() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
      * <pre>
      * A [Cloud Run](https://cloud.google.com/run)
      * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * Applicable only to source endpoint.
      * </pre>
      *
      * <code>
@@ -6116,12 +6315,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return cloudRunRevisionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
      * A [Cloud Run](https://cloud.google.com/run)
      * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * Applicable only to source endpoint.
      * </pre>
      *
      * <code>
@@ -6142,12 +6343,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * A [Cloud Run](https://cloud.google.com/run)
      * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * Applicable only to source endpoint.
      * </pre>
      *
      * <code>
@@ -6166,12 +6369,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * A [Cloud Run](https://cloud.google.com/run)
      * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * Applicable only to source endpoint.
      * </pre>
      *
      * <code>
@@ -6199,12 +6404,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * A [Cloud Run](https://cloud.google.com/run)
      * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * Applicable only to source endpoint.
      * </pre>
      *
      * <code>
@@ -6221,12 +6428,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * A [Cloud Run](https://cloud.google.com/run)
      * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * Applicable only to source endpoint.
      * </pre>
      *
      * <code>
@@ -6239,12 +6448,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCloudRunRevisionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
      * A [Cloud Run](https://cloud.google.com/run)
      * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * Applicable only to source endpoint.
      * </pre>
      *
      * <code>
@@ -6262,12 +6473,14 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             : cloudRunRevision_;
       }
     }
+
     /**
      *
      *
      * <pre>
      * A [Cloud Run](https://cloud.google.com/run)
      * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * Applicable only to source endpoint.
      * </pre>
      *
      * <code>
@@ -6294,11 +6507,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object network_ = "";
+
     /**
      *
      *
      * <pre>
-     * A Compute Engine network URI.
+     * A VPC network URI.
      * </pre>
      *
      * <code>string network = 4;</code>
@@ -6316,11 +6530,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * A Compute Engine network URI.
+     * A VPC network URI.
      * </pre>
      *
      * <code>string network = 4;</code>
@@ -6338,11 +6553,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * A Compute Engine network URI.
+     * A VPC network URI.
      * </pre>
      *
      * <code>string network = 4;</code>
@@ -6359,11 +6575,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * A Compute Engine network URI.
+     * A VPC network URI.
      * </pre>
      *
      * <code>string network = 4;</code>
@@ -6376,11 +6593,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * A Compute Engine network URI.
+     * A VPC network URI.
      * </pre>
      *
      * <code>string network = 4;</code>
@@ -6400,6 +6618,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int networkType_ = 0;
+
     /**
      *
      *
@@ -6417,6 +6636,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public int getNetworkTypeValue() {
       return networkType_;
     }
+
     /**
      *
      *
@@ -6437,6 +6657,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6458,6 +6679,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.networkmanagement.v1beta1.Endpoint.NetworkType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -6482,6 +6704,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6503,14 +6726,15 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
      * <pre>
      * Project ID where the endpoint is located.
-     * The Project ID can be derived from the URI if you provide a VM instance or
+     * The project ID can be derived from the URI if you provide a endpoint or
      * network URI.
-     * The following are two cases where you must provide the project ID:
+     * The following are two cases where you may need to provide the project ID:
      * 1. Only the IP address is specified, and the IP address is within a Google
      * Cloud project.
      * 2. When you are using Shared VPC and the IP address that you provide is
@@ -6533,14 +6757,15 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Project ID where the endpoint is located.
-     * The Project ID can be derived from the URI if you provide a VM instance or
+     * The project ID can be derived from the URI if you provide a endpoint or
      * network URI.
-     * The following are two cases where you must provide the project ID:
+     * The following are two cases where you may need to provide the project ID:
      * 1. Only the IP address is specified, and the IP address is within a Google
      * Cloud project.
      * 2. When you are using Shared VPC and the IP address that you provide is
@@ -6563,14 +6788,15 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Project ID where the endpoint is located.
-     * The Project ID can be derived from the URI if you provide a VM instance or
+     * The project ID can be derived from the URI if you provide a endpoint or
      * network URI.
-     * The following are two cases where you must provide the project ID:
+     * The following are two cases where you may need to provide the project ID:
      * 1. Only the IP address is specified, and the IP address is within a Google
      * Cloud project.
      * 2. When you are using Shared VPC and the IP address that you provide is
@@ -6592,14 +6818,15 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Project ID where the endpoint is located.
-     * The Project ID can be derived from the URI if you provide a VM instance or
+     * The project ID can be derived from the URI if you provide a endpoint or
      * network URI.
-     * The following are two cases where you must provide the project ID:
+     * The following are two cases where you may need to provide the project ID:
      * 1. Only the IP address is specified, and the IP address is within a Google
      * Cloud project.
      * 2. When you are using Shared VPC and the IP address that you provide is
@@ -6617,14 +6844,15 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Project ID where the endpoint is located.
-     * The Project ID can be derived from the URI if you provide a VM instance or
+     * The project ID can be derived from the URI if you provide a endpoint or
      * network URI.
-     * The following are two cases where you must provide the project ID:
+     * The following are two cases where you may need to provide the project ID:
      * 1. Only the IP address is specified, and the IP address is within a Google
      * Cloud project.
      * 2. When you are using Shared VPC and the IP address that you provide is

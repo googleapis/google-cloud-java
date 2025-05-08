@@ -33,6 +33,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.StageSummary)
     StageSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StageSummary.newBuilder() to construct.
   private StageSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stageId_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -184,6 +191,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -218,6 +227,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -236,6 +246,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -255,6 +266,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROGRESS_FIELD_NUMBER = 5;
   private com.google.dataflow.v1beta3.ProgressTimeseries progress_;
+
   /**
    *
    *
@@ -271,6 +283,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProgress() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -289,6 +302,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         ? com.google.dataflow.v1beta3.ProgressTimeseries.getDefaultInstance()
         : progress_;
   }
+
   /**
    *
    *
@@ -310,6 +324,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.MetricUpdate> metrics_;
+
   /**
    *
    *
@@ -323,6 +338,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.dataflow.v1beta3.MetricUpdate> getMetricsList() {
     return metrics_;
   }
+
   /**
    *
    *
@@ -337,6 +353,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       getMetricsOrBuilderList() {
     return metrics_;
   }
+
   /**
    *
    *
@@ -350,6 +367,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   public int getMetricsCount() {
     return metrics_.size();
   }
+
   /**
    *
    *
@@ -363,6 +381,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.MetricUpdate getMetrics(int index) {
     return metrics_.get(index);
   }
+
   /**
    *
    *
@@ -375,6 +394,59 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.dataflow.v1beta3.MetricUpdateOrBuilder getMetricsOrBuilder(int index) {
     return metrics_.get(index);
+  }
+
+  public static final int STRAGGLER_SUMMARY_FIELD_NUMBER = 7;
+  private com.google.dataflow.v1beta3.StragglerSummary stragglerSummary_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Straggler summary for this stage.
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.StragglerSummary straggler_summary = 7;</code>
+   *
+   * @return Whether the stragglerSummary field is set.
+   */
+  @java.lang.Override
+  public boolean hasStragglerSummary() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Straggler summary for this stage.
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.StragglerSummary straggler_summary = 7;</code>
+   *
+   * @return The stragglerSummary.
+   */
+  @java.lang.Override
+  public com.google.dataflow.v1beta3.StragglerSummary getStragglerSummary() {
+    return stragglerSummary_ == null
+        ? com.google.dataflow.v1beta3.StragglerSummary.getDefaultInstance()
+        : stragglerSummary_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Straggler summary for this stage.
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.StragglerSummary straggler_summary = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.dataflow.v1beta3.StragglerSummaryOrBuilder getStragglerSummaryOrBuilder() {
+    return stragglerSummary_ == null
+        ? com.google.dataflow.v1beta3.StragglerSummary.getDefaultInstance()
+        : stragglerSummary_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -409,6 +481,9 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < metrics_.size(); i++) {
       output.writeMessage(6, metrics_.get(i));
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(7, getStragglerSummary());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -435,6 +510,9 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < metrics_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, metrics_.get(i));
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getStragglerSummary());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -466,6 +544,10 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       if (!getProgress().equals(other.getProgress())) return false;
     }
     if (!getMetricsList().equals(other.getMetricsList())) return false;
+    if (hasStragglerSummary() != other.hasStragglerSummary()) return false;
+    if (hasStragglerSummary()) {
+      if (!getStragglerSummary().equals(other.getStragglerSummary())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -496,6 +578,10 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     if (getMetricsCount() > 0) {
       hash = (37 * hash) + METRICS_FIELD_NUMBER;
       hash = (53 * hash) + getMetricsList().hashCode();
+    }
+    if (hasStragglerSummary()) {
+      hash = (37 * hash) + STRAGGLER_SUMMARY_FIELD_NUMBER;
+      hash = (53 * hash) + getStragglerSummary().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -597,6 +683,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -641,6 +728,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         getEndTimeFieldBuilder();
         getProgressFieldBuilder();
         getMetricsFieldBuilder();
+        getStragglerSummaryFieldBuilder();
       }
     }
 
@@ -672,6 +760,11 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         metricsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000020);
+      stragglerSummary_ = null;
+      if (stragglerSummaryBuilder_ != null) {
+        stragglerSummaryBuilder_.dispose();
+        stragglerSummaryBuilder_ = null;
+      }
       return this;
     }
 
@@ -739,6 +832,11 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.progress_ = progressBuilder_ == null ? progress_ : progressBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.stragglerSummary_ =
+            stragglerSummaryBuilder_ == null ? stragglerSummary_ : stragglerSummaryBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -832,6 +930,9 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasStragglerSummary()) {
+        mergeStragglerSummary(other.getStragglerSummary());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -901,6 +1002,13 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getStragglerSummaryFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -921,6 +1029,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object stageId_ = "";
+
     /**
      *
      *
@@ -943,6 +1052,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -965,6 +1075,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -986,6 +1097,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1003,6 +1115,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1140,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1042,6 +1156,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1060,6 +1175,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1193,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
           com.google.dataflow.v1beta3.ExecutionState.forNumber(state_);
       return result == null ? com.google.dataflow.v1beta3.ExecutionState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1098,6 +1215,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1122,6 +1240,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -1136,6 +1255,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1154,6 +1274,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1176,6 +1297,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1195,6 +1317,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1222,6 +1345,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1241,6 +1365,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1255,6 +1380,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1271,6 +1397,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1303,6 +1430,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1320,6 +1448,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1341,6 +1470,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1366,6 +1496,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1388,6 +1519,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1418,6 +1550,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1440,6 +1573,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1457,6 +1591,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1476,6 +1611,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -1511,6 +1647,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
             com.google.dataflow.v1beta3.ProgressTimeseries.Builder,
             com.google.dataflow.v1beta3.ProgressTimeseriesOrBuilder>
         progressBuilder_;
+
     /**
      *
      *
@@ -1526,6 +1663,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProgress() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1547,6 +1685,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return progressBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1570,6 +1709,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1591,6 +1731,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1619,6 +1760,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1639,6 +1781,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1654,6 +1797,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getProgressFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1673,6 +1817,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
             : progress_;
       }
     }
+
     /**
      *
      *
@@ -1732,6 +1877,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return metricsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1748,6 +1894,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return metricsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1764,6 +1911,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return metricsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1786,6 +1934,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1806,6 +1955,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1828,6 +1978,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1850,6 +2001,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1869,6 +2021,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1889,6 +2042,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1909,6 +2063,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1928,6 +2083,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1947,6 +2103,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1959,6 +2116,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.MetricUpdate.Builder getMetricsBuilder(int index) {
       return getMetricsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1975,6 +2133,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return metricsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1992,6 +2151,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(metrics_);
       }
     }
+
     /**
      *
      *
@@ -2005,6 +2165,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       return getMetricsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.MetricUpdate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2018,6 +2179,7 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
       return getMetricsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.MetricUpdate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2047,6 +2209,202 @@ public final class StageSummary extends com.google.protobuf.GeneratedMessageV3
         metrics_ = null;
       }
       return metricsBuilder_;
+    }
+
+    private com.google.dataflow.v1beta3.StragglerSummary stragglerSummary_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.dataflow.v1beta3.StragglerSummary,
+            com.google.dataflow.v1beta3.StragglerSummary.Builder,
+            com.google.dataflow.v1beta3.StragglerSummaryOrBuilder>
+        stragglerSummaryBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Straggler summary for this stage.
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.StragglerSummary straggler_summary = 7;</code>
+     *
+     * @return Whether the stragglerSummary field is set.
+     */
+    public boolean hasStragglerSummary() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Straggler summary for this stage.
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.StragglerSummary straggler_summary = 7;</code>
+     *
+     * @return The stragglerSummary.
+     */
+    public com.google.dataflow.v1beta3.StragglerSummary getStragglerSummary() {
+      if (stragglerSummaryBuilder_ == null) {
+        return stragglerSummary_ == null
+            ? com.google.dataflow.v1beta3.StragglerSummary.getDefaultInstance()
+            : stragglerSummary_;
+      } else {
+        return stragglerSummaryBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Straggler summary for this stage.
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.StragglerSummary straggler_summary = 7;</code>
+     */
+    public Builder setStragglerSummary(com.google.dataflow.v1beta3.StragglerSummary value) {
+      if (stragglerSummaryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stragglerSummary_ = value;
+      } else {
+        stragglerSummaryBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Straggler summary for this stage.
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.StragglerSummary straggler_summary = 7;</code>
+     */
+    public Builder setStragglerSummary(
+        com.google.dataflow.v1beta3.StragglerSummary.Builder builderForValue) {
+      if (stragglerSummaryBuilder_ == null) {
+        stragglerSummary_ = builderForValue.build();
+      } else {
+        stragglerSummaryBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Straggler summary for this stage.
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.StragglerSummary straggler_summary = 7;</code>
+     */
+    public Builder mergeStragglerSummary(com.google.dataflow.v1beta3.StragglerSummary value) {
+      if (stragglerSummaryBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && stragglerSummary_ != null
+            && stragglerSummary_
+                != com.google.dataflow.v1beta3.StragglerSummary.getDefaultInstance()) {
+          getStragglerSummaryBuilder().mergeFrom(value);
+        } else {
+          stragglerSummary_ = value;
+        }
+      } else {
+        stragglerSummaryBuilder_.mergeFrom(value);
+      }
+      if (stragglerSummary_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Straggler summary for this stage.
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.StragglerSummary straggler_summary = 7;</code>
+     */
+    public Builder clearStragglerSummary() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      stragglerSummary_ = null;
+      if (stragglerSummaryBuilder_ != null) {
+        stragglerSummaryBuilder_.dispose();
+        stragglerSummaryBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Straggler summary for this stage.
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.StragglerSummary straggler_summary = 7;</code>
+     */
+    public com.google.dataflow.v1beta3.StragglerSummary.Builder getStragglerSummaryBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getStragglerSummaryFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Straggler summary for this stage.
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.StragglerSummary straggler_summary = 7;</code>
+     */
+    public com.google.dataflow.v1beta3.StragglerSummaryOrBuilder getStragglerSummaryOrBuilder() {
+      if (stragglerSummaryBuilder_ != null) {
+        return stragglerSummaryBuilder_.getMessageOrBuilder();
+      } else {
+        return stragglerSummary_ == null
+            ? com.google.dataflow.v1beta3.StragglerSummary.getDefaultInstance()
+            : stragglerSummary_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Straggler summary for this stage.
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.StragglerSummary straggler_summary = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.dataflow.v1beta3.StragglerSummary,
+            com.google.dataflow.v1beta3.StragglerSummary.Builder,
+            com.google.dataflow.v1beta3.StragglerSummaryOrBuilder>
+        getStragglerSummaryFieldBuilder() {
+      if (stragglerSummaryBuilder_ == null) {
+        stragglerSummaryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.dataflow.v1beta3.StragglerSummary,
+                com.google.dataflow.v1beta3.StragglerSummary.Builder,
+                com.google.dataflow.v1beta3.StragglerSummaryOrBuilder>(
+                getStragglerSummary(), getParentForChildren(), isClean());
+        stragglerSummary_ = null;
+      }
+      return stragglerSummaryBuilder_;
     }
 
     @java.lang.Override

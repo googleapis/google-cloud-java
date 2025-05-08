@@ -33,6 +33,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.SanitizationResult)
     SanitizationResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SanitizationResult.newBuilder() to construct.
   private SanitizationResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -106,6 +107,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
      * @return The errorMessage.
      */
     java.lang.String getErrorMessage();
+
     /**
      *
      *
@@ -118,7 +120,22 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
      * @return The bytes for errorMessage.
      */
     com.google.protobuf.ByteString getErrorMessageBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Passthrough field defined in TemplateMetadata to indicate whether to
+     * ignore partial invocation failures.
+     * </pre>
+     *
+     * <code>bool ignore_partial_invocation_failures = 3;</code>
+     *
+     * @return The ignorePartialInvocationFailures.
+     */
+    boolean getIgnorePartialInvocationFailures();
   }
+
   /**
    *
    *
@@ -133,6 +150,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.SanitizationResult.SanitizationMetadata)
       SanitizationMetadataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SanitizationMetadata.newBuilder() to construct.
     private SanitizationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -165,6 +183,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
 
     public static final int ERROR_CODE_FIELD_NUMBER = 1;
     private long errorCode_ = 0L;
+
     /**
      *
      *
@@ -185,6 +204,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object errorMessage_ = "";
+
     /**
      *
      *
@@ -208,6 +228,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -232,6 +253,26 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       }
     }
 
+    public static final int IGNORE_PARTIAL_INVOCATION_FAILURES_FIELD_NUMBER = 3;
+    private boolean ignorePartialInvocationFailures_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Passthrough field defined in TemplateMetadata to indicate whether to
+     * ignore partial invocation failures.
+     * </pre>
+     *
+     * <code>bool ignore_partial_invocation_failures = 3;</code>
+     *
+     * @return The ignorePartialInvocationFailures.
+     */
+    @java.lang.Override
+    public boolean getIgnorePartialInvocationFailures() {
+      return ignorePartialInvocationFailures_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -252,6 +293,9 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorMessage_);
       }
+      if (ignorePartialInvocationFailures_ != false) {
+        output.writeBool(3, ignorePartialInvocationFailures_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -266,6 +310,11 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorMessage_);
+      }
+      if (ignorePartialInvocationFailures_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(
+                3, ignorePartialInvocationFailures_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -286,6 +335,8 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
 
       if (getErrorCode() != other.getErrorCode()) return false;
       if (!getErrorMessage().equals(other.getErrorMessage())) return false;
+      if (getIgnorePartialInvocationFailures() != other.getIgnorePartialInvocationFailures())
+        return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -301,6 +352,10 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getErrorCode());
       hash = (37 * hash) + ERROR_MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getErrorMessage().hashCode();
+      hash = (37 * hash) + IGNORE_PARTIAL_INVOCATION_FAILURES_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getIgnorePartialInvocationFailures());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -404,6 +459,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -448,6 +504,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         bitField0_ = 0;
         errorCode_ = 0L;
         errorMessage_ = "";
+        ignorePartialInvocationFailures_ = false;
         return this;
       }
 
@@ -493,6 +550,9 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.errorMessage_ = errorMessage_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.ignorePartialInvocationFailures_ = ignorePartialInvocationFailures_;
         }
       }
 
@@ -556,6 +616,9 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (other.getIgnorePartialInvocationFailures() != false) {
+          setIgnorePartialInvocationFailures(other.getIgnorePartialInvocationFailures());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -594,6 +657,12 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 24:
+                {
+                  ignorePartialInvocationFailures_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -614,6 +683,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private long errorCode_;
+
       /**
        *
        *
@@ -629,6 +699,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       public long getErrorCode() {
         return errorCode_;
       }
+
       /**
        *
        *
@@ -648,6 +719,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -667,6 +739,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object errorMessage_ = "";
+
       /**
        *
        *
@@ -689,6 +762,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -711,6 +785,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -732,6 +807,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -749,6 +825,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -768,6 +845,65 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         checkByteStringIsUtf8(value);
         errorMessage_ = value;
         bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private boolean ignorePartialInvocationFailures_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Passthrough field defined in TemplateMetadata to indicate whether to
+       * ignore partial invocation failures.
+       * </pre>
+       *
+       * <code>bool ignore_partial_invocation_failures = 3;</code>
+       *
+       * @return The ignorePartialInvocationFailures.
+       */
+      @java.lang.Override
+      public boolean getIgnorePartialInvocationFailures() {
+        return ignorePartialInvocationFailures_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Passthrough field defined in TemplateMetadata to indicate whether to
+       * ignore partial invocation failures.
+       * </pre>
+       *
+       * <code>bool ignore_partial_invocation_failures = 3;</code>
+       *
+       * @param value The ignorePartialInvocationFailures to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIgnorePartialInvocationFailures(boolean value) {
+
+        ignorePartialInvocationFailures_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Passthrough field defined in TemplateMetadata to indicate whether to
+       * ignore partial invocation failures.
+       * </pre>
+       *
+       * <code>bool ignore_partial_invocation_failures = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIgnorePartialInvocationFailures() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        ignorePartialInvocationFailures_ = false;
         onChanged();
         return this;
       }
@@ -843,6 +979,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int FILTER_MATCH_STATE_FIELD_NUMBER = 1;
   private int filterMatchState_ = 0;
+
   /**
    *
    *
@@ -867,6 +1004,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
   public int getFilterMatchStateValue() {
     return filterMatchState_;
   }
+
   /**
    *
    *
@@ -928,6 +1066,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
   public int getFilterResultsCount() {
     return internalGetFilterResults().getMap().size();
   }
+
   /**
    *
    *
@@ -947,6 +1086,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
     }
     return internalGetFilterResults().getMap().containsKey(key);
   }
+
   /** Use {@link #getFilterResultsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -954,6 +1094,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       getFilterResults() {
     return getFilterResultsMap();
   }
+
   /**
    *
    *
@@ -971,6 +1112,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       getFilterResultsMap() {
     return internalGetFilterResults().getMap();
   }
+
   /**
    *
    *
@@ -995,6 +1137,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         internalGetFilterResults().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1022,6 +1165,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
 
   public static final int INVOCATION_RESULT_FIELD_NUMBER = 4;
   private int invocationResult_ = 0;
+
   /**
    *
    *
@@ -1042,6 +1186,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
   public int getInvocationResultValue() {
     return invocationResult_;
   }
+
   /**
    *
    *
@@ -1068,6 +1213,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
   public static final int SANITIZATION_METADATA_FIELD_NUMBER = 3;
   private com.google.cloud.modelarmor.v1.SanitizationResult.SanitizationMetadata
       sanitizationMetadata_;
+
   /**
    *
    *
@@ -1085,6 +1231,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
   public boolean hasSanitizationMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1106,6 +1253,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance()
         : sanitizationMetadata_;
   }
+
   /**
    *
    *
@@ -1335,6 +1483,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1606,6 +1755,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int filterMatchState_ = 0;
+
     /**
      *
      *
@@ -1630,6 +1780,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
     public int getFilterMatchStateValue() {
       return filterMatchState_;
     }
+
     /**
      *
      *
@@ -1657,6 +1808,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1683,6 +1835,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
           com.google.cloud.modelarmor.v1.FilterMatchState.forNumber(filterMatchState_);
       return result == null ? com.google.cloud.modelarmor.v1.FilterMatchState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1713,6 +1866,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1760,7 +1914,8 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
           defaultEntry() {
         return FilterResultsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final FilterResultsConverter filterResultsConverter =
         new FilterResultsConverter();
@@ -1801,6 +1956,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
     public int getFilterResultsCount() {
       return internalGetFilterResults().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -1820,6 +1976,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       }
       return internalGetFilterResults().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getFilterResultsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1827,6 +1984,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         getFilterResults() {
       return getFilterResultsMap();
     }
+
     /**
      *
      *
@@ -1844,6 +2002,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         getFilterResultsMap() {
       return internalGetFilterResults().getImmutableMap();
     }
+
     /**
      *
      *
@@ -1868,6 +2027,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
           internalGetMutableFilterResults().ensureBuilderMap();
       return map.containsKey(key) ? filterResultsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -1899,6 +2059,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       internalGetMutableFilterResults().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1918,6 +2079,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       internalGetMutableFilterResults().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.modelarmor.v1.FilterResult>
@@ -1925,6 +2087,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000002;
       return internalGetMutableFilterResults().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -1949,6 +2112,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1973,6 +2137,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -2002,6 +2167,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
     }
 
     private int invocationResult_ = 0;
+
     /**
      *
      *
@@ -2022,6 +2188,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
     public int getInvocationResultValue() {
       return invocationResult_;
     }
+
     /**
      *
      *
@@ -2045,6 +2212,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2067,6 +2235,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
           com.google.cloud.modelarmor.v1.InvocationResult.forNumber(invocationResult_);
       return result == null ? com.google.cloud.modelarmor.v1.InvocationResult.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2093,6 +2262,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2123,6 +2293,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
             com.google.cloud.modelarmor.v1.SanitizationResult.SanitizationMetadata.Builder,
             com.google.cloud.modelarmor.v1.SanitizationResult.SanitizationMetadataOrBuilder>
         sanitizationMetadataBuilder_;
+
     /**
      *
      *
@@ -2139,6 +2310,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
     public boolean hasSanitizationMetadata() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2163,6 +2335,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         return sanitizationMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2188,6 +2361,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2211,6 +2385,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2243,6 +2418,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2264,6 +2440,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2281,6 +2458,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getSanitizationMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2303,6 +2481,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
             : sanitizationMetadata_;
       }
     }
+
     /**
      *
      *

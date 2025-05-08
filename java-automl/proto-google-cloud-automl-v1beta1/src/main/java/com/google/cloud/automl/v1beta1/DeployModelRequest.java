@@ -33,6 +33,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.DeployModelRequest)
     DeployModelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeployModelRequest.newBuilder() to construct.
   private DeployModelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     private ModelDeploymentMetadataCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,6 +115,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int IMAGE_OBJECT_DETECTION_MODEL_DEPLOYMENT_METADATA_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasImageObjectDetectionModelDeploymentMetadata() {
     return modelDeploymentMetadataCase_ == 2;
   }
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int IMAGE_CLASSIFICATION_MODEL_DEPLOYMENT_METADATA_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasImageClassificationModelDeploymentMetadata() {
     return modelDeploymentMetadataCase_ == 4;
   }
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -242,6 +250,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -267,6 +276,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -504,6 +514,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -764,6 +775,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata.Builder,
             com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadataOrBuilder>
         imageObjectDetectionModelDeploymentMetadataBuilder_;
+
     /**
      *
      *
@@ -781,6 +793,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasImageObjectDetectionModelDeploymentMetadata() {
       return modelDeploymentMetadataCase_ == 2;
     }
+
     /**
      *
      *
@@ -812,6 +825,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -837,6 +851,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       modelDeploymentMetadataCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +875,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       modelDeploymentMetadataCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +915,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       modelDeploymentMetadataCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +943,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +959,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
         getImageObjectDetectionModelDeploymentMetadataBuilder() {
       return getImageObjectDetectionModelDeploymentMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -967,6 +986,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1011,6 +1031,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadata.Builder,
             com.google.cloud.automl.v1beta1.ImageClassificationModelDeploymentMetadataOrBuilder>
         imageClassificationModelDeploymentMetadataBuilder_;
+
     /**
      *
      *
@@ -1028,6 +1049,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasImageClassificationModelDeploymentMetadata() {
       return modelDeploymentMetadataCase_ == 4;
     }
+
     /**
      *
      *
@@ -1059,6 +1081,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1084,6 +1107,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       modelDeploymentMetadataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1107,6 +1131,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       modelDeploymentMetadataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1170,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       modelDeploymentMetadataCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1172,6 +1198,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1187,6 +1214,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
         getImageClassificationModelDeploymentMetadataBuilder() {
       return getImageClassificationModelDeploymentMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1213,6 +1241,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1253,6 +1282,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1277,6 +1307,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1301,6 +1332,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1324,6 +1356,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1343,6 +1376,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

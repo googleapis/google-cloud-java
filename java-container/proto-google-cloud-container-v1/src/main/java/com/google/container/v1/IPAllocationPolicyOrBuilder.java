@@ -69,6 +69,7 @@ public interface IPAllocationPolicyOrBuilder
    * @return The subnetworkName.
    */
   java.lang.String getSubnetworkName();
+
   /**
    *
    *
@@ -99,6 +100,7 @@ public interface IPAllocationPolicyOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getClusterIpv4Cidr();
+
   /**
    *
    *
@@ -130,6 +132,7 @@ public interface IPAllocationPolicyOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getNodeIpv4Cidr();
+
   /**
    *
    *
@@ -161,6 +164,7 @@ public interface IPAllocationPolicyOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getServicesIpv4Cidr();
+
   /**
    *
    *
@@ -195,6 +199,7 @@ public interface IPAllocationPolicyOrBuilder
    * @return The clusterSecondaryRangeName.
    */
   java.lang.String getClusterSecondaryRangeName();
+
   /**
    *
    *
@@ -232,6 +237,7 @@ public interface IPAllocationPolicyOrBuilder
    * @return The servicesSecondaryRangeName.
    */
   java.lang.String getServicesSecondaryRangeName();
+
   /**
    *
    *
@@ -277,6 +283,7 @@ public interface IPAllocationPolicyOrBuilder
    * @return The clusterIpv4CidrBlock.
    */
   java.lang.String getClusterIpv4CidrBlock();
+
   /**
    *
    *
@@ -329,6 +336,7 @@ public interface IPAllocationPolicyOrBuilder
    * @return The nodeIpv4CidrBlock.
    */
   java.lang.String getNodeIpv4CidrBlock();
+
   /**
    *
    *
@@ -381,6 +389,7 @@ public interface IPAllocationPolicyOrBuilder
    * @return The servicesIpv4CidrBlock.
    */
   java.lang.String getServicesIpv4CidrBlock();
+
   /**
    *
    *
@@ -434,6 +443,7 @@ public interface IPAllocationPolicyOrBuilder
    * @return The tpuIpv4CidrBlock.
    */
   java.lang.String getTpuIpv4CidrBlock();
+
   /**
    *
    *
@@ -489,6 +499,7 @@ public interface IPAllocationPolicyOrBuilder
    * @return The enum numeric value on the wire for stackType.
    */
   int getStackTypeValue();
+
   /**
    *
    *
@@ -514,6 +525,7 @@ public interface IPAllocationPolicyOrBuilder
    * @return The enum numeric value on the wire for ipv6AccessType.
    */
   int getIpv6AccessTypeValue();
+
   /**
    *
    *
@@ -551,6 +563,7 @@ public interface IPAllocationPolicyOrBuilder
    * @return Whether the podCidrOverprovisionConfig field is set.
    */
   boolean hasPodCidrOverprovisionConfig();
+
   /**
    *
    *
@@ -575,6 +588,7 @@ public interface IPAllocationPolicyOrBuilder
    * @return The podCidrOverprovisionConfig.
    */
   com.google.container.v1.PodCIDROverprovisionConfig getPodCidrOverprovisionConfig();
+
   /**
    *
    *
@@ -611,6 +625,7 @@ public interface IPAllocationPolicyOrBuilder
    * @return The subnetIpv6CidrBlock.
    */
   java.lang.String getSubnetIpv6CidrBlock();
+
   /**
    *
    *
@@ -636,6 +651,7 @@ public interface IPAllocationPolicyOrBuilder
    * @return The servicesIpv6CidrBlock.
    */
   java.lang.String getServicesIpv6CidrBlock();
+
   /**
    *
    *
@@ -666,6 +682,7 @@ public interface IPAllocationPolicyOrBuilder
    * @return Whether the additionalPodRangesConfig field is set.
    */
   boolean hasAdditionalPodRangesConfig();
+
   /**
    *
    *
@@ -683,6 +700,7 @@ public interface IPAllocationPolicyOrBuilder
    * @return The additionalPodRangesConfig.
    */
   com.google.container.v1.AdditionalPodRangesConfig getAdditionalPodRangesConfig();
+
   /**
    *
    *

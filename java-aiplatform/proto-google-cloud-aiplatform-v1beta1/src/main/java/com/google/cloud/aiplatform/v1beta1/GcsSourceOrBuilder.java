@@ -30,7 +30,7 @@ public interface GcsSourceOrBuilder
    * <pre>
    * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
    * wildcards. For more information on wildcards, see
-   * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+   * https://cloud.google.com/storage/docs/wildcards.
    * </pre>
    *
    * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -38,13 +38,14 @@ public interface GcsSourceOrBuilder
    * @return A list containing the uris.
    */
   java.util.List<java.lang.String> getUrisList();
+
   /**
    *
    *
    * <pre>
    * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
    * wildcards. For more information on wildcards, see
-   * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+   * https://cloud.google.com/storage/docs/wildcards.
    * </pre>
    *
    * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -52,13 +53,14 @@ public interface GcsSourceOrBuilder
    * @return The count of uris.
    */
   int getUrisCount();
+
   /**
    *
    *
    * <pre>
    * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
    * wildcards. For more information on wildcards, see
-   * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+   * https://cloud.google.com/storage/docs/wildcards.
    * </pre>
    *
    * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -67,13 +69,14 @@ public interface GcsSourceOrBuilder
    * @return The uris at the given index.
    */
   java.lang.String getUris(int index);
+
   /**
    *
    *
    * <pre>
    * Required. Google Cloud Storage URI(-s) to the input file(s). May contain
    * wildcards. For more information on wildcards, see
-   * https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+   * https://cloud.google.com/storage/docs/wildcards.
    * </pre>
    *
    * <code>repeated string uris = 1 [(.google.api.field_behavior) = REQUIRED];</code>

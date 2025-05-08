@@ -54,6 +54,7 @@ public interface TestingOptionsOrBuilder
    * @return The enum numeric value on the wire for testingChallenge.
    */
   int getTestingChallengeValue();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment)
     FlexTemplateRuntimeEnvironmentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FlexTemplateRuntimeEnvironment.newBuilder() to construct.
   private FlexTemplateRuntimeEnvironment(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -57,6 +58,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     autoscalingAlgorithm_ = 0;
     saveHeapDumpsToGcsPath_ = "";
     launcherMachineType_ = "";
+    streamingMode_ = 0;
   }
 
   @java.lang.Override
@@ -92,8 +94,10 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
             com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NUM_WORKERS_FIELD_NUMBER = 1;
   private int numWorkers_ = 0;
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   public static final int MAX_WORKERS_FIELD_NUMBER = 2;
   private int maxWorkers_ = 0;
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccountEmail_ = "";
+
   /**
    *
    *
@@ -213,6 +221,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -241,6 +250,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tempLocation_ = "";
+
   /**
    *
    *
@@ -265,6 +275,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -294,6 +305,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineType_ = "";
+
   /**
    *
    *
@@ -318,6 +330,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -348,6 +361,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList additionalExperiments_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -362,6 +376,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   public com.google.protobuf.ProtocolStringList getAdditionalExperimentsList() {
     return additionalExperiments_;
   }
+
   /**
    *
    *
@@ -376,6 +391,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   public int getAdditionalExperimentsCount() {
     return additionalExperiments_.size();
   }
+
   /**
    *
    *
@@ -391,6 +407,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   public java.lang.String getAdditionalExperiments(int index) {
     return additionalExperiments_.get(index);
   }
+
   /**
    *
    *
@@ -411,6 +428,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
+
   /**
    *
    *
@@ -435,6 +453,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -464,6 +483,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subnetwork_ = "";
+
   /**
    *
    *
@@ -492,6 +512,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -549,6 +570,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   public int getAdditionalUserLabelsCount() {
     return internalGetAdditionalUserLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -570,12 +592,14 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
     return internalGetAdditionalUserLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getAdditionalUserLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAdditionalUserLabels() {
     return getAdditionalUserLabelsMap();
   }
+
   /**
    *
    *
@@ -594,6 +618,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   public java.util.Map<java.lang.String, java.lang.String> getAdditionalUserLabelsMap() {
     return internalGetAdditionalUserLabels().getMap();
   }
+
   /**
    *
    *
@@ -620,6 +645,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         internalGetAdditionalUserLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -651,6 +677,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKeyName_ = "";
+
   /**
    *
    *
@@ -676,6 +703,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -704,6 +732,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   public static final int IP_CONFIGURATION_FIELD_NUMBER = 12;
   private int ipConfiguration_ = 0;
+
   /**
    *
    *
@@ -719,6 +748,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   public int getIpConfigurationValue() {
     return ipConfiguration_;
   }
+
   /**
    *
    *
@@ -743,6 +773,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workerRegion_ = "";
+
   /**
    *
    *
@@ -770,6 +801,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -802,6 +834,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workerZone_ = "";
+
   /**
    *
    *
@@ -830,6 +863,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -861,6 +895,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   public static final int ENABLE_STREAMING_ENGINE_FIELD_NUMBER = 15;
   private boolean enableStreamingEngine_ = false;
+
   /**
    *
    *
@@ -879,6 +914,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   public static final int FLEXRS_GOAL_FIELD_NUMBER = 16;
   private int flexrsGoal_ = 0;
+
   /**
    *
    *
@@ -895,6 +931,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   public int getFlexrsGoalValue() {
     return flexrsGoal_;
   }
+
   /**
    *
    *
@@ -920,6 +957,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stagingLocation_ = "";
+
   /**
    *
    *
@@ -944,6 +982,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -973,6 +1012,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sdkContainerImage_ = "";
+
   /**
    *
    *
@@ -998,6 +1038,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -1026,6 +1067,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   public static final int DISK_SIZE_GB_FIELD_NUMBER = 20;
   private int diskSizeGb_ = 0;
+
   /**
    *
    *
@@ -1044,6 +1086,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   public static final int AUTOSCALING_ALGORITHM_FIELD_NUMBER = 21;
   private int autoscalingAlgorithm_ = 0;
+
   /**
    *
    *
@@ -1059,6 +1102,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
   public int getAutoscalingAlgorithmValue() {
     return autoscalingAlgorithm_;
   }
+
   /**
    *
    *
@@ -1079,13 +1123,17 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   public static final int DUMP_HEAP_ON_OOM_FIELD_NUMBER = 22;
   private boolean dumpHeapOnOom_ = false;
+
   /**
    *
    *
    * <pre>
-   * If true, save a heap dump before killing a thread or process which is GC
-   * thrashing or out of memory. The location of the heap file will either be
-   * echoed back to the user, or the user will be given the opportunity to
+   * If true, when processing time is spent almost entirely
+   * on garbage collection (GC), saves a heap dump before ending the thread
+   * or process. If false, ends the thread or process without saving a heap
+   * dump. Does not save a heap dump when the Java Virtual Machine (JVM) has an
+   * out of memory error during processing. The location of the heap file is
+   * either echoed back to the user, or the user is given the opportunity to
    * download the heap file.
    * </pre>
    *
@@ -1102,13 +1150,13 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object saveHeapDumpsToGcsPath_ = "";
+
   /**
    *
    *
    * <pre>
-   * Cloud Storage bucket (directory) to upload heap dumps to the given
-   * location. Enabling this implies that heap dumps should be generated on OOM
-   * (dump_heap_on_oom is set to true).
+   * Cloud Storage bucket (directory) to upload heap dumps to.
+   * Enabling this field implies that `dump_heap_on_oom` is set to true.
    * </pre>
    *
    * <code>string save_heap_dumps_to_gcs_path = 23;</code>
@@ -1127,13 +1175,13 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Cloud Storage bucket (directory) to upload heap dumps to the given
-   * location. Enabling this implies that heap dumps should be generated on OOM
-   * (dump_heap_on_oom is set to true).
+   * Cloud Storage bucket (directory) to upload heap dumps to.
+   * Enabling this field implies that `dump_heap_on_oom` is set to true.
    * </pre>
    *
    * <code>string save_heap_dumps_to_gcs_path = 23;</code>
@@ -1157,6 +1205,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object launcherMachineType_ = "";
+
   /**
    *
    *
@@ -1181,6 +1230,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -1204,6 +1254,102 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int ENABLE_LAUNCHER_VM_SERIAL_PORT_LOGGING_FIELD_NUMBER = 25;
+  private boolean enableLauncherVmSerialPortLogging_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * If true serial port logging will be enabled for the launcher VM.
+   * </pre>
+   *
+   * <code>bool enable_launcher_vm_serial_port_logging = 25;</code>
+   *
+   * @return The enableLauncherVmSerialPortLogging.
+   */
+  @java.lang.Override
+  public boolean getEnableLauncherVmSerialPortLogging() {
+    return enableLauncherVmSerialPortLogging_;
+  }
+
+  public static final int STREAMING_MODE_FIELD_NUMBER = 26;
+  private int streamingMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the streamingMode field is set.
+   */
+  @java.lang.Override
+  public boolean hasStreamingMode() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for streamingMode.
+   */
+  @java.lang.Override
+  public int getStreamingModeValue() {
+    return streamingMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The streamingMode.
+   */
+  @java.lang.Override
+  public com.google.dataflow.v1beta3.StreamingMode getStreamingMode() {
+    com.google.dataflow.v1beta3.StreamingMode result =
+        com.google.dataflow.v1beta3.StreamingMode.forNumber(streamingMode_);
+    return result == null ? com.google.dataflow.v1beta3.StreamingMode.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1296,6 +1442,12 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(launcherMachineType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 24, launcherMachineType_);
+    }
+    if (enableLauncherVmSerialPortLogging_ != false) {
+      output.writeBool(25, enableLauncherVmSerialPortLogging_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(26, streamingMode_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1392,6 +1544,14 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(launcherMachineType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, launcherMachineType_);
     }
+    if (enableLauncherVmSerialPortLogging_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              25, enableLauncherVmSerialPortLogging_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(26, streamingMode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1432,6 +1592,12 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     if (getDumpHeapOnOom() != other.getDumpHeapOnOom()) return false;
     if (!getSaveHeapDumpsToGcsPath().equals(other.getSaveHeapDumpsToGcsPath())) return false;
     if (!getLauncherMachineType().equals(other.getLauncherMachineType())) return false;
+    if (getEnableLauncherVmSerialPortLogging() != other.getEnableLauncherVmSerialPortLogging())
+      return false;
+    if (hasStreamingMode() != other.hasStreamingMode()) return false;
+    if (hasStreamingMode()) {
+      if (streamingMode_ != other.streamingMode_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1493,6 +1659,14 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     hash = (53 * hash) + getSaveHeapDumpsToGcsPath().hashCode();
     hash = (37 * hash) + LAUNCHER_MACHINE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getLauncherMachineType().hashCode();
+    hash = (37 * hash) + ENABLE_LAUNCHER_VM_SERIAL_PORT_LOGGING_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashBoolean(getEnableLauncherVmSerialPortLogging());
+    if (hasStreamingMode()) {
+      hash = (37 * hash) + STREAMING_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + streamingMode_;
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1594,6 +1768,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1678,6 +1853,8 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       dumpHeapOnOom_ = false;
       saveHeapDumpsToGcsPath_ = "";
       launcherMachineType_ = "";
+      enableLauncherVmSerialPortLogging_ = false;
+      streamingMode_ = 0;
       return this;
     }
 
@@ -1785,6 +1962,15 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       if (((from_bitField0_ & 0x00400000) != 0)) {
         result.launcherMachineType_ = launcherMachineType_;
       }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.enableLauncherVmSerialPortLogging_ = enableLauncherVmSerialPortLogging_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.streamingMode_ = streamingMode_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1933,6 +2119,12 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         launcherMachineType_ = other.launcherMachineType_;
         bitField0_ |= 0x00400000;
         onChanged();
+      }
+      if (other.getEnableLauncherVmSerialPortLogging() != false) {
+        setEnableLauncherVmSerialPortLogging(other.getEnableLauncherVmSerialPortLogging());
+      }
+      if (other.hasStreamingMode()) {
+        setStreamingMode(other.getStreamingMode());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2106,6 +2298,18 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
                 bitField0_ |= 0x00400000;
                 break;
               } // case 194
+            case 200:
+              {
+                enableLauncherVmSerialPortLogging_ = input.readBool();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 200
+            case 208:
+              {
+                streamingMode_ = input.readEnum();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 208
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2126,6 +2330,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     private int bitField0_;
 
     private int numWorkers_;
+
     /**
      *
      *
@@ -2141,6 +2346,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public int getNumWorkers() {
       return numWorkers_;
     }
+
     /**
      *
      *
@@ -2160,6 +2366,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2179,6 +2386,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private int maxWorkers_;
+
     /**
      *
      *
@@ -2195,6 +2403,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public int getMaxWorkers() {
       return maxWorkers_;
     }
+
     /**
      *
      *
@@ -2215,6 +2424,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2235,6 +2445,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -2260,6 +2471,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2285,6 +2497,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2309,6 +2522,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2329,6 +2543,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2356,6 +2571,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object serviceAccountEmail_ = "";
+
     /**
      *
      *
@@ -2378,6 +2594,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2400,6 +2617,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2421,6 +2639,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2438,6 +2657,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2462,6 +2682,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object tempLocation_ = "";
+
     /**
      *
      *
@@ -2485,6 +2706,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2508,6 +2730,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2530,6 +2753,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2548,6 +2772,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2573,6 +2798,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object machineType_ = "";
+
     /**
      *
      *
@@ -2596,6 +2822,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2619,6 +2846,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2641,6 +2869,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2659,6 +2888,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2693,6 +2923,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       }
       bitField0_ |= 0x00000040;
     }
+
     /**
      *
      *
@@ -2708,6 +2939,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       additionalExperiments_.makeImmutable();
       return additionalExperiments_;
     }
+
     /**
      *
      *
@@ -2722,6 +2954,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public int getAdditionalExperimentsCount() {
       return additionalExperiments_.size();
     }
+
     /**
      *
      *
@@ -2737,6 +2970,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public java.lang.String getAdditionalExperiments(int index) {
       return additionalExperiments_.get(index);
     }
+
     /**
      *
      *
@@ -2752,6 +2986,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public com.google.protobuf.ByteString getAdditionalExperimentsBytes(int index) {
       return additionalExperiments_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2775,6 +3010,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2797,6 +3033,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2816,6 +3053,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2834,6 +3072,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2859,6 +3098,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -2882,6 +3122,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2905,6 +3146,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2927,6 +3169,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2945,6 +3188,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2970,6 +3214,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object subnetwork_ = "";
+
     /**
      *
      *
@@ -2997,6 +3242,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3024,6 +3270,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3050,6 +3297,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3072,6 +3320,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3129,6 +3378,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public int getAdditionalUserLabelsCount() {
       return internalGetAdditionalUserLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -3150,12 +3400,14 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       }
       return internalGetAdditionalUserLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getAdditionalUserLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAdditionalUserLabels() {
       return getAdditionalUserLabelsMap();
     }
+
     /**
      *
      *
@@ -3174,6 +3426,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public java.util.Map<java.lang.String, java.lang.String> getAdditionalUserLabelsMap() {
       return internalGetAdditionalUserLabels().getMap();
     }
+
     /**
      *
      *
@@ -3200,6 +3453,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
           internalGetAdditionalUserLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -3232,6 +3486,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       internalGetMutableAdditionalUserLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -3253,12 +3508,14 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       internalGetMutableAdditionalUserLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAdditionalUserLabels() {
       bitField0_ |= 0x00000200;
       return internalGetMutableAdditionalUserLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -3284,6 +3541,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       bitField0_ |= 0x00000200;
       return this;
     }
+
     /**
      *
      *
@@ -3306,6 +3564,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object kmsKeyName_ = "";
+
     /**
      *
      *
@@ -3330,6 +3589,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3354,6 +3614,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3377,6 +3638,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3396,6 +3658,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3422,6 +3685,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private int ipConfiguration_ = 0;
+
     /**
      *
      *
@@ -3437,6 +3701,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public int getIpConfigurationValue() {
       return ipConfiguration_;
     }
+
     /**
      *
      *
@@ -3455,6 +3720,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3474,6 +3740,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
           ? com.google.dataflow.v1beta3.WorkerIPAddressConfiguration.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3496,6 +3763,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3515,6 +3783,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object workerRegion_ = "";
+
     /**
      *
      *
@@ -3541,6 +3810,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3567,6 +3837,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3592,6 +3863,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3613,6 +3885,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3641,6 +3914,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object workerZone_ = "";
+
     /**
      *
      *
@@ -3668,6 +3942,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3695,6 +3970,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3721,6 +3997,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3743,6 +4020,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3772,6 +4050,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private boolean enableStreamingEngine_;
+
     /**
      *
      *
@@ -3787,6 +4066,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public boolean getEnableStreamingEngine() {
       return enableStreamingEngine_;
     }
+
     /**
      *
      *
@@ -3806,6 +4086,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3825,6 +4106,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private int flexrsGoal_ = 0;
+
     /**
      *
      *
@@ -3841,6 +4123,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public int getFlexrsGoalValue() {
       return flexrsGoal_;
     }
+
     /**
      *
      *
@@ -3860,6 +4143,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3880,6 +4164,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
           ? com.google.dataflow.v1beta3.FlexResourceSchedulingGoal.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3902,6 +4187,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3922,6 +4208,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object stagingLocation_ = "";
+
     /**
      *
      *
@@ -3945,6 +4232,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3968,6 +4256,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3990,6 +4279,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4008,6 +4298,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4033,6 +4324,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object sdkContainerImage_ = "";
+
     /**
      *
      *
@@ -4057,6 +4349,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4081,6 +4374,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4104,6 +4398,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4123,6 +4418,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4149,6 +4445,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private int diskSizeGb_;
+
     /**
      *
      *
@@ -4164,6 +4461,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public int getDiskSizeGb() {
       return diskSizeGb_;
     }
+
     /**
      *
      *
@@ -4183,6 +4481,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4202,6 +4501,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private int autoscalingAlgorithm_ = 0;
+
     /**
      *
      *
@@ -4217,6 +4517,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public int getAutoscalingAlgorithmValue() {
       return autoscalingAlgorithm_;
     }
+
     /**
      *
      *
@@ -4235,6 +4536,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4254,6 +4556,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
           ? com.google.dataflow.v1beta3.AutoscalingAlgorithm.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4275,6 +4578,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4294,13 +4598,17 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private boolean dumpHeapOnOom_;
+
     /**
      *
      *
      * <pre>
-     * If true, save a heap dump before killing a thread or process which is GC
-     * thrashing or out of memory. The location of the heap file will either be
-     * echoed back to the user, or the user will be given the opportunity to
+     * If true, when processing time is spent almost entirely
+     * on garbage collection (GC), saves a heap dump before ending the thread
+     * or process. If false, ends the thread or process without saving a heap
+     * dump. Does not save a heap dump when the Java Virtual Machine (JVM) has an
+     * out of memory error during processing. The location of the heap file is
+     * either echoed back to the user, or the user is given the opportunity to
      * download the heap file.
      * </pre>
      *
@@ -4312,13 +4620,17 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     public boolean getDumpHeapOnOom() {
       return dumpHeapOnOom_;
     }
+
     /**
      *
      *
      * <pre>
-     * If true, save a heap dump before killing a thread or process which is GC
-     * thrashing or out of memory. The location of the heap file will either be
-     * echoed back to the user, or the user will be given the opportunity to
+     * If true, when processing time is spent almost entirely
+     * on garbage collection (GC), saves a heap dump before ending the thread
+     * or process. If false, ends the thread or process without saving a heap
+     * dump. Does not save a heap dump when the Java Virtual Machine (JVM) has an
+     * out of memory error during processing. The location of the heap file is
+     * either echoed back to the user, or the user is given the opportunity to
      * download the heap file.
      * </pre>
      *
@@ -4334,13 +4646,17 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * If true, save a heap dump before killing a thread or process which is GC
-     * thrashing or out of memory. The location of the heap file will either be
-     * echoed back to the user, or the user will be given the opportunity to
+     * If true, when processing time is spent almost entirely
+     * on garbage collection (GC), saves a heap dump before ending the thread
+     * or process. If false, ends the thread or process without saving a heap
+     * dump. Does not save a heap dump when the Java Virtual Machine (JVM) has an
+     * out of memory error during processing. The location of the heap file is
+     * either echoed back to the user, or the user is given the opportunity to
      * download the heap file.
      * </pre>
      *
@@ -4356,13 +4672,13 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object saveHeapDumpsToGcsPath_ = "";
+
     /**
      *
      *
      * <pre>
-     * Cloud Storage bucket (directory) to upload heap dumps to the given
-     * location. Enabling this implies that heap dumps should be generated on OOM
-     * (dump_heap_on_oom is set to true).
+     * Cloud Storage bucket (directory) to upload heap dumps to.
+     * Enabling this field implies that `dump_heap_on_oom` is set to true.
      * </pre>
      *
      * <code>string save_heap_dumps_to_gcs_path = 23;</code>
@@ -4380,13 +4696,13 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Cloud Storage bucket (directory) to upload heap dumps to the given
-     * location. Enabling this implies that heap dumps should be generated on OOM
-     * (dump_heap_on_oom is set to true).
+     * Cloud Storage bucket (directory) to upload heap dumps to.
+     * Enabling this field implies that `dump_heap_on_oom` is set to true.
      * </pre>
      *
      * <code>string save_heap_dumps_to_gcs_path = 23;</code>
@@ -4404,13 +4720,13 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Cloud Storage bucket (directory) to upload heap dumps to the given
-     * location. Enabling this implies that heap dumps should be generated on OOM
-     * (dump_heap_on_oom is set to true).
+     * Cloud Storage bucket (directory) to upload heap dumps to.
+     * Enabling this field implies that `dump_heap_on_oom` is set to true.
      * </pre>
      *
      * <code>string save_heap_dumps_to_gcs_path = 23;</code>
@@ -4427,13 +4743,13 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Cloud Storage bucket (directory) to upload heap dumps to the given
-     * location. Enabling this implies that heap dumps should be generated on OOM
-     * (dump_heap_on_oom is set to true).
+     * Cloud Storage bucket (directory) to upload heap dumps to.
+     * Enabling this field implies that `dump_heap_on_oom` is set to true.
      * </pre>
      *
      * <code>string save_heap_dumps_to_gcs_path = 23;</code>
@@ -4446,13 +4762,13 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Cloud Storage bucket (directory) to upload heap dumps to the given
-     * location. Enabling this implies that heap dumps should be generated on OOM
-     * (dump_heap_on_oom is set to true).
+     * Cloud Storage bucket (directory) to upload heap dumps to.
+     * Enabling this field implies that `dump_heap_on_oom` is set to true.
      * </pre>
      *
      * <code>string save_heap_dumps_to_gcs_path = 23;</code>
@@ -4472,6 +4788,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
     }
 
     private java.lang.Object launcherMachineType_ = "";
+
     /**
      *
      *
@@ -4495,6 +4812,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4518,6 +4836,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4540,6 +4859,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4558,6 +4878,7 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4578,6 +4899,221 @@ public final class FlexTemplateRuntimeEnvironment extends com.google.protobuf.Ge
       checkByteStringIsUtf8(value);
       launcherMachineType_ = value;
       bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableLauncherVmSerialPortLogging_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If true serial port logging will be enabled for the launcher VM.
+     * </pre>
+     *
+     * <code>bool enable_launcher_vm_serial_port_logging = 25;</code>
+     *
+     * @return The enableLauncherVmSerialPortLogging.
+     */
+    @java.lang.Override
+    public boolean getEnableLauncherVmSerialPortLogging() {
+      return enableLauncherVmSerialPortLogging_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true serial port logging will be enabled for the launcher VM.
+     * </pre>
+     *
+     * <code>bool enable_launcher_vm_serial_port_logging = 25;</code>
+     *
+     * @param value The enableLauncherVmSerialPortLogging to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableLauncherVmSerialPortLogging(boolean value) {
+
+      enableLauncherVmSerialPortLogging_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true serial port logging will be enabled for the launcher VM.
+     * </pre>
+     *
+     * <code>bool enable_launcher_vm_serial_port_logging = 25;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableLauncherVmSerialPortLogging() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      enableLauncherVmSerialPortLogging_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int streamingMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the streamingMode field is set.
+     */
+    @java.lang.Override
+    public boolean hasStreamingMode() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for streamingMode.
+     */
+    @java.lang.Override
+    public int getStreamingModeValue() {
+      return streamingMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for streamingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStreamingModeValue(int value) {
+      streamingMode_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The streamingMode.
+     */
+    @java.lang.Override
+    public com.google.dataflow.v1beta3.StreamingMode getStreamingMode() {
+      com.google.dataflow.v1beta3.StreamingMode result =
+          com.google.dataflow.v1beta3.StreamingMode.forNumber(streamingMode_);
+      return result == null ? com.google.dataflow.v1beta3.StreamingMode.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The streamingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStreamingMode(com.google.dataflow.v1beta3.StreamingMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x01000000;
+      streamingMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStreamingMode() {
+      bitField0_ = (bitField0_ & ~0x01000000);
+      streamingMode_ = 0;
       onChanged();
       return this;
     }

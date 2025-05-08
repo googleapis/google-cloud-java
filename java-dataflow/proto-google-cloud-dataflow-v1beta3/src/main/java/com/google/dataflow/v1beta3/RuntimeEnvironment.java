@@ -33,6 +33,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.RuntimeEnvironment)
     RuntimeEnvironmentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RuntimeEnvironment.newBuilder() to construct.
   private RuntimeEnvironment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -50,6 +51,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     ipConfiguration_ = 0;
     workerRegion_ = "";
     workerZone_ = "";
+    streamingMode_ = 0;
   }
 
   @java.lang.Override
@@ -85,13 +87,16 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
             com.google.dataflow.v1beta3.RuntimeEnvironment.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NUM_WORKERS_FIELD_NUMBER = 11;
   private int numWorkers_ = 0;
+
   /**
    *
    *
    * <pre>
-   * The initial number of Google Compute Engine instnaces for the job.
+   * Optional. The initial number of Google Compute Engine instances for the
+   * job. The default value is 11.
    * </pre>
    *
    * <code>int32 num_workers = 11;</code>
@@ -105,12 +110,14 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
 
   public static final int MAX_WORKERS_FIELD_NUMBER = 1;
   private int maxWorkers_ = 0;
+
   /**
    *
    *
    * <pre>
-   * The maximum number of Google Compute Engine instances to be made
-   * available to your pipeline during execution, from 1 to 1000.
+   * Optional. The maximum number of Google Compute Engine instances to be made
+   * available to your pipeline during execution, from 1 to 1000. The default
+   * value is 1.
    * </pre>
    *
    * <code>int32 max_workers = 1;</code>
@@ -126,11 +133,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
    * <pre>
-   * The Compute Engine [availability
+   * Optional. The Compute Engine [availability
    * zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones)
    * for launching worker instances to run your pipeline.
    * In the future, worker_zone will take precedence.
@@ -152,11 +160,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * The Compute Engine [availability
+   * Optional. The Compute Engine [availability
    * zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones)
    * for launching worker instances to run your pipeline.
    * In the future, worker_zone will take precedence.
@@ -183,11 +192,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccountEmail_ = "";
+
   /**
    *
    *
    * <pre>
-   * The email address of the service account to run the job as.
+   * Optional. The email address of the service account to run the job as.
    * </pre>
    *
    * <code>string service_account_email = 3;</code>
@@ -206,11 +216,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * The email address of the service account to run the job as.
+   * Optional. The email address of the service account to run the job as.
    * </pre>
    *
    * <code>string service_account_email = 3;</code>
@@ -234,11 +245,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tempLocation_ = "";
+
   /**
    *
    *
    * <pre>
-   * The Cloud Storage path to use for temporary files.
+   * Required. The Cloud Storage path to use for temporary files.
    * Must be a valid Cloud Storage URL, beginning with `gs://`.
    * </pre>
    *
@@ -258,11 +270,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * The Cloud Storage path to use for temporary files.
+   * Required. The Cloud Storage path to use for temporary files.
    * Must be a valid Cloud Storage URL, beginning with `gs://`.
    * </pre>
    *
@@ -285,12 +298,13 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
 
   public static final int BYPASS_TEMP_DIR_VALIDATION_FIELD_NUMBER = 5;
   private boolean bypassTempDirValidation_ = false;
+
   /**
    *
    *
    * <pre>
-   * Whether to bypass the safety checks for the job's temporary directory.
-   * Use with caution.
+   * Optional. Whether to bypass the safety checks for the job's temporary
+   * directory. Use with caution.
    * </pre>
    *
    * <code>bool bypass_temp_dir_validation = 5;</code>
@@ -306,12 +320,13 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineType_ = "";
+
   /**
    *
    *
    * <pre>
-   * The machine type to use for the job. Defaults to the value from the
-   * template if not specified.
+   * Optional. The machine type to use for the job. Defaults to the value from
+   * the template if not specified.
    * </pre>
    *
    * <code>string machine_type = 6;</code>
@@ -330,12 +345,13 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * The machine type to use for the job. Defaults to the value from the
-   * template if not specified.
+   * Optional. The machine type to use for the job. Defaults to the value from
+   * the template if not specified.
    * </pre>
    *
    * <code>string machine_type = 6;</code>
@@ -360,11 +376,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList additionalExperiments_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
    * <pre>
-   * Additional experiment flags for the job, specified with the
+   * Optional. Additional experiment flags for the job, specified with the
    * `--experiments` option.
    * </pre>
    *
@@ -375,11 +392,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getAdditionalExperimentsList() {
     return additionalExperiments_;
   }
+
   /**
    *
    *
    * <pre>
-   * Additional experiment flags for the job, specified with the
+   * Optional. Additional experiment flags for the job, specified with the
    * `--experiments` option.
    * </pre>
    *
@@ -390,11 +408,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   public int getAdditionalExperimentsCount() {
     return additionalExperiments_.size();
   }
+
   /**
    *
    *
    * <pre>
-   * Additional experiment flags for the job, specified with the
+   * Optional. Additional experiment flags for the job, specified with the
    * `--experiments` option.
    * </pre>
    *
@@ -406,11 +425,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   public java.lang.String getAdditionalExperiments(int index) {
     return additionalExperiments_.get(index);
   }
+
   /**
    *
    *
    * <pre>
-   * Additional experiment flags for the job, specified with the
+   * Optional. Additional experiment flags for the job, specified with the
    * `--experiments` option.
    * </pre>
    *
@@ -427,11 +447,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
+
   /**
    *
    *
    * <pre>
-   * Network to which VMs will be assigned.  If empty or unspecified,
+   * Optional. Network to which VMs will be assigned.  If empty or unspecified,
    * the service will use the network "default".
    * </pre>
    *
@@ -451,11 +472,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Network to which VMs will be assigned.  If empty or unspecified,
+   * Optional. Network to which VMs will be assigned.  If empty or unspecified,
    * the service will use the network "default".
    * </pre>
    *
@@ -480,13 +502,14 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subnetwork_ = "";
+
   /**
    *
    *
    * <pre>
-   * Subnetwork to which VMs will be assigned, if desired. You can specify a
-   * subnetwork using either a complete URL or an abbreviated path. Expected to
-   * be of the form
+   * Optional. Subnetwork to which VMs will be assigned, if desired. You can
+   * specify a subnetwork using either a complete URL or an abbreviated path.
+   *  Expected to be of the form
    * "https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK"
    * or "regions/REGION/subnetworks/SUBNETWORK". If the subnetwork is located in
    * a Shared VPC network, you must use the complete URL.
@@ -508,13 +531,14 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Subnetwork to which VMs will be assigned, if desired. You can specify a
-   * subnetwork using either a complete URL or an abbreviated path. Expected to
-   * be of the form
+   * Optional. Subnetwork to which VMs will be assigned, if desired. You can
+   * specify a subnetwork using either a complete URL or an abbreviated path.
+   *  Expected to be of the form
    * "https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK"
    * or "regions/REGION/subnetworks/SUBNETWORK". If the subnetwork is located in
    * a Shared VPC network, you must use the complete URL.
@@ -565,11 +589,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   public int getAdditionalUserLabelsCount() {
     return internalGetAdditionalUserLabels().getMap().size();
   }
+
   /**
    *
    *
    * <pre>
-   * Additional user labels to be specified for the job.
+   * Optional. Additional user labels to be specified for the job.
    * Keys and values should follow the restrictions specified in the [labeling
    * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
    * page.
@@ -586,17 +611,19 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     }
     return internalGetAdditionalUserLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getAdditionalUserLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAdditionalUserLabels() {
     return getAdditionalUserLabelsMap();
   }
+
   /**
    *
    *
    * <pre>
-   * Additional user labels to be specified for the job.
+   * Optional. Additional user labels to be specified for the job.
    * Keys and values should follow the restrictions specified in the [labeling
    * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
    * page.
@@ -610,11 +637,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   public java.util.Map<java.lang.String, java.lang.String> getAdditionalUserLabelsMap() {
     return internalGetAdditionalUserLabels().getMap();
   }
+
   /**
    *
    *
    * <pre>
-   * Additional user labels to be specified for the job.
+   * Optional. Additional user labels to be specified for the job.
    * Keys and values should follow the restrictions specified in the [labeling
    * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
    * page.
@@ -636,11 +664,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         internalGetAdditionalUserLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
    * <pre>
-   * Additional user labels to be specified for the job.
+   * Optional. Additional user labels to be specified for the job.
    * Keys and values should follow the restrictions specified in the [labeling
    * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
    * page.
@@ -667,11 +696,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKeyName_ = "";
+
   /**
    *
    *
    * <pre>
-   * Name for the Cloud KMS key for the job.
+   * Optional. Name for the Cloud KMS key for the job.
    * Key format is:
    * projects/&lt;project&gt;/locations/&lt;location&gt;/keyRings/&lt;keyring&gt;/cryptoKeys/&lt;key&gt;
    * </pre>
@@ -692,11 +722,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Name for the Cloud KMS key for the job.
+   * Optional. Name for the Cloud KMS key for the job.
    * Key format is:
    * projects/&lt;project&gt;/locations/&lt;location&gt;/keyRings/&lt;keyring&gt;/cryptoKeys/&lt;key&gt;
    * </pre>
@@ -720,11 +751,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
 
   public static final int IP_CONFIGURATION_FIELD_NUMBER = 14;
   private int ipConfiguration_ = 0;
+
   /**
    *
    *
    * <pre>
-   * Configuration for VM IPs.
+   * Optional. Configuration for VM IPs.
    * </pre>
    *
    * <code>.google.dataflow.v1beta3.WorkerIPAddressConfiguration ip_configuration = 14;</code>
@@ -735,11 +767,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   public int getIpConfigurationValue() {
     return ipConfiguration_;
   }
+
   /**
    *
    *
    * <pre>
-   * Configuration for VM IPs.
+   * Optional. Configuration for VM IPs.
    * </pre>
    *
    * <code>.google.dataflow.v1beta3.WorkerIPAddressConfiguration ip_configuration = 14;</code>
@@ -759,11 +792,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workerRegion_ = "";
+
   /**
    *
    *
    * <pre>
-   * The Compute Engine region
+   * Required. The Compute Engine region
    * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
    * which worker processing should occur, e.g. "us-west1". Mutually exclusive
    * with worker_zone. If neither worker_region nor worker_zone is specified,
@@ -786,11 +820,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * The Compute Engine region
+   * Required. The Compute Engine region
    * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
    * which worker processing should occur, e.g. "us-west1". Mutually exclusive
    * with worker_zone. If neither worker_region nor worker_zone is specified,
@@ -818,11 +853,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workerZone_ = "";
+
   /**
    *
    *
    * <pre>
-   * The Compute Engine zone
+   * Optional. The Compute Engine zone
    * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
    * which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
    * with worker_region. If neither worker_region nor worker_zone is specified,
@@ -846,11 +882,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * The Compute Engine zone
+   * Optional. The Compute Engine zone
    * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
    * which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
    * with worker_region. If neither worker_region nor worker_zone is specified,
@@ -877,11 +914,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
 
   public static final int ENABLE_STREAMING_ENGINE_FIELD_NUMBER = 17;
   private boolean enableStreamingEngine_ = false;
+
   /**
    *
    *
    * <pre>
-   * Whether to enable Streaming Engine for the job.
+   * Optional. Whether to enable Streaming Engine for the job.
    * </pre>
    *
    * <code>bool enable_streaming_engine = 17;</code>
@@ -891,6 +929,103 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public boolean getEnableStreamingEngine() {
     return enableStreamingEngine_;
+  }
+
+  public static final int DISK_SIZE_GB_FIELD_NUMBER = 18;
+  private int diskSizeGb_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The disk size, in gigabytes, to use on each remote Compute Engine
+   * worker instance.
+   * </pre>
+   *
+   * <code>int32 disk_size_gb = 18;</code>
+   *
+   * @return The diskSizeGb.
+   */
+  @java.lang.Override
+  public int getDiskSizeGb() {
+    return diskSizeGb_;
+  }
+
+  public static final int STREAMING_MODE_FIELD_NUMBER = 19;
+  private int streamingMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the streamingMode field is set.
+   */
+  @java.lang.Override
+  public boolean hasStreamingMode() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for streamingMode.
+   */
+  @java.lang.Override
+  public int getStreamingModeValue() {
+    return streamingMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The streamingMode.
+   */
+  @java.lang.Override
+  public com.google.dataflow.v1beta3.StreamingMode getStreamingMode() {
+    com.google.dataflow.v1beta3.StreamingMode result =
+        com.google.dataflow.v1beta3.StreamingMode.forNumber(streamingMode_);
+    return result == null ? com.google.dataflow.v1beta3.StreamingMode.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -959,6 +1094,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     }
     if (enableStreamingEngine_ != false) {
       output.writeBool(17, enableStreamingEngine_);
+    }
+    if (diskSizeGb_ != 0) {
+      output.writeInt32(18, diskSizeGb_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(19, streamingMode_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1031,6 +1172,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     if (enableStreamingEngine_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(17, enableStreamingEngine_);
     }
+    if (diskSizeGb_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(18, diskSizeGb_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, streamingMode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1064,6 +1211,11 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     if (!getWorkerRegion().equals(other.getWorkerRegion())) return false;
     if (!getWorkerZone().equals(other.getWorkerZone())) return false;
     if (getEnableStreamingEngine() != other.getEnableStreamingEngine()) return false;
+    if (getDiskSizeGb() != other.getDiskSizeGb()) return false;
+    if (hasStreamingMode() != other.hasStreamingMode()) return false;
+    if (hasStreamingMode()) {
+      if (streamingMode_ != other.streamingMode_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1111,6 +1263,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getWorkerZone().hashCode();
     hash = (37 * hash) + ENABLE_STREAMING_ENGINE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableStreamingEngine());
+    hash = (37 * hash) + DISK_SIZE_GB_FIELD_NUMBER;
+    hash = (53 * hash) + getDiskSizeGb();
+    if (hasStreamingMode()) {
+      hash = (37 * hash) + STREAMING_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + streamingMode_;
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1211,6 +1369,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1288,6 +1447,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       workerRegion_ = "";
       workerZone_ = "";
       enableStreamingEngine_ = false;
+      diskSizeGb_ = 0;
+      streamingMode_ = 0;
       return this;
     }
 
@@ -1374,6 +1535,15 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.enableStreamingEngine_ = enableStreamingEngine_;
       }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.diskSizeGb_ = diskSizeGb_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.streamingMode_ = streamingMode_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1492,6 +1662,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       }
       if (other.getEnableStreamingEngine() != false) {
         setEnableStreamingEngine(other.getEnableStreamingEngine());
+      }
+      if (other.getDiskSizeGb() != 0) {
+        setDiskSizeGb(other.getDiskSizeGb());
+      }
+      if (other.hasStreamingMode()) {
+        setStreamingMode(other.getStreamingMode());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1623,6 +1799,18 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00008000;
                 break;
               } // case 136
+            case 144:
+              {
+                diskSizeGb_ = input.readInt32();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 144
+            case 152:
+              {
+                streamingMode_ = input.readEnum();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 152
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1643,11 +1831,13 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int numWorkers_;
+
     /**
      *
      *
      * <pre>
-     * The initial number of Google Compute Engine instnaces for the job.
+     * Optional. The initial number of Google Compute Engine instances for the
+     * job. The default value is 11.
      * </pre>
      *
      * <code>int32 num_workers = 11;</code>
@@ -1658,11 +1848,13 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public int getNumWorkers() {
       return numWorkers_;
     }
+
     /**
      *
      *
      * <pre>
-     * The initial number of Google Compute Engine instnaces for the job.
+     * Optional. The initial number of Google Compute Engine instances for the
+     * job. The default value is 11.
      * </pre>
      *
      * <code>int32 num_workers = 11;</code>
@@ -1677,11 +1869,13 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The initial number of Google Compute Engine instnaces for the job.
+     * Optional. The initial number of Google Compute Engine instances for the
+     * job. The default value is 11.
      * </pre>
      *
      * <code>int32 num_workers = 11;</code>
@@ -1696,12 +1890,14 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     }
 
     private int maxWorkers_;
+
     /**
      *
      *
      * <pre>
-     * The maximum number of Google Compute Engine instances to be made
-     * available to your pipeline during execution, from 1 to 1000.
+     * Optional. The maximum number of Google Compute Engine instances to be made
+     * available to your pipeline during execution, from 1 to 1000. The default
+     * value is 1.
      * </pre>
      *
      * <code>int32 max_workers = 1;</code>
@@ -1712,12 +1908,14 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public int getMaxWorkers() {
       return maxWorkers_;
     }
+
     /**
      *
      *
      * <pre>
-     * The maximum number of Google Compute Engine instances to be made
-     * available to your pipeline during execution, from 1 to 1000.
+     * Optional. The maximum number of Google Compute Engine instances to be made
+     * available to your pipeline during execution, from 1 to 1000. The default
+     * value is 1.
      * </pre>
      *
      * <code>int32 max_workers = 1;</code>
@@ -1732,12 +1930,14 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The maximum number of Google Compute Engine instances to be made
-     * available to your pipeline during execution, from 1 to 1000.
+     * Optional. The maximum number of Google Compute Engine instances to be made
+     * available to your pipeline during execution, from 1 to 1000. The default
+     * value is 1.
      * </pre>
      *
      * <code>int32 max_workers = 1;</code>
@@ -1752,11 +1952,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine [availability
+     * Optional. The Compute Engine [availability
      * zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones)
      * for launching worker instances to run your pipeline.
      * In the future, worker_zone will take precedence.
@@ -1777,11 +1978,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine [availability
+     * Optional. The Compute Engine [availability
      * zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones)
      * for launching worker instances to run your pipeline.
      * In the future, worker_zone will take precedence.
@@ -1802,11 +2004,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine [availability
+     * Optional. The Compute Engine [availability
      * zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones)
      * for launching worker instances to run your pipeline.
      * In the future, worker_zone will take precedence.
@@ -1826,11 +2029,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine [availability
+     * Optional. The Compute Engine [availability
      * zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones)
      * for launching worker instances to run your pipeline.
      * In the future, worker_zone will take precedence.
@@ -1846,11 +2050,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine [availability
+     * Optional. The Compute Engine [availability
      * zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones)
      * for launching worker instances to run your pipeline.
      * In the future, worker_zone will take precedence.
@@ -1873,11 +2078,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object serviceAccountEmail_ = "";
+
     /**
      *
      *
      * <pre>
-     * The email address of the service account to run the job as.
+     * Optional. The email address of the service account to run the job as.
      * </pre>
      *
      * <code>string service_account_email = 3;</code>
@@ -1895,11 +2101,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The email address of the service account to run the job as.
+     * Optional. The email address of the service account to run the job as.
      * </pre>
      *
      * <code>string service_account_email = 3;</code>
@@ -1917,11 +2124,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The email address of the service account to run the job as.
+     * Optional. The email address of the service account to run the job as.
      * </pre>
      *
      * <code>string service_account_email = 3;</code>
@@ -1938,11 +2146,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The email address of the service account to run the job as.
+     * Optional. The email address of the service account to run the job as.
      * </pre>
      *
      * <code>string service_account_email = 3;</code>
@@ -1955,11 +2164,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The email address of the service account to run the job as.
+     * Optional. The email address of the service account to run the job as.
      * </pre>
      *
      * <code>string service_account_email = 3;</code>
@@ -1979,11 +2189,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object tempLocation_ = "";
+
     /**
      *
      *
      * <pre>
-     * The Cloud Storage path to use for temporary files.
+     * Required. The Cloud Storage path to use for temporary files.
      * Must be a valid Cloud Storage URL, beginning with `gs://`.
      * </pre>
      *
@@ -2002,11 +2213,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The Cloud Storage path to use for temporary files.
+     * Required. The Cloud Storage path to use for temporary files.
      * Must be a valid Cloud Storage URL, beginning with `gs://`.
      * </pre>
      *
@@ -2025,11 +2237,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The Cloud Storage path to use for temporary files.
+     * Required. The Cloud Storage path to use for temporary files.
      * Must be a valid Cloud Storage URL, beginning with `gs://`.
      * </pre>
      *
@@ -2047,11 +2260,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The Cloud Storage path to use for temporary files.
+     * Required. The Cloud Storage path to use for temporary files.
      * Must be a valid Cloud Storage URL, beginning with `gs://`.
      * </pre>
      *
@@ -2065,11 +2279,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The Cloud Storage path to use for temporary files.
+     * Required. The Cloud Storage path to use for temporary files.
      * Must be a valid Cloud Storage URL, beginning with `gs://`.
      * </pre>
      *
@@ -2090,12 +2305,13 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean bypassTempDirValidation_;
+
     /**
      *
      *
      * <pre>
-     * Whether to bypass the safety checks for the job's temporary directory.
-     * Use with caution.
+     * Optional. Whether to bypass the safety checks for the job's temporary
+     * directory. Use with caution.
      * </pre>
      *
      * <code>bool bypass_temp_dir_validation = 5;</code>
@@ -2106,12 +2322,13 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public boolean getBypassTempDirValidation() {
       return bypassTempDirValidation_;
     }
+
     /**
      *
      *
      * <pre>
-     * Whether to bypass the safety checks for the job's temporary directory.
-     * Use with caution.
+     * Optional. Whether to bypass the safety checks for the job's temporary
+     * directory. Use with caution.
      * </pre>
      *
      * <code>bool bypass_temp_dir_validation = 5;</code>
@@ -2126,12 +2343,13 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Whether to bypass the safety checks for the job's temporary directory.
-     * Use with caution.
+     * Optional. Whether to bypass the safety checks for the job's temporary
+     * directory. Use with caution.
      * </pre>
      *
      * <code>bool bypass_temp_dir_validation = 5;</code>
@@ -2146,12 +2364,13 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object machineType_ = "";
+
     /**
      *
      *
      * <pre>
-     * The machine type to use for the job. Defaults to the value from the
-     * template if not specified.
+     * Optional. The machine type to use for the job. Defaults to the value from
+     * the template if not specified.
      * </pre>
      *
      * <code>string machine_type = 6;</code>
@@ -2169,12 +2388,13 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The machine type to use for the job. Defaults to the value from the
-     * template if not specified.
+     * Optional. The machine type to use for the job. Defaults to the value from
+     * the template if not specified.
      * </pre>
      *
      * <code>string machine_type = 6;</code>
@@ -2192,12 +2412,13 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The machine type to use for the job. Defaults to the value from the
-     * template if not specified.
+     * Optional. The machine type to use for the job. Defaults to the value from
+     * the template if not specified.
      * </pre>
      *
      * <code>string machine_type = 6;</code>
@@ -2214,12 +2435,13 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The machine type to use for the job. Defaults to the value from the
-     * template if not specified.
+     * Optional. The machine type to use for the job. Defaults to the value from
+     * the template if not specified.
      * </pre>
      *
      * <code>string machine_type = 6;</code>
@@ -2232,12 +2454,13 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The machine type to use for the job. Defaults to the value from the
-     * template if not specified.
+     * Optional. The machine type to use for the job. Defaults to the value from
+     * the template if not specified.
      * </pre>
      *
      * <code>string machine_type = 6;</code>
@@ -2266,11 +2489,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000080;
     }
+
     /**
      *
      *
      * <pre>
-     * Additional experiment flags for the job, specified with the
+     * Optional. Additional experiment flags for the job, specified with the
      * `--experiments` option.
      * </pre>
      *
@@ -2282,11 +2506,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       additionalExperiments_.makeImmutable();
       return additionalExperiments_;
     }
+
     /**
      *
      *
      * <pre>
-     * Additional experiment flags for the job, specified with the
+     * Optional. Additional experiment flags for the job, specified with the
      * `--experiments` option.
      * </pre>
      *
@@ -2297,11 +2522,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public int getAdditionalExperimentsCount() {
       return additionalExperiments_.size();
     }
+
     /**
      *
      *
      * <pre>
-     * Additional experiment flags for the job, specified with the
+     * Optional. Additional experiment flags for the job, specified with the
      * `--experiments` option.
      * </pre>
      *
@@ -2313,11 +2539,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public java.lang.String getAdditionalExperiments(int index) {
       return additionalExperiments_.get(index);
     }
+
     /**
      *
      *
      * <pre>
-     * Additional experiment flags for the job, specified with the
+     * Optional. Additional experiment flags for the job, specified with the
      * `--experiments` option.
      * </pre>
      *
@@ -2329,11 +2556,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getAdditionalExperimentsBytes(int index) {
       return additionalExperiments_.getByteString(index);
     }
+
     /**
      *
      *
      * <pre>
-     * Additional experiment flags for the job, specified with the
+     * Optional. Additional experiment flags for the job, specified with the
      * `--experiments` option.
      * </pre>
      *
@@ -2353,11 +2581,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Additional experiment flags for the job, specified with the
+     * Optional. Additional experiment flags for the job, specified with the
      * `--experiments` option.
      * </pre>
      *
@@ -2376,11 +2605,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Additional experiment flags for the job, specified with the
+     * Optional. Additional experiment flags for the job, specified with the
      * `--experiments` option.
      * </pre>
      *
@@ -2396,11 +2626,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Additional experiment flags for the job, specified with the
+     * Optional. Additional experiment flags for the job, specified with the
      * `--experiments` option.
      * </pre>
      *
@@ -2415,11 +2646,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Additional experiment flags for the job, specified with the
+     * Optional. Additional experiment flags for the job, specified with the
      * `--experiments` option.
      * </pre>
      *
@@ -2441,11 +2673,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object network_ = "";
+
     /**
      *
      *
      * <pre>
-     * Network to which VMs will be assigned.  If empty or unspecified,
+     * Optional. Network to which VMs will be assigned.  If empty or unspecified,
      * the service will use the network "default".
      * </pre>
      *
@@ -2464,11 +2697,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Network to which VMs will be assigned.  If empty or unspecified,
+     * Optional. Network to which VMs will be assigned.  If empty or unspecified,
      * the service will use the network "default".
      * </pre>
      *
@@ -2487,11 +2721,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Network to which VMs will be assigned.  If empty or unspecified,
+     * Optional. Network to which VMs will be assigned.  If empty or unspecified,
      * the service will use the network "default".
      * </pre>
      *
@@ -2509,11 +2744,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Network to which VMs will be assigned.  If empty or unspecified,
+     * Optional. Network to which VMs will be assigned.  If empty or unspecified,
      * the service will use the network "default".
      * </pre>
      *
@@ -2527,11 +2763,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Network to which VMs will be assigned.  If empty or unspecified,
+     * Optional. Network to which VMs will be assigned.  If empty or unspecified,
      * the service will use the network "default".
      * </pre>
      *
@@ -2552,13 +2789,14 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object subnetwork_ = "";
+
     /**
      *
      *
      * <pre>
-     * Subnetwork to which VMs will be assigned, if desired. You can specify a
-     * subnetwork using either a complete URL or an abbreviated path. Expected to
-     * be of the form
+     * Optional. Subnetwork to which VMs will be assigned, if desired. You can
+     * specify a subnetwork using either a complete URL or an abbreviated path.
+     *  Expected to be of the form
      * "https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK"
      * or "regions/REGION/subnetworks/SUBNETWORK". If the subnetwork is located in
      * a Shared VPC network, you must use the complete URL.
@@ -2579,13 +2817,14 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Subnetwork to which VMs will be assigned, if desired. You can specify a
-     * subnetwork using either a complete URL or an abbreviated path. Expected to
-     * be of the form
+     * Optional. Subnetwork to which VMs will be assigned, if desired. You can
+     * specify a subnetwork using either a complete URL or an abbreviated path.
+     *  Expected to be of the form
      * "https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK"
      * or "regions/REGION/subnetworks/SUBNETWORK". If the subnetwork is located in
      * a Shared VPC network, you must use the complete URL.
@@ -2606,13 +2845,14 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Subnetwork to which VMs will be assigned, if desired. You can specify a
-     * subnetwork using either a complete URL or an abbreviated path. Expected to
-     * be of the form
+     * Optional. Subnetwork to which VMs will be assigned, if desired. You can
+     * specify a subnetwork using either a complete URL or an abbreviated path.
+     *  Expected to be of the form
      * "https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK"
      * or "regions/REGION/subnetworks/SUBNETWORK". If the subnetwork is located in
      * a Shared VPC network, you must use the complete URL.
@@ -2632,13 +2872,14 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Subnetwork to which VMs will be assigned, if desired. You can specify a
-     * subnetwork using either a complete URL or an abbreviated path. Expected to
-     * be of the form
+     * Optional. Subnetwork to which VMs will be assigned, if desired. You can
+     * specify a subnetwork using either a complete URL or an abbreviated path.
+     *  Expected to be of the form
      * "https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK"
      * or "regions/REGION/subnetworks/SUBNETWORK". If the subnetwork is located in
      * a Shared VPC network, you must use the complete URL.
@@ -2654,13 +2895,14 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Subnetwork to which VMs will be assigned, if desired. You can specify a
-     * subnetwork using either a complete URL or an abbreviated path. Expected to
-     * be of the form
+     * Optional. Subnetwork to which VMs will be assigned, if desired. You can
+     * specify a subnetwork using either a complete URL or an abbreviated path.
+     *  Expected to be of the form
      * "https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK"
      * or "regions/REGION/subnetworks/SUBNETWORK". If the subnetwork is located in
      * a Shared VPC network, you must use the complete URL.
@@ -2711,11 +2953,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public int getAdditionalUserLabelsCount() {
       return internalGetAdditionalUserLabels().getMap().size();
     }
+
     /**
      *
      *
      * <pre>
-     * Additional user labels to be specified for the job.
+     * Optional. Additional user labels to be specified for the job.
      * Keys and values should follow the restrictions specified in the [labeling
      * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
      * page.
@@ -2732,17 +2975,19 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       }
       return internalGetAdditionalUserLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getAdditionalUserLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAdditionalUserLabels() {
       return getAdditionalUserLabelsMap();
     }
+
     /**
      *
      *
      * <pre>
-     * Additional user labels to be specified for the job.
+     * Optional. Additional user labels to be specified for the job.
      * Keys and values should follow the restrictions specified in the [labeling
      * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
      * page.
@@ -2756,11 +3001,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public java.util.Map<java.lang.String, java.lang.String> getAdditionalUserLabelsMap() {
       return internalGetAdditionalUserLabels().getMap();
     }
+
     /**
      *
      *
      * <pre>
-     * Additional user labels to be specified for the job.
+     * Optional. Additional user labels to be specified for the job.
      * Keys and values should follow the restrictions specified in the [labeling
      * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
      * page.
@@ -2782,11 +3028,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
           internalGetAdditionalUserLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
      * <pre>
-     * Additional user labels to be specified for the job.
+     * Optional. Additional user labels to be specified for the job.
      * Keys and values should follow the restrictions specified in the [labeling
      * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
      * page.
@@ -2814,11 +3061,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       internalGetMutableAdditionalUserLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Additional user labels to be specified for the job.
+     * Optional. Additional user labels to be specified for the job.
      * Keys and values should follow the restrictions specified in the [labeling
      * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
      * page.
@@ -2835,17 +3083,19 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       internalGetMutableAdditionalUserLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAdditionalUserLabels() {
       bitField0_ |= 0x00000400;
       return internalGetMutableAdditionalUserLabels().getMutableMap();
     }
+
     /**
      *
      *
      * <pre>
-     * Additional user labels to be specified for the job.
+     * Optional. Additional user labels to be specified for the job.
      * Keys and values should follow the restrictions specified in the [labeling
      * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
      * page.
@@ -2866,11 +3116,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000400;
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Additional user labels to be specified for the job.
+     * Optional. Additional user labels to be specified for the job.
      * Keys and values should follow the restrictions specified in the [labeling
      * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
      * page.
@@ -2888,11 +3139,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object kmsKeyName_ = "";
+
     /**
      *
      *
      * <pre>
-     * Name for the Cloud KMS key for the job.
+     * Optional. Name for the Cloud KMS key for the job.
      * Key format is:
      * projects/&lt;project&gt;/locations/&lt;location&gt;/keyRings/&lt;keyring&gt;/cryptoKeys/&lt;key&gt;
      * </pre>
@@ -2912,11 +3164,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Name for the Cloud KMS key for the job.
+     * Optional. Name for the Cloud KMS key for the job.
      * Key format is:
      * projects/&lt;project&gt;/locations/&lt;location&gt;/keyRings/&lt;keyring&gt;/cryptoKeys/&lt;key&gt;
      * </pre>
@@ -2936,11 +3189,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Name for the Cloud KMS key for the job.
+     * Optional. Name for the Cloud KMS key for the job.
      * Key format is:
      * projects/&lt;project&gt;/locations/&lt;location&gt;/keyRings/&lt;keyring&gt;/cryptoKeys/&lt;key&gt;
      * </pre>
@@ -2959,11 +3213,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Name for the Cloud KMS key for the job.
+     * Optional. Name for the Cloud KMS key for the job.
      * Key format is:
      * projects/&lt;project&gt;/locations/&lt;location&gt;/keyRings/&lt;keyring&gt;/cryptoKeys/&lt;key&gt;
      * </pre>
@@ -2978,11 +3233,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Name for the Cloud KMS key for the job.
+     * Optional. Name for the Cloud KMS key for the job.
      * Key format is:
      * projects/&lt;project&gt;/locations/&lt;location&gt;/keyRings/&lt;keyring&gt;/cryptoKeys/&lt;key&gt;
      * </pre>
@@ -3004,11 +3260,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     }
 
     private int ipConfiguration_ = 0;
+
     /**
      *
      *
      * <pre>
-     * Configuration for VM IPs.
+     * Optional. Configuration for VM IPs.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.WorkerIPAddressConfiguration ip_configuration = 14;</code>
@@ -3019,11 +3276,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public int getIpConfigurationValue() {
       return ipConfiguration_;
     }
+
     /**
      *
      *
      * <pre>
-     * Configuration for VM IPs.
+     * Optional. Configuration for VM IPs.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.WorkerIPAddressConfiguration ip_configuration = 14;</code>
@@ -3037,11 +3295,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Configuration for VM IPs.
+     * Optional. Configuration for VM IPs.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.WorkerIPAddressConfiguration ip_configuration = 14;</code>
@@ -3056,11 +3315,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
           ? com.google.dataflow.v1beta3.WorkerIPAddressConfiguration.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
      * <pre>
-     * Configuration for VM IPs.
+     * Optional. Configuration for VM IPs.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.WorkerIPAddressConfiguration ip_configuration = 14;</code>
@@ -3078,11 +3338,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Configuration for VM IPs.
+     * Optional. Configuration for VM IPs.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.WorkerIPAddressConfiguration ip_configuration = 14;</code>
@@ -3097,11 +3358,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object workerRegion_ = "";
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine region
+     * Required. The Compute Engine region
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1". Mutually exclusive
      * with worker_zone. If neither worker_region nor worker_zone is specified,
@@ -3123,11 +3385,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine region
+     * Required. The Compute Engine region
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1". Mutually exclusive
      * with worker_zone. If neither worker_region nor worker_zone is specified,
@@ -3149,11 +3412,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine region
+     * Required. The Compute Engine region
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1". Mutually exclusive
      * with worker_zone. If neither worker_region nor worker_zone is specified,
@@ -3174,11 +3438,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine region
+     * Required. The Compute Engine region
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1". Mutually exclusive
      * with worker_zone. If neither worker_region nor worker_zone is specified,
@@ -3195,11 +3460,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine region
+     * Required. The Compute Engine region
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1". Mutually exclusive
      * with worker_zone. If neither worker_region nor worker_zone is specified,
@@ -3223,11 +3489,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object workerZone_ = "";
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine zone
+     * Optional. The Compute Engine zone
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
      * with worker_region. If neither worker_region nor worker_zone is specified,
@@ -3250,11 +3517,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine zone
+     * Optional. The Compute Engine zone
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
      * with worker_region. If neither worker_region nor worker_zone is specified,
@@ -3277,11 +3545,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine zone
+     * Optional. The Compute Engine zone
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
      * with worker_region. If neither worker_region nor worker_zone is specified,
@@ -3303,11 +3572,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine zone
+     * Optional. The Compute Engine zone
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
      * with worker_region. If neither worker_region nor worker_zone is specified,
@@ -3325,11 +3595,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine zone
+     * Optional. The Compute Engine zone
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
      * with worker_region. If neither worker_region nor worker_zone is specified,
@@ -3354,11 +3625,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean enableStreamingEngine_;
+
     /**
      *
      *
      * <pre>
-     * Whether to enable Streaming Engine for the job.
+     * Optional. Whether to enable Streaming Engine for the job.
      * </pre>
      *
      * <code>bool enable_streaming_engine = 17;</code>
@@ -3369,11 +3641,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public boolean getEnableStreamingEngine() {
       return enableStreamingEngine_;
     }
+
     /**
      *
      *
      * <pre>
-     * Whether to enable Streaming Engine for the job.
+     * Optional. Whether to enable Streaming Engine for the job.
      * </pre>
      *
      * <code>bool enable_streaming_engine = 17;</code>
@@ -3388,11 +3661,12 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Whether to enable Streaming Engine for the job.
+     * Optional. Whether to enable Streaming Engine for the job.
      * </pre>
      *
      * <code>bool enable_streaming_engine = 17;</code>
@@ -3402,6 +3676,224 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public Builder clearEnableStreamingEngine() {
       bitField0_ = (bitField0_ & ~0x00008000);
       enableStreamingEngine_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int diskSizeGb_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The disk size, in gigabytes, to use on each remote Compute Engine
+     * worker instance.
+     * </pre>
+     *
+     * <code>int32 disk_size_gb = 18;</code>
+     *
+     * @return The diskSizeGb.
+     */
+    @java.lang.Override
+    public int getDiskSizeGb() {
+      return diskSizeGb_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The disk size, in gigabytes, to use on each remote Compute Engine
+     * worker instance.
+     * </pre>
+     *
+     * <code>int32 disk_size_gb = 18;</code>
+     *
+     * @param value The diskSizeGb to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiskSizeGb(int value) {
+
+      diskSizeGb_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The disk size, in gigabytes, to use on each remote Compute Engine
+     * worker instance.
+     * </pre>
+     *
+     * <code>int32 disk_size_gb = 18;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDiskSizeGb() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      diskSizeGb_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int streamingMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the streamingMode field is set.
+     */
+    @java.lang.Override
+    public boolean hasStreamingMode() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for streamingMode.
+     */
+    @java.lang.Override
+    public int getStreamingModeValue() {
+      return streamingMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for streamingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStreamingModeValue(int value) {
+      streamingMode_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The streamingMode.
+     */
+    @java.lang.Override
+    public com.google.dataflow.v1beta3.StreamingMode getStreamingMode() {
+      com.google.dataflow.v1beta3.StreamingMode result =
+          com.google.dataflow.v1beta3.StreamingMode.forNumber(streamingMode_);
+      return result == null ? com.google.dataflow.v1beta3.StreamingMode.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The streamingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStreamingMode(com.google.dataflow.v1beta3.StreamingMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00020000;
+      streamingMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStreamingMode() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      streamingMode_ = 0;
       onChanged();
       return this;
     }

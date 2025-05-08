@@ -36,6 +36,7 @@ public interface AmazonS3BucketRegexOrBuilder
    * @return Whether the awsAccountRegex field is set.
    */
   boolean hasAwsAccountRegex();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AmazonS3BucketRegexOrBuilder
    * @return The awsAccountRegex.
    */
   com.google.privacy.dlp.v2.AwsAccountRegex getAwsAccountRegex();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface AmazonS3BucketRegexOrBuilder
    * @return The bucketNameRegex.
    */
   java.lang.String getBucketNameRegex();
+
   /**
    *
    *

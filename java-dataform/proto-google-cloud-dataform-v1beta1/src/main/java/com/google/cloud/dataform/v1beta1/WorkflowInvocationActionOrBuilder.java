@@ -38,6 +38,7 @@ public interface WorkflowInvocationActionOrBuilder
    * @return Whether the bigqueryAction field is set.
    */
   boolean hasBigqueryAction();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface WorkflowInvocationActionOrBuilder
    * @return The bigqueryAction.
    */
   com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryAction getBigqueryAction();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface WorkflowInvocationActionOrBuilder
    * @return Whether the notebookAction field is set.
    */
   boolean hasNotebookAction();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface WorkflowInvocationActionOrBuilder
    * @return The notebookAction.
    */
   com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.NotebookAction getNotebookAction();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface WorkflowInvocationActionOrBuilder
    * @return Whether the target field is set.
    */
   boolean hasTarget();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface WorkflowInvocationActionOrBuilder
    * @return The target.
    */
   com.google.cloud.dataform.v1beta1.Target getTarget();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface WorkflowInvocationActionOrBuilder
    * @return Whether the canonicalTarget field is set.
    */
   boolean hasCanonicalTarget();
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public interface WorkflowInvocationActionOrBuilder
    * @return The canonicalTarget.
    */
   com.google.cloud.dataform.v1beta1.Target getCanonicalTarget();
+
   /**
    *
    *
@@ -210,6 +218,7 @@ public interface WorkflowInvocationActionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -238,6 +247,7 @@ public interface WorkflowInvocationActionOrBuilder
    * @return The failureReason.
    */
   java.lang.String getFailureReason();
+
   /**
    *
    *
@@ -269,6 +279,7 @@ public interface WorkflowInvocationActionOrBuilder
    * @return Whether the invocationTiming field is set.
    */
   boolean hasInvocationTiming();
+
   /**
    *
    *
@@ -286,6 +297,7 @@ public interface WorkflowInvocationActionOrBuilder
    * @return The invocationTiming.
    */
   com.google.type.Interval getInvocationTiming();
+
   /**
    *
    *
@@ -317,6 +329,7 @@ public interface WorkflowInvocationActionOrBuilder
    * @return Whether the internalMetadata field is set.
    */
   boolean hasInternalMetadata();
+
   /**
    *
    *
@@ -332,6 +345,7 @@ public interface WorkflowInvocationActionOrBuilder
    * @return The internalMetadata.
    */
   java.lang.String getInternalMetadata();
+
   /**
    *
    *

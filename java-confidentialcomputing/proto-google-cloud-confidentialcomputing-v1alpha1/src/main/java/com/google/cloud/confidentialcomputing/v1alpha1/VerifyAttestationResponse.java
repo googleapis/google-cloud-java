@@ -34,6 +34,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1alpha1.VerifyAttestationResponse)
     VerifyAttestationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VerifyAttestationResponse.newBuilder() to construct.
   private VerifyAttestationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
 
   public static final int CLAIMS_TOKEN_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString claimsToken_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -247,6 +249,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -441,6 +444,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     private int bitField0_;
 
     private com.google.protobuf.ByteString claimsToken_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -458,6 +462,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getClaimsToken() {
       return claimsToken_;
     }
+
     /**
      *
      *
@@ -481,6 +486,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

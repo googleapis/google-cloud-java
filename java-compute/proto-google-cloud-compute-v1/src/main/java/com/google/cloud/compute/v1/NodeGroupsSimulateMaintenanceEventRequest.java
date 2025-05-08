@@ -33,6 +33,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NodeGroupsSimulateMaintenanceEventRequest)
     NodeGroupsSimulateMaintenanceEventRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NodeGroupsSimulateMaintenanceEventRequest.newBuilder() to construct.
   private NodeGroupsSimulateMaintenanceEventRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList nodes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
   public com.google.protobuf.ProtocolStringList getNodesList() {
     return nodes_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
   public int getNodesCount() {
     return nodes_.size();
   }
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
   public java.lang.String getNodes(int index) {
     return nodes_.get(index);
   }
+
   /**
    *
    *
@@ -296,6 +301,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -501,6 +507,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -516,6 +523,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
       nodes_.makeImmutable();
       return nodes_;
     }
+
     /**
      *
      *
@@ -530,6 +538,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
     public int getNodesCount() {
       return nodes_.size();
     }
+
     /**
      *
      *
@@ -545,6 +554,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
     public java.lang.String getNodes(int index) {
       return nodes_.get(index);
     }
+
     /**
      *
      *
@@ -560,6 +570,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
     public com.google.protobuf.ByteString getNodesBytes(int index) {
       return nodes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -583,6 +594,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -605,6 +617,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -624,6 +637,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -642,6 +656,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

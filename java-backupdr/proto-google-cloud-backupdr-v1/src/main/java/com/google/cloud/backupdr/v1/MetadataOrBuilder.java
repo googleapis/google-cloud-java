@@ -37,6 +37,7 @@ public interface MetadataOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.backupdr.v1.Entry> getItemsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface MetadataOrBuilder
    * </code>
    */
   com.google.cloud.backupdr.v1.Entry getItems(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface MetadataOrBuilder
    * </code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -76,6 +79,7 @@ public interface MetadataOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.EntryOrBuilder> getItemsOrBuilderList();
+
   /**
    *
    *

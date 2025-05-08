@@ -34,6 +34,7 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PointwiseMetricInstance)
     PointwiseMetricInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PointwiseMetricInstance.newBuilder() to construct.
   private PointwiseMetricInstance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,12 +73,14 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     JSON_INSTANCE(1),
+    CONTENT_MAP_INSTANCE(2),
     INSTANCE_NOT_SET(0);
     private final int value;
 
     private InstanceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -92,6 +95,8 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
       switch (value) {
         case 1:
           return JSON_INSTANCE;
+        case 2:
+          return CONTENT_MAP_INSTANCE;
         case 0:
           return INSTANCE_NOT_SET;
         default:
@@ -109,6 +114,7 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
   }
 
   public static final int JSON_INSTANCE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
   public boolean hasJsonInstance() {
     return instanceCase_ == 1;
   }
+
   /**
    *
    *
@@ -154,6 +161,7 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -184,6 +192,66 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
     }
   }
 
+  public static final int CONTENT_MAP_INSTANCE_FIELD_NUMBER = 2;
+
+  /**
+   *
+   *
+   * <pre>
+   * Key-value contents for the mutlimodality input, including text, image,
+   * video, audio, and pdf, etc. The key is placeholder in metric prompt
+   * template, and the value is the multimodal content.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ContentMap content_map_instance = 2;</code>
+   *
+   * @return Whether the contentMapInstance field is set.
+   */
+  @java.lang.Override
+  public boolean hasContentMapInstance() {
+    return instanceCase_ == 2;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Key-value contents for the mutlimodality input, including text, image,
+   * video, audio, and pdf, etc. The key is placeholder in metric prompt
+   * template, and the value is the multimodal content.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ContentMap content_map_instance = 2;</code>
+   *
+   * @return The contentMapInstance.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ContentMap getContentMapInstance() {
+    if (instanceCase_ == 2) {
+      return (com.google.cloud.aiplatform.v1beta1.ContentMap) instance_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.ContentMap.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Key-value contents for the mutlimodality input, including text, image,
+   * video, audio, and pdf, etc. The key is placeholder in metric prompt
+   * template, and the value is the multimodal content.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ContentMap content_map_instance = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ContentMapOrBuilder getContentMapInstanceOrBuilder() {
+    if (instanceCase_ == 2) {
+      return (com.google.cloud.aiplatform.v1beta1.ContentMap) instance_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.ContentMap.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -201,6 +269,9 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
     if (instanceCase_ == 1) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instance_);
     }
+    if (instanceCase_ == 2) {
+      output.writeMessage(2, (com.google.cloud.aiplatform.v1beta1.ContentMap) instance_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -212,6 +283,11 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
     size = 0;
     if (instanceCase_ == 1) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instance_);
+    }
+    if (instanceCase_ == 2) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.cloud.aiplatform.v1beta1.ContentMap) instance_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -234,6 +310,9 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
       case 1:
         if (!getJsonInstance().equals(other.getJsonInstance())) return false;
         break;
+      case 2:
+        if (!getContentMapInstance().equals(other.getContentMapInstance())) return false;
+        break;
       case 0:
       default:
     }
@@ -252,6 +331,10 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
       case 1:
         hash = (37 * hash) + JSON_INSTANCE_FIELD_NUMBER;
         hash = (53 * hash) + getJsonInstance().hashCode();
+        break;
+      case 2:
+        hash = (37 * hash) + CONTENT_MAP_INSTANCE_FIELD_NUMBER;
+        hash = (53 * hash) + getContentMapInstance().hashCode();
         break;
       case 0:
       default:
@@ -357,6 +440,7 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -397,6 +481,9 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (contentMapInstanceBuilder_ != null) {
+        contentMapInstanceBuilder_.clear();
+      }
       instanceCase_ = 0;
       instance_ = null;
       return this;
@@ -442,6 +529,9 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
         com.google.cloud.aiplatform.v1beta1.PointwiseMetricInstance result) {
       result.instanceCase_ = instanceCase_;
       result.instance_ = this.instance_;
+      if (instanceCase_ == 2 && contentMapInstanceBuilder_ != null) {
+        result.instance_ = contentMapInstanceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -498,6 +588,11 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
             onChanged();
             break;
           }
+        case CONTENT_MAP_INSTANCE:
+          {
+            mergeContentMapInstance(other.getContentMapInstance());
+            break;
+          }
         case INSTANCE_NOT_SET:
           {
             break;
@@ -536,6 +631,13 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
                 instance_ = s;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getContentMapInstanceFieldBuilder().getBuilder(), extensionRegistry);
+                instanceCase_ = 2;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -586,6 +688,7 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
     public boolean hasJsonInstance() {
       return instanceCase_ == 1;
     }
+
     /**
      *
      *
@@ -616,6 +719,7 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -646,6 +750,7 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -669,6 +774,7 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -690,6 +796,7 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +820,243 @@ public final class PointwiseMetricInstance extends com.google.protobuf.Generated
       instance_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ContentMap,
+            com.google.cloud.aiplatform.v1beta1.ContentMap.Builder,
+            com.google.cloud.aiplatform.v1beta1.ContentMapOrBuilder>
+        contentMapInstanceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Key-value contents for the mutlimodality input, including text, image,
+     * video, audio, and pdf, etc. The key is placeholder in metric prompt
+     * template, and the value is the multimodal content.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ContentMap content_map_instance = 2;</code>
+     *
+     * @return Whether the contentMapInstance field is set.
+     */
+    @java.lang.Override
+    public boolean hasContentMapInstance() {
+      return instanceCase_ == 2;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key-value contents for the mutlimodality input, including text, image,
+     * video, audio, and pdf, etc. The key is placeholder in metric prompt
+     * template, and the value is the multimodal content.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ContentMap content_map_instance = 2;</code>
+     *
+     * @return The contentMapInstance.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ContentMap getContentMapInstance() {
+      if (contentMapInstanceBuilder_ == null) {
+        if (instanceCase_ == 2) {
+          return (com.google.cloud.aiplatform.v1beta1.ContentMap) instance_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.ContentMap.getDefaultInstance();
+      } else {
+        if (instanceCase_ == 2) {
+          return contentMapInstanceBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.ContentMap.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key-value contents for the mutlimodality input, including text, image,
+     * video, audio, and pdf, etc. The key is placeholder in metric prompt
+     * template, and the value is the multimodal content.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ContentMap content_map_instance = 2;</code>
+     */
+    public Builder setContentMapInstance(com.google.cloud.aiplatform.v1beta1.ContentMap value) {
+      if (contentMapInstanceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        instance_ = value;
+        onChanged();
+      } else {
+        contentMapInstanceBuilder_.setMessage(value);
+      }
+      instanceCase_ = 2;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key-value contents for the mutlimodality input, including text, image,
+     * video, audio, and pdf, etc. The key is placeholder in metric prompt
+     * template, and the value is the multimodal content.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ContentMap content_map_instance = 2;</code>
+     */
+    public Builder setContentMapInstance(
+        com.google.cloud.aiplatform.v1beta1.ContentMap.Builder builderForValue) {
+      if (contentMapInstanceBuilder_ == null) {
+        instance_ = builderForValue.build();
+        onChanged();
+      } else {
+        contentMapInstanceBuilder_.setMessage(builderForValue.build());
+      }
+      instanceCase_ = 2;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key-value contents for the mutlimodality input, including text, image,
+     * video, audio, and pdf, etc. The key is placeholder in metric prompt
+     * template, and the value is the multimodal content.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ContentMap content_map_instance = 2;</code>
+     */
+    public Builder mergeContentMapInstance(com.google.cloud.aiplatform.v1beta1.ContentMap value) {
+      if (contentMapInstanceBuilder_ == null) {
+        if (instanceCase_ == 2
+            && instance_ != com.google.cloud.aiplatform.v1beta1.ContentMap.getDefaultInstance()) {
+          instance_ =
+              com.google.cloud.aiplatform.v1beta1.ContentMap.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.ContentMap) instance_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          instance_ = value;
+        }
+        onChanged();
+      } else {
+        if (instanceCase_ == 2) {
+          contentMapInstanceBuilder_.mergeFrom(value);
+        } else {
+          contentMapInstanceBuilder_.setMessage(value);
+        }
+      }
+      instanceCase_ = 2;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key-value contents for the mutlimodality input, including text, image,
+     * video, audio, and pdf, etc. The key is placeholder in metric prompt
+     * template, and the value is the multimodal content.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ContentMap content_map_instance = 2;</code>
+     */
+    public Builder clearContentMapInstance() {
+      if (contentMapInstanceBuilder_ == null) {
+        if (instanceCase_ == 2) {
+          instanceCase_ = 0;
+          instance_ = null;
+          onChanged();
+        }
+      } else {
+        if (instanceCase_ == 2) {
+          instanceCase_ = 0;
+          instance_ = null;
+        }
+        contentMapInstanceBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key-value contents for the mutlimodality input, including text, image,
+     * video, audio, and pdf, etc. The key is placeholder in metric prompt
+     * template, and the value is the multimodal content.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ContentMap content_map_instance = 2;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ContentMap.Builder getContentMapInstanceBuilder() {
+      return getContentMapInstanceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key-value contents for the mutlimodality input, including text, image,
+     * video, audio, and pdf, etc. The key is placeholder in metric prompt
+     * template, and the value is the multimodal content.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ContentMap content_map_instance = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ContentMapOrBuilder
+        getContentMapInstanceOrBuilder() {
+      if ((instanceCase_ == 2) && (contentMapInstanceBuilder_ != null)) {
+        return contentMapInstanceBuilder_.getMessageOrBuilder();
+      } else {
+        if (instanceCase_ == 2) {
+          return (com.google.cloud.aiplatform.v1beta1.ContentMap) instance_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.ContentMap.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Key-value contents for the mutlimodality input, including text, image,
+     * video, audio, and pdf, etc. The key is placeholder in metric prompt
+     * template, and the value is the multimodal content.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ContentMap content_map_instance = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ContentMap,
+            com.google.cloud.aiplatform.v1beta1.ContentMap.Builder,
+            com.google.cloud.aiplatform.v1beta1.ContentMapOrBuilder>
+        getContentMapInstanceFieldBuilder() {
+      if (contentMapInstanceBuilder_ == null) {
+        if (!(instanceCase_ == 2)) {
+          instance_ = com.google.cloud.aiplatform.v1beta1.ContentMap.getDefaultInstance();
+        }
+        contentMapInstanceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ContentMap,
+                com.google.cloud.aiplatform.v1beta1.ContentMap.Builder,
+                com.google.cloud.aiplatform.v1beta1.ContentMapOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.ContentMap) instance_,
+                getParentForChildren(),
+                isClean());
+        instance_ = null;
+      }
+      instanceCase_ = 2;
+      onChanged();
+      return contentMapInstanceBuilder_;
     }
 
     @java.lang.Override

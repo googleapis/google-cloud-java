@@ -37,6 +37,7 @@ public interface AwsCrossAccountRoleOrBuilder
    * @return The iamRoleId.
    */
   java.lang.String getIamRoleId();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface AwsCrossAccountRoleOrBuilder
    * @return The iamUserId.
    */
   java.lang.String getIamUserId();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface AwsCrossAccountRoleOrBuilder
    * @return The externalId.
    */
   java.lang.String getExternalId();
+
   /**
    *
    *

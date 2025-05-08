@@ -36,6 +36,7 @@ public interface PolicyControllerDeploymentConfigOrBuilder
    * @return Whether the replicaCount field is set.
    */
   boolean hasReplicaCount();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface PolicyControllerDeploymentConfigOrBuilder
    * @return Whether the containerResources field is set.
    */
   boolean hasContainerResources();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface PolicyControllerDeploymentConfigOrBuilder
    * @return The containerResources.
    */
   com.google.cloud.gkehub.policycontroller.v1beta.ResourceRequirements getContainerResources();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface PolicyControllerDeploymentConfigOrBuilder
    */
   @java.lang.Deprecated
   boolean hasPodAntiAffinity();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface PolicyControllerDeploymentConfigOrBuilder
           com.google.cloud.gkehub.policycontroller.v1beta.PolicyControllerDeploymentConfig
               .Toleration>
       getPodTolerationsList();
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public interface PolicyControllerDeploymentConfigOrBuilder
    */
   com.google.cloud.gkehub.policycontroller.v1beta.PolicyControllerDeploymentConfig.Toleration
       getPodTolerations(int index);
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface PolicyControllerDeploymentConfigOrBuilder
    * </code>
    */
   int getPodTolerationsCount();
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public interface PolicyControllerDeploymentConfigOrBuilder
               com.google.cloud.gkehub.policycontroller.v1beta.PolicyControllerDeploymentConfig
                   .TolerationOrBuilder>
       getPodTolerationsOrBuilderList();
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public interface PolicyControllerDeploymentConfigOrBuilder
    * @return The enum numeric value on the wire for podAffinity.
    */
   int getPodAffinityValue();
+
   /**
    *
    *

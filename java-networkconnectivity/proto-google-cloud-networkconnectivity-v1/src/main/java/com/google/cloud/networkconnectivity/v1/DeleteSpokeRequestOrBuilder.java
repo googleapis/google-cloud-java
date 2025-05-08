@@ -38,6 +38,7 @@ public interface DeleteSpokeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface DeleteSpokeRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

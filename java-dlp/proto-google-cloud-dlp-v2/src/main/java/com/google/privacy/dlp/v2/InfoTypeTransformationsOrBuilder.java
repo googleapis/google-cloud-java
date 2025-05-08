@@ -38,6 +38,7 @@ public interface InfoTypeTransformationsOrBuilder
    */
   java.util.List<com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation>
       getTransformationsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface InfoTypeTransformationsOrBuilder
    */
   com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformation getTransformations(
       int index);
+
   /**
    *
    *
@@ -65,6 +67,7 @@ public interface InfoTypeTransformationsOrBuilder
    * </code>
    */
   int getTransformationsCount();
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface InfoTypeTransformationsOrBuilder
           ? extends
               com.google.privacy.dlp.v2.InfoTypeTransformations.InfoTypeTransformationOrBuilder>
       getTransformationsOrBuilderList();
+
   /**
    *
    *

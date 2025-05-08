@@ -39,6 +39,7 @@ public interface RevertInstanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface RevertInstanceRequestOrBuilder
    * @return The targetSnapshotId.
    */
   java.lang.String getTargetSnapshotId();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.MaterializeChannelRequest)
     MaterializeChannelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MaterializeChannelRequest.newBuilder() to construct.
   private MaterializeChannelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object channelId_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
 
   public static final int CHANNEL_FIELD_NUMBER = 3;
   private com.google.cloud.visionai.v1.Channel channel_;
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
   public boolean hasChannel() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
   public com.google.cloud.visionai.v1.Channel getChannel() {
     return channel_ == null ? com.google.cloud.visionai.v1.Channel.getDefaultInstance() : channel_;
   }
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -260,6 +269,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -488,6 +498,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -731,6 +742,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -755,6 +767,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -779,6 +792,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -802,6 +816,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +836,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +863,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object channelId_ = "";
+
     /**
      *
      *
@@ -869,6 +886,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -891,6 +909,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -912,6 +931,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +949,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -958,6 +979,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
             com.google.cloud.visionai.v1.Channel.Builder,
             com.google.cloud.visionai.v1.ChannelOrBuilder>
         channelBuilder_;
+
     /**
      *
      *
@@ -974,6 +996,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
     public boolean hasChannel() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -996,6 +1019,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
         return channelBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1020,6 +1044,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1066,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1096,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1091,6 +1118,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1107,6 +1135,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
       onChanged();
       return getChannelFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1127,6 +1156,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
             : channel_;
       }
     }
+
     /**
      *
      *
@@ -1156,6 +1186,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1190,6 +1221,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1224,6 +1256,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1257,6 +1290,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1286,6 +1320,7 @@ public final class MaterializeChannelRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

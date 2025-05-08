@@ -40,6 +40,7 @@ public interface OAuthSettingsOrBuilder
    * @return Whether the loginHint field is set.
    */
   boolean hasLoginHint();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface OAuthSettingsOrBuilder
    * @return The loginHint.
    */
   com.google.protobuf.StringValue getLoginHint();
+
   /**
    *
    *
@@ -75,47 +77,54 @@ public interface OAuthSettingsOrBuilder
    *
    *
    * <pre>
-   * List of OAuth client IDs allowed to programmatically authenticate with IAP.
+   * Optional. List of client ids allowed to use IAP programmatically.
    * </pre>
    *
-   * <code>repeated string programmatic_clients = 5;</code>
+   * <code>repeated string programmatic_clients = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return A list containing the programmaticClients.
    */
   java.util.List<java.lang.String> getProgrammaticClientsList();
+
   /**
    *
    *
    * <pre>
-   * List of OAuth client IDs allowed to programmatically authenticate with IAP.
+   * Optional. List of client ids allowed to use IAP programmatically.
    * </pre>
    *
-   * <code>repeated string programmatic_clients = 5;</code>
+   * <code>repeated string programmatic_clients = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The count of programmaticClients.
    */
   int getProgrammaticClientsCount();
+
   /**
    *
    *
    * <pre>
-   * List of OAuth client IDs allowed to programmatically authenticate with IAP.
+   * Optional. List of client ids allowed to use IAP programmatically.
    * </pre>
    *
-   * <code>repeated string programmatic_clients = 5;</code>
+   * <code>repeated string programmatic_clients = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The programmaticClients at the given index.
    */
   java.lang.String getProgrammaticClients(int index);
+
   /**
    *
    *
    * <pre>
-   * List of OAuth client IDs allowed to programmatically authenticate with IAP.
+   * Optional. List of client ids allowed to use IAP programmatically.
    * </pre>
    *
-   * <code>repeated string programmatic_clients = 5;</code>
+   * <code>repeated string programmatic_clients = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the programmaticClients at the given index.

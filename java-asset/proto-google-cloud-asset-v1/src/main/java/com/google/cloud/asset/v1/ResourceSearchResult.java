@@ -33,6 +33,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.ResourceSearchResult)
     ResourceSearchResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceSearchResult.newBuilder() to construct.
   private ResourceSearchResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -59,6 +60,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     tagValueIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     tags_ = java.util.Collections.emptyList();
     effectiveTags_ = java.util.Collections.emptyList();
+    enrichments_ = java.util.Collections.emptyList();
     parentAssetType_ = "";
   }
 
@@ -104,6 +106,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -173,6 +177,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object assetType_ = "";
+
   /**
    *
    *
@@ -200,6 +205,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -232,6 +238,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -263,6 +270,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -300,6 +308,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList folders_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -322,6 +331,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getFoldersList() {
     return folders_;
   }
+
   /**
    *
    *
@@ -344,6 +354,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getFoldersCount() {
     return folders_.size();
   }
+
   /**
    *
    *
@@ -367,6 +378,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.lang.String getFolders(int index) {
     return folders_.get(index);
   }
+
   /**
    *
    *
@@ -395,6 +407,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object organization_ = "";
+
   /**
    *
    *
@@ -426,6 +439,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -462,6 +476,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -491,6 +506,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -525,6 +541,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -555,6 +572,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -590,6 +608,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
+
   /**
    *
    *
@@ -620,6 +639,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -677,6 +697,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -705,12 +726,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -736,6 +759,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -768,6 +792,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -806,6 +831,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList networkTags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -830,6 +856,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
     return networkTags_;
   }
+
   /**
    *
    *
@@ -854,6 +881,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getNetworkTagsCount() {
     return networkTags_.size();
   }
+
   /**
    *
    *
@@ -879,6 +907,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.lang.String getNetworkTags(int index) {
     return networkTags_.get(index);
   }
+
   /**
    *
    *
@@ -909,6 +938,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKey_ = "";
+
   /**
    *
    *
@@ -935,7 +965,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=470
+   *     google/cloud/asset/v1/assets.proto;l=482
    * @return The kmsKey.
    */
   @java.lang.Override
@@ -951,6 +981,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -977,7 +1008,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=470
+   *     google/cloud/asset/v1/assets.proto;l=482
    * @return The bytes for kmsKey.
    */
   @java.lang.Override
@@ -999,6 +1030,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList kmsKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1023,6 +1055,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getKmsKeysList() {
     return kmsKeys_;
   }
+
   /**
    *
    *
@@ -1047,6 +1080,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getKmsKeysCount() {
     return kmsKeys_.size();
   }
+
   /**
    *
    *
@@ -1072,6 +1106,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.lang.String getKmsKeys(int index) {
     return kmsKeys_.get(index);
   }
+
   /**
    *
    *
@@ -1100,6 +1135,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   public static final int CREATE_TIME_FIELD_NUMBER = 11;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -1125,6 +1161,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1150,6 +1187,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -1176,6 +1214,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 12;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -1202,6 +1241,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1228,6 +1268,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -1257,6 +1298,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object state_ = "";
+
   /**
    *
    *
@@ -1299,6 +1341,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -1344,6 +1387,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   public static final int ADDITIONAL_ATTRIBUTES_FIELD_NUMBER = 9;
   private com.google.protobuf.Struct additionalAttributes_;
+
   /**
    *
    *
@@ -1377,6 +1421,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public boolean hasAdditionalAttributes() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1412,6 +1457,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         ? com.google.protobuf.Struct.getDefaultInstance()
         : additionalAttributes_;
   }
+
   /**
    *
    *
@@ -1450,6 +1496,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parentFullResourceName_ = "";
+
   /**
    *
    *
@@ -1479,6 +1526,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -1513,6 +1561,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.VersionedResource> versionedResources_;
+
   /**
    *
    *
@@ -1532,6 +1581,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.asset.v1.VersionedResource> getVersionedResourcesList() {
     return versionedResources_;
   }
+
   /**
    *
    *
@@ -1552,6 +1602,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       getVersionedResourcesOrBuilderList() {
     return versionedResources_;
   }
+
   /**
    *
    *
@@ -1571,6 +1622,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getVersionedResourcesCount() {
     return versionedResources_.size();
   }
+
   /**
    *
    *
@@ -1590,6 +1642,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.cloud.asset.v1.VersionedResource getVersionedResources(int index) {
     return versionedResources_.get(index);
   }
+
   /**
    *
    *
@@ -1615,6 +1668,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.AttachedResource> attachedResources_;
+
   /**
    *
    *
@@ -1634,6 +1688,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.asset.v1.AttachedResource> getAttachedResourcesList() {
     return attachedResources_;
   }
+
   /**
    *
    *
@@ -1654,6 +1709,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       getAttachedResourcesOrBuilderList() {
     return attachedResources_;
   }
+
   /**
    *
    *
@@ -1673,6 +1729,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getAttachedResourcesCount() {
     return attachedResources_.size();
   }
+
   /**
    *
    *
@@ -1692,6 +1749,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.cloud.asset.v1.AttachedResource getAttachedResources(int index) {
     return attachedResources_.get(index);
   }
+
   /**
    *
    *
@@ -1745,6 +1803,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getRelationshipsCount() {
     return internalGetRelationships().getMap().size();
   }
+
   /**
    *
    *
@@ -1766,6 +1825,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
     return internalGetRelationships().getMap().containsKey(key);
   }
+
   /** Use {@link #getRelationshipsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -1773,6 +1833,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       getRelationships() {
     return getRelationshipsMap();
   }
+
   /**
    *
    *
@@ -1792,6 +1853,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       getRelationshipsMap() {
     return internalGetRelationships().getMap();
   }
+
   /**
    *
    *
@@ -1818,6 +1880,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         internalGetRelationships().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1850,6 +1913,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList tagKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1872,13 +1936,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=603
+   *     google/cloud/asset/v1/assets.proto;l=615
    * @return A list containing the tagKeys.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ProtocolStringList getTagKeysList() {
     return tagKeys_;
   }
+
   /**
    *
    *
@@ -1901,13 +1966,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=603
+   *     google/cloud/asset/v1/assets.proto;l=615
    * @return The count of tagKeys.
    */
   @java.lang.Deprecated
   public int getTagKeysCount() {
     return tagKeys_.size();
   }
+
   /**
    *
    *
@@ -1930,7 +1996,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=603
+   *     google/cloud/asset/v1/assets.proto;l=615
    * @param index The index of the element to return.
    * @return The tagKeys at the given index.
    */
@@ -1938,6 +2004,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.lang.String getTagKeys(int index) {
     return tagKeys_.get(index);
   }
+
   /**
    *
    *
@@ -1960,7 +2027,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=603
+   *     google/cloud/asset/v1/assets.proto;l=615
    * @param index The index of the value to return.
    * @return The bytes of the tagKeys at the given index.
    */
@@ -1974,6 +2041,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList tagValues_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1998,13 +2066,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=620
+   *     google/cloud/asset/v1/assets.proto;l=632
    * @return A list containing the tagValues.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ProtocolStringList getTagValuesList() {
     return tagValues_;
   }
+
   /**
    *
    *
@@ -2029,13 +2098,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=620
+   *     google/cloud/asset/v1/assets.proto;l=632
    * @return The count of tagValues.
    */
   @java.lang.Deprecated
   public int getTagValuesCount() {
     return tagValues_.size();
   }
+
   /**
    *
    *
@@ -2060,7 +2130,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=620
+   *     google/cloud/asset/v1/assets.proto;l=632
    * @param index The index of the element to return.
    * @return The tagValues at the given index.
    */
@@ -2068,6 +2138,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.lang.String getTagValues(int index) {
     return tagValues_.get(index);
   }
+
   /**
    *
    *
@@ -2092,7 +2163,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=620
+   *     google/cloud/asset/v1/assets.proto;l=632
    * @param index The index of the value to return.
    * @return The bytes of the tagValues at the given index.
    */
@@ -2106,6 +2177,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList tagValueIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -2126,13 +2198,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=633
+   *     google/cloud/asset/v1/assets.proto;l=645
    * @return A list containing the tagValueIds.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ProtocolStringList getTagValueIdsList() {
     return tagValueIds_;
   }
+
   /**
    *
    *
@@ -2153,13 +2226,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=633
+   *     google/cloud/asset/v1/assets.proto;l=645
    * @return The count of tagValueIds.
    */
   @java.lang.Deprecated
   public int getTagValueIdsCount() {
     return tagValueIds_.size();
   }
+
   /**
    *
    *
@@ -2180,7 +2254,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=633
+   *     google/cloud/asset/v1/assets.proto;l=645
    * @param index The index of the element to return.
    * @return The tagValueIds at the given index.
    */
@@ -2188,6 +2262,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.lang.String getTagValueIds(int index) {
     return tagValueIds_.get(index);
   }
+
   /**
    *
    *
@@ -2208,7 +2283,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=633
+   *     google/cloud/asset/v1/assets.proto;l=645
    * @param index The index of the value to return.
    * @return The bytes of the tagValueIds at the given index.
    */
@@ -2221,6 +2296,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.Tag> tags_;
+
   /**
    *
    *
@@ -2250,6 +2326,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.asset.v1.Tag> getTagsList() {
     return tags_;
   }
+
   /**
    *
    *
@@ -2279,6 +2356,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.util.List<? extends com.google.cloud.asset.v1.TagOrBuilder> getTagsOrBuilderList() {
     return tags_;
   }
+
   /**
    *
    *
@@ -2308,6 +2386,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getTagsCount() {
     return tags_.size();
   }
+
   /**
    *
    *
@@ -2337,6 +2416,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.cloud.asset.v1.Tag getTags(int index) {
     return tags_.get(index);
   }
+
   /**
    *
    *
@@ -2371,6 +2451,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> effectiveTags_;
+
   /**
    *
    *
@@ -2400,6 +2481,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> getEffectiveTagsList() {
     return effectiveTags_;
   }
+
   /**
    *
    *
@@ -2430,6 +2512,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       getEffectiveTagsOrBuilderList() {
     return effectiveTags_;
   }
+
   /**
    *
    *
@@ -2459,6 +2542,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getEffectiveTagsCount() {
     return effectiveTags_.size();
   }
+
   /**
    *
    *
@@ -2488,6 +2572,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public com.google.cloud.asset.v1.EffectiveTagDetails getEffectiveTags(int index) {
     return effectiveTags_.get(index);
   }
+
   /**
    *
    *
@@ -2519,10 +2604,202 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     return effectiveTags_.get(index);
   }
 
+  public static final int ENRICHMENTS_FIELD_NUMBER = 31;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.asset.v1.AssetEnrichment> enrichments_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Enrichments of the asset. Currently supported enrichment types with
+   * SearchAllResources API:
+   *
+   * * RESOURCE_OWNERS
+   *
+   * The corresponding read masks in order to get the enrichment:
+   *
+   * * enrichments.resource_owners
+   *
+   * The corresponding required permissions:
+   *
+   * * cloudasset.assets.searchEnrichmentResourceOwners
+   *
+   * Example query to get resource owner enrichment:
+   * ```
+   *   scope: "projects/my-project"
+   *   query: "name: my-project"
+   *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+   *   readMask: {
+   *      paths: "asset_type"
+   *      paths: "name"
+   *      paths: "enrichments.resource_owners"
+   *   }
+   * ```
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.asset.v1.AssetEnrichment> getEnrichmentsList() {
+    return enrichments_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Enrichments of the asset. Currently supported enrichment types with
+   * SearchAllResources API:
+   *
+   * * RESOURCE_OWNERS
+   *
+   * The corresponding read masks in order to get the enrichment:
+   *
+   * * enrichments.resource_owners
+   *
+   * The corresponding required permissions:
+   *
+   * * cloudasset.assets.searchEnrichmentResourceOwners
+   *
+   * Example query to get resource owner enrichment:
+   * ```
+   *   scope: "projects/my-project"
+   *   query: "name: my-project"
+   *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+   *   readMask: {
+   *      paths: "asset_type"
+   *      paths: "name"
+   *      paths: "enrichments.resource_owners"
+   *   }
+   * ```
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.asset.v1.AssetEnrichmentOrBuilder>
+      getEnrichmentsOrBuilderList() {
+    return enrichments_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Enrichments of the asset. Currently supported enrichment types with
+   * SearchAllResources API:
+   *
+   * * RESOURCE_OWNERS
+   *
+   * The corresponding read masks in order to get the enrichment:
+   *
+   * * enrichments.resource_owners
+   *
+   * The corresponding required permissions:
+   *
+   * * cloudasset.assets.searchEnrichmentResourceOwners
+   *
+   * Example query to get resource owner enrichment:
+   * ```
+   *   scope: "projects/my-project"
+   *   query: "name: my-project"
+   *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+   *   readMask: {
+   *      paths: "asset_type"
+   *      paths: "name"
+   *      paths: "enrichments.resource_owners"
+   *   }
+   * ```
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+   */
+  @java.lang.Override
+  public int getEnrichmentsCount() {
+    return enrichments_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Enrichments of the asset. Currently supported enrichment types with
+   * SearchAllResources API:
+   *
+   * * RESOURCE_OWNERS
+   *
+   * The corresponding read masks in order to get the enrichment:
+   *
+   * * enrichments.resource_owners
+   *
+   * The corresponding required permissions:
+   *
+   * * cloudasset.assets.searchEnrichmentResourceOwners
+   *
+   * Example query to get resource owner enrichment:
+   * ```
+   *   scope: "projects/my-project"
+   *   query: "name: my-project"
+   *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+   *   readMask: {
+   *      paths: "asset_type"
+   *      paths: "name"
+   *      paths: "enrichments.resource_owners"
+   *   }
+   * ```
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.AssetEnrichment getEnrichments(int index) {
+    return enrichments_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Enrichments of the asset. Currently supported enrichment types with
+   * SearchAllResources API:
+   *
+   * * RESOURCE_OWNERS
+   *
+   * The corresponding read masks in order to get the enrichment:
+   *
+   * * enrichments.resource_owners
+   *
+   * The corresponding required permissions:
+   *
+   * * cloudasset.assets.searchEnrichmentResourceOwners
+   *
+   * Example query to get resource owner enrichment:
+   * ```
+   *   scope: "projects/my-project"
+   *   query: "name: my-project"
+   *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+   *   readMask: {
+   *      paths: "asset_type"
+   *      paths: "name"
+   *      paths: "enrichments.resource_owners"
+   *   }
+   * ```
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.AssetEnrichmentOrBuilder getEnrichmentsOrBuilder(int index) {
+    return enrichments_.get(index);
+  }
+
   public static final int PARENT_ASSET_TYPE_FIELD_NUMBER = 103;
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parentAssetType_ = "";
+
   /**
    *
    *
@@ -2553,6 +2830,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -2612,6 +2890,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public int getSccSecurityMarksCount() {
     return internalGetSccSecurityMarks().getMap().size();
   }
+
   /**
    *
    *
@@ -2636,12 +2915,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
     return internalGetSccSecurityMarks().getMap().containsKey(key);
   }
+
   /** Use {@link #getSccSecurityMarksMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getSccSecurityMarks() {
     return getSccSecurityMarksMap();
   }
+
   /**
    *
    *
@@ -2663,6 +2944,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public java.util.Map<java.lang.String, java.lang.String> getSccSecurityMarksMap() {
     return internalGetSccSecurityMarks().getMap();
   }
+
   /**
    *
    *
@@ -2691,6 +2973,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     java.util.Map<java.lang.String, java.lang.String> map = internalGetSccSecurityMarks().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -2806,6 +3089,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
     for (int i = 0; i < effectiveTags_.size(); i++) {
       output.writeMessage(30, effectiveTags_.get(i));
+    }
+    for (int i = 0; i < enrichments_.size(); i++) {
+      output.writeMessage(31, enrichments_.get(i));
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetSccSecurityMarks(), SccSecurityMarksDefaultEntryHolder.defaultEntry, 32);
@@ -2944,6 +3230,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < effectiveTags_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, effectiveTags_.get(i));
     }
+    for (int i = 0; i < enrichments_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, enrichments_.get(i));
+    }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetSccSecurityMarks().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String> sccSecurityMarks__ =
@@ -3007,6 +3296,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     if (!getTagValueIdsList().equals(other.getTagValueIdsList())) return false;
     if (!getTagsList().equals(other.getTagsList())) return false;
     if (!getEffectiveTagsList().equals(other.getEffectiveTagsList())) return false;
+    if (!getEnrichmentsList().equals(other.getEnrichmentsList())) return false;
     if (!getParentAssetType().equals(other.getParentAssetType())) return false;
     if (!internalGetSccSecurityMarks().equals(other.internalGetSccSecurityMarks())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -3099,6 +3389,10 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     if (getEffectiveTagsCount() > 0) {
       hash = (37 * hash) + EFFECTIVE_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getEffectiveTagsList().hashCode();
+    }
+    if (getEnrichmentsCount() > 0) {
+      hash = (37 * hash) + ENRICHMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getEnrichmentsList().hashCode();
     }
     hash = (37 * hash) + PARENT_ASSET_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getParentAssetType().hashCode();
@@ -3206,6 +3500,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3283,6 +3578,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         getAttachedResourcesFieldBuilder();
         getTagsFieldBuilder();
         getEffectiveTagsFieldBuilder();
+        getEnrichmentsFieldBuilder();
       }
     }
 
@@ -3351,6 +3647,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         effectiveTagsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x01000000);
+      if (enrichmentsBuilder_ == null) {
+        enrichments_ = java.util.Collections.emptyList();
+      } else {
+        enrichments_ = null;
+        enrichmentsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x02000000);
       parentAssetType_ = "";
       internalGetMutableSccSecurityMarks().clear();
       return this;
@@ -3424,6 +3727,15 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         result.effectiveTags_ = effectiveTags_;
       } else {
         result.effectiveTags_ = effectiveTagsBuilder_.build();
+      }
+      if (enrichmentsBuilder_ == null) {
+        if (((bitField0_ & 0x02000000) != 0)) {
+          enrichments_ = java.util.Collections.unmodifiableList(enrichments_);
+          bitField0_ = (bitField0_ & ~0x02000000);
+        }
+        result.enrichments_ = enrichments_;
+      } else {
+        result.enrichments_ = enrichmentsBuilder_.build();
       }
     }
 
@@ -3507,10 +3819,10 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         tagValueIds_.makeImmutable();
         result.tagValueIds_ = tagValueIds_;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.parentAssetType_ = parentAssetType_;
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.sccSecurityMarks_ = internalGetSccSecurityMarks();
         result.sccSecurityMarks_.makeImmutable();
       }
@@ -3793,13 +4105,40 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
           }
         }
       }
+      if (enrichmentsBuilder_ == null) {
+        if (!other.enrichments_.isEmpty()) {
+          if (enrichments_.isEmpty()) {
+            enrichments_ = other.enrichments_;
+            bitField0_ = (bitField0_ & ~0x02000000);
+          } else {
+            ensureEnrichmentsIsMutable();
+            enrichments_.addAll(other.enrichments_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.enrichments_.isEmpty()) {
+          if (enrichmentsBuilder_.isEmpty()) {
+            enrichmentsBuilder_.dispose();
+            enrichmentsBuilder_ = null;
+            enrichments_ = other.enrichments_;
+            bitField0_ = (bitField0_ & ~0x02000000);
+            enrichmentsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getEnrichmentsFieldBuilder()
+                    : null;
+          } else {
+            enrichmentsBuilder_.addAllMessages(other.enrichments_);
+          }
+        }
+      }
       if (!other.getParentAssetType().isEmpty()) {
         parentAssetType_ = other.parentAssetType_;
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       internalGetMutableSccSecurityMarks().mergeFrom(other.internalGetSccSecurityMarks());
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4024,6 +4363,19 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
                 }
                 break;
               } // case 242
+            case 250:
+              {
+                com.google.cloud.asset.v1.AssetEnrichment m =
+                    input.readMessage(
+                        com.google.cloud.asset.v1.AssetEnrichment.parser(), extensionRegistry);
+                if (enrichmentsBuilder_ == null) {
+                  ensureEnrichmentsIsMutable();
+                  enrichments_.add(m);
+                } else {
+                  enrichmentsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 250
             case 258:
               {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
@@ -4034,13 +4386,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
                 internalGetMutableSccSecurityMarks()
                     .getMutableMap()
                     .put(sccSecurityMarks__.getKey(), sccSecurityMarks__.getValue());
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 258
             case 826:
               {
                 parentAssetType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 826
             default:
@@ -4063,6 +4415,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -4094,6 +4447,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4125,6 +4479,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4155,6 +4510,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4181,6 +4537,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4214,6 +4571,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object assetType_ = "";
+
     /**
      *
      *
@@ -4240,6 +4598,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4266,6 +4625,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4291,6 +4651,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4312,6 +4673,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4340,6 +4702,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -4370,6 +4733,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4400,6 +4764,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4429,6 +4794,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4454,6 +4820,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4494,6 +4861,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -4517,6 +4885,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       folders_.makeImmutable();
       return folders_;
     }
+
     /**
      *
      *
@@ -4539,6 +4908,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public int getFoldersCount() {
       return folders_.size();
     }
+
     /**
      *
      *
@@ -4562,6 +4932,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public java.lang.String getFolders(int index) {
       return folders_.get(index);
     }
+
     /**
      *
      *
@@ -4585,6 +4956,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getFoldersBytes(int index) {
       return folders_.getByteString(index);
     }
+
     /**
      *
      *
@@ -4616,6 +4988,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4646,6 +5019,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4673,6 +5047,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4699,6 +5074,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4732,6 +5108,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object organization_ = "";
+
     /**
      *
      *
@@ -4762,6 +5139,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4792,6 +5170,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4821,6 +5200,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4846,6 +5226,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4878,6 +5259,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -4906,6 +5288,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4934,6 +5317,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4961,6 +5345,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4984,6 +5369,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5014,6 +5400,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -5043,6 +5430,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5072,6 +5460,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5100,6 +5489,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5124,6 +5514,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5155,6 +5546,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -5184,6 +5576,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5213,6 +5606,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5241,6 +5635,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5265,6 +5660,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5320,6 +5716,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -5348,12 +5745,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -5379,6 +5778,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -5411,6 +5811,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -5449,6 +5850,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -5477,12 +5879,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000100;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -5515,6 +5919,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000100;
       return this;
     }
+
     /**
      *
      *
@@ -5551,6 +5956,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000200;
     }
+
     /**
      *
      *
@@ -5576,6 +5982,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       networkTags_.makeImmutable();
       return networkTags_;
     }
+
     /**
      *
      *
@@ -5600,6 +6007,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public int getNetworkTagsCount() {
       return networkTags_.size();
     }
+
     /**
      *
      *
@@ -5625,6 +6033,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public java.lang.String getNetworkTags(int index) {
       return networkTags_.get(index);
     }
+
     /**
      *
      *
@@ -5650,6 +6059,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getNetworkTagsBytes(int index) {
       return networkTags_.getByteString(index);
     }
+
     /**
      *
      *
@@ -5683,6 +6093,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5715,6 +6126,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5744,6 +6156,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5772,6 +6185,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5807,6 +6221,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object kmsKey_ = "";
+
     /**
      *
      *
@@ -5833,7 +6248,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=470
+     *     google/cloud/asset/v1/assets.proto;l=482
      * @return The kmsKey.
      */
     @java.lang.Deprecated
@@ -5848,6 +6263,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5874,7 +6290,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=470
+     *     google/cloud/asset/v1/assets.proto;l=482
      * @return The bytes for kmsKey.
      */
     @java.lang.Deprecated
@@ -5889,6 +6305,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5915,7 +6332,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=470
+     *     google/cloud/asset/v1/assets.proto;l=482
      * @param value The kmsKey to set.
      * @return This builder for chaining.
      */
@@ -5929,6 +6346,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5955,7 +6373,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=470
+     *     google/cloud/asset/v1/assets.proto;l=482
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -5965,6 +6383,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5991,7 +6410,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=470
+     *     google/cloud/asset/v1/assets.proto;l=482
      * @param value The bytes for kmsKey to set.
      * @return This builder for chaining.
      */
@@ -6016,6 +6435,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000800;
     }
+
     /**
      *
      *
@@ -6041,6 +6461,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       kmsKeys_.makeImmutable();
       return kmsKeys_;
     }
+
     /**
      *
      *
@@ -6065,6 +6486,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public int getKmsKeysCount() {
       return kmsKeys_.size();
     }
+
     /**
      *
      *
@@ -6090,6 +6512,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public java.lang.String getKmsKeys(int index) {
       return kmsKeys_.get(index);
     }
+
     /**
      *
      *
@@ -6115,6 +6538,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getKmsKeysBytes(int index) {
       return kmsKeys_.getByteString(index);
     }
+
     /**
      *
      *
@@ -6148,6 +6572,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6180,6 +6605,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6209,6 +6635,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6237,6 +6664,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6277,6 +6705,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -6301,6 +6730,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -6331,6 +6761,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6363,6 +6794,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6392,6 +6824,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6429,6 +6862,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6458,6 +6892,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6482,6 +6917,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6510,6 +6946,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -6552,6 +6989,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -6577,6 +7015,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -6608,6 +7047,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6641,6 +7081,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6671,6 +7112,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6709,6 +7151,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -6739,6 +7182,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6764,6 +7208,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6793,6 +7238,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -6831,6 +7277,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object state_ = "";
+
     /**
      *
      *
@@ -6872,6 +7319,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -6913,6 +7361,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -6953,6 +7402,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6989,6 +7439,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7037,6 +7488,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         additionalAttributesBuilder_;
+
     /**
      *
      *
@@ -7069,6 +7521,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public boolean hasAdditionalAttributes() {
       return ((bitField0_ & 0x00008000) != 0);
     }
+
     /**
      *
      *
@@ -7107,6 +7560,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return additionalAttributesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -7147,6 +7601,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7184,6 +7639,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7229,6 +7685,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7266,6 +7723,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7298,6 +7756,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return getAdditionalAttributesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7334,6 +7793,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
             : additionalAttributes_;
       }
     }
+
     /**
      *
      *
@@ -7379,6 +7839,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object parentFullResourceName_ = "";
+
     /**
      *
      *
@@ -7407,6 +7868,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7435,6 +7897,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7462,6 +7925,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7485,6 +7949,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7554,6 +8019,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return versionedResourcesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -7576,6 +8042,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return versionedResourcesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -7598,6 +8065,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return versionedResourcesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -7627,6 +8095,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7653,6 +8122,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7681,6 +8151,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7710,6 +8181,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7736,6 +8208,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7762,6 +8235,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7788,6 +8262,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7813,6 +8288,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7838,6 +8314,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -7857,6 +8334,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         int index) {
       return getVersionedResourcesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -7880,6 +8358,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return versionedResourcesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -7903,6 +8382,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(versionedResources_);
       }
     }
+
     /**
      *
      *
@@ -7922,6 +8402,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return getVersionedResourcesFieldBuilder()
           .addBuilder(com.google.cloud.asset.v1.VersionedResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -7942,6 +8423,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return getVersionedResourcesFieldBuilder()
           .addBuilder(index, com.google.cloud.asset.v1.VersionedResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -8021,6 +8503,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return attachedResourcesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -8043,6 +8526,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return attachedResourcesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -8065,6 +8549,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return attachedResourcesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -8094,6 +8579,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8120,6 +8606,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8148,6 +8635,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8177,6 +8665,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8203,6 +8692,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8229,6 +8719,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8255,6 +8746,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8280,6 +8772,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8305,6 +8798,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -8324,6 +8818,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         int index) {
       return getAttachedResourcesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -8347,6 +8842,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return attachedResourcesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -8370,6 +8866,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(attachedResources_);
       }
     }
+
     /**
      *
      *
@@ -8389,6 +8886,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return getAttachedResourcesFieldBuilder()
           .addBuilder(com.google.cloud.asset.v1.AttachedResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -8409,6 +8907,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return getAttachedResourcesFieldBuilder()
           .addBuilder(index, com.google.cloud.asset.v1.AttachedResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -8469,7 +8968,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
           defaultEntry() {
         return RelationshipsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final RelationshipsConverter relationshipsConverter =
         new RelationshipsConverter();
@@ -8510,6 +9010,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public int getRelationshipsCount() {
       return internalGetRelationships().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -8531,6 +9032,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return internalGetRelationships().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getRelationshipsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -8538,6 +9040,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         getRelationships() {
       return getRelationshipsMap();
     }
+
     /**
      *
      *
@@ -8557,6 +9060,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         getRelationshipsMap() {
       return internalGetRelationships().getImmutableMap();
     }
+
     /**
      *
      *
@@ -8583,6 +9087,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
           internalGetMutableRelationships().ensureBuilderMap();
       return map.containsKey(key) ? relationshipsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -8616,6 +9121,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       internalGetMutableRelationships().clear();
       return this;
     }
+
     /**
      *
      *
@@ -8637,6 +9143,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       internalGetMutableRelationships().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources>
@@ -8644,6 +9151,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00080000;
       return internalGetMutableRelationships().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -8670,6 +9178,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00080000;
       return this;
     }
+
     /**
      *
      *
@@ -8696,6 +9205,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00080000;
       return this;
     }
+
     /**
      *
      *
@@ -8735,6 +9245,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00100000;
     }
+
     /**
      *
      *
@@ -8757,7 +9268,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=603
+     *     google/cloud/asset/v1/assets.proto;l=615
      * @return A list containing the tagKeys.
      */
     @java.lang.Deprecated
@@ -8765,6 +9276,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       tagKeys_.makeImmutable();
       return tagKeys_;
     }
+
     /**
      *
      *
@@ -8787,13 +9299,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=603
+     *     google/cloud/asset/v1/assets.proto;l=615
      * @return The count of tagKeys.
      */
     @java.lang.Deprecated
     public int getTagKeysCount() {
       return tagKeys_.size();
     }
+
     /**
      *
      *
@@ -8816,7 +9329,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=603
+     *     google/cloud/asset/v1/assets.proto;l=615
      * @param index The index of the element to return.
      * @return The tagKeys at the given index.
      */
@@ -8824,6 +9337,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public java.lang.String getTagKeys(int index) {
       return tagKeys_.get(index);
     }
+
     /**
      *
      *
@@ -8846,7 +9360,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=603
+     *     google/cloud/asset/v1/assets.proto;l=615
      * @param index The index of the value to return.
      * @return The bytes of the tagKeys at the given index.
      */
@@ -8854,6 +9368,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getTagKeysBytes(int index) {
       return tagKeys_.getByteString(index);
     }
+
     /**
      *
      *
@@ -8876,7 +9391,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=603
+     *     google/cloud/asset/v1/assets.proto;l=615
      * @param index The index to set the value at.
      * @param value The tagKeys to set.
      * @return This builder for chaining.
@@ -8892,6 +9407,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8914,7 +9430,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=603
+     *     google/cloud/asset/v1/assets.proto;l=615
      * @param value The tagKeys to add.
      * @return This builder for chaining.
      */
@@ -8929,6 +9445,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8951,7 +9468,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=603
+     *     google/cloud/asset/v1/assets.proto;l=615
      * @param values The tagKeys to add.
      * @return This builder for chaining.
      */
@@ -8963,6 +9480,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8985,7 +9503,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=603
+     *     google/cloud/asset/v1/assets.proto;l=615
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -8996,6 +9514,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9018,7 +9537,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=603
+     *     google/cloud/asset/v1/assets.proto;l=615
      * @param value The bytes of the tagKeys to add.
      * @return This builder for chaining.
      */
@@ -9044,6 +9563,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00200000;
     }
+
     /**
      *
      *
@@ -9068,7 +9588,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=620
+     *     google/cloud/asset/v1/assets.proto;l=632
      * @return A list containing the tagValues.
      */
     @java.lang.Deprecated
@@ -9076,6 +9596,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       tagValues_.makeImmutable();
       return tagValues_;
     }
+
     /**
      *
      *
@@ -9100,13 +9621,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=620
+     *     google/cloud/asset/v1/assets.proto;l=632
      * @return The count of tagValues.
      */
     @java.lang.Deprecated
     public int getTagValuesCount() {
       return tagValues_.size();
     }
+
     /**
      *
      *
@@ -9131,7 +9653,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=620
+     *     google/cloud/asset/v1/assets.proto;l=632
      * @param index The index of the element to return.
      * @return The tagValues at the given index.
      */
@@ -9139,6 +9661,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public java.lang.String getTagValues(int index) {
       return tagValues_.get(index);
     }
+
     /**
      *
      *
@@ -9163,7 +9686,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=620
+     *     google/cloud/asset/v1/assets.proto;l=632
      * @param index The index of the value to return.
      * @return The bytes of the tagValues at the given index.
      */
@@ -9171,6 +9694,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getTagValuesBytes(int index) {
       return tagValues_.getByteString(index);
     }
+
     /**
      *
      *
@@ -9195,7 +9719,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=620
+     *     google/cloud/asset/v1/assets.proto;l=632
      * @param index The index to set the value at.
      * @param value The tagValues to set.
      * @return This builder for chaining.
@@ -9211,6 +9735,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9235,7 +9760,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=620
+     *     google/cloud/asset/v1/assets.proto;l=632
      * @param value The tagValues to add.
      * @return This builder for chaining.
      */
@@ -9250,6 +9775,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9274,7 +9800,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=620
+     *     google/cloud/asset/v1/assets.proto;l=632
      * @param values The tagValues to add.
      * @return This builder for chaining.
      */
@@ -9286,6 +9812,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9310,7 +9837,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=620
+     *     google/cloud/asset/v1/assets.proto;l=632
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -9321,6 +9848,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9345,7 +9873,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=620
+     *     google/cloud/asset/v1/assets.proto;l=632
      * @param value The bytes of the tagValues to add.
      * @return This builder for chaining.
      */
@@ -9371,6 +9899,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00400000;
     }
+
     /**
      *
      *
@@ -9391,7 +9920,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=633
+     *     google/cloud/asset/v1/assets.proto;l=645
      * @return A list containing the tagValueIds.
      */
     @java.lang.Deprecated
@@ -9399,6 +9928,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       tagValueIds_.makeImmutable();
       return tagValueIds_;
     }
+
     /**
      *
      *
@@ -9419,13 +9949,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=633
+     *     google/cloud/asset/v1/assets.proto;l=645
      * @return The count of tagValueIds.
      */
     @java.lang.Deprecated
     public int getTagValueIdsCount() {
       return tagValueIds_.size();
     }
+
     /**
      *
      *
@@ -9446,7 +9977,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=633
+     *     google/cloud/asset/v1/assets.proto;l=645
      * @param index The index of the element to return.
      * @return The tagValueIds at the given index.
      */
@@ -9454,6 +9985,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public java.lang.String getTagValueIds(int index) {
       return tagValueIds_.get(index);
     }
+
     /**
      *
      *
@@ -9474,7 +10006,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=633
+     *     google/cloud/asset/v1/assets.proto;l=645
      * @param index The index of the value to return.
      * @return The bytes of the tagValueIds at the given index.
      */
@@ -9482,6 +10014,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getTagValueIdsBytes(int index) {
       return tagValueIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -9502,7 +10035,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=633
+     *     google/cloud/asset/v1/assets.proto;l=645
      * @param index The index to set the value at.
      * @param value The tagValueIds to set.
      * @return This builder for chaining.
@@ -9518,6 +10051,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9538,7 +10072,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=633
+     *     google/cloud/asset/v1/assets.proto;l=645
      * @param value The tagValueIds to add.
      * @return This builder for chaining.
      */
@@ -9553,6 +10087,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9573,7 +10108,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=633
+     *     google/cloud/asset/v1/assets.proto;l=645
      * @param values The tagValueIds to add.
      * @return This builder for chaining.
      */
@@ -9585,6 +10120,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9605,7 +10141,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=633
+     *     google/cloud/asset/v1/assets.proto;l=645
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -9616,6 +10152,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9636,7 +10173,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=633
+     *     google/cloud/asset/v1/assets.proto;l=645
      * @param value The bytes of the tagValueIds to add.
      * @return This builder for chaining.
      */
@@ -9700,6 +10237,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return tagsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -9732,6 +10270,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return tagsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -9764,6 +10303,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return tagsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -9802,6 +10342,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9837,6 +10378,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9875,6 +10417,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9913,6 +10456,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9948,6 +10492,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -9983,6 +10528,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10018,6 +10564,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10053,6 +10600,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10088,6 +10636,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10116,6 +10665,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.cloud.asset.v1.Tag.Builder getTagsBuilder(int index) {
       return getTagsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -10148,6 +10698,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return tagsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -10180,6 +10731,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(tags_);
       }
     }
+
     /**
      *
      *
@@ -10208,6 +10760,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.cloud.asset.v1.Tag.Builder addTagsBuilder() {
       return getTagsFieldBuilder().addBuilder(com.google.cloud.asset.v1.Tag.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -10237,6 +10790,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return getTagsFieldBuilder()
           .addBuilder(index, com.google.cloud.asset.v1.Tag.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -10332,6 +10886,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return effectiveTagsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -10364,6 +10919,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return effectiveTagsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -10396,6 +10952,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return effectiveTagsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -10435,6 +10992,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10471,6 +11029,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10509,6 +11068,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10548,6 +11108,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10584,6 +11145,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10620,6 +11182,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10656,6 +11219,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10691,6 +11255,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10726,6 +11291,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10755,6 +11321,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         int index) {
       return getEffectiveTagsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -10788,6 +11355,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return effectiveTagsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -10821,6 +11389,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(effectiveTags_);
       }
     }
+
     /**
      *
      *
@@ -10850,6 +11419,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return getEffectiveTagsFieldBuilder()
           .addBuilder(com.google.cloud.asset.v1.EffectiveTagDetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -10880,6 +11450,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return getEffectiveTagsFieldBuilder()
           .addBuilder(index, com.google.cloud.asset.v1.EffectiveTagDetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -10930,7 +11501,790 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return effectiveTagsBuilder_;
     }
 
+    private java.util.List<com.google.cloud.asset.v1.AssetEnrichment> enrichments_ =
+        java.util.Collections.emptyList();
+
+    private void ensureEnrichmentsIsMutable() {
+      if (!((bitField0_ & 0x02000000) != 0)) {
+        enrichments_ =
+            new java.util.ArrayList<com.google.cloud.asset.v1.AssetEnrichment>(enrichments_);
+        bitField0_ |= 0x02000000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.asset.v1.AssetEnrichment,
+            com.google.cloud.asset.v1.AssetEnrichment.Builder,
+            com.google.cloud.asset.v1.AssetEnrichmentOrBuilder>
+        enrichmentsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Enrichments of the asset. Currently supported enrichment types with
+     * SearchAllResources API:
+     *
+     * * RESOURCE_OWNERS
+     *
+     * The corresponding read masks in order to get the enrichment:
+     *
+     * * enrichments.resource_owners
+     *
+     * The corresponding required permissions:
+     *
+     * * cloudasset.assets.searchEnrichmentResourceOwners
+     *
+     * Example query to get resource owner enrichment:
+     * ```
+     *   scope: "projects/my-project"
+     *   query: "name: my-project"
+     *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+     *   readMask: {
+     *      paths: "asset_type"
+     *      paths: "name"
+     *      paths: "enrichments.resource_owners"
+     *   }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+     */
+    public java.util.List<com.google.cloud.asset.v1.AssetEnrichment> getEnrichmentsList() {
+      if (enrichmentsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(enrichments_);
+      } else {
+        return enrichmentsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enrichments of the asset. Currently supported enrichment types with
+     * SearchAllResources API:
+     *
+     * * RESOURCE_OWNERS
+     *
+     * The corresponding read masks in order to get the enrichment:
+     *
+     * * enrichments.resource_owners
+     *
+     * The corresponding required permissions:
+     *
+     * * cloudasset.assets.searchEnrichmentResourceOwners
+     *
+     * Example query to get resource owner enrichment:
+     * ```
+     *   scope: "projects/my-project"
+     *   query: "name: my-project"
+     *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+     *   readMask: {
+     *      paths: "asset_type"
+     *      paths: "name"
+     *      paths: "enrichments.resource_owners"
+     *   }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+     */
+    public int getEnrichmentsCount() {
+      if (enrichmentsBuilder_ == null) {
+        return enrichments_.size();
+      } else {
+        return enrichmentsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enrichments of the asset. Currently supported enrichment types with
+     * SearchAllResources API:
+     *
+     * * RESOURCE_OWNERS
+     *
+     * The corresponding read masks in order to get the enrichment:
+     *
+     * * enrichments.resource_owners
+     *
+     * The corresponding required permissions:
+     *
+     * * cloudasset.assets.searchEnrichmentResourceOwners
+     *
+     * Example query to get resource owner enrichment:
+     * ```
+     *   scope: "projects/my-project"
+     *   query: "name: my-project"
+     *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+     *   readMask: {
+     *      paths: "asset_type"
+     *      paths: "name"
+     *      paths: "enrichments.resource_owners"
+     *   }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+     */
+    public com.google.cloud.asset.v1.AssetEnrichment getEnrichments(int index) {
+      if (enrichmentsBuilder_ == null) {
+        return enrichments_.get(index);
+      } else {
+        return enrichmentsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enrichments of the asset. Currently supported enrichment types with
+     * SearchAllResources API:
+     *
+     * * RESOURCE_OWNERS
+     *
+     * The corresponding read masks in order to get the enrichment:
+     *
+     * * enrichments.resource_owners
+     *
+     * The corresponding required permissions:
+     *
+     * * cloudasset.assets.searchEnrichmentResourceOwners
+     *
+     * Example query to get resource owner enrichment:
+     * ```
+     *   scope: "projects/my-project"
+     *   query: "name: my-project"
+     *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+     *   readMask: {
+     *      paths: "asset_type"
+     *      paths: "name"
+     *      paths: "enrichments.resource_owners"
+     *   }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+     */
+    public Builder setEnrichments(int index, com.google.cloud.asset.v1.AssetEnrichment value) {
+      if (enrichmentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEnrichmentsIsMutable();
+        enrichments_.set(index, value);
+        onChanged();
+      } else {
+        enrichmentsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enrichments of the asset. Currently supported enrichment types with
+     * SearchAllResources API:
+     *
+     * * RESOURCE_OWNERS
+     *
+     * The corresponding read masks in order to get the enrichment:
+     *
+     * * enrichments.resource_owners
+     *
+     * The corresponding required permissions:
+     *
+     * * cloudasset.assets.searchEnrichmentResourceOwners
+     *
+     * Example query to get resource owner enrichment:
+     * ```
+     *   scope: "projects/my-project"
+     *   query: "name: my-project"
+     *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+     *   readMask: {
+     *      paths: "asset_type"
+     *      paths: "name"
+     *      paths: "enrichments.resource_owners"
+     *   }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+     */
+    public Builder setEnrichments(
+        int index, com.google.cloud.asset.v1.AssetEnrichment.Builder builderForValue) {
+      if (enrichmentsBuilder_ == null) {
+        ensureEnrichmentsIsMutable();
+        enrichments_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        enrichmentsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enrichments of the asset. Currently supported enrichment types with
+     * SearchAllResources API:
+     *
+     * * RESOURCE_OWNERS
+     *
+     * The corresponding read masks in order to get the enrichment:
+     *
+     * * enrichments.resource_owners
+     *
+     * The corresponding required permissions:
+     *
+     * * cloudasset.assets.searchEnrichmentResourceOwners
+     *
+     * Example query to get resource owner enrichment:
+     * ```
+     *   scope: "projects/my-project"
+     *   query: "name: my-project"
+     *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+     *   readMask: {
+     *      paths: "asset_type"
+     *      paths: "name"
+     *      paths: "enrichments.resource_owners"
+     *   }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+     */
+    public Builder addEnrichments(com.google.cloud.asset.v1.AssetEnrichment value) {
+      if (enrichmentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEnrichmentsIsMutable();
+        enrichments_.add(value);
+        onChanged();
+      } else {
+        enrichmentsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enrichments of the asset. Currently supported enrichment types with
+     * SearchAllResources API:
+     *
+     * * RESOURCE_OWNERS
+     *
+     * The corresponding read masks in order to get the enrichment:
+     *
+     * * enrichments.resource_owners
+     *
+     * The corresponding required permissions:
+     *
+     * * cloudasset.assets.searchEnrichmentResourceOwners
+     *
+     * Example query to get resource owner enrichment:
+     * ```
+     *   scope: "projects/my-project"
+     *   query: "name: my-project"
+     *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+     *   readMask: {
+     *      paths: "asset_type"
+     *      paths: "name"
+     *      paths: "enrichments.resource_owners"
+     *   }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+     */
+    public Builder addEnrichments(int index, com.google.cloud.asset.v1.AssetEnrichment value) {
+      if (enrichmentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEnrichmentsIsMutable();
+        enrichments_.add(index, value);
+        onChanged();
+      } else {
+        enrichmentsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enrichments of the asset. Currently supported enrichment types with
+     * SearchAllResources API:
+     *
+     * * RESOURCE_OWNERS
+     *
+     * The corresponding read masks in order to get the enrichment:
+     *
+     * * enrichments.resource_owners
+     *
+     * The corresponding required permissions:
+     *
+     * * cloudasset.assets.searchEnrichmentResourceOwners
+     *
+     * Example query to get resource owner enrichment:
+     * ```
+     *   scope: "projects/my-project"
+     *   query: "name: my-project"
+     *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+     *   readMask: {
+     *      paths: "asset_type"
+     *      paths: "name"
+     *      paths: "enrichments.resource_owners"
+     *   }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+     */
+    public Builder addEnrichments(
+        com.google.cloud.asset.v1.AssetEnrichment.Builder builderForValue) {
+      if (enrichmentsBuilder_ == null) {
+        ensureEnrichmentsIsMutable();
+        enrichments_.add(builderForValue.build());
+        onChanged();
+      } else {
+        enrichmentsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enrichments of the asset. Currently supported enrichment types with
+     * SearchAllResources API:
+     *
+     * * RESOURCE_OWNERS
+     *
+     * The corresponding read masks in order to get the enrichment:
+     *
+     * * enrichments.resource_owners
+     *
+     * The corresponding required permissions:
+     *
+     * * cloudasset.assets.searchEnrichmentResourceOwners
+     *
+     * Example query to get resource owner enrichment:
+     * ```
+     *   scope: "projects/my-project"
+     *   query: "name: my-project"
+     *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+     *   readMask: {
+     *      paths: "asset_type"
+     *      paths: "name"
+     *      paths: "enrichments.resource_owners"
+     *   }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+     */
+    public Builder addEnrichments(
+        int index, com.google.cloud.asset.v1.AssetEnrichment.Builder builderForValue) {
+      if (enrichmentsBuilder_ == null) {
+        ensureEnrichmentsIsMutable();
+        enrichments_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        enrichmentsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enrichments of the asset. Currently supported enrichment types with
+     * SearchAllResources API:
+     *
+     * * RESOURCE_OWNERS
+     *
+     * The corresponding read masks in order to get the enrichment:
+     *
+     * * enrichments.resource_owners
+     *
+     * The corresponding required permissions:
+     *
+     * * cloudasset.assets.searchEnrichmentResourceOwners
+     *
+     * Example query to get resource owner enrichment:
+     * ```
+     *   scope: "projects/my-project"
+     *   query: "name: my-project"
+     *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+     *   readMask: {
+     *      paths: "asset_type"
+     *      paths: "name"
+     *      paths: "enrichments.resource_owners"
+     *   }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+     */
+    public Builder addAllEnrichments(
+        java.lang.Iterable<? extends com.google.cloud.asset.v1.AssetEnrichment> values) {
+      if (enrichmentsBuilder_ == null) {
+        ensureEnrichmentsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, enrichments_);
+        onChanged();
+      } else {
+        enrichmentsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enrichments of the asset. Currently supported enrichment types with
+     * SearchAllResources API:
+     *
+     * * RESOURCE_OWNERS
+     *
+     * The corresponding read masks in order to get the enrichment:
+     *
+     * * enrichments.resource_owners
+     *
+     * The corresponding required permissions:
+     *
+     * * cloudasset.assets.searchEnrichmentResourceOwners
+     *
+     * Example query to get resource owner enrichment:
+     * ```
+     *   scope: "projects/my-project"
+     *   query: "name: my-project"
+     *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+     *   readMask: {
+     *      paths: "asset_type"
+     *      paths: "name"
+     *      paths: "enrichments.resource_owners"
+     *   }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+     */
+    public Builder clearEnrichments() {
+      if (enrichmentsBuilder_ == null) {
+        enrichments_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x02000000);
+        onChanged();
+      } else {
+        enrichmentsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enrichments of the asset. Currently supported enrichment types with
+     * SearchAllResources API:
+     *
+     * * RESOURCE_OWNERS
+     *
+     * The corresponding read masks in order to get the enrichment:
+     *
+     * * enrichments.resource_owners
+     *
+     * The corresponding required permissions:
+     *
+     * * cloudasset.assets.searchEnrichmentResourceOwners
+     *
+     * Example query to get resource owner enrichment:
+     * ```
+     *   scope: "projects/my-project"
+     *   query: "name: my-project"
+     *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+     *   readMask: {
+     *      paths: "asset_type"
+     *      paths: "name"
+     *      paths: "enrichments.resource_owners"
+     *   }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+     */
+    public Builder removeEnrichments(int index) {
+      if (enrichmentsBuilder_ == null) {
+        ensureEnrichmentsIsMutable();
+        enrichments_.remove(index);
+        onChanged();
+      } else {
+        enrichmentsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enrichments of the asset. Currently supported enrichment types with
+     * SearchAllResources API:
+     *
+     * * RESOURCE_OWNERS
+     *
+     * The corresponding read masks in order to get the enrichment:
+     *
+     * * enrichments.resource_owners
+     *
+     * The corresponding required permissions:
+     *
+     * * cloudasset.assets.searchEnrichmentResourceOwners
+     *
+     * Example query to get resource owner enrichment:
+     * ```
+     *   scope: "projects/my-project"
+     *   query: "name: my-project"
+     *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+     *   readMask: {
+     *      paths: "asset_type"
+     *      paths: "name"
+     *      paths: "enrichments.resource_owners"
+     *   }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+     */
+    public com.google.cloud.asset.v1.AssetEnrichment.Builder getEnrichmentsBuilder(int index) {
+      return getEnrichmentsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enrichments of the asset. Currently supported enrichment types with
+     * SearchAllResources API:
+     *
+     * * RESOURCE_OWNERS
+     *
+     * The corresponding read masks in order to get the enrichment:
+     *
+     * * enrichments.resource_owners
+     *
+     * The corresponding required permissions:
+     *
+     * * cloudasset.assets.searchEnrichmentResourceOwners
+     *
+     * Example query to get resource owner enrichment:
+     * ```
+     *   scope: "projects/my-project"
+     *   query: "name: my-project"
+     *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+     *   readMask: {
+     *      paths: "asset_type"
+     *      paths: "name"
+     *      paths: "enrichments.resource_owners"
+     *   }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+     */
+    public com.google.cloud.asset.v1.AssetEnrichmentOrBuilder getEnrichmentsOrBuilder(int index) {
+      if (enrichmentsBuilder_ == null) {
+        return enrichments_.get(index);
+      } else {
+        return enrichmentsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enrichments of the asset. Currently supported enrichment types with
+     * SearchAllResources API:
+     *
+     * * RESOURCE_OWNERS
+     *
+     * The corresponding read masks in order to get the enrichment:
+     *
+     * * enrichments.resource_owners
+     *
+     * The corresponding required permissions:
+     *
+     * * cloudasset.assets.searchEnrichmentResourceOwners
+     *
+     * Example query to get resource owner enrichment:
+     * ```
+     *   scope: "projects/my-project"
+     *   query: "name: my-project"
+     *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+     *   readMask: {
+     *      paths: "asset_type"
+     *      paths: "name"
+     *      paths: "enrichments.resource_owners"
+     *   }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+     */
+    public java.util.List<? extends com.google.cloud.asset.v1.AssetEnrichmentOrBuilder>
+        getEnrichmentsOrBuilderList() {
+      if (enrichmentsBuilder_ != null) {
+        return enrichmentsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(enrichments_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enrichments of the asset. Currently supported enrichment types with
+     * SearchAllResources API:
+     *
+     * * RESOURCE_OWNERS
+     *
+     * The corresponding read masks in order to get the enrichment:
+     *
+     * * enrichments.resource_owners
+     *
+     * The corresponding required permissions:
+     *
+     * * cloudasset.assets.searchEnrichmentResourceOwners
+     *
+     * Example query to get resource owner enrichment:
+     * ```
+     *   scope: "projects/my-project"
+     *   query: "name: my-project"
+     *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+     *   readMask: {
+     *      paths: "asset_type"
+     *      paths: "name"
+     *      paths: "enrichments.resource_owners"
+     *   }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+     */
+    public com.google.cloud.asset.v1.AssetEnrichment.Builder addEnrichmentsBuilder() {
+      return getEnrichmentsFieldBuilder()
+          .addBuilder(com.google.cloud.asset.v1.AssetEnrichment.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enrichments of the asset. Currently supported enrichment types with
+     * SearchAllResources API:
+     *
+     * * RESOURCE_OWNERS
+     *
+     * The corresponding read masks in order to get the enrichment:
+     *
+     * * enrichments.resource_owners
+     *
+     * The corresponding required permissions:
+     *
+     * * cloudasset.assets.searchEnrichmentResourceOwners
+     *
+     * Example query to get resource owner enrichment:
+     * ```
+     *   scope: "projects/my-project"
+     *   query: "name: my-project"
+     *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+     *   readMask: {
+     *      paths: "asset_type"
+     *      paths: "name"
+     *      paths: "enrichments.resource_owners"
+     *   }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+     */
+    public com.google.cloud.asset.v1.AssetEnrichment.Builder addEnrichmentsBuilder(int index) {
+      return getEnrichmentsFieldBuilder()
+          .addBuilder(index, com.google.cloud.asset.v1.AssetEnrichment.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enrichments of the asset. Currently supported enrichment types with
+     * SearchAllResources API:
+     *
+     * * RESOURCE_OWNERS
+     *
+     * The corresponding read masks in order to get the enrichment:
+     *
+     * * enrichments.resource_owners
+     *
+     * The corresponding required permissions:
+     *
+     * * cloudasset.assets.searchEnrichmentResourceOwners
+     *
+     * Example query to get resource owner enrichment:
+     * ```
+     *   scope: "projects/my-project"
+     *   query: "name: my-project"
+     *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+     *   readMask: {
+     *      paths: "asset_type"
+     *      paths: "name"
+     *      paths: "enrichments.resource_owners"
+     *   }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+     */
+    public java.util.List<com.google.cloud.asset.v1.AssetEnrichment.Builder>
+        getEnrichmentsBuilderList() {
+      return getEnrichmentsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.asset.v1.AssetEnrichment,
+            com.google.cloud.asset.v1.AssetEnrichment.Builder,
+            com.google.cloud.asset.v1.AssetEnrichmentOrBuilder>
+        getEnrichmentsFieldBuilder() {
+      if (enrichmentsBuilder_ == null) {
+        enrichmentsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.asset.v1.AssetEnrichment,
+                com.google.cloud.asset.v1.AssetEnrichment.Builder,
+                com.google.cloud.asset.v1.AssetEnrichmentOrBuilder>(
+                enrichments_, ((bitField0_ & 0x02000000) != 0), getParentForChildren(), isClean());
+        enrichments_ = null;
+      }
+      return enrichmentsBuilder_;
+    }
+
     private java.lang.Object parentAssetType_ = "";
+
     /**
      *
      *
@@ -10960,6 +12314,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -10989,6 +12344,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -11013,10 +12369,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       parentAssetType_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11037,10 +12394,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      */
     public Builder clearParentAssetType() {
       parentAssetType_ = getDefaultInstance().getParentAssetType();
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11066,7 +12424,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       parentAssetType_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -11092,7 +12450,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (!sccSecurityMarks_.isMutable()) {
         sccSecurityMarks_ = sccSecurityMarks_.copy();
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return sccSecurityMarks_;
     }
@@ -11100,6 +12458,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public int getSccSecurityMarksCount() {
       return internalGetSccSecurityMarks().getMap().size();
     }
+
     /**
      *
      *
@@ -11124,12 +12483,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       return internalGetSccSecurityMarks().getMap().containsKey(key);
     }
+
     /** Use {@link #getSccSecurityMarksMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getSccSecurityMarks() {
       return getSccSecurityMarksMap();
     }
+
     /**
      *
      *
@@ -11151,6 +12512,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.String> getSccSecurityMarksMap() {
       return internalGetSccSecurityMarks().getMap();
     }
+
     /**
      *
      *
@@ -11180,6 +12542,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
           internalGetSccSecurityMarks().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -11211,10 +12574,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearSccSecurityMarks() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       internalGetMutableSccSecurityMarks().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -11239,12 +12603,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       internalGetMutableSccSecurityMarks().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableSccSecurityMarks() {
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       return internalGetMutableSccSecurityMarks().getMutableMap();
     }
+
     /**
      *
      *
@@ -11270,9 +12636,10 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException("map value");
       }
       internalGetMutableSccSecurityMarks().getMutableMap().put(key, value);
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       return this;
     }
+
     /**
      *
      *
@@ -11293,7 +12660,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public Builder putAllSccSecurityMarks(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableSccSecurityMarks().getMutableMap().putAll(values);
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       return this;
     }
 

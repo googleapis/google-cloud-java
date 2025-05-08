@@ -37,6 +37,7 @@ public interface ProcessResponseOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ProcessResponseOrBuilder
    * @return The document.
    */
   com.google.cloud.documentai.v1beta3.Document getDocument();
+
   /**
    *
    *
@@ -75,11 +77,12 @@ public interface ProcessResponseOrBuilder
    * <code>string human_review_operation = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
-   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=530
+   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=549
    * @return The humanReviewOperation.
    */
   @java.lang.Deprecated
   java.lang.String getHumanReviewOperation();
+
   /**
    *
    *
@@ -93,7 +96,7 @@ public interface ProcessResponseOrBuilder
    * <code>string human_review_operation = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
-   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=530
+   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=549
    * @return The bytes for humanReviewOperation.
    */
   @java.lang.Deprecated
@@ -111,6 +114,7 @@ public interface ProcessResponseOrBuilder
    * @return Whether the humanReviewStatus field is set.
    */
   boolean hasHumanReviewStatus();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface ProcessResponseOrBuilder
    * @return The humanReviewStatus.
    */
   com.google.cloud.documentai.v1beta3.HumanReviewStatus getHumanReviewStatus();
+
   /**
    *
    *

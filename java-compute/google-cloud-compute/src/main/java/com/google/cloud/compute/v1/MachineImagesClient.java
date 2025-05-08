@@ -176,6 +176,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> SetLabels</td>
+ *      <td><p> Sets the labels on a machine image. To learn more about labels, read the Labeling Resources documentation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setLabelsAsync(SetLabelsMachineImageRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> setLabelsAsync(String project, String resource, GlobalSetLabelsRequest globalSetLabelsRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setLabelsOperationCallable()
+ *           <li><p> setLabelsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> TestIamPermissions</td>
  *      <td><p> Returns permissions that a caller has on the specified resource.</td>
  *      <td>
@@ -968,6 +987,141 @@ public class MachineImagesClient implements BackgroundResource {
    */
   public final UnaryCallable<SetIamPolicyMachineImageRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on a machine image. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
+   *   String project = "project-309310695";
+   *   String resource = "resource-341064690";
+   *   GlobalSetLabelsRequest globalSetLabelsRequestResource =
+   *       GlobalSetLabelsRequest.newBuilder().build();
+   *   Operation response =
+   *       machineImagesClient
+   *           .setLabelsAsync(project, resource, globalSetLabelsRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param resource Name or id of the resource for this request.
+   * @param globalSetLabelsRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> setLabelsAsync(
+      String project, String resource, GlobalSetLabelsRequest globalSetLabelsRequestResource) {
+    SetLabelsMachineImageRequest request =
+        SetLabelsMachineImageRequest.newBuilder()
+            .setProject(project)
+            .setResource(resource)
+            .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
+            .build();
+    return setLabelsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on a machine image. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
+   *   SetLabelsMachineImageRequest request =
+   *       SetLabelsMachineImageRequest.newBuilder()
+   *           .setGlobalSetLabelsRequestResource(GlobalSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   Operation response = machineImagesClient.setLabelsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> setLabelsAsync(
+      SetLabelsMachineImageRequest request) {
+    return setLabelsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on a machine image. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
+   *   SetLabelsMachineImageRequest request =
+   *       SetLabelsMachineImageRequest.newBuilder()
+   *           .setGlobalSetLabelsRequestResource(GlobalSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       machineImagesClient.setLabelsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetLabelsMachineImageRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return stub.setLabelsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the labels on a machine image. To learn more about labels, read the Labeling Resources
+   * documentation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
+   *   SetLabelsMachineImageRequest request =
+   *       SetLabelsMachineImageRequest.newBuilder()
+   *           .setGlobalSetLabelsRequestResource(GlobalSetLabelsRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .build();
+   *   ApiFuture<Operation> future = machineImagesClient.setLabelsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetLabelsMachineImageRequest, Operation> setLabelsCallable() {
+    return stub.setLabelsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -29,6 +29,9 @@ public interface LaunchTemplateParametersOrBuilder
    *
    * <pre>
    * Required. The job name to use for the created job.
+   *
+   * The name must match the regular expression
+   * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
    * </pre>
    *
    * <code>string job_name = 1;</code>
@@ -36,11 +39,15 @@ public interface LaunchTemplateParametersOrBuilder
    * @return The jobName.
    */
   java.lang.String getJobName();
+
   /**
    *
    *
    * <pre>
    * Required. The job name to use for the created job.
+   *
+   * The name must match the regular expression
+   * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
    * </pre>
    *
    * <code>string job_name = 1;</code>
@@ -59,6 +66,7 @@ public interface LaunchTemplateParametersOrBuilder
    * <code>map&lt;string, string&gt; parameters = 2;</code>
    */
   int getParametersCount();
+
   /**
    *
    *
@@ -69,9 +77,11 @@ public interface LaunchTemplateParametersOrBuilder
    * <code>map&lt;string, string&gt; parameters = 2;</code>
    */
   boolean containsParameters(java.lang.String key);
+
   /** Use {@link #getParametersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getParameters();
+
   /**
    *
    *
@@ -82,6 +92,7 @@ public interface LaunchTemplateParametersOrBuilder
    * <code>map&lt;string, string&gt; parameters = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getParametersMap();
+
   /**
    *
    *
@@ -96,6 +107,7 @@ public interface LaunchTemplateParametersOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -119,6 +131,7 @@ public interface LaunchTemplateParametersOrBuilder
    * @return Whether the environment field is set.
    */
   boolean hasEnvironment();
+
   /**
    *
    *
@@ -131,6 +144,7 @@ public interface LaunchTemplateParametersOrBuilder
    * @return The environment.
    */
   com.google.dataflow.v1beta3.RuntimeEnvironment getEnvironment();
+
   /**
    *
    *
@@ -167,6 +181,7 @@ public interface LaunchTemplateParametersOrBuilder
    * <code>map&lt;string, string&gt; transform_name_mapping = 5;</code>
    */
   int getTransformNameMappingCount();
+
   /**
    *
    *
@@ -178,9 +193,11 @@ public interface LaunchTemplateParametersOrBuilder
    * <code>map&lt;string, string&gt; transform_name_mapping = 5;</code>
    */
   boolean containsTransformNameMapping(java.lang.String key);
+
   /** Use {@link #getTransformNameMappingMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getTransformNameMapping();
+
   /**
    *
    *
@@ -192,6 +209,7 @@ public interface LaunchTemplateParametersOrBuilder
    * <code>map&lt;string, string&gt; transform_name_mapping = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getTransformNameMappingMap();
+
   /**
    *
    *
@@ -207,6 +225,7 @@ public interface LaunchTemplateParametersOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

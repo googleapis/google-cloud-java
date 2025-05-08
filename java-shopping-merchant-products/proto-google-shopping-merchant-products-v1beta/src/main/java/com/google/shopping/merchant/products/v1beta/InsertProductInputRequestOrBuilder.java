@@ -39,6 +39,7 @@ public interface InsertProductInputRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface InsertProductInputRequestOrBuilder
    * @return Whether the productInput field is set.
    */
   boolean hasProductInput();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface InsertProductInputRequestOrBuilder
    * @return The productInput.
    */
   com.google.shopping.merchant.products.v1beta.ProductInput getProductInput();
+
   /**
    *
    *
@@ -102,8 +105,11 @@ public interface InsertProductInputRequestOrBuilder
    * <pre>
    * Required. The primary or supplemental product data source name. If the
    * product already exists and data source provided is different, then the
-   * product will be moved to a new data source. Format:
-   * `accounts/{account}/dataSources/{datasource}`.
+   * product will be moved to a new data source.
+   *
+   * Only API data sources are supported.
+   *
+   * Format: `accounts/{account}/dataSources/{datasource}`.
    * </pre>
    *
    * <code>string data_source = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -111,14 +117,18 @@ public interface InsertProductInputRequestOrBuilder
    * @return The dataSource.
    */
   java.lang.String getDataSource();
+
   /**
    *
    *
    * <pre>
    * Required. The primary or supplemental product data source name. If the
    * product already exists and data source provided is different, then the
-   * product will be moved to a new data source. Format:
-   * `accounts/{account}/dataSources/{datasource}`.
+   * product will be moved to a new data source.
+   *
+   * Only API data sources are supported.
+   *
+   * Format: `accounts/{account}/dataSources/{datasource}`.
    * </pre>
    *
    * <code>string data_source = 3 [(.google.api.field_behavior) = REQUIRED];</code>

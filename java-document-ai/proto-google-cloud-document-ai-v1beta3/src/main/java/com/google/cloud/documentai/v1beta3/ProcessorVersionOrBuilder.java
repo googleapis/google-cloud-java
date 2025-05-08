@@ -38,6 +38,7 @@ public interface ProcessorVersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ProcessorVersionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface ProcessorVersionOrBuilder
    * @return Whether the documentSchema field is set.
    */
   boolean hasDocumentSchema();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface ProcessorVersionOrBuilder
    * @return The documentSchema.
    */
   com.google.cloud.documentai.v1beta3.DocumentSchema getDocumentSchema();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface ProcessorVersionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface ProcessorVersionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface ProcessorVersionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public interface ProcessorVersionOrBuilder
    * @return Whether the latestEvaluation field is set.
    */
   boolean hasLatestEvaluation();
+
   /**
    *
    *
@@ -201,6 +209,7 @@ public interface ProcessorVersionOrBuilder
    * @return The latestEvaluation.
    */
   com.google.cloud.documentai.v1beta3.EvaluationReference getLatestEvaluation();
+
   /**
    *
    *
@@ -224,6 +233,7 @@ public interface ProcessorVersionOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
+
   /**
    *
    *
@@ -249,6 +259,7 @@ public interface ProcessorVersionOrBuilder
    * @return The kmsKeyVersionName.
    */
   java.lang.String getKmsKeyVersionName();
+
   /**
    *
    *
@@ -288,6 +299,7 @@ public interface ProcessorVersionOrBuilder
    * @return Whether the deprecationInfo field is set.
    */
   boolean hasDeprecationInfo();
+
   /**
    *
    *
@@ -301,6 +313,7 @@ public interface ProcessorVersionOrBuilder
    * @return The deprecationInfo.
    */
   com.google.cloud.documentai.v1beta3.ProcessorVersion.DeprecationInfo getDeprecationInfo();
+
   /**
    *
    *
@@ -328,6 +341,7 @@ public interface ProcessorVersionOrBuilder
    * @return The enum numeric value on the wire for modelType.
    */
   int getModelTypeValue();
+
   /**
    *
    *
@@ -384,6 +398,7 @@ public interface ProcessorVersionOrBuilder
    * @return Whether the genAiModelInfo field is set.
    */
   boolean hasGenAiModelInfo();
+
   /**
    *
    *
@@ -399,6 +414,7 @@ public interface ProcessorVersionOrBuilder
    * @return The genAiModelInfo.
    */
   com.google.cloud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo getGenAiModelInfo();
+
   /**
    *
    *

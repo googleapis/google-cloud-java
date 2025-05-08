@@ -33,6 +33,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BackendServiceLogConfig)
     BackendServiceLogConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BackendServiceLogConfig.newBuilder() to construct.
   private BackendServiceLogConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,6 +128,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      * <code>UNDEFINED_OPTIONAL_MODE = 0;</code>
      */
     public static final int UNDEFINED_OPTIONAL_MODE_VALUE = 0;
+
     /**
      *
      *
@@ -137,6 +139,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      * <code>CUSTOM = 388595569;</code>
      */
     public static final int CUSTOM_VALUE = 388595569;
+
     /**
      *
      *
@@ -147,6 +150,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      * <code>EXCLUDE_ALL_OPTIONAL = 168636099;</code>
      */
     public static final int EXCLUDE_ALL_OPTIONAL_VALUE = 168636099;
+
     /**
      *
      *
@@ -248,6 +252,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int ENABLE_FIELD_NUMBER = 311764355;
   private boolean enable_ = false;
+
   /**
    *
    *
@@ -263,6 +268,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
   public boolean hasEnable() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -284,6 +290,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList optionalFields_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -298,6 +305,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getOptionalFieldsList() {
     return optionalFields_;
   }
+
   /**
    *
    *
@@ -312,6 +320,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
   public int getOptionalFieldsCount() {
     return optionalFields_.size();
   }
+
   /**
    *
    *
@@ -327,6 +336,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
   public java.lang.String getOptionalFields(int index) {
     return optionalFields_.get(index);
   }
+
   /**
    *
    *
@@ -347,6 +357,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object optionalMode_ = "";
+
   /**
    *
    *
@@ -363,6 +374,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
   public boolean hasOptionalMode() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -387,6 +399,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -414,6 +427,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
 
   public static final int SAMPLE_RATE_FIELD_NUMBER = 153193045;
   private float sampleRate_ = 0F;
+
   /**
    *
    *
@@ -429,6 +443,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
   public boolean hasSampleRate() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -655,6 +670,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -892,6 +908,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     private int bitField0_;
 
     private boolean enable_;
+
     /**
      *
      *
@@ -907,6 +924,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public boolean hasEnable() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -922,6 +940,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public boolean getEnable() {
       return enable_;
     }
+
     /**
      *
      *
@@ -941,6 +960,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +988,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -983,6 +1004,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       optionalFields_.makeImmutable();
       return optionalFields_;
     }
+
     /**
      *
      *
@@ -997,6 +1019,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public int getOptionalFieldsCount() {
       return optionalFields_.size();
     }
+
     /**
      *
      *
@@ -1012,6 +1035,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public java.lang.String getOptionalFields(int index) {
       return optionalFields_.get(index);
     }
+
     /**
      *
      *
@@ -1027,6 +1051,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getOptionalFieldsBytes(int index) {
       return optionalFields_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1050,6 +1075,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1098,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1091,6 +1118,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1137,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1134,6 +1163,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     }
 
     private java.lang.Object optionalMode_ = "";
+
     /**
      *
      *
@@ -1149,6 +1179,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public boolean hasOptionalMode() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1172,6 +1203,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1195,6 +1227,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1217,6 +1250,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1269,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1260,6 +1295,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     }
 
     private float sampleRate_;
+
     /**
      *
      *
@@ -1275,6 +1311,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public boolean hasSampleRate() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1290,6 +1327,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public float getSampleRate() {
       return sampleRate_;
     }
+
     /**
      *
      *
@@ -1309,6 +1347,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

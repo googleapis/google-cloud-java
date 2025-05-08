@@ -28,22 +28,27 @@ public interface ReauthSettingsOrBuilder
    *
    *
    * <pre>
-   * Reauth method requested.
+   * Optional. Reauth method requested.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.ReauthSettings.Method method = 1;</code>
+   * <code>
+   * .google.cloud.iap.v1.ReauthSettings.Method method = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for method.
    */
   int getMethodValue();
+
   /**
    *
    *
    * <pre>
-   * Reauth method requested.
+   * Optional. Reauth method requested.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.ReauthSettings.Method method = 1;</code>
+   * <code>
+   * .google.cloud.iap.v1.ReauthSettings.Method method = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The method.
    */
@@ -53,37 +58,39 @@ public interface ReauthSettingsOrBuilder
    *
    *
    * <pre>
-   * Reauth session lifetime, how long before a user has to reauthenticate
-   * again.
+   * Optional. Reauth session lifetime, how long before a user has to
+   * reauthenticate again.
    * </pre>
    *
-   * <code>.google.protobuf.Duration max_age = 2;</code>
+   * <code>.google.protobuf.Duration max_age = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the maxAge field is set.
    */
   boolean hasMaxAge();
+
   /**
    *
    *
    * <pre>
-   * Reauth session lifetime, how long before a user has to reauthenticate
-   * again.
+   * Optional. Reauth session lifetime, how long before a user has to
+   * reauthenticate again.
    * </pre>
    *
-   * <code>.google.protobuf.Duration max_age = 2;</code>
+   * <code>.google.protobuf.Duration max_age = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The maxAge.
    */
   com.google.protobuf.Duration getMaxAge();
+
   /**
    *
    *
    * <pre>
-   * Reauth session lifetime, how long before a user has to reauthenticate
-   * again.
+   * Optional. Reauth session lifetime, how long before a user has to
+   * reauthenticate again.
    * </pre>
    *
-   * <code>.google.protobuf.Duration max_age = 2;</code>
+   * <code>.google.protobuf.Duration max_age = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.DurationOrBuilder getMaxAgeOrBuilder();
 
@@ -91,24 +98,31 @@ public interface ReauthSettingsOrBuilder
    *
    *
    * <pre>
-   * How IAP determines the effective policy in cases of hierarchial policies.
-   * Policies are merged from higher in the hierarchy to lower in the hierarchy.
+   * Optional. How IAP determines the effective policy in cases of hierarchical
+   * policies. Policies are merged from higher in the hierarchy to lower in the
+   * hierarchy.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.ReauthSettings.PolicyType policy_type = 3;</code>
+   * <code>
+   * .google.cloud.iap.v1.ReauthSettings.PolicyType policy_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for policyType.
    */
   int getPolicyTypeValue();
+
   /**
    *
    *
    * <pre>
-   * How IAP determines the effective policy in cases of hierarchial policies.
-   * Policies are merged from higher in the hierarchy to lower in the hierarchy.
+   * Optional. How IAP determines the effective policy in cases of hierarchical
+   * policies. Policies are merged from higher in the hierarchy to lower in the
+   * hierarchy.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.ReauthSettings.PolicyType policy_type = 3;</code>
+   * <code>
+   * .google.cloud.iap.v1.ReauthSettings.PolicyType policy_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The policyType.
    */

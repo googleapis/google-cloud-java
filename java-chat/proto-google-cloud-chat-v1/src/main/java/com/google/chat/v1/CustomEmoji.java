@@ -23,7 +23,7 @@ package com.google.chat.v1;
  *
  *
  * <pre>
- * Represents a custom emoji.
+ * Represents a [custom emoji](https://support.google.com/chat/answer/12800149).
  * </pre>
  *
  * Protobuf type {@code google.chat.v1.CustomEmoji}
@@ -33,13 +33,17 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.chat.v1.CustomEmoji)
     CustomEmojiOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomEmoji.newBuilder() to construct.
   private CustomEmoji(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
   private CustomEmoji() {
+    name_ = "";
     uid_ = "";
+    emojiName_ = "";
+    temporaryImageUri_ = "";
   }
 
   @java.lang.Override
@@ -61,10 +65,900 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.CustomEmoji.class, com.google.chat.v1.CustomEmoji.Builder.class);
   }
 
+  public interface CustomEmojiPayloadOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.chat.v1.CustomEmoji.CustomEmojiPayload)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The image used for the custom emoji.
+     *
+     * The payload must be under 256 KB and the dimension of
+     * the image must be square and between 64 and 500 pixels. The
+     * restrictions are subject to change.
+     * </pre>
+     *
+     * <code>
+     * bytes file_content = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The fileContent.
+     */
+    com.google.protobuf.ByteString getFileContent();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The image file name.
+     *
+     * Supported file extensions: `.png`, `.jpg`, `.gif`.
+     * </pre>
+     *
+     * <code>
+     * string filename = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The filename.
+     */
+    java.lang.String getFilename();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The image file name.
+     *
+     * Supported file extensions: `.png`, `.jpg`, `.gif`.
+     * </pre>
+     *
+     * <code>
+     * string filename = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The bytes for filename.
+     */
+    com.google.protobuf.ByteString getFilenameBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Payload data for the custom emoji.
+   * </pre>
+   *
+   * Protobuf type {@code google.chat.v1.CustomEmoji.CustomEmojiPayload}
+   */
+  public static final class CustomEmojiPayload extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.chat.v1.CustomEmoji.CustomEmojiPayload)
+      CustomEmojiPayloadOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use CustomEmojiPayload.newBuilder() to construct.
+    private CustomEmojiPayload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private CustomEmojiPayload() {
+      fileContent_ = com.google.protobuf.ByteString.EMPTY;
+      filename_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CustomEmojiPayload();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.chat.v1.ReactionProto
+          .internal_static_google_chat_v1_CustomEmoji_CustomEmojiPayload_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.chat.v1.ReactionProto
+          .internal_static_google_chat_v1_CustomEmoji_CustomEmojiPayload_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.chat.v1.CustomEmoji.CustomEmojiPayload.class,
+              com.google.chat.v1.CustomEmoji.CustomEmojiPayload.Builder.class);
+    }
+
+    public static final int FILE_CONTENT_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString fileContent_ = com.google.protobuf.ByteString.EMPTY;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The image used for the custom emoji.
+     *
+     * The payload must be under 256 KB and the dimension of
+     * the image must be square and between 64 and 500 pixels. The
+     * restrictions are subject to change.
+     * </pre>
+     *
+     * <code>
+     * bytes file_content = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The fileContent.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getFileContent() {
+      return fileContent_;
+    }
+
+    public static final int FILENAME_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object filename_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The image file name.
+     *
+     * Supported file extensions: `.png`, `.jpg`, `.gif`.
+     * </pre>
+     *
+     * <code>
+     * string filename = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The filename.
+     */
+    @java.lang.Override
+    public java.lang.String getFilename() {
+      java.lang.Object ref = filename_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filename_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Input only. The image file name.
+     *
+     * Supported file extensions: `.png`, `.jpg`, `.gif`.
+     * </pre>
+     *
+     * <code>
+     * string filename = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The bytes for filename.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getFilenameBytes() {
+      java.lang.Object ref = filename_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filename_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!fileContent_.isEmpty()) {
+        output.writeBytes(1, fileContent_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filename_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filename_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!fileContent_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, fileContent_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filename_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filename_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.chat.v1.CustomEmoji.CustomEmojiPayload)) {
+        return super.equals(obj);
+      }
+      com.google.chat.v1.CustomEmoji.CustomEmojiPayload other =
+          (com.google.chat.v1.CustomEmoji.CustomEmojiPayload) obj;
+
+      if (!getFileContent().equals(other.getFileContent())) return false;
+      if (!getFilename().equals(other.getFilename())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FILE_CONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getFileContent().hashCode();
+      hash = (37 * hash) + FILENAME_FIELD_NUMBER;
+      hash = (53 * hash) + getFilename().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.chat.v1.CustomEmoji.CustomEmojiPayload parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.chat.v1.CustomEmoji.CustomEmojiPayload parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.CustomEmoji.CustomEmojiPayload parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.chat.v1.CustomEmoji.CustomEmojiPayload parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.CustomEmoji.CustomEmojiPayload parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.chat.v1.CustomEmoji.CustomEmojiPayload parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.CustomEmoji.CustomEmojiPayload parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.chat.v1.CustomEmoji.CustomEmojiPayload parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.CustomEmoji.CustomEmojiPayload parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.chat.v1.CustomEmoji.CustomEmojiPayload parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.CustomEmoji.CustomEmojiPayload parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.chat.v1.CustomEmoji.CustomEmojiPayload parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.chat.v1.CustomEmoji.CustomEmojiPayload prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Payload data for the custom emoji.
+     * </pre>
+     *
+     * Protobuf type {@code google.chat.v1.CustomEmoji.CustomEmojiPayload}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.chat.v1.CustomEmoji.CustomEmojiPayload)
+        com.google.chat.v1.CustomEmoji.CustomEmojiPayloadOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.chat.v1.ReactionProto
+            .internal_static_google_chat_v1_CustomEmoji_CustomEmojiPayload_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.chat.v1.ReactionProto
+            .internal_static_google_chat_v1_CustomEmoji_CustomEmojiPayload_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.chat.v1.CustomEmoji.CustomEmojiPayload.class,
+                com.google.chat.v1.CustomEmoji.CustomEmojiPayload.Builder.class);
+      }
+
+      // Construct using com.google.chat.v1.CustomEmoji.CustomEmojiPayload.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        fileContent_ = com.google.protobuf.ByteString.EMPTY;
+        filename_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.chat.v1.ReactionProto
+            .internal_static_google_chat_v1_CustomEmoji_CustomEmojiPayload_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.chat.v1.CustomEmoji.CustomEmojiPayload getDefaultInstanceForType() {
+        return com.google.chat.v1.CustomEmoji.CustomEmojiPayload.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.chat.v1.CustomEmoji.CustomEmojiPayload build() {
+        com.google.chat.v1.CustomEmoji.CustomEmojiPayload result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.chat.v1.CustomEmoji.CustomEmojiPayload buildPartial() {
+        com.google.chat.v1.CustomEmoji.CustomEmojiPayload result =
+            new com.google.chat.v1.CustomEmoji.CustomEmojiPayload(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.chat.v1.CustomEmoji.CustomEmojiPayload result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.fileContent_ = fileContent_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.filename_ = filename_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.chat.v1.CustomEmoji.CustomEmojiPayload) {
+          return mergeFrom((com.google.chat.v1.CustomEmoji.CustomEmojiPayload) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.chat.v1.CustomEmoji.CustomEmojiPayload other) {
+        if (other == com.google.chat.v1.CustomEmoji.CustomEmojiPayload.getDefaultInstance())
+          return this;
+        if (other.getFileContent() != com.google.protobuf.ByteString.EMPTY) {
+          setFileContent(other.getFileContent());
+        }
+        if (!other.getFilename().isEmpty()) {
+          filename_ = other.filename_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  fileContent_ = input.readBytes();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  filename_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.ByteString fileContent_ = com.google.protobuf.ByteString.EMPTY;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The image used for the custom emoji.
+       *
+       * The payload must be under 256 KB and the dimension of
+       * the image must be square and between 64 and 500 pixels. The
+       * restrictions are subject to change.
+       * </pre>
+       *
+       * <code>
+       * bytes file_content = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The fileContent.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getFileContent() {
+        return fileContent_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The image used for the custom emoji.
+       *
+       * The payload must be under 256 KB and the dimension of
+       * the image must be square and between 64 and 500 pixels. The
+       * restrictions are subject to change.
+       * </pre>
+       *
+       * <code>
+       * bytes file_content = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The fileContent to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileContent(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fileContent_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The image used for the custom emoji.
+       *
+       * The payload must be under 256 KB and the dimension of
+       * the image must be square and between 64 and 500 pixels. The
+       * restrictions are subject to change.
+       * </pre>
+       *
+       * <code>
+       * bytes file_content = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFileContent() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        fileContent_ = getDefaultInstance().getFileContent();
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object filename_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The image file name.
+       *
+       * Supported file extensions: `.png`, `.jpg`, `.gif`.
+       * </pre>
+       *
+       * <code>
+       * string filename = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The filename.
+       */
+      public java.lang.String getFilename() {
+        java.lang.Object ref = filename_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          filename_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The image file name.
+       *
+       * Supported file extensions: `.png`, `.jpg`, `.gif`.
+       * </pre>
+       *
+       * <code>
+       * string filename = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The bytes for filename.
+       */
+      public com.google.protobuf.ByteString getFilenameBytes() {
+        java.lang.Object ref = filename_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          filename_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The image file name.
+       *
+       * Supported file extensions: `.png`, `.jpg`, `.gif`.
+       * </pre>
+       *
+       * <code>
+       * string filename = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The filename to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilename(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        filename_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The image file name.
+       *
+       * Supported file extensions: `.png`, `.jpg`, `.gif`.
+       * </pre>
+       *
+       * <code>
+       * string filename = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFilename() {
+        filename_ = getDefaultInstance().getFilename();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Input only. The image file name.
+       *
+       * Supported file extensions: `.png`, `.jpg`, `.gif`.
+       * </pre>
+       *
+       * <code>
+       * string filename = 2 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The bytes for filename to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilenameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        filename_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.chat.v1.CustomEmoji.CustomEmojiPayload)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.chat.v1.CustomEmoji.CustomEmojiPayload)
+    private static final com.google.chat.v1.CustomEmoji.CustomEmojiPayload DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.chat.v1.CustomEmoji.CustomEmojiPayload();
+    }
+
+    public static com.google.chat.v1.CustomEmoji.CustomEmojiPayload getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CustomEmojiPayload> PARSER =
+        new com.google.protobuf.AbstractParser<CustomEmojiPayload>() {
+          @java.lang.Override
+          public CustomEmojiPayload parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<CustomEmojiPayload> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CustomEmojiPayload> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.chat.v1.CustomEmoji.CustomEmojiPayload getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
+  public static final int NAME_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Identifier. The resource name of the custom emoji, assigned by the server.
+   *
+   * Format: `customEmojis/{customEmoji}`
+   * </pre>
+   *
+   * <code>string name = 2 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   *
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Identifier. The resource name of the custom emoji, assigned by the server.
+   *
+   * Format: `customEmojis/{customEmoji}`
+   * </pre>
+   *
+   * <code>string name = 2 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   *
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int UID_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
+
   /**
    *
    *
@@ -90,6 +984,7 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -116,6 +1011,202 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int EMOJI_NAME_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object emojiName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. User-provided name for the custom emoji, which is
+   * unique within the organization.
+   *
+   * Required when the custom emoji is created, output only otherwise.
+   *
+   * Emoji names must start and end with colons, must be lowercase and can only
+   * contain alphanumeric characters, hyphens, and underscores.
+   * Hyphens and underscores should be used to separate words and cannot be used
+   * consecutively.
+   *
+   * Example: `:valid-emoji-name:`
+   * </pre>
+   *
+   * <code>
+   * string emoji_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The emojiName.
+   */
+  @java.lang.Override
+  public java.lang.String getEmojiName() {
+    java.lang.Object ref = emojiName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      emojiName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. User-provided name for the custom emoji, which is
+   * unique within the organization.
+   *
+   * Required when the custom emoji is created, output only otherwise.
+   *
+   * Emoji names must start and end with colons, must be lowercase and can only
+   * contain alphanumeric characters, hyphens, and underscores.
+   * Hyphens and underscores should be used to separate words and cannot be used
+   * consecutively.
+   *
+   * Example: `:valid-emoji-name:`
+   * </pre>
+   *
+   * <code>
+   * string emoji_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The bytes for emojiName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEmojiNameBytes() {
+    java.lang.Object ref = emojiName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      emojiName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TEMPORARY_IMAGE_URI_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object temporaryImageUri_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A temporary image URL for the custom emoji, valid for at least
+   * 10 minutes. Note that this is not populated in the response when the custom
+   * emoji is created.
+   * </pre>
+   *
+   * <code>string temporary_image_uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The temporaryImageUri.
+   */
+  @java.lang.Override
+  public java.lang.String getTemporaryImageUri() {
+    java.lang.Object ref = temporaryImageUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      temporaryImageUri_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A temporary image URL for the custom emoji, valid for at least
+   * 10 minutes. Note that this is not populated in the response when the custom
+   * emoji is created.
+   * </pre>
+   *
+   * <code>string temporary_image_uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for temporaryImageUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTemporaryImageUriBytes() {
+    java.lang.Object ref = temporaryImageUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      temporaryImageUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PAYLOAD_FIELD_NUMBER = 5;
+  private com.google.chat.v1.CustomEmoji.CustomEmojiPayload payload_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Payload data.
+   * Required when the custom emoji is created.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.CustomEmoji.CustomEmojiPayload payload = 5 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the payload field is set.
+   */
+  @java.lang.Override
+  public boolean hasPayload() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Payload data.
+   * Required when the custom emoji is created.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.CustomEmoji.CustomEmojiPayload payload = 5 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The payload.
+   */
+  @java.lang.Override
+  public com.google.chat.v1.CustomEmoji.CustomEmojiPayload getPayload() {
+    return payload_ == null
+        ? com.google.chat.v1.CustomEmoji.CustomEmojiPayload.getDefaultInstance()
+        : payload_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Payload data.
+   * Required when the custom emoji is created.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.CustomEmoji.CustomEmojiPayload payload = 5 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.chat.v1.CustomEmoji.CustomEmojiPayloadOrBuilder getPayloadOrBuilder() {
+    return payload_ == null
+        ? com.google.chat.v1.CustomEmoji.CustomEmojiPayload.getDefaultInstance()
+        : payload_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -133,6 +1224,18 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uid_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(emojiName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, emojiName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(temporaryImageUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, temporaryImageUri_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(5, getPayload());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -144,6 +1247,18 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uid_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(emojiName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, emojiName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(temporaryImageUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, temporaryImageUri_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getPayload());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -160,7 +1275,14 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.chat.v1.CustomEmoji other = (com.google.chat.v1.CustomEmoji) obj;
 
+    if (!getName().equals(other.getName())) return false;
     if (!getUid().equals(other.getUid())) return false;
+    if (!getEmojiName().equals(other.getEmojiName())) return false;
+    if (!getTemporaryImageUri().equals(other.getTemporaryImageUri())) return false;
+    if (hasPayload() != other.hasPayload()) return false;
+    if (hasPayload()) {
+      if (!getPayload().equals(other.getPayload())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -172,8 +1294,18 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + UID_FIELD_NUMBER;
     hash = (53 * hash) + getUid().hashCode();
+    hash = (37 * hash) + EMOJI_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getEmojiName().hashCode();
+    hash = (37 * hash) + TEMPORARY_IMAGE_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getTemporaryImageUri().hashCode();
+    if (hasPayload()) {
+      hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
+      hash = (53 * hash) + getPayload().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -273,11 +1405,12 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
    * <pre>
-   * Represents a custom emoji.
+   * Represents a [custom emoji](https://support.google.com/chat/answer/12800149).
    * </pre>
    *
    * Protobuf type {@code google.chat.v1.CustomEmoji}
@@ -300,17 +1433,34 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.chat.v1.CustomEmoji.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getPayloadFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      name_ = "";
       uid_ = "";
+      emojiName_ = "";
+      temporaryImageUri_ = "";
+      payload_ = null;
+      if (payloadBuilder_ != null) {
+        payloadBuilder_.dispose();
+        payloadBuilder_ = null;
+      }
       return this;
     }
 
@@ -346,8 +1496,23 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
     private void buildPartial0(com.google.chat.v1.CustomEmoji result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.uid_ = uid_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.emojiName_ = emojiName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.temporaryImageUri_ = temporaryImageUri_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.payload_ = payloadBuilder_ == null ? payload_ : payloadBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -395,10 +1560,28 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.chat.v1.CustomEmoji other) {
       if (other == com.google.chat.v1.CustomEmoji.getDefaultInstance()) return this;
-      if (!other.getUid().isEmpty()) {
-        uid_ = other.uid_;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (!other.getUid().isEmpty()) {
+        uid_ = other.uid_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (!other.getEmojiName().isEmpty()) {
+        emojiName_ = other.emojiName_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getTemporaryImageUri().isEmpty()) {
+        temporaryImageUri_ = other.temporaryImageUri_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (other.hasPayload()) {
+        mergePayload(other.getPayload());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -429,9 +1612,33 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 uid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
+            case 18:
+              {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 18
+            case 26:
+              {
+                emojiName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+            case 34:
+              {
+                temporaryImageUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getPayloadFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -451,7 +1658,129 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
+    private java.lang.Object name_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Identifier. The resource name of the custom emoji, assigned by the server.
+     *
+     * Format: `customEmojis/{customEmoji}`
+     * </pre>
+     *
+     * <code>string name = 2 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     *
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Identifier. The resource name of the custom emoji, assigned by the server.
+     *
+     * Format: `customEmojis/{customEmoji}`
+     * </pre>
+     *
+     * <code>string name = 2 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     *
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Identifier. The resource name of the custom emoji, assigned by the server.
+     *
+     * Format: `customEmojis/{customEmoji}`
+     * </pre>
+     *
+     * <code>string name = 2 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      name_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Identifier. The resource name of the custom emoji, assigned by the server.
+     *
+     * Format: `customEmojis/{customEmoji}`
+     * </pre>
+     *
+     * <code>string name = 2 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Identifier. The resource name of the custom emoji, assigned by the server.
+     *
+     * Format: `customEmojis/{customEmoji}`
+     * </pre>
+     *
+     * <code>string name = 2 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      name_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object uid_ = "";
+
     /**
      *
      *
@@ -476,6 +1805,7 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -500,6 +1830,7 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -519,10 +1850,11 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       uid_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -538,10 +1870,11 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUid() {
       uid_ = getDefaultInstance().getUid();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -562,9 +1895,523 @@ public final class CustomEmoji extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       uid_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object emojiName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. User-provided name for the custom emoji, which is
+     * unique within the organization.
+     *
+     * Required when the custom emoji is created, output only otherwise.
+     *
+     * Emoji names must start and end with colons, must be lowercase and can only
+     * contain alphanumeric characters, hyphens, and underscores.
+     * Hyphens and underscores should be used to separate words and cannot be used
+     * consecutively.
+     *
+     * Example: `:valid-emoji-name:`
+     * </pre>
+     *
+     * <code>
+     * string emoji_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The emojiName.
+     */
+    public java.lang.String getEmojiName() {
+      java.lang.Object ref = emojiName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        emojiName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. User-provided name for the custom emoji, which is
+     * unique within the organization.
+     *
+     * Required when the custom emoji is created, output only otherwise.
+     *
+     * Emoji names must start and end with colons, must be lowercase and can only
+     * contain alphanumeric characters, hyphens, and underscores.
+     * Hyphens and underscores should be used to separate words and cannot be used
+     * consecutively.
+     *
+     * Example: `:valid-emoji-name:`
+     * </pre>
+     *
+     * <code>
+     * string emoji_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The bytes for emojiName.
+     */
+    public com.google.protobuf.ByteString getEmojiNameBytes() {
+      java.lang.Object ref = emojiName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        emojiName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. User-provided name for the custom emoji, which is
+     * unique within the organization.
+     *
+     * Required when the custom emoji is created, output only otherwise.
+     *
+     * Emoji names must start and end with colons, must be lowercase and can only
+     * contain alphanumeric characters, hyphens, and underscores.
+     * Hyphens and underscores should be used to separate words and cannot be used
+     * consecutively.
+     *
+     * Example: `:valid-emoji-name:`
+     * </pre>
+     *
+     * <code>
+     * string emoji_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The emojiName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEmojiName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      emojiName_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. User-provided name for the custom emoji, which is
+     * unique within the organization.
+     *
+     * Required when the custom emoji is created, output only otherwise.
+     *
+     * Emoji names must start and end with colons, must be lowercase and can only
+     * contain alphanumeric characters, hyphens, and underscores.
+     * Hyphens and underscores should be used to separate words and cannot be used
+     * consecutively.
+     *
+     * Example: `:valid-emoji-name:`
+     * </pre>
+     *
+     * <code>
+     * string emoji_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEmojiName() {
+      emojiName_ = getDefaultInstance().getEmojiName();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. User-provided name for the custom emoji, which is
+     * unique within the organization.
+     *
+     * Required when the custom emoji is created, output only otherwise.
+     *
+     * Emoji names must start and end with colons, must be lowercase and can only
+     * contain alphanumeric characters, hyphens, and underscores.
+     * Hyphens and underscores should be used to separate words and cannot be used
+     * consecutively.
+     *
+     * Example: `:valid-emoji-name:`
+     * </pre>
+     *
+     * <code>
+     * string emoji_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The bytes for emojiName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEmojiNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      emojiName_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object temporaryImageUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A temporary image URL for the custom emoji, valid for at least
+     * 10 minutes. Note that this is not populated in the response when the custom
+     * emoji is created.
+     * </pre>
+     *
+     * <code>string temporary_image_uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The temporaryImageUri.
+     */
+    public java.lang.String getTemporaryImageUri() {
+      java.lang.Object ref = temporaryImageUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        temporaryImageUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A temporary image URL for the custom emoji, valid for at least
+     * 10 minutes. Note that this is not populated in the response when the custom
+     * emoji is created.
+     * </pre>
+     *
+     * <code>string temporary_image_uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for temporaryImageUri.
+     */
+    public com.google.protobuf.ByteString getTemporaryImageUriBytes() {
+      java.lang.Object ref = temporaryImageUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        temporaryImageUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A temporary image URL for the custom emoji, valid for at least
+     * 10 minutes. Note that this is not populated in the response when the custom
+     * emoji is created.
+     * </pre>
+     *
+     * <code>string temporary_image_uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The temporaryImageUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTemporaryImageUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      temporaryImageUri_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A temporary image URL for the custom emoji, valid for at least
+     * 10 minutes. Note that this is not populated in the response when the custom
+     * emoji is created.
+     * </pre>
+     *
+     * <code>string temporary_image_uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTemporaryImageUri() {
+      temporaryImageUri_ = getDefaultInstance().getTemporaryImageUri();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A temporary image URL for the custom emoji, valid for at least
+     * 10 minutes. Note that this is not populated in the response when the custom
+     * emoji is created.
+     * </pre>
+     *
+     * <code>string temporary_image_uri = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for temporaryImageUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTemporaryImageUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      temporaryImageUri_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private com.google.chat.v1.CustomEmoji.CustomEmojiPayload payload_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.chat.v1.CustomEmoji.CustomEmojiPayload,
+            com.google.chat.v1.CustomEmoji.CustomEmojiPayload.Builder,
+            com.google.chat.v1.CustomEmoji.CustomEmojiPayloadOrBuilder>
+        payloadBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Payload data.
+     * Required when the custom emoji is created.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.CustomEmoji.CustomEmojiPayload payload = 5 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the payload field is set.
+     */
+    public boolean hasPayload() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Payload data.
+     * Required when the custom emoji is created.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.CustomEmoji.CustomEmojiPayload payload = 5 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The payload.
+     */
+    public com.google.chat.v1.CustomEmoji.CustomEmojiPayload getPayload() {
+      if (payloadBuilder_ == null) {
+        return payload_ == null
+            ? com.google.chat.v1.CustomEmoji.CustomEmojiPayload.getDefaultInstance()
+            : payload_;
+      } else {
+        return payloadBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Payload data.
+     * Required when the custom emoji is created.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.CustomEmoji.CustomEmojiPayload payload = 5 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPayload(com.google.chat.v1.CustomEmoji.CustomEmojiPayload value) {
+      if (payloadBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payload_ = value;
+      } else {
+        payloadBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Payload data.
+     * Required when the custom emoji is created.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.CustomEmoji.CustomEmojiPayload payload = 5 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPayload(
+        com.google.chat.v1.CustomEmoji.CustomEmojiPayload.Builder builderForValue) {
+      if (payloadBuilder_ == null) {
+        payload_ = builderForValue.build();
+      } else {
+        payloadBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Payload data.
+     * Required when the custom emoji is created.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.CustomEmoji.CustomEmojiPayload payload = 5 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePayload(com.google.chat.v1.CustomEmoji.CustomEmojiPayload value) {
+      if (payloadBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && payload_ != null
+            && payload_ != com.google.chat.v1.CustomEmoji.CustomEmojiPayload.getDefaultInstance()) {
+          getPayloadBuilder().mergeFrom(value);
+        } else {
+          payload_ = value;
+        }
+      } else {
+        payloadBuilder_.mergeFrom(value);
+      }
+      if (payload_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Payload data.
+     * Required when the custom emoji is created.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.CustomEmoji.CustomEmojiPayload payload = 5 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPayload() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      payload_ = null;
+      if (payloadBuilder_ != null) {
+        payloadBuilder_.dispose();
+        payloadBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Payload data.
+     * Required when the custom emoji is created.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.CustomEmoji.CustomEmojiPayload payload = 5 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.chat.v1.CustomEmoji.CustomEmojiPayload.Builder getPayloadBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getPayloadFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Payload data.
+     * Required when the custom emoji is created.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.CustomEmoji.CustomEmojiPayload payload = 5 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.chat.v1.CustomEmoji.CustomEmojiPayloadOrBuilder getPayloadOrBuilder() {
+      if (payloadBuilder_ != null) {
+        return payloadBuilder_.getMessageOrBuilder();
+      } else {
+        return payload_ == null
+            ? com.google.chat.v1.CustomEmoji.CustomEmojiPayload.getDefaultInstance()
+            : payload_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Payload data.
+     * Required when the custom emoji is created.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.CustomEmoji.CustomEmojiPayload payload = 5 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.chat.v1.CustomEmoji.CustomEmojiPayload,
+            com.google.chat.v1.CustomEmoji.CustomEmojiPayload.Builder,
+            com.google.chat.v1.CustomEmoji.CustomEmojiPayloadOrBuilder>
+        getPayloadFieldBuilder() {
+      if (payloadBuilder_ == null) {
+        payloadBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.chat.v1.CustomEmoji.CustomEmojiPayload,
+                com.google.chat.v1.CustomEmoji.CustomEmojiPayload.Builder,
+                com.google.chat.v1.CustomEmoji.CustomEmojiPayloadOrBuilder>(
+                getPayload(), getParentForChildren(), isClean());
+        payload_ = null;
+      }
+      return payloadBuilder_;
     }
 
     @java.lang.Override

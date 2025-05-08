@@ -37,6 +37,7 @@ public interface DataProfileConfigSnapshotOrBuilder
    * @return Whether the inspectConfig field is set.
    */
   boolean hasInspectConfig();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface DataProfileConfigSnapshotOrBuilder
    * @return The inspectConfig.
    */
   com.google.privacy.dlp.v2.InspectConfig getInspectConfig();
+
   /**
    *
    *
@@ -77,11 +79,12 @@ public interface DataProfileConfigSnapshotOrBuilder
    * </code>
    *
    * @deprecated google.privacy.dlp.v2.DataProfileConfigSnapshot.data_profile_job is deprecated. See
-   *     google/privacy/dlp/v2/dlp.proto;l=7403
+   *     google/privacy/dlp/v2/dlp.proto;l=7493
    * @return Whether the dataProfileJob field is set.
    */
   @java.lang.Deprecated
   boolean hasDataProfileJob();
+
   /**
    *
    *
@@ -97,11 +100,12 @@ public interface DataProfileConfigSnapshotOrBuilder
    * </code>
    *
    * @deprecated google.privacy.dlp.v2.DataProfileConfigSnapshot.data_profile_job is deprecated. See
-   *     google/privacy/dlp/v2/dlp.proto;l=7403
+   *     google/privacy/dlp/v2/dlp.proto;l=7493
    * @return The dataProfileJob.
    */
   @java.lang.Deprecated
   com.google.privacy.dlp.v2.DataProfileJobConfig getDataProfileJob();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface DataProfileConfigSnapshotOrBuilder
    * @return Whether the discoveryConfig field is set.
    */
   boolean hasDiscoveryConfig();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface DataProfileConfigSnapshotOrBuilder
    * @return The discoveryConfig.
    */
   com.google.privacy.dlp.v2.DiscoveryConfig getDiscoveryConfig();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface DataProfileConfigSnapshotOrBuilder
    * @return The inspectTemplateName.
    */
   java.lang.String getInspectTemplateName();
+
   /**
    *
    *
@@ -191,6 +198,7 @@ public interface DataProfileConfigSnapshotOrBuilder
    * @return Whether the inspectTemplateModifiedTime field is set.
    */
   boolean hasInspectTemplateModifiedTime();
+
   /**
    *
    *
@@ -203,6 +211,7 @@ public interface DataProfileConfigSnapshotOrBuilder
    * @return The inspectTemplateModifiedTime.
    */
   com.google.protobuf.Timestamp getInspectTemplateModifiedTime();
+
   /**
    *
    *

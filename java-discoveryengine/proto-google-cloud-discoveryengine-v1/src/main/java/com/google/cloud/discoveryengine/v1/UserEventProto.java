@@ -73,71 +73,100 @@ public final class UserEventProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n0google/cloud/discoveryengine/v1/user_e"
-          + "vent.proto\022\037google.cloud.discoveryengine"
+      "\n"
+          + "0google/cloud/discoveryengine/v1/user_event.proto\022\037google.cloud.discoveryengine"
           + ".v1\032\037google/api/field_behavior.proto\032\031go"
           + "ogle/api/resource.proto\032,google/cloud/di"
           + "scoveryengine/v1/common.proto\032\036google/pr"
-          + "otobuf/duration.proto\032\037google/protobuf/t"
-          + "imestamp.proto\"\272\010\n\tUserEvent\022\027\n\nevent_ty"
-          + "pe\030\001 \001(\tB\003\340A\002\022\033\n\016user_pseudo_id\030\002 \001(\tB\003\340"
-          + "A\002\022:\n\006engine\030\023 \001(\tB*\372A\'\n%discoveryengine"
-          + ".googleapis.com/Engine\022A\n\ndata_store\030\024 \001"
-          + "(\tB-\372A*\n(discoveryengine.googleapis.com/"
-          + "DataStore\022.\n\nevent_time\030\003 \001(\0132\032.google.p"
-          + "rotobuf.Timestamp\022<\n\tuser_info\030\004 \001(\0132).g"
-          + "oogle.cloud.discoveryengine.v1.UserInfo\022"
-          + "\033\n\023direct_user_request\030\005 \001(\010\022\022\n\nsession_"
-          + "id\030\006 \001(\t\022<\n\tpage_info\030\007 \001(\0132).google.clo"
-          + "ud.discoveryengine.v1.PageInfo\022\031\n\021attrib"
-          + "ution_token\030\010 \001(\t\022\016\n\006filter\030\t \001(\t\022@\n\tdoc"
-          + "uments\030\n \003(\0132-.google.cloud.discoveryeng"
-          + "ine.v1.DocumentInfo\0229\n\005panel\030\013 \001(\0132*.goo"
-          + "gle.cloud.discoveryengine.v1.PanelInfo\022@"
-          + "\n\013search_info\030\014 \001(\0132+.google.cloud.disco"
-          + "veryengine.v1.SearchInfo\022H\n\017completion_i"
-          + "nfo\030\r \001(\0132/.google.cloud.discoveryengine"
-          + ".v1.CompletionInfo\022J\n\020transaction_info\030\016"
-          + " \001(\01320.google.cloud.discoveryengine.v1.T"
-          + "ransactionInfo\022\017\n\007tag_ids\030\017 \003(\t\022\025\n\rpromo"
-          + "tion_ids\030\020 \003(\t\022N\n\nattributes\030\021 \003(\0132:.goo"
-          + "gle.cloud.discoveryengine.v1.UserEvent.A"
-          + "ttributesEntry\022>\n\nmedia_info\030\022 \001(\0132*.goo"
-          + "gle.cloud.discoveryengine.v1.MediaInfo\032c"
-          + "\n\017AttributesEntry\022\013\n\003key\030\001 \001(\t\022?\n\005value\030"
-          + "\002 \001(\01320.google.cloud.discoveryengine.v1."
-          + "CustomAttribute:\0028\001\"Y\n\010PageInfo\022\023\n\013pagev"
-          + "iew_id\030\001 \001(\t\022\025\n\rpage_category\030\002 \001(\t\022\013\n\003u"
-          + "ri\030\003 \001(\t\022\024\n\014referrer_uri\030\004 \001(\t\"T\n\nSearch"
-          + "Info\022\024\n\014search_query\030\001 \001(\t\022\020\n\010order_by\030\002"
-          + " \001(\t\022\023\n\006offset\030\003 \001(\005H\000\210\001\001B\t\n\007_offset\"H\n\016"
-          + "CompletionInfo\022\033\n\023selected_suggestion\030\001 "
-          + "\001(\t\022\031\n\021selected_position\030\002 \001(\005\"\311\001\n\017Trans"
-          + "actionInfo\022\027\n\005value\030\001 \001(\002B\003\340A\002H\000\210\001\001\022\025\n\010c"
-          + "urrency\030\002 \001(\tB\003\340A\002\022\026\n\016transaction_id\030\003 \001"
-          + "(\t\022\020\n\003tax\030\004 \001(\002H\001\210\001\001\022\021\n\004cost\030\005 \001(\002H\002\210\001\001\022"
-          + "\033\n\016discount_value\030\006 \001(\002H\003\210\001\001B\010\n\006_valueB\006"
-          + "\n\004_taxB\007\n\005_costB\021\n\017_discount_value\"\320\001\n\014D"
-          + "ocumentInfo\022\014\n\002id\030\001 \001(\tH\000\022<\n\004name\030\002 \001(\tB"
-          + ",\372A)\n\'discoveryengine.googleapis.com/Doc"
-          + "umentH\000\022\r\n\003uri\030\006 \001(\tH\000\022\025\n\010quantity\030\003 \001(\005"
-          + "H\001\210\001\001\022\025\n\rpromotion_ids\030\004 \003(\t\022\023\n\006joined\030\005"
-          + " \001(\010B\003\340A\003B\025\n\023document_descriptorB\013\n\t_qua"
-          + "ntity\"\224\001\n\tPanelInfo\022\025\n\010panel_id\030\002 \001(\tB\003\340"
-          + "A\002\022\024\n\014display_name\030\003 \001(\t\022\033\n\016panel_positi"
-          + "on\030\004 \001(\005H\000\210\001\001\022\031\n\014total_panels\030\005 \001(\005H\001\210\001\001"
-          + "B\021\n\017_panel_positionB\017\n\r_total_panels\"\215\001\n"
-          + "\tMediaInfo\022:\n\027media_progress_duration\030\001 "
-          + "\001(\0132\031.google.protobuf.Duration\022&\n\031media_"
-          + "progress_percentage\030\002 \001(\002H\000\210\001\001B\034\n\032_media"
-          + "_progress_percentageB\201\002\n#com.google.clou"
-          + "d.discoveryengine.v1B\016UserEventProtoP\001ZM"
-          + "cloud.google.com/go/discoveryengine/apiv"
-          + "1/discoveryenginepb;discoveryenginepb\242\002\017"
-          + "DISCOVERYENGINE\252\002\037Google.Cloud.Discovery"
-          + "Engine.V1\312\002\037Google\\Cloud\\DiscoveryEngine"
-          + "\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1"
-          + "b\006proto3"
+          + "otobuf/duration.proto\032\037google/protobuf/timestamp.proto\"\231\t\n"
+          + "\tUserEvent\022\027\n\n"
+          + "event_type\030\001 \001(\tB\003\340A\002\022\034\n"
+          + "\017conversion_type\030\025 \001(\tB\003\340A\001\022\033\n"
+          + "\016user_pseudo_id\030\002 \001(\tB\003\340A\002\022:\n"
+          + "\006engine\030\023 \001(\tB*\372A\'\n"
+          + "%discoveryengine.googleapis.com/Engine\022A\n\n"
+          + "data_store\030\024 \001(\tB-\372A*\n"
+          + "(discoveryengine.googleapis.com/DataStore\022.\n\n"
+          + "event_time\030\003 \001(\0132\032.google.protobuf.Timestamp\022<\n"
+          + "\tuser_info\030\004 \001(\0132).google.cloud.discoveryengine.v1.UserInfo\022\033\n"
+          + "\023direct_user_request\030\005 \001(\010\022\022\n\n"
+          + "session_id\030\006 \001(\t\022<\n"
+          + "\tpage_info\030\007 \001(\0132).google.cloud.discoveryengine.v1.PageInfo\022\031\n"
+          + "\021attribution_token\030\010 \001(\t\022\016\n"
+          + "\006filter\030\t \001(\t\022@\n"
+          + "\tdocuments\030\n"
+          + " \003(\0132-.google.cloud.discoveryengine.v1.DocumentInfo\0229\n"
+          + "\005panel\030\013 \001(\0132*.google.cloud.discoveryengine.v1.PanelInfo\022@\n"
+          + "\013search_info\030\014 \001(\0132+.google.cloud.discoveryengine.v1.SearchInfo\022H\n"
+          + "\017completion_info\030\r"
+          + " \001(\0132/.google.cloud.discoveryengine.v1.CompletionInfo\022J\n"
+          + "\020transaction_info\030\016 \001(\01320.goo"
+          + "gle.cloud.discoveryengine.v1.TransactionInfo\022\017\n"
+          + "\007tag_ids\030\017 \003(\t\022\025\n\r"
+          + "promotion_ids\030\020 \003(\t\022N\n\n"
+          + "attributes\030\021 \003(\0132:.google.cloud."
+          + "discoveryengine.v1.UserEvent.AttributesEntry\022>\n\n"
+          + "media_info\030\022 \001(\0132*.google.cloud.discoveryengine.v1.MediaInfo\022?\n"
+          + "\006panels\030\026"
+          + " \003(\0132*.google.cloud.discoveryengine.v1.PanelInfoB\003\340A\001\032c\n"
+          + "\017AttributesEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022?\n"
+          + "\005value\030\002"
+          + " \001(\01320.google.cloud.discoveryengine.v1.CustomAttribute:\0028\001\"Y\n"
+          + "\010PageInfo\022\023\n"
+          + "\013pageview_id\030\001 \001(\t\022\025\n\r"
+          + "page_category\030\002 \001(\t\022\013\n"
+          + "\003uri\030\003 \001(\t\022\024\n"
+          + "\014referrer_uri\030\004 \001(\t\"T\n\n"
+          + "SearchInfo\022\024\n"
+          + "\014search_query\030\001 \001(\t\022\020\n"
+          + "\010order_by\030\002 \001(\t\022\023\n"
+          + "\006offset\030\003 \001(\005H\000\210\001\001B\t\n"
+          + "\007_offset\"H\n"
+          + "\016CompletionInfo\022\033\n"
+          + "\023selected_suggestion\030\001 \001(\t\022\031\n"
+          + "\021selected_position\030\002 \001(\005\"\311\001\n"
+          + "\017TransactionInfo\022\027\n"
+          + "\005value\030\001 \001(\002B\003\340A\002H\000\210\001\001\022\025\n"
+          + "\010currency\030\002 \001(\tB\003\340A\002\022\026\n"
+          + "\016transaction_id\030\003 \001(\t\022\020\n"
+          + "\003tax\030\004 \001(\002H\001\210\001\001\022\021\n"
+          + "\004cost\030\005 \001(\002H\002\210\001\001\022\033\n"
+          + "\016discount_value\030\006 \001(\002H\003\210\001\001B\010\n"
+          + "\006_valueB\006\n"
+          + "\004_taxB\007\n"
+          + "\005_costB\021\n"
+          + "\017_discount_value\"\211\002\n"
+          + "\014DocumentInfo\022\014\n"
+          + "\002id\030\001 \001(\tH\000\022<\n"
+          + "\004name\030\002 \001(\tB,\372A)\n"
+          + "\'discoveryengine.googleapis.com/DocumentH\000\022\r\n"
+          + "\003uri\030\006 \001(\tH\000\022\025\n"
+          + "\010quantity\030\003 \001(\005H\001\210\001\001\022\025\n\r"
+          + "promotion_ids\030\004 \003(\t\022\023\n"
+          + "\006joined\030\005 \001(\010B\003\340A\003\022\"\n"
+          + "\020conversion_value\030\007 \001(\002B\003\340A\001H\002\210\001\001B\025\n"
+          + "\023document_descriptorB\013\n"
+          + "\t_quantityB\023\n"
+          + "\021_conversion_value\"\333\001\n"
+          + "\tPanelInfo\022\025\n"
+          + "\010panel_id\030\002 \001(\tB\003\340A\002\022\024\n"
+          + "\014display_name\030\003 \001(\t\022\033\n"
+          + "\016panel_position\030\004 \001(\005H\000\210\001\001\022\031\n"
+          + "\014total_panels\030\005 \001(\005H\001\210\001\001\022E\n"
+          + "\tdocuments\030\006"
+          + " \003(\0132-.google.cloud.discoveryengine.v1.DocumentInfoB\003\340A\001B\021\n"
+          + "\017_panel_positionB\017\n\r"
+          + "_total_panels\"\215\001\n"
+          + "\tMediaInfo\022:\n"
+          + "\027media_progress_duration\030\001 \001(\0132\031.google.protobuf.Duration\022&\n"
+          + "\031media_progress_percentage\030\002 \001(\002H\000\210\001\001B\034\n"
+          + "\032_media_progress_percentageB\201\002\n"
+          + "#com.google.cloud.discoveryengine.v1B\016UserEventProtoP\001ZMcloud.google.com/"
+          + "go/discoveryengine/apiv1/discoveryengine"
+          + "pb;discoveryenginepb\242\002\017DISCOVERYENGINE\252\002"
+          + "\037Google.Cloud.DiscoveryEngine.V1\312\002\037Googl"
+          + "e\\Cloud\\DiscoveryEngine\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -156,6 +185,7 @@ public final class UserEventProto {
             internal_static_google_cloud_discoveryengine_v1_UserEvent_descriptor,
             new java.lang.String[] {
               "EventType",
+              "ConversionType",
               "UserPseudoId",
               "Engine",
               "DataStore",
@@ -175,6 +205,7 @@ public final class UserEventProto {
               "PromotionIds",
               "Attributes",
               "MediaInfo",
+              "Panels",
             });
     internal_static_google_cloud_discoveryengine_v1_UserEvent_AttributesEntry_descriptor =
         internal_static_google_cloud_discoveryengine_v1_UserEvent_descriptor
@@ -224,7 +255,14 @@ public final class UserEventProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_DocumentInfo_descriptor,
             new java.lang.String[] {
-              "Id", "Name", "Uri", "Quantity", "PromotionIds", "Joined", "DocumentDescriptor",
+              "Id",
+              "Name",
+              "Uri",
+              "Quantity",
+              "PromotionIds",
+              "Joined",
+              "ConversionValue",
+              "DocumentDescriptor",
             });
     internal_static_google_cloud_discoveryengine_v1_PanelInfo_descriptor =
         getDescriptor().getMessageTypes().get(6);
@@ -232,7 +270,7 @@ public final class UserEventProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_PanelInfo_descriptor,
             new java.lang.String[] {
-              "PanelId", "DisplayName", "PanelPosition", "TotalPanels",
+              "PanelId", "DisplayName", "PanelPosition", "TotalPanels", "Documents",
             });
     internal_static_google_cloud_discoveryengine_v1_MediaInfo_descriptor =
         getDescriptor().getMessageTypes().get(7);

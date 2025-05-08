@@ -37,6 +37,7 @@ public interface TableOptionsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.FieldId> getIdentifyingFieldsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface TableOptionsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 1;</code>
    */
   com.google.privacy.dlp.v2.FieldId getIdentifyingFields(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface TableOptionsOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 1;</code>
    */
   int getIdentifyingFieldsCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface TableOptionsOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder>
       getIdentifyingFieldsOrBuilderList();
+
   /**
    *
    *

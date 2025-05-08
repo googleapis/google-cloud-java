@@ -33,6 +33,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.BigQueryDestinationConfig)
     BigQueryDestinationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BigQueryDestinationConfig.newBuilder() to construct.
   private BigQueryDestinationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
      * @return The datasetId.
      */
     java.lang.String getDatasetId();
+
     /**
      *
      *
@@ -95,6 +97,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
      */
     com.google.protobuf.ByteString getDatasetIdBytes();
   }
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.BigQueryDestinationConfig.SingleTargetDataset)
       SingleTargetDatasetOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SingleTargetDataset.newBuilder() to construct.
     private SingleTargetDataset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -144,6 +148,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object datasetId_ = "";
+
     /**
      *
      *
@@ -169,6 +174,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         return s;
       }
     }
+
     /**
      *
      *
@@ -364,6 +370,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -564,6 +571,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       private int bitField0_;
 
       private java.lang.Object datasetId_ = "";
+
       /**
        *
        *
@@ -588,6 +596,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -612,6 +621,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -635,6 +645,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -654,6 +665,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -767,6 +779,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
      * @return Whether the datasetTemplate field is set.
      */
     boolean hasDatasetTemplate();
+
     /**
      *
      *
@@ -782,6 +795,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
      */
     com.google.cloud.datastream.v1.BigQueryDestinationConfig.SourceHierarchyDatasets.DatasetTemplate
         getDatasetTemplate();
+
     /**
      *
      *
@@ -797,6 +811,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             .DatasetTemplateOrBuilder
         getDatasetTemplateOrBuilder();
   }
+
   /**
    *
    *
@@ -813,6 +828,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.BigQueryDestinationConfig.SourceHierarchyDatasets)
       SourceHierarchyDatasetsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SourceHierarchyDatasets.newBuilder() to construct.
     private SourceHierarchyDatasets(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -862,6 +878,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
        * @return The location.
        */
       java.lang.String getLocation();
+
       /**
        *
        *
@@ -891,6 +908,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
        * @return The datasetIdPrefix.
        */
       java.lang.String getDatasetIdPrefix();
+
       /**
        *
        *
@@ -924,6 +942,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
        * @return The kmsKeyName.
        */
       java.lang.String getKmsKeyName();
+
       /**
        *
        *
@@ -943,6 +962,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
        */
       com.google.protobuf.ByteString getKmsKeyNameBytes();
     }
+
     /**
      *
      *
@@ -958,6 +978,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.BigQueryDestinationConfig.SourceHierarchyDatasets.DatasetTemplate)
         DatasetTemplateOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use DatasetTemplate.newBuilder() to construct.
       private DatasetTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -996,6 +1017,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object location_ = "";
+
       /**
        *
        *
@@ -1021,6 +1043,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           return s;
         }
       }
+
       /**
        *
        *
@@ -1051,6 +1074,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object datasetIdPrefix_ = "";
+
       /**
        *
        *
@@ -1076,6 +1100,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           return s;
         }
       }
+
       /**
        *
        *
@@ -1106,6 +1131,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object kmsKeyName_ = "";
+
       /**
        *
        *
@@ -1135,6 +1161,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           return s;
         }
       }
+
       /**
        *
        *
@@ -1373,6 +1400,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1620,6 +1648,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         private int bitField0_;
 
         private java.lang.Object location_ = "";
+
         /**
          *
          *
@@ -1644,6 +1673,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1668,6 +1698,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1691,6 +1722,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1710,6 +1742,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1736,6 +1769,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         }
 
         private java.lang.Object datasetIdPrefix_ = "";
+
         /**
          *
          *
@@ -1760,6 +1794,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1784,6 +1819,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1807,6 +1843,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1826,6 +1863,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1852,6 +1890,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         }
 
         private java.lang.Object kmsKeyName_ = "";
+
         /**
          *
          *
@@ -1880,6 +1919,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -1908,6 +1948,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -1935,6 +1976,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1958,6 +2000,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2064,6 +2107,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     private com.google.cloud.datastream.v1.BigQueryDestinationConfig.SourceHierarchyDatasets
             .DatasetTemplate
         datasetTemplate_;
+
     /**
      *
      *
@@ -2081,6 +2125,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     public boolean hasDatasetTemplate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2103,6 +2148,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
               .DatasetTemplate.getDefaultInstance()
           : datasetTemplate_;
     }
+
     /**
      *
      *
@@ -2299,6 +2345,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2530,6 +2577,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
               com.google.cloud.datastream.v1.BigQueryDestinationConfig.SourceHierarchyDatasets
                   .DatasetTemplateOrBuilder>
           datasetTemplateBuilder_;
+
       /**
        *
        *
@@ -2546,6 +2594,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       public boolean hasDatasetTemplate() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -2571,6 +2620,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
           return datasetTemplateBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2598,6 +2648,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2622,6 +2673,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2656,6 +2708,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         }
         return this;
       }
+
       /**
        *
        *
@@ -2677,6 +2730,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2695,6 +2749,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         onChanged();
         return getDatasetTemplateFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2718,6 +2773,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
               : datasetTemplate_;
         }
       }
+
       /**
        *
        *
@@ -2821,10 +2877,1825 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     }
   }
 
+  public interface BlmtConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Cloud Storage bucket name.
+     * </pre>
+     *
+     * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bucket.
+     */
+    java.lang.String getBucket();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Cloud Storage bucket name.
+     * </pre>
+     *
+     * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for bucket.
+     */
+    com.google.protobuf.ByteString getBucketBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The root path inside the Cloud Storage bucket.
+     * </pre>
+     *
+     * <code>string root_path = 2;</code>
+     *
+     * @return The rootPath.
+     */
+    java.lang.String getRootPath();
+
+    /**
+     *
+     *
+     * <pre>
+     * The root path inside the Cloud Storage bucket.
+     * </pre>
+     *
+     * <code>string root_path = 2;</code>
+     *
+     * @return The bytes for rootPath.
+     */
+    com.google.protobuf.ByteString getRootPathBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The bigquery connection.
+     * Format: `{project}.{location}.{name}`
+     * </pre>
+     *
+     * <code>string connection_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The connectionName.
+     */
+    java.lang.String getConnectionName();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The bigquery connection.
+     * Format: `{project}.{location}.{name}`
+     * </pre>
+     *
+     * <code>string connection_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for connectionName.
+     */
+    com.google.protobuf.ByteString getConnectionNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The file format.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat file_format = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for fileFormat.
+     */
+    int getFileFormatValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The file format.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat file_format = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The fileFormat.
+     */
+    com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat getFileFormat();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The table format.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat table_format = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for tableFormat.
+     */
+    int getTableFormatValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The table format.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat table_format = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The tableFormat.
+     */
+    com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat
+        getTableFormat();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for BLMT.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig}
+   */
+  public static final class BlmtConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig)
+      BlmtConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use BlmtConfig.newBuilder() to construct.
+    private BlmtConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BlmtConfig() {
+      bucket_ = "";
+      rootPath_ = "";
+      connectionName_ = "";
+      fileFormat_ = 0;
+      tableFormat_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BlmtConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_BlmtConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_BlmtConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.class,
+              com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Supported file formats for BigLake managed tables.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat}
+     */
+    public enum FileFormat implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value.
+       * </pre>
+       *
+       * <code>FILE_FORMAT_UNSPECIFIED = 0;</code>
+       */
+      FILE_FORMAT_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Parquet file format.
+       * </pre>
+       *
+       * <code>PARQUET = 1;</code>
+       */
+      PARQUET(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value.
+       * </pre>
+       *
+       * <code>FILE_FORMAT_UNSPECIFIED = 0;</code>
+       */
+      public static final int FILE_FORMAT_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Parquet file format.
+       * </pre>
+       *
+       * <code>PARQUET = 1;</code>
+       */
+      public static final int PARQUET_VALUE = 1;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static FileFormat valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static FileFormat forNumber(int value) {
+        switch (value) {
+          case 0:
+            return FILE_FORMAT_UNSPECIFIED;
+          case 1:
+            return PARQUET;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<FileFormat> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<FileFormat> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<FileFormat>() {
+            public FileFormat findValueByNumber(int number) {
+              return FileFormat.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final FileFormat[] VALUES = values();
+
+      public static FileFormat valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private FileFormat(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Supported table formats for BigLake managed tables.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat}
+     */
+    public enum TableFormat implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value.
+       * </pre>
+       *
+       * <code>TABLE_FORMAT_UNSPECIFIED = 0;</code>
+       */
+      TABLE_FORMAT_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Iceberg table format.
+       * </pre>
+       *
+       * <code>ICEBERG = 1;</code>
+       */
+      ICEBERG(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value.
+       * </pre>
+       *
+       * <code>TABLE_FORMAT_UNSPECIFIED = 0;</code>
+       */
+      public static final int TABLE_FORMAT_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Iceberg table format.
+       * </pre>
+       *
+       * <code>ICEBERG = 1;</code>
+       */
+      public static final int ICEBERG_VALUE = 1;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static TableFormat valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static TableFormat forNumber(int value) {
+        switch (value) {
+          case 0:
+            return TABLE_FORMAT_UNSPECIFIED;
+          case 1:
+            return ICEBERG;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<TableFormat> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<TableFormat> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TableFormat>() {
+            public TableFormat findValueByNumber(int number) {
+              return TableFormat.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.getDescriptor()
+            .getEnumTypes()
+            .get(1);
+      }
+
+      private static final TableFormat[] VALUES = values();
+
+      public static TableFormat valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private TableFormat(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat)
+    }
+
+    public static final int BUCKET_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object bucket_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Cloud Storage bucket name.
+     * </pre>
+     *
+     * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bucket.
+     */
+    @java.lang.Override
+    public java.lang.String getBucket() {
+      java.lang.Object ref = bucket_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bucket_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Cloud Storage bucket name.
+     * </pre>
+     *
+     * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for bucket.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getBucketBytes() {
+      java.lang.Object ref = bucket_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        bucket_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROOT_PATH_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object rootPath_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The root path inside the Cloud Storage bucket.
+     * </pre>
+     *
+     * <code>string root_path = 2;</code>
+     *
+     * @return The rootPath.
+     */
+    @java.lang.Override
+    public java.lang.String getRootPath() {
+      java.lang.Object ref = rootPath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rootPath_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The root path inside the Cloud Storage bucket.
+     * </pre>
+     *
+     * <code>string root_path = 2;</code>
+     *
+     * @return The bytes for rootPath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRootPathBytes() {
+      java.lang.Object ref = rootPath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        rootPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONNECTION_NAME_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object connectionName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The bigquery connection.
+     * Format: `{project}.{location}.{name}`
+     * </pre>
+     *
+     * <code>string connection_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The connectionName.
+     */
+    @java.lang.Override
+    public java.lang.String getConnectionName() {
+      java.lang.Object ref = connectionName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        connectionName_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The bigquery connection.
+     * Format: `{project}.{location}.{name}`
+     * </pre>
+     *
+     * <code>string connection_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for connectionName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getConnectionNameBytes() {
+      java.lang.Object ref = connectionName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        connectionName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FILE_FORMAT_FIELD_NUMBER = 4;
+    private int fileFormat_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The file format.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat file_format = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for fileFormat.
+     */
+    @java.lang.Override
+    public int getFileFormatValue() {
+      return fileFormat_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The file format.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat file_format = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The fileFormat.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat
+        getFileFormat() {
+      com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat result =
+          com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat.forNumber(
+              fileFormat_);
+      return result == null
+          ? com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int TABLE_FORMAT_FIELD_NUMBER = 5;
+    private int tableFormat_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The table format.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat table_format = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for tableFormat.
+     */
+    @java.lang.Override
+    public int getTableFormatValue() {
+      return tableFormat_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The table format.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat table_format = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The tableFormat.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat
+        getTableFormat() {
+      com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat result =
+          com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat.forNumber(
+              tableFormat_);
+      return result == null
+          ? com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bucket_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, bucket_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootPath_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, rootPath_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(connectionName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, connectionName_);
+      }
+      if (fileFormat_
+          != com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat
+              .FILE_FORMAT_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(4, fileFormat_);
+      }
+      if (tableFormat_
+          != com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat
+              .TABLE_FORMAT_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(5, tableFormat_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bucket_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, bucket_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootPath_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, rootPath_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(connectionName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, connectionName_);
+      }
+      if (fileFormat_
+          != com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat
+              .FILE_FORMAT_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, fileFormat_);
+      }
+      if (tableFormat_
+          != com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat
+              .TABLE_FORMAT_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, tableFormat_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig other =
+          (com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig) obj;
+
+      if (!getBucket().equals(other.getBucket())) return false;
+      if (!getRootPath().equals(other.getRootPath())) return false;
+      if (!getConnectionName().equals(other.getConnectionName())) return false;
+      if (fileFormat_ != other.fileFormat_) return false;
+      if (tableFormat_ != other.tableFormat_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BUCKET_FIELD_NUMBER;
+      hash = (53 * hash) + getBucket().hashCode();
+      hash = (37 * hash) + ROOT_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getRootPath().hashCode();
+      hash = (37 * hash) + CONNECTION_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getConnectionName().hashCode();
+      hash = (37 * hash) + FILE_FORMAT_FIELD_NUMBER;
+      hash = (53 * hash) + fileFormat_;
+      hash = (37 * hash) + TABLE_FORMAT_FIELD_NUMBER;
+      hash = (53 * hash) + tableFormat_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for BLMT.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig)
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_BlmtConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_BlmtConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.class,
+                com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        bucket_ = "";
+        rootPath_ = "";
+        connectionName_ = "";
+        fileFormat_ = 0;
+        tableFormat_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_BigQueryDestinationConfig_BlmtConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig build() {
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig buildPartial() {
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig result =
+            new com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.bucket_ = bucket_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.rootPath_ = rootPath_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.connectionName_ = connectionName_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.fileFormat_ = fileFormat_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.tableFormat_ = tableFormat_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig) {
+          return mergeFrom(
+              (com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig other) {
+        if (other
+            == com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig
+                .getDefaultInstance()) return this;
+        if (!other.getBucket().isEmpty()) {
+          bucket_ = other.bucket_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getRootPath().isEmpty()) {
+          rootPath_ = other.rootPath_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getConnectionName().isEmpty()) {
+          connectionName_ = other.connectionName_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.fileFormat_ != 0) {
+          setFileFormatValue(other.getFileFormatValue());
+        }
+        if (other.tableFormat_ != 0) {
+          setTableFormatValue(other.getTableFormatValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  bucket_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  rootPath_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  connectionName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 32:
+                {
+                  fileFormat_ = input.readEnum();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              case 40:
+                {
+                  tableFormat_ = input.readEnum();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object bucket_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Cloud Storage bucket name.
+       * </pre>
+       *
+       * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bucket.
+       */
+      public java.lang.String getBucket() {
+        java.lang.Object ref = bucket_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bucket_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Cloud Storage bucket name.
+       * </pre>
+       *
+       * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for bucket.
+       */
+      public com.google.protobuf.ByteString getBucketBytes() {
+        java.lang.Object ref = bucket_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          bucket_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Cloud Storage bucket name.
+       * </pre>
+       *
+       * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bucket to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBucket(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bucket_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Cloud Storage bucket name.
+       * </pre>
+       *
+       * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBucket() {
+        bucket_ = getDefaultInstance().getBucket();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Cloud Storage bucket name.
+       * </pre>
+       *
+       * <code>string bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for bucket to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBucketBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        bucket_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object rootPath_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The root path inside the Cloud Storage bucket.
+       * </pre>
+       *
+       * <code>string root_path = 2;</code>
+       *
+       * @return The rootPath.
+       */
+      public java.lang.String getRootPath() {
+        java.lang.Object ref = rootPath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rootPath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The root path inside the Cloud Storage bucket.
+       * </pre>
+       *
+       * <code>string root_path = 2;</code>
+       *
+       * @return The bytes for rootPath.
+       */
+      public com.google.protobuf.ByteString getRootPathBytes() {
+        java.lang.Object ref = rootPath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          rootPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The root path inside the Cloud Storage bucket.
+       * </pre>
+       *
+       * <code>string root_path = 2;</code>
+       *
+       * @param value The rootPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRootPath(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rootPath_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The root path inside the Cloud Storage bucket.
+       * </pre>
+       *
+       * <code>string root_path = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRootPath() {
+        rootPath_ = getDefaultInstance().getRootPath();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The root path inside the Cloud Storage bucket.
+       * </pre>
+       *
+       * <code>string root_path = 2;</code>
+       *
+       * @param value The bytes for rootPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRootPathBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        rootPath_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object connectionName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The bigquery connection.
+       * Format: `{project}.{location}.{name}`
+       * </pre>
+       *
+       * <code>string connection_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The connectionName.
+       */
+      public java.lang.String getConnectionName() {
+        java.lang.Object ref = connectionName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          connectionName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The bigquery connection.
+       * Format: `{project}.{location}.{name}`
+       * </pre>
+       *
+       * <code>string connection_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for connectionName.
+       */
+      public com.google.protobuf.ByteString getConnectionNameBytes() {
+        java.lang.Object ref = connectionName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          connectionName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The bigquery connection.
+       * Format: `{project}.{location}.{name}`
+       * </pre>
+       *
+       * <code>string connection_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The connectionName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConnectionName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        connectionName_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The bigquery connection.
+       * Format: `{project}.{location}.{name}`
+       * </pre>
+       *
+       * <code>string connection_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearConnectionName() {
+        connectionName_ = getDefaultInstance().getConnectionName();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The bigquery connection.
+       * Format: `{project}.{location}.{name}`
+       * </pre>
+       *
+       * <code>string connection_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for connectionName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConnectionNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        connectionName_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private int fileFormat_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The file format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat file_format = 4 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for fileFormat.
+       */
+      @java.lang.Override
+      public int getFileFormatValue() {
+        return fileFormat_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The file format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat file_format = 4 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for fileFormat to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileFormatValue(int value) {
+        fileFormat_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The file format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat file_format = 4 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The fileFormat.
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat
+          getFileFormat() {
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat result =
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat
+                .forNumber(fileFormat_);
+        return result == null
+            ? com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The file format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat file_format = 4 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The fileFormat to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileFormat(
+          com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        fileFormat_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The file format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.FileFormat file_format = 4 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFileFormat() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        fileFormat_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int tableFormat_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat table_format = 5 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for tableFormat.
+       */
+      @java.lang.Override
+      public int getTableFormatValue() {
+        return tableFormat_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat table_format = 5 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for tableFormat to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTableFormatValue(int value) {
+        tableFormat_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat table_format = 5 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The tableFormat.
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat
+          getTableFormat() {
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat result =
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat
+                .forNumber(tableFormat_);
+        return result == null
+            ? com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat table_format = 5 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The tableFormat to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTableFormat(
+          com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
+        tableFormat_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table format.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.TableFormat table_format = 5 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTableFormat() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        tableFormat_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig)
+    private static final com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig();
+    }
+
+    public static com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BlmtConfig> PARSER =
+        new com.google.protobuf.AbstractParser<BlmtConfig>() {
+          @java.lang.Override
+          public BlmtConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<BlmtConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BlmtConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface AppendOnlyOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -2840,6 +4711,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly)
       AppendOnlyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AppendOnly.newBuilder() to construct.
     private AppendOnly(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3021,6 +4893,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3260,6 +5133,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.BigQueryDestinationConfig.Merge)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -3275,6 +5149,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.BigQueryDestinationConfig.Merge)
       MergeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Merge.newBuilder() to construct.
     private Merge(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3455,6 +5330,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3705,6 +5581,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     private DatasetConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3754,6 +5631,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     private WriteModeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3787,6 +5665,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   }
 
   public static final int SINGLE_TARGET_DATASET_FIELD_NUMBER = 201;
+
   /**
    *
    *
@@ -3804,6 +5683,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   public boolean hasSingleTargetDataset() {
     return datasetConfigCase_ == 201;
   }
+
   /**
    *
    *
@@ -3827,6 +5707,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     return com.google.cloud.datastream.v1.BigQueryDestinationConfig.SingleTargetDataset
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3850,6 +5731,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   }
 
   public static final int SOURCE_HIERARCHY_DATASETS_FIELD_NUMBER = 202;
+
   /**
    *
    *
@@ -3867,6 +5749,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   public boolean hasSourceHierarchyDatasets() {
     return datasetConfigCase_ == 202;
   }
+
   /**
    *
    *
@@ -3890,6 +5773,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     return com.google.cloud.datastream.v1.BigQueryDestinationConfig.SourceHierarchyDatasets
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3914,6 +5798,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
 
   public static final int DATA_FRESHNESS_FIELD_NUMBER = 300;
   private com.google.protobuf.Duration dataFreshness_;
+
   /**
    *
    *
@@ -3932,6 +5817,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   public boolean hasDataFreshness() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3952,6 +5838,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         ? com.google.protobuf.Duration.getDefaultInstance()
         : dataFreshness_;
   }
+
   /**
    *
    *
@@ -3971,7 +5858,68 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         : dataFreshness_;
   }
 
+  public static final int BLMT_CONFIG_FIELD_NUMBER = 1;
+  private com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmtConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Big Lake Managed Tables (BLMT) configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the blmtConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasBlmtConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Big Lake Managed Tables (BLMT) configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The blmtConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig getBlmtConfig() {
+    return blmtConfig_ == null
+        ? com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.getDefaultInstance()
+        : blmtConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Big Lake Managed Tables (BLMT) configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfigOrBuilder
+      getBlmtConfigOrBuilder() {
+    return blmtConfig_ == null
+        ? com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.getDefaultInstance()
+        : blmtConfig_;
+  }
+
   public static final int MERGE_FIELD_NUMBER = 301;
+
   /**
    *
    *
@@ -3987,6 +5935,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   public boolean hasMerge() {
     return writeModeCase_ == 301;
   }
+
   /**
    *
    *
@@ -4005,6 +5954,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     }
     return com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4024,6 +5974,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   }
 
   public static final int APPEND_ONLY_FIELD_NUMBER = 302;
+
   /**
    *
    *
@@ -4040,6 +5991,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
   public boolean hasAppendOnly() {
     return writeModeCase_ == 302;
   }
+
   /**
    *
    *
@@ -4059,6 +6011,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     }
     return com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4092,6 +6045,9 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(1, getBlmtConfig());
+    }
     if (datasetConfigCase_ == 201) {
       output.writeMessage(
           201,
@@ -4124,6 +6080,9 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getBlmtConfig());
+    }
     if (datasetConfigCase_ == 201) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -4172,6 +6131,10 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     if (hasDataFreshness()) {
       if (!getDataFreshness().equals(other.getDataFreshness())) return false;
     }
+    if (hasBlmtConfig() != other.hasBlmtConfig()) return false;
+    if (hasBlmtConfig()) {
+      if (!getBlmtConfig().equals(other.getBlmtConfig())) return false;
+    }
     if (!getDatasetConfigCase().equals(other.getDatasetConfigCase())) return false;
     switch (datasetConfigCase_) {
       case 201:
@@ -4208,6 +6171,10 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     if (hasDataFreshness()) {
       hash = (37 * hash) + DATA_FRESHNESS_FIELD_NUMBER;
       hash = (53 * hash) + getDataFreshness().hashCode();
+    }
+    if (hasBlmtConfig()) {
+      hash = (37 * hash) + BLMT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getBlmtConfig().hashCode();
     }
     switch (datasetConfigCase_) {
       case 201:
@@ -4334,6 +6301,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4375,6 +6343,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getDataFreshnessFieldBuilder();
+        getBlmtConfigFieldBuilder();
       }
     }
 
@@ -4392,6 +6361,11 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       if (dataFreshnessBuilder_ != null) {
         dataFreshnessBuilder_.dispose();
         dataFreshnessBuilder_ = null;
+      }
+      blmtConfig_ = null;
+      if (blmtConfigBuilder_ != null) {
+        blmtConfigBuilder_.dispose();
+        blmtConfigBuilder_ = null;
       }
       if (mergeBuilder_ != null) {
         mergeBuilder_.clear();
@@ -4445,6 +6419,10 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         result.dataFreshness_ =
             dataFreshnessBuilder_ == null ? dataFreshness_ : dataFreshnessBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.blmtConfig_ = blmtConfigBuilder_ == null ? blmtConfig_ : blmtConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4518,6 +6496,9 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       if (other.hasDataFreshness()) {
         mergeDataFreshness(other.getDataFreshness());
       }
+      if (other.hasBlmtConfig()) {
+        mergeBlmtConfig(other.getBlmtConfig());
+      }
       switch (other.getDatasetConfigCase()) {
         case SINGLE_TARGET_DATASET:
           {
@@ -4576,6 +6557,12 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                input.readMessage(getBlmtConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 10
             case 1610:
               {
                 input.readMessage(
@@ -4660,6 +6647,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             com.google.cloud.datastream.v1.BigQueryDestinationConfig.SingleTargetDataset.Builder,
             com.google.cloud.datastream.v1.BigQueryDestinationConfig.SingleTargetDatasetOrBuilder>
         singleTargetDatasetBuilder_;
+
     /**
      *
      *
@@ -4677,6 +6665,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     public boolean hasSingleTargetDataset() {
       return datasetConfigCase_ == 201;
     }
+
     /**
      *
      *
@@ -4708,6 +6697,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4733,6 +6723,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       datasetConfigCase_ = 201;
       return this;
     }
+
     /**
      *
      *
@@ -4756,6 +6747,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       datasetConfigCase_ = 201;
       return this;
     }
+
     /**
      *
      *
@@ -4795,6 +6787,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       datasetConfigCase_ = 201;
       return this;
     }
+
     /**
      *
      *
@@ -4822,6 +6815,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -4837,6 +6831,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         getSingleTargetDatasetBuilder() {
       return getSingleTargetDatasetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4862,6 +6857,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4909,6 +6905,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             com.google.cloud.datastream.v1.BigQueryDestinationConfig
                 .SourceHierarchyDatasetsOrBuilder>
         sourceHierarchyDatasetsBuilder_;
+
     /**
      *
      *
@@ -4926,6 +6923,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     public boolean hasSourceHierarchyDatasets() {
       return datasetConfigCase_ == 202;
     }
+
     /**
      *
      *
@@ -4957,6 +6955,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4982,6 +6981,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       datasetConfigCase_ = 202;
       return this;
     }
+
     /**
      *
      *
@@ -5005,6 +7005,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       datasetConfigCase_ = 202;
       return this;
     }
+
     /**
      *
      *
@@ -5045,6 +7046,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       datasetConfigCase_ = 202;
       return this;
     }
+
     /**
      *
      *
@@ -5072,6 +7074,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -5087,6 +7090,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         getSourceHierarchyDatasetsBuilder() {
       return getSourceHierarchyDatasetsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5112,6 +7116,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5160,6 +7165,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         dataFreshnessBuilder_;
+
     /**
      *
      *
@@ -5177,6 +7183,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     public boolean hasDataFreshness() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -5200,6 +7207,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         return dataFreshnessBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5225,6 +7233,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5247,6 +7256,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5277,6 +7287,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -5299,6 +7310,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5316,6 +7328,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       onChanged();
       return getDataFreshnessFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5337,6 +7350,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             : dataFreshness_;
       }
     }
+
     /**
      *
      *
@@ -5366,11 +7380,234 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       return dataFreshnessBuilder_;
     }
 
+    private com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmtConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig,
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.Builder,
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfigOrBuilder>
+        blmtConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Big Lake Managed Tables (BLMT) configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the blmtConfig field is set.
+     */
+    public boolean hasBlmtConfig() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Big Lake Managed Tables (BLMT) configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The blmtConfig.
+     */
+    public com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig getBlmtConfig() {
+      if (blmtConfigBuilder_ == null) {
+        return blmtConfig_ == null
+            ? com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig
+                .getDefaultInstance()
+            : blmtConfig_;
+      } else {
+        return blmtConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Big Lake Managed Tables (BLMT) configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBlmtConfig(
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig value) {
+      if (blmtConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        blmtConfig_ = value;
+      } else {
+        blmtConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Big Lake Managed Tables (BLMT) configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBlmtConfig(
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.Builder
+            builderForValue) {
+      if (blmtConfigBuilder_ == null) {
+        blmtConfig_ = builderForValue.build();
+      } else {
+        blmtConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Big Lake Managed Tables (BLMT) configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBlmtConfig(
+        com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig value) {
+      if (blmtConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && blmtConfig_ != null
+            && blmtConfig_
+                != com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig
+                    .getDefaultInstance()) {
+          getBlmtConfigBuilder().mergeFrom(value);
+        } else {
+          blmtConfig_ = value;
+        }
+      } else {
+        blmtConfigBuilder_.mergeFrom(value);
+      }
+      if (blmtConfig_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Big Lake Managed Tables (BLMT) configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBlmtConfig() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      blmtConfig_ = null;
+      if (blmtConfigBuilder_ != null) {
+        blmtConfigBuilder_.dispose();
+        blmtConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Big Lake Managed Tables (BLMT) configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.Builder
+        getBlmtConfigBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getBlmtConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Big Lake Managed Tables (BLMT) configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfigOrBuilder
+        getBlmtConfigOrBuilder() {
+      if (blmtConfigBuilder_ != null) {
+        return blmtConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return blmtConfig_ == null
+            ? com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig
+                .getDefaultInstance()
+            : blmtConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Big Lake Managed Tables (BLMT) configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig blmt_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig,
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.Builder,
+            com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfigOrBuilder>
+        getBlmtConfigFieldBuilder() {
+      if (blmtConfigBuilder_ == null) {
+        blmtConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig,
+                com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfig.Builder,
+                com.google.cloud.datastream.v1.BigQueryDestinationConfig.BlmtConfigOrBuilder>(
+                getBlmtConfig(), getParentForChildren(), isClean());
+        blmtConfig_ = null;
+      }
+      return blmtConfigBuilder_;
+    }
+
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge,
             com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.Builder,
             com.google.cloud.datastream.v1.BigQueryDestinationConfig.MergeOrBuilder>
         mergeBuilder_;
+
     /**
      *
      *
@@ -5386,6 +7623,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     public boolean hasMerge() {
       return writeModeCase_ == 301;
     }
+
     /**
      *
      *
@@ -5411,6 +7649,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         return com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5433,6 +7672,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       writeModeCase_ = 301;
       return this;
     }
+
     /**
      *
      *
@@ -5453,6 +7693,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       writeModeCase_ = 301;
       return this;
     }
+
     /**
      *
      *
@@ -5488,6 +7729,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       writeModeCase_ = 301;
       return this;
     }
+
     /**
      *
      *
@@ -5513,6 +7755,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -5526,6 +7769,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         getMergeBuilder() {
       return getMergeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5547,6 +7791,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         return com.google.cloud.datastream.v1.BigQueryDestinationConfig.Merge.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5586,6 +7831,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnly.Builder,
             com.google.cloud.datastream.v1.BigQueryDestinationConfig.AppendOnlyOrBuilder>
         appendOnlyBuilder_;
+
     /**
      *
      *
@@ -5602,6 +7848,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
     public boolean hasAppendOnly() {
       return writeModeCase_ == 302;
     }
+
     /**
      *
      *
@@ -5630,6 +7877,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5654,6 +7902,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       writeModeCase_ = 302;
       return this;
     }
+
     /**
      *
      *
@@ -5676,6 +7925,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       writeModeCase_ = 302;
       return this;
     }
+
     /**
      *
      *
@@ -5713,6 +7963,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       writeModeCase_ = 302;
       return this;
     }
+
     /**
      *
      *
@@ -5739,6 +7990,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -5753,6 +8005,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
         getAppendOnlyBuilder() {
       return getAppendOnlyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5776,6 +8029,7 @@ public final class BigQueryDestinationConfig extends com.google.protobuf.Generat
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

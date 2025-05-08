@@ -36,6 +36,7 @@ public interface ListJobsRequestOrBuilder
    * @return The enum numeric value on the wire for filter.
    */
   int getFilterValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ListJobsRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -85,11 +87,12 @@ public interface ListJobsRequestOrBuilder
    * <code>.google.dataflow.v1beta3.JobView view = 2 [deprecated = true];</code>
    *
    * @deprecated google.dataflow.v1beta3.ListJobsRequest.view is deprecated. See
-   *     google/dataflow/v1beta3/jobs.proto;l=849
+   *     google/dataflow/v1beta3/jobs.proto;l=976
    * @return The enum numeric value on the wire for view.
    */
   @java.lang.Deprecated
   int getViewValue();
+
   /**
    *
    *
@@ -101,7 +104,7 @@ public interface ListJobsRequestOrBuilder
    * <code>.google.dataflow.v1beta3.JobView view = 2 [deprecated = true];</code>
    *
    * @deprecated google.dataflow.v1beta3.ListJobsRequest.view is deprecated. See
-   *     google/dataflow/v1beta3/jobs.proto;l=849
+   *     google/dataflow/v1beta3/jobs.proto;l=976
    * @return The view.
    */
   @java.lang.Deprecated
@@ -135,6 +138,7 @@ public interface ListJobsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -163,6 +167,7 @@ public interface ListJobsRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -177,4 +182,43 @@ public interface ListJobsRequestOrBuilder
    * @return The bytes for location.
    */
   com.google.protobuf.ByteString getLocationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The job name.
+   * </pre>
+   *
+   * <code>optional string name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the name field is set.
+   */
+  boolean hasName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The job name.
+   * </pre>
+   *
+   * <code>optional string name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The name.
+   */
+  java.lang.String getName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The job name.
+   * </pre>
+   *
+   * <code>optional string name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString getNameBytes();
 }

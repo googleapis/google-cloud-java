@@ -41,6 +41,7 @@ public interface UpdateHubRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateHubRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateHubRequestOrBuilder
    * @return Whether the hub field is set.
    */
   boolean hasHub();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateHubRequestOrBuilder
    * @return The hub.
    */
   com.google.cloud.networkconnectivity.v1alpha1.Hub getHub();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface UpdateHubRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

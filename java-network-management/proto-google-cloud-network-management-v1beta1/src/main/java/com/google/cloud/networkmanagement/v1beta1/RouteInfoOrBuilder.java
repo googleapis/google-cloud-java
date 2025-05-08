@@ -36,6 +36,7 @@ public interface RouteInfoOrBuilder
    * @return The enum numeric value on the wire for routeType.
    */
   int getRouteTypeValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface RouteInfoOrBuilder
    * @return The enum numeric value on the wire for nextHopType.
    */
   int getNextHopTypeValue();
+
   /**
    *
    *
@@ -78,25 +80,38 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * Indicates where route is applicable.
+   * Indicates where route is applicable. Deprecated, routes with NCC_HUB scope
+   * are not included in the trace in new tests.
    * </pre>
    *
-   * <code>.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14;</code>
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.route_scope is deprecated. See
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=568
    * @return The enum numeric value on the wire for routeScope.
    */
+  @java.lang.Deprecated
   int getRouteScopeValue();
+
   /**
    *
    *
    * <pre>
-   * Indicates where route is applicable.
+   * Indicates where route is applicable. Deprecated, routes with NCC_HUB scope
+   * are not included in the trace in new tests.
    * </pre>
    *
-   * <code>.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14;</code>
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.route_scope is deprecated. See
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=568
    * @return The routeScope.
    */
+  @java.lang.Deprecated
   com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope getRouteScope();
 
   /**
@@ -111,6 +126,7 @@ public interface RouteInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -128,7 +144,8 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a route (if applicable).
+   * URI of a route. SUBNET, STATIC, PEERING_SUBNET (only for peering network)
+   * and POLICY_BASED routes only.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -136,11 +153,13 @@ public interface RouteInfoOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
    * <pre>
-   * URI of a route (if applicable).
+   * URI of a route. SUBNET, STATIC, PEERING_SUBNET (only for peering network)
+   * and POLICY_BASED routes only.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -153,7 +172,9 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * Region of the route (if applicable).
+   * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
+   * routes only. If set for POLICY_BASED route, this is a region of VLAN
+   * attachments for Cloud Interconnect the route applies to.
    * </pre>
    *
    * <code>string region = 19;</code>
@@ -161,11 +182,14 @@ public interface RouteInfoOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
    * <pre>
-   * Region of the route (if applicable).
+   * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
+   * routes only. If set for POLICY_BASED route, this is a region of VLAN
+   * attachments for Cloud Interconnect the route applies to.
    * </pre>
    *
    * <code>string region = 19;</code>
@@ -186,6 +210,7 @@ public interface RouteInfoOrBuilder
    * @return The destIpRange.
    */
   java.lang.String getDestIpRange();
+
   /**
    *
    *
@@ -203,32 +228,43 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * Next hop of the route.
+   * String type of the next hop of the route (for example, "VPN tunnel").
+   * Deprecated in favor of the next_hop_type and next_hop_uri fields, not used
+   * in new tests.
    * </pre>
    *
-   * <code>string next_hop = 4;</code>
+   * <code>string next_hop = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.next_hop is deprecated. See
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=588
    * @return The nextHop.
    */
+  @java.lang.Deprecated
   java.lang.String getNextHop();
+
   /**
    *
    *
    * <pre>
-   * Next hop of the route.
+   * String type of the next hop of the route (for example, "VPN tunnel").
+   * Deprecated in favor of the next_hop_type and next_hop_uri fields, not used
+   * in new tests.
    * </pre>
    *
-   * <code>string next_hop = 4;</code>
+   * <code>string next_hop = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.next_hop is deprecated. See
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=588
    * @return The bytes for nextHop.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getNextHopBytes();
 
   /**
    *
    *
    * <pre>
-   * URI of a Compute Engine network. NETWORK routes only.
+   * URI of a VPC network where route is located.
    * </pre>
    *
    * <code>string network_uri = 5;</code>
@@ -236,11 +272,12 @@ public interface RouteInfoOrBuilder
    * @return The networkUri.
    */
   java.lang.String getNetworkUri();
+
   /**
    *
    *
    * <pre>
-   * URI of a Compute Engine network. NETWORK routes only.
+   * URI of a VPC network where route is located.
    * </pre>
    *
    * <code>string network_uri = 5;</code>
@@ -274,6 +311,7 @@ public interface RouteInfoOrBuilder
    * @return A list containing the instanceTags.
    */
   java.util.List<java.lang.String> getInstanceTagsList();
+
   /**
    *
    *
@@ -286,6 +324,7 @@ public interface RouteInfoOrBuilder
    * @return The count of instanceTags.
    */
   int getInstanceTagsCount();
+
   /**
    *
    *
@@ -299,6 +338,7 @@ public interface RouteInfoOrBuilder
    * @return The instanceTags at the given index.
    */
   java.lang.String getInstanceTags(int index);
+
   /**
    *
    *
@@ -317,7 +357,7 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * Source IP address range of the route. Policy based routes only.
+   * Source IP address range of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>string src_ip_range = 10;</code>
@@ -325,11 +365,12 @@ public interface RouteInfoOrBuilder
    * @return The srcIpRange.
    */
   java.lang.String getSrcIpRange();
+
   /**
    *
    *
    * <pre>
-   * Source IP address range of the route. Policy based routes only.
+   * Source IP address range of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>string src_ip_range = 10;</code>
@@ -342,7 +383,7 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * Destination port ranges of the route. Policy based routes only.
+   * Destination port ranges of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string dest_port_ranges = 11;</code>
@@ -350,11 +391,12 @@ public interface RouteInfoOrBuilder
    * @return A list containing the destPortRanges.
    */
   java.util.List<java.lang.String> getDestPortRangesList();
+
   /**
    *
    *
    * <pre>
-   * Destination port ranges of the route. Policy based routes only.
+   * Destination port ranges of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string dest_port_ranges = 11;</code>
@@ -362,11 +404,12 @@ public interface RouteInfoOrBuilder
    * @return The count of destPortRanges.
    */
   int getDestPortRangesCount();
+
   /**
    *
    *
    * <pre>
-   * Destination port ranges of the route. Policy based routes only.
+   * Destination port ranges of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string dest_port_ranges = 11;</code>
@@ -375,11 +418,12 @@ public interface RouteInfoOrBuilder
    * @return The destPortRanges at the given index.
    */
   java.lang.String getDestPortRanges(int index);
+
   /**
    *
    *
    * <pre>
-   * Destination port ranges of the route. Policy based routes only.
+   * Destination port ranges of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string dest_port_ranges = 11;</code>
@@ -393,7 +437,7 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * Source port ranges of the route. Policy based routes only.
+   * Source port ranges of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string src_port_ranges = 12;</code>
@@ -401,11 +445,12 @@ public interface RouteInfoOrBuilder
    * @return A list containing the srcPortRanges.
    */
   java.util.List<java.lang.String> getSrcPortRangesList();
+
   /**
    *
    *
    * <pre>
-   * Source port ranges of the route. Policy based routes only.
+   * Source port ranges of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string src_port_ranges = 12;</code>
@@ -413,11 +458,12 @@ public interface RouteInfoOrBuilder
    * @return The count of srcPortRanges.
    */
   int getSrcPortRangesCount();
+
   /**
    *
    *
    * <pre>
-   * Source port ranges of the route. Policy based routes only.
+   * Source port ranges of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string src_port_ranges = 12;</code>
@@ -426,11 +472,12 @@ public interface RouteInfoOrBuilder
    * @return The srcPortRanges at the given index.
    */
   java.lang.String getSrcPortRanges(int index);
+
   /**
    *
    *
    * <pre>
-   * Source port ranges of the route. Policy based routes only.
+   * Source port ranges of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string src_port_ranges = 12;</code>
@@ -444,7 +491,7 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * Protocols of the route. Policy based routes only.
+   * Protocols of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string protocols = 13;</code>
@@ -452,11 +499,12 @@ public interface RouteInfoOrBuilder
    * @return A list containing the protocols.
    */
   java.util.List<java.lang.String> getProtocolsList();
+
   /**
    *
    *
    * <pre>
-   * Protocols of the route. Policy based routes only.
+   * Protocols of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string protocols = 13;</code>
@@ -464,11 +512,12 @@ public interface RouteInfoOrBuilder
    * @return The count of protocols.
    */
   int getProtocolsCount();
+
   /**
    *
    *
    * <pre>
-   * Protocols of the route. Policy based routes only.
+   * Protocols of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string protocols = 13;</code>
@@ -477,11 +526,12 @@ public interface RouteInfoOrBuilder
    * @return The protocols at the given index.
    */
   java.lang.String getProtocols(int index);
+
   /**
    *
    *
    * <pre>
-   * Protocols of the route. Policy based routes only.
+   * Protocols of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string protocols = 13;</code>
@@ -495,7 +545,8 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a NCC Hub. NCC_HUB routes only.
+   * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+   * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
    * </pre>
    *
    * <code>optional string ncc_hub_uri = 15;</code>
@@ -503,11 +554,13 @@ public interface RouteInfoOrBuilder
    * @return Whether the nccHubUri field is set.
    */
   boolean hasNccHubUri();
+
   /**
    *
    *
    * <pre>
-   * URI of a NCC Hub. NCC_HUB routes only.
+   * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+   * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
    * </pre>
    *
    * <code>optional string ncc_hub_uri = 15;</code>
@@ -515,11 +568,13 @@ public interface RouteInfoOrBuilder
    * @return The nccHubUri.
    */
   java.lang.String getNccHubUri();
+
   /**
    *
    *
    * <pre>
-   * URI of a NCC Hub. NCC_HUB routes only.
+   * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+   * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
    * </pre>
    *
    * <code>optional string ncc_hub_uri = 15;</code>
@@ -532,7 +587,8 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a NCC Spoke. NCC_HUB routes only.
+   * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
+   * that are advertised by NCC Hub only.
    * </pre>
    *
    * <code>optional string ncc_spoke_uri = 16;</code>
@@ -540,11 +596,13 @@ public interface RouteInfoOrBuilder
    * @return Whether the nccSpokeUri field is set.
    */
   boolean hasNccSpokeUri();
+
   /**
    *
    *
    * <pre>
-   * URI of a NCC Spoke. NCC_HUB routes only.
+   * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
+   * that are advertised by NCC Hub only.
    * </pre>
    *
    * <code>optional string ncc_spoke_uri = 16;</code>
@@ -552,11 +610,13 @@ public interface RouteInfoOrBuilder
    * @return The nccSpokeUri.
    */
   java.lang.String getNccSpokeUri();
+
   /**
    *
    *
    * <pre>
-   * URI of a NCC Spoke. NCC_HUB routes only.
+   * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
+   * that are advertised by NCC Hub only.
    * </pre>
    *
    * <code>optional string ncc_spoke_uri = 16;</code>
@@ -569,7 +629,7 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * For advertised dynamic routes, the URI of the Cloud Router that advertised
+   * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
    * the corresponding IP prefix.
    * </pre>
    *
@@ -578,11 +638,12 @@ public interface RouteInfoOrBuilder
    * @return Whether the advertisedRouteSourceRouterUri field is set.
    */
   boolean hasAdvertisedRouteSourceRouterUri();
+
   /**
    *
    *
    * <pre>
-   * For advertised dynamic routes, the URI of the Cloud Router that advertised
+   * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
    * the corresponding IP prefix.
    * </pre>
    *
@@ -591,11 +652,12 @@ public interface RouteInfoOrBuilder
    * @return The advertisedRouteSourceRouterUri.
    */
   java.lang.String getAdvertisedRouteSourceRouterUri();
+
   /**
    *
    *
    * <pre>
-   * For advertised dynamic routes, the URI of the Cloud Router that advertised
+   * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
    * the corresponding IP prefix.
    * </pre>
    *
@@ -609,45 +671,195 @@ public interface RouteInfoOrBuilder
    *
    *
    * <pre>
-   * For advertised routes, the URI of their next hop, i.e. the URI of the
+   * For ADVERTISED routes, the URI of their next hop, i.e. the URI of the
    * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
    * the advertised prefix is advertised through, or URI of the source peered
-   * network.
+   * network. Deprecated in favor of the next_hop_uri field, not used in new
+   * tests.
    * </pre>
    *
-   * <code>optional string advertised_route_next_hop_uri = 18;</code>
+   * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
+   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=628
    * @return Whether the advertisedRouteNextHopUri field is set.
    */
+  @java.lang.Deprecated
   boolean hasAdvertisedRouteNextHopUri();
+
   /**
    *
    *
    * <pre>
-   * For advertised routes, the URI of their next hop, i.e. the URI of the
+   * For ADVERTISED routes, the URI of their next hop, i.e. the URI of the
    * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
    * the advertised prefix is advertised through, or URI of the source peered
-   * network.
+   * network. Deprecated in favor of the next_hop_uri field, not used in new
+   * tests.
    * </pre>
    *
-   * <code>optional string advertised_route_next_hop_uri = 18;</code>
+   * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
+   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=628
    * @return The advertisedRouteNextHopUri.
    */
+  @java.lang.Deprecated
   java.lang.String getAdvertisedRouteNextHopUri();
+
   /**
    *
    *
    * <pre>
-   * For advertised routes, the URI of their next hop, i.e. the URI of the
+   * For ADVERTISED routes, the URI of their next hop, i.e. the URI of the
    * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
    * the advertised prefix is advertised through, or URI of the source peered
-   * network.
+   * network. Deprecated in favor of the next_hop_uri field, not used in new
+   * tests.
    * </pre>
    *
-   * <code>optional string advertised_route_next_hop_uri = 18;</code>
+   * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
+   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=628
    * @return The bytes for advertisedRouteNextHopUri.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getAdvertisedRouteNextHopUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * URI of the next hop resource.
+   * </pre>
+   *
+   * <code>string next_hop_uri = 20;</code>
+   *
+   * @return The nextHopUri.
+   */
+  java.lang.String getNextHopUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * URI of the next hop resource.
+   * </pre>
+   *
+   * <code>string next_hop_uri = 20;</code>
+   *
+   * @return The bytes for nextHopUri.
+   */
+  com.google.protobuf.ByteString getNextHopUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * URI of a VPC network where the next hop resource is located.
+   * </pre>
+   *
+   * <code>string next_hop_network_uri = 21;</code>
+   *
+   * @return The nextHopNetworkUri.
+   */
+  java.lang.String getNextHopNetworkUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * URI of a VPC network where the next hop resource is located.
+   * </pre>
+   *
+   * <code>string next_hop_network_uri = 21;</code>
+   *
+   * @return The bytes for nextHopNetworkUri.
+   */
+  com.google.protobuf.ByteString getNextHopNetworkUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * For PEERING_SUBNET and PEERING_STATIC routes, the URI of the originating
+   * SUBNET/STATIC route.
+   * </pre>
+   *
+   * <code>string originating_route_uri = 22;</code>
+   *
+   * @return The originatingRouteUri.
+   */
+  java.lang.String getOriginatingRouteUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * For PEERING_SUBNET and PEERING_STATIC routes, the URI of the originating
+   * SUBNET/STATIC route.
+   * </pre>
+   *
+   * <code>string originating_route_uri = 22;</code>
+   *
+   * @return The bytes for originatingRouteUri.
+   */
+  com.google.protobuf.ByteString getOriginatingRouteUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * For PEERING_SUBNET, PEERING_STATIC and PEERING_DYNAMIC routes, the name of
+   * the originating SUBNET/STATIC/DYNAMIC route.
+   * </pre>
+   *
+   * <code>string originating_route_display_name = 23;</code>
+   *
+   * @return The originatingRouteDisplayName.
+   */
+  java.lang.String getOriginatingRouteDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * For PEERING_SUBNET, PEERING_STATIC and PEERING_DYNAMIC routes, the name of
+   * the originating SUBNET/STATIC/DYNAMIC route.
+   * </pre>
+   *
+   * <code>string originating_route_display_name = 23;</code>
+   *
+   * @return The bytes for originatingRouteDisplayName.
+   */
+  com.google.protobuf.ByteString getOriginatingRouteDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * For PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC
+   * Hub, the URI of the corresponding route in NCC Hub's routing table.
+   * </pre>
+   *
+   * <code>string ncc_hub_route_uri = 24;</code>
+   *
+   * @return The nccHubRouteUri.
+   */
+  java.lang.String getNccHubRouteUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * For PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC
+   * Hub, the URI of the corresponding route in NCC Hub's routing table.
+   * </pre>
+   *
+   * <code>string ncc_hub_route_uri = 24;</code>
+   *
+   * @return The bytes for nccHubRouteUri.
+   */
+  com.google.protobuf.ByteString getNccHubRouteUriBytes();
 }

@@ -404,6 +404,19 @@ public final class CloudSchedulerGrpc {
     return CloudSchedulerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CloudSchedulerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CloudSchedulerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudSchedulerBlockingV2Stub>() {
+          @java.lang.Override
+          public CloudSchedulerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudSchedulerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CloudSchedulerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -754,6 +767,158 @@ public final class CloudSchedulerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CloudScheduler.
+   *
+   * <pre>
+   * The Cloud Scheduler API allows external entities to reliably
+   * schedule asynchronous jobs.
+   * </pre>
+   */
+  public static final class CloudSchedulerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CloudSchedulerBlockingV2Stub> {
+    private CloudSchedulerBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CloudSchedulerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CloudSchedulerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists jobs.
+     * </pre>
+     */
+    public com.google.cloud.scheduler.v1beta1.ListJobsResponse listJobs(
+        com.google.cloud.scheduler.v1beta1.ListJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a job.
+     * </pre>
+     */
+    public com.google.cloud.scheduler.v1beta1.Job getJob(
+        com.google.cloud.scheduler.v1beta1.GetJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a job.
+     * </pre>
+     */
+    public com.google.cloud.scheduler.v1beta1.Job createJob(
+        com.google.cloud.scheduler.v1beta1.CreateJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a job.
+     * If successful, the updated [Job][google.cloud.scheduler.v1beta1.Job] is
+     * returned. If the job does not exist, `NOT_FOUND` is returned.
+     * If UpdateJob does not successfully return, it is possible for the
+     * job to be in an
+     * [Job.State.UPDATE_FAILED][google.cloud.scheduler.v1beta1.Job.State.UPDATE_FAILED]
+     * state. A job in this state may not be executed. If this happens, retry the
+     * UpdateJob request until a successful response is received.
+     * </pre>
+     */
+    public com.google.cloud.scheduler.v1beta1.Job updateJob(
+        com.google.cloud.scheduler.v1beta1.UpdateJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a job.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteJob(
+        com.google.cloud.scheduler.v1beta1.DeleteJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses a job.
+     * If a job is paused then the system will stop executing the job
+     * until it is re-enabled via
+     * [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The
+     * state of the job is stored in
+     * [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it will be set
+     * to [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A
+     * job must be in
+     * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED] to be
+     * paused.
+     * </pre>
+     */
+    public com.google.cloud.scheduler.v1beta1.Job pauseJob(
+        com.google.cloud.scheduler.v1beta1.PauseJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPauseJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resume a job.
+     * This method reenables a job after it has been
+     * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The
+     * state of a job is stored in
+     * [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this
+     * method it will be set to
+     * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A
+     * job must be in
+     * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be
+     * resumed.
+     * </pre>
+     */
+    public com.google.cloud.scheduler.v1beta1.Job resumeJob(
+        com.google.cloud.scheduler.v1beta1.ResumeJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResumeJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Forces a job to run now.
+     * When this method is called, Cloud Scheduler will dispatch the job, even
+     * if the job is already running.
+     * </pre>
+     */
+    public com.google.cloud.scheduler.v1beta1.Job runJob(
+        com.google.cloud.scheduler.v1beta1.RunJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunJobMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CloudScheduler.
    *
    * <pre>
    * The Cloud Scheduler API allows external entities to reliably

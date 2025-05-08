@@ -34,6 +34,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.FuelOptions)
     FuelOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FuelOptions.newBuilder() to construct.
   private FuelOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
+
     /**
      *
      *
@@ -106,6 +108,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the price field is set.
      */
     boolean hasPrice();
+
     /**
      *
      *
@@ -118,6 +121,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
      * @return The price.
      */
     com.google.type.Money getPrice();
+
     /**
      *
      *
@@ -141,6 +145,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     boolean hasUpdateTime();
+
     /**
      *
      *
@@ -153,6 +158,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
      * @return The updateTime.
      */
     com.google.protobuf.Timestamp getUpdateTime();
+
     /**
      *
      *
@@ -164,6 +170,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
   }
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.maps.places.v1.FuelOptions.FuelPrice)
       FuelPriceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FuelPrice.newBuilder() to construct.
     private FuelPrice(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -441,6 +449,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>FUEL_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int FUEL_TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -451,6 +460,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>DIESEL = 1;</code>
        */
       public static final int DIESEL_VALUE = 1;
+
       /**
        *
        *
@@ -461,6 +471,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>DIESEL_PLUS = 19;</code>
        */
       public static final int DIESEL_PLUS_VALUE = 19;
+
       /**
        *
        *
@@ -471,6 +482,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>REGULAR_UNLEADED = 2;</code>
        */
       public static final int REGULAR_UNLEADED_VALUE = 2;
+
       /**
        *
        *
@@ -481,6 +493,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>MIDGRADE = 3;</code>
        */
       public static final int MIDGRADE_VALUE = 3;
+
       /**
        *
        *
@@ -491,6 +504,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>PREMIUM = 4;</code>
        */
       public static final int PREMIUM_VALUE = 4;
+
       /**
        *
        *
@@ -501,6 +515,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>SP91 = 5;</code>
        */
       public static final int SP91_VALUE = 5;
+
       /**
        *
        *
@@ -511,6 +526,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>SP91_E10 = 6;</code>
        */
       public static final int SP91_E10_VALUE = 6;
+
       /**
        *
        *
@@ -521,6 +537,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>SP92 = 7;</code>
        */
       public static final int SP92_VALUE = 7;
+
       /**
        *
        *
@@ -531,6 +548,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>SP95 = 8;</code>
        */
       public static final int SP95_VALUE = 8;
+
       /**
        *
        *
@@ -541,6 +559,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>SP95_E10 = 9;</code>
        */
       public static final int SP95_E10_VALUE = 9;
+
       /**
        *
        *
@@ -551,6 +570,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>SP98 = 10;</code>
        */
       public static final int SP98_VALUE = 10;
+
       /**
        *
        *
@@ -561,6 +581,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>SP99 = 11;</code>
        */
       public static final int SP99_VALUE = 11;
+
       /**
        *
        *
@@ -571,6 +592,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>SP100 = 12;</code>
        */
       public static final int SP100_VALUE = 12;
+
       /**
        *
        *
@@ -581,6 +603,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>LPG = 13;</code>
        */
       public static final int LPG_VALUE = 13;
+
       /**
        *
        *
@@ -591,6 +614,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>E80 = 14;</code>
        */
       public static final int E80_VALUE = 14;
+
       /**
        *
        *
@@ -601,6 +625,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>E85 = 15;</code>
        */
       public static final int E85_VALUE = 15;
+
       /**
        *
        *
@@ -611,6 +636,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>E100 = 20;</code>
        */
       public static final int E100_VALUE = 20;
+
       /**
        *
        *
@@ -621,6 +647,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>METHANE = 16;</code>
        */
       public static final int METHANE_VALUE = 16;
+
       /**
        *
        *
@@ -631,6 +658,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
        * <code>BIO_DIESEL = 17;</code>
        */
       public static final int BIO_DIESEL_VALUE = 17;
+
       /**
        *
        *
@@ -766,6 +794,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_ = 0;
+
     /**
      *
      *
@@ -781,6 +810,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -803,6 +833,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
 
     public static final int PRICE_FIELD_NUMBER = 2;
     private com.google.type.Money price_;
+
     /**
      *
      *
@@ -818,6 +849,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPrice() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -833,6 +865,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.Money getPrice() {
       return price_ == null ? com.google.type.Money.getDefaultInstance() : price_;
     }
+
     /**
      *
      *
@@ -849,6 +882,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
 
     public static final int UPDATE_TIME_FIELD_NUMBER = 3;
     private com.google.protobuf.Timestamp updateTime_;
+
     /**
      *
      *
@@ -864,6 +898,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -879,6 +914,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getUpdateTime() {
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
+
     /**
      *
      *
@@ -1085,6 +1121,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1319,6 +1356,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int type_ = 0;
+
       /**
        *
        *
@@ -1334,6 +1372,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       public int getTypeValue() {
         return type_;
       }
+
       /**
        *
        *
@@ -1352,6 +1391,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1371,6 +1411,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
             ? com.google.maps.places.v1.FuelOptions.FuelPrice.FuelType.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1392,6 +1433,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1414,6 +1456,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
           priceBuilder_;
+
       /**
        *
        *
@@ -1428,6 +1471,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       public boolean hasPrice() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1446,6 +1490,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
           return priceBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1468,6 +1513,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1487,6 +1533,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1514,6 +1561,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1533,6 +1581,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1547,6 +1596,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getPriceFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1563,6 +1613,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
           return price_ == null ? com.google.type.Money.getDefaultInstance() : price_;
         }
       }
+
       /**
        *
        *
@@ -1592,6 +1643,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           updateTimeBuilder_;
+
       /**
        *
        *
@@ -1606,6 +1658,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUpdateTime() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1626,6 +1679,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
           return updateTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1648,6 +1702,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1667,6 +1722,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1694,6 +1750,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1713,6 +1770,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1727,6 +1785,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getUpdateTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1745,6 +1804,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
               : updateTime_;
         }
       }
+
       /**
        *
        *
@@ -1839,6 +1899,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.places.v1.FuelOptions.FuelPrice> fuelPrices_;
+
   /**
    *
    *
@@ -1853,6 +1914,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.maps.places.v1.FuelOptions.FuelPrice> getFuelPricesList() {
     return fuelPrices_;
   }
+
   /**
    *
    *
@@ -1868,6 +1930,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       getFuelPricesOrBuilderList() {
     return fuelPrices_;
   }
+
   /**
    *
    *
@@ -1882,6 +1945,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
   public int getFuelPricesCount() {
     return fuelPrices_.size();
   }
+
   /**
    *
    *
@@ -1896,6 +1960,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.places.v1.FuelOptions.FuelPrice getFuelPrices(int index) {
     return fuelPrices_.get(index);
   }
+
   /**
    *
    *
@@ -2071,6 +2136,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2334,6 +2400,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
         return fuelPricesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2351,6 +2418,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
         return fuelPricesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2368,6 +2436,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
         return fuelPricesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2391,6 +2460,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2412,6 +2482,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2435,6 +2506,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2458,6 +2530,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2479,6 +2552,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2500,6 +2574,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2521,6 +2596,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2541,6 +2617,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2561,6 +2638,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2574,6 +2652,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.places.v1.FuelOptions.FuelPrice.Builder getFuelPricesBuilder(int index) {
       return getFuelPricesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2592,6 +2671,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
         return fuelPricesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2610,6 +2690,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(fuelPrices_);
       }
     }
+
     /**
      *
      *
@@ -2624,6 +2705,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       return getFuelPricesFieldBuilder()
           .addBuilder(com.google.maps.places.v1.FuelOptions.FuelPrice.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2638,6 +2720,7 @@ public final class FuelOptions extends com.google.protobuf.GeneratedMessageV3
       return getFuelPricesFieldBuilder()
           .addBuilder(index, com.google.maps.places.v1.FuelOptions.FuelPrice.getDefaultInstance());
     }
+
     /**
      *
      *

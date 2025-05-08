@@ -33,6 +33,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.chat.v1.CreateMessageRequest)
     CreateMessageRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateMessageRequest.newBuilder() to construct.
   private CreateMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -132,6 +133,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * <code>MESSAGE_REPLY_OPTION_UNSPECIFIED = 0;</code>
      */
     public static final int MESSAGE_REPLY_OPTION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -145,6 +147,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * <code>REPLY_MESSAGE_FALLBACK_TO_NEW_THREAD = 1;</code>
      */
     public static final int REPLY_MESSAGE_FALLBACK_TO_NEW_THREAD_VALUE = 1;
+
     /**
      *
      *
@@ -251,6 +254,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -278,6 +282,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -308,6 +313,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
 
   public static final int MESSAGE_FIELD_NUMBER = 4;
   private com.google.chat.v1.Message message_;
+
   /**
    *
    *
@@ -323,6 +329,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
   public boolean hasMessage() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -338,6 +345,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
   public com.google.chat.v1.Message getMessage() {
     return message_ == null ? com.google.chat.v1.Message.getDefaultInstance() : message_;
   }
+
   /**
    *
    *
@@ -356,6 +364,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object threadKey_ = "";
+
   /**
    *
    *
@@ -389,6 +398,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -427,6 +437,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -452,6 +463,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -480,6 +492,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
 
   public static final int MESSAGE_REPLY_OPTION_FIELD_NUMBER = 8;
   private int messageReplyOption_ = 0;
+
   /**
    *
    *
@@ -504,6 +517,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
   public int getMessageReplyOptionValue() {
     return messageReplyOption_;
   }
+
   /**
    *
    *
@@ -537,6 +551,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object messageId_ = "";
+
   /**
    *
    *
@@ -574,6 +589,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -826,6 +842,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1096,6 +1113,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1122,6 +1140,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1148,6 +1167,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1173,6 +1193,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1194,6 +1215,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1227,6 +1249,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
             com.google.chat.v1.Message.Builder,
             com.google.chat.v1.MessageOrBuilder>
         messageBuilder_;
+
     /**
      *
      *
@@ -1241,6 +1264,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
     public boolean hasMessage() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1259,6 +1283,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
         return messageBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1281,6 +1306,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1300,6 +1326,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1327,6 +1354,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1346,6 +1374,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1360,6 +1389,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getMessageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1376,6 +1406,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
         return message_ == null ? com.google.chat.v1.Message.getDefaultInstance() : message_;
       }
     }
+
     /**
      *
      *
@@ -1403,6 +1434,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object threadKey_ = "";
+
     /**
      *
      *
@@ -1435,6 +1467,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1467,6 +1500,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1498,6 +1532,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1525,6 +1560,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1559,6 +1595,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1583,6 +1620,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1607,6 +1645,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1630,6 +1669,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1649,6 +1689,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1675,6 +1716,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
     }
 
     private int messageReplyOption_ = 0;
+
     /**
      *
      *
@@ -1699,6 +1741,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
     public int getMessageReplyOptionValue() {
       return messageReplyOption_;
     }
+
     /**
      *
      *
@@ -1726,6 +1769,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1754,6 +1798,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
           ? com.google.chat.v1.CreateMessageRequest.MessageReplyOption.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1785,6 +1830,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1813,6 +1859,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object messageId_ = "";
+
     /**
      *
      *
@@ -1849,6 +1896,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1885,6 +1933,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1920,6 +1969,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1951,6 +2001,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

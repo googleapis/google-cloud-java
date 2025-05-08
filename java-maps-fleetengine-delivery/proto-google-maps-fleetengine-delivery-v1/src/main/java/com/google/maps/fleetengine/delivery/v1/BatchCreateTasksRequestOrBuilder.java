@@ -41,6 +41,7 @@ public interface BatchCreateTasksRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface BatchCreateTasksRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader getHeader();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface BatchCreateTasksRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface BatchCreateTasksRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.maps.fleetengine.delivery.v1.CreateTaskRequest> getRequestsList();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface BatchCreateTasksRequestOrBuilder
    * </code>
    */
   com.google.maps.fleetengine.delivery.v1.CreateTaskRequest getRequests(int index);
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface BatchCreateTasksRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface BatchCreateTasksRequestOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.delivery.v1.CreateTaskRequestOrBuilder>
       getRequestsOrBuilderList();
+
   /**
    *
    *

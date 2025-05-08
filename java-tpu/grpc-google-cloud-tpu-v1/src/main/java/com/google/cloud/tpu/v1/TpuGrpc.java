@@ -515,6 +515,19 @@ public final class TpuGrpc {
     return TpuStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TpuBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TpuBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TpuBlockingV2Stub>() {
+          @java.lang.Override
+          public TpuBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TpuBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TpuBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -905,6 +918,168 @@ public final class TpuGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Tpu.
+   *
+   * <pre>
+   * Manages TPU nodes and other resources
+   * TPU API v1
+   * </pre>
+   */
+  public static final class TpuBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TpuBlockingV2Stub> {
+    private TpuBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TpuBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TpuBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists nodes.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v1.ListNodesResponse listNodes(
+        com.google.cloud.tpu.v1.ListNodesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNodesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a node.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v1.Node getNode(com.google.cloud.tpu.v1.GetNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a node.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createNode(
+        com.google.cloud.tpu.v1.CreateNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a node.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteNode(
+        com.google.cloud.tpu.v1.DeleteNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reimages a node's OS.
+     * </pre>
+     */
+    public com.google.longrunning.Operation reimageNode(
+        com.google.cloud.tpu.v1.ReimageNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReimageNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops a node, this operation is only available with single TPU nodes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation stopNode(
+        com.google.cloud.tpu.v1.StopNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a node.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startNode(
+        com.google.cloud.tpu.v1.StartNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List TensorFlow versions supported by this API.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v1.ListTensorFlowVersionsResponse listTensorFlowVersions(
+        com.google.cloud.tpu.v1.ListTensorFlowVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTensorFlowVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets TensorFlow Version.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v1.TensorFlowVersion getTensorFlowVersion(
+        com.google.cloud.tpu.v1.GetTensorFlowVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTensorFlowVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists accelerator types supported by this API.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v1.ListAcceleratorTypesResponse listAcceleratorTypes(
+        com.google.cloud.tpu.v1.ListAcceleratorTypesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAcceleratorTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets AcceleratorType.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v1.AcceleratorType getAcceleratorType(
+        com.google.cloud.tpu.v1.GetAcceleratorTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAcceleratorTypeMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Tpu.
    *
    * <pre>
    * Manages TPU nodes and other resources

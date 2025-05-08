@@ -34,6 +34,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.AllowedDomainsSettings)
     AllowedDomainsSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AllowedDomainsSettings.newBuilder() to construct.
   private AllowedDomainsSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,14 +68,15 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int ENABLE_FIELD_NUMBER = 1;
   private boolean enable_ = false;
+
   /**
    *
    *
    * <pre>
-   * Configuration for customers to opt in for the feature.
+   * Optional. Configuration for customers to opt in for the feature.
    * </pre>
    *
-   * <code>optional bool enable = 1;</code>
+   * <code>optional bool enable = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the enable field is set.
    */
@@ -82,14 +84,15 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
   public boolean hasEnable() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Configuration for customers to opt in for the feature.
+   * Optional. Configuration for customers to opt in for the feature.
    * </pre>
    *
-   * <code>optional bool enable = 1;</code>
+   * <code>optional bool enable = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The enable.
    */
@@ -103,42 +106,45 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList domains_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
    * <pre>
-   * List of trusted domains.
+   * Optional. List of trusted domains.
    * </pre>
    *
-   * <code>repeated string domains = 2;</code>
+   * <code>repeated string domains = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the domains.
    */
   public com.google.protobuf.ProtocolStringList getDomainsList() {
     return domains_;
   }
+
   /**
    *
    *
    * <pre>
-   * List of trusted domains.
+   * Optional. List of trusted domains.
    * </pre>
    *
-   * <code>repeated string domains = 2;</code>
+   * <code>repeated string domains = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of domains.
    */
   public int getDomainsCount() {
     return domains_.size();
   }
+
   /**
    *
    *
    * <pre>
-   * List of trusted domains.
+   * Optional. List of trusted domains.
    * </pre>
    *
-   * <code>repeated string domains = 2;</code>
+   * <code>repeated string domains = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The domains at the given index.
@@ -146,14 +152,15 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
   public java.lang.String getDomains(int index) {
     return domains_.get(index);
   }
+
   /**
    *
    *
    * <pre>
-   * List of trusted domains.
+   * Optional. List of trusted domains.
    * </pre>
    *
-   * <code>repeated string domains = 2;</code>
+   * <code>repeated string domains = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the domains at the given index.
@@ -342,6 +349,7 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -549,14 +557,15 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private boolean enable_;
+
     /**
      *
      *
      * <pre>
-     * Configuration for customers to opt in for the feature.
+     * Optional. Configuration for customers to opt in for the feature.
      * </pre>
      *
-     * <code>optional bool enable = 1;</code>
+     * <code>optional bool enable = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the enable field is set.
      */
@@ -564,14 +573,15 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
     public boolean hasEnable() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Configuration for customers to opt in for the feature.
+     * Optional. Configuration for customers to opt in for the feature.
      * </pre>
      *
-     * <code>optional bool enable = 1;</code>
+     * <code>optional bool enable = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The enable.
      */
@@ -579,14 +589,15 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
     public boolean getEnable() {
       return enable_;
     }
+
     /**
      *
      *
      * <pre>
-     * Configuration for customers to opt in for the feature.
+     * Optional. Configuration for customers to opt in for the feature.
      * </pre>
      *
-     * <code>optional bool enable = 1;</code>
+     * <code>optional bool enable = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The enable to set.
      * @return This builder for chaining.
@@ -598,14 +609,15 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Configuration for customers to opt in for the feature.
+     * Optional. Configuration for customers to opt in for the feature.
      * </pre>
      *
-     * <code>optional bool enable = 1;</code>
+     * <code>optional bool enable = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -625,14 +637,15 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
      * <pre>
-     * List of trusted domains.
+     * Optional. List of trusted domains.
      * </pre>
      *
-     * <code>repeated string domains = 2;</code>
+     * <code>repeated string domains = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the domains.
      */
@@ -640,28 +653,30 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
       domains_.makeImmutable();
       return domains_;
     }
+
     /**
      *
      *
      * <pre>
-     * List of trusted domains.
+     * Optional. List of trusted domains.
      * </pre>
      *
-     * <code>repeated string domains = 2;</code>
+     * <code>repeated string domains = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of domains.
      */
     public int getDomainsCount() {
       return domains_.size();
     }
+
     /**
      *
      *
      * <pre>
-     * List of trusted domains.
+     * Optional. List of trusted domains.
      * </pre>
      *
-     * <code>repeated string domains = 2;</code>
+     * <code>repeated string domains = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The domains at the given index.
@@ -669,14 +684,15 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
     public java.lang.String getDomains(int index) {
       return domains_.get(index);
     }
+
     /**
      *
      *
      * <pre>
-     * List of trusted domains.
+     * Optional. List of trusted domains.
      * </pre>
      *
-     * <code>repeated string domains = 2;</code>
+     * <code>repeated string domains = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the domains at the given index.
@@ -684,14 +700,15 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getDomainsBytes(int index) {
       return domains_.getByteString(index);
     }
+
     /**
      *
      *
      * <pre>
-     * List of trusted domains.
+     * Optional. List of trusted domains.
      * </pre>
      *
-     * <code>repeated string domains = 2;</code>
+     * <code>repeated string domains = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index to set the value at.
      * @param value The domains to set.
@@ -707,14 +724,15 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * List of trusted domains.
+     * Optional. List of trusted domains.
      * </pre>
      *
-     * <code>repeated string domains = 2;</code>
+     * <code>repeated string domains = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The domains to add.
      * @return This builder for chaining.
@@ -729,14 +747,15 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * List of trusted domains.
+     * Optional. List of trusted domains.
      * </pre>
      *
-     * <code>repeated string domains = 2;</code>
+     * <code>repeated string domains = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param values The domains to add.
      * @return This builder for chaining.
@@ -748,14 +767,15 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * List of trusted domains.
+     * Optional. List of trusted domains.
      * </pre>
      *
-     * <code>repeated string domains = 2;</code>
+     * <code>repeated string domains = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -766,14 +786,15 @@ public final class AllowedDomainsSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * List of trusted domains.
+     * Optional. List of trusted domains.
      * </pre>
      *
-     * <code>repeated string domains = 2;</code>
+     * <code>repeated string domains = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes of the domains to add.
      * @return This builder for chaining.

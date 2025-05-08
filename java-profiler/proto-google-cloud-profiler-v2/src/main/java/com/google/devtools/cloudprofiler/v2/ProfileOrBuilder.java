@@ -36,6 +36,7 @@ public interface ProfileOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ProfileOrBuilder
    * @return The enum numeric value on the wire for profileType.
    */
   int getProfileTypeValue();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface ProfileOrBuilder
    * @return Whether the deployment field is set.
    */
   boolean hasDeployment();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface ProfileOrBuilder
    * @return The deployment.
    */
   com.google.devtools.cloudprofiler.v2.Deployment getDeployment();
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public interface ProfileOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface ProfileOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public interface ProfileOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -201,9 +208,11 @@ public interface ProfileOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public interface ProfileOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -232,6 +242,7 @@ public interface ProfileOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -259,6 +270,7 @@ public interface ProfileOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -273,6 +285,7 @@ public interface ProfileOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *

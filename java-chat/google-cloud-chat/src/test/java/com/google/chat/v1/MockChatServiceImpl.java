@@ -558,6 +558,90 @@ public class MockChatServiceImpl extends ChatServiceImplBase {
   }
 
   @Override
+  public void createCustomEmoji(
+      CreateCustomEmojiRequest request, StreamObserver<CustomEmoji> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CustomEmoji) {
+      requests.add(request);
+      responseObserver.onNext(((CustomEmoji) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateCustomEmoji, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CustomEmoji.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getCustomEmoji(
+      GetCustomEmojiRequest request, StreamObserver<CustomEmoji> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CustomEmoji) {
+      requests.add(request);
+      responseObserver.onNext(((CustomEmoji) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCustomEmoji, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CustomEmoji.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listCustomEmojis(
+      ListCustomEmojisRequest request, StreamObserver<ListCustomEmojisResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListCustomEmojisResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListCustomEmojisResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListCustomEmojis, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListCustomEmojisResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteCustomEmoji(
+      DeleteCustomEmojiRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteCustomEmoji, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getSpaceReadState(
       GetSpaceReadStateRequest request, StreamObserver<SpaceReadState> responseObserver) {
     Object response = responses.poll();
@@ -592,7 +676,8 @@ public class MockChatServiceImpl extends ChatServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateSpaceReadState, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateSpaceReadState, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   SpaceReadState.class.getName(),
                   Exception.class.getName())));
@@ -677,7 +762,8 @@ public class MockChatServiceImpl extends ChatServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetSpaceNotificationSetting, expected %s or %s",
+                  "Unrecognized response type %s for method GetSpaceNotificationSetting, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SpaceNotificationSetting.class.getName(),
                   Exception.class.getName())));
@@ -699,7 +785,8 @@ public class MockChatServiceImpl extends ChatServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateSpaceNotificationSetting, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateSpaceNotificationSetting,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SpaceNotificationSetting.class.getName(),
                   Exception.class.getName())));

@@ -34,6 +34,7 @@ public interface ListDraftsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Draft drafts = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.Draft> getDraftsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDraftsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Draft drafts = 1;</code>
    */
   com.google.cloud.visionai.v1.Draft getDrafts(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDraftsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Draft drafts = 1;</code>
    */
   int getDraftsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListDraftsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Draft drafts = 1;</code>
    */
   java.util.List<? extends com.google.cloud.visionai.v1.DraftOrBuilder> getDraftsOrBuilderList();
+
   /**
    *
    *
@@ -87,6 +91,7 @@ public interface ListDraftsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface ListDraftsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -124,6 +130,7 @@ public interface ListDraftsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -137,6 +144,7 @@ public interface ListDraftsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

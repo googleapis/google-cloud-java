@@ -39,6 +39,7 @@ public interface FailoverInstanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface FailoverInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

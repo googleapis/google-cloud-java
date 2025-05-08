@@ -33,6 +33,7 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.ByteDataItem)
     ByteDataItemOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ByteDataItem.newBuilder() to construct.
   private ByteDataItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -104,6 +105,36 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
      * <code>PDF = 2;</code>
      */
     PDF(2),
+    /**
+     *
+     *
+     * <pre>
+     * DOCX, DOCM, DOTX, DOTM
+     * </pre>
+     *
+     * <code>WORD_DOCUMENT = 3;</code>
+     */
+    WORD_DOCUMENT(3),
+    /**
+     *
+     *
+     * <pre>
+     * XLSX, XLSM, XLTX, XLYM
+     * </pre>
+     *
+     * <code>EXCEL_DOCUMENT = 4;</code>
+     */
+    EXCEL_DOCUMENT(4),
+    /**
+     *
+     *
+     * <pre>
+     * PPTX, PPTM, POTX, POTM, POT
+     * </pre>
+     *
+     * <code>POWERPOINT_DOCUMENT = 5;</code>
+     */
+    POWERPOINT_DOCUMENT(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -117,6 +148,7 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
      * <code>BYTE_ITEM_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int BYTE_ITEM_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +159,7 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
      * <code>PLAINTEXT_UTF8 = 1;</code>
      */
     public static final int PLAINTEXT_UTF8_VALUE = 1;
+
     /**
      *
      *
@@ -137,6 +170,39 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
      * <code>PDF = 2;</code>
      */
     public static final int PDF_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * DOCX, DOCM, DOTX, DOTM
+     * </pre>
+     *
+     * <code>WORD_DOCUMENT = 3;</code>
+     */
+    public static final int WORD_DOCUMENT_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * XLSX, XLSM, XLTX, XLYM
+     * </pre>
+     *
+     * <code>EXCEL_DOCUMENT = 4;</code>
+     */
+    public static final int EXCEL_DOCUMENT_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * PPTX, PPTM, POTX, POTM, POT
+     * </pre>
+     *
+     * <code>POWERPOINT_DOCUMENT = 5;</code>
+     */
+    public static final int POWERPOINT_DOCUMENT_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -168,6 +234,12 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
           return PLAINTEXT_UTF8;
         case 2:
           return PDF;
+        case 3:
+          return WORD_DOCUMENT;
+        case 4:
+          return EXCEL_DOCUMENT;
+        case 5:
+          return POWERPOINT_DOCUMENT;
         default:
           return null;
       }
@@ -223,6 +295,7 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BYTE_DATA_TYPE_FIELD_NUMBER = 1;
   private int byteDataType_ = 0;
+
   /**
    *
    *
@@ -240,6 +313,7 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
   public int getByteDataTypeValue() {
     return byteDataType_;
   }
+
   /**
    *
    *
@@ -264,6 +338,7 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BYTE_DATA_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString byteData_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -452,6 +527,7 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -646,6 +722,7 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int byteDataType_ = 0;
+
     /**
      *
      *
@@ -663,6 +740,7 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
     public int getByteDataTypeValue() {
       return byteDataType_;
     }
+
     /**
      *
      *
@@ -683,6 +761,7 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -704,6 +783,7 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.modelarmor.v1.ByteDataItem.ByteItemType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -727,6 +807,7 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +829,7 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString byteData_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -763,6 +845,7 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getByteData() {
       return byteData_;
     }
+
     /**
      *
      *
@@ -784,6 +867,7 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

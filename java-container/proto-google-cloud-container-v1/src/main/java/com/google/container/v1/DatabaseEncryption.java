@@ -33,6 +33,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.container.v1.DatabaseEncryption)
     DatabaseEncryptionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DatabaseEncryption.newBuilder() to construct.
   private DatabaseEncryption(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,6 +122,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
+
     /**
      *
      *
@@ -131,6 +133,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      * <code>ENCRYPTED = 1;</code>
      */
     public static final int ENCRYPTED_VALUE = 1;
+
     /**
      *
      *
@@ -322,6 +325,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      * <code>CURRENT_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int CURRENT_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -332,6 +336,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      * <code>CURRENT_STATE_ENCRYPTED = 7;</code>
      */
     public static final int CURRENT_STATE_ENCRYPTED_VALUE = 7;
+
     /**
      *
      *
@@ -343,6 +348,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      * <code>CURRENT_STATE_DECRYPTED = 2;</code>
      */
     public static final int CURRENT_STATE_DECRYPTED_VALUE = 2;
+
     /**
      *
      *
@@ -354,6 +360,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      * <code>CURRENT_STATE_ENCRYPTION_PENDING = 3;</code>
      */
     public static final int CURRENT_STATE_ENCRYPTION_PENDING_VALUE = 3;
+
     /**
      *
      *
@@ -365,6 +372,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      * <code>CURRENT_STATE_ENCRYPTION_ERROR = 4;</code>
      */
     public static final int CURRENT_STATE_ENCRYPTION_ERROR_VALUE = 4;
+
     /**
      *
      *
@@ -375,6 +383,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      * <code>CURRENT_STATE_DECRYPTION_PENDING = 5;</code>
      */
     public static final int CURRENT_STATE_DECRYPTION_PENDING_VALUE = 5;
+
     /**
      *
      *
@@ -494,6 +503,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      * @return The keyName.
      */
     java.lang.String getKeyName();
+
     /**
      *
      *
@@ -519,6 +529,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      * @return The errorMessage.
      */
     java.lang.String getErrorMessage();
+
     /**
      *
      *
@@ -544,6 +555,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      * @return Whether the timestamp field is set.
      */
     boolean hasTimestamp();
+
     /**
      *
      *
@@ -556,6 +568,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      * @return The timestamp.
      */
     com.google.protobuf.Timestamp getTimestamp();
+
     /**
      *
      *
@@ -567,6 +580,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder();
   }
+
   /**
    *
    *
@@ -582,6 +596,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.container.v1.DatabaseEncryption.OperationError)
       OperationErrorOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use OperationError.newBuilder() to construct.
     private OperationError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -618,6 +633,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object keyName_ = "";
+
     /**
      *
      *
@@ -641,6 +657,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -669,6 +686,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object errorMessage_ = "";
+
     /**
      *
      *
@@ -692,6 +710,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
+
     /**
      *
      *
@@ -718,6 +737,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
 
     public static final int TIMESTAMP_FIELD_NUMBER = 3;
     private com.google.protobuf.Timestamp timestamp_;
+
     /**
      *
      *
@@ -733,6 +753,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     public boolean hasTimestamp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -748,6 +769,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.Timestamp getTimestamp() {
       return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
     }
+
     /**
      *
      *
@@ -946,6 +968,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1178,6 +1201,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object keyName_ = "";
+
       /**
        *
        *
@@ -1200,6 +1224,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1222,6 +1247,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1243,6 +1269,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1260,6 +1287,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1284,6 +1312,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object errorMessage_ = "";
+
       /**
        *
        *
@@ -1306,6 +1335,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1328,6 +1358,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1349,6 +1380,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1366,6 +1398,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1395,6 +1428,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           timestampBuilder_;
+
       /**
        *
        *
@@ -1409,6 +1443,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       public boolean hasTimestamp() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1429,6 +1464,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
           return timestampBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1451,6 +1487,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1470,6 +1507,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1497,6 +1535,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -1516,6 +1555,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1530,6 +1570,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getTimestampFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1548,6 +1589,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
               : timestamp_;
         }
       }
+
       /**
        *
        *
@@ -1643,6 +1685,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyName_ = "";
+
   /**
    *
    *
@@ -1667,6 +1710,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -1694,6 +1738,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
+
   /**
    *
    *
@@ -1709,6 +1754,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -1729,6 +1775,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
 
   public static final int CURRENT_STATE_FIELD_NUMBER = 3;
   private int currentState_ = 0;
+
   /**
    *
    *
@@ -1746,6 +1793,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
   public boolean hasCurrentState() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1763,6 +1811,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
   public int getCurrentStateValue() {
     return currentState_;
   }
+
   /**
    *
    *
@@ -1790,6 +1839,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList decryptionKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1807,6 +1857,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getDecryptionKeysList() {
     return decryptionKeys_;
   }
+
   /**
    *
    *
@@ -1824,6 +1875,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
   public int getDecryptionKeysCount() {
     return decryptionKeys_.size();
   }
+
   /**
    *
    *
@@ -1842,6 +1894,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
   public java.lang.String getDecryptionKeys(int index) {
     return decryptionKeys_.get(index);
   }
+
   /**
    *
    *
@@ -1866,6 +1919,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1.DatabaseEncryption.OperationError>
       lastOperationErrors_;
+
   /**
    *
    *
@@ -1883,6 +1937,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       getLastOperationErrorsList() {
     return lastOperationErrors_;
   }
+
   /**
    *
    *
@@ -1901,6 +1956,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       getLastOperationErrorsOrBuilderList() {
     return lastOperationErrors_;
   }
+
   /**
    *
    *
@@ -1917,6 +1973,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
   public int getLastOperationErrorsCount() {
     return lastOperationErrors_.size();
   }
+
   /**
    *
    *
@@ -1934,6 +1991,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       int index) {
     return lastOperationErrors_.get(index);
   }
+
   /**
    *
    *
@@ -2162,6 +2220,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2457,6 +2516,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object keyName_ = "";
+
     /**
      *
      *
@@ -2480,6 +2540,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2503,6 +2564,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2525,6 +2587,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2543,6 +2606,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2568,6 +2632,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2583,6 +2648,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2601,6 +2667,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2620,6 +2687,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
           ? com.google.container.v1.DatabaseEncryption.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2641,6 +2709,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2660,6 +2729,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     }
 
     private int currentState_ = 0;
+
     /**
      *
      *
@@ -2677,6 +2747,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     public boolean hasCurrentState() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2694,6 +2765,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     public int getCurrentStateValue() {
       return currentState_;
     }
+
     /**
      *
      *
@@ -2714,6 +2786,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2735,6 +2808,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
           ? com.google.container.v1.DatabaseEncryption.CurrentState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2758,6 +2832,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2787,6 +2862,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -2806,6 +2882,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       decryptionKeys_.makeImmutable();
       return decryptionKeys_;
     }
+
     /**
      *
      *
@@ -2824,6 +2901,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     public int getDecryptionKeysCount() {
       return decryptionKeys_.size();
     }
+
     /**
      *
      *
@@ -2843,6 +2921,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     public java.lang.String getDecryptionKeys(int index) {
       return decryptionKeys_.get(index);
     }
+
     /**
      *
      *
@@ -2862,6 +2941,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getDecryptionKeysBytes(int index) {
       return decryptionKeys_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2889,6 +2969,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2915,6 +2996,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2938,6 +3020,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2960,6 +3043,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3026,6 +3110,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         return lastOperationErrorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3045,6 +3130,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         return lastOperationErrorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3065,6 +3151,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         return lastOperationErrorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3091,6 +3178,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3115,6 +3203,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3141,6 +3230,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3167,6 +3257,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3190,6 +3281,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3214,6 +3306,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3238,6 +3331,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3260,6 +3354,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3282,6 +3377,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3298,6 +3394,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         getLastOperationErrorsBuilder(int index) {
       return getLastOperationErrorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3318,6 +3415,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         return lastOperationErrorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3339,6 +3437,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(lastOperationErrors_);
       }
     }
+
     /**
      *
      *
@@ -3357,6 +3456,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               com.google.container.v1.DatabaseEncryption.OperationError.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3376,6 +3476,7 @@ public final class DatabaseEncryption extends com.google.protobuf.GeneratedMessa
               index,
               com.google.container.v1.DatabaseEncryption.OperationError.getDefaultInstance());
     }
+
     /**
      *
      *

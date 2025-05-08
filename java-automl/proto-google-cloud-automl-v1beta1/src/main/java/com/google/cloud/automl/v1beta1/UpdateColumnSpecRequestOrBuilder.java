@@ -38,6 +38,7 @@ public interface UpdateColumnSpecRequestOrBuilder
    * @return Whether the columnSpec field is set.
    */
   boolean hasColumnSpec();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateColumnSpecRequestOrBuilder
    * @return The columnSpec.
    */
   com.google.cloud.automl.v1beta1.ColumnSpec getColumnSpec();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface UpdateColumnSpecRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface UpdateColumnSpecRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

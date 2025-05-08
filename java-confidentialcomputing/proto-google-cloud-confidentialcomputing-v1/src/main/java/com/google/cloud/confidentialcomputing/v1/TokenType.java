@@ -93,6 +93,7 @@ public enum TokenType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TOKEN_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int TOKEN_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -103,6 +104,7 @@ public enum TokenType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TOKEN_TYPE_OIDC = 1;</code>
    */
   public static final int TOKEN_TYPE_OIDC_VALUE = 1;
+
   /**
    *
    *
@@ -113,6 +115,7 @@ public enum TokenType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TOKEN_TYPE_PKI = 2;</code>
    */
   public static final int TOKEN_TYPE_PKI_VALUE = 2;
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public enum TokenType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TOKEN_TYPE_LIMITED_AWS = 3;</code>
    */
   public static final int TOKEN_TYPE_LIMITED_AWS_VALUE = 3;
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface CreateDataExchangeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -60,9 +61,7 @@ public interface CreateDataExchangeRequestOrBuilder
    *
    * <pre>
    * Required. The ID of the data exchange.
-   * Must contain only Unicode letters, numbers (0-9), underscores (_).
-   * Should not use characters that require URL-escaping, or characters
-   * outside of ASCII, spaces.
+   * Must contain only ASCII letters, numbers (0-9), underscores (_).
    * Max length: 100 bytes.
    * </pre>
    *
@@ -71,14 +70,13 @@ public interface CreateDataExchangeRequestOrBuilder
    * @return The dataExchangeId.
    */
   java.lang.String getDataExchangeId();
+
   /**
    *
    *
    * <pre>
    * Required. The ID of the data exchange.
-   * Must contain only Unicode letters, numbers (0-9), underscores (_).
-   * Should not use characters that require URL-escaping, or characters
-   * outside of ASCII, spaces.
+   * Must contain only ASCII letters, numbers (0-9), underscores (_).
    * Max length: 100 bytes.
    * </pre>
    *
@@ -102,6 +100,7 @@ public interface CreateDataExchangeRequestOrBuilder
    * @return Whether the dataExchange field is set.
    */
   boolean hasDataExchange();
+
   /**
    *
    *
@@ -116,6 +115,7 @@ public interface CreateDataExchangeRequestOrBuilder
    * @return The dataExchange.
    */
   com.google.cloud.bigquery.analyticshub.v1.DataExchange getDataExchange();
+
   /**
    *
    *

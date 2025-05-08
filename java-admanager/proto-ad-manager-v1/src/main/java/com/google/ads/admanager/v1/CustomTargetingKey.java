@@ -33,6 +33,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.CustomTargetingKey)
     CustomTargetingKeyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomTargetingKey.newBuilder() to construct.
   private CustomTargetingKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
 
   public static final int CUSTOM_TARGETING_KEY_ID_FIELD_NUMBER = 2;
   private long customTargetingKeyId_ = 0L;
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object adTagName_ = "";
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -249,6 +257,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
 
   public static final int TYPE_FIELD_NUMBER = 5;
   private int type_ = 0;
+
   /**
    *
    *
@@ -268,6 +277,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -295,6 +305,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
 
   public static final int STATUS_FIELD_NUMBER = 6;
   private int status_ = 0;
+
   /**
    *
    *
@@ -312,6 +323,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
   public int getStatusValue() {
     return status_;
   }
+
   /**
    *
    *
@@ -339,6 +351,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
 
   public static final int REPORTABLE_TYPE_FIELD_NUMBER = 7;
   private int reportableType_ = 0;
+
   /**
    *
    *
@@ -356,6 +369,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
   public int getReportableTypeValue() {
     return reportableType_;
   }
+
   /**
    *
    *
@@ -615,6 +629,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -880,6 +895,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -904,6 +920,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -928,6 +945,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -951,6 +969,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -970,6 +989,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1016,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
     }
 
     private long customTargetingKeyId_;
+
     /**
      *
      *
@@ -1011,6 +1032,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
     public long getCustomTargetingKeyId() {
       return customTargetingKeyId_;
     }
+
     /**
      *
      *
@@ -1030,6 +1052,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1049,6 +1072,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object adTagName_ = "";
+
     /**
      *
      *
@@ -1073,6 +1097,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1097,6 +1122,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1120,6 +1146,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1139,6 +1166,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1193,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1187,6 +1216,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1209,6 +1239,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1230,6 +1261,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1247,6 +1279,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1271,6 +1304,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -1290,6 +1324,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1312,6 +1347,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1337,6 +1373,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1363,6 +1400,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1386,6 +1424,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
     }
 
     private int status_ = 0;
+
     /**
      *
      *
@@ -1403,6 +1442,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
     public int getStatusValue() {
       return status_;
     }
+
     /**
      *
      *
@@ -1423,6 +1463,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1447,6 +1488,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1471,6 +1513,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1492,6 +1535,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
     }
 
     private int reportableType_ = 0;
+
     /**
      *
      *
@@ -1509,6 +1553,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
     public int getReportableTypeValue() {
       return reportableType_;
     }
+
     /**
      *
      *
@@ -1529,6 +1574,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1556,6 +1602,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
               .CustomTargetingKeyReportableType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1582,6 +1629,7 @@ public final class CustomTargetingKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

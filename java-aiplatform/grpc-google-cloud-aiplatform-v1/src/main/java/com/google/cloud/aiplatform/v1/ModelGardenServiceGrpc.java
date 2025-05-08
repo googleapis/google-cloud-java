@@ -96,6 +96,19 @@ public final class ModelGardenServiceGrpc {
     return ModelGardenServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ModelGardenServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ModelGardenServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ModelGardenServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ModelGardenServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ModelGardenServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ModelGardenServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -204,6 +217,40 @@ public final class ModelGardenServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ModelGardenService.
+   *
+   * <pre>
+   * The interface of Model Garden Service.
+   * </pre>
+   */
+  public static final class ModelGardenServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ModelGardenServiceBlockingV2Stub> {
+    private ModelGardenServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ModelGardenServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ModelGardenServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Model Garden publisher model.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.PublisherModel getPublisherModel(
+        com.google.cloud.aiplatform.v1.GetPublisherModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPublisherModelMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ModelGardenService.
    *
    * <pre>
    * The interface of Model Garden Service.

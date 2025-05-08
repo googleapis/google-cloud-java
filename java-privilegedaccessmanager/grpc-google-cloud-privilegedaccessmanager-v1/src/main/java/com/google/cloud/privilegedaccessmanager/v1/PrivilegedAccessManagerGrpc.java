@@ -735,6 +735,19 @@ public final class PrivilegedAccessManagerGrpc {
     return PrivilegedAccessManagerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static PrivilegedAccessManagerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<PrivilegedAccessManagerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PrivilegedAccessManagerBlockingV2Stub>() {
+          @java.lang.Override
+          public PrivilegedAccessManagerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PrivilegedAccessManagerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return PrivilegedAccessManagerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1350,6 +1363,254 @@ public final class PrivilegedAccessManagerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service PrivilegedAccessManager.
+   *
+   * <pre>
+   * This API allows customers to manage temporary, request based privileged
+   * access to their resources.
+   * It defines the following resource model:
+   * * A collection of `Entitlement` resources. An entitlement allows configuring
+   *   (among other things):
+   *   * Some kind of privileged access that users can request.
+   *   * A set of users called _requesters_ who can request this access.
+   *   * A maximum duration for which the access can be requested.
+   *   * An optional approval workflow which must be satisfied before access is
+   *     granted.
+   * * A collection of `Grant` resources. A grant is a request by a requester to
+   *   get the privileged access specified in an entitlement for some duration.
+   *   After the approval workflow as specified in the entitlement is satisfied,
+   *   the specified access is given to the requester. The access is automatically
+   *   taken back after the requested duration is over.
+   * </pre>
+   */
+  public static final class PrivilegedAccessManagerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<PrivilegedAccessManagerBlockingV2Stub> {
+    private PrivilegedAccessManagerBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected PrivilegedAccessManagerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new PrivilegedAccessManagerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * `CheckOnboardingStatus` reports the onboarding status for a
+     * project/folder/organization. Any findings reported by this API need to be
+     * fixed before PAM can be used on the resource.
+     * </pre>
+     */
+    public com.google.cloud.privilegedaccessmanager.v1.CheckOnboardingStatusResponse
+        checkOnboardingStatus(
+            com.google.cloud.privilegedaccessmanager.v1.CheckOnboardingStatusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCheckOnboardingStatusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists entitlements in a given project/folder/organization and location.
+     * </pre>
+     */
+    public com.google.cloud.privilegedaccessmanager.v1.ListEntitlementsResponse listEntitlements(
+        com.google.cloud.privilegedaccessmanager.v1.ListEntitlementsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEntitlementsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * `SearchEntitlements` returns entitlements on which the caller has the
+     * specified access.
+     * </pre>
+     */
+    public com.google.cloud.privilegedaccessmanager.v1.SearchEntitlementsResponse
+        searchEntitlements(
+            com.google.cloud.privilegedaccessmanager.v1.SearchEntitlementsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchEntitlementsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single entitlement.
+     * </pre>
+     */
+    public com.google.cloud.privilegedaccessmanager.v1.Entitlement getEntitlement(
+        com.google.cloud.privilegedaccessmanager.v1.GetEntitlementRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEntitlementMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new entitlement in a given project/folder/organization and
+     * location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createEntitlement(
+        com.google.cloud.privilegedaccessmanager.v1.CreateEntitlementRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEntitlementMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single entitlement. This method can only be called when there
+     * are no in-progress (`ACTIVE`/`ACTIVATING`/`REVOKING`) grants under the
+     * entitlement.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteEntitlement(
+        com.google.cloud.privilegedaccessmanager.v1.DeleteEntitlementRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEntitlementMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the entitlement specified in the request. Updated fields in the
+     * entitlement need to be specified in an update mask. The changes made to an
+     * entitlement are applicable only on future grants of the entitlement.
+     * However, if new approvers are added or existing approvers are removed from
+     * the approval workflow, the changes are effective on existing grants.
+     * The following fields are not supported for updates:
+     *  * All immutable fields
+     *  * Entitlement name
+     *  * Resource name
+     *  * Resource type
+     *  * Adding an approval workflow in an entitlement which previously had no
+     *    approval workflow.
+     *  * Deleting the approval workflow from an entitlement.
+     *  * Adding or deleting a step in the approval workflow (only one step is
+     *    supported)
+     * Note that updates are allowed on the list of approvers in an approval
+     * workflow step.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateEntitlement(
+        com.google.cloud.privilegedaccessmanager.v1.UpdateEntitlementRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEntitlementMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists grants for a given entitlement.
+     * </pre>
+     */
+    public com.google.cloud.privilegedaccessmanager.v1.ListGrantsResponse listGrants(
+        com.google.cloud.privilegedaccessmanager.v1.ListGrantsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListGrantsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * `SearchGrants` returns grants that are related to the calling user in the
+     * specified way.
+     * </pre>
+     */
+    public com.google.cloud.privilegedaccessmanager.v1.SearchGrantsResponse searchGrants(
+        com.google.cloud.privilegedaccessmanager.v1.SearchGrantsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchGrantsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get details of a single grant.
+     * </pre>
+     */
+    public com.google.cloud.privilegedaccessmanager.v1.Grant getGrant(
+        com.google.cloud.privilegedaccessmanager.v1.GetGrantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGrantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new grant in a given project/folder/organization and
+     * location.
+     * </pre>
+     */
+    public com.google.cloud.privilegedaccessmanager.v1.Grant createGrant(
+        com.google.cloud.privilegedaccessmanager.v1.CreateGrantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateGrantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * `ApproveGrant` is used to approve a grant. This method can only be called
+     * on a grant when it's in the `APPROVAL_AWAITED` state. This operation can't
+     * be undone.
+     * </pre>
+     */
+    public com.google.cloud.privilegedaccessmanager.v1.Grant approveGrant(
+        com.google.cloud.privilegedaccessmanager.v1.ApproveGrantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getApproveGrantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * `DenyGrant` is used to deny a grant. This method can only be called on a
+     * grant when it's in the `APPROVAL_AWAITED` state. This operation can't be
+     * undone.
+     * </pre>
+     */
+    public com.google.cloud.privilegedaccessmanager.v1.Grant denyGrant(
+        com.google.cloud.privilegedaccessmanager.v1.DenyGrantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDenyGrantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * `RevokeGrant` is used to immediately revoke access for a grant. This method
+     * can be called when the grant is in a non-terminal state.
+     * </pre>
+     */
+    public com.google.longrunning.Operation revokeGrant(
+        com.google.cloud.privilegedaccessmanager.v1.RevokeGrantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRevokeGrantMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service PrivilegedAccessManager.
    *
    * <pre>
    * This API allows customers to manage temporary, request based privileged

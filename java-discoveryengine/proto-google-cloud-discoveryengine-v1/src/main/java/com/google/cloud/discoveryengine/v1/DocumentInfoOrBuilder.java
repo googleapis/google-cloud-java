@@ -36,6 +36,7 @@ public interface DocumentInfoOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DocumentInfoOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface DocumentInfoOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface DocumentInfoOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface DocumentInfoOrBuilder
    * @return Whether the uri field is set.
    */
   boolean hasUri();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface DocumentInfoOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface DocumentInfoOrBuilder
    * @return Whether the quantity field is set.
    */
   boolean hasQuantity();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface DocumentInfoOrBuilder
    * @return A list containing the promotionIds.
    */
   java.util.List<java.lang.String> getPromotionIdsList();
+
   /**
    *
    *
@@ -211,6 +219,7 @@ public interface DocumentInfoOrBuilder
    * @return The count of promotionIds.
    */
   int getPromotionIdsCount();
+
   /**
    *
    *
@@ -225,6 +234,7 @@ public interface DocumentInfoOrBuilder
    * @return The promotionIds at the given index.
    */
   java.lang.String getPromotionIds(int index);
+
   /**
    *
    *
@@ -253,6 +263,44 @@ public interface DocumentInfoOrBuilder
    * @return The joined.
    */
   boolean getJoined();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The conversion value associated with this Document.
+   * Must be set if
+   * [UserEvent.event_type][google.cloud.discoveryengine.v1.UserEvent.event_type]
+   * is "conversion".
+   *
+   * For example, a value of 1000 signifies that 1000 seconds were spent viewing
+   * a Document for the `watch` conversion type.
+   * </pre>
+   *
+   * <code>optional float conversion_value = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the conversionValue field is set.
+   */
+  boolean hasConversionValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The conversion value associated with this Document.
+   * Must be set if
+   * [UserEvent.event_type][google.cloud.discoveryengine.v1.UserEvent.event_type]
+   * is "conversion".
+   *
+   * For example, a value of 1000 signifies that 1000 seconds were spent viewing
+   * a Document for the `watch` conversion type.
+   * </pre>
+   *
+   * <code>optional float conversion_value = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The conversionValue.
+   */
+  float getConversionValue();
 
   com.google.cloud.discoveryengine.v1.DocumentInfo.DocumentDescriptorCase
       getDocumentDescriptorCase();

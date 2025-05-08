@@ -160,6 +160,16 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SBOM_REFERENCE = 12;</code>
    */
   SBOM_REFERENCE(12),
+  /**
+   *
+   *
+   * <pre>
+   * This represents a secret.
+   * </pre>
+   *
+   * <code>SECRET = 13;</code>
+   */
+  SECRET(13),
   UNRECOGNIZED(-1),
   ;
 
@@ -173,6 +183,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NOTE_KIND_UNSPECIFIED = 0;</code>
    */
   public static final int NOTE_KIND_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -183,6 +194,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VULNERABILITY = 1;</code>
    */
   public static final int VULNERABILITY_VALUE = 1;
+
   /**
    *
    *
@@ -193,6 +205,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BUILD = 2;</code>
    */
   public static final int BUILD_VALUE = 2;
+
   /**
    *
    *
@@ -203,6 +216,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMAGE = 3;</code>
    */
   public static final int IMAGE_VALUE = 3;
+
   /**
    *
    *
@@ -213,6 +227,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PACKAGE = 4;</code>
    */
   public static final int PACKAGE_VALUE = 4;
+
   /**
    *
    *
@@ -223,6 +238,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DEPLOYMENT = 5;</code>
    */
   public static final int DEPLOYMENT_VALUE = 5;
+
   /**
    *
    *
@@ -233,6 +249,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DISCOVERY = 6;</code>
    */
   public static final int DISCOVERY_VALUE = 6;
+
   /**
    *
    *
@@ -243,6 +260,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ATTESTATION = 7;</code>
    */
   public static final int ATTESTATION_VALUE = 7;
+
   /**
    *
    *
@@ -253,6 +271,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPGRADE = 8;</code>
    */
   public static final int UPGRADE_VALUE = 8;
+
   /**
    *
    *
@@ -263,6 +282,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMPLIANCE = 9;</code>
    */
   public static final int COMPLIANCE_VALUE = 9;
+
   /**
    *
    *
@@ -273,6 +293,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DSSE_ATTESTATION = 10;</code>
    */
   public static final int DSSE_ATTESTATION_VALUE = 10;
+
   /**
    *
    *
@@ -283,6 +304,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VULNERABILITY_ASSESSMENT = 11;</code>
    */
   public static final int VULNERABILITY_ASSESSMENT_VALUE = 11;
+
   /**
    *
    *
@@ -293,6 +315,17 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SBOM_REFERENCE = 12;</code>
    */
   public static final int SBOM_REFERENCE_VALUE = 12;
+
+  /**
+   *
+   *
+   * <pre>
+   * This represents a secret.
+   * </pre>
+   *
+   * <code>SECRET = 13;</code>
+   */
+  public static final int SECRET_VALUE = 13;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -344,6 +377,8 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
         return VULNERABILITY_ASSESSMENT;
       case 12:
         return SBOM_REFERENCE;
+      case 13:
+        return SECRET;
       default:
         return null;
     }

@@ -33,6 +33,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.ListGroupsRequest)
     ListGroupsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListGroupsRequest.newBuilder() to construct.
   private ListGroupsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
     private FilterCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -120,6 +122,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -149,6 +152,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -180,6 +184,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CHILDREN_OF_GROUP_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -199,6 +204,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasChildrenOfGroup() {
     return filterCase_ == 2;
   }
+
   /**
    *
    *
@@ -231,6 +237,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -265,6 +272,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ANCESTORS_OF_GROUP_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -286,6 +294,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasAncestorsOfGroup() {
     return filterCase_ == 3;
   }
+
   /**
    *
    *
@@ -320,6 +329,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -356,6 +366,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DESCENDANTS_OF_GROUP_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -376,6 +387,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasDescendantsOfGroup() {
     return filterCase_ == 4;
   }
+
   /**
    *
    *
@@ -409,6 +421,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -445,6 +458,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 5;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -465,6 +479,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -490,6 +505,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -741,6 +757,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1022,6 +1039,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1050,6 +1068,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1078,6 +1097,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1105,6 +1125,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1149,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1199,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasChildrenOfGroup() {
       return filterCase_ == 2;
     }
+
     /**
      *
      *
@@ -1210,6 +1233,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1243,6 +1267,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1269,6 +1294,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1293,6 +1319,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1343,6 +1370,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasAncestorsOfGroup() {
       return filterCase_ == 3;
     }
+
     /**
      *
      *
@@ -1378,6 +1406,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1413,6 +1442,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1441,6 +1471,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1467,6 +1498,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1518,6 +1550,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasDescendantsOfGroup() {
       return filterCase_ == 4;
     }
+
     /**
      *
      *
@@ -1552,6 +1585,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1586,6 +1620,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1613,6 +1648,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1638,6 +1674,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1668,6 +1705,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -1683,6 +1721,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -1702,6 +1741,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1721,6 +1761,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1745,6 +1786,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1769,6 +1811,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1792,6 +1835,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1811,6 +1855,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

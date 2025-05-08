@@ -37,6 +37,7 @@ public interface InstanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface InstanceOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface InstanceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface InstanceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public interface InstanceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface InstanceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -194,6 +201,7 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -207,9 +215,11 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -223,6 +233,7 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -240,6 +251,7 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -275,25 +287,36 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Output only. Deprecated 'daos_version' field.
    * Output only. The version of DAOS software running in the instance.
    * </pre>
    *
-   * <code>string daos_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string daos_version = 9 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.parallelstore.v1beta.Instance.daos_version is deprecated. See
+   *     google/cloud/parallelstore/v1beta/parallelstore.proto;l=274
    * @return The daosVersion.
    */
+  @java.lang.Deprecated
   java.lang.String getDaosVersion();
+
   /**
    *
    *
    * <pre>
+   * Output only. Deprecated 'daos_version' field.
    * Output only. The version of DAOS software running in the instance.
    * </pre>
    *
-   * <code>string daos_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string daos_version = 9 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.parallelstore.v1beta.Instance.daos_version is deprecated. See
+   *     google/cloud/parallelstore/v1beta/parallelstore.proto;l=274
    * @return The bytes for daosVersion.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getDaosVersionBytes();
 
   /**
@@ -308,6 +331,7 @@ public interface InstanceOrBuilder
    * @return A list containing the accessPoints.
    */
   java.util.List<java.lang.String> getAccessPointsList();
+
   /**
    *
    *
@@ -320,6 +344,7 @@ public interface InstanceOrBuilder
    * @return The count of accessPoints.
    */
   int getAccessPointsCount();
+
   /**
    *
    *
@@ -333,6 +358,7 @@ public interface InstanceOrBuilder
    * @return The accessPoints at the given index.
    */
   java.lang.String getAccessPoints(int index);
+
   /**
    *
    *
@@ -363,6 +389,7 @@ public interface InstanceOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -397,6 +424,7 @@ public interface InstanceOrBuilder
    * @return The reservedIpRange.
    */
   java.lang.String getReservedIpRange();
+
   /**
    *
    *
@@ -431,6 +459,7 @@ public interface InstanceOrBuilder
    * @return The effectiveReservedIpRange.
    */
   java.lang.String getEffectiveReservedIpRange();
+
   /**
    *
    *
@@ -452,7 +481,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Stripe level for files. Allowed values are:
+   * Optional. Immutable. Stripe level for files. Allowed values are:
    *
    * * `FILE_STRIPE_LEVEL_MIN`: offers the best performance for small size
    *   files.
@@ -462,17 +491,18 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for fileStripeLevel.
    */
   int getFileStripeLevelValue();
+
   /**
    *
    *
    * <pre>
-   * Optional. Stripe level for files. Allowed values are:
+   * Optional. Immutable. Stripe level for files. Allowed values are:
    *
    * * `FILE_STRIPE_LEVEL_MIN`: offers the best performance for small size
    *   files.
@@ -482,7 +512,7 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The fileStripeLevel.
@@ -493,7 +523,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Stripe level for directories. Allowed values are:
+   * Optional. Immutable. Stripe level for directories. Allowed values are:
    *
    * * `DIRECTORY_STRIPE_LEVEL_MIN`: recommended when directories contain a
    *   small number of files.
@@ -504,17 +534,18 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for directoryStripeLevel.
    */
   int getDirectoryStripeLevelValue();
+
   /**
    *
    *
    * <pre>
-   * Optional. Stripe level for directories. Allowed values are:
+   * Optional. Immutable. Stripe level for directories. Allowed values are:
    *
    * * `DIRECTORY_STRIPE_LEVEL_MIN`: recommended when directories contain a
    *   small number of files.
@@ -525,7 +556,7 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The directoryStripeLevel.
@@ -536,31 +567,34 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. The deployment type of the instance. Allowed values are:
+   * Optional. Immutable. The deployment type of the instance. Allowed values
+   * are:
    *
    * * `SCRATCH`: the instance is a scratch instance.
    * * `PERSISTENT`: the instance is a persistent instance.
    * </pre>
    *
    * <code>
-   * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for deploymentType.
    */
   int getDeploymentTypeValue();
+
   /**
    *
    *
    * <pre>
-   * Optional. The deployment type of the instance. Allowed values are:
+   * Optional. Immutable. The deployment type of the instance. Allowed values
+   * are:
    *
    * * `SCRATCH`: the instance is a scratch instance.
    * * `PERSISTENT`: the instance is a persistent instance.
    * </pre>
    *
    * <code>
-   * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The deploymentType.

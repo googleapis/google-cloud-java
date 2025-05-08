@@ -36,6 +36,7 @@ public interface ValueOrBuilder
    * @return Whether the integerValue field is set.
    */
   boolean hasIntegerValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ValueOrBuilder
    * @return Whether the floatValue field is set.
    */
   boolean hasFloatValue();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ValueOrBuilder
    * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ValueOrBuilder
    * @return The stringValue.
    */
   java.lang.String getStringValue();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface ValueOrBuilder
    * @return Whether the booleanValue field is set.
    */
   boolean hasBooleanValue();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface ValueOrBuilder
    * @return Whether the timestampValue field is set.
    */
   boolean hasTimestampValue();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface ValueOrBuilder
    * @return The timestampValue.
    */
   com.google.protobuf.Timestamp getTimestampValue();
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public interface ValueOrBuilder
    * @return Whether the timeValue field is set.
    */
   boolean hasTimeValue();
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public interface ValueOrBuilder
    * @return The timeValue.
    */
   com.google.type.TimeOfDay getTimeValue();
+
   /**
    *
    *
@@ -218,6 +227,7 @@ public interface ValueOrBuilder
    * @return Whether the dateValue field is set.
    */
   boolean hasDateValue();
+
   /**
    *
    *
@@ -230,6 +240,7 @@ public interface ValueOrBuilder
    * @return The dateValue.
    */
   com.google.type.Date getDateValue();
+
   /**
    *
    *
@@ -253,6 +264,7 @@ public interface ValueOrBuilder
    * @return Whether the dayOfWeekValue field is set.
    */
   boolean hasDayOfWeekValue();
+
   /**
    *
    *
@@ -265,6 +277,7 @@ public interface ValueOrBuilder
    * @return The enum numeric value on the wire for dayOfWeekValue.
    */
   int getDayOfWeekValueValue();
+
   /**
    *
    *

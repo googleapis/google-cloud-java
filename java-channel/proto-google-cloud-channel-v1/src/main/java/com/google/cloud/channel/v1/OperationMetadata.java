@@ -34,6 +34,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.OperationMetadata)
     OperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OperationMetadata.newBuilder() to construct.
   private OperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -207,6 +208,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>OPERATION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int OPERATION_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -217,6 +219,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>CREATE_ENTITLEMENT = 1;</code>
      */
     public static final int CREATE_ENTITLEMENT_VALUE = 1;
+
     /**
      *
      *
@@ -227,6 +230,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>CHANGE_RENEWAL_SETTINGS = 3;</code>
      */
     public static final int CHANGE_RENEWAL_SETTINGS_VALUE = 3;
+
     /**
      *
      *
@@ -237,6 +241,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>START_PAID_SERVICE = 5;</code>
      */
     public static final int START_PAID_SERVICE_VALUE = 5;
+
     /**
      *
      *
@@ -247,6 +252,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>ACTIVATE_ENTITLEMENT = 7;</code>
      */
     public static final int ACTIVATE_ENTITLEMENT_VALUE = 7;
+
     /**
      *
      *
@@ -257,6 +263,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>SUSPEND_ENTITLEMENT = 8;</code>
      */
     public static final int SUSPEND_ENTITLEMENT_VALUE = 8;
+
     /**
      *
      *
@@ -267,6 +274,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>CANCEL_ENTITLEMENT = 9;</code>
      */
     public static final int CANCEL_ENTITLEMENT_VALUE = 9;
+
     /**
      *
      *
@@ -277,6 +285,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>TRANSFER_ENTITLEMENTS = 10;</code>
      */
     public static final int TRANSFER_ENTITLEMENTS_VALUE = 10;
+
     /**
      *
      *
@@ -287,6 +296,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>TRANSFER_ENTITLEMENTS_TO_GOOGLE = 11;</code>
      */
     public static final int TRANSFER_ENTITLEMENTS_TO_GOOGLE_VALUE = 11;
+
     /**
      *
      *
@@ -297,6 +307,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>CHANGE_OFFER = 14;</code>
      */
     public static final int CHANGE_OFFER_VALUE = 14;
+
     /**
      *
      *
@@ -307,6 +318,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>CHANGE_PARAMETERS = 15;</code>
      */
     public static final int CHANGE_PARAMETERS_VALUE = 15;
+
     /**
      *
      *
@@ -421,6 +433,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
   public static final int OPERATION_TYPE_FIELD_NUMBER = 1;
   private int operationType_ = 0;
+
   /**
    *
    *
@@ -436,6 +449,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public int getOperationTypeValue() {
     return operationType_;
   }
+
   /**
    *
    *
@@ -619,6 +633,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -801,6 +816,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int operationType_ = 0;
+
     /**
      *
      *
@@ -816,6 +832,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public int getOperationTypeValue() {
       return operationType_;
     }
+
     /**
      *
      *
@@ -834,6 +851,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +871,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.channel.v1.OperationMetadata.OperationType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -875,6 +894,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

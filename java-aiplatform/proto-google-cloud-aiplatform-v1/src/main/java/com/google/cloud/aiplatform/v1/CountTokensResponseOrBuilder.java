@@ -63,6 +63,7 @@ public interface CountTokensResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.ModalityTokenCount> getPromptTokensDetailsList();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface CountTokensResponseOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.ModalityTokenCount getPromptTokensDetails(int index);
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface CountTokensResponseOrBuilder
    * </code>
    */
   int getPromptTokensDetailsCount();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface CountTokensResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.ModalityTokenCountOrBuilder>
       getPromptTokensDetailsOrBuilderList();
+
   /**
    *
    *

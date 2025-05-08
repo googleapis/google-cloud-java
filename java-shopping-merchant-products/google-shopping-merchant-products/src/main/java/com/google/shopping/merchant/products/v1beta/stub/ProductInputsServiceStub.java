@@ -23,6 +23,7 @@ import com.google.protobuf.Empty;
 import com.google.shopping.merchant.products.v1beta.DeleteProductInputRequest;
 import com.google.shopping.merchant.products.v1beta.InsertProductInputRequest;
 import com.google.shopping.merchant.products.v1beta.ProductInput;
+import com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -37,6 +38,10 @@ public abstract class ProductInputsServiceStub implements BackgroundResource {
 
   public UnaryCallable<InsertProductInputRequest, ProductInput> insertProductInputCallable() {
     throw new UnsupportedOperationException("Not implemented: insertProductInputCallable()");
+  }
+
+  public UnaryCallable<UpdateProductInputRequest, ProductInput> updateProductInputCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateProductInputCallable()");
   }
 
   public UnaryCallable<DeleteProductInputRequest, Empty> deleteProductInputCallable() {

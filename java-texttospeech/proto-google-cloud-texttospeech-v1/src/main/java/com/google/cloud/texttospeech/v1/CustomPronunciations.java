@@ -33,6 +33,7 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1.CustomPronunciations)
     CustomPronunciationsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomPronunciations.newBuilder() to construct.
   private CustomPronunciations(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,11 +69,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.texttospeech.v1.CustomPronunciationParams>
       pronunciations_;
+
   /**
    *
    *
    * <pre>
-   * The pronunciation customizations to be applied.
+   * The pronunciation customizations are applied.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -83,11 +85,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
       getPronunciationsList() {
     return pronunciations_;
   }
+
   /**
    *
    *
    * <pre>
-   * The pronunciation customizations to be applied.
+   * The pronunciation customizations are applied.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -99,11 +102,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
       getPronunciationsOrBuilderList() {
     return pronunciations_;
   }
+
   /**
    *
    *
    * <pre>
-   * The pronunciation customizations to be applied.
+   * The pronunciation customizations are applied.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -113,11 +117,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
   public int getPronunciationsCount() {
     return pronunciations_.size();
   }
+
   /**
    *
    *
    * <pre>
-   * The pronunciation customizations to be applied.
+   * The pronunciation customizations are applied.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -127,11 +132,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
   public com.google.cloud.texttospeech.v1.CustomPronunciationParams getPronunciations(int index) {
     return pronunciations_.get(index);
   }
+
   /**
    *
    *
    * <pre>
-   * The pronunciation customizations to be applied.
+   * The pronunciation customizations are applied.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -305,6 +311,7 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -557,7 +564,7 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The pronunciation customizations to be applied.
+     * The pronunciation customizations are applied.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -571,11 +578,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
         return pronunciationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The pronunciation customizations to be applied.
+     * The pronunciation customizations are applied.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -588,11 +596,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
         return pronunciationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The pronunciation customizations to be applied.
+     * The pronunciation customizations are applied.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -605,11 +614,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
         return pronunciationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The pronunciation customizations to be applied.
+     * The pronunciation customizations are applied.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -629,11 +639,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The pronunciation customizations to be applied.
+     * The pronunciation customizations are applied.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -651,11 +662,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The pronunciation customizations to be applied.
+     * The pronunciation customizations are applied.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -675,11 +687,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The pronunciation customizations to be applied.
+     * The pronunciation customizations are applied.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -699,11 +712,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The pronunciation customizations to be applied.
+     * The pronunciation customizations are applied.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -720,11 +734,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The pronunciation customizations to be applied.
+     * The pronunciation customizations are applied.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -742,11 +757,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The pronunciation customizations to be applied.
+     * The pronunciation customizations are applied.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -764,11 +780,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The pronunciation customizations to be applied.
+     * The pronunciation customizations are applied.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -784,11 +801,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The pronunciation customizations to be applied.
+     * The pronunciation customizations are applied.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -804,11 +822,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The pronunciation customizations to be applied.
+     * The pronunciation customizations are applied.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -818,11 +837,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
         getPronunciationsBuilder(int index) {
       return getPronunciationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
      * <pre>
-     * The pronunciation customizations to be applied.
+     * The pronunciation customizations are applied.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -836,11 +856,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
         return pronunciationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The pronunciation customizations to be applied.
+     * The pronunciation customizations are applied.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -855,11 +876,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(pronunciations_);
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The pronunciation customizations to be applied.
+     * The pronunciation customizations are applied.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -871,11 +893,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
           .addBuilder(
               com.google.cloud.texttospeech.v1.CustomPronunciationParams.getDefaultInstance());
     }
+
     /**
      *
      *
      * <pre>
-     * The pronunciation customizations to be applied.
+     * The pronunciation customizations are applied.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;
@@ -888,11 +911,12 @@ public final class CustomPronunciations extends com.google.protobuf.GeneratedMes
               index,
               com.google.cloud.texttospeech.v1.CustomPronunciationParams.getDefaultInstance());
     }
+
     /**
      *
      *
      * <pre>
-     * The pronunciation customizations to be applied.
+     * The pronunciation customizations are applied.
      * </pre>
      *
      * <code>repeated .google.cloud.texttospeech.v1.CustomPronunciationParams pronunciations = 1;

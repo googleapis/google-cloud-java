@@ -112,6 +112,7 @@ public enum RawDocumentFileType implements com.google.protobuf.ProtocolMessageEn
    * <code>RAW_DOCUMENT_FILE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int RAW_DOCUMENT_FILE_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -122,6 +123,7 @@ public enum RawDocumentFileType implements com.google.protobuf.ProtocolMessageEn
    * <code>RAW_DOCUMENT_FILE_TYPE_PDF = 1;</code>
    */
   public static final int RAW_DOCUMENT_FILE_TYPE_PDF_VALUE = 1;
+
   /**
    *
    *
@@ -132,6 +134,7 @@ public enum RawDocumentFileType implements com.google.protobuf.ProtocolMessageEn
    * <code>RAW_DOCUMENT_FILE_TYPE_DOCX = 2;</code>
    */
   public static final int RAW_DOCUMENT_FILE_TYPE_DOCX_VALUE = 2;
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public enum RawDocumentFileType implements com.google.protobuf.ProtocolMessageEn
    * <code>RAW_DOCUMENT_FILE_TYPE_XLSX = 3;</code>
    */
   public static final int RAW_DOCUMENT_FILE_TYPE_XLSX_VALUE = 3;
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public enum RawDocumentFileType implements com.google.protobuf.ProtocolMessageEn
    * <code>RAW_DOCUMENT_FILE_TYPE_PPTX = 4;</code>
    */
   public static final int RAW_DOCUMENT_FILE_TYPE_PPTX_VALUE = 4;
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public enum RawDocumentFileType implements com.google.protobuf.ProtocolMessageEn
    * <code>RAW_DOCUMENT_FILE_TYPE_TEXT = 5;</code>
    */
   public static final int RAW_DOCUMENT_FILE_TYPE_TEXT_VALUE = 5;
+
   /**
    *
    *

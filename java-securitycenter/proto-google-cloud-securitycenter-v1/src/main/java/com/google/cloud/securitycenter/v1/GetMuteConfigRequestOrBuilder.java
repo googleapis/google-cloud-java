@@ -44,6 +44,7 @@ public interface GetMuteConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

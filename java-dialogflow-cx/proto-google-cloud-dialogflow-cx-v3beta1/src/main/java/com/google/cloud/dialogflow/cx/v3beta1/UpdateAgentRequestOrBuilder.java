@@ -38,6 +38,7 @@ public interface UpdateAgentRequestOrBuilder
    * @return Whether the agent field is set.
    */
   boolean hasAgent();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateAgentRequestOrBuilder
    * @return The agent.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Agent getAgent();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface UpdateAgentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface UpdateAgentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

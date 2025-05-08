@@ -38,6 +38,7 @@ public interface CreateUtilizationReportRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateUtilizationReportRequestOrBuilder
    * @return Whether the utilizationReport field is set.
    */
   boolean hasUtilizationReport();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateUtilizationReportRequestOrBuilder
    * @return The utilizationReport.
    */
   com.google.cloud.vmmigration.v1.UtilizationReport getUtilizationReport();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface CreateUtilizationReportRequestOrBuilder
    * @return The utilizationReportId.
    */
   java.lang.String getUtilizationReportId();
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public interface CreateUtilizationReportRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

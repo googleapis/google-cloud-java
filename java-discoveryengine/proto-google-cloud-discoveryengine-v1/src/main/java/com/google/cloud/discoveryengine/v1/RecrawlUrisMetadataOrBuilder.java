@@ -36,6 +36,7 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface RecrawlUrisMetadataOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -101,37 +105,36 @@ public interface RecrawlUrisMetadataOrBuilder
    *
    *
    * <pre>
-   * Unique URIs in the request that don't match any TargetSite in the
-   * DataStore, only match TargetSites that haven't been fully indexed, or match
-   * a TargetSite with type EXCLUDE.
+   * Unique URIs in the request that have invalid format. Sample limited to
+   * 1000.
    * </pre>
    *
    * <code>repeated string invalid_uris = 3;</code>
    *
    * @return A list containing the invalidUris.
    */
-  java.util.List<java.lang.String> getInvalidUrisList();
+  java.util.List<java.lang.String> getInvalidUris3List();
+
   /**
    *
    *
    * <pre>
-   * Unique URIs in the request that don't match any TargetSite in the
-   * DataStore, only match TargetSites that haven't been fully indexed, or match
-   * a TargetSite with type EXCLUDE.
+   * Unique URIs in the request that have invalid format. Sample limited to
+   * 1000.
    * </pre>
    *
    * <code>repeated string invalid_uris = 3;</code>
    *
    * @return The count of invalidUris.
    */
-  int getInvalidUrisCount();
+  int getInvalidUris3Count();
+
   /**
    *
    *
    * <pre>
-   * Unique URIs in the request that don't match any TargetSite in the
-   * DataStore, only match TargetSites that haven't been fully indexed, or match
-   * a TargetSite with type EXCLUDE.
+   * Unique URIs in the request that have invalid format. Sample limited to
+   * 1000.
    * </pre>
    *
    * <code>repeated string invalid_uris = 3;</code>
@@ -139,14 +142,14 @@ public interface RecrawlUrisMetadataOrBuilder
    * @param index The index of the element to return.
    * @return The invalidUris at the given index.
    */
-  java.lang.String getInvalidUris(int index);
+  java.lang.String getInvalidUris3(int index);
+
   /**
    *
    *
    * <pre>
-   * Unique URIs in the request that don't match any TargetSite in the
-   * DataStore, only match TargetSites that haven't been fully indexed, or match
-   * a TargetSite with type EXCLUDE.
+   * Unique URIs in the request that have invalid format. Sample limited to
+   * 1000.
    * </pre>
    *
    * <code>repeated string invalid_uris = 3;</code>
@@ -154,7 +157,162 @@ public interface RecrawlUrisMetadataOrBuilder
    * @param index The index of the value to return.
    * @return The bytes of the invalidUris at the given index.
    */
-  com.google.protobuf.ByteString getInvalidUrisBytes(int index);
+  com.google.protobuf.ByteString getInvalidUris3Bytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Total number of unique URIs in the request that have invalid format.
+   * </pre>
+   *
+   * <code>int32 invalid_uris_count = 8;</code>
+   *
+   * @return The invalidUrisCount.
+   */
+  int getInvalidUrisCount8();
+
+  /**
+   *
+   *
+   * <pre>
+   * URIs that have no index meta tag. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string noindex_uris = 11;</code>
+   *
+   * @return A list containing the noindexUris.
+   */
+  java.util.List<java.lang.String> getNoindexUris11List();
+
+  /**
+   *
+   *
+   * <pre>
+   * URIs that have no index meta tag. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string noindex_uris = 11;</code>
+   *
+   * @return The count of noindexUris.
+   */
+  int getNoindexUris11Count();
+
+  /**
+   *
+   *
+   * <pre>
+   * URIs that have no index meta tag. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string noindex_uris = 11;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The noindexUris at the given index.
+   */
+  java.lang.String getNoindexUris11(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * URIs that have no index meta tag. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string noindex_uris = 11;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the noindexUris at the given index.
+   */
+  com.google.protobuf.ByteString getNoindexUris11Bytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Total number of URIs that have no index meta tag.
+   * </pre>
+   *
+   * <code>int32 noindex_uris_count = 12;</code>
+   *
+   * @return The noindexUrisCount.
+   */
+  int getNoindexUrisCount12();
+
+  /**
+   *
+   *
+   * <pre>
+   * Unique URIs in the request that don't match any TargetSite in the
+   * DataStore, only match TargetSites that haven't been fully indexed, or match
+   * a TargetSite with type EXCLUDE. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string uris_not_matching_target_sites = 9;</code>
+   *
+   * @return A list containing the urisNotMatchingTargetSites.
+   */
+  java.util.List<java.lang.String> getUrisNotMatchingTargetSites9List();
+
+  /**
+   *
+   *
+   * <pre>
+   * Unique URIs in the request that don't match any TargetSite in the
+   * DataStore, only match TargetSites that haven't been fully indexed, or match
+   * a TargetSite with type EXCLUDE. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string uris_not_matching_target_sites = 9;</code>
+   *
+   * @return The count of urisNotMatchingTargetSites.
+   */
+  int getUrisNotMatchingTargetSites9Count();
+
+  /**
+   *
+   *
+   * <pre>
+   * Unique URIs in the request that don't match any TargetSite in the
+   * DataStore, only match TargetSites that haven't been fully indexed, or match
+   * a TargetSite with type EXCLUDE. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string uris_not_matching_target_sites = 9;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The urisNotMatchingTargetSites at the given index.
+   */
+  java.lang.String getUrisNotMatchingTargetSites9(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Unique URIs in the request that don't match any TargetSite in the
+   * DataStore, only match TargetSites that haven't been fully indexed, or match
+   * a TargetSite with type EXCLUDE. Sample limited to 1000.
+   * </pre>
+   *
+   * <code>repeated string uris_not_matching_target_sites = 9;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the urisNotMatchingTargetSites at the given index.
+   */
+  com.google.protobuf.ByteString getUrisNotMatchingTargetSites9Bytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Total number of URIs that don't match any TargetSites.
+   * </pre>
+   *
+   * <code>int32 uris_not_matching_target_sites_count = 10;</code>
+   *
+   * @return The urisNotMatchingTargetSitesCount.
+   */
+  int getUrisNotMatchingTargetSitesCount10();
 
   /**
    *

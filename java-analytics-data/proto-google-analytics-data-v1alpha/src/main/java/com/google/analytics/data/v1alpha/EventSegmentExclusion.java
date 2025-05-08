@@ -33,6 +33,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.EventSegmentExclusion)
     EventSegmentExclusionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EventSegmentExclusion.newBuilder() to construct.
   private EventSegmentExclusion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int EVENT_EXCLUSION_DURATION_FIELD_NUMBER = 1;
   private int eventExclusionDuration_ = 0;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
   public int getEventExclusionDurationValue() {
     return eventExclusionDuration_;
   }
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
 
   public static final int EVENT_EXCLUSION_CRITERIA_FIELD_NUMBER = 2;
   private com.google.analytics.data.v1alpha.EventSegmentCriteria eventExclusionCriteria_;
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
   public boolean hasEventExclusionCriteria() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
         ? com.google.analytics.data.v1alpha.EventSegmentCriteria.getDefaultInstance()
         : eventExclusionCriteria_;
   }
+
   /**
    *
    *
@@ -344,6 +350,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -559,6 +566,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int eventExclusionDuration_ = 0;
+
     /**
      *
      *
@@ -578,6 +586,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
     public int getEventExclusionDurationValue() {
       return eventExclusionDuration_;
     }
+
     /**
      *
      *
@@ -600,6 +609,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -624,6 +634,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
           ? com.google.analytics.data.v1alpha.EventExclusionDuration.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -650,6 +661,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +690,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
             com.google.analytics.data.v1alpha.EventSegmentCriteria.Builder,
             com.google.analytics.data.v1alpha.EventSegmentCriteriaOrBuilder>
         eventExclusionCriteriaBuilder_;
+
     /**
      *
      *
@@ -694,6 +707,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
     public boolean hasEventExclusionCriteria() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -716,6 +730,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
         return eventExclusionCriteriaBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -741,6 +756,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +779,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +811,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +833,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +851,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
       onChanged();
       return getEventExclusionCriteriaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -853,6 +873,7 @@ public final class EventSegmentExclusion extends com.google.protobuf.GeneratedMe
             : eventExclusionCriteria_;
       }
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface NotificationSubscriptionOrBuilder
    * @return Whether the allManagedAccounts field is set.
    */
   boolean hasAllManagedAccounts();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface NotificationSubscriptionOrBuilder
    * @return Whether the targetAccount field is set.
    */
   boolean hasTargetAccount();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface NotificationSubscriptionOrBuilder
    * @return The targetAccount.
    */
   java.lang.String getTargetAccount();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface NotificationSubscriptionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface NotificationSubscriptionOrBuilder
    * @return The enum numeric value on the wire for registeredEvent.
    */
   int getRegisteredEventValue();
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public interface NotificationSubscriptionOrBuilder
    * @return The callBackUri.
    */
   java.lang.String getCallBackUri();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.parallelstore.v1beta.Instance)
     InstanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Instance.newBuilder() to construct.
   private Instance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -155,6 +156,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>UPGRADING = 5;</code>
      */
     UPGRADING(5),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is being repaired. This should only be used by instances
+     * using the `PERSISTENT` deployment type.
+     * </pre>
+     *
+     * <code>REPAIRING = 6;</code>
+     */
+    REPAIRING(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -168,6 +180,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -178,6 +191,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
+
     /**
      *
      *
@@ -188,6 +202,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
+
     /**
      *
      *
@@ -198,6 +213,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 3;</code>
      */
     public static final int DELETING_VALUE = 3;
+
     /**
      *
      *
@@ -208,6 +224,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 4;</code>
      */
     public static final int FAILED_VALUE = 4;
+
     /**
      *
      *
@@ -218,6 +235,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>UPGRADING = 5;</code>
      */
     public static final int UPGRADING_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * The instance is being repaired. This should only be used by instances
+     * using the `PERSISTENT` deployment type.
+     * </pre>
+     *
+     * <code>REPAIRING = 6;</code>
+     */
+    public static final int REPAIRING_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -255,6 +284,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return FAILED;
         case 5:
           return UPGRADING;
+        case 6:
+          return REPAIRING;
         default:
           return null;
       }
@@ -313,6 +344,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -337,6 +369,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -366,6 +399,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -389,6 +423,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -415,6 +450,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -432,6 +468,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -456,6 +493,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -472,6 +510,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -488,6 +527,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -505,6 +545,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -521,6 +562,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -537,6 +579,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -578,6 +621,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -597,12 +641,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -619,6 +665,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -642,6 +689,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -668,6 +716,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CAPACITY_GIB_FIELD_NUMBER = 8;
   private long capacityGib_ = 0L;
+
   /**
    *
    *
@@ -692,18 +741,24 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object daosVersion_ = "";
+
   /**
    *
    *
    * <pre>
+   * Output only. Deprecated 'daos_version' field.
    * Output only. The version of DAOS software running in the instance.
    * </pre>
    *
-   * <code>string daos_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string daos_version = 9 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.parallelstore.v1beta.Instance.daos_version is deprecated. See
+   *     google/cloud/parallelstore/v1beta/parallelstore.proto;l=274
    * @return The daosVersion.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getDaosVersion() {
     java.lang.Object ref = daosVersion_;
     if (ref instanceof java.lang.String) {
@@ -715,18 +770,24 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
+   * Output only. Deprecated 'daos_version' field.
    * Output only. The version of DAOS software running in the instance.
    * </pre>
    *
-   * <code>string daos_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string daos_version = 9 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.parallelstore.v1beta.Instance.daos_version is deprecated. See
+   *     google/cloud/parallelstore/v1beta/parallelstore.proto;l=274
    * @return The bytes for daosVersion.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getDaosVersionBytes() {
     java.lang.Object ref = daosVersion_;
     if (ref instanceof java.lang.String) {
@@ -744,6 +805,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList accessPoints_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -758,6 +820,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAccessPointsList() {
     return accessPoints_;
   }
+
   /**
    *
    *
@@ -772,6 +835,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getAccessPointsCount() {
     return accessPoints_.size();
   }
+
   /**
    *
    *
@@ -787,6 +851,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAccessPoints(int index) {
     return accessPoints_.get(index);
   }
+
   /**
    *
    *
@@ -807,6 +872,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
+
   /**
    *
    *
@@ -834,6 +900,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -866,6 +933,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reservedIpRange_ = "";
+
   /**
    *
    *
@@ -894,6 +962,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -927,6 +996,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object effectiveReservedIpRange_ = "";
+
   /**
    *
    *
@@ -954,6 +1024,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -984,11 +1055,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FILE_STRIPE_LEVEL_FIELD_NUMBER = 15;
   private int fileStripeLevel_ = 0;
+
   /**
    *
    *
    * <pre>
-   * Optional. Stripe level for files. Allowed values are:
+   * Optional. Immutable. Stripe level for files. Allowed values are:
    *
    * * `FILE_STRIPE_LEVEL_MIN`: offers the best performance for small size
    *   files.
@@ -998,7 +1070,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for fileStripeLevel.
@@ -1007,11 +1079,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getFileStripeLevelValue() {
     return fileStripeLevel_;
   }
+
   /**
    *
    *
    * <pre>
-   * Optional. Stripe level for files. Allowed values are:
+   * Optional. Immutable. Stripe level for files. Allowed values are:
    *
    * * `FILE_STRIPE_LEVEL_MIN`: offers the best performance for small size
    *   files.
@@ -1021,7 +1094,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The fileStripeLevel.
@@ -1037,11 +1110,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DIRECTORY_STRIPE_LEVEL_FIELD_NUMBER = 16;
   private int directoryStripeLevel_ = 0;
+
   /**
    *
    *
    * <pre>
-   * Optional. Stripe level for directories. Allowed values are:
+   * Optional. Immutable. Stripe level for directories. Allowed values are:
    *
    * * `DIRECTORY_STRIPE_LEVEL_MIN`: recommended when directories contain a
    *   small number of files.
@@ -1052,7 +1126,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for directoryStripeLevel.
@@ -1061,11 +1135,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getDirectoryStripeLevelValue() {
     return directoryStripeLevel_;
   }
+
   /**
    *
    *
    * <pre>
-   * Optional. Stripe level for directories. Allowed values are:
+   * Optional. Immutable. Stripe level for directories. Allowed values are:
    *
    * * `DIRECTORY_STRIPE_LEVEL_MIN`: recommended when directories contain a
    *   small number of files.
@@ -1076,7 +1151,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The directoryStripeLevel.
@@ -1092,18 +1167,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEPLOYMENT_TYPE_FIELD_NUMBER = 17;
   private int deploymentType_ = 0;
+
   /**
    *
    *
    * <pre>
-   * Optional. The deployment type of the instance. Allowed values are:
+   * Optional. Immutable. The deployment type of the instance. Allowed values
+   * are:
    *
    * * `SCRATCH`: the instance is a scratch instance.
    * * `PERSISTENT`: the instance is a persistent instance.
    * </pre>
    *
    * <code>
-   * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for deploymentType.
@@ -1112,18 +1189,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getDeploymentTypeValue() {
     return deploymentType_;
   }
+
   /**
    *
    *
    * <pre>
-   * Optional. The deployment type of the instance. Allowed values are:
+   * Optional. Immutable. The deployment type of the instance. Allowed values
+   * are:
    *
    * * `SCRATCH`: the instance is a scratch instance.
    * * `PERSISTENT`: the instance is a persistent instance.
    * </pre>
    *
    * <code>
-   * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The deploymentType.
@@ -1464,6 +1543,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1898,6 +1978,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1921,6 +2002,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1944,6 +2026,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1966,6 +2049,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1984,6 +2068,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2009,6 +2094,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2031,6 +2117,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2053,6 +2140,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2074,6 +2162,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2091,6 +2180,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2115,6 +2205,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2132,6 +2223,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2152,6 +2244,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2173,6 +2266,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.parallelstore.v1beta.Instance.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2196,6 +2290,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2222,6 +2317,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2238,6 +2334,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2260,6 +2357,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2284,6 +2382,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2305,6 +2404,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2334,6 +2434,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2355,6 +2456,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2371,6 +2473,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2391,6 +2494,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2425,6 +2529,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2441,6 +2546,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2463,6 +2569,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2487,6 +2594,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2508,6 +2616,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2537,6 +2646,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2558,6 +2668,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2574,6 +2685,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2594,6 +2706,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2647,6 +2760,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2666,12 +2780,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2688,6 +2804,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2711,6 +2828,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2740,6 +2858,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2759,12 +2878,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000020;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2788,6 +2909,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       return this;
     }
+
     /**
      *
      *
@@ -2807,6 +2929,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long capacityGib_;
+
     /**
      *
      *
@@ -2826,6 +2949,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public long getCapacityGib() {
       return capacityGib_;
     }
+
     /**
      *
      *
@@ -2849,6 +2973,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2872,17 +2997,24 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object daosVersion_ = "";
+
     /**
      *
      *
      * <pre>
+     * Output only. Deprecated 'daos_version' field.
      * Output only. The version of DAOS software running in the instance.
      * </pre>
      *
-     * <code>string daos_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string daos_version = 9 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.parallelstore.v1beta.Instance.daos_version is deprecated. See
+     *     google/cloud/parallelstore/v1beta/parallelstore.proto;l=274
      * @return The daosVersion.
      */
+    @java.lang.Deprecated
     public java.lang.String getDaosVersion() {
       java.lang.Object ref = daosVersion_;
       if (!(ref instanceof java.lang.String)) {
@@ -2894,17 +3026,24 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
+     * Output only. Deprecated 'daos_version' field.
      * Output only. The version of DAOS software running in the instance.
      * </pre>
      *
-     * <code>string daos_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string daos_version = 9 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.parallelstore.v1beta.Instance.daos_version is deprecated. See
+     *     google/cloud/parallelstore/v1beta/parallelstore.proto;l=274
      * @return The bytes for daosVersion.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getDaosVersionBytes() {
       java.lang.Object ref = daosVersion_;
       if (ref instanceof String) {
@@ -2916,18 +3055,25 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
+     * Output only. Deprecated 'daos_version' field.
      * Output only. The version of DAOS software running in the instance.
      * </pre>
      *
-     * <code>string daos_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string daos_version = 9 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.parallelstore.v1beta.Instance.daos_version is deprecated. See
+     *     google/cloud/parallelstore/v1beta/parallelstore.proto;l=274
      * @param value The daosVersion to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setDaosVersion(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -2937,35 +3083,49 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
+     * Output only. Deprecated 'daos_version' field.
      * Output only. The version of DAOS software running in the instance.
      * </pre>
      *
-     * <code>string daos_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string daos_version = 9 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.parallelstore.v1beta.Instance.daos_version is deprecated. See
+     *     google/cloud/parallelstore/v1beta/parallelstore.proto;l=274
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearDaosVersion() {
       daosVersion_ = getDefaultInstance().getDaosVersion();
       bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
+     * Output only. Deprecated 'daos_version' field.
      * Output only. The version of DAOS software running in the instance.
      * </pre>
      *
-     * <code>string daos_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string daos_version = 9 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.parallelstore.v1beta.Instance.daos_version is deprecated. See
+     *     google/cloud/parallelstore/v1beta/parallelstore.proto;l=274
      * @param value The bytes for daosVersion to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setDaosVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -2986,6 +3146,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000100;
     }
+
     /**
      *
      *
@@ -3001,6 +3162,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       accessPoints_.makeImmutable();
       return accessPoints_;
     }
+
     /**
      *
      *
@@ -3015,6 +3177,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getAccessPointsCount() {
       return accessPoints_.size();
     }
+
     /**
      *
      *
@@ -3030,6 +3193,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAccessPoints(int index) {
       return accessPoints_.get(index);
     }
+
     /**
      *
      *
@@ -3045,6 +3209,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAccessPointsBytes(int index) {
       return accessPoints_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3068,6 +3233,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3090,6 +3256,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3109,6 +3276,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3127,6 +3295,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3152,6 +3321,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -3178,6 +3348,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3204,6 +3375,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3229,6 +3401,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3250,6 +3423,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3278,6 +3452,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object reservedIpRange_ = "";
+
     /**
      *
      *
@@ -3305,6 +3480,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3332,6 +3508,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3358,6 +3535,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3380,6 +3558,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3409,6 +3588,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object effectiveReservedIpRange_ = "";
+
     /**
      *
      *
@@ -3435,6 +3615,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3461,6 +3642,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3486,6 +3668,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3507,6 +3690,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3535,11 +3719,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int fileStripeLevel_ = 0;
+
     /**
      *
      *
      * <pre>
-     * Optional. Stripe level for files. Allowed values are:
+     * Optional. Immutable. Stripe level for files. Allowed values are:
      *
      * * `FILE_STRIPE_LEVEL_MIN`: offers the best performance for small size
      *   files.
@@ -3549,7 +3734,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for fileStripeLevel.
@@ -3558,11 +3743,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getFileStripeLevelValue() {
       return fileStripeLevel_;
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. Stripe level for files. Allowed values are:
+     * Optional. Immutable. Stripe level for files. Allowed values are:
      *
      * * `FILE_STRIPE_LEVEL_MIN`: offers the best performance for small size
      *   files.
@@ -3572,7 +3758,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for fileStripeLevel to set.
@@ -3584,11 +3770,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. Stripe level for files. Allowed values are:
+     * Optional. Immutable. Stripe level for files. Allowed values are:
      *
      * * `FILE_STRIPE_LEVEL_MIN`: offers the best performance for small size
      *   files.
@@ -3598,7 +3785,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The fileStripeLevel.
@@ -3611,11 +3798,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.parallelstore.v1beta.FileStripeLevel.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. Stripe level for files. Allowed values are:
+     * Optional. Immutable. Stripe level for files. Allowed values are:
      *
      * * `FILE_STRIPE_LEVEL_MIN`: offers the best performance for small size
      *   files.
@@ -3625,7 +3813,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The fileStripeLevel to set.
@@ -3640,11 +3828,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. Stripe level for files. Allowed values are:
+     * Optional. Immutable. Stripe level for files. Allowed values are:
      *
      * * `FILE_STRIPE_LEVEL_MIN`: offers the best performance for small size
      *   files.
@@ -3654,7 +3843,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.parallelstore.v1beta.FileStripeLevel file_stripe_level = 15 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -3667,11 +3856,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int directoryStripeLevel_ = 0;
+
     /**
      *
      *
      * <pre>
-     * Optional. Stripe level for directories. Allowed values are:
+     * Optional. Immutable. Stripe level for directories. Allowed values are:
      *
      * * `DIRECTORY_STRIPE_LEVEL_MIN`: recommended when directories contain a
      *   small number of files.
@@ -3682,7 +3872,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for directoryStripeLevel.
@@ -3691,11 +3881,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getDirectoryStripeLevelValue() {
       return directoryStripeLevel_;
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. Stripe level for directories. Allowed values are:
+     * Optional. Immutable. Stripe level for directories. Allowed values are:
      *
      * * `DIRECTORY_STRIPE_LEVEL_MIN`: recommended when directories contain a
      *   small number of files.
@@ -3706,7 +3897,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for directoryStripeLevel to set.
@@ -3718,11 +3909,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. Stripe level for directories. Allowed values are:
+     * Optional. Immutable. Stripe level for directories. Allowed values are:
      *
      * * `DIRECTORY_STRIPE_LEVEL_MIN`: recommended when directories contain a
      *   small number of files.
@@ -3733,7 +3925,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The directoryStripeLevel.
@@ -3747,11 +3939,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.parallelstore.v1beta.DirectoryStripeLevel.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. Stripe level for directories. Allowed values are:
+     * Optional. Immutable. Stripe level for directories. Allowed values are:
      *
      * * `DIRECTORY_STRIPE_LEVEL_MIN`: recommended when directories contain a
      *   small number of files.
@@ -3762,7 +3955,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The directoryStripeLevel to set.
@@ -3778,11 +3971,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. Stripe level for directories. Allowed values are:
+     * Optional. Immutable. Stripe level for directories. Allowed values are:
      *
      * * `DIRECTORY_STRIPE_LEVEL_MIN`: recommended when directories contain a
      *   small number of files.
@@ -3793,7 +3987,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.parallelstore.v1beta.DirectoryStripeLevel directory_stripe_level = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -3806,18 +4000,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int deploymentType_ = 0;
+
     /**
      *
      *
      * <pre>
-     * Optional. The deployment type of the instance. Allowed values are:
+     * Optional. Immutable. The deployment type of the instance. Allowed values
+     * are:
      *
      * * `SCRATCH`: the instance is a scratch instance.
      * * `PERSISTENT`: the instance is a persistent instance.
      * </pre>
      *
      * <code>
-     * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for deploymentType.
@@ -3826,18 +4022,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getDeploymentTypeValue() {
       return deploymentType_;
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. The deployment type of the instance. Allowed values are:
+     * Optional. Immutable. The deployment type of the instance. Allowed values
+     * are:
      *
      * * `SCRATCH`: the instance is a scratch instance.
      * * `PERSISTENT`: the instance is a persistent instance.
      * </pre>
      *
      * <code>
-     * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for deploymentType to set.
@@ -3849,18 +4047,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. The deployment type of the instance. Allowed values are:
+     * Optional. Immutable. The deployment type of the instance. Allowed values
+     * are:
      *
      * * `SCRATCH`: the instance is a scratch instance.
      * * `PERSISTENT`: the instance is a persistent instance.
      * </pre>
      *
      * <code>
-     * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The deploymentType.
@@ -3873,18 +4073,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.parallelstore.v1beta.DeploymentType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. The deployment type of the instance. Allowed values are:
+     * Optional. Immutable. The deployment type of the instance. Allowed values
+     * are:
      *
      * * `SCRATCH`: the instance is a scratch instance.
      * * `PERSISTENT`: the instance is a persistent instance.
      * </pre>
      *
      * <code>
-     * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The deploymentType to set.
@@ -3899,18 +4101,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. The deployment type of the instance. Allowed values are:
+     * Optional. Immutable. The deployment type of the instance. Allowed values
+     * are:
      *
      * * `SCRATCH`: the instance is a scratch instance.
      * * `PERSISTENT`: the instance is a persistent instance.
      * </pre>
      *
      * <code>
-     * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.parallelstore.v1beta.DeploymentType deployment_type = 17 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.

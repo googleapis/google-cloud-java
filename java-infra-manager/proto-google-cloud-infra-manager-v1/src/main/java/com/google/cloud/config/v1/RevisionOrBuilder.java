@@ -39,6 +39,7 @@ public interface RevisionOrBuilder
    * @return Whether the terraformBlueprint field is set.
    */
   boolean hasTerraformBlueprint();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface RevisionOrBuilder
    * @return The terraformBlueprint.
    */
   com.google.cloud.config.v1.TerraformBlueprint getTerraformBlueprint();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface RevisionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface RevisionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface RevisionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface RevisionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public interface RevisionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -187,6 +194,7 @@ public interface RevisionOrBuilder
    * @return The enum numeric value on the wire for action.
    */
   int getActionValue();
+
   /**
    *
    *
@@ -216,6 +224,7 @@ public interface RevisionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -245,6 +254,7 @@ public interface RevisionOrBuilder
    * @return Whether the applyResults field is set.
    */
   boolean hasApplyResults();
+
   /**
    *
    *
@@ -259,6 +269,7 @@ public interface RevisionOrBuilder
    * @return The applyResults.
    */
   com.google.cloud.config.v1.ApplyResults getApplyResults();
+
   /**
    *
    *
@@ -284,6 +295,7 @@ public interface RevisionOrBuilder
    * @return The stateDetail.
    */
   java.lang.String getStateDetail();
+
   /**
    *
    *
@@ -311,6 +323,7 @@ public interface RevisionOrBuilder
    * @return The enum numeric value on the wire for errorCode.
    */
   int getErrorCodeValue();
+
   /**
    *
    *
@@ -338,6 +351,7 @@ public interface RevisionOrBuilder
    * @return The build.
    */
   java.lang.String getBuild();
+
   /**
    *
    *
@@ -364,6 +378,7 @@ public interface RevisionOrBuilder
    * @return The logs.
    */
   java.lang.String getLogs();
+
   /**
    *
    *
@@ -392,6 +407,7 @@ public interface RevisionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.config.v1.TerraformError> getTfErrorsList();
+
   /**
    *
    *
@@ -406,6 +422,7 @@ public interface RevisionOrBuilder
    * </code>
    */
   com.google.cloud.config.v1.TerraformError getTfErrors(int index);
+
   /**
    *
    *
@@ -420,6 +437,7 @@ public interface RevisionOrBuilder
    * </code>
    */
   int getTfErrorsCount();
+
   /**
    *
    *
@@ -435,6 +453,7 @@ public interface RevisionOrBuilder
    */
   java.util.List<? extends com.google.cloud.config.v1.TerraformErrorOrBuilder>
       getTfErrorsOrBuilderList();
+
   /**
    *
    *
@@ -463,6 +482,7 @@ public interface RevisionOrBuilder
    * @return The errorLogs.
    */
   java.lang.String getErrorLogs();
+
   /**
    *
    *
@@ -493,6 +513,7 @@ public interface RevisionOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -547,6 +568,7 @@ public interface RevisionOrBuilder
    * @return The workerPool.
    */
   java.lang.String getWorkerPool();
+
   /**
    *
    *
@@ -579,6 +601,7 @@ public interface RevisionOrBuilder
    * @return The tfVersionConstraint.
    */
   java.lang.String getTfVersionConstraint();
+
   /**
    *
    *
@@ -606,6 +629,7 @@ public interface RevisionOrBuilder
    * @return The tfVersion.
    */
   java.lang.String getTfVersion();
+
   /**
    *
    *
@@ -634,6 +658,7 @@ public interface RevisionOrBuilder
    * @return The quotaValidationResults.
    */
   java.lang.String getQuotaValidationResults();
+
   /**
    *
    *
@@ -665,6 +690,7 @@ public interface RevisionOrBuilder
    * @return The enum numeric value on the wire for quotaValidation.
    */
   int getQuotaValidationValue();
+
   /**
    *
    *

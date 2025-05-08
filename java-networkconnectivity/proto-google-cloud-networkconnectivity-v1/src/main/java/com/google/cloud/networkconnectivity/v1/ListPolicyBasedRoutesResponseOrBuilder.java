@@ -28,7 +28,7 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -36,33 +36,36 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.PolicyBasedRoute>
       getPolicyBasedRoutesList();
+
   /**
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
    * </code>
    */
   com.google.cloud.networkconnectivity.v1.PolicyBasedRoute getPolicyBasedRoutes(int index);
+
   /**
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
    * </code>
    */
   int getPolicyBasedRoutesCount();
+
   /**
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -70,11 +73,12 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkconnectivity.v1.PolicyBasedRouteOrBuilder>
       getPolicyBasedRoutesOrBuilderList();
+
   /**
    *
    *
    * <pre>
-   * Policy based routes to be returned.
+   * Policy-based routes to be returned.
    * </pre>
    *
    * <code>repeated .google.cloud.networkconnectivity.v1.PolicyBasedRoute policy_based_routes = 1;
@@ -96,6 +100,7 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -134,6 +140,7 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -147,6 +154,7 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

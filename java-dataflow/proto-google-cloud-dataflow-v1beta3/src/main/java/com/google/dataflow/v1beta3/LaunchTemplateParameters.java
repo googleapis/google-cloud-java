@@ -23,7 +23,10 @@ package com.google.dataflow.v1beta3;
  *
  *
  * <pre>
- * Parameters to provide to the template being launched.
+ * Parameters to provide to the template being launched. Note that the
+ * [metadata in the pipeline code]
+ * (https://cloud.google.com/dataflow/docs/guides/templates/creating-templates#metadata)
+ * determines which runtime parameters are valid.
  * </pre>
  *
  * Protobuf type {@code google.dataflow.v1beta3.LaunchTemplateParameters}
@@ -33,6 +36,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.LaunchTemplateParameters)
     LaunchTemplateParametersOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LaunchTemplateParameters.newBuilder() to construct.
   private LaunchTemplateParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,11 +86,15 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object jobName_ = "";
+
   /**
    *
    *
    * <pre>
    * Required. The job name to use for the created job.
+   *
+   * The name must match the regular expression
+   * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
    * </pre>
    *
    * <code>string job_name = 1;</code>
@@ -105,11 +113,15 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
    * Required. The job name to use for the created job.
+   *
+   * The name must match the regular expression
+   * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
    * </pre>
    *
    * <code>string job_name = 1;</code>
@@ -155,6 +167,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
   public int getParametersCount() {
     return internalGetParameters().getMap().size();
   }
+
   /**
    *
    *
@@ -171,12 +184,14 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
     }
     return internalGetParameters().getMap().containsKey(key);
   }
+
   /** Use {@link #getParametersMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParameters() {
     return getParametersMap();
   }
+
   /**
    *
    *
@@ -190,6 +205,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
   public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
     return internalGetParameters().getMap();
   }
+
   /**
    *
    *
@@ -210,6 +226,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
     java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -233,6 +250,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 3;
   private com.google.dataflow.v1beta3.RuntimeEnvironment environment_;
+
   /**
    *
    *
@@ -248,6 +266,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
   public boolean hasEnvironment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -265,6 +284,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
         ? com.google.dataflow.v1beta3.RuntimeEnvironment.getDefaultInstance()
         : environment_;
   }
+
   /**
    *
    *
@@ -283,6 +303,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
 
   public static final int UPDATE_FIELD_NUMBER = 4;
   private boolean update_ = false;
+
   /**
    *
    *
@@ -328,6 +349,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
   public int getTransformNameMappingCount() {
     return internalGetTransformNameMapping().getMap().size();
   }
+
   /**
    *
    *
@@ -345,12 +367,14 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
     }
     return internalGetTransformNameMapping().getMap().containsKey(key);
   }
+
   /** Use {@link #getTransformNameMappingMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getTransformNameMapping() {
     return getTransformNameMappingMap();
   }
+
   /**
    *
    *
@@ -365,6 +389,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
   public java.util.Map<java.lang.String, java.lang.String> getTransformNameMappingMap() {
     return internalGetTransformNameMapping().getMap();
   }
+
   /**
    *
    *
@@ -387,6 +412,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
         internalGetTransformNameMapping().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -630,11 +656,15 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
    * <pre>
-   * Parameters to provide to the template being launched.
+   * Parameters to provide to the template being launched. Note that the
+   * [metadata in the pipeline code]
+   * (https://cloud.google.com/dataflow/docs/guides/templates/creating-templates#metadata)
+   * determines which runtime parameters are valid.
    * </pre>
    *
    * Protobuf type {@code google.dataflow.v1beta3.LaunchTemplateParameters}
@@ -922,11 +952,15 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object jobName_ = "";
+
     /**
      *
      *
      * <pre>
      * Required. The job name to use for the created job.
+     *
+     * The name must match the regular expression
+     * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
      * </pre>
      *
      * <code>string job_name = 1;</code>
@@ -944,11 +978,15 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Required. The job name to use for the created job.
+     *
+     * The name must match the regular expression
+     * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
      * </pre>
      *
      * <code>string job_name = 1;</code>
@@ -966,11 +1004,15 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Required. The job name to use for the created job.
+     *
+     * The name must match the regular expression
+     * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
      * </pre>
      *
      * <code>string job_name = 1;</code>
@@ -987,11 +1029,15 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Required. The job name to use for the created job.
+     *
+     * The name must match the regular expression
+     * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
      * </pre>
      *
      * <code>string job_name = 1;</code>
@@ -1004,11 +1050,15 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Required. The job name to use for the created job.
+     *
+     * The name must match the regular expression
+     * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
      * </pre>
      *
      * <code>string job_name = 1;</code>
@@ -1055,6 +1105,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
     public int getParametersCount() {
       return internalGetParameters().getMap().size();
     }
+
     /**
      *
      *
@@ -1071,12 +1122,14 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
       }
       return internalGetParameters().getMap().containsKey(key);
     }
+
     /** Use {@link #getParametersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParameters() {
       return getParametersMap();
     }
+
     /**
      *
      *
@@ -1090,6 +1143,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
     public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
       return internalGetParameters().getMap();
     }
+
     /**
      *
      *
@@ -1110,6 +1164,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
       java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1136,6 +1191,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
       internalGetMutableParameters().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1152,12 +1208,14 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
       internalGetMutableParameters().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableParameters() {
       bitField0_ |= 0x00000002;
       return internalGetMutableParameters().getMutableMap();
     }
+
     /**
      *
      *
@@ -1178,6 +1236,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1199,6 +1258,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
             com.google.dataflow.v1beta3.RuntimeEnvironment.Builder,
             com.google.dataflow.v1beta3.RuntimeEnvironmentOrBuilder>
         environmentBuilder_;
+
     /**
      *
      *
@@ -1213,6 +1273,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
     public boolean hasEnvironment() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1233,6 +1294,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
         return environmentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1255,6 +1317,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1275,6 +1338,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1303,6 +1367,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1322,6 +1387,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1336,6 +1402,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
       onChanged();
       return getEnvironmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1354,6 +1421,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
             : environment_;
       }
     }
+
     /**
      *
      *
@@ -1381,6 +1449,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
     }
 
     private boolean update_;
+
     /**
      *
      *
@@ -1397,6 +1466,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
     public boolean getUpdate() {
       return update_;
     }
+
     /**
      *
      *
@@ -1417,6 +1487,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1465,6 +1536,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
     public int getTransformNameMappingCount() {
       return internalGetTransformNameMapping().getMap().size();
     }
+
     /**
      *
      *
@@ -1482,12 +1554,14 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
       }
       return internalGetTransformNameMapping().getMap().containsKey(key);
     }
+
     /** Use {@link #getTransformNameMappingMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getTransformNameMapping() {
       return getTransformNameMappingMap();
     }
+
     /**
      *
      *
@@ -1502,6 +1576,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
     public java.util.Map<java.lang.String, java.lang.String> getTransformNameMappingMap() {
       return internalGetTransformNameMapping().getMap();
     }
+
     /**
      *
      *
@@ -1524,6 +1599,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
           internalGetTransformNameMapping().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1552,6 +1628,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
       internalGetMutableTransformNameMapping().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1569,12 +1646,14 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
       internalGetMutableTransformNameMapping().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableTransformNameMapping() {
       bitField0_ |= 0x00000010;
       return internalGetMutableTransformNameMapping().getMutableMap();
     }
+
     /**
      *
      *
@@ -1596,6 +1675,7 @@ public final class LaunchTemplateParameters extends com.google.protobuf.Generate
       bitField0_ |= 0x00000010;
       return this;
     }
+
     /**
      *
      *

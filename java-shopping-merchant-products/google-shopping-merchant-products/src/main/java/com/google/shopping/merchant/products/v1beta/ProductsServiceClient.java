@@ -35,8 +35,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Service to use Product resource. This service works for products with online
- * channel only.
+ * Service Description: Service to use Product resource.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -86,7 +85,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListProducts</td>
- *      <td><p> Lists the processed products in your Merchant Center account. The response might contain fewer items than specified by pageSize. Rely on pageToken to determine if there are more items to be requested.
+ *      <td><p> Lists the processed products in your Merchant Center account. The response might contain fewer items than specified by `pageSize`. Rely on `pageToken` to determine if there are more items to be requested.
  * <p>  After inserting, updating, or deleting a product input, it may take several minutes before the updated processed product can be retrieved.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -237,8 +236,8 @@ public class ProductsServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the product to retrieve. Format:
    *     `accounts/{account}/products/{product}` where the last section `product` consists of 4
-   *     parts: channel~content_language~feed_label~offer_id example for product name is
-   *     "accounts/123/products/online~en~US~sku123"
+   *     parts: `channel~content_language~feed_label~offer_id` example for product name is
+   *     `accounts/123/products/online~en~US~sku123`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Product getProduct(ProductName name) {
@@ -270,8 +269,8 @@ public class ProductsServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the product to retrieve. Format:
    *     `accounts/{account}/products/{product}` where the last section `product` consists of 4
-   *     parts: channel~content_language~feed_label~offer_id example for product name is
-   *     "accounts/123/products/online~en~US~sku123"
+   *     parts: `channel~content_language~feed_label~offer_id` example for product name is
+   *     `accounts/123/products/online~en~US~sku123`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Product getProduct(String name) {
@@ -343,8 +342,8 @@ public class ProductsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the processed products in your Merchant Center account. The response might contain fewer
-   * items than specified by pageSize. Rely on pageToken to determine if there are more items to be
-   * requested.
+   * items than specified by `pageSize`. Rely on `pageToken` to determine if there are more items to
+   * be requested.
    *
    * <p>After inserting, updating, or deleting a product input, it may take several minutes before
    * the updated processed product can be retrieved.
@@ -365,7 +364,8 @@ public class ProductsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The account to list processed products for. Format: accounts/{account}
+   * @param parent Required. The account to list processed products for. Format:
+   *     `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListProductsPagedResponse listProducts(AccountName parent) {
@@ -379,8 +379,8 @@ public class ProductsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the processed products in your Merchant Center account. The response might contain fewer
-   * items than specified by pageSize. Rely on pageToken to determine if there are more items to be
-   * requested.
+   * items than specified by `pageSize`. Rely on `pageToken` to determine if there are more items to
+   * be requested.
    *
    * <p>After inserting, updating, or deleting a product input, it may take several minutes before
    * the updated processed product can be retrieved.
@@ -401,7 +401,8 @@ public class ProductsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The account to list processed products for. Format: accounts/{account}
+   * @param parent Required. The account to list processed products for. Format:
+   *     `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListProductsPagedResponse listProducts(String parent) {
@@ -412,8 +413,8 @@ public class ProductsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the processed products in your Merchant Center account. The response might contain fewer
-   * items than specified by pageSize. Rely on pageToken to determine if there are more items to be
-   * requested.
+   * items than specified by `pageSize`. Rely on `pageToken` to determine if there are more items to
+   * be requested.
    *
    * <p>After inserting, updating, or deleting a product input, it may take several minutes before
    * the updated processed product can be retrieved.
@@ -449,8 +450,8 @@ public class ProductsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the processed products in your Merchant Center account. The response might contain fewer
-   * items than specified by pageSize. Rely on pageToken to determine if there are more items to be
-   * requested.
+   * items than specified by `pageSize`. Rely on `pageToken` to determine if there are more items to
+   * be requested.
    *
    * <p>After inserting, updating, or deleting a product input, it may take several minutes before
    * the updated processed product can be retrieved.
@@ -487,8 +488,8 @@ public class ProductsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the processed products in your Merchant Center account. The response might contain fewer
-   * items than specified by pageSize. Rely on pageToken to determine if there are more items to be
-   * requested.
+   * items than specified by `pageSize`. Rely on `pageToken` to determine if there are more items to
+   * be requested.
    *
    * <p>After inserting, updating, or deleting a product input, it may take several minutes before
    * the updated processed product can be retrieved.

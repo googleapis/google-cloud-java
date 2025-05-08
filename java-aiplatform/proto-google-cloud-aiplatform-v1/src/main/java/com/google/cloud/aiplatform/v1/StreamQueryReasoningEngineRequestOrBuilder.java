@@ -40,6 +40,7 @@ public interface StreamQueryReasoningEngineRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface StreamQueryReasoningEngineRequestOrBuilder
    * @return Whether the input field is set.
    */
   boolean hasInput();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface StreamQueryReasoningEngineRequestOrBuilder
    * @return The input.
    */
   com.google.protobuf.Struct getInput();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface StreamQueryReasoningEngineRequestOrBuilder
    * @return The classMethod.
    */
   java.lang.String getClassMethod();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class CreateFeatureOnlineStoreOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CreateFeatureOnlineStoreOperationMetadata)
     CreateFeatureOnlineStoreOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateFeatureOnlineStoreOperationMetadata.newBuilder() to construct.
   private CreateFeatureOnlineStoreOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,6 +68,7 @@ public final class CreateFeatureOnlineStoreOperationMetadata
   private int bitField0_;
   public static final int GENERIC_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata genericMetadata_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class CreateFeatureOnlineStoreOperationMetadata
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class CreateFeatureOnlineStoreOperationMetadata
         ? com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
+
   /**
    *
    *
@@ -288,6 +292,7 @@ public final class CreateFeatureOnlineStoreOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -504,6 +509,7 @@ public final class CreateFeatureOnlineStoreOperationMetadata
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.Builder,
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
+
     /**
      *
      *
@@ -518,6 +524,7 @@ public final class CreateFeatureOnlineStoreOperationMetadata
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -538,6 +545,7 @@ public final class CreateFeatureOnlineStoreOperationMetadata
         return genericMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -561,6 +569,7 @@ public final class CreateFeatureOnlineStoreOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -581,6 +590,7 @@ public final class CreateFeatureOnlineStoreOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -611,6 +621,7 @@ public final class CreateFeatureOnlineStoreOperationMetadata
       }
       return this;
     }
+
     /**
      *
      *
@@ -630,6 +641,7 @@ public final class CreateFeatureOnlineStoreOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -645,6 +657,7 @@ public final class CreateFeatureOnlineStoreOperationMetadata
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -664,6 +677,7 @@ public final class CreateFeatureOnlineStoreOperationMetadata
             : genericMetadata_;
       }
     }
+
     /**
      *
      *

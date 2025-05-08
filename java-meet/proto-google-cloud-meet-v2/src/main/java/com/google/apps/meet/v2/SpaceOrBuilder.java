@@ -44,6 +44,7 @@ public interface SpaceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface SpaceOrBuilder
    * @return The meetingUri.
    */
   java.lang.String getMeetingUri();
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public interface SpaceOrBuilder
    * @return The meetingCode.
    */
   java.lang.String getMeetingCode();
+
   /**
    *
    *
@@ -143,6 +146,7 @@ public interface SpaceOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
+
   /**
    *
    *
@@ -155,6 +159,7 @@ public interface SpaceOrBuilder
    * @return The config.
    */
   com.google.apps.meet.v2.SpaceConfig getConfig();
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public interface SpaceOrBuilder
    * @return Whether the activeConference field is set.
    */
   boolean hasActiveConference();
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public interface SpaceOrBuilder
    * @return The activeConference.
    */
   com.google.apps.meet.v2.ActiveConference getActiveConference();
+
   /**
    *
    *

@@ -577,6 +577,19 @@ public final class ProductServiceGrpc {
     return ProductServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ProductServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ProductServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ProductServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ProductServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ProductServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ProductServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1320,6 +1333,336 @@ public final class ProductServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ProductService.
+   *
+   * <pre>
+   * Service for ingesting [Product][google.cloud.retail.v2.Product] information
+   * of the customer's website.
+   * </pre>
+   */
+  public static final class ProductServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ProductServiceBlockingV2Stub> {
+    private ProductServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ProductServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ProductServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     */
+    public com.google.cloud.retail.v2.Product createProduct(
+        com.google.cloud.retail.v2.CreateProductRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateProductMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     */
+    public com.google.cloud.retail.v2.Product getProduct(
+        com.google.cloud.retail.v2.GetProductRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProductMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a list of [Product][google.cloud.retail.v2.Product]s.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2.ListProductsResponse listProducts(
+        com.google.cloud.retail.v2.ListProductsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListProductsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     */
+    public com.google.cloud.retail.v2.Product updateProduct(
+        com.google.cloud.retail.v2.UpdateProductRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateProductMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Product][google.cloud.retail.v2.Product].
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteProduct(
+        com.google.cloud.retail.v2.DeleteProductRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteProductMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Permanently deletes all selected [Product][google.cloud.retail.v2.Product]s
+     * under a branch.
+     * This process is asynchronous. If the request is valid, the removal will be
+     * enqueued and processed offline. Depending on the number of
+     * [Product][google.cloud.retail.v2.Product]s, this operation could take hours
+     * to complete. Before the operation completes, some
+     * [Product][google.cloud.retail.v2.Product]s may still be returned by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * or
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * Depending on the number of [Product][google.cloud.retail.v2.Product]s, this
+     * operation could take hours to complete. To get a sample of
+     * [Product][google.cloud.retail.v2.Product]s that would be deleted, set
+     * [PurgeProductsRequest.force][google.cloud.retail.v2.PurgeProductsRequest.force]
+     * to false.
+     * </pre>
+     */
+    public com.google.longrunning.Operation purgeProducts(
+        com.google.cloud.retail.v2.PurgeProductsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPurgeProductsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bulk import of multiple [Product][google.cloud.retail.v2.Product]s.
+     * Request processing may be synchronous.
+     * Non-existing items are created.
+     * Note that it is possible for a subset of the
+     * [Product][google.cloud.retail.v2.Product]s to be successfully updated.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importProducts(
+        com.google.cloud.retail.v2.ImportProductsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportProductsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates inventory information for a
+     * [Product][google.cloud.retail.v2.Product] while respecting the last update
+     * timestamps of each inventory field.
+     * This process is asynchronous and does not require the
+     * [Product][google.cloud.retail.v2.Product] to exist before updating
+     * fulfillment information. If the request is valid, the update is enqueued
+     * and processed downstream. As a consequence, when a response is returned,
+     * updates are not immediately manifested in the
+     * [Product][google.cloud.retail.v2.Product] queried by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * or
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * When inventory is updated with
+     * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct]
+     * and
+     * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct],
+     * the specified inventory field value(s) overwrite any existing value(s)
+     * while ignoring the last update time for this field. Furthermore, the last
+     * update times for the specified inventory fields are overwritten by the
+     * times of the
+     * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct]
+     * or
+     * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct]
+     * request.
+     * If no inventory fields are set in
+     * [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product],
+     * then any pre-existing inventory information for this product is used.
+     * If no inventory fields are set in
+     * [SetInventoryRequest.set_mask][google.cloud.retail.v2.SetInventoryRequest.set_mask],
+     * then any existing inventory information is preserved.
+     * Pre-existing inventory information can only be updated with
+     * [ProductService.SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
+     * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces],
+     * and
+     * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+     * The returned [Operation][google.longrunning.Operation]s is obsolete after
+     * one day, and the [GetOperation][google.longrunning.Operations.GetOperation]
+     * API returns `NOT_FOUND` afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates are not marked as [done][google.longrunning.Operation.done] until
+     * they are obsolete.
+     * </pre>
+     */
+    public com.google.longrunning.Operation setInventory(
+        com.google.cloud.retail.v2.SetInventoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetInventoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * We recommend that you use the
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * method instead of the
+     * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces]
+     * method.
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * achieves the same results but provides more fine-grained control over
+     * ingesting local inventory data.
+     * Incrementally adds place IDs to
+     * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+     * This process is asynchronous and does not require the
+     * [Product][google.cloud.retail.v2.Product] to exist before updating
+     * fulfillment information. If the request is valid, the update will be
+     * enqueued and processed downstream. As a consequence, when a response is
+     * returned, the added place IDs are not immediately manifested in the
+     * [Product][google.cloud.retail.v2.Product] queried by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * or
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addFulfillmentPlaces(
+        com.google.cloud.retail.v2.AddFulfillmentPlacesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddFulfillmentPlacesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * We recommend that you use the
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * method instead of the
+     * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces]
+     * method.
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * achieves the same results but provides more fine-grained control over
+     * ingesting local inventory data.
+     * Incrementally removes place IDs from a
+     * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+     * This process is asynchronous and does not require the
+     * [Product][google.cloud.retail.v2.Product] to exist before updating
+     * fulfillment information. If the request is valid, the update will be
+     * enqueued and processed downstream. As a consequence, when a response is
+     * returned, the removed place IDs are not immediately manifested in the
+     * [Product][google.cloud.retail.v2.Product] queried by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * or
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
+     * </pre>
+     */
+    public com.google.longrunning.Operation removeFulfillmentPlaces(
+        com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveFulfillmentPlacesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates local inventory information for a
+     * [Product][google.cloud.retail.v2.Product] at a list of places, while
+     * respecting the last update timestamps of each inventory field.
+     * This process is asynchronous and does not require the
+     * [Product][google.cloud.retail.v2.Product] to exist before updating
+     * inventory information. If the request is valid, the update will be enqueued
+     * and processed downstream. As a consequence, when a response is returned,
+     * updates are not immediately manifested in the
+     * [Product][google.cloud.retail.v2.Product] queried by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * or
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * Local inventory information can only be modified using this method.
+     * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct]
+     * and
+     * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct]
+     * has no effect on local inventories.
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addLocalInventories(
+        com.google.cloud.retail.v2.AddLocalInventoriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddLocalInventoriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Remove local inventory information for a
+     * [Product][google.cloud.retail.v2.Product] at a list of places at a removal
+     * timestamp.
+     * This process is asynchronous. If the request is valid, the removal will be
+     * enqueued and processed downstream. As a consequence, when a response is
+     * returned, removals are not immediately manifested in the
+     * [Product][google.cloud.retail.v2.Product] queried by
+     * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct]
+     * or
+     * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+     * Local inventory information can only be removed using this method.
+     * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct]
+     * and
+     * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct]
+     * has no effect on local inventories.
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
+     * </pre>
+     */
+    public com.google.longrunning.Operation removeLocalInventories(
+        com.google.cloud.retail.v2.RemoveLocalInventoriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveLocalInventoriesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ProductService.
    *
    * <pre>
    * Service for ingesting [Product][google.cloud.retail.v2.Product] information

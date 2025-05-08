@@ -41,6 +41,7 @@ public interface UpdateQuotaRuleRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateQuotaRuleRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateQuotaRuleRequestOrBuilder
    * @return Whether the quotaRule field is set.
    */
   boolean hasQuotaRule();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateQuotaRuleRequestOrBuilder
    * @return The quotaRule.
    */
   com.google.cloud.netapp.v1.QuotaRule getQuotaRule();
+
   /**
    *
    *

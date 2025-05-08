@@ -33,6 +33,7 @@ public final class ParameterVersionPayload extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.parametermanager.v1.ParameterVersionPayload)
     ParameterVersionPayloadOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ParameterVersionPayload.newBuilder() to construct.
   private ParameterVersionPayload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class ParameterVersionPayload extends com.google.protobuf.Generated
 
   public static final int DATA_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -241,6 +243,7 @@ public final class ParameterVersionPayload extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -426,6 +429,7 @@ public final class ParameterVersionPayload extends com.google.protobuf.Generated
     private int bitField0_;
 
     private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -441,6 +445,7 @@ public final class ParameterVersionPayload extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
+
     /**
      *
      *
@@ -462,6 +467,7 @@ public final class ParameterVersionPayload extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

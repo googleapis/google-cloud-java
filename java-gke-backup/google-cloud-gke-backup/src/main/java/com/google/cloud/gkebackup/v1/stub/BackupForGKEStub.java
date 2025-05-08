@@ -16,9 +16,13 @@
 
 package com.google.cloud.gkebackup.v1.stub;
 
+import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupChannelsPagedResponse;
+import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupPlanBindingsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListLocationsPagedResponse;
+import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestoreChannelsPagedResponse;
+import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestorePlanBindingsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestorePlansPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestoresPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListVolumeBackupsPagedResponse;
@@ -28,27 +32,45 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkebackup.v1.Backup;
+import com.google.cloud.gkebackup.v1.BackupChannel;
 import com.google.cloud.gkebackup.v1.BackupPlan;
+import com.google.cloud.gkebackup.v1.BackupPlanBinding;
+import com.google.cloud.gkebackup.v1.CreateBackupChannelRequest;
 import com.google.cloud.gkebackup.v1.CreateBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.CreateBackupRequest;
+import com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest;
 import com.google.cloud.gkebackup.v1.CreateRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.CreateRestoreRequest;
+import com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest;
 import com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.DeleteBackupRequest;
+import com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest;
 import com.google.cloud.gkebackup.v1.DeleteRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.DeleteRestoreRequest;
+import com.google.cloud.gkebackup.v1.GetBackupChannelRequest;
 import com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest;
 import com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse;
+import com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest;
 import com.google.cloud.gkebackup.v1.GetBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.GetBackupRequest;
+import com.google.cloud.gkebackup.v1.GetRestoreChannelRequest;
+import com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest;
 import com.google.cloud.gkebackup.v1.GetRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.GetRestoreRequest;
 import com.google.cloud.gkebackup.v1.GetVolumeBackupRequest;
 import com.google.cloud.gkebackup.v1.GetVolumeRestoreRequest;
+import com.google.cloud.gkebackup.v1.ListBackupChannelsRequest;
+import com.google.cloud.gkebackup.v1.ListBackupChannelsResponse;
+import com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest;
+import com.google.cloud.gkebackup.v1.ListBackupPlanBindingsResponse;
 import com.google.cloud.gkebackup.v1.ListBackupPlansRequest;
 import com.google.cloud.gkebackup.v1.ListBackupPlansResponse;
 import com.google.cloud.gkebackup.v1.ListBackupsRequest;
 import com.google.cloud.gkebackup.v1.ListBackupsResponse;
+import com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest;
+import com.google.cloud.gkebackup.v1.ListRestoreChannelsResponse;
+import com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest;
+import com.google.cloud.gkebackup.v1.ListRestorePlanBindingsResponse;
 import com.google.cloud.gkebackup.v1.ListRestorePlansRequest;
 import com.google.cloud.gkebackup.v1.ListRestorePlansResponse;
 import com.google.cloud.gkebackup.v1.ListRestoresRequest;
@@ -59,9 +81,13 @@ import com.google.cloud.gkebackup.v1.ListVolumeRestoresRequest;
 import com.google.cloud.gkebackup.v1.ListVolumeRestoresResponse;
 import com.google.cloud.gkebackup.v1.OperationMetadata;
 import com.google.cloud.gkebackup.v1.Restore;
+import com.google.cloud.gkebackup.v1.RestoreChannel;
 import com.google.cloud.gkebackup.v1.RestorePlan;
+import com.google.cloud.gkebackup.v1.RestorePlanBinding;
+import com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest;
 import com.google.cloud.gkebackup.v1.UpdateBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.UpdateBackupRequest;
+import com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest;
 import com.google.cloud.gkebackup.v1.UpdateRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.UpdateRestoreRequest;
 import com.google.cloud.gkebackup.v1.VolumeBackup;
@@ -135,6 +161,66 @@ public abstract class BackupForGKEStub implements BackgroundResource {
 
   public UnaryCallable<DeleteBackupPlanRequest, Operation> deleteBackupPlanCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteBackupPlanCallable()");
+  }
+
+  public OperationCallable<CreateBackupChannelRequest, BackupChannel, OperationMetadata>
+      createBackupChannelOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createBackupChannelOperationCallable()");
+  }
+
+  public UnaryCallable<CreateBackupChannelRequest, Operation> createBackupChannelCallable() {
+    throw new UnsupportedOperationException("Not implemented: createBackupChannelCallable()");
+  }
+
+  public UnaryCallable<ListBackupChannelsRequest, ListBackupChannelsPagedResponse>
+      listBackupChannelsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupChannelsPagedCallable()");
+  }
+
+  public UnaryCallable<ListBackupChannelsRequest, ListBackupChannelsResponse>
+      listBackupChannelsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupChannelsCallable()");
+  }
+
+  public UnaryCallable<GetBackupChannelRequest, BackupChannel> getBackupChannelCallable() {
+    throw new UnsupportedOperationException("Not implemented: getBackupChannelCallable()");
+  }
+
+  public OperationCallable<UpdateBackupChannelRequest, BackupChannel, OperationMetadata>
+      updateBackupChannelOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateBackupChannelOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateBackupChannelRequest, Operation> updateBackupChannelCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateBackupChannelCallable()");
+  }
+
+  public OperationCallable<DeleteBackupChannelRequest, Empty, OperationMetadata>
+      deleteBackupChannelOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteBackupChannelOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteBackupChannelRequest, Operation> deleteBackupChannelCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteBackupChannelCallable()");
+  }
+
+  public UnaryCallable<ListBackupPlanBindingsRequest, ListBackupPlanBindingsPagedResponse>
+      listBackupPlanBindingsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listBackupPlanBindingsPagedCallable()");
+  }
+
+  public UnaryCallable<ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse>
+      listBackupPlanBindingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupPlanBindingsCallable()");
+  }
+
+  public UnaryCallable<GetBackupPlanBindingRequest, BackupPlanBinding>
+      getBackupPlanBindingCallable() {
+    throw new UnsupportedOperationException("Not implemented: getBackupPlanBindingCallable()");
   }
 
   public OperationCallable<CreateBackupRequest, Backup, OperationMetadata>
@@ -232,6 +318,66 @@ public abstract class BackupForGKEStub implements BackgroundResource {
 
   public UnaryCallable<DeleteRestorePlanRequest, Operation> deleteRestorePlanCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteRestorePlanCallable()");
+  }
+
+  public OperationCallable<CreateRestoreChannelRequest, RestoreChannel, OperationMetadata>
+      createRestoreChannelOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createRestoreChannelOperationCallable()");
+  }
+
+  public UnaryCallable<CreateRestoreChannelRequest, Operation> createRestoreChannelCallable() {
+    throw new UnsupportedOperationException("Not implemented: createRestoreChannelCallable()");
+  }
+
+  public UnaryCallable<ListRestoreChannelsRequest, ListRestoreChannelsPagedResponse>
+      listRestoreChannelsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRestoreChannelsPagedCallable()");
+  }
+
+  public UnaryCallable<ListRestoreChannelsRequest, ListRestoreChannelsResponse>
+      listRestoreChannelsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRestoreChannelsCallable()");
+  }
+
+  public UnaryCallable<GetRestoreChannelRequest, RestoreChannel> getRestoreChannelCallable() {
+    throw new UnsupportedOperationException("Not implemented: getRestoreChannelCallable()");
+  }
+
+  public OperationCallable<UpdateRestoreChannelRequest, RestoreChannel, OperationMetadata>
+      updateRestoreChannelOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateRestoreChannelOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateRestoreChannelRequest, Operation> updateRestoreChannelCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateRestoreChannelCallable()");
+  }
+
+  public OperationCallable<DeleteRestoreChannelRequest, Empty, OperationMetadata>
+      deleteRestoreChannelOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteRestoreChannelOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteRestoreChannelRequest, Operation> deleteRestoreChannelCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteRestoreChannelCallable()");
+  }
+
+  public UnaryCallable<ListRestorePlanBindingsRequest, ListRestorePlanBindingsPagedResponse>
+      listRestorePlanBindingsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRestorePlanBindingsPagedCallable()");
+  }
+
+  public UnaryCallable<ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse>
+      listRestorePlanBindingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRestorePlanBindingsCallable()");
+  }
+
+  public UnaryCallable<GetRestorePlanBindingRequest, RestorePlanBinding>
+      getRestorePlanBindingCallable() {
+    throw new UnsupportedOperationException("Not implemented: getRestorePlanBindingCallable()");
   }
 
   public OperationCallable<CreateRestoreRequest, Restore, OperationMetadata>

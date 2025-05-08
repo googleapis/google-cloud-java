@@ -33,6 +33,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.WorkItemDetails)
     WorkItemDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WorkItemDetails.newBuilder() to construct.
   private WorkItemDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object taskId_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object attemptId_ = "";
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
 
   public static final int START_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
 
   public static final int END_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -235,6 +244,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -253,6 +263,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -272,6 +283,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
 
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
+
   /**
    *
    *
@@ -287,6 +299,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -307,6 +320,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
 
   public static final int PROGRESS_FIELD_NUMBER = 6;
   private com.google.dataflow.v1beta3.ProgressTimeseries progress_;
+
   /**
    *
    *
@@ -322,6 +336,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
   public boolean hasProgress() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -339,6 +354,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
         ? com.google.dataflow.v1beta3.ProgressTimeseries.getDefaultInstance()
         : progress_;
   }
+
   /**
    *
    *
@@ -359,6 +375,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.MetricUpdate> metrics_;
+
   /**
    *
    *
@@ -372,6 +389,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.dataflow.v1beta3.MetricUpdate> getMetricsList() {
     return metrics_;
   }
+
   /**
    *
    *
@@ -386,6 +404,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       getMetricsOrBuilderList() {
     return metrics_;
   }
+
   /**
    *
    *
@@ -399,6 +418,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
   public int getMetricsCount() {
     return metrics_.size();
   }
+
   /**
    *
    *
@@ -412,6 +432,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
   public com.google.dataflow.v1beta3.MetricUpdate getMetrics(int index) {
     return metrics_.get(index);
   }
+
   /**
    *
    *
@@ -424,6 +445,59 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.dataflow.v1beta3.MetricUpdateOrBuilder getMetricsOrBuilder(int index) {
     return metrics_.get(index);
+  }
+
+  public static final int STRAGGLER_INFO_FIELD_NUMBER = 8;
+  private com.google.dataflow.v1beta3.StragglerInfo stragglerInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about straggler detections for this work item.
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.StragglerInfo straggler_info = 8;</code>
+   *
+   * @return Whether the stragglerInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasStragglerInfo() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about straggler detections for this work item.
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.StragglerInfo straggler_info = 8;</code>
+   *
+   * @return The stragglerInfo.
+   */
+  @java.lang.Override
+  public com.google.dataflow.v1beta3.StragglerInfo getStragglerInfo() {
+    return stragglerInfo_ == null
+        ? com.google.dataflow.v1beta3.StragglerInfo.getDefaultInstance()
+        : stragglerInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about straggler detections for this work item.
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.StragglerInfo straggler_info = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.dataflow.v1beta3.StragglerInfoOrBuilder getStragglerInfoOrBuilder() {
+    return stragglerInfo_ == null
+        ? com.google.dataflow.v1beta3.StragglerInfo.getDefaultInstance()
+        : stragglerInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -461,6 +535,9 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < metrics_.size(); i++) {
       output.writeMessage(7, metrics_.get(i));
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(8, getStragglerInfo());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -490,6 +567,9 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
     }
     for (int i = 0; i < metrics_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, metrics_.get(i));
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getStragglerInfo());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -523,6 +603,10 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       if (!getProgress().equals(other.getProgress())) return false;
     }
     if (!getMetricsList().equals(other.getMetricsList())) return false;
+    if (hasStragglerInfo() != other.hasStragglerInfo()) return false;
+    if (hasStragglerInfo()) {
+      if (!getStragglerInfo().equals(other.getStragglerInfo())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -555,6 +639,10 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
     if (getMetricsCount() > 0) {
       hash = (37 * hash) + METRICS_FIELD_NUMBER;
       hash = (53 * hash) + getMetricsList().hashCode();
+    }
+    if (hasStragglerInfo()) {
+      hash = (37 * hash) + STRAGGLER_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getStragglerInfo().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -656,6 +744,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -700,6 +789,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
         getEndTimeFieldBuilder();
         getProgressFieldBuilder();
         getMetricsFieldBuilder();
+        getStragglerInfoFieldBuilder();
       }
     }
 
@@ -732,6 +822,11 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
         metricsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000040);
+      stragglerInfo_ = null;
+      if (stragglerInfoBuilder_ != null) {
+        stragglerInfoBuilder_.dispose();
+        stragglerInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -802,6 +897,11 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.progress_ = progressBuilder_ == null ? progress_ : progressBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.stragglerInfo_ =
+            stragglerInfoBuilder_ == null ? stragglerInfo_ : stragglerInfoBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -900,6 +1000,9 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
           }
         }
       }
+      if (other.hasStragglerInfo()) {
+        mergeStragglerInfo(other.getStragglerInfo());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -975,6 +1078,12 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
                 }
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(getStragglerInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -995,6 +1104,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object taskId_ = "";
+
     /**
      *
      *
@@ -1017,6 +1127,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1039,6 +1150,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1060,6 +1172,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1190,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1215,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object attemptId_ = "";
+
     /**
      *
      *
@@ -1123,6 +1238,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1145,6 +1261,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1166,6 +1283,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1183,6 +1301,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1212,6 +1331,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -1226,6 +1346,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1244,6 +1365,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1266,6 +1388,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1285,6 +1408,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1312,6 +1436,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1331,6 +1456,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1345,6 +1471,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1361,6 +1488,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1393,6 +1521,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1410,6 +1539,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1431,6 +1561,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1456,6 +1587,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1478,6 +1610,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1508,6 +1641,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1530,6 +1664,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1547,6 +1682,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1566,6 +1702,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -1596,6 +1733,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1611,6 +1749,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1629,6 +1768,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1646,6 +1786,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
           com.google.dataflow.v1beta3.ExecutionState.forNumber(state_);
       return result == null ? com.google.dataflow.v1beta3.ExecutionState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1667,6 +1808,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1691,6 +1833,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
             com.google.dataflow.v1beta3.ProgressTimeseries.Builder,
             com.google.dataflow.v1beta3.ProgressTimeseriesOrBuilder>
         progressBuilder_;
+
     /**
      *
      *
@@ -1705,6 +1848,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
     public boolean hasProgress() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1725,6 +1869,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
         return progressBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1747,6 +1892,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1767,6 +1913,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1794,6 +1941,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1813,6 +1961,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1827,6 +1976,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getProgressFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1845,6 +1995,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
             : progress_;
       }
     }
+
     /**
      *
      *
@@ -1903,6 +2054,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
         return metricsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1919,6 +2071,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
         return metricsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1935,6 +2088,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
         return metricsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1957,6 +2111,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1977,6 +2132,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1999,6 +2155,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2021,6 +2178,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2040,6 +2198,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2060,6 +2219,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2080,6 +2240,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2099,6 +2260,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2118,6 +2280,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2130,6 +2293,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
     public com.google.dataflow.v1beta3.MetricUpdate.Builder getMetricsBuilder(int index) {
       return getMetricsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2146,6 +2310,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
         return metricsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2163,6 +2328,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(metrics_);
       }
     }
+
     /**
      *
      *
@@ -2176,6 +2342,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       return getMetricsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.MetricUpdate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2189,6 +2356,7 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
       return getMetricsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.MetricUpdate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2218,6 +2386,201 @@ public final class WorkItemDetails extends com.google.protobuf.GeneratedMessageV
         metrics_ = null;
       }
       return metricsBuilder_;
+    }
+
+    private com.google.dataflow.v1beta3.StragglerInfo stragglerInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.dataflow.v1beta3.StragglerInfo,
+            com.google.dataflow.v1beta3.StragglerInfo.Builder,
+            com.google.dataflow.v1beta3.StragglerInfoOrBuilder>
+        stragglerInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about straggler detections for this work item.
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.StragglerInfo straggler_info = 8;</code>
+     *
+     * @return Whether the stragglerInfo field is set.
+     */
+    public boolean hasStragglerInfo() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about straggler detections for this work item.
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.StragglerInfo straggler_info = 8;</code>
+     *
+     * @return The stragglerInfo.
+     */
+    public com.google.dataflow.v1beta3.StragglerInfo getStragglerInfo() {
+      if (stragglerInfoBuilder_ == null) {
+        return stragglerInfo_ == null
+            ? com.google.dataflow.v1beta3.StragglerInfo.getDefaultInstance()
+            : stragglerInfo_;
+      } else {
+        return stragglerInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about straggler detections for this work item.
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.StragglerInfo straggler_info = 8;</code>
+     */
+    public Builder setStragglerInfo(com.google.dataflow.v1beta3.StragglerInfo value) {
+      if (stragglerInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stragglerInfo_ = value;
+      } else {
+        stragglerInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about straggler detections for this work item.
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.StragglerInfo straggler_info = 8;</code>
+     */
+    public Builder setStragglerInfo(
+        com.google.dataflow.v1beta3.StragglerInfo.Builder builderForValue) {
+      if (stragglerInfoBuilder_ == null) {
+        stragglerInfo_ = builderForValue.build();
+      } else {
+        stragglerInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about straggler detections for this work item.
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.StragglerInfo straggler_info = 8;</code>
+     */
+    public Builder mergeStragglerInfo(com.google.dataflow.v1beta3.StragglerInfo value) {
+      if (stragglerInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && stragglerInfo_ != null
+            && stragglerInfo_ != com.google.dataflow.v1beta3.StragglerInfo.getDefaultInstance()) {
+          getStragglerInfoBuilder().mergeFrom(value);
+        } else {
+          stragglerInfo_ = value;
+        }
+      } else {
+        stragglerInfoBuilder_.mergeFrom(value);
+      }
+      if (stragglerInfo_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about straggler detections for this work item.
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.StragglerInfo straggler_info = 8;</code>
+     */
+    public Builder clearStragglerInfo() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      stragglerInfo_ = null;
+      if (stragglerInfoBuilder_ != null) {
+        stragglerInfoBuilder_.dispose();
+        stragglerInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about straggler detections for this work item.
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.StragglerInfo straggler_info = 8;</code>
+     */
+    public com.google.dataflow.v1beta3.StragglerInfo.Builder getStragglerInfoBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getStragglerInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about straggler detections for this work item.
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.StragglerInfo straggler_info = 8;</code>
+     */
+    public com.google.dataflow.v1beta3.StragglerInfoOrBuilder getStragglerInfoOrBuilder() {
+      if (stragglerInfoBuilder_ != null) {
+        return stragglerInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return stragglerInfo_ == null
+            ? com.google.dataflow.v1beta3.StragglerInfo.getDefaultInstance()
+            : stragglerInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about straggler detections for this work item.
+     * </pre>
+     *
+     * <code>.google.dataflow.v1beta3.StragglerInfo straggler_info = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.dataflow.v1beta3.StragglerInfo,
+            com.google.dataflow.v1beta3.StragglerInfo.Builder,
+            com.google.dataflow.v1beta3.StragglerInfoOrBuilder>
+        getStragglerInfoFieldBuilder() {
+      if (stragglerInfoBuilder_ == null) {
+        stragglerInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.dataflow.v1beta3.StragglerInfo,
+                com.google.dataflow.v1beta3.StragglerInfo.Builder,
+                com.google.dataflow.v1beta3.StragglerInfoOrBuilder>(
+                getStragglerInfo(), getParentForChildren(), isClean());
+        stragglerInfo_ = null;
+      }
+      return stragglerInfoBuilder_;
     }
 
     @java.lang.Override

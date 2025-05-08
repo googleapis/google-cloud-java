@@ -36,6 +36,7 @@ public interface MetricUpdateOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MetricUpdateOrBuilder
    * @return The name.
    */
   com.google.dataflow.v1beta3.MetricStructuredName getName();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface MetricUpdateOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface MetricUpdateOrBuilder
    * @return Whether the scalar field is set.
    */
   boolean hasScalar();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface MetricUpdateOrBuilder
    * @return The scalar.
    */
   com.google.protobuf.Value getScalar();
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public interface MetricUpdateOrBuilder
    * @return Whether the meanSum field is set.
    */
   boolean hasMeanSum();
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public interface MetricUpdateOrBuilder
    * @return The meanSum.
    */
   com.google.protobuf.Value getMeanSum();
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public interface MetricUpdateOrBuilder
    * @return Whether the meanCount field is set.
    */
   boolean hasMeanCount();
+
   /**
    *
    *
@@ -222,6 +230,7 @@ public interface MetricUpdateOrBuilder
    * @return The meanCount.
    */
   com.google.protobuf.Value getMeanCount();
+
   /**
    *
    *
@@ -242,8 +251,8 @@ public interface MetricUpdateOrBuilder
    * <pre>
    * Worker-computed aggregate value for the "Set" aggregation kind.  The only
    * possible value type is a list of Values whose type can be Long, Double,
-   * or String, according to the metric's type.  All Values in the list must
-   * be of the same type.
+   * String, or BoundedTrie according to the metric's type.  All Values in the
+   * list must be of the same type.
    * </pre>
    *
    * <code>.google.protobuf.Value set = 7;</code>
@@ -251,14 +260,15 @@ public interface MetricUpdateOrBuilder
    * @return Whether the set field is set.
    */
   boolean hasSet();
+
   /**
    *
    *
    * <pre>
    * Worker-computed aggregate value for the "Set" aggregation kind.  The only
    * possible value type is a list of Values whose type can be Long, Double,
-   * or String, according to the metric's type.  All Values in the list must
-   * be of the same type.
+   * String, or BoundedTrie according to the metric's type.  All Values in the
+   * list must be of the same type.
    * </pre>
    *
    * <code>.google.protobuf.Value set = 7;</code>
@@ -266,19 +276,60 @@ public interface MetricUpdateOrBuilder
    * @return The set.
    */
   com.google.protobuf.Value getSet();
+
   /**
    *
    *
    * <pre>
    * Worker-computed aggregate value for the "Set" aggregation kind.  The only
    * possible value type is a list of Values whose type can be Long, Double,
-   * or String, according to the metric's type.  All Values in the list must
-   * be of the same type.
+   * String, or BoundedTrie according to the metric's type.  All Values in the
+   * list must be of the same type.
    * </pre>
    *
    * <code>.google.protobuf.Value set = 7;</code>
    */
   com.google.protobuf.ValueOrBuilder getSetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Worker-computed aggregate value for the "Trie" aggregation kind.  The only
+   * possible value type is a BoundedTrieNode.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value trie = 13;</code>
+   *
+   * @return Whether the trie field is set.
+   */
+  boolean hasTrie();
+
+  /**
+   *
+   *
+   * <pre>
+   * Worker-computed aggregate value for the "Trie" aggregation kind.  The only
+   * possible value type is a BoundedTrieNode.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value trie = 13;</code>
+   *
+   * @return The trie.
+   */
+  com.google.protobuf.Value getTrie();
+
+  /**
+   *
+   *
+   * <pre>
+   * Worker-computed aggregate value for the "Trie" aggregation kind.  The only
+   * possible value type is a BoundedTrieNode.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value trie = 13;</code>
+   */
+  com.google.protobuf.ValueOrBuilder getTrieOrBuilder();
 
   /**
    *
@@ -292,6 +343,7 @@ public interface MetricUpdateOrBuilder
    * @return Whether the distribution field is set.
    */
   boolean hasDistribution();
+
   /**
    *
    *
@@ -304,6 +356,7 @@ public interface MetricUpdateOrBuilder
    * @return The distribution.
    */
   com.google.protobuf.Value getDistribution();
+
   /**
    *
    *
@@ -329,6 +382,7 @@ public interface MetricUpdateOrBuilder
    * @return Whether the gauge field is set.
    */
   boolean hasGauge();
+
   /**
    *
    *
@@ -343,6 +397,7 @@ public interface MetricUpdateOrBuilder
    * @return The gauge.
    */
   com.google.protobuf.Value getGauge();
+
   /**
    *
    *
@@ -369,6 +424,7 @@ public interface MetricUpdateOrBuilder
    * @return Whether the internal field is set.
    */
   boolean hasInternal();
+
   /**
    *
    *
@@ -382,6 +438,7 @@ public interface MetricUpdateOrBuilder
    * @return The internal.
    */
   com.google.protobuf.Value getInternal();
+
   /**
    *
    *
@@ -408,6 +465,7 @@ public interface MetricUpdateOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -422,6 +480,7 @@ public interface MetricUpdateOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

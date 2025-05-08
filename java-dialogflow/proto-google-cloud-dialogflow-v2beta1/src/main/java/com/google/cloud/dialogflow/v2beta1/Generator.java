@@ -33,6 +33,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Generator)
     GeneratorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Generator.newBuilder() to construct.
   private Generator(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     private ContextCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -131,6 +133,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     private FoundationModelCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -165,6 +168,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -191,6 +195,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -222,6 +227,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -245,6 +251,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -270,6 +277,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FREE_FORM_CONTEXT_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -285,6 +293,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFreeFormContext() {
     return contextCase_ == 11;
   }
+
   /**
    *
    *
@@ -303,6 +312,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dialogflow.v2beta1.FreeFormContext.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -322,6 +332,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUMMARIZATION_CONTEXT_FIELD_NUMBER = 13;
+
   /**
    *
    *
@@ -337,6 +348,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSummarizationContext() {
     return contextCase_ == 13;
   }
+
   /**
    *
    *
@@ -355,6 +367,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dialogflow.v2beta1.SummarizationContext.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -375,6 +388,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INFERENCE_PARAMETER_FIELD_NUMBER = 4;
   private com.google.cloud.dialogflow.v2beta1.InferenceParameter inferenceParameter_;
+
   /**
    *
    *
@@ -392,6 +406,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInferenceParameter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -411,6 +426,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dialogflow.v2beta1.InferenceParameter.getDefaultInstance()
         : inferenceParameter_;
   }
+
   /**
    *
    *
@@ -432,6 +448,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRIGGER_EVENT_FIELD_NUMBER = 5;
   private int triggerEvent_ = 0;
+
   /**
    *
    *
@@ -450,6 +467,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
   public int getTriggerEventValue() {
     return triggerEvent_;
   }
+
   /**
    *
    *
@@ -472,6 +490,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PUBLISHED_MODEL_FIELD_NUMBER = 15;
+
   /**
    *
    *
@@ -490,6 +509,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPublishedModel() {
     return foundationModelCase_ == 15;
   }
+
   /**
    *
    *
@@ -521,6 +541,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -555,6 +576,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -571,6 +593,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -587,6 +610,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -604,6 +628,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -620,6 +645,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -636,6 +662,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -933,6 +960,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1316,6 +1344,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1341,6 +1370,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1366,6 +1396,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1390,6 +1421,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1410,6 +1442,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1437,6 +1470,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1459,6 +1493,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1481,6 +1516,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1502,6 +1538,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1519,6 +1556,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1547,6 +1585,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.FreeFormContext.Builder,
             com.google.cloud.dialogflow.v2beta1.FreeFormContextOrBuilder>
         freeFormContextBuilder_;
+
     /**
      *
      *
@@ -1562,6 +1601,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFreeFormContext() {
       return contextCase_ == 11;
     }
+
     /**
      *
      *
@@ -1587,6 +1627,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.v2beta1.FreeFormContext.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1609,6 +1650,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -1629,6 +1671,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -1662,6 +1705,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -1687,6 +1731,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1699,6 +1744,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.v2beta1.FreeFormContext.Builder getFreeFormContextBuilder() {
       return getFreeFormContextFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1720,6 +1766,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.v2beta1.FreeFormContext.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1758,6 +1805,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.SummarizationContext.Builder,
             com.google.cloud.dialogflow.v2beta1.SummarizationContextOrBuilder>
         summarizationContextBuilder_;
+
     /**
      *
      *
@@ -1774,6 +1822,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSummarizationContext() {
       return contextCase_ == 13;
     }
+
     /**
      *
      *
@@ -1800,6 +1849,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.v2beta1.SummarizationContext.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1824,6 +1874,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -1845,6 +1896,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -1880,6 +1932,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -1906,6 +1959,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1920,6 +1974,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         getSummarizationContextBuilder() {
       return getSummarizationContextFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1942,6 +1997,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dialogflow.v2beta1.SummarizationContext.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1982,6 +2038,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.InferenceParameter.Builder,
             com.google.cloud.dialogflow.v2beta1.InferenceParameterOrBuilder>
         inferenceParameterBuilder_;
+
     /**
      *
      *
@@ -1998,6 +2055,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInferenceParameter() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2020,6 +2078,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         return inferenceParameterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2045,6 +2104,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2067,6 +2127,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2098,6 +2159,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2119,6 +2181,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2136,6 +2199,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getInferenceParameterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2157,6 +2221,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
             : inferenceParameter_;
       }
     }
+
     /**
      *
      *
@@ -2186,6 +2251,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int triggerEvent_ = 0;
+
     /**
      *
      *
@@ -2204,6 +2270,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     public int getTriggerEventValue() {
       return triggerEvent_;
     }
+
     /**
      *
      *
@@ -2225,6 +2292,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2247,6 +2315,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dialogflow.v2beta1.TriggerEvent.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2271,6 +2340,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2311,6 +2381,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPublishedModel() {
       return foundationModelCase_ == 15;
     }
+
     /**
      *
      *
@@ -2343,6 +2414,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2375,6 +2447,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2400,6 +2473,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2423,6 +2497,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2456,6 +2531,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2472,6 +2548,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2494,6 +2571,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2518,6 +2596,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2539,6 +2618,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2568,6 +2648,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2589,6 +2670,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2605,6 +2687,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2625,6 +2708,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2659,6 +2743,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2675,6 +2760,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2697,6 +2783,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2721,6 +2808,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2742,6 +2830,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2771,6 +2860,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2792,6 +2882,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2808,6 +2899,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2828,6 +2920,7 @@ public final class Generator extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *

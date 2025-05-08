@@ -28,53 +28,57 @@ public interface ListSecretsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-   * first).
+   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+   * reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
    */
   java.util.List<com.google.cloud.secretmanager.v1beta1.Secret> getSecretsList();
+
   /**
    *
    *
    * <pre>
-   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-   * first).
+   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+   * reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
    */
   com.google.cloud.secretmanager.v1beta1.Secret getSecrets(int index);
+
   /**
    *
    *
    * <pre>
-   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-   * first).
+   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+   * reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
    */
   int getSecretsCount();
+
   /**
    *
    *
    * <pre>
-   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-   * first).
+   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+   * reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
    */
   java.util.List<? extends com.google.cloud.secretmanager.v1beta1.SecretOrBuilder>
       getSecretsOrBuilderList();
+
   /**
    *
    *
    * <pre>
-   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-   * first).
+   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+   * reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -86,7 +90,8 @@ public interface ListSecretsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve the next page of results. Pass this value in
-   * [ListSecretsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretsRequest.page_token] to retrieve the next page.
+   * [ListSecretsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretsRequest.page_token]
+   * to retrieve the next page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -94,12 +99,14 @@ public interface ListSecretsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
    * <pre>
    * A token to retrieve the next page of results. Pass this value in
-   * [ListSecretsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretsRequest.page_token] to retrieve the next page.
+   * [ListSecretsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretsRequest.page_token]
+   * to retrieve the next page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

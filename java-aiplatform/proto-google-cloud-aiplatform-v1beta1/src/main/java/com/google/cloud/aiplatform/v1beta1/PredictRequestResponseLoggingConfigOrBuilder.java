@@ -68,6 +68,7 @@ public interface PredictRequestResponseLoggingConfigOrBuilder
    * @return Whether the bigqueryDestination field is set.
    */
   boolean hasBigqueryDestination();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface PredictRequestResponseLoggingConfigOrBuilder
    * @return The bigqueryDestination.
    */
   com.google.cloud.aiplatform.v1beta1.BigQueryDestination getBigqueryDestination();
+
   /**
    *
    *
@@ -101,4 +103,53 @@ public interface PredictRequestResponseLoggingConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder
       getBigqueryDestinationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The schema version used in creating the BigQuery table for the
+   * request response logging. The versions are "v1" and "v2". The current
+   * default version is "v1".
+   * </pre>
+   *
+   * <code>
+   * string request_response_logging_schema_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The requestResponseLoggingSchemaVersion.
+   */
+  java.lang.String getRequestResponseLoggingSchemaVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The schema version used in creating the BigQuery table for the
+   * request response logging. The versions are "v1" and "v2". The current
+   * default version is "v1".
+   * </pre>
+   *
+   * <code>
+   * string request_response_logging_schema_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for requestResponseLoggingSchemaVersion.
+   */
+  com.google.protobuf.ByteString getRequestResponseLoggingSchemaVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * This field is used for large models. If true, in addition to the
+   * original large model logs, logs will be converted in OTel schema format,
+   * and saved in otel_log column. Default value is false.
+   * </pre>
+   *
+   * <code>bool enable_otel_logging = 6;</code>
+   *
+   * @return The enableOtelLogging.
+   */
+  boolean getEnableOtelLogging();
 }

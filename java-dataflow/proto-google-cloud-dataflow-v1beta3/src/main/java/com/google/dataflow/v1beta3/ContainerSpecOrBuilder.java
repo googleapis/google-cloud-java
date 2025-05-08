@@ -36,6 +36,7 @@ public interface ContainerSpecOrBuilder
    * @return The image.
    */
   java.lang.String getImage();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ContainerSpecOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ContainerSpecOrBuilder
    * @return The metadata.
    */
   com.google.dataflow.v1beta3.TemplateMetadata getMetadata();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface ContainerSpecOrBuilder
    * @return Whether the sdkInfo field is set.
    */
   boolean hasSdkInfo();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface ContainerSpecOrBuilder
    * @return The sdkInfo.
    */
   com.google.dataflow.v1beta3.SDKInfo getSdkInfo();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface ContainerSpecOrBuilder
    * @return Whether the defaultEnvironment field is set.
    */
   boolean hasDefaultEnvironment();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface ContainerSpecOrBuilder
    * @return The defaultEnvironment.
    */
   com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment getDefaultEnvironment();
+
   /**
    *
    *
@@ -154,4 +161,82 @@ public interface ContainerSpecOrBuilder
    */
   com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironmentOrBuilder
       getDefaultEnvironmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Secret Manager secret id for username to authenticate to private registry.
+   * </pre>
+   *
+   * <code>string image_repository_username_secret_id = 5;</code>
+   *
+   * @return The imageRepositoryUsernameSecretId.
+   */
+  java.lang.String getImageRepositoryUsernameSecretId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Secret Manager secret id for username to authenticate to private registry.
+   * </pre>
+   *
+   * <code>string image_repository_username_secret_id = 5;</code>
+   *
+   * @return The bytes for imageRepositoryUsernameSecretId.
+   */
+  com.google.protobuf.ByteString getImageRepositoryUsernameSecretIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Secret Manager secret id for password to authenticate to private registry.
+   * </pre>
+   *
+   * <code>string image_repository_password_secret_id = 6;</code>
+   *
+   * @return The imageRepositoryPasswordSecretId.
+   */
+  java.lang.String getImageRepositoryPasswordSecretId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Secret Manager secret id for password to authenticate to private registry.
+   * </pre>
+   *
+   * <code>string image_repository_password_secret_id = 6;</code>
+   *
+   * @return The bytes for imageRepositoryPasswordSecretId.
+   */
+  com.google.protobuf.ByteString getImageRepositoryPasswordSecretIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage path to self-signed certificate of private registry.
+   * </pre>
+   *
+   * <code>string image_repository_cert_path = 7;</code>
+   *
+   * @return The imageRepositoryCertPath.
+   */
+  java.lang.String getImageRepositoryCertPath();
+
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage path to self-signed certificate of private registry.
+   * </pre>
+   *
+   * <code>string image_repository_cert_path = 7;</code>
+   *
+   * @return The bytes for imageRepositoryCertPath.
+   */
+  com.google.protobuf.ByteString getImageRepositoryCertPathBytes();
 }

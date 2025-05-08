@@ -33,6 +33,7 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.functions.v2.GetFunctionRequest)
     GetFunctionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetFunctionRequest.newBuilder() to construct.
   private GetFunctionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,11 +126,12 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object revision_ = "";
+
   /**
    *
    *
    * <pre>
-   * Optional. The version of the 1st gen function whose details should
+   * Optional. The optional version of the 1st gen function whose details should
    * be obtained. The version of a 1st gen function is an integer that starts
    * from 1 and gets incremented on redeployments. GCF may keep historical
    * configs for old versions of 1st gen function. This field can be specified
@@ -151,11 +155,12 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Optional. The version of the 1st gen function whose details should
+   * Optional. The optional version of the 1st gen function whose details should
    * be obtained. The version of a 1st gen function is an integer that starts
    * from 1 and gets incremented on redeployments. GCF may keep historical
    * configs for old versions of 1st gen function. This field can be specified
@@ -348,6 +353,7 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -547,6 +553,7 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -571,6 +578,7 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -595,6 +603,7 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -618,6 +627,7 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -637,6 +647,7 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -663,11 +674,12 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object revision_ = "";
+
     /**
      *
      *
      * <pre>
-     * Optional. The version of the 1st gen function whose details should
+     * Optional. The optional version of the 1st gen function whose details should
      * be obtained. The version of a 1st gen function is an integer that starts
      * from 1 and gets incremented on redeployments. GCF may keep historical
      * configs for old versions of 1st gen function. This field can be specified
@@ -690,11 +702,12 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. The version of the 1st gen function whose details should
+     * Optional. The optional version of the 1st gen function whose details should
      * be obtained. The version of a 1st gen function is an integer that starts
      * from 1 and gets incremented on redeployments. GCF may keep historical
      * configs for old versions of 1st gen function. This field can be specified
@@ -717,11 +730,12 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. The version of the 1st gen function whose details should
+     * Optional. The optional version of the 1st gen function whose details should
      * be obtained. The version of a 1st gen function is an integer that starts
      * from 1 and gets incremented on redeployments. GCF may keep historical
      * configs for old versions of 1st gen function. This field can be specified
@@ -743,11 +757,12 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. The version of the 1st gen function whose details should
+     * Optional. The optional version of the 1st gen function whose details should
      * be obtained. The version of a 1st gen function is an integer that starts
      * from 1 and gets incremented on redeployments. GCF may keep historical
      * configs for old versions of 1st gen function. This field can be specified
@@ -765,11 +780,12 @@ public final class GetFunctionRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Optional. The version of the 1st gen function whose details should
+     * Optional. The optional version of the 1st gen function whose details should
      * be obtained. The version of a 1st gen function is an integer that starts
      * from 1 and gets incremented on redeployments. GCF may keep historical
      * configs for old versions of 1st gen function. This field can be specified

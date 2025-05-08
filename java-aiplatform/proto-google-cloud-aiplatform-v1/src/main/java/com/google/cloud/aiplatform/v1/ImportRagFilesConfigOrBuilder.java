@@ -39,6 +39,7 @@ public interface ImportRagFilesConfigOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface ImportRagFilesConfigOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.aiplatform.v1.GcsSource getGcsSource();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ImportRagFilesConfigOrBuilder
    * @return Whether the googleDriveSource field is set.
    */
   boolean hasGoogleDriveSource();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface ImportRagFilesConfigOrBuilder
    * @return The googleDriveSource.
    */
   com.google.cloud.aiplatform.v1.GoogleDriveSource getGoogleDriveSource();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface ImportRagFilesConfigOrBuilder
    * @return Whether the slackSource field is set.
    */
   boolean hasSlackSource();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface ImportRagFilesConfigOrBuilder
    * @return The slackSource.
    */
   com.google.cloud.aiplatform.v1.SlackSource getSlackSource();
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public interface ImportRagFilesConfigOrBuilder
    * @return Whether the jiraSource field is set.
    */
   boolean hasJiraSource();
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public interface ImportRagFilesConfigOrBuilder
    * @return The jiraSource.
    */
   com.google.cloud.aiplatform.v1.JiraSource getJiraSource();
+
   /**
    *
    *
@@ -188,6 +196,7 @@ public interface ImportRagFilesConfigOrBuilder
    * @return Whether the sharePointSources field is set.
    */
   boolean hasSharePointSources();
+
   /**
    *
    *
@@ -200,6 +209,7 @@ public interface ImportRagFilesConfigOrBuilder
    * @return The sharePointSources.
    */
   com.google.cloud.aiplatform.v1.SharePointSources getSharePointSources();
+
   /**
    *
    *
@@ -224,11 +234,12 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=357
+   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=413
    * @return Whether the partialFailureGcsSink field is set.
    */
   @java.lang.Deprecated
   boolean hasPartialFailureGcsSink();
+
   /**
    *
    *
@@ -242,11 +253,12 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=357
+   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=413
    * @return The partialFailureGcsSink.
    */
   @java.lang.Deprecated
   com.google.cloud.aiplatform.v1.GcsDestination getPartialFailureGcsSink();
+
   /**
    *
    *
@@ -280,11 +292,12 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=366
+   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=422
    * @return Whether the partialFailureBigquerySink field is set.
    */
   @java.lang.Deprecated
   boolean hasPartialFailureBigquerySink();
+
   /**
    *
    *
@@ -303,11 +316,12 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=366
+   *     deprecated. See google/cloud/aiplatform/v1/vertex_rag_data.proto;l=422
    * @return The partialFailureBigquerySink.
    */
   @java.lang.Deprecated
   com.google.cloud.aiplatform.v1.BigQueryDestination getPartialFailureBigquerySink();
+
   /**
    *
    *
@@ -333,6 +347,96 @@ public interface ImportRagFilesConfigOrBuilder
    *
    *
    * <pre>
+   * The Cloud Storage path to write import result to.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.GcsDestination import_result_gcs_sink = 14;</code>
+   *
+   * @return Whether the importResultGcsSink field is set.
+   */
+  boolean hasImportResultGcsSink();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage path to write import result to.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.GcsDestination import_result_gcs_sink = 14;</code>
+   *
+   * @return The importResultGcsSink.
+   */
+  com.google.cloud.aiplatform.v1.GcsDestination getImportResultGcsSink();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage path to write import result to.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.GcsDestination import_result_gcs_sink = 14;</code>
+   */
+  com.google.cloud.aiplatform.v1.GcsDestinationOrBuilder getImportResultGcsSinkOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery destination to write import result to. It should be a
+   * bigquery table resource name (e.g.
+   * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+   * table does not exist, it will be created with the expected schema. If the
+   * table exists, the schema will be validated and data will be added to this
+   * existing table.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.BigQueryDestination import_result_bigquery_sink = 15;</code>
+   *
+   * @return Whether the importResultBigquerySink field is set.
+   */
+  boolean hasImportResultBigquerySink();
+
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery destination to write import result to. It should be a
+   * bigquery table resource name (e.g.
+   * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+   * table does not exist, it will be created with the expected schema. If the
+   * table exists, the schema will be validated and data will be added to this
+   * existing table.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.BigQueryDestination import_result_bigquery_sink = 15;</code>
+   *
+   * @return The importResultBigquerySink.
+   */
+  com.google.cloud.aiplatform.v1.BigQueryDestination getImportResultBigquerySink();
+
+  /**
+   *
+   *
+   * <pre>
+   * The BigQuery destination to write import result to. It should be a
+   * bigquery table resource name (e.g.
+   * "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the
+   * table does not exist, it will be created with the expected schema. If the
+   * table exists, the schema will be validated and data will be added to this
+   * existing table.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.BigQueryDestination import_result_bigquery_sink = 15;</code>
+   */
+  com.google.cloud.aiplatform.v1.BigQueryDestinationOrBuilder
+      getImportResultBigquerySinkOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies the transformation config for RagFiles.
    * </pre>
    *
@@ -343,6 +447,7 @@ public interface ImportRagFilesConfigOrBuilder
    * @return Whether the ragFileTransformationConfig field is set.
    */
   boolean hasRagFileTransformationConfig();
+
   /**
    *
    *
@@ -357,6 +462,7 @@ public interface ImportRagFilesConfigOrBuilder
    * @return The ragFileTransformationConfig.
    */
   com.google.cloud.aiplatform.v1.RagFileTransformationConfig getRagFileTransformationConfig();
+
   /**
    *
    *
@@ -386,6 +492,7 @@ public interface ImportRagFilesConfigOrBuilder
    * @return Whether the ragFileParsingConfig field is set.
    */
   boolean hasRagFileParsingConfig();
+
   /**
    *
    *
@@ -401,6 +508,7 @@ public interface ImportRagFilesConfigOrBuilder
    * @return The ragFileParsingConfig.
    */
   com.google.cloud.aiplatform.v1.RagFileParsingConfig getRagFileParsingConfig();
+
   /**
    *
    *
@@ -437,4 +545,7 @@ public interface ImportRagFilesConfigOrBuilder
 
   com.google.cloud.aiplatform.v1.ImportRagFilesConfig.PartialFailureSinkCase
       getPartialFailureSinkCase();
+
+  com.google.cloud.aiplatform.v1.ImportRagFilesConfig.ImportResultSinkCase
+      getImportResultSinkCase();
 }

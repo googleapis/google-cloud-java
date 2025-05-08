@@ -34,6 +34,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StreamDirectPredictResponse)
     StreamDirectPredictResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamDirectPredictResponse.newBuilder() to construct.
   private StreamDirectPredictResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Tensor> outputs_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.aiplatform.v1beta1.Tensor> getOutputsList() {
     return outputs_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
       getOutputsOrBuilderList() {
     return outputs_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
   public int getOutputsCount() {
     return outputs_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
   public com.google.cloud.aiplatform.v1beta1.Tensor getOutputs(int index) {
     return outputs_.get(index);
   }
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
 
   public static final int PARAMETERS_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.Tensor parameters_;
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
   public boolean hasParameters() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -170,6 +178,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
         ? com.google.cloud.aiplatform.v1beta1.Tensor.getDefaultInstance()
         : parameters_;
   }
+
   /**
    *
    *
@@ -362,6 +371,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -658,6 +668,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
         return outputsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -674,6 +685,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
         return outputsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -690,6 +702,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
         return outputsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +746,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +769,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +792,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +812,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +833,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +854,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +874,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +894,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +907,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
     public com.google.cloud.aiplatform.v1beta1.Tensor.Builder getOutputsBuilder(int index) {
       return getOutputsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -901,6 +924,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
         return outputsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -918,6 +942,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(outputs_);
       }
     }
+
     /**
      *
      *
@@ -931,6 +956,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
       return getOutputsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.Tensor.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -944,6 +970,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
       return getOutputsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Tensor.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -981,6 +1008,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
             com.google.cloud.aiplatform.v1beta1.Tensor.Builder,
             com.google.cloud.aiplatform.v1beta1.TensorOrBuilder>
         parametersBuilder_;
+
     /**
      *
      *
@@ -995,6 +1023,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
     public boolean hasParameters() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1015,6 +1044,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
         return parametersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1067,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1088,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1116,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1136,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1151,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
       onChanged();
       return getParametersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1135,6 +1170,7 @@ public final class StreamDirectPredictResponse extends com.google.protobuf.Gener
             : parameters_;
       }
     }
+
     /**
      *
      *

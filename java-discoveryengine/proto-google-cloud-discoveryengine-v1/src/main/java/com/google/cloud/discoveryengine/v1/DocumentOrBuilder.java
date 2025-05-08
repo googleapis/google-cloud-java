@@ -38,6 +38,7 @@ public interface DocumentOrBuilder
    * @return Whether the structData field is set.
    */
   boolean hasStructData();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface DocumentOrBuilder
    * @return The structData.
    */
   com.google.protobuf.Struct getStructData();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface DocumentOrBuilder
    * @return Whether the jsonData field is set.
    */
   boolean hasJsonData();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface DocumentOrBuilder
    * @return The jsonData.
    */
   java.lang.String getJsonData();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface DocumentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -150,7 +155,7 @@ public interface DocumentOrBuilder
    * Immutable. The identifier of the document.
    *
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-   * standard with a length limit of 63 characters.
+   * standard with a length limit of 128 characters.
    * </pre>
    *
    * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -158,6 +163,7 @@ public interface DocumentOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -165,7 +171,7 @@ public interface DocumentOrBuilder
    * Immutable. The identifier of the document.
    *
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-   * standard with a length limit of 63 characters.
+   * standard with a length limit of 128 characters.
    * </pre>
    *
    * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -186,6 +192,7 @@ public interface DocumentOrBuilder
    * @return The schemaId.
    */
   java.lang.String getSchemaId();
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public interface DocumentOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
+
   /**
    *
    *
@@ -227,6 +235,7 @@ public interface DocumentOrBuilder
    * @return The content.
    */
   com.google.cloud.discoveryengine.v1.Document.Content getContent();
+
   /**
    *
    *
@@ -256,6 +265,7 @@ public interface DocumentOrBuilder
    * @return The parentDocumentId.
    */
   java.lang.String getParentDocumentId();
+
   /**
    *
    *
@@ -288,6 +298,7 @@ public interface DocumentOrBuilder
    * @return Whether the derivedStructData field is set.
    */
   boolean hasDerivedStructData();
+
   /**
    *
    *
@@ -303,6 +314,7 @@ public interface DocumentOrBuilder
    * @return The derivedStructData.
    */
   com.google.protobuf.Struct getDerivedStructData();
+
   /**
    *
    *
@@ -334,6 +346,7 @@ public interface DocumentOrBuilder
    * @return Whether the indexTime field is set.
    */
   boolean hasIndexTime();
+
   /**
    *
    *
@@ -351,6 +364,7 @@ public interface DocumentOrBuilder
    * @return The indexTime.
    */
   com.google.protobuf.Timestamp getIndexTime();
+
   /**
    *
    *
@@ -376,7 +390,8 @@ public interface DocumentOrBuilder
    * * If document is indexed successfully, the index_time field is populated.
    * * Otherwise, if document is not indexed due to errors, the error_samples
    *   field is populated.
-   * * Otherwise, index_status is unset.
+   * * Otherwise, if document's index is in progress, the pending_message field
+   *   is populated.
    * </pre>
    *
    * <code>
@@ -386,6 +401,7 @@ public interface DocumentOrBuilder
    * @return Whether the indexStatus field is set.
    */
   boolean hasIndexStatus();
+
   /**
    *
    *
@@ -395,7 +411,8 @@ public interface DocumentOrBuilder
    * * If document is indexed successfully, the index_time field is populated.
    * * Otherwise, if document is not indexed due to errors, the error_samples
    *   field is populated.
-   * * Otherwise, index_status is unset.
+   * * Otherwise, if document's index is in progress, the pending_message field
+   *   is populated.
    * </pre>
    *
    * <code>
@@ -405,6 +422,7 @@ public interface DocumentOrBuilder
    * @return The indexStatus.
    */
   com.google.cloud.discoveryengine.v1.Document.IndexStatus getIndexStatus();
+
   /**
    *
    *
@@ -414,7 +432,8 @@ public interface DocumentOrBuilder
    * * If document is indexed successfully, the index_time field is populated.
    * * Otherwise, if document is not indexed due to errors, the error_samples
    *   field is populated.
-   * * Otherwise, index_status is unset.
+   * * Otherwise, if document's index is in progress, the pending_message field
+   *   is populated.
    * </pre>
    *
    * <code>

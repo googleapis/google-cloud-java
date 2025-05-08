@@ -61,6 +61,63 @@
           }
         }
       }
+    },
+    "ManagedKafkaConnect": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ManagedKafkaConnectClient",
+          "rpcs": {
+            "CreateConnectCluster": {
+              "methods": ["createConnectClusterAsync", "createConnectClusterAsync", "createConnectClusterAsync", "createConnectClusterOperationCallable", "createConnectClusterCallable"]
+            },
+            "CreateConnector": {
+              "methods": ["createConnector", "createConnector", "createConnector", "createConnectorCallable"]
+            },
+            "DeleteConnectCluster": {
+              "methods": ["deleteConnectClusterAsync", "deleteConnectClusterAsync", "deleteConnectClusterAsync", "deleteConnectClusterOperationCallable", "deleteConnectClusterCallable"]
+            },
+            "DeleteConnector": {
+              "methods": ["deleteConnector", "deleteConnector", "deleteConnector", "deleteConnectorCallable"]
+            },
+            "GetConnectCluster": {
+              "methods": ["getConnectCluster", "getConnectCluster", "getConnectCluster", "getConnectClusterCallable"]
+            },
+            "GetConnector": {
+              "methods": ["getConnector", "getConnector", "getConnector", "getConnectorCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListConnectClusters": {
+              "methods": ["listConnectClusters", "listConnectClusters", "listConnectClusters", "listConnectClustersPagedCallable", "listConnectClustersCallable"]
+            },
+            "ListConnectors": {
+              "methods": ["listConnectors", "listConnectors", "listConnectors", "listConnectorsPagedCallable", "listConnectorsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "PauseConnector": {
+              "methods": ["pauseConnector", "pauseConnector", "pauseConnector", "pauseConnectorCallable"]
+            },
+            "RestartConnector": {
+              "methods": ["restartConnector", "restartConnector", "restartConnector", "restartConnectorCallable"]
+            },
+            "ResumeConnector": {
+              "methods": ["resumeConnector", "resumeConnector", "resumeConnector", "resumeConnectorCallable"]
+            },
+            "StopConnector": {
+              "methods": ["stopConnector", "stopConnector", "stopConnector", "stopConnectorCallable"]
+            },
+            "UpdateConnectCluster": {
+              "methods": ["updateConnectClusterAsync", "updateConnectClusterAsync", "updateConnectClusterOperationCallable", "updateConnectClusterCallable"]
+            },
+            "UpdateConnector": {
+              "methods": ["updateConnector", "updateConnector", "updateConnectorCallable"]
+            }
+          }
+        }
+      }
     }
   }
 }

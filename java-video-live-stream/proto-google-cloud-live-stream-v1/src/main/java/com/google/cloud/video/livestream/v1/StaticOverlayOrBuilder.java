@@ -41,6 +41,7 @@ public interface StaticOverlayOrBuilder
    * @return The asset.
    */
   java.lang.String getAsset();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface StaticOverlayOrBuilder
    * @return Whether the resolution field is set.
    */
   boolean hasResolution();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface StaticOverlayOrBuilder
    * @return The resolution.
    */
   com.google.cloud.video.livestream.v1.NormalizedResolution getResolution();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface StaticOverlayOrBuilder
    * @return Whether the position field is set.
    */
   boolean hasPosition();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface StaticOverlayOrBuilder
    * @return The position.
    */
   com.google.cloud.video.livestream.v1.NormalizedCoordinate getPosition();
+
   /**
    *
    *

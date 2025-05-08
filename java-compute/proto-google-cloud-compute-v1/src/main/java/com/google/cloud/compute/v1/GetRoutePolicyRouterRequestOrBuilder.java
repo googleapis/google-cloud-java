@@ -36,6 +36,7 @@ public interface GetRoutePolicyRouterRequestOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface GetRoutePolicyRouterRequestOrBuilder
    * @return The policy.
    */
   java.lang.String getPolicy();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface GetRoutePolicyRouterRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface GetRoutePolicyRouterRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface GetRoutePolicyRouterRequestOrBuilder
    * @return The router.
    */
   java.lang.String getRouter();
+
   /**
    *
    *

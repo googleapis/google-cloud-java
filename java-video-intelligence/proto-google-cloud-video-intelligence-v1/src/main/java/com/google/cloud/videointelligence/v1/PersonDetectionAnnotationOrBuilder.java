@@ -34,6 +34,7 @@ public interface PersonDetectionAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
    */
   java.util.List<com.google.cloud.videointelligence.v1.Track> getTracksList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface PersonDetectionAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
    */
   com.google.cloud.videointelligence.v1.Track getTracks(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface PersonDetectionAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1.Track tracks = 1;</code>
    */
   int getTracksCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface PersonDetectionAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1.TrackOrBuilder>
       getTracksOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface PersonDetectionAnnotationOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

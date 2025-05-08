@@ -39,6 +39,7 @@ public interface RagFileOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface RagFileOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.aiplatform.v1.GcsSource getGcsSource();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface RagFileOrBuilder
    * @return Whether the googleDriveSource field is set.
    */
   boolean hasGoogleDriveSource();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface RagFileOrBuilder
    * @return The googleDriveSource.
    */
   com.google.cloud.aiplatform.v1.GoogleDriveSource getGoogleDriveSource();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface RagFileOrBuilder
    * @return Whether the directUploadSource field is set.
    */
   boolean hasDirectUploadSource();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface RagFileOrBuilder
    * @return The directUploadSource.
    */
   com.google.cloud.aiplatform.v1.DirectUploadSource getDirectUploadSource();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface RagFileOrBuilder
    * @return Whether the slackSource field is set.
    */
   boolean hasSlackSource();
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public interface RagFileOrBuilder
    * @return The slackSource.
    */
   com.google.cloud.aiplatform.v1.SlackSource getSlackSource();
+
   /**
    *
    *
@@ -203,6 +211,7 @@ public interface RagFileOrBuilder
    * @return Whether the jiraSource field is set.
    */
   boolean hasJiraSource();
+
   /**
    *
    *
@@ -215,6 +224,7 @@ public interface RagFileOrBuilder
    * @return The jiraSource.
    */
   com.google.cloud.aiplatform.v1.JiraSource getJiraSource();
+
   /**
    *
    *
@@ -238,6 +248,7 @@ public interface RagFileOrBuilder
    * @return Whether the sharePointSources field is set.
    */
   boolean hasSharePointSources();
+
   /**
    *
    *
@@ -250,6 +261,7 @@ public interface RagFileOrBuilder
    * @return The sharePointSources.
    */
   com.google.cloud.aiplatform.v1.SharePointSources getSharePointSources();
+
   /**
    *
    *
@@ -273,6 +285,7 @@ public interface RagFileOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -300,6 +313,7 @@ public interface RagFileOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -327,6 +341,7 @@ public interface RagFileOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -353,6 +368,7 @@ public interface RagFileOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -366,6 +382,7 @@ public interface RagFileOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -391,6 +408,7 @@ public interface RagFileOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -404,6 +422,7 @@ public interface RagFileOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -430,6 +449,7 @@ public interface RagFileOrBuilder
    * @return Whether the fileStatus field is set.
    */
   boolean hasFileStatus();
+
   /**
    *
    *
@@ -444,6 +464,7 @@ public interface RagFileOrBuilder
    * @return The fileStatus.
    */
   com.google.cloud.aiplatform.v1.FileStatus getFileStatus();
+
   /**
    *
    *

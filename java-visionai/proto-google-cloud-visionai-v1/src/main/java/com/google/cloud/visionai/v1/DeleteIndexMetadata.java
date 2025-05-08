@@ -33,6 +33,7 @@ public final class DeleteIndexMetadata extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.DeleteIndexMetadata)
     DeleteIndexMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteIndexMetadata.newBuilder() to construct.
   private DeleteIndexMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class DeleteIndexMetadata extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetProxyHeaderTargetTcpProxyRequest)
     SetProxyHeaderTargetTcpProxyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetProxyHeaderTargetTcpProxyRequest.newBuilder() to construct.
   private SetProxyHeaderTargetTcpProxyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       219958339;
   private com.google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest
       targetTcpProxiesSetProxyHeaderRequestResource_;
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
   public boolean hasTargetTcpProxiesSetProxyHeaderRequestResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
         ? com.google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest.getDefaultInstance()
         : targetTcpProxiesSetProxyHeaderRequestResource_;
   }
+
   /**
    *
    *
@@ -253,6 +262,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetTcpProxy_ = "";
+
   /**
    *
    *
@@ -276,6 +286,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -501,6 +512,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -755,6 +767,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -779,6 +792,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -803,6 +817,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -826,6 +841,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +861,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +888,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -885,6 +903,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -907,6 +926,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -929,6 +949,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -950,6 +971,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +989,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1020,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
             com.google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest.Builder,
             com.google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequestOrBuilder>
         targetTcpProxiesSetProxyHeaderRequestResourceBuilder_;
+
     /**
      *
      *
@@ -1013,6 +1037,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
     public boolean hasTargetTcpProxiesSetProxyHeaderRequestResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1036,6 +1061,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
         return targetTcpProxiesSetProxyHeaderRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1061,6 +1087,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1110,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1115,6 +1143,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1136,6 +1165,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1153,6 +1183,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       onChanged();
       return getTargetTcpProxiesSetProxyHeaderRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1174,6 +1205,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
             : targetTcpProxiesSetProxyHeaderRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1205,6 +1237,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
     }
 
     private java.lang.Object targetTcpProxy_ = "";
+
     /**
      *
      *
@@ -1227,6 +1260,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1249,6 +1283,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1270,6 +1305,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1323,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

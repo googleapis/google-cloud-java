@@ -34,6 +34,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.BatchMigrateResourcesRequest)
     BatchMigrateResourcesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchMigrateResourcesRequest.newBuilder() to construct.
   private BatchMigrateResourcesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.MigrateResourceRequest>
       migrateResourceRequests_;
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
       getMigrateResourceRequestsList() {
     return migrateResourceRequests_;
   }
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
       getMigrateResourceRequestsOrBuilderList() {
     return migrateResourceRequests_;
   }
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
   public int getMigrateResourceRequestsCount() {
     return migrateResourceRequests_.size();
   }
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
       int index) {
     return migrateResourceRequests_.get(index);
   }
+
   /**
    *
    *
@@ -391,6 +399,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -639,6 +648,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -664,6 +674,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -689,6 +700,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -713,6 +725,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -733,6 +746,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +812,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
         return migrateResourceRequestsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -818,6 +833,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
         return migrateResourceRequestsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -839,6 +855,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
         return migrateResourceRequestsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -866,6 +883,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +908,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +936,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +964,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +989,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -992,6 +1014,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1040,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1064,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1088,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1106,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
         getMigrateResourceRequestsBuilder(int index) {
       return getMigrateResourceRequestsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1101,6 +1128,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
         return migrateResourceRequestsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1122,6 +1150,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(migrateResourceRequests_);
       }
     }
+
     /**
      *
      *
@@ -1140,6 +1169,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
       return getMigrateResourceRequestsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.MigrateResourceRequest.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1159,6 +1189,7 @@ public final class BatchMigrateResourcesRequest extends com.google.protobuf.Gene
           .addBuilder(
               index, com.google.cloud.aiplatform.v1.MigrateResourceRequest.getDefaultInstance());
     }
+
     /**
      *
      *

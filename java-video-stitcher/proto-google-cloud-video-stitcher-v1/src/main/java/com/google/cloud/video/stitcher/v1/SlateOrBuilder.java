@@ -37,6 +37,7 @@ public interface SlateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface SlateOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface SlateOrBuilder
    * @return Whether the gamSlate field is set.
    */
   boolean hasGamSlate();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface SlateOrBuilder
    * @return The gamSlate.
    */
   com.google.cloud.video.stitcher.v1.Slate.GamSlate getGamSlate();
+
   /**
    *
    *

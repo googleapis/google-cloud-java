@@ -37,6 +37,7 @@ public interface AcceptedOrBuilder
    * @return The termsOfService.
    */
   java.lang.String getTermsOfService();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface AcceptedOrBuilder
    * @return The acceptedBy.
    */
   java.lang.String getAcceptedBy();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface AcceptedOrBuilder
    * @return Whether the validUntil field is set.
    */
   boolean hasValidUntil();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface AcceptedOrBuilder
    * @return The validUntil.
    */
   com.google.type.Date getValidUntil();
+
   /**
    *
    *

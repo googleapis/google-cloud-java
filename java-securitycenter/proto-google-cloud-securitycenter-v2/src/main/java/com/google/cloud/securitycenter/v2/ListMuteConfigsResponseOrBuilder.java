@@ -34,6 +34,7 @@ public interface ListMuteConfigsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.MuteConfig mute_configs = 1;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.MuteConfig> getMuteConfigsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListMuteConfigsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.MuteConfig mute_configs = 1;</code>
    */
   com.google.cloud.securitycenter.v2.MuteConfig getMuteConfigs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListMuteConfigsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.MuteConfig mute_configs = 1;</code>
    */
   int getMuteConfigsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListMuteConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.MuteConfigOrBuilder>
       getMuteConfigsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListMuteConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

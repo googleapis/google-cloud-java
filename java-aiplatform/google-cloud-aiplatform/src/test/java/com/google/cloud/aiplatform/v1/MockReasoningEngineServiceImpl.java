@@ -73,7 +73,8 @@ public class MockReasoningEngineServiceImpl extends ReasoningEngineServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateReasoningEngine, expected %s or %s",
+                  "Unrecognized response type %s for method CreateReasoningEngine, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -116,7 +117,8 @@ public class MockReasoningEngineServiceImpl extends ReasoningEngineServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListReasoningEngines, expected %s or %s",
+                  "Unrecognized response type %s for method ListReasoningEngines, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListReasoningEnginesResponse.class.getName(),
                   Exception.class.getName())));
@@ -137,7 +139,8 @@ public class MockReasoningEngineServiceImpl extends ReasoningEngineServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateReasoningEngine, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateReasoningEngine, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -158,7 +161,8 @@ public class MockReasoningEngineServiceImpl extends ReasoningEngineServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteReasoningEngine, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteReasoningEngine, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

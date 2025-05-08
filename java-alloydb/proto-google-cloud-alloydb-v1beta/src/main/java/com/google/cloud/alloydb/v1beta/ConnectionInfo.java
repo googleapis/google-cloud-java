@@ -34,6 +34,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.ConnectionInfo)
     ConnectionInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConnectionInfo.newBuilder() to construct.
   private ConnectionInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicIpAddress_ = "";
+
   /**
    *
    *
@@ -210,6 +216,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -243,6 +250,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList pemCertificateChain_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -256,13 +264,14 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=1159
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1162
    * @return A list containing the pemCertificateChain.
    */
   @java.lang.Deprecated
   public com.google.protobuf.ProtocolStringList getPemCertificateChainList() {
     return pemCertificateChain_;
   }
+
   /**
    *
    *
@@ -276,13 +285,14 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=1159
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1162
    * @return The count of pemCertificateChain.
    */
   @java.lang.Deprecated
   public int getPemCertificateChainCount() {
     return pemCertificateChain_.size();
   }
+
   /**
    *
    *
@@ -296,7 +306,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=1159
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1162
    * @param index The index of the element to return.
    * @return The pemCertificateChain at the given index.
    */
@@ -304,6 +314,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getPemCertificateChain(int index) {
     return pemCertificateChain_.get(index);
   }
+
   /**
    *
    *
@@ -317,7 +328,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=1159
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1162
    * @param index The index of the value to return.
    * @return The bytes of the pemCertificateChain at the given index.
    */
@@ -330,6 +341,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceUid_ = "";
+
   /**
    *
    *
@@ -353,6 +365,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -381,6 +394,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pscDnsName_ = "";
+
   /**
    *
    *
@@ -404,6 +418,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -639,6 +654,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -905,6 +921,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -929,6 +946,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -953,6 +971,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -976,6 +995,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -995,6 +1015,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1042,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object ipAddress_ = "";
+
     /**
      *
      *
@@ -1045,6 +1067,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1069,6 +1092,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1092,6 +1116,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1111,6 +1136,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1137,6 +1163,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object publicIpAddress_ = "";
+
     /**
      *
      *
@@ -1163,6 +1190,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1217,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1214,6 +1243,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1235,6 +1265,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1271,6 +1302,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -1284,7 +1316,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1beta/resources.proto;l=1159
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=1162
      * @return A list containing the pemCertificateChain.
      */
     @java.lang.Deprecated
@@ -1292,6 +1324,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       pemCertificateChain_.makeImmutable();
       return pemCertificateChain_;
     }
+
     /**
      *
      *
@@ -1305,13 +1338,14 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1beta/resources.proto;l=1159
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=1162
      * @return The count of pemCertificateChain.
      */
     @java.lang.Deprecated
     public int getPemCertificateChainCount() {
       return pemCertificateChain_.size();
     }
+
     /**
      *
      *
@@ -1325,7 +1359,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1beta/resources.proto;l=1159
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=1162
      * @param index The index of the element to return.
      * @return The pemCertificateChain at the given index.
      */
@@ -1333,6 +1367,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getPemCertificateChain(int index) {
       return pemCertificateChain_.get(index);
     }
+
     /**
      *
      *
@@ -1346,7 +1381,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1beta/resources.proto;l=1159
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=1162
      * @param index The index of the value to return.
      * @return The bytes of the pemCertificateChain at the given index.
      */
@@ -1354,6 +1389,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPemCertificateChainBytes(int index) {
       return pemCertificateChain_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1367,7 +1403,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1beta/resources.proto;l=1159
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=1162
      * @param index The index to set the value at.
      * @param value The pemCertificateChain to set.
      * @return This builder for chaining.
@@ -1383,6 +1419,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1396,7 +1433,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1beta/resources.proto;l=1159
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=1162
      * @param value The pemCertificateChain to add.
      * @return This builder for chaining.
      */
@@ -1411,6 +1448,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1424,7 +1462,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1beta/resources.proto;l=1159
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=1162
      * @param values The pemCertificateChain to add.
      * @return This builder for chaining.
      */
@@ -1436,6 +1474,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1449,7 +1488,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1beta/resources.proto;l=1159
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=1162
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1460,6 +1499,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1473,7 +1513,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1beta/resources.proto;l=1159
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=1162
      * @param value The bytes of the pemCertificateChain to add.
      * @return This builder for chaining.
      */
@@ -1491,6 +1531,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object instanceUid_ = "";
+
     /**
      *
      *
@@ -1513,6 +1554,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1535,6 +1577,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1556,6 +1599,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1573,6 +1617,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1597,6 +1642,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object pscDnsName_ = "";
+
     /**
      *
      *
@@ -1619,6 +1665,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1641,6 +1688,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1662,6 +1710,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1679,6 +1728,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

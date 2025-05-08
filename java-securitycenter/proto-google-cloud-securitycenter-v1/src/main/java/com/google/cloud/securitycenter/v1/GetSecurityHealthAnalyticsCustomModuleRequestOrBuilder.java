@@ -42,6 +42,7 @@ public interface GetSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

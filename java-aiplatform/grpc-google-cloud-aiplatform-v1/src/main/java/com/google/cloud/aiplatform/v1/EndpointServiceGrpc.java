@@ -458,6 +458,19 @@ public final class EndpointServiceGrpc {
     return EndpointServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EndpointServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EndpointServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EndpointServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public EndpointServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EndpointServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EndpointServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -813,6 +826,148 @@ public final class EndpointServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service EndpointService.
+   *
+   * <pre>
+   * A service for managing Vertex AI's Endpoints.
+   * </pre>
+   */
+  public static final class EndpointServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EndpointServiceBlockingV2Stub> {
+    private EndpointServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EndpointServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EndpointServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Endpoint.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createEndpoint(
+        com.google.cloud.aiplatform.v1.CreateEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Endpoint.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.Endpoint getEndpoint(
+        com.google.cloud.aiplatform.v1.GetEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Endpoints in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListEndpointsResponse listEndpoints(
+        com.google.cloud.aiplatform.v1.ListEndpointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEndpointsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Endpoint.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.Endpoint updateEndpoint(
+        com.google.cloud.aiplatform.v1.UpdateEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Endpoint with a long running operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateEndpointLongRunning(
+        com.google.cloud.aiplatform.v1.UpdateEndpointLongRunningRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEndpointLongRunningMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Endpoint.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteEndpoint(
+        com.google.cloud.aiplatform.v1.DeleteEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a Model into this Endpoint, creating a DeployedModel within it.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deployModel(
+        com.google.cloud.aiplatform.v1.DeployModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeployModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys a Model from an Endpoint, removing a DeployedModel from it, and
+     * freeing all resources it's using.
+     * </pre>
+     */
+    public com.google.longrunning.Operation undeployModel(
+        com.google.cloud.aiplatform.v1.UndeployModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeployModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing deployed model. Updatable fields include
+     * `min_replica_count`, `max_replica_count`, `autoscaling_metric_specs`,
+     * `disable_container_logging` (v1 only), and `enable_container_logging`
+     * (v1beta1 only).
+     * </pre>
+     */
+    public com.google.longrunning.Operation mutateDeployedModel(
+        com.google.cloud.aiplatform.v1.MutateDeployedModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMutateDeployedModelMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service EndpointService.
    *
    * <pre>
    * A service for managing Vertex AI's Endpoints.

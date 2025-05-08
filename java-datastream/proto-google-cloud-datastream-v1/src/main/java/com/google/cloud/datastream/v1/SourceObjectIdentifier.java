@@ -33,6 +33,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SourceObjectIdentifier)
     SourceObjectIdentifierOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SourceObjectIdentifier.newBuilder() to construct.
   private SourceObjectIdentifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      * @return The schema.
      */
     java.lang.String getSchema();
+
     /**
      *
      *
@@ -103,6 +105,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      * @return The table.
      */
     java.lang.String getTable();
+
     /**
      *
      *
@@ -116,6 +119,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getTableBytes();
   }
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SourceObjectIdentifier.OracleObjectIdentifier)
       OracleObjectIdentifierOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use OracleObjectIdentifier.newBuilder() to construct.
     private OracleObjectIdentifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -166,6 +171,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object schema_ = "";
+
     /**
      *
      *
@@ -189,6 +195,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -217,6 +224,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object table_ = "";
+
     /**
      *
      *
@@ -240,6 +248,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -442,6 +451,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -657,6 +667,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object schema_ = "";
+
       /**
        *
        *
@@ -679,6 +690,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -701,6 +713,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -722,6 +735,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -739,6 +753,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -763,6 +778,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object table_ = "";
+
       /**
        *
        *
@@ -785,6 +801,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -807,6 +824,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -828,6 +846,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -845,6 +864,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -954,6 +974,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      * @return The schema.
      */
     java.lang.String getSchema();
+
     /**
      *
      *
@@ -979,6 +1000,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      * @return The table.
      */
     java.lang.String getTable();
+
     /**
      *
      *
@@ -992,6 +1014,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getTableBytes();
   }
+
   /**
    *
    *
@@ -1008,6 +1031,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)
       PostgresqlObjectIdentifierOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PostgresqlObjectIdentifier.newBuilder() to construct.
     private PostgresqlObjectIdentifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1045,6 +1069,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object schema_ = "";
+
     /**
      *
      *
@@ -1068,6 +1093,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -1096,6 +1122,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object table_ = "";
+
     /**
      *
      *
@@ -1119,6 +1146,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -1322,6 +1350,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1541,6 +1570,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object schema_ = "";
+
       /**
        *
        *
@@ -1563,6 +1593,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1585,6 +1616,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1606,6 +1638,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1623,6 +1656,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1647,6 +1681,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object table_ = "";
+
       /**
        *
        *
@@ -1669,6 +1704,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1691,6 +1727,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1712,6 +1749,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1729,6 +1767,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1838,6 +1877,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      * @return The database.
      */
     java.lang.String getDatabase();
+
     /**
      *
      *
@@ -1863,6 +1903,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      * @return The table.
      */
     java.lang.String getTable();
+
     /**
      *
      *
@@ -1876,6 +1917,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getTableBytes();
   }
+
   /**
    *
    *
@@ -1890,6 +1932,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SourceObjectIdentifier.MysqlObjectIdentifier)
       MysqlObjectIdentifierOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MysqlObjectIdentifier.newBuilder() to construct.
     private MysqlObjectIdentifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1926,6 +1969,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object database_ = "";
+
     /**
      *
      *
@@ -1949,6 +1993,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -1977,6 +2022,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object table_ = "";
+
     /**
      *
      *
@@ -2000,6 +2046,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -2201,6 +2248,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2415,6 +2463,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object database_ = "";
+
       /**
        *
        *
@@ -2437,6 +2486,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2459,6 +2509,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2480,6 +2531,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2497,6 +2549,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2521,6 +2574,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object table_ = "";
+
       /**
        *
        *
@@ -2543,6 +2597,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2565,6 +2620,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2586,6 +2642,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2603,6 +2660,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2711,6 +2769,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      * @return The schema.
      */
     java.lang.String getSchema();
+
     /**
      *
      *
@@ -2736,6 +2795,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      * @return The table.
      */
     java.lang.String getTable();
+
     /**
      *
      *
@@ -2749,6 +2809,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getTableBytes();
   }
+
   /**
    *
    *
@@ -2764,6 +2825,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier)
       SqlServerObjectIdentifierOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SqlServerObjectIdentifier.newBuilder() to construct.
     private SqlServerObjectIdentifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2800,6 +2862,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object schema_ = "";
+
     /**
      *
      *
@@ -2823,6 +2886,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -2851,6 +2915,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object table_ = "";
+
     /**
      *
      *
@@ -2874,6 +2939,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -3076,6 +3142,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3295,6 +3362,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object schema_ = "";
+
       /**
        *
        *
@@ -3317,6 +3385,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3339,6 +3408,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3360,6 +3430,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3377,6 +3448,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3401,6 +3473,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object table_ = "";
+
       /**
        *
        *
@@ -3423,6 +3496,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3445,6 +3519,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3466,6 +3541,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3483,6 +3559,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3575,6 +3652,694 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     }
   }
 
+  public interface SalesforceObjectIdentifierOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The object name.
+     * </pre>
+     *
+     * <code>string object_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The objectName.
+     */
+    java.lang.String getObjectName();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The object name.
+     * </pre>
+     *
+     * <code>string object_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for objectName.
+     */
+    com.google.protobuf.ByteString getObjectNameBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce data source object identifier.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier}
+   */
+  public static final class SalesforceObjectIdentifier
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier)
+      SalesforceObjectIdentifierOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use SalesforceObjectIdentifier.newBuilder() to construct.
+    private SalesforceObjectIdentifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SalesforceObjectIdentifier() {
+      objectName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SalesforceObjectIdentifier();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_SalesforceObjectIdentifier_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_SalesforceObjectIdentifier_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+                  .class,
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+                  .Builder.class);
+    }
+
+    public static final int OBJECT_NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object objectName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The object name.
+     * </pre>
+     *
+     * <code>string object_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The objectName.
+     */
+    @java.lang.Override
+    public java.lang.String getObjectName() {
+      java.lang.Object ref = objectName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        objectName_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The object name.
+     * </pre>
+     *
+     * <code>string object_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for objectName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getObjectNameBytes() {
+      java.lang.Object ref = objectName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        objectName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(objectName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, objectName_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(objectName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, objectName_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier other =
+          (com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier) obj;
+
+      if (!getObjectName().equals(other.getObjectName())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OBJECT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getObjectName().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source object identifier.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier)
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifierOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_SalesforceObjectIdentifier_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_SalesforceObjectIdentifier_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+                    .class,
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        objectName_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_SalesforceObjectIdentifier_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+          getDefaultInstanceForType() {
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+          build() {
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+          buildPartial() {
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier result =
+            new com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.objectName_ = objectName_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier) {
+          return mergeFrom(
+              (com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier other) {
+        if (other
+            == com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+                .getDefaultInstance()) return this;
+        if (!other.getObjectName().isEmpty()) {
+          objectName_ = other.objectName_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  objectName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object objectName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The object name.
+       * </pre>
+       *
+       * <code>string object_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The objectName.
+       */
+      public java.lang.String getObjectName() {
+        java.lang.Object ref = objectName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          objectName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The object name.
+       * </pre>
+       *
+       * <code>string object_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for objectName.
+       */
+      public com.google.protobuf.ByteString getObjectNameBytes() {
+        java.lang.Object ref = objectName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          objectName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The object name.
+       * </pre>
+       *
+       * <code>string object_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The objectName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setObjectName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        objectName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The object name.
+       * </pre>
+       *
+       * <code>string object_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearObjectName() {
+        objectName_ = getDefaultInstance().getObjectName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The object name.
+       * </pre>
+       *
+       * <code>string object_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for objectName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setObjectNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        objectName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier)
+    private static final com.google.cloud.datastream.v1.SourceObjectIdentifier
+            .SalesforceObjectIdentifier
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier();
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SalesforceObjectIdentifier> PARSER =
+        new com.google.protobuf.AbstractParser<SalesforceObjectIdentifier>() {
+          @java.lang.Override
+          public SalesforceObjectIdentifier parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SalesforceObjectIdentifier> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SalesforceObjectIdentifier> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int sourceIdentifierCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -3588,12 +4353,14 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     MYSQL_IDENTIFIER(2),
     POSTGRESQL_IDENTIFIER(3),
     SQL_SERVER_IDENTIFIER(4),
+    SALESFORCE_IDENTIFIER(5),
     SOURCEIDENTIFIER_NOT_SET(0);
     private final int value;
 
     private SourceIdentifierCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3614,6 +4381,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return POSTGRESQL_IDENTIFIER;
         case 4:
           return SQL_SERVER_IDENTIFIER;
+        case 5:
+          return SALESFORCE_IDENTIFIER;
         case 0:
           return SOURCEIDENTIFIER_NOT_SET;
         default:
@@ -3631,6 +4400,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   }
 
   public static final int ORACLE_IDENTIFIER_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -3648,6 +4418,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   public boolean hasOracleIdentifier() {
     return sourceIdentifierCase_ == 1;
   }
+
   /**
    *
    *
@@ -3671,6 +4442,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     return com.google.cloud.datastream.v1.SourceObjectIdentifier.OracleObjectIdentifier
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3694,6 +4466,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   }
 
   public static final int MYSQL_IDENTIFIER_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -3711,6 +4484,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   public boolean hasMysqlIdentifier() {
     return sourceIdentifierCase_ == 2;
   }
+
   /**
    *
    *
@@ -3734,6 +4508,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     return com.google.cloud.datastream.v1.SourceObjectIdentifier.MysqlObjectIdentifier
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3757,6 +4532,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   }
 
   public static final int POSTGRESQL_IDENTIFIER_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -3774,6 +4550,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   public boolean hasPostgresqlIdentifier() {
     return sourceIdentifierCase_ == 3;
   }
+
   /**
    *
    *
@@ -3797,6 +4574,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     return com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3820,6 +4598,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   }
 
   public static final int SQL_SERVER_IDENTIFIER_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -3837,6 +4616,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   public boolean hasSqlServerIdentifier() {
     return sourceIdentifierCase_ == 4;
   }
+
   /**
    *
    *
@@ -3860,6 +4640,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     return com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3879,6 +4660,72 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           sourceIdentifier_;
     }
     return com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
+        .getDefaultInstance();
+  }
+
+  public static final int SALESFORCE_IDENTIFIER_FIELD_NUMBER = 5;
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier salesforce_identifier = 5;
+   * </code>
+   *
+   * @return Whether the salesforceIdentifier field is set.
+   */
+  @java.lang.Override
+  public boolean hasSalesforceIdentifier() {
+    return sourceIdentifierCase_ == 5;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier salesforce_identifier = 5;
+   * </code>
+   *
+   * @return The salesforceIdentifier.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+      getSalesforceIdentifier() {
+    if (sourceIdentifierCase_ == 5) {
+      return (com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier)
+          sourceIdentifier_;
+    }
+    return com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier salesforce_identifier = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifierOrBuilder
+      getSalesforceIdentifierOrBuilder() {
+    if (sourceIdentifierCase_ == 5) {
+      return (com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier)
+          sourceIdentifier_;
+    }
+    return com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
         .getDefaultInstance();
   }
 
@@ -3920,6 +4767,12 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           (com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier)
               sourceIdentifier_);
     }
+    if (sourceIdentifierCase_ == 5) {
+      output.writeMessage(
+          5,
+          (com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier)
+              sourceIdentifier_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3957,6 +4810,13 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
               (com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier)
                   sourceIdentifier_);
     }
+    if (sourceIdentifierCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5,
+              (com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier)
+                  sourceIdentifier_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3986,6 +4846,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         break;
       case 4:
         if (!getSqlServerIdentifier().equals(other.getSqlServerIdentifier())) return false;
+        break;
+      case 5:
+        if (!getSalesforceIdentifier().equals(other.getSalesforceIdentifier())) return false;
         break;
       case 0:
       default:
@@ -4017,6 +4880,10 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       case 4:
         hash = (37 * hash) + SQL_SERVER_IDENTIFIER_FIELD_NUMBER;
         hash = (53 * hash) + getSqlServerIdentifier().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + SALESFORCE_IDENTIFIER_FIELD_NUMBER;
+        hash = (53 * hash) + getSalesforceIdentifier().hashCode();
         break;
       case 0:
       default:
@@ -4122,6 +4989,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4172,6 +5040,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
       if (sqlServerIdentifierBuilder_ != null) {
         sqlServerIdentifierBuilder_.clear();
+      }
+      if (salesforceIdentifierBuilder_ != null) {
+        salesforceIdentifierBuilder_.clear();
       }
       sourceIdentifierCase_ = 0;
       sourceIdentifier_ = null;
@@ -4228,6 +5099,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
       if (sourceIdentifierCase_ == 4 && sqlServerIdentifierBuilder_ != null) {
         result.sourceIdentifier_ = sqlServerIdentifierBuilder_.build();
+      }
+      if (sourceIdentifierCase_ == 5 && salesforceIdentifierBuilder_ != null) {
+        result.sourceIdentifier_ = salesforceIdentifierBuilder_.build();
       }
     }
 
@@ -4298,6 +5172,11 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             mergeSqlServerIdentifier(other.getSqlServerIdentifier());
             break;
           }
+        case SALESFORCE_IDENTIFIER:
+          {
+            mergeSalesforceIdentifier(other.getSalesforceIdentifier());
+            break;
+          }
         case SOURCEIDENTIFIER_NOT_SET:
           {
             break;
@@ -4356,6 +5235,13 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
                 sourceIdentifierCase_ = 4;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getSalesforceIdentifierFieldBuilder().getBuilder(), extensionRegistry);
+                sourceIdentifierCase_ = 5;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4394,6 +5280,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             com.google.cloud.datastream.v1.SourceObjectIdentifier.OracleObjectIdentifier.Builder,
             com.google.cloud.datastream.v1.SourceObjectIdentifier.OracleObjectIdentifierOrBuilder>
         oracleIdentifierBuilder_;
+
     /**
      *
      *
@@ -4411,6 +5298,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     public boolean hasOracleIdentifier() {
       return sourceIdentifierCase_ == 1;
     }
+
     /**
      *
      *
@@ -4442,6 +5330,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4467,6 +5356,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -4490,6 +5380,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -4529,6 +5420,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -4556,6 +5448,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -4571,6 +5464,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         getOracleIdentifierBuilder() {
       return getOracleIdentifierFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4596,6 +5490,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4641,6 +5536,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             com.google.cloud.datastream.v1.SourceObjectIdentifier.MysqlObjectIdentifier.Builder,
             com.google.cloud.datastream.v1.SourceObjectIdentifier.MysqlObjectIdentifierOrBuilder>
         mysqlIdentifierBuilder_;
+
     /**
      *
      *
@@ -4658,6 +5554,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     public boolean hasMysqlIdentifier() {
       return sourceIdentifierCase_ == 2;
     }
+
     /**
      *
      *
@@ -4689,6 +5586,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4714,6 +5612,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4737,6 +5636,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4776,6 +5676,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4803,6 +5704,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -4818,6 +5720,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         getMysqlIdentifierBuilder() {
       return getMysqlIdentifierFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4843,6 +5746,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4889,6 +5793,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             com.google.cloud.datastream.v1.SourceObjectIdentifier
                 .PostgresqlObjectIdentifierOrBuilder>
         postgresqlIdentifierBuilder_;
+
     /**
      *
      *
@@ -4906,6 +5811,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     public boolean hasPostgresqlIdentifier() {
       return sourceIdentifierCase_ == 3;
     }
+
     /**
      *
      *
@@ -4937,6 +5843,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4962,6 +5869,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -4985,6 +5893,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -5025,6 +5934,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -5052,6 +5962,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -5067,6 +5978,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         getPostgresqlIdentifierBuilder() {
       return getPostgresqlIdentifierFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5092,6 +6004,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5140,6 +6053,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             com.google.cloud.datastream.v1.SourceObjectIdentifier
                 .SqlServerObjectIdentifierOrBuilder>
         sqlServerIdentifierBuilder_;
+
     /**
      *
      *
@@ -5157,6 +6071,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     public boolean hasSqlServerIdentifier() {
       return sourceIdentifierCase_ == 4;
     }
+
     /**
      *
      *
@@ -5188,6 +6103,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5213,6 +6129,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -5236,6 +6153,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -5276,6 +6194,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -5303,6 +6222,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -5318,6 +6238,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         getSqlServerIdentifierBuilder() {
       return getSqlServerIdentifierFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5343,6 +6264,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5382,6 +6304,267 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 4;
       onChanged();
       return sqlServerIdentifierBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+                .Builder,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier
+                .SalesforceObjectIdentifierOrBuilder>
+        salesforceIdentifierBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier salesforce_identifier = 5;
+     * </code>
+     *
+     * @return Whether the salesforceIdentifier field is set.
+     */
+    @java.lang.Override
+    public boolean hasSalesforceIdentifier() {
+      return sourceIdentifierCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier salesforce_identifier = 5;
+     * </code>
+     *
+     * @return The salesforceIdentifier.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+        getSalesforceIdentifier() {
+      if (salesforceIdentifierBuilder_ == null) {
+        if (sourceIdentifierCase_ == 5) {
+          return (com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier)
+              sourceIdentifier_;
+        }
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+            .getDefaultInstance();
+      } else {
+        if (sourceIdentifierCase_ == 5) {
+          return salesforceIdentifierBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier salesforce_identifier = 5;
+     * </code>
+     */
+    public Builder setSalesforceIdentifier(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier value) {
+      if (salesforceIdentifierBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceIdentifier_ = value;
+        onChanged();
+      } else {
+        salesforceIdentifierBuilder_.setMessage(value);
+      }
+      sourceIdentifierCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier salesforce_identifier = 5;
+     * </code>
+     */
+    public Builder setSalesforceIdentifier(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier.Builder
+            builderForValue) {
+      if (salesforceIdentifierBuilder_ == null) {
+        sourceIdentifier_ = builderForValue.build();
+        onChanged();
+      } else {
+        salesforceIdentifierBuilder_.setMessage(builderForValue.build());
+      }
+      sourceIdentifierCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier salesforce_identifier = 5;
+     * </code>
+     */
+    public Builder mergeSalesforceIdentifier(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier value) {
+      if (salesforceIdentifierBuilder_ == null) {
+        if (sourceIdentifierCase_ == 5
+            && sourceIdentifier_
+                != com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+                    .getDefaultInstance()) {
+          sourceIdentifier_ =
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+                  .newBuilder(
+                      (com.google.cloud.datastream.v1.SourceObjectIdentifier
+                              .SalesforceObjectIdentifier)
+                          sourceIdentifier_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceIdentifier_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceIdentifierCase_ == 5) {
+          salesforceIdentifierBuilder_.mergeFrom(value);
+        } else {
+          salesforceIdentifierBuilder_.setMessage(value);
+        }
+      }
+      sourceIdentifierCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier salesforce_identifier = 5;
+     * </code>
+     */
+    public Builder clearSalesforceIdentifier() {
+      if (salesforceIdentifierBuilder_ == null) {
+        if (sourceIdentifierCase_ == 5) {
+          sourceIdentifierCase_ = 0;
+          sourceIdentifier_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceIdentifierCase_ == 5) {
+          sourceIdentifierCase_ = 0;
+          sourceIdentifier_ = null;
+        }
+        salesforceIdentifierBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier salesforce_identifier = 5;
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier.Builder
+        getSalesforceIdentifierBuilder() {
+      return getSalesforceIdentifierFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier salesforce_identifier = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifierOrBuilder
+        getSalesforceIdentifierOrBuilder() {
+      if ((sourceIdentifierCase_ == 5) && (salesforceIdentifierBuilder_ != null)) {
+        return salesforceIdentifierBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceIdentifierCase_ == 5) {
+          return (com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier)
+              sourceIdentifier_;
+        }
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier salesforce_identifier = 5;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+                .Builder,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier
+                .SalesforceObjectIdentifierOrBuilder>
+        getSalesforceIdentifierFieldBuilder() {
+      if (salesforceIdentifierBuilder_ == null) {
+        if (!(sourceIdentifierCase_ == 5)) {
+          sourceIdentifier_ =
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+                  .getDefaultInstance();
+        }
+        salesforceIdentifierBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier,
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
+                    .Builder,
+                com.google.cloud.datastream.v1.SourceObjectIdentifier
+                    .SalesforceObjectIdentifierOrBuilder>(
+                (com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier)
+                    sourceIdentifier_,
+                getParentForChildren(),
+                isClean());
+        sourceIdentifier_ = null;
+      }
+      sourceIdentifierCase_ = 5;
+      onChanged();
+      return salesforceIdentifierBuilder_;
     }
 
     @java.lang.Override

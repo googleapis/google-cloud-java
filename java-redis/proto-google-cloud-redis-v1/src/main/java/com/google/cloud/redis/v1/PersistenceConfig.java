@@ -33,6 +33,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.redis.v1.PersistenceConfig)
     PersistenceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PersistenceConfig.newBuilder() to construct.
   private PersistenceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,6 +119,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * <code>PERSISTENCE_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int PERSISTENCE_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -129,6 +131,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * <code>DISABLED = 1;</code>
      */
     public static final int DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -298,6 +301,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * <code>SNAPSHOT_PERIOD_UNSPECIFIED = 0;</code>
      */
     public static final int SNAPSHOT_PERIOD_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -308,6 +312,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * <code>ONE_HOUR = 3;</code>
      */
     public static final int ONE_HOUR_VALUE = 3;
+
     /**
      *
      *
@@ -318,6 +323,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * <code>SIX_HOURS = 4;</code>
      */
     public static final int SIX_HOURS_VALUE = 4;
+
     /**
      *
      *
@@ -328,6 +334,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
      * <code>TWELVE_HOURS = 5;</code>
      */
     public static final int TWELVE_HOURS_VALUE = 5;
+
     /**
      *
      *
@@ -429,6 +436,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int PERSISTENCE_MODE_FIELD_NUMBER = 1;
   private int persistenceMode_ = 0;
+
   /**
    *
    *
@@ -447,6 +455,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
   public int getPersistenceModeValue() {
     return persistenceMode_;
   }
+
   /**
    *
    *
@@ -472,6 +481,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int RDB_SNAPSHOT_PERIOD_FIELD_NUMBER = 2;
   private int rdbSnapshotPeriod_ = 0;
+
   /**
    *
    *
@@ -494,6 +504,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
   public int getRdbSnapshotPeriodValue() {
     return rdbSnapshotPeriod_;
   }
+
   /**
    *
    *
@@ -523,6 +534,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int RDB_NEXT_SNAPSHOT_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp rdbNextSnapshotTime_;
+
   /**
    *
    *
@@ -540,6 +552,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasRdbNextSnapshotTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -559,6 +572,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : rdbNextSnapshotTime_;
   }
+
   /**
    *
    *
@@ -579,6 +593,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int RDB_SNAPSHOT_START_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp rdbSnapshotStartTime_;
+
   /**
    *
    *
@@ -598,6 +613,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasRdbSnapshotStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -619,6 +635,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : rdbSnapshotStartTime_;
   }
+
   /**
    *
    *
@@ -844,6 +861,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1094,6 +1112,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int persistenceMode_ = 0;
+
     /**
      *
      *
@@ -1112,6 +1131,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     public int getPersistenceModeValue() {
       return persistenceMode_;
     }
+
     /**
      *
      *
@@ -1133,6 +1153,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1155,6 +1176,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.redis.v1.PersistenceConfig.PersistenceMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1180,6 +1202,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1202,6 +1225,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private int rdbSnapshotPeriod_ = 0;
+
     /**
      *
      *
@@ -1224,6 +1248,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     public int getRdbSnapshotPeriodValue() {
       return rdbSnapshotPeriod_;
     }
+
     /**
      *
      *
@@ -1249,6 +1274,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1275,6 +1301,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.redis.v1.PersistenceConfig.SnapshotPeriod.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1304,6 +1331,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1335,6 +1363,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         rdbNextSnapshotTimeBuilder_;
+
     /**
      *
      *
@@ -1351,6 +1380,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasRdbNextSnapshotTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1373,6 +1403,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
         return rdbNextSnapshotTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1397,6 +1428,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1418,6 +1450,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1447,6 +1480,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1468,6 +1502,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1484,6 +1519,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getRdbNextSnapshotTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1504,6 +1540,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
             : rdbNextSnapshotTime_;
       }
     }
+
     /**
      *
      *
@@ -1538,6 +1575,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         rdbSnapshotStartTimeBuilder_;
+
     /**
      *
      *
@@ -1556,6 +1594,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasRdbSnapshotStartTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1580,6 +1619,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
         return rdbSnapshotStartTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1606,6 +1646,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1629,6 +1670,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1660,6 +1702,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1683,6 +1726,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1701,6 +1745,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getRdbSnapshotStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1723,6 +1768,7 @@ public final class PersistenceConfig extends com.google.protobuf.GeneratedMessag
             : rdbSnapshotStartTime_;
       }
     }
+
     /**
      *
      *

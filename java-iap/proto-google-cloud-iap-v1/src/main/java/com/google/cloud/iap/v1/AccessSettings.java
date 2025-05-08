@@ -33,12 +33,15 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.AccessSettings)
     AccessSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AccessSettings.newBuilder() to construct.
   private AccessSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private AccessSettings() {}
+  private AccessSettings() {
+    identitySources_ = java.util.Collections.emptyList();
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -61,17 +64,167 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iap.v1.AccessSettings.Builder.class);
   }
 
-  private int bitField0_;
-  public static final int GCIP_SETTINGS_FIELD_NUMBER = 1;
-  private com.google.cloud.iap.v1.GcipSettings gcipSettings_;
   /**
    *
    *
    * <pre>
-   * GCIP claims and endpoint configurations for 3p identity providers.
+   * Types of identity source supported by IAP.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.GcipSettings gcip_settings = 1;</code>
+   * Protobuf enum {@code google.cloud.iap.v1.AccessSettings.IdentitySource}
+   */
+  public enum IdentitySource implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * IdentitySource Unspecified.
+     * When selected, IAP relies on which identity settings are fully configured
+     * to redirect the traffic to. The precedence order is
+     * WorkforceIdentitySettings &gt; GcipSettings. If none is set, default to use
+     * Google identity.
+     * </pre>
+     *
+     * <code>IDENTITY_SOURCE_UNSPECIFIED = 0;</code>
+     */
+    IDENTITY_SOURCE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Use external identities set up on Google Cloud Workforce Identity
+     * Federation.
+     * </pre>
+     *
+     * <code>WORKFORCE_IDENTITY_FEDERATION = 3;</code>
+     */
+    WORKFORCE_IDENTITY_FEDERATION(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * IdentitySource Unspecified.
+     * When selected, IAP relies on which identity settings are fully configured
+     * to redirect the traffic to. The precedence order is
+     * WorkforceIdentitySettings &gt; GcipSettings. If none is set, default to use
+     * Google identity.
+     * </pre>
+     *
+     * <code>IDENTITY_SOURCE_UNSPECIFIED = 0;</code>
+     */
+    public static final int IDENTITY_SOURCE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Use external identities set up on Google Cloud Workforce Identity
+     * Federation.
+     * </pre>
+     *
+     * <code>WORKFORCE_IDENTITY_FEDERATION = 3;</code>
+     */
+    public static final int WORKFORCE_IDENTITY_FEDERATION_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static IdentitySource valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static IdentitySource forNumber(int value) {
+      switch (value) {
+        case 0:
+          return IDENTITY_SOURCE_UNSPECIFIED;
+        case 3:
+          return WORKFORCE_IDENTITY_FEDERATION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<IdentitySource> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<IdentitySource> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<IdentitySource>() {
+          public IdentitySource findValueByNumber(int number) {
+            return IdentitySource.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.iap.v1.AccessSettings.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final IdentitySource[] VALUES = values();
+
+    public static IdentitySource valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private IdentitySource(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.iap.v1.AccessSettings.IdentitySource)
+  }
+
+  private int bitField0_;
+  public static final int GCIP_SETTINGS_FIELD_NUMBER = 1;
+  private com.google.cloud.iap.v1.GcipSettings gcipSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. GCIP claims and endpoint configurations for 3p identity
+   * providers.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.iap.v1.GcipSettings gcip_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the gcipSettings field is set.
    */
@@ -79,14 +232,18 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcipSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * GCIP claims and endpoint configurations for 3p identity providers.
+   * Optional. GCIP claims and endpoint configurations for 3p identity
+   * providers.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.GcipSettings gcip_settings = 1;</code>
+   * <code>
+   * .google.cloud.iap.v1.GcipSettings gcip_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The gcipSettings.
    */
@@ -96,14 +253,18 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.iap.v1.GcipSettings.getDefaultInstance()
         : gcipSettings_;
   }
+
   /**
    *
    *
    * <pre>
-   * GCIP claims and endpoint configurations for 3p identity providers.
+   * Optional. GCIP claims and endpoint configurations for 3p identity
+   * providers.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.GcipSettings gcip_settings = 1;</code>
+   * <code>
+   * .google.cloud.iap.v1.GcipSettings gcip_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.iap.v1.GcipSettingsOrBuilder getGcipSettingsOrBuilder() {
@@ -114,14 +275,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CORS_SETTINGS_FIELD_NUMBER = 2;
   private com.google.cloud.iap.v1.CorsSettings corsSettings_;
+
   /**
    *
    *
    * <pre>
-   * Configuration to allow cross-origin requests via IAP.
+   * Optional. Configuration to allow cross-origin requests via IAP.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.CorsSettings cors_settings = 2;</code>
+   * <code>
+   * .google.cloud.iap.v1.CorsSettings cors_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the corsSettings field is set.
    */
@@ -129,14 +293,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCorsSettings() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Configuration to allow cross-origin requests via IAP.
+   * Optional. Configuration to allow cross-origin requests via IAP.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.CorsSettings cors_settings = 2;</code>
+   * <code>
+   * .google.cloud.iap.v1.CorsSettings cors_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The corsSettings.
    */
@@ -146,14 +313,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.iap.v1.CorsSettings.getDefaultInstance()
         : corsSettings_;
   }
+
   /**
    *
    *
    * <pre>
-   * Configuration to allow cross-origin requests via IAP.
+   * Optional. Configuration to allow cross-origin requests via IAP.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.CorsSettings cors_settings = 2;</code>
+   * <code>
+   * .google.cloud.iap.v1.CorsSettings cors_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.iap.v1.CorsSettingsOrBuilder getCorsSettingsOrBuilder() {
@@ -164,14 +334,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OAUTH_SETTINGS_FIELD_NUMBER = 3;
   private com.google.cloud.iap.v1.OAuthSettings oauthSettings_;
+
   /**
    *
    *
    * <pre>
-   * Settings to configure IAP's OAuth behavior.
+   * Optional. Settings to configure IAP's OAuth behavior.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.OAuthSettings oauth_settings = 3;</code>
+   * <code>
+   * .google.cloud.iap.v1.OAuthSettings oauth_settings = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the oauthSettings field is set.
    */
@@ -179,14 +352,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOauthSettings() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Settings to configure IAP's OAuth behavior.
+   * Optional. Settings to configure IAP's OAuth behavior.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.OAuthSettings oauth_settings = 3;</code>
+   * <code>
+   * .google.cloud.iap.v1.OAuthSettings oauth_settings = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The oauthSettings.
    */
@@ -196,14 +372,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.iap.v1.OAuthSettings.getDefaultInstance()
         : oauthSettings_;
   }
+
   /**
    *
    *
    * <pre>
-   * Settings to configure IAP's OAuth behavior.
+   * Optional. Settings to configure IAP's OAuth behavior.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.OAuthSettings oauth_settings = 3;</code>
+   * <code>
+   * .google.cloud.iap.v1.OAuthSettings oauth_settings = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.iap.v1.OAuthSettingsOrBuilder getOauthSettingsOrBuilder() {
@@ -214,14 +393,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REAUTH_SETTINGS_FIELD_NUMBER = 6;
   private com.google.cloud.iap.v1.ReauthSettings reauthSettings_;
+
   /**
    *
    *
    * <pre>
-   * Settings to configure reauthentication policies in IAP.
+   * Optional. Settings to configure reauthentication policies in IAP.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.ReauthSettings reauth_settings = 6;</code>
+   * <code>
+   * .google.cloud.iap.v1.ReauthSettings reauth_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the reauthSettings field is set.
    */
@@ -229,14 +411,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReauthSettings() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Settings to configure reauthentication policies in IAP.
+   * Optional. Settings to configure reauthentication policies in IAP.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.ReauthSettings reauth_settings = 6;</code>
+   * <code>
+   * .google.cloud.iap.v1.ReauthSettings reauth_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The reauthSettings.
    */
@@ -246,14 +431,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.iap.v1.ReauthSettings.getDefaultInstance()
         : reauthSettings_;
   }
+
   /**
    *
    *
    * <pre>
-   * Settings to configure reauthentication policies in IAP.
+   * Optional. Settings to configure reauthentication policies in IAP.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.ReauthSettings reauth_settings = 6;</code>
+   * <code>
+   * .google.cloud.iap.v1.ReauthSettings reauth_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.iap.v1.ReauthSettingsOrBuilder getReauthSettingsOrBuilder() {
@@ -264,14 +452,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ALLOWED_DOMAINS_SETTINGS_FIELD_NUMBER = 7;
   private com.google.cloud.iap.v1.AllowedDomainsSettings allowedDomainsSettings_;
+
   /**
    *
    *
    * <pre>
-   * Settings to configure and enable allowed domains.
+   * Optional. Settings to configure and enable allowed domains.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7;</code>
+   * <code>
+   * .google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the allowedDomainsSettings field is set.
    */
@@ -279,14 +470,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAllowedDomainsSettings() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Settings to configure and enable allowed domains.
+   * Optional. Settings to configure and enable allowed domains.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7;</code>
+   * <code>
+   * .google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The allowedDomainsSettings.
    */
@@ -296,14 +490,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.iap.v1.AllowedDomainsSettings.getDefaultInstance()
         : allowedDomainsSettings_;
   }
+
   /**
    *
    *
    * <pre>
-   * Settings to configure and enable allowed domains.
+   * Optional. Settings to configure and enable allowed domains.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7;</code>
+   * <code>
+   * .google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.iap.v1.AllowedDomainsSettingsOrBuilder
@@ -312,6 +509,191 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.iap.v1.AllowedDomainsSettings.getDefaultInstance()
         : allowedDomainsSettings_;
   }
+
+  public static final int WORKFORCE_IDENTITY_SETTINGS_FIELD_NUMBER = 9;
+  private com.google.cloud.iap.v1.WorkforceIdentitySettings workforceIdentitySettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings to configure the workforce identity federation,
+   * including workforce pools and OAuth 2.0 settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.iap.v1.WorkforceIdentitySettings workforce_identity_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the workforceIdentitySettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkforceIdentitySettings() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings to configure the workforce identity federation,
+   * including workforce pools and OAuth 2.0 settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.iap.v1.WorkforceIdentitySettings workforce_identity_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workforceIdentitySettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.iap.v1.WorkforceIdentitySettings getWorkforceIdentitySettings() {
+    return workforceIdentitySettings_ == null
+        ? com.google.cloud.iap.v1.WorkforceIdentitySettings.getDefaultInstance()
+        : workforceIdentitySettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings to configure the workforce identity federation,
+   * including workforce pools and OAuth 2.0 settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.iap.v1.WorkforceIdentitySettings workforce_identity_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.iap.v1.WorkforceIdentitySettingsOrBuilder
+      getWorkforceIdentitySettingsOrBuilder() {
+    return workforceIdentitySettings_ == null
+        ? com.google.cloud.iap.v1.WorkforceIdentitySettings.getDefaultInstance()
+        : workforceIdentitySettings_;
+  }
+
+  public static final int IDENTITY_SOURCES_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private java.util.List<java.lang.Integer> identitySources_;
+
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer, com.google.cloud.iap.v1.AccessSettings.IdentitySource>
+      identitySources_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.google.cloud.iap.v1.AccessSettings.IdentitySource>() {
+            public com.google.cloud.iap.v1.AccessSettings.IdentitySource convert(
+                java.lang.Integer from) {
+              com.google.cloud.iap.v1.AccessSettings.IdentitySource result =
+                  com.google.cloud.iap.v1.AccessSettings.IdentitySource.forNumber(from);
+              return result == null
+                  ? com.google.cloud.iap.v1.AccessSettings.IdentitySource.UNRECOGNIZED
+                  : result;
+            }
+          };
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Identity sources that IAP can use to authenticate the end user.
+   * Only one identity source can be configured.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the identitySources.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.iap.v1.AccessSettings.IdentitySource>
+      getIdentitySourcesList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.google.cloud.iap.v1.AccessSettings.IdentitySource>(
+        identitySources_, identitySources_converter_);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Identity sources that IAP can use to authenticate the end user.
+   * Only one identity source can be configured.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of identitySources.
+   */
+  @java.lang.Override
+  public int getIdentitySourcesCount() {
+    return identitySources_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Identity sources that IAP can use to authenticate the end user.
+   * Only one identity source can be configured.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The identitySources at the given index.
+   */
+  @java.lang.Override
+  public com.google.cloud.iap.v1.AccessSettings.IdentitySource getIdentitySources(int index) {
+    return identitySources_converter_.convert(identitySources_.get(index));
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Identity sources that IAP can use to authenticate the end user.
+   * Only one identity source can be configured.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for identitySources.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getIdentitySourcesValueList() {
+    return identitySources_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Identity sources that IAP can use to authenticate the end user.
+   * Only one identity source can be configured.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of identitySources at the given index.
+   */
+  @java.lang.Override
+  public int getIdentitySourcesValue(int index) {
+    return identitySources_.get(index);
+  }
+
+  private int identitySourcesMemoizedSerializedSize;
 
   private byte memoizedIsInitialized = -1;
 
@@ -327,6 +709,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getGcipSettings());
     }
@@ -341,6 +724,16 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(7, getAllowedDomainsSettings());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(9, getWorkforceIdentitySettings());
+    }
+    if (getIdentitySourcesList().size() > 0) {
+      output.writeUInt32NoTag(82);
+      output.writeUInt32NoTag(identitySourcesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < identitySources_.size(); i++) {
+      output.writeEnumNoTag(identitySources_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -366,6 +759,24 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(7, getAllowedDomainsSettings());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, getWorkforceIdentitySettings());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < identitySources_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(identitySources_.get(i));
+      }
+      size += dataSize;
+      if (!getIdentitySourcesList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      identitySourcesMemoizedSerializedSize = dataSize;
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -402,6 +813,12 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
     if (hasAllowedDomainsSettings()) {
       if (!getAllowedDomainsSettings().equals(other.getAllowedDomainsSettings())) return false;
     }
+    if (hasWorkforceIdentitySettings() != other.hasWorkforceIdentitySettings()) return false;
+    if (hasWorkforceIdentitySettings()) {
+      if (!getWorkforceIdentitySettings().equals(other.getWorkforceIdentitySettings()))
+        return false;
+    }
+    if (!identitySources_.equals(other.identitySources_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -432,6 +849,14 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
     if (hasAllowedDomainsSettings()) {
       hash = (37 * hash) + ALLOWED_DOMAINS_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getAllowedDomainsSettings().hashCode();
+    }
+    if (hasWorkforceIdentitySettings()) {
+      hash = (37 * hash) + WORKFORCE_IDENTITY_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkforceIdentitySettings().hashCode();
+    }
+    if (getIdentitySourcesCount() > 0) {
+      hash = (37 * hash) + IDENTITY_SOURCES_FIELD_NUMBER;
+      hash = (53 * hash) + identitySources_.hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -533,6 +958,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -578,6 +1004,7 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         getOauthSettingsFieldBuilder();
         getReauthSettingsFieldBuilder();
         getAllowedDomainsSettingsFieldBuilder();
+        getWorkforceIdentitySettingsFieldBuilder();
       }
     }
 
@@ -610,6 +1037,13 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         allowedDomainsSettingsBuilder_.dispose();
         allowedDomainsSettingsBuilder_ = null;
       }
+      workforceIdentitySettings_ = null;
+      if (workforceIdentitySettingsBuilder_ != null) {
+        workforceIdentitySettingsBuilder_.dispose();
+        workforceIdentitySettingsBuilder_ = null;
+      }
+      identitySources_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -637,11 +1071,20 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.iap.v1.AccessSettings buildPartial() {
       com.google.cloud.iap.v1.AccessSettings result =
           new com.google.cloud.iap.v1.AccessSettings(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.iap.v1.AccessSettings result) {
+      if (((bitField0_ & 0x00000040) != 0)) {
+        identitySources_ = java.util.Collections.unmodifiableList(identitySources_);
+        bitField0_ = (bitField0_ & ~0x00000040);
+      }
+      result.identitySources_ = identitySources_;
     }
 
     private void buildPartial0(com.google.cloud.iap.v1.AccessSettings result) {
@@ -673,6 +1116,13 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
                 ? allowedDomainsSettings_
                 : allowedDomainsSettingsBuilder_.build();
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.workforceIdentitySettings_ =
+            workforceIdentitySettingsBuilder_ == null
+                ? workforceIdentitySettings_
+                : workforceIdentitySettingsBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -737,6 +1187,19 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAllowedDomainsSettings()) {
         mergeAllowedDomainsSettings(other.getAllowedDomainsSettings());
       }
+      if (other.hasWorkforceIdentitySettings()) {
+        mergeWorkforceIdentitySettings(other.getWorkforceIdentitySettings());
+      }
+      if (!other.identitySources_.isEmpty()) {
+        if (identitySources_.isEmpty()) {
+          identitySources_ = other.identitySources_;
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          ensureIdentitySourcesIsMutable();
+          identitySources_.addAll(other.identitySources_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -794,6 +1257,32 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
+            case 74:
+              {
+                input.readMessage(
+                    getWorkforceIdentitySettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 74
+            case 80:
+              {
+                int tmpRaw = input.readEnum();
+                ensureIdentitySourcesIsMutable();
+                identitySources_.add(tmpRaw);
+                break;
+              } // case 80
+            case 82:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureIdentitySourcesIsMutable();
+                  identitySources_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -819,28 +1308,36 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iap.v1.GcipSettings.Builder,
             com.google.cloud.iap.v1.GcipSettingsOrBuilder>
         gcipSettingsBuilder_;
+
     /**
      *
      *
      * <pre>
-     * GCIP claims and endpoint configurations for 3p identity providers.
+     * Optional. GCIP claims and endpoint configurations for 3p identity
+     * providers.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.GcipSettings gcip_settings = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.GcipSettings gcip_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the gcipSettings field is set.
      */
     public boolean hasGcipSettings() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * GCIP claims and endpoint configurations for 3p identity providers.
+     * Optional. GCIP claims and endpoint configurations for 3p identity
+     * providers.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.GcipSettings gcip_settings = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.GcipSettings gcip_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The gcipSettings.
      */
@@ -853,14 +1350,18 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         return gcipSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * GCIP claims and endpoint configurations for 3p identity providers.
+     * Optional. GCIP claims and endpoint configurations for 3p identity
+     * providers.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.GcipSettings gcip_settings = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.GcipSettings gcip_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setGcipSettings(com.google.cloud.iap.v1.GcipSettings value) {
       if (gcipSettingsBuilder_ == null) {
@@ -875,14 +1376,18 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * GCIP claims and endpoint configurations for 3p identity providers.
+     * Optional. GCIP claims and endpoint configurations for 3p identity
+     * providers.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.GcipSettings gcip_settings = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.GcipSettings gcip_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setGcipSettings(com.google.cloud.iap.v1.GcipSettings.Builder builderForValue) {
       if (gcipSettingsBuilder_ == null) {
@@ -894,14 +1399,18 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * GCIP claims and endpoint configurations for 3p identity providers.
+     * Optional. GCIP claims and endpoint configurations for 3p identity
+     * providers.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.GcipSettings gcip_settings = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.GcipSettings gcip_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeGcipSettings(com.google.cloud.iap.v1.GcipSettings value) {
       if (gcipSettingsBuilder_ == null) {
@@ -921,14 +1430,18 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * GCIP claims and endpoint configurations for 3p identity providers.
+     * Optional. GCIP claims and endpoint configurations for 3p identity
+     * providers.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.GcipSettings gcip_settings = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.GcipSettings gcip_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearGcipSettings() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -940,28 +1453,36 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * GCIP claims and endpoint configurations for 3p identity providers.
+     * Optional. GCIP claims and endpoint configurations for 3p identity
+     * providers.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.GcipSettings gcip_settings = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.GcipSettings gcip_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.iap.v1.GcipSettings.Builder getGcipSettingsBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return getGcipSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * GCIP claims and endpoint configurations for 3p identity providers.
+     * Optional. GCIP claims and endpoint configurations for 3p identity
+     * providers.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.GcipSettings gcip_settings = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.GcipSettings gcip_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.iap.v1.GcipSettingsOrBuilder getGcipSettingsOrBuilder() {
       if (gcipSettingsBuilder_ != null) {
@@ -972,14 +1493,18 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             : gcipSettings_;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * GCIP claims and endpoint configurations for 3p identity providers.
+     * Optional. GCIP claims and endpoint configurations for 3p identity
+     * providers.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.GcipSettings gcip_settings = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.GcipSettings gcip_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.iap.v1.GcipSettings,
@@ -1004,28 +1529,34 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iap.v1.CorsSettings.Builder,
             com.google.cloud.iap.v1.CorsSettingsOrBuilder>
         corsSettingsBuilder_;
+
     /**
      *
      *
      * <pre>
-     * Configuration to allow cross-origin requests via IAP.
+     * Optional. Configuration to allow cross-origin requests via IAP.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.CorsSettings cors_settings = 2;</code>
+     * <code>
+     * .google.cloud.iap.v1.CorsSettings cors_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the corsSettings field is set.
      */
     public boolean hasCorsSettings() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Configuration to allow cross-origin requests via IAP.
+     * Optional. Configuration to allow cross-origin requests via IAP.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.CorsSettings cors_settings = 2;</code>
+     * <code>
+     * .google.cloud.iap.v1.CorsSettings cors_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The corsSettings.
      */
@@ -1038,14 +1569,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         return corsSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Configuration to allow cross-origin requests via IAP.
+     * Optional. Configuration to allow cross-origin requests via IAP.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.CorsSettings cors_settings = 2;</code>
+     * <code>
+     * .google.cloud.iap.v1.CorsSettings cors_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setCorsSettings(com.google.cloud.iap.v1.CorsSettings value) {
       if (corsSettingsBuilder_ == null) {
@@ -1060,14 +1594,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Configuration to allow cross-origin requests via IAP.
+     * Optional. Configuration to allow cross-origin requests via IAP.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.CorsSettings cors_settings = 2;</code>
+     * <code>
+     * .google.cloud.iap.v1.CorsSettings cors_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setCorsSettings(com.google.cloud.iap.v1.CorsSettings.Builder builderForValue) {
       if (corsSettingsBuilder_ == null) {
@@ -1079,14 +1616,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Configuration to allow cross-origin requests via IAP.
+     * Optional. Configuration to allow cross-origin requests via IAP.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.CorsSettings cors_settings = 2;</code>
+     * <code>
+     * .google.cloud.iap.v1.CorsSettings cors_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeCorsSettings(com.google.cloud.iap.v1.CorsSettings value) {
       if (corsSettingsBuilder_ == null) {
@@ -1106,14 +1646,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Configuration to allow cross-origin requests via IAP.
+     * Optional. Configuration to allow cross-origin requests via IAP.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.CorsSettings cors_settings = 2;</code>
+     * <code>
+     * .google.cloud.iap.v1.CorsSettings cors_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearCorsSettings() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1125,28 +1668,34 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Configuration to allow cross-origin requests via IAP.
+     * Optional. Configuration to allow cross-origin requests via IAP.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.CorsSettings cors_settings = 2;</code>
+     * <code>
+     * .google.cloud.iap.v1.CorsSettings cors_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.iap.v1.CorsSettings.Builder getCorsSettingsBuilder() {
       bitField0_ |= 0x00000002;
       onChanged();
       return getCorsSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * Configuration to allow cross-origin requests via IAP.
+     * Optional. Configuration to allow cross-origin requests via IAP.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.CorsSettings cors_settings = 2;</code>
+     * <code>
+     * .google.cloud.iap.v1.CorsSettings cors_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.iap.v1.CorsSettingsOrBuilder getCorsSettingsOrBuilder() {
       if (corsSettingsBuilder_ != null) {
@@ -1157,14 +1706,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             : corsSettings_;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Configuration to allow cross-origin requests via IAP.
+     * Optional. Configuration to allow cross-origin requests via IAP.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.CorsSettings cors_settings = 2;</code>
+     * <code>
+     * .google.cloud.iap.v1.CorsSettings cors_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.iap.v1.CorsSettings,
@@ -1189,28 +1741,34 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iap.v1.OAuthSettings.Builder,
             com.google.cloud.iap.v1.OAuthSettingsOrBuilder>
         oauthSettingsBuilder_;
+
     /**
      *
      *
      * <pre>
-     * Settings to configure IAP's OAuth behavior.
+     * Optional. Settings to configure IAP's OAuth behavior.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.OAuthSettings oauth_settings = 3;</code>
+     * <code>
+     * .google.cloud.iap.v1.OAuthSettings oauth_settings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the oauthSettings field is set.
      */
     public boolean hasOauthSettings() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure IAP's OAuth behavior.
+     * Optional. Settings to configure IAP's OAuth behavior.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.OAuthSettings oauth_settings = 3;</code>
+     * <code>
+     * .google.cloud.iap.v1.OAuthSettings oauth_settings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The oauthSettings.
      */
@@ -1223,14 +1781,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         return oauthSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure IAP's OAuth behavior.
+     * Optional. Settings to configure IAP's OAuth behavior.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.OAuthSettings oauth_settings = 3;</code>
+     * <code>
+     * .google.cloud.iap.v1.OAuthSettings oauth_settings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setOauthSettings(com.google.cloud.iap.v1.OAuthSettings value) {
       if (oauthSettingsBuilder_ == null) {
@@ -1245,14 +1806,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure IAP's OAuth behavior.
+     * Optional. Settings to configure IAP's OAuth behavior.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.OAuthSettings oauth_settings = 3;</code>
+     * <code>
+     * .google.cloud.iap.v1.OAuthSettings oauth_settings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setOauthSettings(com.google.cloud.iap.v1.OAuthSettings.Builder builderForValue) {
       if (oauthSettingsBuilder_ == null) {
@@ -1264,14 +1828,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure IAP's OAuth behavior.
+     * Optional. Settings to configure IAP's OAuth behavior.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.OAuthSettings oauth_settings = 3;</code>
+     * <code>
+     * .google.cloud.iap.v1.OAuthSettings oauth_settings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeOauthSettings(com.google.cloud.iap.v1.OAuthSettings value) {
       if (oauthSettingsBuilder_ == null) {
@@ -1291,14 +1858,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure IAP's OAuth behavior.
+     * Optional. Settings to configure IAP's OAuth behavior.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.OAuthSettings oauth_settings = 3;</code>
+     * <code>
+     * .google.cloud.iap.v1.OAuthSettings oauth_settings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearOauthSettings() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1310,28 +1880,34 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure IAP's OAuth behavior.
+     * Optional. Settings to configure IAP's OAuth behavior.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.OAuthSettings oauth_settings = 3;</code>
+     * <code>
+     * .google.cloud.iap.v1.OAuthSettings oauth_settings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.iap.v1.OAuthSettings.Builder getOauthSettingsBuilder() {
       bitField0_ |= 0x00000004;
       onChanged();
       return getOauthSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure IAP's OAuth behavior.
+     * Optional. Settings to configure IAP's OAuth behavior.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.OAuthSettings oauth_settings = 3;</code>
+     * <code>
+     * .google.cloud.iap.v1.OAuthSettings oauth_settings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.iap.v1.OAuthSettingsOrBuilder getOauthSettingsOrBuilder() {
       if (oauthSettingsBuilder_ != null) {
@@ -1342,14 +1918,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             : oauthSettings_;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure IAP's OAuth behavior.
+     * Optional. Settings to configure IAP's OAuth behavior.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.OAuthSettings oauth_settings = 3;</code>
+     * <code>
+     * .google.cloud.iap.v1.OAuthSettings oauth_settings = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.iap.v1.OAuthSettings,
@@ -1374,28 +1953,34 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iap.v1.ReauthSettings.Builder,
             com.google.cloud.iap.v1.ReauthSettingsOrBuilder>
         reauthSettingsBuilder_;
+
     /**
      *
      *
      * <pre>
-     * Settings to configure reauthentication policies in IAP.
+     * Optional. Settings to configure reauthentication policies in IAP.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings reauth_settings = 6;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings reauth_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the reauthSettings field is set.
      */
     public boolean hasReauthSettings() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure reauthentication policies in IAP.
+     * Optional. Settings to configure reauthentication policies in IAP.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings reauth_settings = 6;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings reauth_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The reauthSettings.
      */
@@ -1408,14 +1993,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         return reauthSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure reauthentication policies in IAP.
+     * Optional. Settings to configure reauthentication policies in IAP.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings reauth_settings = 6;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings reauth_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setReauthSettings(com.google.cloud.iap.v1.ReauthSettings value) {
       if (reauthSettingsBuilder_ == null) {
@@ -1430,14 +2018,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure reauthentication policies in IAP.
+     * Optional. Settings to configure reauthentication policies in IAP.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings reauth_settings = 6;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings reauth_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setReauthSettings(
         com.google.cloud.iap.v1.ReauthSettings.Builder builderForValue) {
@@ -1450,14 +2041,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure reauthentication policies in IAP.
+     * Optional. Settings to configure reauthentication policies in IAP.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings reauth_settings = 6;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings reauth_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeReauthSettings(com.google.cloud.iap.v1.ReauthSettings value) {
       if (reauthSettingsBuilder_ == null) {
@@ -1477,14 +2071,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure reauthentication policies in IAP.
+     * Optional. Settings to configure reauthentication policies in IAP.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings reauth_settings = 6;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings reauth_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearReauthSettings() {
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1496,28 +2093,34 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure reauthentication policies in IAP.
+     * Optional. Settings to configure reauthentication policies in IAP.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings reauth_settings = 6;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings reauth_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.iap.v1.ReauthSettings.Builder getReauthSettingsBuilder() {
       bitField0_ |= 0x00000008;
       onChanged();
       return getReauthSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure reauthentication policies in IAP.
+     * Optional. Settings to configure reauthentication policies in IAP.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings reauth_settings = 6;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings reauth_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.iap.v1.ReauthSettingsOrBuilder getReauthSettingsOrBuilder() {
       if (reauthSettingsBuilder_ != null) {
@@ -1528,14 +2131,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             : reauthSettings_;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure reauthentication policies in IAP.
+     * Optional. Settings to configure reauthentication policies in IAP.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.ReauthSettings reauth_settings = 6;</code>
+     * <code>
+     * .google.cloud.iap.v1.ReauthSettings reauth_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.iap.v1.ReauthSettings,
@@ -1560,28 +2166,34 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.iap.v1.AllowedDomainsSettings.Builder,
             com.google.cloud.iap.v1.AllowedDomainsSettingsOrBuilder>
         allowedDomainsSettingsBuilder_;
+
     /**
      *
      *
      * <pre>
-     * Settings to configure and enable allowed domains.
+     * Optional. Settings to configure and enable allowed domains.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7;</code>
+     * <code>
+     * .google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the allowedDomainsSettings field is set.
      */
     public boolean hasAllowedDomainsSettings() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure and enable allowed domains.
+     * Optional. Settings to configure and enable allowed domains.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7;</code>
+     * <code>
+     * .google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The allowedDomainsSettings.
      */
@@ -1594,14 +2206,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         return allowedDomainsSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure and enable allowed domains.
+     * Optional. Settings to configure and enable allowed domains.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7;</code>
+     * <code>
+     * .google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAllowedDomainsSettings(com.google.cloud.iap.v1.AllowedDomainsSettings value) {
       if (allowedDomainsSettingsBuilder_ == null) {
@@ -1616,14 +2231,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure and enable allowed domains.
+     * Optional. Settings to configure and enable allowed domains.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7;</code>
+     * <code>
+     * .google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAllowedDomainsSettings(
         com.google.cloud.iap.v1.AllowedDomainsSettings.Builder builderForValue) {
@@ -1636,14 +2254,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure and enable allowed domains.
+     * Optional. Settings to configure and enable allowed domains.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7;</code>
+     * <code>
+     * .google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeAllowedDomainsSettings(
         com.google.cloud.iap.v1.AllowedDomainsSettings value) {
@@ -1665,14 +2286,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure and enable allowed domains.
+     * Optional. Settings to configure and enable allowed domains.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7;</code>
+     * <code>
+     * .google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearAllowedDomainsSettings() {
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -1684,14 +2308,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure and enable allowed domains.
+     * Optional. Settings to configure and enable allowed domains.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7;</code>
+     * <code>
+     * .google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.iap.v1.AllowedDomainsSettings.Builder
         getAllowedDomainsSettingsBuilder() {
@@ -1699,14 +2326,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAllowedDomainsSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure and enable allowed domains.
+     * Optional. Settings to configure and enable allowed domains.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7;</code>
+     * <code>
+     * .google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.iap.v1.AllowedDomainsSettingsOrBuilder
         getAllowedDomainsSettingsOrBuilder() {
@@ -1718,14 +2348,17 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
             : allowedDomainsSettings_;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure and enable allowed domains.
+     * Optional. Settings to configure and enable allowed domains.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7;</code>
+     * <code>
+     * .google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.iap.v1.AllowedDomainsSettings,
@@ -1742,6 +2375,505 @@ public final class AccessSettings extends com.google.protobuf.GeneratedMessageV3
         allowedDomainsSettings_ = null;
       }
       return allowedDomainsSettingsBuilder_;
+    }
+
+    private com.google.cloud.iap.v1.WorkforceIdentitySettings workforceIdentitySettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.iap.v1.WorkforceIdentitySettings,
+            com.google.cloud.iap.v1.WorkforceIdentitySettings.Builder,
+            com.google.cloud.iap.v1.WorkforceIdentitySettingsOrBuilder>
+        workforceIdentitySettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings to configure the workforce identity federation,
+     * including workforce pools and OAuth 2.0 settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.iap.v1.WorkforceIdentitySettings workforce_identity_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the workforceIdentitySettings field is set.
+     */
+    public boolean hasWorkforceIdentitySettings() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings to configure the workforce identity federation,
+     * including workforce pools and OAuth 2.0 settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.iap.v1.WorkforceIdentitySettings workforce_identity_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The workforceIdentitySettings.
+     */
+    public com.google.cloud.iap.v1.WorkforceIdentitySettings getWorkforceIdentitySettings() {
+      if (workforceIdentitySettingsBuilder_ == null) {
+        return workforceIdentitySettings_ == null
+            ? com.google.cloud.iap.v1.WorkforceIdentitySettings.getDefaultInstance()
+            : workforceIdentitySettings_;
+      } else {
+        return workforceIdentitySettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings to configure the workforce identity federation,
+     * including workforce pools and OAuth 2.0 settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.iap.v1.WorkforceIdentitySettings workforce_identity_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWorkforceIdentitySettings(
+        com.google.cloud.iap.v1.WorkforceIdentitySettings value) {
+      if (workforceIdentitySettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workforceIdentitySettings_ = value;
+      } else {
+        workforceIdentitySettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings to configure the workforce identity federation,
+     * including workforce pools and OAuth 2.0 settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.iap.v1.WorkforceIdentitySettings workforce_identity_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWorkforceIdentitySettings(
+        com.google.cloud.iap.v1.WorkforceIdentitySettings.Builder builderForValue) {
+      if (workforceIdentitySettingsBuilder_ == null) {
+        workforceIdentitySettings_ = builderForValue.build();
+      } else {
+        workforceIdentitySettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings to configure the workforce identity federation,
+     * including workforce pools and OAuth 2.0 settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.iap.v1.WorkforceIdentitySettings workforce_identity_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeWorkforceIdentitySettings(
+        com.google.cloud.iap.v1.WorkforceIdentitySettings value) {
+      if (workforceIdentitySettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && workforceIdentitySettings_ != null
+            && workforceIdentitySettings_
+                != com.google.cloud.iap.v1.WorkforceIdentitySettings.getDefaultInstance()) {
+          getWorkforceIdentitySettingsBuilder().mergeFrom(value);
+        } else {
+          workforceIdentitySettings_ = value;
+        }
+      } else {
+        workforceIdentitySettingsBuilder_.mergeFrom(value);
+      }
+      if (workforceIdentitySettings_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings to configure the workforce identity federation,
+     * including workforce pools and OAuth 2.0 settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.iap.v1.WorkforceIdentitySettings workforce_identity_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearWorkforceIdentitySettings() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      workforceIdentitySettings_ = null;
+      if (workforceIdentitySettingsBuilder_ != null) {
+        workforceIdentitySettingsBuilder_.dispose();
+        workforceIdentitySettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings to configure the workforce identity federation,
+     * including workforce pools and OAuth 2.0 settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.iap.v1.WorkforceIdentitySettings workforce_identity_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.iap.v1.WorkforceIdentitySettings.Builder
+        getWorkforceIdentitySettingsBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getWorkforceIdentitySettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings to configure the workforce identity federation,
+     * including workforce pools and OAuth 2.0 settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.iap.v1.WorkforceIdentitySettings workforce_identity_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.iap.v1.WorkforceIdentitySettingsOrBuilder
+        getWorkforceIdentitySettingsOrBuilder() {
+      if (workforceIdentitySettingsBuilder_ != null) {
+        return workforceIdentitySettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return workforceIdentitySettings_ == null
+            ? com.google.cloud.iap.v1.WorkforceIdentitySettings.getDefaultInstance()
+            : workforceIdentitySettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings to configure the workforce identity federation,
+     * including workforce pools and OAuth 2.0 settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.iap.v1.WorkforceIdentitySettings workforce_identity_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.iap.v1.WorkforceIdentitySettings,
+            com.google.cloud.iap.v1.WorkforceIdentitySettings.Builder,
+            com.google.cloud.iap.v1.WorkforceIdentitySettingsOrBuilder>
+        getWorkforceIdentitySettingsFieldBuilder() {
+      if (workforceIdentitySettingsBuilder_ == null) {
+        workforceIdentitySettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.iap.v1.WorkforceIdentitySettings,
+                com.google.cloud.iap.v1.WorkforceIdentitySettings.Builder,
+                com.google.cloud.iap.v1.WorkforceIdentitySettingsOrBuilder>(
+                getWorkforceIdentitySettings(), getParentForChildren(), isClean());
+        workforceIdentitySettings_ = null;
+      }
+      return workforceIdentitySettingsBuilder_;
+    }
+
+    private java.util.List<java.lang.Integer> identitySources_ = java.util.Collections.emptyList();
+
+    private void ensureIdentitySourcesIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        identitySources_ = new java.util.ArrayList<java.lang.Integer>(identitySources_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity sources that IAP can use to authenticate the end user.
+     * Only one identity source can be configured.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the identitySources.
+     */
+    public java.util.List<com.google.cloud.iap.v1.AccessSettings.IdentitySource>
+        getIdentitySourcesList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.cloud.iap.v1.AccessSettings.IdentitySource>(
+          identitySources_, identitySources_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity sources that IAP can use to authenticate the end user.
+     * Only one identity source can be configured.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of identitySources.
+     */
+    public int getIdentitySourcesCount() {
+      return identitySources_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity sources that IAP can use to authenticate the end user.
+     * Only one identity source can be configured.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The identitySources at the given index.
+     */
+    public com.google.cloud.iap.v1.AccessSettings.IdentitySource getIdentitySources(int index) {
+      return identitySources_converter_.convert(identitySources_.get(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity sources that IAP can use to authenticate the end user.
+     * Only one identity source can be configured.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The identitySources to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdentitySources(
+        int index, com.google.cloud.iap.v1.AccessSettings.IdentitySource value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIdentitySourcesIsMutable();
+      identitySources_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity sources that IAP can use to authenticate the end user.
+     * Only one identity source can be configured.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The identitySources to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIdentitySources(com.google.cloud.iap.v1.AccessSettings.IdentitySource value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIdentitySourcesIsMutable();
+      identitySources_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity sources that IAP can use to authenticate the end user.
+     * Only one identity source can be configured.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The identitySources to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllIdentitySources(
+        java.lang.Iterable<? extends com.google.cloud.iap.v1.AccessSettings.IdentitySource>
+            values) {
+      ensureIdentitySourcesIsMutable();
+      for (com.google.cloud.iap.v1.AccessSettings.IdentitySource value : values) {
+        identitySources_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity sources that IAP can use to authenticate the end user.
+     * Only one identity source can be configured.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIdentitySources() {
+      identitySources_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity sources that IAP can use to authenticate the end user.
+     * Only one identity source can be configured.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for identitySources.
+     */
+    public java.util.List<java.lang.Integer> getIdentitySourcesValueList() {
+      return java.util.Collections.unmodifiableList(identitySources_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity sources that IAP can use to authenticate the end user.
+     * Only one identity source can be configured.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of identitySources at the given index.
+     */
+    public int getIdentitySourcesValue(int index) {
+      return identitySources_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity sources that IAP can use to authenticate the end user.
+     * Only one identity source can be configured.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for identitySources to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdentitySourcesValue(int index, int value) {
+      ensureIdentitySourcesIsMutable();
+      identitySources_.set(index, value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity sources that IAP can use to authenticate the end user.
+     * Only one identity source can be configured.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for identitySources to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIdentitySourcesValue(int value) {
+      ensureIdentitySourcesIsMutable();
+      identitySources_.add(value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Identity sources that IAP can use to authenticate the end user.
+     * Only one identity source can be configured.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for identitySources to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllIdentitySourcesValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureIdentitySourcesIsMutable();
+      for (int value : values) {
+        identitySources_.add(value);
+      }
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

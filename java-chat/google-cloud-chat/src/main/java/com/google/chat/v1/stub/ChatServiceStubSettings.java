@@ -16,6 +16,7 @@
 
 package com.google.chat.v1.stub;
 
+import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
@@ -52,16 +53,20 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.chat.v1.Attachment;
 import com.google.chat.v1.CompleteImportSpaceRequest;
 import com.google.chat.v1.CompleteImportSpaceResponse;
+import com.google.chat.v1.CreateCustomEmojiRequest;
 import com.google.chat.v1.CreateMembershipRequest;
 import com.google.chat.v1.CreateMessageRequest;
 import com.google.chat.v1.CreateReactionRequest;
 import com.google.chat.v1.CreateSpaceRequest;
+import com.google.chat.v1.CustomEmoji;
+import com.google.chat.v1.DeleteCustomEmojiRequest;
 import com.google.chat.v1.DeleteMembershipRequest;
 import com.google.chat.v1.DeleteMessageRequest;
 import com.google.chat.v1.DeleteReactionRequest;
 import com.google.chat.v1.DeleteSpaceRequest;
 import com.google.chat.v1.FindDirectMessageRequest;
 import com.google.chat.v1.GetAttachmentRequest;
+import com.google.chat.v1.GetCustomEmojiRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
 import com.google.chat.v1.GetSpaceEventRequest;
@@ -69,6 +74,8 @@ import com.google.chat.v1.GetSpaceNotificationSettingRequest;
 import com.google.chat.v1.GetSpaceReadStateRequest;
 import com.google.chat.v1.GetSpaceRequest;
 import com.google.chat.v1.GetThreadReadStateRequest;
+import com.google.chat.v1.ListCustomEmojisRequest;
+import com.google.chat.v1.ListCustomEmojisResponse;
 import com.google.chat.v1.ListMembershipsRequest;
 import com.google.chat.v1.ListMembershipsResponse;
 import com.google.chat.v1.ListMessagesRequest;
@@ -168,6 +175,8 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           .add("https://www.googleapis.com/auth/chat.admin.spaces")
           .add("https://www.googleapis.com/auth/chat.admin.spaces.readonly")
           .add("https://www.googleapis.com/auth/chat.bot")
+          .add("https://www.googleapis.com/auth/chat.customemojis")
+          .add("https://www.googleapis.com/auth/chat.customemojis.readonly")
           .add("https://www.googleapis.com/auth/chat.delete")
           .add("https://www.googleapis.com/auth/chat.import")
           .add("https://www.googleapis.com/auth/chat.memberships")
@@ -222,6 +231,12 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           ListReactionsRequest, ListReactionsResponse, ListReactionsPagedResponse>
       listReactionsSettings;
   private final UnaryCallSettings<DeleteReactionRequest, Empty> deleteReactionSettings;
+  private final UnaryCallSettings<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiSettings;
+  private final UnaryCallSettings<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiSettings;
+  private final PagedCallSettings<
+          ListCustomEmojisRequest, ListCustomEmojisResponse, ListCustomEmojisPagedResponse>
+      listCustomEmojisSettings;
+  private final UnaryCallSettings<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiSettings;
   private final UnaryCallSettings<GetSpaceReadStateRequest, SpaceReadState>
       getSpaceReadStateSettings;
   private final UnaryCallSettings<UpdateSpaceReadStateRequest, SpaceReadState>
@@ -411,6 +426,44 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           };
 
   private static final PagedListDescriptor<
+          ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji>
+      LIST_CUSTOM_EMOJIS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListCustomEmojisRequest injectToken(
+                ListCustomEmojisRequest payload, String token) {
+              return ListCustomEmojisRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListCustomEmojisRequest injectPageSize(
+                ListCustomEmojisRequest payload, int pageSize) {
+              return ListCustomEmojisRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListCustomEmojisRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListCustomEmojisResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<CustomEmoji> extractResources(ListCustomEmojisResponse payload) {
+              return payload.getCustomEmojisList();
+            }
+          };
+
+  private static final PagedListDescriptor<
           ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent>
       LIST_SPACE_EVENTS_PAGE_STR_DESC =
           new PagedListDescriptor<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent>() {
@@ -529,6 +582,25 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               PageContext<ListReactionsRequest, ListReactionsResponse, Reaction> pageContext =
                   PageContext.create(callable, LIST_REACTIONS_PAGE_STR_DESC, request, context);
               return ListReactionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListCustomEmojisRequest, ListCustomEmojisResponse, ListCustomEmojisPagedResponse>
+      LIST_CUSTOM_EMOJIS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListCustomEmojisRequest, ListCustomEmojisResponse, ListCustomEmojisPagedResponse>() {
+            @Override
+            public ApiFuture<ListCustomEmojisPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisResponse> callable,
+                ListCustomEmojisRequest request,
+                ApiCallContext context,
+                ApiFuture<ListCustomEmojisResponse> futureResponse) {
+              PageContext<ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_CUSTOM_EMOJIS_PAGE_STR_DESC, request, context);
+              return ListCustomEmojisPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -675,6 +747,28 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
   /** Returns the object with the settings used for calls to deleteReaction. */
   public UnaryCallSettings<DeleteReactionRequest, Empty> deleteReactionSettings() {
     return deleteReactionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createCustomEmoji. */
+  public UnaryCallSettings<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiSettings() {
+    return createCustomEmojiSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getCustomEmoji. */
+  public UnaryCallSettings<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiSettings() {
+    return getCustomEmojiSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listCustomEmojis. */
+  public PagedCallSettings<
+          ListCustomEmojisRequest, ListCustomEmojisResponse, ListCustomEmojisPagedResponse>
+      listCustomEmojisSettings() {
+    return listCustomEmojisSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteCustomEmoji. */
+  public UnaryCallSettings<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiSettings() {
+    return deleteCustomEmojiSettings;
   }
 
   /** Returns the object with the settings used for calls to getSpaceReadState. */
@@ -853,6 +947,10 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     createReactionSettings = settingsBuilder.createReactionSettings().build();
     listReactionsSettings = settingsBuilder.listReactionsSettings().build();
     deleteReactionSettings = settingsBuilder.deleteReactionSettings().build();
+    createCustomEmojiSettings = settingsBuilder.createCustomEmojiSettings().build();
+    getCustomEmojiSettings = settingsBuilder.getCustomEmojiSettings().build();
+    listCustomEmojisSettings = settingsBuilder.listCustomEmojisSettings().build();
+    deleteCustomEmojiSettings = settingsBuilder.deleteCustomEmojiSettings().build();
     getSpaceReadStateSettings = settingsBuilder.getSpaceReadStateSettings().build();
     updateSpaceReadStateSettings = settingsBuilder.updateSpaceReadStateSettings().build();
     getThreadReadStateSettings = settingsBuilder.getThreadReadStateSettings().build();
@@ -907,6 +1005,15 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
             ListReactionsRequest, ListReactionsResponse, ListReactionsPagedResponse>
         listReactionsSettings;
     private final UnaryCallSettings.Builder<DeleteReactionRequest, Empty> deleteReactionSettings;
+    private final UnaryCallSettings.Builder<CreateCustomEmojiRequest, CustomEmoji>
+        createCustomEmojiSettings;
+    private final UnaryCallSettings.Builder<GetCustomEmojiRequest, CustomEmoji>
+        getCustomEmojiSettings;
+    private final PagedCallSettings.Builder<
+            ListCustomEmojisRequest, ListCustomEmojisResponse, ListCustomEmojisPagedResponse>
+        listCustomEmojisSettings;
+    private final UnaryCallSettings.Builder<DeleteCustomEmojiRequest, Empty>
+        deleteCustomEmojiSettings;
     private final UnaryCallSettings.Builder<GetSpaceReadStateRequest, SpaceReadState>
         getSpaceReadStateSettings;
     private final UnaryCallSettings.Builder<UpdateSpaceReadStateRequest, SpaceReadState>
@@ -985,6 +1092,10 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       createReactionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listReactionsSettings = PagedCallSettings.newBuilder(LIST_REACTIONS_PAGE_STR_FACT);
       deleteReactionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createCustomEmojiSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getCustomEmojiSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listCustomEmojisSettings = PagedCallSettings.newBuilder(LIST_CUSTOM_EMOJIS_PAGE_STR_FACT);
+      deleteCustomEmojiSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSpaceReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSpaceReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getThreadReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1019,6 +1130,10 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               createReactionSettings,
               listReactionsSettings,
               deleteReactionSettings,
+              createCustomEmojiSettings,
+              getCustomEmojiSettings,
+              listCustomEmojisSettings,
+              deleteCustomEmojiSettings,
               getSpaceReadStateSettings,
               updateSpaceReadStateSettings,
               getThreadReadStateSettings,
@@ -1056,6 +1171,10 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       createReactionSettings = settings.createReactionSettings.toBuilder();
       listReactionsSettings = settings.listReactionsSettings.toBuilder();
       deleteReactionSettings = settings.deleteReactionSettings.toBuilder();
+      createCustomEmojiSettings = settings.createCustomEmojiSettings.toBuilder();
+      getCustomEmojiSettings = settings.getCustomEmojiSettings.toBuilder();
+      listCustomEmojisSettings = settings.listCustomEmojisSettings.toBuilder();
+      deleteCustomEmojiSettings = settings.deleteCustomEmojiSettings.toBuilder();
       getSpaceReadStateSettings = settings.getSpaceReadStateSettings.toBuilder();
       updateSpaceReadStateSettings = settings.updateSpaceReadStateSettings.toBuilder();
       getThreadReadStateSettings = settings.getThreadReadStateSettings.toBuilder();
@@ -1092,6 +1211,10 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               createReactionSettings,
               listReactionsSettings,
               deleteReactionSettings,
+              createCustomEmojiSettings,
+              getCustomEmojiSettings,
+              listCustomEmojisSettings,
+              deleteCustomEmojiSettings,
               getSpaceReadStateSettings,
               updateSpaceReadStateSettings,
               getThreadReadStateSettings,
@@ -1243,6 +1366,26 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
       builder
           .deleteReactionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createCustomEmojiSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getCustomEmojiSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listCustomEmojisSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteCustomEmojiSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1431,6 +1574,29 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     /** Returns the builder for the settings used for calls to deleteReaction. */
     public UnaryCallSettings.Builder<DeleteReactionRequest, Empty> deleteReactionSettings() {
       return deleteReactionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomEmoji. */
+    public UnaryCallSettings.Builder<CreateCustomEmojiRequest, CustomEmoji>
+        createCustomEmojiSettings() {
+      return createCustomEmojiSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getCustomEmoji. */
+    public UnaryCallSettings.Builder<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiSettings() {
+      return getCustomEmojiSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listCustomEmojis. */
+    public PagedCallSettings.Builder<
+            ListCustomEmojisRequest, ListCustomEmojisResponse, ListCustomEmojisPagedResponse>
+        listCustomEmojisSettings() {
+      return listCustomEmojisSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCustomEmoji. */
+    public UnaryCallSettings.Builder<DeleteCustomEmojiRequest, Empty> deleteCustomEmojiSettings() {
+      return deleteCustomEmojiSettings;
     }
 
     /** Returns the builder for the settings used for calls to getSpaceReadState. */

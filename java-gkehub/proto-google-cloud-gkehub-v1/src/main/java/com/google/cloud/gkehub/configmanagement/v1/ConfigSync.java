@@ -33,6 +33,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1.ConfigSync)
     ConfigSyncOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConfigSync.newBuilder() to construct.
   private ConfigSync(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int GIT_FIELD_NUMBER = 7;
   private com.google.cloud.gkehub.configmanagement.v1.GitConfig git_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGit() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gkehub.configmanagement.v1.GitConfig.getDefaultInstance()
         : git_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceFormat_ = "";
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLED_FIELD_NUMBER = 10;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -191,6 +198,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEnabled() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -215,6 +223,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PREVENT_DRIFT_FIELD_NUMBER = 11;
   private boolean preventDrift_ = false;
+
   /**
    *
    *
@@ -235,6 +244,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OCI_FIELD_NUMBER = 12;
   private com.google.cloud.gkehub.configmanagement.v1.OciConfig oci_;
+
   /**
    *
    *
@@ -250,6 +260,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOci() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -267,6 +278,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gkehub.configmanagement.v1.OciConfig.getDefaultInstance()
         : oci_;
   }
+
   /**
    *
    *
@@ -287,6 +299,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object metricsGcpServiceAccountEmail_ = "";
+
   /**
    *
    *
@@ -315,6 +328,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -568,6 +582,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -847,6 +862,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkehub.configmanagement.v1.GitConfig.Builder,
             com.google.cloud.gkehub.configmanagement.v1.GitConfigOrBuilder>
         gitBuilder_;
+
     /**
      *
      *
@@ -861,6 +877,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGit() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -881,6 +898,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
         return gitBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -903,6 +921,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +942,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +970,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +990,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -983,6 +1005,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGitFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1001,6 +1024,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
             : git_;
       }
     }
+
     /**
      *
      *
@@ -1028,6 +1052,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sourceFormat_ = "";
+
     /**
      *
      *
@@ -1051,6 +1076,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1074,6 +1100,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1096,6 +1123,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1114,6 +1142,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1139,6 +1168,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -1160,6 +1190,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEnabled() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1181,6 +1212,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -1206,6 +1238,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1231,6 +1264,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean preventDrift_;
+
     /**
      *
      *
@@ -1248,6 +1282,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     public boolean getPreventDrift() {
       return preventDrift_;
     }
+
     /**
      *
      *
@@ -1269,6 +1304,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1295,6 +1331,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkehub.configmanagement.v1.OciConfig.Builder,
             com.google.cloud.gkehub.configmanagement.v1.OciConfigOrBuilder>
         ociBuilder_;
+
     /**
      *
      *
@@ -1309,6 +1346,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOci() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1329,6 +1367,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
         return ociBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1351,6 +1390,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1371,6 +1411,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1398,6 +1439,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1417,6 +1459,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1431,6 +1474,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOciFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1449,6 +1493,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
             : oci_;
       }
     }
+
     /**
      *
      *
@@ -1476,6 +1521,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object metricsGcpServiceAccountEmail_ = "";
+
     /**
      *
      *
@@ -1503,6 +1549,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1530,6 +1577,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1556,6 +1604,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1578,6 +1627,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -28,10 +28,10 @@ public interface DataQualityResultOrBuilder
    *
    *
    * <pre>
-   * Overall data quality result -- `true` if all rules passed.
+   * Output only. Overall data quality result -- `true` if all rules passed.
    * </pre>
    *
-   * <code>bool passed = 5;</code>
+   * <code>bool passed = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The passed.
    */
@@ -51,6 +51,7 @@ public interface DataQualityResultOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
+
   /**
    *
    *
@@ -70,66 +71,80 @@ public interface DataQualityResultOrBuilder
    *
    *
    * <pre>
-   * A list of results at the dimension level.
+   * Output only. A list of results at the dimension level.
    *
    * A dimension will have a corresponding `DataQualityDimensionResult` if and
    * only if there is at least one rule with the 'dimension' field set to it.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.cloud.dataplex.v1.DataQualityDimensionResult> getDimensionsList();
+
   /**
    *
    *
    * <pre>
-   * A list of results at the dimension level.
+   * Output only. A list of results at the dimension level.
    *
    * A dimension will have a corresponding `DataQualityDimensionResult` if and
    * only if there is at least one rule with the 'dimension' field set to it.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataplex.v1.DataQualityDimensionResult getDimensions(int index);
+
   /**
    *
    *
    * <pre>
-   * A list of results at the dimension level.
+   * Output only. A list of results at the dimension level.
    *
    * A dimension will have a corresponding `DataQualityDimensionResult` if and
    * only if there is at least one rule with the 'dimension' field set to it.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getDimensionsCount();
+
   /**
    *
    *
    * <pre>
-   * A list of results at the dimension level.
+   * Output only. A list of results at the dimension level.
    *
    * A dimension will have a corresponding `DataQualityDimensionResult` if and
    * only if there is at least one rule with the 'dimension' field set to it.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder>
       getDimensionsOrBuilderList();
+
   /**
    *
    *
    * <pre>
-   * A list of results at the dimension level.
+   * Output only. A list of results at the dimension level.
    *
    * A dimension will have a corresponding `DataQualityDimensionResult` if and
    * only if there is at least one rule with the 'dimension' field set to it.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder getDimensionsOrBuilder(
       int index);
@@ -149,6 +164,7 @@ public interface DataQualityResultOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataplex.v1.DataQualityColumnResult> getColumnsList();
+
   /**
    *
    *
@@ -164,6 +180,7 @@ public interface DataQualityResultOrBuilder
    * </code>
    */
   com.google.cloud.dataplex.v1.DataQualityColumnResult getColumns(int index);
+
   /**
    *
    *
@@ -179,6 +196,7 @@ public interface DataQualityResultOrBuilder
    * </code>
    */
   int getColumnsCount();
+
   /**
    *
    *
@@ -195,6 +213,7 @@ public interface DataQualityResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.DataQualityColumnResultOrBuilder>
       getColumnsOrBuilderList();
+
   /**
    *
    *
@@ -215,51 +234,65 @@ public interface DataQualityResultOrBuilder
    *
    *
    * <pre>
-   * A list of all the rules in a job, and their results.
+   * Output only. A list of all the rules in a job, and their results.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.cloud.dataplex.v1.DataQualityRuleResult> getRulesList();
+
   /**
    *
    *
    * <pre>
-   * A list of all the rules in a job, and their results.
+   * Output only. A list of all the rules in a job, and their results.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataplex.v1.DataQualityRuleResult getRules(int index);
+
   /**
    *
    *
    * <pre>
-   * A list of all the rules in a job, and their results.
+   * Output only. A list of all the rules in a job, and their results.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getRulesCount();
+
   /**
    *
    *
    * <pre>
-   * A list of all the rules in a job, and their results.
+   * Output only. A list of all the rules in a job, and their results.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.DataQualityRuleResultOrBuilder>
       getRulesOrBuilderList();
+
   /**
    *
    *
    * <pre>
-   * A list of all the rules in a job, and their results.
+   * Output only. A list of all the rules in a job, and their results.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3;</code>
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityRuleResult rules = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataplex.v1.DataQualityRuleResultOrBuilder getRulesOrBuilder(int index);
 
@@ -267,10 +300,10 @@ public interface DataQualityResultOrBuilder
    *
    *
    * <pre>
-   * The count of rows processed.
+   * Output only. The count of rows processed.
    * </pre>
    *
-   * <code>int64 row_count = 4;</code>
+   * <code>int64 row_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The rowCount.
    */
@@ -280,34 +313,42 @@ public interface DataQualityResultOrBuilder
    *
    *
    * <pre>
-   * The data scanned for this result.
+   * Output only. The data scanned for this result.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.ScannedData scanned_data = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the scannedData field is set.
    */
   boolean hasScannedData();
+
   /**
    *
    *
    * <pre>
-   * The data scanned for this result.
+   * Output only. The data scanned for this result.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.ScannedData scanned_data = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The scannedData.
    */
   com.google.cloud.dataplex.v1.ScannedData getScannedData();
+
   /**
    *
    *
    * <pre>
-   * The data scanned for this result.
+   * Output only. The data scanned for this result.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 7;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.ScannedData scanned_data = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.dataplex.v1.ScannedDataOrBuilder getScannedDataOrBuilder();
 
@@ -325,6 +366,7 @@ public interface DataQualityResultOrBuilder
    * @return Whether the postScanActionsResult field is set.
    */
   boolean hasPostScanActionsResult();
+
   /**
    *
    *
@@ -339,6 +381,7 @@ public interface DataQualityResultOrBuilder
    * @return The postScanActionsResult.
    */
   com.google.cloud.dataplex.v1.DataQualityResult.PostScanActionsResult getPostScanActionsResult();
+
   /**
    *
    *

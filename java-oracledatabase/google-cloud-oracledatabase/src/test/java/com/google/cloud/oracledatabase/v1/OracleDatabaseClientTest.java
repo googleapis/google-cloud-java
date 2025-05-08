@@ -30,29 +30,30 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGiVers
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.httpjson.GaxHttpJsonProperties;
-import com.google.api.gax.httpjson.testing.MockHttpService;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
+import com.google.api.gax.grpc.testing.MockGrpcService;
+import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
-import com.google.api.gax.rpc.ApiException;
-import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
-import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.cloud.oracledatabase.v1.stub.HttpJsonOracleDatabaseStub;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.Timestamp;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -64,37 +65,43 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class OracleDatabaseClientTest {
-  private static MockHttpService mockService;
-  private static OracleDatabaseClient client;
+  private static MockLocations mockLocations;
+  private static MockOracleDatabase mockOracleDatabase;
+  private static MockServiceHelper mockServiceHelper;
+  private LocalChannelProvider channelProvider;
+  private OracleDatabaseClient client;
 
   @BeforeClass
-  public static void startStaticServer() throws IOException {
-    mockService =
-        new MockHttpService(
-            HttpJsonOracleDatabaseStub.getMethodDescriptors(),
-            OracleDatabaseSettings.getDefaultEndpoint());
+  public static void startStaticServer() {
+    mockOracleDatabase = new MockOracleDatabase();
+    mockLocations = new MockLocations();
+    mockServiceHelper =
+        new MockServiceHelper(
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockOracleDatabase, mockLocations));
+    mockServiceHelper.start();
+  }
+
+  @AfterClass
+  public static void stopServer() {
+    mockServiceHelper.stop();
+  }
+
+  @Before
+  public void setUp() throws IOException {
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     OracleDatabaseSettings settings =
         OracleDatabaseSettings.newBuilder()
-            .setTransportChannelProvider(
-                OracleDatabaseSettings.defaultHttpJsonTransportProviderBuilder()
-                    .setHttpTransport(mockService)
-                    .build())
+            .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = OracleDatabaseClient.create(settings);
   }
 
-  @AfterClass
-  public static void stopServer() {
-    client.close();
-  }
-
-  @Before
-  public void setUp() {}
-
   @After
   public void tearDown() throws Exception {
-    mockService.reset();
+    client.close();
   }
 
   @Test
@@ -105,7 +112,7 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllCloudExadataInfrastructures(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
@@ -118,27 +125,22 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(
         expectedResponse.getCloudExadataInfrastructuresList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListCloudExadataInfrastructuresRequest actualRequest =
+        ((ListCloudExadataInfrastructuresRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listCloudExadataInfrastructuresExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -157,9 +159,9 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllCloudExadataInfrastructures(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
-    String parent = "projects/project-5833/locations/location-5833";
+    String parent = "parent-995424086";
 
     ListCloudExadataInfrastructuresPagedResponse pagedListResponse =
         client.listCloudExadataInfrastructures(parent);
@@ -170,30 +172,25 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(
         expectedResponse.getCloudExadataInfrastructuresList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListCloudExadataInfrastructuresRequest actualRequest =
+        ((ListCloudExadataInfrastructuresRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listCloudExadataInfrastructuresExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String parent = "projects/project-5833/locations/location-5833";
+      String parent = "parent-995424086";
       client.listCloudExadataInfrastructures(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -216,7 +213,7 @@ public class OracleDatabaseClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
     CloudExadataInfrastructureName name =
         CloudExadataInfrastructureName.of(
@@ -225,27 +222,22 @@ public class OracleDatabaseClientTest {
     CloudExadataInfrastructure actualResponse = client.getCloudExadataInfrastructure(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    GetCloudExadataInfrastructureRequest actualRequest =
+        ((GetCloudExadataInfrastructureRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void getCloudExadataInfrastructureExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       CloudExadataInfrastructureName name =
@@ -273,39 +265,32 @@ public class OracleDatabaseClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
-    String name =
-        "projects/project-7549/locations/location-7549/cloudExadataInfrastructures/cloudExadataInfrastructure-7549";
+    String name = "name3373707";
 
     CloudExadataInfrastructure actualResponse = client.getCloudExadataInfrastructure(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    GetCloudExadataInfrastructureRequest actualRequest =
+        ((GetCloudExadataInfrastructureRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void getCloudExadataInfrastructureExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String name =
-          "projects/project-7549/locations/location-7549/cloudExadataInfrastructures/cloudExadataInfrastructure-7549";
+      String name = "name3373707";
       client.getCloudExadataInfrastructure(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -334,7 +319,7 @@ public class OracleDatabaseClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockService.addResponse(resultOperation);
+    mockOracleDatabase.addResponse(resultOperation);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     CloudExadataInfrastructure cloudExadataInfrastructure =
@@ -348,27 +333,25 @@ public class OracleDatabaseClientTest {
             .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    CreateCloudExadataInfrastructureRequest actualRequest =
+        ((CreateCloudExadataInfrastructureRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(cloudExadataInfrastructure, actualRequest.getCloudExadataInfrastructure());
+    Assert.assertEquals(
+        cloudExadataInfrastructureId, actualRequest.getCloudExadataInfrastructureId());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void createCloudExadataInfrastructureExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -381,6 +364,9 @@ public class OracleDatabaseClientTest {
           .get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -405,9 +391,9 @@ public class OracleDatabaseClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockService.addResponse(resultOperation);
+    mockOracleDatabase.addResponse(resultOperation);
 
-    String parent = "projects/project-5833/locations/location-5833";
+    String parent = "parent-995424086";
     CloudExadataInfrastructure cloudExadataInfrastructure =
         CloudExadataInfrastructure.newBuilder().build();
     String cloudExadataInfrastructureId = "cloudExadataInfrastructureId975345409";
@@ -419,30 +405,28 @@ public class OracleDatabaseClientTest {
             .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    CreateCloudExadataInfrastructureRequest actualRequest =
+        ((CreateCloudExadataInfrastructureRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(cloudExadataInfrastructure, actualRequest.getCloudExadataInfrastructure());
+    Assert.assertEquals(
+        cloudExadataInfrastructureId, actualRequest.getCloudExadataInfrastructureId());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void createCloudExadataInfrastructureExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String parent = "projects/project-5833/locations/location-5833";
+      String parent = "parent-995424086";
       CloudExadataInfrastructure cloudExadataInfrastructure =
           CloudExadataInfrastructure.newBuilder().build();
       String cloudExadataInfrastructureId = "cloudExadataInfrastructureId975345409";
@@ -452,6 +436,9 @@ public class OracleDatabaseClientTest {
           .get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -464,7 +451,7 @@ public class OracleDatabaseClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockService.addResponse(resultOperation);
+    mockOracleDatabase.addResponse(resultOperation);
 
     CloudExadataInfrastructureName name =
         CloudExadataInfrastructureName.of(
@@ -472,27 +459,22 @@ public class OracleDatabaseClientTest {
 
     client.deleteCloudExadataInfrastructureAsync(name).get();
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    DeleteCloudExadataInfrastructureRequest actualRequest =
+        ((DeleteCloudExadataInfrastructureRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void deleteCloudExadataInfrastructureExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       CloudExadataInfrastructureName name =
@@ -501,6 +483,9 @@ public class OracleDatabaseClientTest {
       client.deleteCloudExadataInfrastructureAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -513,41 +498,37 @@ public class OracleDatabaseClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockService.addResponse(resultOperation);
+    mockOracleDatabase.addResponse(resultOperation);
 
-    String name =
-        "projects/project-7549/locations/location-7549/cloudExadataInfrastructures/cloudExadataInfrastructure-7549";
+    String name = "name3373707";
 
     client.deleteCloudExadataInfrastructureAsync(name).get();
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    DeleteCloudExadataInfrastructureRequest actualRequest =
+        ((DeleteCloudExadataInfrastructureRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void deleteCloudExadataInfrastructureExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String name =
-          "projects/project-7549/locations/location-7549/cloudExadataInfrastructures/cloudExadataInfrastructure-7549";
+      String name = "name3373707";
       client.deleteCloudExadataInfrastructureAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -559,7 +540,7 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllCloudVmClusters(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
@@ -570,27 +551,21 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getCloudVmClustersList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListCloudVmClustersRequest actualRequest = ((ListCloudVmClustersRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listCloudVmClustersExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -609,9 +584,9 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllCloudVmClusters(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
-    String parent = "projects/project-5833/locations/location-5833";
+    String parent = "parent-995424086";
 
     ListCloudVmClustersPagedResponse pagedListResponse = client.listCloudVmClusters(parent);
 
@@ -620,30 +595,24 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getCloudVmClustersList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListCloudVmClustersRequest actualRequest = ((ListCloudVmClustersRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listCloudVmClustersExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String parent = "projects/project-5833/locations/location-5833";
+      String parent = "parent-995424086";
       client.listCloudVmClusters(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -670,7 +639,7 @@ public class OracleDatabaseClientTest {
             .setBackupSubnetCidr("backupSubnetCidr1087692755")
             .setNetwork("network1843485230")
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
     CloudVmClusterName name =
         CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]");
@@ -678,27 +647,21 @@ public class OracleDatabaseClientTest {
     CloudVmCluster actualResponse = client.getCloudVmCluster(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    GetCloudVmClusterRequest actualRequest = ((GetCloudVmClusterRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void getCloudVmClusterExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       CloudVmClusterName name =
@@ -729,39 +692,31 @@ public class OracleDatabaseClientTest {
             .setBackupSubnetCidr("backupSubnetCidr1087692755")
             .setNetwork("network1843485230")
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
-    String name =
-        "projects/project-9637/locations/location-9637/cloudVmClusters/cloudVmCluster-9637";
+    String name = "name3373707";
 
     CloudVmCluster actualResponse = client.getCloudVmCluster(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    GetCloudVmClusterRequest actualRequest = ((GetCloudVmClusterRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void getCloudVmClusterExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String name =
-          "projects/project-9637/locations/location-9637/cloudVmClusters/cloudVmCluster-9637";
+      String name = "name3373707";
       client.getCloudVmCluster(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -794,7 +749,7 @@ public class OracleDatabaseClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockService.addResponse(resultOperation);
+    mockOracleDatabase.addResponse(resultOperation);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     CloudVmCluster cloudVmCluster = CloudVmCluster.newBuilder().build();
@@ -804,27 +759,24 @@ public class OracleDatabaseClientTest {
         client.createCloudVmClusterAsync(parent, cloudVmCluster, cloudVmClusterId).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    CreateCloudVmClusterRequest actualRequest =
+        ((CreateCloudVmClusterRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(cloudVmCluster, actualRequest.getCloudVmCluster());
+    Assert.assertEquals(cloudVmClusterId, actualRequest.getCloudVmClusterId());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void createCloudVmClusterExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -833,6 +785,9 @@ public class OracleDatabaseClientTest {
       client.createCloudVmClusterAsync(parent, cloudVmCluster, cloudVmClusterId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -861,9 +816,9 @@ public class OracleDatabaseClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockService.addResponse(resultOperation);
+    mockOracleDatabase.addResponse(resultOperation);
 
-    String parent = "projects/project-5833/locations/location-5833";
+    String parent = "parent-995424086";
     CloudVmCluster cloudVmCluster = CloudVmCluster.newBuilder().build();
     String cloudVmClusterId = "cloudVmClusterId-1217103287";
 
@@ -871,35 +826,35 @@ public class OracleDatabaseClientTest {
         client.createCloudVmClusterAsync(parent, cloudVmCluster, cloudVmClusterId).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    CreateCloudVmClusterRequest actualRequest =
+        ((CreateCloudVmClusterRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(cloudVmCluster, actualRequest.getCloudVmCluster());
+    Assert.assertEquals(cloudVmClusterId, actualRequest.getCloudVmClusterId());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void createCloudVmClusterExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String parent = "projects/project-5833/locations/location-5833";
+      String parent = "parent-995424086";
       CloudVmCluster cloudVmCluster = CloudVmCluster.newBuilder().build();
       String cloudVmClusterId = "cloudVmClusterId-1217103287";
       client.createCloudVmClusterAsync(parent, cloudVmCluster, cloudVmClusterId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -912,34 +867,29 @@ public class OracleDatabaseClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockService.addResponse(resultOperation);
+    mockOracleDatabase.addResponse(resultOperation);
 
     CloudVmClusterName name =
         CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]");
 
     client.deleteCloudVmClusterAsync(name).get();
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    DeleteCloudVmClusterRequest actualRequest =
+        ((DeleteCloudVmClusterRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void deleteCloudVmClusterExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       CloudVmClusterName name =
@@ -947,6 +897,9 @@ public class OracleDatabaseClientTest {
       client.deleteCloudVmClusterAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -959,41 +912,37 @@ public class OracleDatabaseClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockService.addResponse(resultOperation);
+    mockOracleDatabase.addResponse(resultOperation);
 
-    String name =
-        "projects/project-9637/locations/location-9637/cloudVmClusters/cloudVmCluster-9637";
+    String name = "name3373707";
 
     client.deleteCloudVmClusterAsync(name).get();
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    DeleteCloudVmClusterRequest actualRequest =
+        ((DeleteCloudVmClusterRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void deleteCloudVmClusterExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String name =
-          "projects/project-9637/locations/location-9637/cloudVmClusters/cloudVmCluster-9637";
+      String name = "name3373707";
       client.deleteCloudVmClusterAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -1005,7 +954,7 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllEntitlements(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
@@ -1016,27 +965,21 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getEntitlementsList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListEntitlementsRequest actualRequest = ((ListEntitlementsRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listEntitlementsExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -1055,9 +998,9 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllEntitlements(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
-    String parent = "projects/project-5833/locations/location-5833";
+    String parent = "parent-995424086";
 
     ListEntitlementsPagedResponse pagedListResponse = client.listEntitlements(parent);
 
@@ -1066,30 +1009,24 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getEntitlementsList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListEntitlementsRequest actualRequest = ((ListEntitlementsRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listEntitlementsExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String parent = "projects/project-5833/locations/location-5833";
+      String parent = "parent-995424086";
       client.listEntitlements(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1105,7 +1042,7 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllDbServers(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
     CloudExadataInfrastructureName parent =
         CloudExadataInfrastructureName.of(
@@ -1118,27 +1055,21 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDbServersList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListDbServersRequest actualRequest = ((ListDbServersRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listDbServersExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       CloudExadataInfrastructureName parent =
@@ -1159,10 +1090,9 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllDbServers(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
-    String parent =
-        "projects/project-3202/locations/location-3202/cloudExadataInfrastructures/cloudExadataInfrastructure-3202";
+    String parent = "parent-995424086";
 
     ListDbServersPagedResponse pagedListResponse = client.listDbServers(parent);
 
@@ -1171,31 +1101,24 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDbServersList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListDbServersRequest actualRequest = ((ListDbServersRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listDbServersExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String parent =
-          "projects/project-3202/locations/location-3202/cloudExadataInfrastructures/cloudExadataInfrastructure-3202";
+      String parent = "parent-995424086";
       client.listDbServers(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1211,7 +1134,7 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllDbNodes(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
     CloudVmClusterName parent =
         CloudVmClusterName.of("[PROJECT]", "[LOCATION]", "[CLOUD_VM_CLUSTER]");
@@ -1223,27 +1146,21 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDbNodesList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListDbNodesRequest actualRequest = ((ListDbNodesRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listDbNodesExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       CloudVmClusterName parent =
@@ -1263,10 +1180,9 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllDbNodes(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
-    String parent =
-        "projects/project-2426/locations/location-2426/cloudVmClusters/cloudVmCluster-2426";
+    String parent = "parent-995424086";
 
     ListDbNodesPagedResponse pagedListResponse = client.listDbNodes(parent);
 
@@ -1275,31 +1191,24 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDbNodesList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListDbNodesRequest actualRequest = ((ListDbNodesRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listDbNodesExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String parent =
-          "projects/project-2426/locations/location-2426/cloudVmClusters/cloudVmCluster-2426";
+      String parent = "parent-995424086";
       client.listDbNodes(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1315,7 +1224,7 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllGiVersions(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
@@ -1326,27 +1235,21 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getGiVersionsList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListGiVersionsRequest actualRequest = ((ListGiVersionsRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listGiVersionsExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -1365,9 +1268,9 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllGiVersions(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
-    String parent = "projects/project-5833/locations/location-5833";
+    String parent = "parent-995424086";
 
     ListGiVersionsPagedResponse pagedListResponse = client.listGiVersions(parent);
 
@@ -1376,30 +1279,24 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getGiVersionsList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListGiVersionsRequest actualRequest = ((ListGiVersionsRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listGiVersionsExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String parent = "projects/project-5833/locations/location-5833";
+      String parent = "parent-995424086";
       client.listGiVersions(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1415,7 +1312,7 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllDbSystemShapes(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
@@ -1426,27 +1323,21 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDbSystemShapesList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListDbSystemShapesRequest actualRequest = ((ListDbSystemShapesRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listDbSystemShapesExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -1465,9 +1356,9 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllDbSystemShapes(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
-    String parent = "projects/project-5833/locations/location-5833";
+    String parent = "parent-995424086";
 
     ListDbSystemShapesPagedResponse pagedListResponse = client.listDbSystemShapes(parent);
 
@@ -1476,30 +1367,24 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDbSystemShapesList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListDbSystemShapesRequest actualRequest = ((ListDbSystemShapesRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listDbSystemShapesExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String parent = "projects/project-5833/locations/location-5833";
+      String parent = "parent-995424086";
       client.listDbSystemShapes(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1515,7 +1400,7 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllAutonomousDatabases(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
@@ -1526,27 +1411,22 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getAutonomousDatabasesList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListAutonomousDatabasesRequest actualRequest =
+        ((ListAutonomousDatabasesRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listAutonomousDatabasesExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -1565,9 +1445,9 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllAutonomousDatabases(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
-    String parent = "projects/project-5833/locations/location-5833";
+    String parent = "parent-995424086";
 
     ListAutonomousDatabasesPagedResponse pagedListResponse = client.listAutonomousDatabases(parent);
 
@@ -1576,30 +1456,25 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getAutonomousDatabasesList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListAutonomousDatabasesRequest actualRequest =
+        ((ListAutonomousDatabasesRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listAutonomousDatabasesExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String parent = "projects/project-5833/locations/location-5833";
+      String parent = "parent-995424086";
       client.listAutonomousDatabases(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1624,7 +1499,7 @@ public class OracleDatabaseClientTest {
             .setCidr("cidr3053428")
             .setCreateTime(Timestamp.newBuilder().build())
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
     AutonomousDatabaseName name =
         AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
@@ -1632,27 +1507,22 @@ public class OracleDatabaseClientTest {
     AutonomousDatabase actualResponse = client.getAutonomousDatabase(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    GetAutonomousDatabaseRequest actualRequest =
+        ((GetAutonomousDatabaseRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void getAutonomousDatabaseExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       AutonomousDatabaseName name =
@@ -1681,39 +1551,32 @@ public class OracleDatabaseClientTest {
             .setCidr("cidr3053428")
             .setCreateTime(Timestamp.newBuilder().build())
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
-    String name =
-        "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+    String name = "name3373707";
 
     AutonomousDatabase actualResponse = client.getAutonomousDatabase(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    GetAutonomousDatabaseRequest actualRequest =
+        ((GetAutonomousDatabaseRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void getAutonomousDatabaseExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String name =
-          "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+      String name = "name3373707";
       client.getAutonomousDatabase(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1744,7 +1607,7 @@ public class OracleDatabaseClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockService.addResponse(resultOperation);
+    mockOracleDatabase.addResponse(resultOperation);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     AutonomousDatabase autonomousDatabase = AutonomousDatabase.newBuilder().build();
@@ -1756,27 +1619,24 @@ public class OracleDatabaseClientTest {
             .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    CreateAutonomousDatabaseRequest actualRequest =
+        ((CreateAutonomousDatabaseRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(autonomousDatabase, actualRequest.getAutonomousDatabase());
+    Assert.assertEquals(autonomousDatabaseId, actualRequest.getAutonomousDatabaseId());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void createAutonomousDatabaseExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -1785,6 +1645,9 @@ public class OracleDatabaseClientTest {
       client.createAutonomousDatabaseAsync(parent, autonomousDatabase, autonomousDatabaseId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -1811,9 +1674,9 @@ public class OracleDatabaseClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockService.addResponse(resultOperation);
+    mockOracleDatabase.addResponse(resultOperation);
 
-    String parent = "projects/project-5833/locations/location-5833";
+    String parent = "parent-995424086";
     AutonomousDatabase autonomousDatabase = AutonomousDatabase.newBuilder().build();
     String autonomousDatabaseId = "autonomousDatabaseId-1972693114";
 
@@ -1823,35 +1686,35 @@ public class OracleDatabaseClientTest {
             .get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    CreateAutonomousDatabaseRequest actualRequest =
+        ((CreateAutonomousDatabaseRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(autonomousDatabase, actualRequest.getAutonomousDatabase());
+    Assert.assertEquals(autonomousDatabaseId, actualRequest.getAutonomousDatabaseId());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void createAutonomousDatabaseExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String parent = "projects/project-5833/locations/location-5833";
+      String parent = "parent-995424086";
       AutonomousDatabase autonomousDatabase = AutonomousDatabase.newBuilder().build();
       String autonomousDatabaseId = "autonomousDatabaseId-1972693114";
       client.createAutonomousDatabaseAsync(parent, autonomousDatabase, autonomousDatabaseId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -1864,34 +1727,29 @@ public class OracleDatabaseClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockService.addResponse(resultOperation);
+    mockOracleDatabase.addResponse(resultOperation);
 
     AutonomousDatabaseName name =
         AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
 
     client.deleteAutonomousDatabaseAsync(name).get();
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    DeleteAutonomousDatabaseRequest actualRequest =
+        ((DeleteAutonomousDatabaseRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void deleteAutonomousDatabaseExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       AutonomousDatabaseName name =
@@ -1899,6 +1757,9 @@ public class OracleDatabaseClientTest {
       client.deleteAutonomousDatabaseAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -1911,41 +1772,37 @@ public class OracleDatabaseClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockService.addResponse(resultOperation);
+    mockOracleDatabase.addResponse(resultOperation);
 
-    String name =
-        "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+    String name = "name3373707";
 
     client.deleteAutonomousDatabaseAsync(name).get();
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    DeleteAutonomousDatabaseRequest actualRequest =
+        ((DeleteAutonomousDatabaseRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void deleteAutonomousDatabaseExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String name =
-          "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+      String name = "name3373707";
       client.deleteAutonomousDatabaseAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -1972,7 +1829,7 @@ public class OracleDatabaseClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockService.addResponse(resultOperation);
+    mockOracleDatabase.addResponse(resultOperation);
 
     AutonomousDatabaseName name =
         AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
@@ -1982,27 +1839,23 @@ public class OracleDatabaseClientTest {
         client.restoreAutonomousDatabaseAsync(name, restoreTime).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    RestoreAutonomousDatabaseRequest actualRequest =
+        ((RestoreAutonomousDatabaseRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(restoreTime, actualRequest.getRestoreTime());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void restoreAutonomousDatabaseExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       AutonomousDatabaseName name =
@@ -2011,6 +1864,9 @@ public class OracleDatabaseClientTest {
       client.restoreAutonomousDatabaseAsync(name, restoreTime).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -2037,45 +1893,42 @@ public class OracleDatabaseClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockService.addResponse(resultOperation);
+    mockOracleDatabase.addResponse(resultOperation);
 
-    String name =
-        "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+    String name = "name3373707";
     Timestamp restoreTime = Timestamp.newBuilder().build();
 
     AutonomousDatabase actualResponse =
         client.restoreAutonomousDatabaseAsync(name, restoreTime).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    RestoreAutonomousDatabaseRequest actualRequest =
+        ((RestoreAutonomousDatabaseRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(restoreTime, actualRequest.getRestoreTime());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void restoreAutonomousDatabaseExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String name =
-          "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+      String name = "name3373707";
       Timestamp restoreTime = Timestamp.newBuilder().build();
       client.restoreAutonomousDatabaseAsync(name, restoreTime).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -2085,7 +1938,7 @@ public class OracleDatabaseClientTest {
         GenerateAutonomousDatabaseWalletResponse.newBuilder()
             .setArchiveContent(ByteString.EMPTY)
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
     AutonomousDatabaseName name =
         AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
@@ -2097,27 +1950,25 @@ public class OracleDatabaseClientTest {
         client.generateAutonomousDatabaseWallet(name, type, isRegional, password);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    GenerateAutonomousDatabaseWalletRequest actualRequest =
+        ((GenerateAutonomousDatabaseWalletRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(type, actualRequest.getType());
+    Assert.assertEquals(isRegional, actualRequest.getIsRegional());
+    Assert.assertEquals(password, actualRequest.getPassword());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void generateAutonomousDatabaseWalletExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       AutonomousDatabaseName name =
@@ -2138,10 +1989,9 @@ public class OracleDatabaseClientTest {
         GenerateAutonomousDatabaseWalletResponse.newBuilder()
             .setArchiveContent(ByteString.EMPTY)
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
-    String name =
-        "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+    String name = "name3373707";
     GenerateType type = GenerateType.forNumber(0);
     boolean isRegional = true;
     String password = "password1216985755";
@@ -2150,31 +2000,28 @@ public class OracleDatabaseClientTest {
         client.generateAutonomousDatabaseWallet(name, type, isRegional, password);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    GenerateAutonomousDatabaseWalletRequest actualRequest =
+        ((GenerateAutonomousDatabaseWalletRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(type, actualRequest.getType());
+    Assert.assertEquals(isRegional, actualRequest.getIsRegional());
+    Assert.assertEquals(password, actualRequest.getPassword());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void generateAutonomousDatabaseWalletExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String name =
-          "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+      String name = "name3373707";
       GenerateType type = GenerateType.forNumber(0);
       boolean isRegional = true;
       String password = "password1216985755";
@@ -2193,7 +2040,7 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllAutonomousDbVersions(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
@@ -2205,27 +2052,22 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getAutonomousDbVersionsList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListAutonomousDbVersionsRequest actualRequest =
+        ((ListAutonomousDbVersionsRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listAutonomousDbVersionsExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -2244,9 +2086,9 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllAutonomousDbVersions(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
-    String parent = "projects/project-5833/locations/location-5833";
+    String parent = "parent-995424086";
 
     ListAutonomousDbVersionsPagedResponse pagedListResponse =
         client.listAutonomousDbVersions(parent);
@@ -2256,30 +2098,25 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getAutonomousDbVersionsList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListAutonomousDbVersionsRequest actualRequest =
+        ((ListAutonomousDbVersionsRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listAutonomousDbVersionsExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String parent = "projects/project-5833/locations/location-5833";
+      String parent = "parent-995424086";
       client.listAutonomousDbVersions(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2296,7 +2133,7 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllAutonomousDatabaseCharacterSets(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
@@ -2310,27 +2147,22 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(
         expectedResponse.getAutonomousDatabaseCharacterSetsList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListAutonomousDatabaseCharacterSetsRequest actualRequest =
+        ((ListAutonomousDatabaseCharacterSetsRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listAutonomousDatabaseCharacterSetsExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -2350,9 +2182,9 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllAutonomousDatabaseCharacterSets(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
-    String parent = "projects/project-5833/locations/location-5833";
+    String parent = "parent-995424086";
 
     ListAutonomousDatabaseCharacterSetsPagedResponse pagedListResponse =
         client.listAutonomousDatabaseCharacterSets(parent);
@@ -2364,30 +2196,25 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(
         expectedResponse.getAutonomousDatabaseCharacterSetsList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListAutonomousDatabaseCharacterSetsRequest actualRequest =
+        ((ListAutonomousDatabaseCharacterSetsRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listAutonomousDatabaseCharacterSetsExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String parent = "projects/project-5833/locations/location-5833";
+      String parent = "parent-995424086";
       client.listAutonomousDatabaseCharacterSets(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2403,7 +2230,7 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllAutonomousDatabaseBackups(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
@@ -2416,27 +2243,22 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(
         expectedResponse.getAutonomousDatabaseBackupsList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListAutonomousDatabaseBackupsRequest actualRequest =
+        ((ListAutonomousDatabaseBackupsRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listAutonomousDatabaseBackupsExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -2455,9 +2277,9 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllAutonomousDatabaseBackups(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockOracleDatabase.addResponse(expectedResponse);
 
-    String parent = "projects/project-5833/locations/location-5833";
+    String parent = "parent-995424086";
 
     ListAutonomousDatabaseBackupsPagedResponse pagedListResponse =
         client.listAutonomousDatabaseBackups(parent);
@@ -2468,34 +2290,383 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(
         expectedResponse.getAutonomousDatabaseBackupsList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListAutonomousDatabaseBackupsRequest actualRequest =
+        ((ListAutonomousDatabaseBackupsRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listAutonomousDatabaseBackupsExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
 
     try {
-      String parent = "projects/project-5833/locations/location-5833";
+      String parent = "parent-995424086";
       client.listAutonomousDatabaseBackups(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void stopAutonomousDatabaseTest() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    AutonomousDatabaseName name =
+        AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+
+    AutonomousDatabase actualResponse = client.stopAutonomousDatabaseAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StopAutonomousDatabaseRequest actualRequest =
+        ((StopAutonomousDatabaseRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void stopAutonomousDatabaseExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      AutonomousDatabaseName name =
+          AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+      client.stopAutonomousDatabaseAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void stopAutonomousDatabaseTest2() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    AutonomousDatabase actualResponse = client.stopAutonomousDatabaseAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StopAutonomousDatabaseRequest actualRequest =
+        ((StopAutonomousDatabaseRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void stopAutonomousDatabaseExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.stopAutonomousDatabaseAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void startAutonomousDatabaseTest() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    AutonomousDatabaseName name =
+        AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+
+    AutonomousDatabase actualResponse = client.startAutonomousDatabaseAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StartAutonomousDatabaseRequest actualRequest =
+        ((StartAutonomousDatabaseRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void startAutonomousDatabaseExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      AutonomousDatabaseName name =
+          AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+      client.startAutonomousDatabaseAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void startAutonomousDatabaseTest2() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    AutonomousDatabase actualResponse = client.startAutonomousDatabaseAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StartAutonomousDatabaseRequest actualRequest =
+        ((StartAutonomousDatabaseRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void startAutonomousDatabaseExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.startAutonomousDatabaseAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void restartAutonomousDatabaseTest() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("restartAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    AutonomousDatabaseName name =
+        AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+
+    AutonomousDatabase actualResponse = client.restartAutonomousDatabaseAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RestartAutonomousDatabaseRequest actualRequest =
+        ((RestartAutonomousDatabaseRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void restartAutonomousDatabaseExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      AutonomousDatabaseName name =
+          AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+      client.restartAutonomousDatabaseAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void restartAutonomousDatabaseTest2() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("restartAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    AutonomousDatabase actualResponse = client.restartAutonomousDatabaseAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RestartAutonomousDatabaseRequest actualRequest =
+        ((RestartAutonomousDatabaseRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void restartAutonomousDatabaseExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.restartAutonomousDatabaseAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -2507,11 +2678,11 @@ public class OracleDatabaseClientTest {
             .setNextPageToken("")
             .addAllLocations(Arrays.asList(responsesElement))
             .build();
-    mockService.addResponse(expectedResponse);
+    mockLocations.addResponse(expectedResponse);
 
     ListLocationsRequest request =
         ListLocationsRequest.newBuilder()
-            .setName("projects/project-3664")
+            .setName("name3373707")
             .setFilter("filter-1274492040")
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
@@ -2524,32 +2695,29 @@ public class OracleDatabaseClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getLocationsList().get(0), resources.get(0));
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockLocations.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    ListLocationsRequest actualRequest = ((ListLocationsRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void listLocationsExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLocations.addException(exception);
 
     try {
       ListLocationsRequest request =
           ListLocationsRequest.newBuilder()
-              .setName("projects/project-3664")
+              .setName("name3373707")
               .setFilter("filter-1274492040")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
@@ -2571,43 +2739,31 @@ public class OracleDatabaseClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setMetadata(Any.newBuilder().build())
             .build();
-    mockService.addResponse(expectedResponse);
+    mockLocations.addResponse(expectedResponse);
 
-    GetLocationRequest request =
-        GetLocationRequest.newBuilder()
-            .setName("projects/project-9062/locations/location-9062")
-            .build();
+    GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
 
     Location actualResponse = client.getLocation(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<String> actualRequests = mockService.getRequestPaths();
+    List<AbstractMessage> actualRequests = mockLocations.getRequests();
     Assert.assertEquals(1, actualRequests.size());
+    GetLocationRequest actualRequest = ((GetLocationRequest) actualRequests.get(0));
 
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
   }
 
   @Test
   public void getLocationExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLocations.addException(exception);
 
     try {
-      GetLocationRequest request =
-          GetLocationRequest.newBuilder()
-              .setName("projects/project-9062/locations/location-9062")
-              .build();
+      GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
       client.getLocation(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

@@ -33,6 +33,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.cloudcontrolspartner.v1.Customer)
     CustomerOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Customer.newBuilder() to construct.
   private Customer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -41,6 +42,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
   private Customer() {
     name_ = "";
     displayName_ = "";
+    organizationDomain_ = "";
   }
 
   @java.lang.Override
@@ -69,6 +71,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CUSTOMER_ONBOARDING_STATE_FIELD_NUMBER = 3;
   private com.google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState customerOnboardingState_;
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomerOnboardingState() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState.getDefaultInstance()
         : customerOnboardingState_;
   }
+
   /**
    *
    *
@@ -229,6 +238,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IS_ONBOARDED_FIELD_NUMBER = 4;
   private boolean isOnboarded_ = false;
+
   /**
    *
    *
@@ -243,6 +253,61 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getIsOnboarded() {
     return isOnboarded_;
+  }
+
+  public static final int ORGANIZATION_DOMAIN_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object organizationDomain_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The customer organization domain, extracted from
+   * CRM Organization’s display_name field. e.g. "google.com"
+   * </pre>
+   *
+   * <code>string organization_domain = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The organizationDomain.
+   */
+  @java.lang.Override
+  public java.lang.String getOrganizationDomain() {
+    java.lang.Object ref = organizationDomain_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      organizationDomain_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The customer organization domain, extracted from
+   * CRM Organization’s display_name field. e.g. "google.com"
+   * </pre>
+   *
+   * <code>string organization_domain = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for organizationDomain.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOrganizationDomainBytes() {
+    java.lang.Object ref = organizationDomain_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      organizationDomain_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -271,6 +336,9 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     if (isOnboarded_ != false) {
       output.writeBool(4, isOnboarded_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationDomain_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, organizationDomain_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -292,6 +360,9 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     }
     if (isOnboarded_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, isOnboarded_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationDomain_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, organizationDomain_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -316,6 +387,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       if (!getCustomerOnboardingState().equals(other.getCustomerOnboardingState())) return false;
     }
     if (getIsOnboarded() != other.getIsOnboarded()) return false;
+    if (!getOrganizationDomain().equals(other.getOrganizationDomain())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -337,6 +409,8 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + IS_ONBOARDED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsOnboarded());
+    hash = (37 * hash) + ORGANIZATION_DOMAIN_FIELD_NUMBER;
+    hash = (53 * hash) + getOrganizationDomain().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -437,6 +511,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -493,6 +568,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
         customerOnboardingStateBuilder_ = null;
       }
       isOnboarded_ = false;
+      organizationDomain_ = "";
       return this;
     }
 
@@ -545,6 +621,9 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.isOnboarded_ = isOnboarded_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.organizationDomain_ = organizationDomain_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -611,6 +690,11 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       if (other.getIsOnboarded() != false) {
         setIsOnboarded(other.getIsOnboarded());
       }
+      if (!other.getOrganizationDomain().isEmpty()) {
+        organizationDomain_ = other.organizationDomain_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -662,6 +746,12 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 42:
+              {
+                organizationDomain_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -682,6 +772,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -705,6 +796,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -728,6 +820,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -750,6 +843,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +862,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +888,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -815,6 +911,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -837,6 +934,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -858,6 +956,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +974,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -905,6 +1005,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.cloudcontrolspartner.v1.CustomerOnboardingState.Builder,
             com.google.cloud.cloudcontrolspartner.v1.CustomerOnboardingStateOrBuilder>
         customerOnboardingStateBuilder_;
+
     /**
      *
      *
@@ -921,6 +1022,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomerOnboardingState() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -944,6 +1046,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
         return customerOnboardingStateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -969,6 +1072,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -991,6 +1095,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1128,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1044,6 +1150,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1168,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCustomerOnboardingStateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1082,6 +1190,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
             : customerOnboardingState_;
       }
     }
+
     /**
      *
      *
@@ -1111,6 +1220,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean isOnboarded_;
+
     /**
      *
      *
@@ -1126,6 +1236,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     public boolean getIsOnboarded() {
       return isOnboarded_;
     }
+
     /**
      *
      *
@@ -1145,6 +1256,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1159,6 +1271,122 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
     public Builder clearIsOnboarded() {
       bitField0_ = (bitField0_ & ~0x00000008);
       isOnboarded_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object organizationDomain_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customer organization domain, extracted from
+     * CRM Organization’s display_name field. e.g. "google.com"
+     * </pre>
+     *
+     * <code>string organization_domain = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The organizationDomain.
+     */
+    public java.lang.String getOrganizationDomain() {
+      java.lang.Object ref = organizationDomain_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationDomain_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customer organization domain, extracted from
+     * CRM Organization’s display_name field. e.g. "google.com"
+     * </pre>
+     *
+     * <code>string organization_domain = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for organizationDomain.
+     */
+    public com.google.protobuf.ByteString getOrganizationDomainBytes() {
+      java.lang.Object ref = organizationDomain_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        organizationDomain_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customer organization domain, extracted from
+     * CRM Organization’s display_name field. e.g. "google.com"
+     * </pre>
+     *
+     * <code>string organization_domain = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The organizationDomain to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganizationDomain(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      organizationDomain_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customer organization domain, extracted from
+     * CRM Organization’s display_name field. e.g. "google.com"
+     * </pre>
+     *
+     * <code>string organization_domain = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOrganizationDomain() {
+      organizationDomain_ = getDefaultInstance().getOrganizationDomain();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customer organization domain, extracted from
+     * CRM Organization’s display_name field. e.g. "google.com"
+     * </pre>
+     *
+     * <code>string organization_domain = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for organizationDomain to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrganizationDomainBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      organizationDomain_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -47,6 +47,7 @@ public interface GetWorkflowTemplateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

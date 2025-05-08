@@ -38,6 +38,7 @@ public interface DestinationVolumeParametersOrBuilder
    * @return The storagePool.
    */
   java.lang.String getStoragePool();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface DestinationVolumeParametersOrBuilder
    * @return The volumeId.
    */
   java.lang.String getVolumeId();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface DestinationVolumeParametersOrBuilder
    * @return The shareName.
    */
   java.lang.String getShareName();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface DestinationVolumeParametersOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface DestinationVolumeParametersOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public interface DestinationVolumeParametersOrBuilder
    * @return Whether the tieringPolicy field is set.
    */
   boolean hasTieringPolicy();
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public interface DestinationVolumeParametersOrBuilder
    * @return The tieringPolicy.
    */
   com.google.cloud.netapp.v1.TieringPolicy getTieringPolicy();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface CorroborateContentResponseOrBuilder
    * @return Whether the corroborationScore field is set.
    */
   boolean hasCorroborationScore();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface CorroborateContentResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Claim claims = 2;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Claim> getClaimsList();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface CorroborateContentResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Claim claims = 2;</code>
    */
   com.google.cloud.aiplatform.v1.Claim getClaims(int index);
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface CorroborateContentResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Claim claims = 2;</code>
    */
   int getClaimsCount();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface CorroborateContentResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.Claim claims = 2;</code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.ClaimOrBuilder> getClaimsOrBuilderList();
+
   /**
    *
    *

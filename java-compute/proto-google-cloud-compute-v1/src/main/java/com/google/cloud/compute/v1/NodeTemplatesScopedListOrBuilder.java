@@ -34,6 +34,7 @@ public interface NodeTemplatesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NodeTemplate> getNodeTemplatesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface NodeTemplatesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
    */
   com.google.cloud.compute.v1.NodeTemplate getNodeTemplates(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface NodeTemplatesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
    */
   int getNodeTemplatesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface NodeTemplatesScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.NodeTemplateOrBuilder>
       getNodeTemplatesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface NodeTemplatesScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface NodeTemplatesScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

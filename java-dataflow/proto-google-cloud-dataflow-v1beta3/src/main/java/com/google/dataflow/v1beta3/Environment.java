@@ -33,6 +33,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.Environment)
     EnvironmentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Environment.newBuilder() to construct.
   private Environment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -51,6 +52,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     workerRegion_ = "";
     workerZone_ = "";
     shuffleMode_ = 0;
+    streamingMode_ = 0;
   }
 
   @java.lang.Override
@@ -79,6 +81,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tempStoragePrefix_ = "";
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterManagerApiService_ = "";
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -212,6 +218,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList experiments_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -228,6 +235,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getExperimentsList() {
     return experiments_;
   }
+
   /**
    *
    *
@@ -244,6 +252,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public int getExperimentsCount() {
     return experiments_.size();
   }
+
   /**
    *
    *
@@ -261,6 +270,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getExperiments(int index) {
     return experiments_.get(index);
   }
+
   /**
    *
    *
@@ -284,48 +294,54 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList serviceOptions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
    * <pre>
-   * The list of service options to enable. This field should be used for
-   * service related experiments only. These experiments, when graduating to GA,
-   * should be replaced by dedicated fields or become default (i.e. always on).
+   * Optional. The list of service options to enable. This field should be used
+   * for service related experiments only. These experiments, when graduating to
+   * GA, should be replaced by dedicated fields or become default (i.e. always
+   * on).
    * </pre>
    *
-   * <code>repeated string service_options = 16;</code>
+   * <code>repeated string service_options = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the serviceOptions.
    */
   public com.google.protobuf.ProtocolStringList getServiceOptionsList() {
     return serviceOptions_;
   }
+
   /**
    *
    *
    * <pre>
-   * The list of service options to enable. This field should be used for
-   * service related experiments only. These experiments, when graduating to GA,
-   * should be replaced by dedicated fields or become default (i.e. always on).
+   * Optional. The list of service options to enable. This field should be used
+   * for service related experiments only. These experiments, when graduating to
+   * GA, should be replaced by dedicated fields or become default (i.e. always
+   * on).
    * </pre>
    *
-   * <code>repeated string service_options = 16;</code>
+   * <code>repeated string service_options = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of serviceOptions.
    */
   public int getServiceOptionsCount() {
     return serviceOptions_.size();
   }
+
   /**
    *
    *
    * <pre>
-   * The list of service options to enable. This field should be used for
-   * service related experiments only. These experiments, when graduating to GA,
-   * should be replaced by dedicated fields or become default (i.e. always on).
+   * Optional. The list of service options to enable. This field should be used
+   * for service related experiments only. These experiments, when graduating to
+   * GA, should be replaced by dedicated fields or become default (i.e. always
+   * on).
    * </pre>
    *
-   * <code>repeated string service_options = 16;</code>
+   * <code>repeated string service_options = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The serviceOptions at the given index.
@@ -333,16 +349,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getServiceOptions(int index) {
     return serviceOptions_.get(index);
   }
+
   /**
    *
    *
    * <pre>
-   * The list of service options to enable. This field should be used for
-   * service related experiments only. These experiments, when graduating to GA,
-   * should be replaced by dedicated fields or become default (i.e. always on).
+   * Optional. The list of service options to enable. This field should be used
+   * for service related experiments only. These experiments, when graduating to
+   * GA, should be replaced by dedicated fields or become default (i.e. always
+   * on).
    * </pre>
    *
-   * <code>repeated string service_options = 16;</code>
+   * <code>repeated string service_options = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the serviceOptions at the given index.
@@ -355,18 +373,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceKmsKeyName_ = "";
+
   /**
    *
    *
    * <pre>
-   * If set, contains the Cloud KMS key identifier used to encrypt data
-   * at rest, AKA a Customer Managed Encryption Key (CMEK).
+   * Optional. If set, contains the Cloud KMS key identifier used to encrypt
+   * data at rest, AKA a Customer Managed Encryption Key (CMEK).
    *
    * Format:
    *   projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
    * </pre>
    *
-   * <code>string service_kms_key_name = 12;</code>
+   * <code>string service_kms_key_name = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The serviceKmsKeyName.
    */
@@ -382,18 +401,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * If set, contains the Cloud KMS key identifier used to encrypt data
-   * at rest, AKA a Customer Managed Encryption Key (CMEK).
+   * Optional. If set, contains the Cloud KMS key identifier used to encrypt
+   * data at rest, AKA a Customer Managed Encryption Key (CMEK).
    *
    * Format:
    *   projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
    * </pre>
    *
-   * <code>string service_kms_key_name = 12;</code>
+   * <code>string service_kms_key_name = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for serviceKmsKeyName.
    */
@@ -414,6 +434,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.WorkerPool> workerPools_;
+
   /**
    *
    *
@@ -428,6 +449,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.dataflow.v1beta3.WorkerPool> getWorkerPoolsList() {
     return workerPools_;
   }
+
   /**
    *
    *
@@ -443,6 +465,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       getWorkerPoolsOrBuilderList() {
     return workerPools_;
   }
+
   /**
    *
    *
@@ -457,6 +480,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public int getWorkerPoolsCount() {
     return workerPools_.size();
   }
+
   /**
    *
    *
@@ -471,6 +495,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.WorkerPool getWorkerPools(int index) {
     return workerPools_.get(index);
   }
+
   /**
    *
    *
@@ -488,6 +513,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USER_AGENT_FIELD_NUMBER = 5;
   private com.google.protobuf.Struct userAgent_;
+
   /**
    *
    *
@@ -503,6 +529,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUserAgent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -518,6 +545,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Struct getUserAgent() {
     return userAgent_ == null ? com.google.protobuf.Struct.getDefaultInstance() : userAgent_;
   }
+
   /**
    *
    *
@@ -534,6 +562,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VERSION_FIELD_NUMBER = 6;
   private com.google.protobuf.Struct version_;
+
   /**
    *
    *
@@ -550,6 +579,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVersion() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -566,6 +596,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Struct getVersion() {
     return version_ == null ? com.google.protobuf.Struct.getDefaultInstance() : version_;
   }
+
   /**
    *
    *
@@ -585,11 +616,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataset_ = "";
+
   /**
    *
    *
    * <pre>
-   * The dataset for the current project where various workflow
+   * Optional. The dataset for the current project where various workflow
    * related tables are stored.
    *
    * The supported resource type is:
@@ -598,7 +630,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *   bigquery.googleapis.com/{dataset}
    * </pre>
    *
-   * <code>string dataset = 7;</code>
+   * <code>string dataset = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The dataset.
    */
@@ -614,11 +646,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * The dataset for the current project where various workflow
+   * Optional. The dataset for the current project where various workflow
    * related tables are stored.
    *
    * The supported resource type is:
@@ -627,7 +660,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *   bigquery.googleapis.com/{dataset}
    * </pre>
    *
-   * <code>string dataset = 7;</code>
+   * <code>string dataset = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for dataset.
    */
@@ -646,6 +679,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SDK_PIPELINE_OPTIONS_FIELD_NUMBER = 8;
   private com.google.protobuf.Struct sdkPipelineOptions_;
+
   /**
    *
    *
@@ -664,6 +698,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSdkPipelineOptions() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -684,6 +719,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Struct.getDefaultInstance()
         : sdkPipelineOptions_;
   }
+
   /**
    *
    *
@@ -705,6 +741,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INTERNAL_EXPERIMENTS_FIELD_NUMBER = 9;
   private com.google.protobuf.Any internalExperiments_;
+
   /**
    *
    *
@@ -720,6 +757,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInternalExperiments() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -737,6 +775,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Any.getDefaultInstance()
         : internalExperiments_;
   }
+
   /**
    *
    *
@@ -757,14 +796,16 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccountEmail_ = "";
+
   /**
    *
    *
    * <pre>
-   * Identity to run virtual machines as. Defaults to the default account.
+   * Optional. Identity to run virtual machines as. Defaults to the default
+   * account.
    * </pre>
    *
-   * <code>string service_account_email = 10;</code>
+   * <code>string service_account_email = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The serviceAccountEmail.
    */
@@ -780,14 +821,16 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Identity to run virtual machines as. Defaults to the default account.
+   * Optional. Identity to run virtual machines as. Defaults to the default
+   * account.
    * </pre>
    *
-   * <code>string service_account_email = 10;</code>
+   * <code>string service_account_email = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for serviceAccountEmail.
    */
@@ -806,14 +849,16 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FLEX_RESOURCE_SCHEDULING_GOAL_FIELD_NUMBER = 11;
   private int flexResourceSchedulingGoal_ = 0;
+
   /**
    *
    *
    * <pre>
-   * Which Flexible Resource Scheduling mode to run in.
+   * Optional. Which Flexible Resource Scheduling mode to run in.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.FlexResourceSchedulingGoal flex_resource_scheduling_goal = 11;
+   * <code>
+   * .google.dataflow.v1beta3.FlexResourceSchedulingGoal flex_resource_scheduling_goal = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for flexResourceSchedulingGoal.
@@ -822,14 +867,16 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public int getFlexResourceSchedulingGoalValue() {
     return flexResourceSchedulingGoal_;
   }
+
   /**
    *
    *
    * <pre>
-   * Which Flexible Resource Scheduling mode to run in.
+   * Optional. Which Flexible Resource Scheduling mode to run in.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.FlexResourceSchedulingGoal flex_resource_scheduling_goal = 11;
+   * <code>
+   * .google.dataflow.v1beta3.FlexResourceSchedulingGoal flex_resource_scheduling_goal = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The flexResourceSchedulingGoal.
@@ -848,18 +895,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workerRegion_ = "";
+
   /**
    *
    *
    * <pre>
-   * The Compute Engine region
+   * Optional. The Compute Engine region
    * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
    * which worker processing should occur, e.g. "us-west1". Mutually exclusive
    * with worker_zone. If neither worker_region nor worker_zone is specified,
    * default to the control plane's region.
    * </pre>
    *
-   * <code>string worker_region = 13;</code>
+   * <code>string worker_region = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The workerRegion.
    */
@@ -875,18 +923,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * The Compute Engine region
+   * Optional. The Compute Engine region
    * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
    * which worker processing should occur, e.g. "us-west1". Mutually exclusive
    * with worker_zone. If neither worker_region nor worker_zone is specified,
    * default to the control plane's region.
    * </pre>
    *
-   * <code>string worker_region = 13;</code>
+   * <code>string worker_region = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for workerRegion.
    */
@@ -907,18 +956,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workerZone_ = "";
+
   /**
    *
    *
    * <pre>
-   * The Compute Engine zone
+   * Optional. The Compute Engine zone
    * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
    * which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
    * with worker_region. If neither worker_region nor worker_zone is specified,
    * a zone in the control plane's region is chosen based on available capacity.
    * </pre>
    *
-   * <code>string worker_zone = 14;</code>
+   * <code>string worker_zone = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The workerZone.
    */
@@ -934,18 +984,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * The Compute Engine zone
+   * Optional. The Compute Engine zone
    * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
    * which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
    * with worker_region. If neither worker_region nor worker_zone is specified,
    * a zone in the control plane's region is chosen based on available capacity.
    * </pre>
    *
-   * <code>string worker_zone = 14;</code>
+   * <code>string worker_zone = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for workerZone.
    */
@@ -964,6 +1015,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SHUFFLE_MODE_FIELD_NUMBER = 15;
   private int shuffleMode_ = 0;
+
   /**
    *
    *
@@ -981,6 +1033,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public int getShuffleModeValue() {
     return shuffleMode_;
   }
+
   /**
    *
    *
@@ -1003,14 +1056,17 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEBUG_OPTIONS_FIELD_NUMBER = 17;
   private com.google.dataflow.v1beta3.DebugOptions debugOptions_;
+
   /**
    *
    *
    * <pre>
-   * Any debugging options to be supplied to the job.
+   * Optional. Any debugging options to be supplied to the job.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.DebugOptions debug_options = 17;</code>
+   * <code>
+   * .google.dataflow.v1beta3.DebugOptions debug_options = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the debugOptions field is set.
    */
@@ -1018,14 +1074,17 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDebugOptions() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Any debugging options to be supplied to the job.
+   * Optional. Any debugging options to be supplied to the job.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.DebugOptions debug_options = 17;</code>
+   * <code>
+   * .google.dataflow.v1beta3.DebugOptions debug_options = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The debugOptions.
    */
@@ -1035,20 +1094,98 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.dataflow.v1beta3.DebugOptions.getDefaultInstance()
         : debugOptions_;
   }
+
   /**
    *
    *
    * <pre>
-   * Any debugging options to be supplied to the job.
+   * Optional. Any debugging options to be supplied to the job.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.DebugOptions debug_options = 17;</code>
+   * <code>
+   * .google.dataflow.v1beta3.DebugOptions debug_options = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.dataflow.v1beta3.DebugOptionsOrBuilder getDebugOptionsOrBuilder() {
     return debugOptions_ == null
         ? com.google.dataflow.v1beta3.DebugOptions.getDefaultInstance()
         : debugOptions_;
+  }
+
+  public static final int USE_STREAMING_ENGINE_RESOURCE_BASED_BILLING_FIELD_NUMBER = 18;
+  private boolean useStreamingEngineResourceBasedBilling_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the job uses the Streaming Engine resource-based
+   * billing model.
+   * </pre>
+   *
+   * <code>
+   * bool use_streaming_engine_resource_based_billing = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The useStreamingEngineResourceBasedBilling.
+   */
+  @java.lang.Override
+  public boolean getUseStreamingEngineResourceBasedBilling() {
+    return useStreamingEngineResourceBasedBilling_;
+  }
+
+  public static final int STREAMING_MODE_FIELD_NUMBER = 19;
+  private int streamingMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for streamingMode.
+   */
+  @java.lang.Override
+  public int getStreamingModeValue() {
+    return streamingMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The streamingMode.
+   */
+  @java.lang.Override
+  public com.google.dataflow.v1beta3.StreamingMode getStreamingMode() {
+    com.google.dataflow.v1beta3.StreamingMode result =
+        com.google.dataflow.v1beta3.StreamingMode.forNumber(streamingMode_);
+    return result == null ? com.google.dataflow.v1beta3.StreamingMode.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1117,6 +1254,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(17, getDebugOptions());
+    }
+    if (useStreamingEngineResourceBasedBilling_ != false) {
+      output.writeBool(18, useStreamingEngineResourceBasedBilling_);
+    }
+    if (streamingMode_
+        != com.google.dataflow.v1beta3.StreamingMode.STREAMING_MODE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(19, streamingMode_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1192,6 +1336,15 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getDebugOptions());
     }
+    if (useStreamingEngineResourceBasedBilling_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              18, useStreamingEngineResourceBasedBilling_);
+    }
+    if (streamingMode_
+        != com.google.dataflow.v1beta3.StreamingMode.STREAMING_MODE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, streamingMode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1239,6 +1392,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     if (hasDebugOptions()) {
       if (!getDebugOptions().equals(other.getDebugOptions())) return false;
     }
+    if (getUseStreamingEngineResourceBasedBilling()
+        != other.getUseStreamingEngineResourceBasedBilling()) return false;
+    if (streamingMode_ != other.streamingMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1300,6 +1456,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DEBUG_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getDebugOptions().hashCode();
     }
+    hash = (37 * hash) + USE_STREAMING_ENGINE_RESOURCE_BASED_BILLING_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashBoolean(getUseStreamingEngineResourceBasedBilling());
+    hash = (37 * hash) + STREAMING_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + streamingMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1400,6 +1562,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1496,6 +1659,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         debugOptionsBuilder_.dispose();
         debugOptionsBuilder_ = null;
       }
+      useStreamingEngineResourceBasedBilling_ = false;
+      streamingMode_ = 0;
       return this;
     }
 
@@ -1607,6 +1772,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         result.debugOptions_ =
             debugOptionsBuilder_ == null ? debugOptions_ : debugOptionsBuilder_.build();
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.useStreamingEngineResourceBasedBilling_ = useStreamingEngineResourceBasedBilling_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.streamingMode_ = streamingMode_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1759,6 +1930,13 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDebugOptions()) {
         mergeDebugOptions(other.getDebugOptions());
       }
+      if (other.getUseStreamingEngineResourceBasedBilling() != false) {
+        setUseStreamingEngineResourceBasedBilling(
+            other.getUseStreamingEngineResourceBasedBilling());
+      }
+      if (other.streamingMode_ != 0) {
+        setStreamingModeValue(other.getStreamingModeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1898,6 +2076,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00010000;
                 break;
               } // case 138
+            case 144:
+              {
+                useStreamingEngineResourceBasedBilling_ = input.readBool();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 144
+            case 152:
+              {
+                streamingMode_ = input.readEnum();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 152
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1918,6 +2108,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object tempStoragePrefix_ = "";
+
     /**
      *
      *
@@ -1952,6 +2143,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1986,6 +2178,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2019,6 +2212,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2048,6 +2242,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2084,6 +2279,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object clusterManagerApiService_ = "";
+
     /**
      *
      *
@@ -2109,6 +2305,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2134,6 +2331,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2158,6 +2356,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2178,6 +2377,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2213,6 +2413,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -2230,6 +2431,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       experiments_.makeImmutable();
       return experiments_;
     }
+
     /**
      *
      *
@@ -2246,6 +2448,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public int getExperimentsCount() {
       return experiments_.size();
     }
+
     /**
      *
      *
@@ -2263,6 +2466,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getExperiments(int index) {
       return experiments_.get(index);
     }
+
     /**
      *
      *
@@ -2280,6 +2484,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getExperimentsBytes(int index) {
       return experiments_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2305,6 +2510,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2329,6 +2535,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2350,6 +2557,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2370,6 +2578,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2405,16 +2614,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
      * <pre>
-     * The list of service options to enable. This field should be used for
-     * service related experiments only. These experiments, when graduating to GA,
-     * should be replaced by dedicated fields or become default (i.e. always on).
+     * Optional. The list of service options to enable. This field should be used
+     * for service related experiments only. These experiments, when graduating to
+     * GA, should be replaced by dedicated fields or become default (i.e. always
+     * on).
      * </pre>
      *
-     * <code>repeated string service_options = 16;</code>
+     * <code>repeated string service_options = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the serviceOptions.
      */
@@ -2422,32 +2633,36 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       serviceOptions_.makeImmutable();
       return serviceOptions_;
     }
+
     /**
      *
      *
      * <pre>
-     * The list of service options to enable. This field should be used for
-     * service related experiments only. These experiments, when graduating to GA,
-     * should be replaced by dedicated fields or become default (i.e. always on).
+     * Optional. The list of service options to enable. This field should be used
+     * for service related experiments only. These experiments, when graduating to
+     * GA, should be replaced by dedicated fields or become default (i.e. always
+     * on).
      * </pre>
      *
-     * <code>repeated string service_options = 16;</code>
+     * <code>repeated string service_options = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of serviceOptions.
      */
     public int getServiceOptionsCount() {
       return serviceOptions_.size();
     }
+
     /**
      *
      *
      * <pre>
-     * The list of service options to enable. This field should be used for
-     * service related experiments only. These experiments, when graduating to GA,
-     * should be replaced by dedicated fields or become default (i.e. always on).
+     * Optional. The list of service options to enable. This field should be used
+     * for service related experiments only. These experiments, when graduating to
+     * GA, should be replaced by dedicated fields or become default (i.e. always
+     * on).
      * </pre>
      *
-     * <code>repeated string service_options = 16;</code>
+     * <code>repeated string service_options = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The serviceOptions at the given index.
@@ -2455,16 +2670,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getServiceOptions(int index) {
       return serviceOptions_.get(index);
     }
+
     /**
      *
      *
      * <pre>
-     * The list of service options to enable. This field should be used for
-     * service related experiments only. These experiments, when graduating to GA,
-     * should be replaced by dedicated fields or become default (i.e. always on).
+     * Optional. The list of service options to enable. This field should be used
+     * for service related experiments only. These experiments, when graduating to
+     * GA, should be replaced by dedicated fields or become default (i.e. always
+     * on).
      * </pre>
      *
-     * <code>repeated string service_options = 16;</code>
+     * <code>repeated string service_options = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the serviceOptions at the given index.
@@ -2472,16 +2689,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getServiceOptionsBytes(int index) {
       return serviceOptions_.getByteString(index);
     }
+
     /**
      *
      *
      * <pre>
-     * The list of service options to enable. This field should be used for
-     * service related experiments only. These experiments, when graduating to GA,
-     * should be replaced by dedicated fields or become default (i.e. always on).
+     * Optional. The list of service options to enable. This field should be used
+     * for service related experiments only. These experiments, when graduating to
+     * GA, should be replaced by dedicated fields or become default (i.e. always
+     * on).
      * </pre>
      *
-     * <code>repeated string service_options = 16;</code>
+     * <code>repeated string service_options = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index to set the value at.
      * @param value The serviceOptions to set.
@@ -2497,16 +2716,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The list of service options to enable. This field should be used for
-     * service related experiments only. These experiments, when graduating to GA,
-     * should be replaced by dedicated fields or become default (i.e. always on).
+     * Optional. The list of service options to enable. This field should be used
+     * for service related experiments only. These experiments, when graduating to
+     * GA, should be replaced by dedicated fields or become default (i.e. always
+     * on).
      * </pre>
      *
-     * <code>repeated string service_options = 16;</code>
+     * <code>repeated string service_options = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The serviceOptions to add.
      * @return This builder for chaining.
@@ -2521,16 +2742,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The list of service options to enable. This field should be used for
-     * service related experiments only. These experiments, when graduating to GA,
-     * should be replaced by dedicated fields or become default (i.e. always on).
+     * Optional. The list of service options to enable. This field should be used
+     * for service related experiments only. These experiments, when graduating to
+     * GA, should be replaced by dedicated fields or become default (i.e. always
+     * on).
      * </pre>
      *
-     * <code>repeated string service_options = 16;</code>
+     * <code>repeated string service_options = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param values The serviceOptions to add.
      * @return This builder for chaining.
@@ -2542,16 +2765,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The list of service options to enable. This field should be used for
-     * service related experiments only. These experiments, when graduating to GA,
-     * should be replaced by dedicated fields or become default (i.e. always on).
+     * Optional. The list of service options to enable. This field should be used
+     * for service related experiments only. These experiments, when graduating to
+     * GA, should be replaced by dedicated fields or become default (i.e. always
+     * on).
      * </pre>
      *
-     * <code>repeated string service_options = 16;</code>
+     * <code>repeated string service_options = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2562,16 +2787,18 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The list of service options to enable. This field should be used for
-     * service related experiments only. These experiments, when graduating to GA,
-     * should be replaced by dedicated fields or become default (i.e. always on).
+     * Optional. The list of service options to enable. This field should be used
+     * for service related experiments only. These experiments, when graduating to
+     * GA, should be replaced by dedicated fields or become default (i.e. always
+     * on).
      * </pre>
      *
-     * <code>repeated string service_options = 16;</code>
+     * <code>repeated string service_options = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes of the serviceOptions to add.
      * @return This builder for chaining.
@@ -2589,18 +2816,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object serviceKmsKeyName_ = "";
+
     /**
      *
      *
      * <pre>
-     * If set, contains the Cloud KMS key identifier used to encrypt data
-     * at rest, AKA a Customer Managed Encryption Key (CMEK).
+     * Optional. If set, contains the Cloud KMS key identifier used to encrypt
+     * data at rest, AKA a Customer Managed Encryption Key (CMEK).
      *
      * Format:
      *   projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
      * </pre>
      *
-     * <code>string service_kms_key_name = 12;</code>
+     * <code>string service_kms_key_name = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The serviceKmsKeyName.
      */
@@ -2615,18 +2843,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * If set, contains the Cloud KMS key identifier used to encrypt data
-     * at rest, AKA a Customer Managed Encryption Key (CMEK).
+     * Optional. If set, contains the Cloud KMS key identifier used to encrypt
+     * data at rest, AKA a Customer Managed Encryption Key (CMEK).
      *
      * Format:
      *   projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
      * </pre>
      *
-     * <code>string service_kms_key_name = 12;</code>
+     * <code>string service_kms_key_name = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for serviceKmsKeyName.
      */
@@ -2641,18 +2870,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * If set, contains the Cloud KMS key identifier used to encrypt data
-     * at rest, AKA a Customer Managed Encryption Key (CMEK).
+     * Optional. If set, contains the Cloud KMS key identifier used to encrypt
+     * data at rest, AKA a Customer Managed Encryption Key (CMEK).
      *
      * Format:
      *   projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
      * </pre>
      *
-     * <code>string service_kms_key_name = 12;</code>
+     * <code>string service_kms_key_name = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The serviceKmsKeyName to set.
      * @return This builder for chaining.
@@ -2666,18 +2896,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * If set, contains the Cloud KMS key identifier used to encrypt data
-     * at rest, AKA a Customer Managed Encryption Key (CMEK).
+     * Optional. If set, contains the Cloud KMS key identifier used to encrypt
+     * data at rest, AKA a Customer Managed Encryption Key (CMEK).
      *
      * Format:
      *   projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
      * </pre>
      *
-     * <code>string service_kms_key_name = 12;</code>
+     * <code>string service_kms_key_name = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2687,18 +2918,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * If set, contains the Cloud KMS key identifier used to encrypt data
-     * at rest, AKA a Customer Managed Encryption Key (CMEK).
+     * Optional. If set, contains the Cloud KMS key identifier used to encrypt
+     * data at rest, AKA a Customer Managed Encryption Key (CMEK).
      *
      * Format:
      *   projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
      * </pre>
      *
-     * <code>string service_kms_key_name = 12;</code>
+     * <code>string service_kms_key_name = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for serviceKmsKeyName to set.
      * @return This builder for chaining.
@@ -2748,6 +2980,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return workerPoolsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2765,6 +2998,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return workerPoolsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2782,6 +3016,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return workerPoolsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2805,6 +3040,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2826,6 +3062,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2849,6 +3086,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2872,6 +3110,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2892,6 +3131,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2913,6 +3153,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2934,6 +3175,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2954,6 +3196,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2974,6 +3217,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2987,6 +3231,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.WorkerPool.Builder getWorkerPoolsBuilder(int index) {
       return getWorkerPoolsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3004,6 +3249,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return workerPoolsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3022,6 +3268,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(workerPools_);
       }
     }
+
     /**
      *
      *
@@ -3036,6 +3283,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return getWorkerPoolsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.WorkerPool.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3050,6 +3298,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return getWorkerPoolsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.WorkerPool.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3088,6 +3337,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         userAgentBuilder_;
+
     /**
      *
      *
@@ -3102,6 +3352,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUserAgent() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -3120,6 +3371,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return userAgentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3142,6 +3394,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3161,6 +3414,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3188,6 +3442,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3207,6 +3462,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3221,6 +3477,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUserAgentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3237,6 +3494,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return userAgent_ == null ? com.google.protobuf.Struct.getDefaultInstance() : userAgent_;
       }
     }
+
     /**
      *
      *
@@ -3269,6 +3527,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         versionBuilder_;
+
     /**
      *
      *
@@ -3284,6 +3543,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVersion() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3303,6 +3563,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return versionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3326,6 +3587,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3346,6 +3608,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3374,6 +3637,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3394,6 +3658,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3409,6 +3674,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3426,6 +3692,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return version_ == null ? com.google.protobuf.Struct.getDefaultInstance() : version_;
       }
     }
+
     /**
      *
      *
@@ -3454,11 +3721,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object dataset_ = "";
+
     /**
      *
      *
      * <pre>
-     * The dataset for the current project where various workflow
+     * Optional. The dataset for the current project where various workflow
      * related tables are stored.
      *
      * The supported resource type is:
@@ -3467,7 +3735,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *   bigquery.googleapis.com/{dataset}
      * </pre>
      *
-     * <code>string dataset = 7;</code>
+     * <code>string dataset = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The dataset.
      */
@@ -3482,11 +3750,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The dataset for the current project where various workflow
+     * Optional. The dataset for the current project where various workflow
      * related tables are stored.
      *
      * The supported resource type is:
@@ -3495,7 +3764,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *   bigquery.googleapis.com/{dataset}
      * </pre>
      *
-     * <code>string dataset = 7;</code>
+     * <code>string dataset = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for dataset.
      */
@@ -3510,11 +3779,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The dataset for the current project where various workflow
+     * Optional. The dataset for the current project where various workflow
      * related tables are stored.
      *
      * The supported resource type is:
@@ -3523,7 +3793,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *   bigquery.googleapis.com/{dataset}
      * </pre>
      *
-     * <code>string dataset = 7;</code>
+     * <code>string dataset = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The dataset to set.
      * @return This builder for chaining.
@@ -3537,11 +3807,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The dataset for the current project where various workflow
+     * Optional. The dataset for the current project where various workflow
      * related tables are stored.
      *
      * The supported resource type is:
@@ -3550,7 +3821,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *   bigquery.googleapis.com/{dataset}
      * </pre>
      *
-     * <code>string dataset = 7;</code>
+     * <code>string dataset = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -3560,11 +3831,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The dataset for the current project where various workflow
+     * Optional. The dataset for the current project where various workflow
      * related tables are stored.
      *
      * The supported resource type is:
@@ -3573,7 +3845,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *   bigquery.googleapis.com/{dataset}
      * </pre>
      *
-     * <code>string dataset = 7;</code>
+     * <code>string dataset = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for dataset to set.
      * @return This builder for chaining.
@@ -3595,6 +3867,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         sdkPipelineOptionsBuilder_;
+
     /**
      *
      *
@@ -3612,6 +3885,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSdkPipelineOptions() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3635,6 +3909,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return sdkPipelineOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3660,6 +3935,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3682,6 +3958,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3712,6 +3989,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3734,6 +4012,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3751,6 +4030,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSdkPipelineOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3772,6 +4052,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             : sdkPipelineOptions_;
       }
     }
+
     /**
      *
      *
@@ -3807,6 +4088,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Any.Builder,
             com.google.protobuf.AnyOrBuilder>
         internalExperimentsBuilder_;
+
     /**
      *
      *
@@ -3821,6 +4103,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInternalExperiments() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -3841,6 +4124,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return internalExperimentsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3863,6 +4147,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3882,6 +4167,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3909,6 +4195,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3928,6 +4215,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3942,6 +4230,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getInternalExperimentsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3960,6 +4249,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             : internalExperiments_;
       }
     }
+
     /**
      *
      *
@@ -3987,14 +4277,16 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object serviceAccountEmail_ = "";
+
     /**
      *
      *
      * <pre>
-     * Identity to run virtual machines as. Defaults to the default account.
+     * Optional. Identity to run virtual machines as. Defaults to the default
+     * account.
      * </pre>
      *
-     * <code>string service_account_email = 10;</code>
+     * <code>string service_account_email = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The serviceAccountEmail.
      */
@@ -4009,14 +4301,16 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Identity to run virtual machines as. Defaults to the default account.
+     * Optional. Identity to run virtual machines as. Defaults to the default
+     * account.
      * </pre>
      *
-     * <code>string service_account_email = 10;</code>
+     * <code>string service_account_email = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for serviceAccountEmail.
      */
@@ -4031,14 +4325,16 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Identity to run virtual machines as. Defaults to the default account.
+     * Optional. Identity to run virtual machines as. Defaults to the default
+     * account.
      * </pre>
      *
-     * <code>string service_account_email = 10;</code>
+     * <code>string service_account_email = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The serviceAccountEmail to set.
      * @return This builder for chaining.
@@ -4052,14 +4348,16 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Identity to run virtual machines as. Defaults to the default account.
+     * Optional. Identity to run virtual machines as. Defaults to the default
+     * account.
      * </pre>
      *
-     * <code>string service_account_email = 10;</code>
+     * <code>string service_account_email = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -4069,14 +4367,16 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Identity to run virtual machines as. Defaults to the default account.
+     * Optional. Identity to run virtual machines as. Defaults to the default
+     * account.
      * </pre>
      *
-     * <code>string service_account_email = 10;</code>
+     * <code>string service_account_email = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for serviceAccountEmail to set.
      * @return This builder for chaining.
@@ -4093,14 +4393,16 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int flexResourceSchedulingGoal_ = 0;
+
     /**
      *
      *
      * <pre>
-     * Which Flexible Resource Scheduling mode to run in.
+     * Optional. Which Flexible Resource Scheduling mode to run in.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.FlexResourceSchedulingGoal flex_resource_scheduling_goal = 11;
+     * <code>
+     * .google.dataflow.v1beta3.FlexResourceSchedulingGoal flex_resource_scheduling_goal = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for flexResourceSchedulingGoal.
@@ -4109,14 +4411,16 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public int getFlexResourceSchedulingGoalValue() {
       return flexResourceSchedulingGoal_;
     }
+
     /**
      *
      *
      * <pre>
-     * Which Flexible Resource Scheduling mode to run in.
+     * Optional. Which Flexible Resource Scheduling mode to run in.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.FlexResourceSchedulingGoal flex_resource_scheduling_goal = 11;
+     * <code>
+     * .google.dataflow.v1beta3.FlexResourceSchedulingGoal flex_resource_scheduling_goal = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for flexResourceSchedulingGoal to set.
@@ -4128,14 +4432,16 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Which Flexible Resource Scheduling mode to run in.
+     * Optional. Which Flexible Resource Scheduling mode to run in.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.FlexResourceSchedulingGoal flex_resource_scheduling_goal = 11;
+     * <code>
+     * .google.dataflow.v1beta3.FlexResourceSchedulingGoal flex_resource_scheduling_goal = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The flexResourceSchedulingGoal.
@@ -4149,14 +4455,16 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           ? com.google.dataflow.v1beta3.FlexResourceSchedulingGoal.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
      * <pre>
-     * Which Flexible Resource Scheduling mode to run in.
+     * Optional. Which Flexible Resource Scheduling mode to run in.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.FlexResourceSchedulingGoal flex_resource_scheduling_goal = 11;
+     * <code>
+     * .google.dataflow.v1beta3.FlexResourceSchedulingGoal flex_resource_scheduling_goal = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The flexResourceSchedulingGoal to set.
@@ -4172,14 +4480,16 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Which Flexible Resource Scheduling mode to run in.
+     * Optional. Which Flexible Resource Scheduling mode to run in.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.FlexResourceSchedulingGoal flex_resource_scheduling_goal = 11;
+     * <code>
+     * .google.dataflow.v1beta3.FlexResourceSchedulingGoal flex_resource_scheduling_goal = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -4192,18 +4502,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object workerRegion_ = "";
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine region
+     * Optional. The Compute Engine region
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1". Mutually exclusive
      * with worker_zone. If neither worker_region nor worker_zone is specified,
      * default to the control plane's region.
      * </pre>
      *
-     * <code>string worker_region = 13;</code>
+     * <code>string worker_region = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The workerRegion.
      */
@@ -4218,18 +4529,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine region
+     * Optional. The Compute Engine region
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1". Mutually exclusive
      * with worker_zone. If neither worker_region nor worker_zone is specified,
      * default to the control plane's region.
      * </pre>
      *
-     * <code>string worker_region = 13;</code>
+     * <code>string worker_region = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for workerRegion.
      */
@@ -4244,18 +4556,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine region
+     * Optional. The Compute Engine region
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1". Mutually exclusive
      * with worker_zone. If neither worker_region nor worker_zone is specified,
      * default to the control plane's region.
      * </pre>
      *
-     * <code>string worker_region = 13;</code>
+     * <code>string worker_region = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The workerRegion to set.
      * @return This builder for chaining.
@@ -4269,18 +4582,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine region
+     * Optional. The Compute Engine region
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1". Mutually exclusive
      * with worker_zone. If neither worker_region nor worker_zone is specified,
      * default to the control plane's region.
      * </pre>
      *
-     * <code>string worker_region = 13;</code>
+     * <code>string worker_region = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -4290,18 +4604,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine region
+     * Optional. The Compute Engine region
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1". Mutually exclusive
      * with worker_zone. If neither worker_region nor worker_zone is specified,
      * default to the control plane's region.
      * </pre>
      *
-     * <code>string worker_region = 13;</code>
+     * <code>string worker_region = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for workerRegion to set.
      * @return This builder for chaining.
@@ -4318,18 +4633,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object workerZone_ = "";
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine zone
+     * Optional. The Compute Engine zone
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
      * with worker_region. If neither worker_region nor worker_zone is specified,
      * a zone in the control plane's region is chosen based on available capacity.
      * </pre>
      *
-     * <code>string worker_zone = 14;</code>
+     * <code>string worker_zone = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The workerZone.
      */
@@ -4344,18 +4660,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine zone
+     * Optional. The Compute Engine zone
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
      * with worker_region. If neither worker_region nor worker_zone is specified,
      * a zone in the control plane's region is chosen based on available capacity.
      * </pre>
      *
-     * <code>string worker_zone = 14;</code>
+     * <code>string worker_zone = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for workerZone.
      */
@@ -4370,18 +4687,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine zone
+     * Optional. The Compute Engine zone
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
      * with worker_region. If neither worker_region nor worker_zone is specified,
      * a zone in the control plane's region is chosen based on available capacity.
      * </pre>
      *
-     * <code>string worker_zone = 14;</code>
+     * <code>string worker_zone = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The workerZone to set.
      * @return This builder for chaining.
@@ -4395,18 +4713,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine zone
+     * Optional. The Compute Engine zone
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
      * with worker_region. If neither worker_region nor worker_zone is specified,
      * a zone in the control plane's region is chosen based on available capacity.
      * </pre>
      *
-     * <code>string worker_zone = 14;</code>
+     * <code>string worker_zone = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -4416,18 +4735,19 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The Compute Engine zone
+     * Optional. The Compute Engine zone
      * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
      * which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
      * with worker_region. If neither worker_region nor worker_zone is specified,
      * a zone in the control plane's region is chosen based on available capacity.
      * </pre>
      *
-     * <code>string worker_zone = 14;</code>
+     * <code>string worker_zone = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for workerZone to set.
      * @return This builder for chaining.
@@ -4444,6 +4764,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int shuffleMode_ = 0;
+
     /**
      *
      *
@@ -4461,6 +4782,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public int getShuffleModeValue() {
       return shuffleMode_;
     }
+
     /**
      *
      *
@@ -4481,6 +4803,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4500,6 +4823,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           com.google.dataflow.v1beta3.ShuffleMode.forNumber(shuffleMode_);
       return result == null ? com.google.dataflow.v1beta3.ShuffleMode.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -4523,6 +4847,7 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4549,28 +4874,34 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             com.google.dataflow.v1beta3.DebugOptions.Builder,
             com.google.dataflow.v1beta3.DebugOptionsOrBuilder>
         debugOptionsBuilder_;
+
     /**
      *
      *
      * <pre>
-     * Any debugging options to be supplied to the job.
+     * Optional. Any debugging options to be supplied to the job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.DebugOptions debug_options = 17;</code>
+     * <code>
+     * .google.dataflow.v1beta3.DebugOptions debug_options = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the debugOptions field is set.
      */
     public boolean hasDebugOptions() {
       return ((bitField0_ & 0x00010000) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Any debugging options to be supplied to the job.
+     * Optional. Any debugging options to be supplied to the job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.DebugOptions debug_options = 17;</code>
+     * <code>
+     * .google.dataflow.v1beta3.DebugOptions debug_options = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The debugOptions.
      */
@@ -4583,14 +4914,17 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return debugOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Any debugging options to be supplied to the job.
+     * Optional. Any debugging options to be supplied to the job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.DebugOptions debug_options = 17;</code>
+     * <code>
+     * .google.dataflow.v1beta3.DebugOptions debug_options = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setDebugOptions(com.google.dataflow.v1beta3.DebugOptions value) {
       if (debugOptionsBuilder_ == null) {
@@ -4605,14 +4939,17 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Any debugging options to be supplied to the job.
+     * Optional. Any debugging options to be supplied to the job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.DebugOptions debug_options = 17;</code>
+     * <code>
+     * .google.dataflow.v1beta3.DebugOptions debug_options = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setDebugOptions(
         com.google.dataflow.v1beta3.DebugOptions.Builder builderForValue) {
@@ -4625,14 +4962,17 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Any debugging options to be supplied to the job.
+     * Optional. Any debugging options to be supplied to the job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.DebugOptions debug_options = 17;</code>
+     * <code>
+     * .google.dataflow.v1beta3.DebugOptions debug_options = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeDebugOptions(com.google.dataflow.v1beta3.DebugOptions value) {
       if (debugOptionsBuilder_ == null) {
@@ -4652,14 +4992,17 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Any debugging options to be supplied to the job.
+     * Optional. Any debugging options to be supplied to the job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.DebugOptions debug_options = 17;</code>
+     * <code>
+     * .google.dataflow.v1beta3.DebugOptions debug_options = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearDebugOptions() {
       bitField0_ = (bitField0_ & ~0x00010000);
@@ -4671,28 +5014,34 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Any debugging options to be supplied to the job.
+     * Optional. Any debugging options to be supplied to the job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.DebugOptions debug_options = 17;</code>
+     * <code>
+     * .google.dataflow.v1beta3.DebugOptions debug_options = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.dataflow.v1beta3.DebugOptions.Builder getDebugOptionsBuilder() {
       bitField0_ |= 0x00010000;
       onChanged();
       return getDebugOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * Any debugging options to be supplied to the job.
+     * Optional. Any debugging options to be supplied to the job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.DebugOptions debug_options = 17;</code>
+     * <code>
+     * .google.dataflow.v1beta3.DebugOptions debug_options = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.dataflow.v1beta3.DebugOptionsOrBuilder getDebugOptionsOrBuilder() {
       if (debugOptionsBuilder_ != null) {
@@ -4703,14 +5052,17 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
             : debugOptions_;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Any debugging options to be supplied to the job.
+     * Optional. Any debugging options to be supplied to the job.
      * </pre>
      *
-     * <code>.google.dataflow.v1beta3.DebugOptions debug_options = 17;</code>
+     * <code>
+     * .google.dataflow.v1beta3.DebugOptions debug_options = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.dataflow.v1beta3.DebugOptions,
@@ -4727,6 +5079,206 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         debugOptions_ = null;
       }
       return debugOptionsBuilder_;
+    }
+
+    private boolean useStreamingEngineResourceBasedBilling_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the job uses the Streaming Engine resource-based
+     * billing model.
+     * </pre>
+     *
+     * <code>
+     * bool use_streaming_engine_resource_based_billing = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The useStreamingEngineResourceBasedBilling.
+     */
+    @java.lang.Override
+    public boolean getUseStreamingEngineResourceBasedBilling() {
+      return useStreamingEngineResourceBasedBilling_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the job uses the Streaming Engine resource-based
+     * billing model.
+     * </pre>
+     *
+     * <code>
+     * bool use_streaming_engine_resource_based_billing = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The useStreamingEngineResourceBasedBilling to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseStreamingEngineResourceBasedBilling(boolean value) {
+
+      useStreamingEngineResourceBasedBilling_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the job uses the Streaming Engine resource-based
+     * billing model.
+     * </pre>
+     *
+     * <code>
+     * bool use_streaming_engine_resource_based_billing = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUseStreamingEngineResourceBasedBilling() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      useStreamingEngineResourceBasedBilling_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int streamingMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for streamingMode.
+     */
+    @java.lang.Override
+    public int getStreamingModeValue() {
+      return streamingMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for streamingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStreamingModeValue(int value) {
+      streamingMode_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The streamingMode.
+     */
+    @java.lang.Override
+    public com.google.dataflow.v1beta3.StreamingMode getStreamingMode() {
+      com.google.dataflow.v1beta3.StreamingMode result =
+          com.google.dataflow.v1beta3.StreamingMode.forNumber(streamingMode_);
+      return result == null ? com.google.dataflow.v1beta3.StreamingMode.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The streamingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStreamingMode(com.google.dataflow.v1beta3.StreamingMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00040000;
+      streamingMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the Streaming Engine message processing guarantees.
+     * Reduces cost and latency but might result in duplicate messages committed
+     * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+     * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+     * case. For more information, see
+     * [Set the pipeline streaming
+     * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+     * </pre>
+     *
+     * <code>
+     * .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStreamingMode() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      streamingMode_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

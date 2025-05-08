@@ -45,6 +45,7 @@ public interface UpdateQueueRequestOrBuilder
    * @return Whether the queue field is set.
    */
   boolean hasQueue();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface UpdateQueueRequestOrBuilder
    * @return The queue.
    */
   com.google.cloud.tasks.v2beta2.Queue getQueue();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface UpdateQueueRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface UpdateQueueRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

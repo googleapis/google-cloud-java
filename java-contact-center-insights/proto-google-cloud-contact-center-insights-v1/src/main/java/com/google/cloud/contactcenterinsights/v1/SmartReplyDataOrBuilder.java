@@ -36,6 +36,7 @@ public interface SmartReplyDataOrBuilder
    * @return The reply.
    */
   java.lang.String getReply();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface SmartReplyDataOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   int getMetadataCount();
+
   /**
    *
    *
@@ -86,9 +88,11 @@ public interface SmartReplyDataOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   boolean containsMetadata(java.lang.String key);
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
+
   /**
    *
    *
@@ -100,6 +104,7 @@ public interface SmartReplyDataOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface SmartReplyDataOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface SmartReplyDataOrBuilder
    * @return The queryRecord.
    */
   java.lang.String getQueryRecord();
+
   /**
    *
    *

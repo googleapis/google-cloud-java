@@ -28,6 +28,92 @@ public interface RagCorpusOrBuilder
    *
    *
    * <pre>
+   * Optional. Immutable. The config for the Vector DBs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the vectorDbConfig field is set.
+   */
+  boolean hasVectorDbConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vector DBs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The vectorDbConfig.
+   */
+  com.google.cloud.aiplatform.v1.RagVectorDbConfig getVectorDbConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vector DBs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.RagVectorDbConfigOrBuilder getVectorDbConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vertex AI Search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the vertexAiSearchConfig field is set.
+   */
+  boolean hasVertexAiSearchConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vertex AI Search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The vertexAiSearchConfig.
+   */
+  com.google.cloud.aiplatform.v1.VertexAiSearchConfig getVertexAiSearchConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The config for the Vertex AI Search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.VertexAiSearchConfig vertex_ai_search_config = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.VertexAiSearchConfigOrBuilder getVertexAiSearchConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The resource name of the RagCorpus.
    * </pre>
    *
@@ -36,6 +122,7 @@ public interface RagCorpusOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +150,7 @@ public interface RagCorpusOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -90,6 +178,7 @@ public interface RagCorpusOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -116,6 +205,7 @@ public interface RagCorpusOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -129,6 +219,7 @@ public interface RagCorpusOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -154,6 +245,7 @@ public interface RagCorpusOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -167,6 +259,7 @@ public interface RagCorpusOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -193,6 +286,7 @@ public interface RagCorpusOrBuilder
    * @return Whether the corpusStatus field is set.
    */
   boolean hasCorpusStatus();
+
   /**
    *
    *
@@ -207,6 +301,7 @@ public interface RagCorpusOrBuilder
    * @return The corpusStatus.
    */
   com.google.cloud.aiplatform.v1.CorpusStatus getCorpusStatus();
+
   /**
    *
    *
@@ -219,47 +314,6 @@ public interface RagCorpusOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.CorpusStatusOrBuilder getCorpusStatusOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Immutable. The config for the Vector DBs.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
-   *
-   * @return Whether the vectorDbConfig field is set.
-   */
-  boolean hasVectorDbConfig();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Immutable. The config for the Vector DBs.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
-   *
-   * @return The vectorDbConfig.
-   */
-  com.google.cloud.aiplatform.v1.RagVectorDbConfig getVectorDbConfig();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Immutable. The config for the Vector DBs.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1.RagVectorDbConfig vector_db_config = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
-   */
-  com.google.cloud.aiplatform.v1.RagVectorDbConfigOrBuilder getVectorDbConfigOrBuilder();
 
   com.google.cloud.aiplatform.v1.RagCorpus.BackendConfigCase getBackendConfigCase();
 }

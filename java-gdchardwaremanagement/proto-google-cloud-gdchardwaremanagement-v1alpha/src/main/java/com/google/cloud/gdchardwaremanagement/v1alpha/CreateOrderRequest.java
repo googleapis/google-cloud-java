@@ -33,6 +33,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.CreateOrderRequest)
     CreateOrderRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateOrderRequest.newBuilder() to construct.
   private CreateOrderRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderId_ = "";
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -190,6 +195,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int ORDER_FIELD_NUMBER = 3;
   private com.google.cloud.gdchardwaremanagement.v1alpha.Order order_;
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasOrder() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -226,6 +233,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.gdchardwaremanagement.v1alpha.Order.getDefaultInstance()
         : order_;
   }
+
   /**
    *
    *
@@ -248,6 +256,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -272,6 +281,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -490,6 +500,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -738,6 +749,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -763,6 +775,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -788,6 +801,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -812,6 +826,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +847,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +875,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object orderId_ = "";
+
     /**
      *
      *
@@ -888,6 +905,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -917,6 +935,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -945,6 +964,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +989,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1005,6 +1026,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.gdchardwaremanagement.v1alpha.Order.Builder,
             com.google.cloud.gdchardwaremanagement.v1alpha.OrderOrBuilder>
         orderBuilder_;
+
     /**
      *
      *
@@ -1021,6 +1043,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasOrder() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1043,6 +1066,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
         return orderBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1067,6 +1091,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1114,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1119,6 +1145,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1140,6 +1167,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1156,6 +1184,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getOrderFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1176,6 +1205,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
             : order_;
       }
     }
+
     /**
      *
      *
@@ -1205,6 +1235,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1228,6 +1259,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1251,6 +1283,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1273,6 +1306,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1291,6 +1325,7 @@ public final class CreateOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class SecondaryBootDiskUpdateStrategy extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.container.v1.SecondaryBootDiskUpdateStrategy)
     SecondaryBootDiskUpdateStrategyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecondaryBootDiskUpdateStrategy.newBuilder() to construct.
   private SecondaryBootDiskUpdateStrategy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -214,6 +215,7 @@ public final class SecondaryBootDiskUpdateStrategy extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

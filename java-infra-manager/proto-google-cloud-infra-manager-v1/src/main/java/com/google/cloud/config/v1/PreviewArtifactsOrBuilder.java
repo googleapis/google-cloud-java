@@ -37,6 +37,7 @@ public interface PreviewArtifactsOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface PreviewArtifactsOrBuilder
    * @return The artifacts.
    */
   java.lang.String getArtifacts();
+
   /**
    *
    *

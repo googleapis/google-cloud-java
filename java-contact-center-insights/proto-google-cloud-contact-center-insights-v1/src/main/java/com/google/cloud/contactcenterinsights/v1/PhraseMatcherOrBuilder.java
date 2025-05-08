@@ -38,6 +38,7 @@ public interface PhraseMatcherOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface PhraseMatcherOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface PhraseMatcherOrBuilder
    * @return The versionTag.
    */
   java.lang.String getVersionTag();
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public interface PhraseMatcherOrBuilder
    * @return Whether the revisionCreateTime field is set.
    */
   boolean hasRevisionCreateTime();
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public interface PhraseMatcherOrBuilder
    * @return The revisionCreateTime.
    */
   com.google.protobuf.Timestamp getRevisionCreateTime();
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public interface PhraseMatcherOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public interface PhraseMatcherOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -239,6 +246,7 @@ public interface PhraseMatcherOrBuilder
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup>
       getPhraseMatchRuleGroupsList();
+
   /**
    *
    *
@@ -252,6 +260,7 @@ public interface PhraseMatcherOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup getPhraseMatchRuleGroups(
       int index);
+
   /**
    *
    *
@@ -264,6 +273,7 @@ public interface PhraseMatcherOrBuilder
    * </code>
    */
   int getPhraseMatchRuleGroupsCount();
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public interface PhraseMatcherOrBuilder
    */
   java.util.List<? extends com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroupOrBuilder>
       getPhraseMatchRuleGroupsOrBuilderList();
+
   /**
    *
    *
@@ -306,6 +317,7 @@ public interface PhraseMatcherOrBuilder
    * @return Whether the activationUpdateTime field is set.
    */
   boolean hasActivationUpdateTime();
+
   /**
    *
    *
@@ -321,6 +333,7 @@ public interface PhraseMatcherOrBuilder
    * @return The activationUpdateTime.
    */
   com.google.protobuf.Timestamp getActivationUpdateTime();
+
   /**
    *
    *
@@ -350,6 +363,7 @@ public interface PhraseMatcherOrBuilder
    * @return The enum numeric value on the wire for roleMatch.
    */
   int getRoleMatchValue();
+
   /**
    *
    *
@@ -379,6 +393,7 @@ public interface PhraseMatcherOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -392,6 +407,7 @@ public interface PhraseMatcherOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface CreateListingRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -60,9 +61,7 @@ public interface CreateListingRequestOrBuilder
    *
    * <pre>
    * Required. The ID of the listing to create.
-   * Must contain only Unicode letters, numbers (0-9), underscores (_).
-   * Should not use characters that require URL-escaping, or characters
-   * outside of ASCII, spaces.
+   * Must contain only ASCII letters, numbers (0-9), underscores (_).
    * Max length: 100 bytes.
    * </pre>
    *
@@ -71,14 +70,13 @@ public interface CreateListingRequestOrBuilder
    * @return The listingId.
    */
   java.lang.String getListingId();
+
   /**
    *
    *
    * <pre>
    * Required. The ID of the listing to create.
-   * Must contain only Unicode letters, numbers (0-9), underscores (_).
-   * Should not use characters that require URL-escaping, or characters
-   * outside of ASCII, spaces.
+   * Must contain only ASCII letters, numbers (0-9), underscores (_).
    * Max length: 100 bytes.
    * </pre>
    *
@@ -102,6 +100,7 @@ public interface CreateListingRequestOrBuilder
    * @return Whether the listing field is set.
    */
   boolean hasListing();
+
   /**
    *
    *
@@ -116,6 +115,7 @@ public interface CreateListingRequestOrBuilder
    * @return The listing.
    */
   com.google.cloud.bigquery.analyticshub.v1.Listing getListing();
+
   /**
    *
    *

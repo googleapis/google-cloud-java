@@ -28,8 +28,8 @@ public interface DynamicTemplateLaunchParamsOrBuilder
    *
    *
    * <pre>
-   * Path to dynamic template spec file on Cloud Storage.
-   * The file must be a Json serialized DynamicTemplateFieSpec object.
+   * Path to the dynamic template specification file on Cloud Storage.
+   * The file must be a JSON serialized `DynamicTemplateFileSpec` object.
    * </pre>
    *
    * <code>string gcs_path = 1;</code>
@@ -37,12 +37,13 @@ public interface DynamicTemplateLaunchParamsOrBuilder
    * @return The gcsPath.
    */
   java.lang.String getGcsPath();
+
   /**
    *
    *
    * <pre>
-   * Path to dynamic template spec file on Cloud Storage.
-   * The file must be a Json serialized DynamicTemplateFieSpec object.
+   * Path to the dynamic template specification file on Cloud Storage.
+   * The file must be a JSON serialized `DynamicTemplateFileSpec` object.
    * </pre>
    *
    * <code>string gcs_path = 1;</code>
@@ -64,6 +65,7 @@ public interface DynamicTemplateLaunchParamsOrBuilder
    * @return The stagingLocation.
    */
   java.lang.String getStagingLocation();
+
   /**
    *
    *

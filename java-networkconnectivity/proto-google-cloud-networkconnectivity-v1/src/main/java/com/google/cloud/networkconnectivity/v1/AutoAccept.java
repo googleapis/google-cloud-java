@@ -39,6 +39,7 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.AutoAccept)
     AutoAcceptOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoAccept.newBuilder() to construct.
   private AutoAccept(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,48 +75,54 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList autoAcceptProjects_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
    * <pre>
-   * A list of project ids or project numbers for which you want
+   * Optional. A list of project ids or project numbers for which you want
    * to enable auto-accept. The auto-accept setting is applied to
    * spokes being created or updated in these projects.
    * </pre>
    *
-   * <code>repeated string auto_accept_projects = 1;</code>
+   * <code>repeated string auto_accept_projects = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return A list containing the autoAcceptProjects.
    */
   public com.google.protobuf.ProtocolStringList getAutoAcceptProjectsList() {
     return autoAcceptProjects_;
   }
+
   /**
    *
    *
    * <pre>
-   * A list of project ids or project numbers for which you want
+   * Optional. A list of project ids or project numbers for which you want
    * to enable auto-accept. The auto-accept setting is applied to
    * spokes being created or updated in these projects.
    * </pre>
    *
-   * <code>repeated string auto_accept_projects = 1;</code>
+   * <code>repeated string auto_accept_projects = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The count of autoAcceptProjects.
    */
   public int getAutoAcceptProjectsCount() {
     return autoAcceptProjects_.size();
   }
+
   /**
    *
    *
    * <pre>
-   * A list of project ids or project numbers for which you want
+   * Optional. A list of project ids or project numbers for which you want
    * to enable auto-accept. The auto-accept setting is applied to
    * spokes being created or updated in these projects.
    * </pre>
    *
-   * <code>repeated string auto_accept_projects = 1;</code>
+   * <code>repeated string auto_accept_projects = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The autoAcceptProjects at the given index.
@@ -123,16 +130,18 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAutoAcceptProjects(int index) {
     return autoAcceptProjects_.get(index);
   }
+
   /**
    *
    *
    * <pre>
-   * A list of project ids or project numbers for which you want
+   * Optional. A list of project ids or project numbers for which you want
    * to enable auto-accept. The auto-accept setting is applied to
    * spokes being created or updated in these projects.
    * </pre>
    *
-   * <code>repeated string auto_accept_projects = 1;</code>
+   * <code>repeated string auto_accept_projects = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the autoAcceptProjects at the given index.
@@ -307,6 +316,7 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -512,16 +522,18 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
      * <pre>
-     * A list of project ids or project numbers for which you want
+     * Optional. A list of project ids or project numbers for which you want
      * to enable auto-accept. The auto-accept setting is applied to
      * spokes being created or updated in these projects.
      * </pre>
      *
-     * <code>repeated string auto_accept_projects = 1;</code>
+     * <code>repeated string auto_accept_projects = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return A list containing the autoAcceptProjects.
      */
@@ -529,32 +541,36 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
       autoAcceptProjects_.makeImmutable();
       return autoAcceptProjects_;
     }
+
     /**
      *
      *
      * <pre>
-     * A list of project ids or project numbers for which you want
+     * Optional. A list of project ids or project numbers for which you want
      * to enable auto-accept. The auto-accept setting is applied to
      * spokes being created or updated in these projects.
      * </pre>
      *
-     * <code>repeated string auto_accept_projects = 1;</code>
+     * <code>repeated string auto_accept_projects = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The count of autoAcceptProjects.
      */
     public int getAutoAcceptProjectsCount() {
       return autoAcceptProjects_.size();
     }
+
     /**
      *
      *
      * <pre>
-     * A list of project ids or project numbers for which you want
+     * Optional. A list of project ids or project numbers for which you want
      * to enable auto-accept. The auto-accept setting is applied to
      * spokes being created or updated in these projects.
      * </pre>
      *
-     * <code>repeated string auto_accept_projects = 1;</code>
+     * <code>repeated string auto_accept_projects = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The autoAcceptProjects at the given index.
@@ -562,16 +578,18 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAutoAcceptProjects(int index) {
       return autoAcceptProjects_.get(index);
     }
+
     /**
      *
      *
      * <pre>
-     * A list of project ids or project numbers for which you want
+     * Optional. A list of project ids or project numbers for which you want
      * to enable auto-accept. The auto-accept setting is applied to
      * spokes being created or updated in these projects.
      * </pre>
      *
-     * <code>repeated string auto_accept_projects = 1;</code>
+     * <code>repeated string auto_accept_projects = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the autoAcceptProjects at the given index.
@@ -579,16 +597,18 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAutoAcceptProjectsBytes(int index) {
       return autoAcceptProjects_.getByteString(index);
     }
+
     /**
      *
      *
      * <pre>
-     * A list of project ids or project numbers for which you want
+     * Optional. A list of project ids or project numbers for which you want
      * to enable auto-accept. The auto-accept setting is applied to
      * spokes being created or updated in these projects.
      * </pre>
      *
-     * <code>repeated string auto_accept_projects = 1;</code>
+     * <code>repeated string auto_accept_projects = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The autoAcceptProjects to set.
@@ -604,16 +624,18 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * A list of project ids or project numbers for which you want
+     * Optional. A list of project ids or project numbers for which you want
      * to enable auto-accept. The auto-accept setting is applied to
      * spokes being created or updated in these projects.
      * </pre>
      *
-     * <code>repeated string auto_accept_projects = 1;</code>
+     * <code>repeated string auto_accept_projects = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The autoAcceptProjects to add.
      * @return This builder for chaining.
@@ -628,16 +650,18 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * A list of project ids or project numbers for which you want
+     * Optional. A list of project ids or project numbers for which you want
      * to enable auto-accept. The auto-accept setting is applied to
      * spokes being created or updated in these projects.
      * </pre>
      *
-     * <code>repeated string auto_accept_projects = 1;</code>
+     * <code>repeated string auto_accept_projects = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param values The autoAcceptProjects to add.
      * @return This builder for chaining.
@@ -649,16 +673,18 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * A list of project ids or project numbers for which you want
+     * Optional. A list of project ids or project numbers for which you want
      * to enable auto-accept. The auto-accept setting is applied to
      * spokes being created or updated in these projects.
      * </pre>
      *
-     * <code>repeated string auto_accept_projects = 1;</code>
+     * <code>repeated string auto_accept_projects = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -669,16 +695,18 @@ public final class AutoAccept extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * A list of project ids or project numbers for which you want
+     * Optional. A list of project ids or project numbers for which you want
      * to enable auto-accept. The auto-accept setting is applied to
      * spokes being created or updated in these projects.
      * </pre>
      *
-     * <code>repeated string auto_accept_projects = 1;</code>
+     * <code>repeated string auto_accept_projects = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The bytes of the autoAcceptProjects to add.
      * @return This builder for chaining.

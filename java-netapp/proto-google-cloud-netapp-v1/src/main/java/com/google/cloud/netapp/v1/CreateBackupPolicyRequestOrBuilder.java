@@ -39,6 +39,7 @@ public interface CreateBackupPolicyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateBackupPolicyRequestOrBuilder
    * @return Whether the backupPolicy field is set.
    */
   boolean hasBackupPolicy();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateBackupPolicyRequestOrBuilder
    * @return The backupPolicy.
    */
   com.google.cloud.netapp.v1.BackupPolicy getBackupPolicy();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface CreateBackupPolicyRequestOrBuilder
    * @return The backupPolicyId.
    */
   java.lang.String getBackupPolicyId();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public interface ListChannelConnectionsResponseOrBuilder
    * <code>repeated .google.cloud.eventarc.v1.ChannelConnection channel_connections = 1;</code>
    */
   java.util.List<com.google.cloud.eventarc.v1.ChannelConnection> getChannelConnectionsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListChannelConnectionsResponseOrBuilder
    * <code>repeated .google.cloud.eventarc.v1.ChannelConnection channel_connections = 1;</code>
    */
   com.google.cloud.eventarc.v1.ChannelConnection getChannelConnections(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListChannelConnectionsResponseOrBuilder
    * <code>repeated .google.cloud.eventarc.v1.ChannelConnection channel_connections = 1;</code>
    */
   int getChannelConnectionsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListChannelConnectionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.eventarc.v1.ChannelConnectionOrBuilder>
       getChannelConnectionsOrBuilderList();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface ListChannelConnectionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface ListChannelConnectionsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -134,6 +140,7 @@ public interface ListChannelConnectionsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -147,6 +154,7 @@ public interface ListChannelConnectionsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

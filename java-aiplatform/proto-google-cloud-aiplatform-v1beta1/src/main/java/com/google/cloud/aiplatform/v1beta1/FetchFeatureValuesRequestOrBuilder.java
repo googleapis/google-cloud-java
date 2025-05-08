@@ -35,11 +35,12 @@ public interface FetchFeatureValuesRequestOrBuilder
    * <code>string id = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=129
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=141
    * @return Whether the id field is set.
    */
   @java.lang.Deprecated
   boolean hasId();
+
   /**
    *
    *
@@ -51,11 +52,12 @@ public interface FetchFeatureValuesRequestOrBuilder
    * <code>string id = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=129
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=141
    * @return The id.
    */
   @java.lang.Deprecated
   java.lang.String getId();
+
   /**
    *
    *
@@ -67,7 +69,7 @@ public interface FetchFeatureValuesRequestOrBuilder
    * <code>string id = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=129
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=141
    * @return The bytes for id.
    */
   @java.lang.Deprecated
@@ -88,6 +90,7 @@ public interface FetchFeatureValuesRequestOrBuilder
    * @return The featureView.
    */
   java.lang.String getFeatureView();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface FetchFeatureValuesRequestOrBuilder
    * @return Whether the dataKey field is set.
    */
   boolean hasDataKey();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface FetchFeatureValuesRequestOrBuilder
    * @return The dataKey.
    */
   com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey getDataKey();
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public interface FetchFeatureValuesRequestOrBuilder
    * @return The enum numeric value on the wire for dataFormat.
    */
   int getDataFormatValue();
+
   /**
    *
    *
@@ -192,11 +198,12 @@ public interface FetchFeatureValuesRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=153
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=165
    * @return The enum numeric value on the wire for format.
    */
   @java.lang.Deprecated
   int getFormatValue();
+
   /**
    *
    *
@@ -211,7 +218,7 @@ public interface FetchFeatureValuesRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=153
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=165
    * @return The format.
    */
   @java.lang.Deprecated

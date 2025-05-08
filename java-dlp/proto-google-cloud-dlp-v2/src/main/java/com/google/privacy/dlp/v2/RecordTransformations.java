@@ -34,6 +34,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.RecordTransformations)
     RecordTransformationsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RecordTransformations.newBuilder() to construct.
   private RecordTransformations(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.FieldTransformation> fieldTransformations_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       getFieldTransformationsList() {
     return fieldTransformations_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       getFieldTransformationsOrBuilderList() {
     return fieldTransformations_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
   public int getFieldTransformationsCount() {
     return fieldTransformations_.size();
   }
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
   public com.google.privacy.dlp.v2.FieldTransformation getFieldTransformations(int index) {
     return fieldTransformations_.get(index);
   }
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.RecordSuppression> recordSuppressions_;
+
   /**
    *
    *
@@ -156,6 +163,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.privacy.dlp.v2.RecordSuppression> getRecordSuppressionsList() {
     return recordSuppressions_;
   }
+
   /**
    *
    *
@@ -171,6 +179,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       getRecordSuppressionsOrBuilderList() {
     return recordSuppressions_;
   }
+
   /**
    *
    *
@@ -185,6 +194,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
   public int getRecordSuppressionsCount() {
     return recordSuppressions_.size();
   }
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
   public com.google.privacy.dlp.v2.RecordSuppression getRecordSuppressions(int index) {
     return recordSuppressions_.get(index);
   }
+
   /**
    *
    *
@@ -389,6 +400,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -710,6 +722,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
         return fieldTransformationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -726,6 +739,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
         return fieldTransformationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -742,6 +756,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
         return fieldTransformationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -765,6 +780,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +824,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +848,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +869,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +890,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +911,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -909,6 +931,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +951,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +965,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
         int index) {
       return getFieldTransformationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -958,6 +983,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
         return fieldTransformationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -975,6 +1001,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(fieldTransformations_);
       }
     }
+
     /**
      *
      *
@@ -988,6 +1015,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       return getFieldTransformationsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.FieldTransformation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1002,6 +1030,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       return getFieldTransformationsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.FieldTransformation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1071,6 +1100,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
         return recordSuppressionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1088,6 +1118,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
         return recordSuppressionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1105,6 +1136,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
         return recordSuppressionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1129,6 +1161,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1150,6 +1183,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1173,6 +1207,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1197,6 +1232,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1218,6 +1254,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1239,6 +1276,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1260,6 +1298,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1280,6 +1319,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1300,6 +1340,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1314,6 +1355,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
         int index) {
       return getRecordSuppressionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1332,6 +1374,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
         return recordSuppressionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1350,6 +1393,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(recordSuppressions_);
       }
     }
+
     /**
      *
      *
@@ -1364,6 +1408,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       return getRecordSuppressionsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.RecordSuppression.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1379,6 +1424,7 @@ public final class RecordTransformations extends com.google.protobuf.GeneratedMe
       return getRecordSuppressionsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.RecordSuppression.getDefaultInstance());
     }
+
     /**
      *
      *

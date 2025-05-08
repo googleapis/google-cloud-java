@@ -73,6 +73,10 @@ public final class GroundedGenerationServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_GoogleSearchSource_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_EnterpriseWebRetrievalSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_EnterpriseWebRetrievalSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSpec_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSpec_fieldAccessorTable;
@@ -113,6 +117,18 @@ public final class GroundedGenerationServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_GroundingSupport_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_WebsiteInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_WebsiteInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_Image_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_Image_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1_CheckGroundingSpec_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_CheckGroundingSpec_fieldAccessorTable;
@@ -129,6 +145,10 @@ public final class GroundedGenerationServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_CheckGroundingResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_CheckGroundingResponse_CheckGroundingFactChunk_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_CheckGroundingResponse_CheckGroundingFactChunk_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1_CheckGroundingResponse_Claim_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_CheckGroundingResponse_Claim_fieldAccessorTable;
@@ -141,181 +161,231 @@ public final class GroundedGenerationServiceProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\nAgoogle/cloud/discoveryengine/v1/ground"
-          + "ed_generation_service.proto\022\037google.clou"
+      "\n"
+          + "Agoogle/cloud/discoveryengine/v1/grounded_generation_service.proto\022\037google.clou"
           + "d.discoveryengine.v1\032\034google/api/annotat"
           + "ions.proto\032\027google/api/client.proto\032\037goo"
           + "gle/api/field_behavior.proto\032\031google/api"
-          + "/resource.proto\032/google/cloud/discoverye"
-          + "ngine/v1/grounding.proto\"\231\001\n\031GroundedGen"
-          + "erationContent\022\014\n\004role\030\001 \001(\t\022N\n\005parts\030\002 "
-          + "\003(\0132?.google.cloud.discoveryengine.v1.Gr"
-          + "oundedGenerationContent.Part\032\036\n\004Part\022\016\n\004"
-          + "text\030\001 \001(\tH\000B\006\n\004data\"\311\023\n\036GenerateGrounde"
-          + "dContentRequest\022A\n\010location\030\001 \001(\tB/\340A\002\372A"
-          + ")\n\'discoveryengine.googleapis.com/Locati"
-          + "on\022V\n\022system_instruction\030\005 \001(\0132:.google."
-          + "cloud.discoveryengine.v1.GroundedGenerat"
-          + "ionContent\022L\n\010contents\030\002 \003(\0132:.google.cl"
-          + "oud.discoveryengine.v1.GroundedGeneratio"
-          + "nContent\022g\n\017generation_spec\030\003 \001(\0132N.goog"
-          + "le.cloud.discoveryengine.v1.GenerateGrou"
-          + "ndedContentRequest.GenerationSpec\022e\n\016gro"
-          + "unding_spec\030\004 \001(\0132M.google.cloud.discove"
-          + "ryengine.v1.GenerateGroundedContentReque"
-          + "st.GroundingSpec\022d\n\013user_labels\030\006 \003(\0132O."
-          + "google.cloud.discoveryengine.v1.Generate"
-          + "GroundedContentRequest.UserLabelsEntry\032\277"
-          + "\002\n\016GenerationSpec\022\020\n\010model_id\030\003 \001(\t\022\025\n\rl"
-          + "anguage_code\030\002 \001(\t\022\030\n\013temperature\030\004 \001(\002H"
-          + "\000\210\001\001\022\022\n\005top_p\030\005 \001(\002H\001\210\001\001\022\022\n\005top_k\030\007 \001(\005H"
-          + "\002\210\001\001\022\036\n\021frequency_penalty\030\010 \001(\002H\003\210\001\001\022\035\n\020"
-          + "presence_penalty\030\t \001(\002H\004\210\001\001\022\036\n\021max_outpu"
-          + "t_tokens\030\n \001(\005H\005\210\001\001B\016\n\014_temperatureB\010\n\006_"
-          + "top_pB\010\n\006_top_kB\024\n\022_frequency_penaltyB\023\n"
-          + "\021_presence_penaltyB\024\n\022_max_output_tokens"
-          + "\032\273\003\n\035DynamicRetrievalConfiguration\022\212\001\n\tp"
-          + "redictor\030\001 \001(\0132w.google.cloud.discoverye"
-          + "ngine.v1.GenerateGroundedContentRequest."
-          + "DynamicRetrievalConfiguration.DynamicRet"
-          + "rievalPredictor\032\214\002\n\031DynamicRetrievalPred"
-          + "ictor\022\220\001\n\007version\030\001 \001(\0162\177.google.cloud.d"
-          + "iscoveryengine.v1.GenerateGroundedConten"
-          + "tRequest.DynamicRetrievalConfiguration.D"
-          + "ynamicRetrievalPredictor.Version\022\026\n\tthre"
-          + "shold\030\002 \001(\002H\000\210\001\001\"6\n\007Version\022\027\n\023VERSION_U"
-          + "NSPECIFIED\020\000\022\022\n\016V1_INDEPENDENT\020\001B\014\n\n_thr"
-          + "eshold\032\327\007\n\017GroundingSource\022u\n\rinline_sou"
-          + "rce\030\001 \001(\0132\\.google.cloud.discoveryengine"
-          + ".v1.GenerateGroundedContentRequest.Groun"
-          + "dingSource.InlineSourceH\000\022u\n\rsearch_sour"
-          + "ce\030\002 \001(\0132\\.google.cloud.discoveryengine."
-          + "v1.GenerateGroundedContentRequest.Ground"
-          + "ingSource.SearchSourceH\000\022\202\001\n\024google_sear"
-          + "ch_source\030\003 \001(\0132b.google.cloud.discovery"
-          + "engine.v1.GenerateGroundedContentRequest"
-          + ".GroundingSource.GoogleSearchSourceH\000\032\215\002"
-          + "\n\014InlineSource\022G\n\017grounding_facts\030\001 \003(\0132"
-          + "..google.cloud.discoveryengine.v1.Ground"
-          + "ingFact\022\200\001\n\nattributes\030\002 \003(\0132l.google.cl"
-          + "oud.discoveryengine.v1.GenerateGroundedC"
-          + "ontentRequest.GroundingSource.InlineSour"
-          + "ce.AttributesEntry\0321\n\017AttributesEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032\230\001\n\014Search"
-          + "Source\022I\n\016serving_config\030\001 \001(\tB1\372A.\n,dis"
-          + "coveryengine.googleapis.com/ServingConfi"
-          + "g\022\030\n\020max_result_count\030\002 \001(\005\022\016\n\006filter\030\003 "
-          + "\001(\t\022\023\n\013safe_search\030\005 \001(\010\032\233\001\n\022GoogleSearc"
-          + "hSource\022\204\001\n\030dynamic_retrieval_config\030\002 \001"
-          + "(\0132].google.cloud.discoveryengine.v1.Gen"
+          + "/resource.proto\032/google/cloud/discoveryengine/v1/grounding.proto\"\231\001\n"
+          + "\031GroundedGenerationContent\022\014\n"
+          + "\004role\030\001 \001(\t\022N\n"
+          + "\005parts\030\002 "
+          + "\003(\0132?.google.cloud.discoveryengine.v1.GroundedGenerationContent.Part\032\036\n"
+          + "\004Part\022\016\n"
+          + "\004text\030\001 \001(\tH\000B\006\n"
+          + "\004data\"\237\025\n"
+          + "\036GenerateGroundedContentRequest\022A\n"
+          + "\010location\030\001 \001(\tB/\340A\002\372A)\n"
+          + "\'discoveryengine.googleapis.com/Location\022V\n"
+          + "\022system_instruction\030\005 \001(\0132:.google."
+          + "cloud.discoveryengine.v1.GroundedGenerationContent\022L\n"
+          + "\010contents\030\002 \003(\0132:.google.cl"
+          + "oud.discoveryengine.v1.GroundedGenerationContent\022g\n"
+          + "\017generation_spec\030\003 \001(\0132N.goog"
+          + "le.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec\022e\n"
+          + "\016grounding_spec\030\004 \001(\0132M.google.cloud.discove"
+          + "ryengine.v1.GenerateGroundedContentRequest.GroundingSpec\022d\n"
+          + "\013user_labels\030\006 \003(\0132O.google.cloud.discoveryengine.v1.Generate"
+          + "GroundedContentRequest.UserLabelsEntry\032\333\002\n"
+          + "\016GenerationSpec\022\020\n"
+          + "\010model_id\030\003 \001(\t\022\025\n\r"
+          + "language_code\030\002 \001(\t\022\030\n"
+          + "\013temperature\030\004 \001(\002H\000\210\001\001\022\022\n"
+          + "\005top_p\030\005 \001(\002H\001\210\001\001\022\022\n"
+          + "\005top_k\030\007 \001(\005H\002\210\001\001\022\036\n"
+          + "\021frequency_penalty\030\010 \001(\002H\003\210\001\001\022\021\n"
+          + "\004seed\030\014 \001(\005H\004\210\001\001\022\035\n"
+          + "\020presence_penalty\030\t \001(\002H\005\210\001\001\022\036\n"
+          + "\021max_output_tokens\030\n"
+          + " \001(\005H\006\210\001\001B\016\n"
+          + "\014_temperatureB\010\n"
+          + "\006_top_pB\010\n"
+          + "\006_top_kB\024\n"
+          + "\022_frequency_penaltyB\007\n"
+          + "\005_seedB\023\n"
+          + "\021_presence_penaltyB\024\n"
+          + "\022_max_output_tokens\032\273\003\n"
+          + "\035DynamicRetrievalConfiguration\022\212\001\n"
+          + "\tpredictor\030\001 \001(\0132w.google.cloud.discoveryengine.v1.Gen"
           + "erateGroundedContentRequest.DynamicRetri"
-          + "evalConfigurationB\003\340A\001B\010\n\006source\032{\n\rGrou"
-          + "ndingSpec\022j\n\021grounding_sources\030\001 \003(\0132O.g"
-          + "oogle.cloud.discoveryengine.v1.GenerateG"
-          + "roundedContentRequest.GroundingSource\0321\n"
-          + "\017UserLabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
-          + " \001(\t:\0028\001\"\353\017\n\037GenerateGroundedContentResp"
-          + "onse\022^\n\ncandidates\030\001 \003(\0132J.google.cloud."
+          + "evalConfiguration.DynamicRetrievalPredictor\032\214\002\n"
+          + "\031DynamicRetrievalPredictor\022\220\001\n"
+          + "\007version\030\001 \001(\0162\177.google.cloud.discoveryengi"
+          + "ne.v1.GenerateGroundedContentRequest.Dyn"
+          + "amicRetrievalConfiguration.DynamicRetrievalPredictor.Version\022\026\n"
+          + "\tthreshold\030\002 \001(\002H\000\210\001\001\"6\n"
+          + "\007Version\022\027\n"
+          + "\023VERSION_UNSPECIFIED\020\000\022\022\n"
+          + "\016V1_INDEPENDENT\020\001B\014\n\n"
+          + "_threshold\032\221\t\n"
+          + "\017GroundingSource\022u\n\r"
+          + "inline_source\030\001 \001(\0132\\.google.cloud.discoveryengine.v1.Generate"
+          + "GroundedContentRequest.GroundingSource.InlineSourceH\000\022u\n\r"
+          + "search_source\030\002 \001(\0132\\.google.cloud.discoveryengine.v1.GenerateG"
+          + "roundedContentRequest.GroundingSource.SearchSourceH\000\022\202\001\n"
+          + "\024google_search_source\030\003 \001(\0132b.google.cloud.discoveryengine.v1.Ge"
+          + "nerateGroundedContentRequest.GroundingSource.GoogleSearchSourceH\000\022\227\001\n"
+          + "\037enterprise_web_retrieval_source\030\010 \001(\0132l.google.clo"
+          + "ud.discoveryengine.v1.GenerateGroundedCo"
+          + "ntentRequest.GroundingSource.EnterpriseWebRetrievalSourceH\000\032\215\002\n"
+          + "\014InlineSource\022G\n"
+          + "\017grounding_facts\030\001"
+          + " \003(\0132..google.cloud.discoveryengine.v1.GroundingFact\022\200\001\n\n"
+          + "attributes\030\002 \003(\0132l.google.cloud.discoveryengin"
+          + "e.v1.GenerateGroundedContentRequest.Grou"
+          + "ndingSource.InlineSource.AttributesEntry\0321\n"
+          + "\017AttributesEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\032\230\001\n"
+          + "\014SearchSource\022I\n"
+          + "\016serving_config\030\001 \001(\tB1\372A.\n"
+          + ",discoveryengine.googleapis.com/ServingConfig\022\030\n"
+          + "\020max_result_count\030\002 \001(\005\022\016\n"
+          + "\006filter\030\003 \001(\t\022\023\n"
+          + "\013safe_search\030\005 \001(\010\032\233\001\n"
+          + "\022GoogleSearchSource\022\204\001\n"
+          + "\030dynamic_retrieval_config\030\002 \001(\0132].google.cloud."
           + "discoveryengine.v1.GenerateGroundedConte"
-          + "ntResponse.Candidate\032\347\016\n\tCandidate\022\r\n\005in"
-          + "dex\030\001 \001(\005\022K\n\007content\030\002 \001(\0132:.google.clou"
-          + "d.discoveryengine.v1.GroundedGenerationC"
-          + "ontent\022\034\n\017grounding_score\030\003 \001(\002H\000\210\001\001\022x\n\022"
-          + "grounding_metadata\030\004 \001(\0132\\.google.cloud."
-          + "discoveryengine.v1.GenerateGroundedConte"
-          + "ntResponse.Candidate.GroundingMetadata\032\321"
-          + "\014\n\021GroundingMetadata\022\212\001\n\022retrieval_metad"
-          + "ata\030\005 \003(\0132n.google.cloud.discoveryengine"
-          + ".v1.GenerateGroundedContentResponse.Cand"
-          + "idate.GroundingMetadata.RetrievalMetadat"
-          + "a\022B\n\016support_chunks\030\001 \003(\0132*.google.cloud"
-          + ".discoveryengine.v1.FactChunk\022\032\n\022web_sea"
-          + "rch_queries\030\003 \003(\t\022\211\001\n\022search_entry_point"
-          + "\030\004 \001(\0132m.google.cloud.discoveryengine.v1"
-          + ".GenerateGroundedContentResponse.Candida"
-          + "te.GroundingMetadata.SearchEntryPoint\022\210\001"
-          + "\n\021grounding_support\030\002 \003(\0132m.google.cloud"
-          + ".discoveryengine.v1.GenerateGroundedCont"
-          + "entResponse.Candidate.GroundingMetadata."
-          + "GroundingSupport\032\247\003\n\021RetrievalMetadata\022\205"
-          + "\001\n\006source\030\001 \001(\0162u.google.cloud.discovery"
-          + "engine.v1.GenerateGroundedContentRespons"
-          + "e.Candidate.GroundingMetadata.RetrievalM"
-          + "etadata.Source\022\231\001\n\032dynamic_retrieval_met"
-          + "adata\030\002 \001(\0132u.google.cloud.discoveryengi"
-          + "ne.v1.GenerateGroundedContentResponse.Ca"
-          + "ndidate.GroundingMetadata.DynamicRetriev"
-          + "alMetadata\"n\n\006Source\022\026\n\022SOURCE_UNSPECIFI"
-          + "ED\020\000\022\024\n\020VERTEX_AI_SEARCH\020\001\022\021\n\rGOOGLE_SEA"
-          + "RCH\020\003\022\022\n\016INLINE_CONTENT\020\002\022\017\n\013GOOGLE_MAPS"
-          + "\020\004\032\267\001\n\030DynamicRetrievalMetadata\022\232\001\n\022pred"
-          + "ictor_metadata\030\001 \001(\0132~.google.cloud.disc"
+          + "ntRequest.DynamicRetrievalConfigurationB\003\340A\001\032\036\n"
+          + "\034EnterpriseWebRetrievalSourceB\010\n"
+          + "\006source\032{\n\r"
+          + "GroundingSpec\022j\n"
+          + "\021grounding_sources\030\001 \003(\0132O.google.cloud.discoveryengin"
+          + "e.v1.GenerateGroundedContentRequest.GroundingSource\0321\n"
+          + "\017UserLabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\351\024\n"
+          + "\037GenerateGroundedContentResponse\022^\n\n"
+          + "candidates\030\001 \003(\0132J"
+          + ".google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate\032\345\023\n"
+          + "\tCandidate\022\r\n"
+          + "\005index\030\001 \001(\005\022K\n"
+          + "\007content\030\002 \001(\013"
+          + "2:.google.cloud.discoveryengine.v1.GroundedGenerationContent\022\034\n"
+          + "\017grounding_score\030\003 \001(\002H\000\210\001\001\022x\n"
+          + "\022grounding_metadata\030\004 \001(\0132\\.google.cloud.discoveryengine.v1.Generat"
+          + "eGroundedContentResponse.Candidate.GroundingMetadata\032\317\021\n"
+          + "\021GroundingMetadata\022\212\001\n"
+          + "\022retrieval_metadata\030\005 \003(\0132n.google.cloud.d"
+          + "iscoveryengine.v1.GenerateGroundedConten"
+          + "tResponse.Candidate.GroundingMetadata.RetrievalMetadata\022B\n"
+          + "\016support_chunks\030\001 \003(\0132"
+          + "*.google.cloud.discoveryengine.v1.FactChunk\022\032\n"
+          + "\022web_search_queries\030\003 \003(\t\022\211\001\n"
+          + "\022search_entry_point\030\004 \001(\0132m.google.cloud.disc"
           + "overyengine.v1.GenerateGroundedContentRe"
-          + "sponse.Candidate.GroundingMetadata.Dynam"
-          + "icRetrievalPredictorMetadata\032\236\002\n!Dynamic"
-          + "RetrievalPredictorMetadata\022\230\001\n\007version\030\001"
-          + " \001(\0162\206\001.google.cloud.discoveryengine.v1."
-          + "GenerateGroundedContentResponse.Candidat"
-          + "e.GroundingMetadata.DynamicRetrievalPred"
-          + "ictorMetadata.Version\022\027\n\nprediction\030\002 \001("
-          + "\002H\000\210\001\001\"6\n\007Version\022\027\n\023VERSION_UNSPECIFIED"
-          + "\020\000\022\022\n\016V1_INDEPENDENT\020\001B\r\n\013_prediction\032>\n"
-          + "\020SearchEntryPoint\022\030\n\020rendered_content\030\001 "
-          + "\001(\t\022\020\n\010sdk_blob\030\002 \001(\014\032s\n\020GroundingSuppor"
-          + "t\022\022\n\nclaim_text\030\001 \001(\t\022\035\n\025support_chunk_i"
-          + "ndices\030\003 \003(\005\022\032\n\rsupport_score\030\002 \001(\002H\000\210\001\001"
-          + "B\020\n\016_support_scoreB\022\n\020_grounding_score\"L"
-          + "\n\022CheckGroundingSpec\022\037\n\022citation_thresho"
-          + "ld\030\001 \001(\001H\000\210\001\001B\025\n\023_citation_threshold\"\237\003\n"
-          + "\025CheckGroundingRequest\022P\n\020grounding_conf"
-          + "ig\030\001 \001(\tB6\340A\002\372A0\n.discoveryengine.google"
-          + "apis.com/GroundingConfig\022\030\n\020answer_candi"
-          + "date\030\002 \001(\t\022=\n\005facts\030\003 \003(\0132..google.cloud"
-          + ".discoveryengine.v1.GroundingFact\022K\n\016gro"
-          + "unding_spec\030\004 \001(\01323.google.cloud.discove"
-          + "ryengine.v1.CheckGroundingSpec\022[\n\013user_l"
-          + "abels\030\005 \003(\0132F.google.cloud.discoveryengi"
-          + "ne.v1.CheckGroundingRequest.UserLabelsEn"
-          + "try\0321\n\017UserLabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
-          + "alue\030\002 \001(\t:\0028\001\"\233\003\n\026CheckGroundingRespons"
-          + "e\022\032\n\rsupport_score\030\001 \001(\002H\000\210\001\001\022@\n\014cited_c"
-          + "hunks\030\003 \003(\0132*.google.cloud.discoveryengi"
-          + "ne.v1.FactChunk\022M\n\006claims\030\004 \003(\0132=.google"
-          + ".cloud.discoveryengine.v1.CheckGrounding"
-          + "Response.Claim\032\301\001\n\005Claim\022\026\n\tstart_pos\030\001 "
-          + "\001(\005H\000\210\001\001\022\024\n\007end_pos\030\002 \001(\005H\001\210\001\001\022\022\n\nclaim_"
-          + "text\030\003 \001(\t\022\030\n\020citation_indices\030\004 \003(\005\022%\n\030"
-          + "grounding_check_required\030\006 \001(\010H\002\210\001\001B\014\n\n_"
-          + "start_posB\n\n\010_end_posB\033\n\031_grounding_chec"
-          + "k_requiredB\020\n\016_support_score2\250\006\n\031Grounde"
-          + "dGenerationService\022\366\001\n\035StreamGenerateGro"
-          + "undedContent\022?.google.cloud.discoveryeng"
-          + "ine.v1.GenerateGroundedContentRequest\032@."
-          + "google.cloud.discoveryengine.v1.Generate"
-          + "GroundedContentResponse\"N\202\323\344\223\002H\"C/v1/{lo"
-          + "cation=projects/*/locations/*}:streamGen"
-          + "erateGroundedContent:\001*(\0010\001\022\346\001\n\027Generate"
-          + "GroundedContent\022?.google.cloud.discovery"
-          + "engine.v1.GenerateGroundedContentRequest"
-          + "\032@.google.cloud.discoveryengine.v1.Gener"
-          + "ateGroundedContentResponse\"H\202\323\344\223\002B\"=/v1/"
-          + "{location=projects/*/locations/*}:genera"
-          + "teGroundedContent:\001*\022\324\001\n\016CheckGrounding\022"
-          + "6.google.cloud.discoveryengine.v1.CheckG"
-          + "roundingRequest\0327.google.cloud.discovery"
-          + "engine.v1.CheckGroundingResponse\"Q\202\323\344\223\002K"
-          + "\"F/v1/{grounding_config=projects/*/locat"
-          + "ions/*/groundingConfigs/*}:check:\001*\032R\312A\036"
-          + "discoveryengine.googleapis.com\322A.https:/"
-          + "/www.googleapis.com/auth/cloud-platformB"
-          + "\221\002\n#com.google.cloud.discoveryengine.v1B"
-          + "\036GroundedGenerationServiceProtoP\001ZMcloud"
-          + ".google.com/go/discoveryengine/apiv1/dis"
-          + "coveryenginepb;discoveryenginepb\242\002\017DISCO"
-          + "VERYENGINE\252\002\037Google.Cloud.DiscoveryEngin"
-          + "e.V1\312\002\037Google\\Cloud\\DiscoveryEngine\\V1\352\002"
-          + "\"Google::Cloud::DiscoveryEngine::V1b\006pro"
-          + "to3"
+          + "sponse.Candidate.GroundingMetadata.SearchEntryPoint\022\210\001\n"
+          + "\021grounding_support\030\002 \003(\0132m.google.cloud.discoveryengine.v1.Genera"
+          + "teGroundedContentResponse.Candidate.GroundingMetadata.GroundingSupport\022z\n"
+          + "\006images\030\t \003(\0132j.google.cloud.discoveryengine.v1"
+          + ".GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata\032\247\003\n"
+          + "\021RetrievalMetadata\022\205\001\n"
+          + "\006source\030\001 \001(\0162u.google.cloud.discoveryengine.v1.GenerateGrou"
+          + "ndedContentResponse.Candidate.GroundingMetadata.RetrievalMetadata.Source\022\231\001\n"
+          + "\032dynamic_retrieval_metadata\030\002 \001(\0132u.google.c"
+          + "loud.discoveryengine.v1.GenerateGrounded"
+          + "ContentResponse.Candidate.GroundingMetadata.DynamicRetrievalMetadata\"n\n"
+          + "\006Source\022\026\n"
+          + "\022SOURCE_UNSPECIFIED\020\000\022\024\n"
+          + "\020VERTEX_AI_SEARCH\020\001\022\021\n\r"
+          + "GOOGLE_SEARCH\020\003\022\022\n"
+          + "\016INLINE_CONTENT\020\002\022\017\n"
+          + "\013GOOGLE_MAPS\020\004\032\267\001\n"
+          + "\030DynamicRetrievalMetadata\022\232\001\n"
+          + "\022predictor_metadata\030\001 \001(\0132~.google.cloud.discoveryengine.v1.Generat"
+          + "eGroundedContentResponse.Candidate.Groun"
+          + "dingMetadata.DynamicRetrievalPredictorMetadata\032\236\002\n"
+          + "!DynamicRetrievalPredictorMetadata\022\230\001\n"
+          + "\007version\030\001 \001(\0162\206\001.google.cloud.d"
+          + "iscoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.Dy"
+          + "namicRetrievalPredictorMetadata.Version\022\027\n\n"
+          + "prediction\030\002 \001(\002H\000\210\001\001\"6\n"
+          + "\007Version\022\027\n"
+          + "\023VERSION_UNSPECIFIED\020\000\022\022\n"
+          + "\016V1_INDEPENDENT\020\001B\r\n"
+          + "\013_prediction\032>\n"
+          + "\020SearchEntryPoint\022\030\n"
+          + "\020rendered_content\030\001 \001(\t\022\020\n"
+          + "\010sdk_blob\030\002 \001(\014\032s\n"
+          + "\020GroundingSupport\022\022\n\n"
+          + "claim_text\030\001 \001(\t\022\035\n"
+          + "\025support_chunk_indices\030\003 \003(\005\022\032\n\r"
+          + "support_score\030\002 \001(\002H\000\210\001\001B\020\n"
+          + "\016_support_score\032\377\003\n"
+          + "\r"
+          + "ImageMetadata\022\177\n"
+          + "\005image\030\001 \001(\0132p.google.cloud.discoveryengine.v1.GenerateGrounded"
+          + "ContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image\022\203\001\n"
+          + "\tthumbnail\030\002 \001(\0132p.google.cloud.discoveryengine.v1.Ge"
+          + "nerateGroundedContentResponse.Candidate."
+          + "GroundingMetadata.ImageMetadata.Image\022\206\001\n"
+          + "\006source\030\003 \001(\0132v.google.cloud.discoverye"
+          + "ngine.v1.GenerateGroundedContentResponse"
+          + ".Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo\032)\n"
+          + "\013WebsiteInfo\022\013\n"
+          + "\003uri\030\001 \001(\t\022\r\n"
+          + "\005title\030\002 \001(\t\0323\n"
+          + "\005Image\022\013\n"
+          + "\003uri\030\001 \001(\t\022\r\n"
+          + "\005width\030\002 \001(\005\022\016\n"
+          + "\006height\030\003 \001(\005B\022\n"
+          + "\020_grounding_score\"L\n"
+          + "\022CheckGroundingSpec\022\037\n"
+          + "\022citation_threshold\030\001 \001(\001H\000\210\001\001B\025\n"
+          + "\023_citation_threshold\"\237\003\n"
+          + "\025CheckGroundingRequest\022P\n"
+          + "\020grounding_config\030\001 \001(\tB6\340A\002\372A0\n"
+          + ".discoveryengine.googleapis.com/GroundingConfig\022\030\n"
+          + "\020answer_candidate\030\002 \001(\t\022=\n"
+          + "\005facts\030\003 \003(\0132..google.cloud.discoveryengine.v1.GroundingFact\022K\n"
+          + "\016grounding_spec\030\004 \001(\01323.google.c"
+          + "loud.discoveryengine.v1.CheckGroundingSpec\022[\n"
+          + "\013user_labels\030\005 \003(\0132F.google.cloud.d"
+          + "iscoveryengine.v1.CheckGroundingRequest.UserLabelsEntry\0321\n"
+          + "\017UserLabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\260\004\n"
+          + "\026CheckGroundingResponse\022\032\n\r"
+          + "support_score\030\001 \001(\002H\000\210\001\001\022@\n"
+          + "\014cited_chunks\030\003 \003(\0132*.google.cloud.discoveryengine.v1.FactChunk\022d\n"
+          + "\013cited_facts\030\006 \003(\0132O.google.cloud.discoveryengine."
+          + "v1.CheckGroundingResponse.CheckGroundingFactChunk\022M\n"
+          + "\006claims\030\004 \003(\0132=.google.cloud"
+          + ".discoveryengine.v1.CheckGroundingResponse.Claim\032-\n"
+          + "\027CheckGroundingFactChunk\022\022\n\n"
+          + "chunk_text\030\001 \001(\t\032\301\001\n"
+          + "\005Claim\022\026\n"
+          + "\tstart_pos\030\001 \001(\005H\000\210\001\001\022\024\n"
+          + "\007end_pos\030\002 \001(\005H\001\210\001\001\022\022\n\n"
+          + "claim_text\030\003 \001(\t\022\030\n"
+          + "\020citation_indices\030\004 \003(\005\022%\n"
+          + "\030grounding_check_required\030\006 \001(\010H\002\210\001\001B\014\n\n"
+          + "_start_posB\n\n"
+          + "\010_end_posB\033\n"
+          + "\031_grounding_check_requiredB\020\n"
+          + "\016_support_score2\250\006\n"
+          + "\031GroundedGenerationService\022\366\001\n"
+          + "\035StreamGenerateGroundedContent\022?.google.cloud.discoveryen"
+          + "gine.v1.GenerateGroundedContentRequest\032@.google.cloud.discoveryengine.v1.Generat"
+          + "eGroundedContentResponse\"N\202\323\344\223\002H\"C/v1/{l"
+          + "ocation=projects/*/locations/*}:streamGenerateGroundedContent:\001*(\0010\001\022\346\001\n"
+          + "\027GenerateGroundedContent\022?.google.cloud.discover"
+          + "yengine.v1.GenerateGroundedContentRequest\032@.google.cloud.discoveryengine.v1.Gene"
+          + "rateGroundedContentResponse\"H\202\323\344\223\002B\"=/v1"
+          + "/{location=projects/*/locations/*}:generateGroundedContent:\001*\022\324\001\n"
+          + "\016CheckGrounding\0226.google.cloud.discoveryengine.v1.Check"
+          + "GroundingRequest\0327.google.cloud.discover"
+          + "yengine.v1.CheckGroundingResponse\"Q\202\323\344\223\002"
+          + "K\"F/v1/{grounding_config=projects/*/loca"
+          + "tions/*/groundingConfigs/*}:check:\001*\032R\312A"
+          + "\036discoveryengine.googleapis.com\322A.https:"
+          + "//www.googleapis.com/auth/cloud-platformB\221\002\n"
+          + "#com.google.cloud.discoveryengine.v1B\036GroundedGenerationServiceProtoP\001ZMclou"
+          + "d.google.com/go/discoveryengine/apiv1/di"
+          + "scoveryenginepb;discoveryenginepb\242\002\017DISC"
+          + "OVERYENGINE\252\002\037Google.Cloud.DiscoveryEngi"
+          + "ne.V1\312\002\037Google\\Cloud\\DiscoveryEngine\\V1\352"
+          + "\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -372,6 +442,7 @@ public final class GroundedGenerationServiceProto {
               "TopP",
               "TopK",
               "FrequencyPenalty",
+              "Seed",
               "PresencePenalty",
               "MaxOutputTokens",
             });
@@ -403,7 +474,11 @@ public final class GroundedGenerationServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_descriptor,
             new java.lang.String[] {
-              "InlineSource", "SearchSource", "GoogleSearchSource", "Source",
+              "InlineSource",
+              "SearchSource",
+              "GoogleSearchSource",
+              "EnterpriseWebRetrievalSource",
+              "Source",
             });
     internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_InlineSource_descriptor =
         internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_descriptor
@@ -445,6 +520,14 @@ public final class GroundedGenerationServiceProto {
             new java.lang.String[] {
               "DynamicRetrievalConfig",
             });
+    internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_EnterpriseWebRetrievalSource_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_EnterpriseWebRetrievalSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_EnterpriseWebRetrievalSource_descriptor,
+            new java.lang.String[] {});
     internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_descriptor
             .getNestedTypes()
@@ -496,6 +579,7 @@ public final class GroundedGenerationServiceProto {
               "WebSearchQueries",
               "SearchEntryPoint",
               "GroundingSupport",
+              "Images",
             });
     internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_RetrievalMetadata_descriptor =
         internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_descriptor
@@ -547,6 +631,36 @@ public final class GroundedGenerationServiceProto {
             new java.lang.String[] {
               "ClaimText", "SupportChunkIndices", "SupportScore",
             });
+    internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_descriptor
+            .getNestedTypes()
+            .get(5);
+    internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_descriptor,
+            new java.lang.String[] {
+              "Image", "Thumbnail", "Source",
+            });
+    internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_WebsiteInfo_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_WebsiteInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_WebsiteInfo_descriptor,
+            new java.lang.String[] {
+              "Uri", "Title",
+            });
+    internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_Image_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_Image_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_Image_descriptor,
+            new java.lang.String[] {
+              "Uri", "Width", "Height",
+            });
     internal_static_google_cloud_discoveryengine_v1_CheckGroundingSpec_descriptor =
         getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_discoveryengine_v1_CheckGroundingSpec_fieldAccessorTable =
@@ -579,12 +693,22 @@ public final class GroundedGenerationServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_CheckGroundingResponse_descriptor,
             new java.lang.String[] {
-              "SupportScore", "CitedChunks", "Claims",
+              "SupportScore", "CitedChunks", "CitedFacts", "Claims",
+            });
+    internal_static_google_cloud_discoveryengine_v1_CheckGroundingResponse_CheckGroundingFactChunk_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_CheckGroundingResponse_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_discoveryengine_v1_CheckGroundingResponse_CheckGroundingFactChunk_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_CheckGroundingResponse_CheckGroundingFactChunk_descriptor,
+            new java.lang.String[] {
+              "ChunkText",
             });
     internal_static_google_cloud_discoveryengine_v1_CheckGroundingResponse_Claim_descriptor =
         internal_static_google_cloud_discoveryengine_v1_CheckGroundingResponse_descriptor
             .getNestedTypes()
-            .get(0);
+            .get(1);
     internal_static_google_cloud_discoveryengine_v1_CheckGroundingResponse_Claim_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_CheckGroundingResponse_Claim_descriptor,

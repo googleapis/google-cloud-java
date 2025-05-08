@@ -33,6 +33,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.ListJobsRequest)
     ListJobsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListJobsRequest.newBuilder() to construct.
   private ListJobsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -44,6 +45,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     view_ = 0;
     pageToken_ = "";
     location_ = "";
+    name_ = "";
   }
 
   @java.lang.Override
@@ -137,6 +139,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
+
     /**
      *
      *
@@ -148,6 +151,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * <code>ALL = 1;</code>
      */
     public static final int ALL_VALUE = 1;
+
     /**
      *
      *
@@ -160,6 +164,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * <code>TERMINATED = 2;</code>
      */
     public static final int TERMINATED_VALUE = 2;
+
     /**
      *
      *
@@ -256,8 +261,10 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(enum_scope:google.dataflow.v1beta3.ListJobsRequest.Filter)
   }
 
+  private int bitField0_;
   public static final int FILTER_FIELD_NUMBER = 5;
   private int filter_ = 0;
+
   /**
    *
    *
@@ -273,6 +280,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
   public int getFilterValue() {
     return filter_;
   }
+
   /**
    *
    *
@@ -297,6 +305,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -320,6 +329,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -346,6 +356,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final int VIEW_FIELD_NUMBER = 2;
   private int view_ = 0;
+
   /**
    *
    *
@@ -357,7 +368,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * <code>.google.dataflow.v1beta3.JobView view = 2 [deprecated = true];</code>
    *
    * @deprecated google.dataflow.v1beta3.ListJobsRequest.view is deprecated. See
-   *     google/dataflow/v1beta3/jobs.proto;l=849
+   *     google/dataflow/v1beta3/jobs.proto;l=976
    * @return The enum numeric value on the wire for view.
    */
   @java.lang.Override
@@ -365,6 +376,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
   public int getViewValue() {
     return view_;
   }
+
   /**
    *
    *
@@ -376,7 +388,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * <code>.google.dataflow.v1beta3.JobView view = 2 [deprecated = true];</code>
    *
    * @deprecated google.dataflow.v1beta3.ListJobsRequest.view is deprecated. See
-   *     google/dataflow/v1beta3/jobs.proto;l=849
+   *     google/dataflow/v1beta3/jobs.proto;l=976
    * @return The view.
    */
   @java.lang.Override
@@ -389,6 +401,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -411,6 +424,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -435,6 +449,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -464,6 +479,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
+
   /**
    *
    *
@@ -489,6 +505,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -509,6 +526,75 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       location_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NAME_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The job name.
+   * </pre>
+   *
+   * <code>optional string name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the name field is set.
+   */
+  @java.lang.Override
+  public boolean hasName() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The job name.
+   * </pre>
+   *
+   * <code>optional string name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The job name.
+   * </pre>
+   *
+   * <code>optional string name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -544,6 +630,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     if (filter_ != com.google.dataflow.v1beta3.ListJobsRequest.Filter.UNKNOWN.getNumber()) {
       output.writeEnum(5, filter_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, name_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, location_);
     }
@@ -571,6 +660,9 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     if (filter_ != com.google.dataflow.v1beta3.ListJobsRequest.Filter.UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, filter_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, name_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, location_);
     }
@@ -596,6 +688,10 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getLocation().equals(other.getLocation())) return false;
+    if (hasName() != other.hasName()) return false;
+    if (hasName()) {
+      if (!getName().equals(other.getName())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -619,6 +715,10 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + LOCATION_FIELD_NUMBER;
     hash = (53 * hash) + getLocation().hashCode();
+    if (hasName()) {
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -719,6 +819,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -764,6 +865,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       pageSize_ = 0;
       pageToken_ = "";
       location_ = "";
+      name_ = "";
       return this;
     }
 
@@ -818,6 +920,12 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.location_ = location_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.name_ = name_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -889,6 +997,11 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (other.hasName()) {
+        name_ = other.name_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -945,6 +1058,12 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000001;
                 break;
               } // case 40
+            case 90:
+              {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 90
             case 138:
               {
                 location_ = input.readStringRequireUtf8();
@@ -971,6 +1090,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int filter_ = 0;
+
     /**
      *
      *
@@ -986,6 +1106,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     public int getFilterValue() {
       return filter_;
     }
+
     /**
      *
      *
@@ -1004,6 +1125,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1145,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
           ? com.google.dataflow.v1beta3.ListJobsRequest.Filter.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1044,6 +1167,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1187,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -1085,6 +1210,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1107,6 +1233,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1128,6 +1255,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1273,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1169,6 +1298,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private int view_ = 0;
+
     /**
      *
      *
@@ -1180,7 +1310,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * <code>.google.dataflow.v1beta3.JobView view = 2 [deprecated = true];</code>
      *
      * @deprecated google.dataflow.v1beta3.ListJobsRequest.view is deprecated. See
-     *     google/dataflow/v1beta3/jobs.proto;l=849
+     *     google/dataflow/v1beta3/jobs.proto;l=976
      * @return The enum numeric value on the wire for view.
      */
     @java.lang.Override
@@ -1188,6 +1318,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     public int getViewValue() {
       return view_;
     }
+
     /**
      *
      *
@@ -1199,7 +1330,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * <code>.google.dataflow.v1beta3.JobView view = 2 [deprecated = true];</code>
      *
      * @deprecated google.dataflow.v1beta3.ListJobsRequest.view is deprecated. See
-     *     google/dataflow/v1beta3/jobs.proto;l=849
+     *     google/dataflow/v1beta3/jobs.proto;l=976
      * @param value The enum numeric value on the wire for view to set.
      * @return This builder for chaining.
      */
@@ -1210,6 +1341,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1221,7 +1353,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * <code>.google.dataflow.v1beta3.JobView view = 2 [deprecated = true];</code>
      *
      * @deprecated google.dataflow.v1beta3.ListJobsRequest.view is deprecated. See
-     *     google/dataflow/v1beta3/jobs.proto;l=849
+     *     google/dataflow/v1beta3/jobs.proto;l=976
      * @return The view.
      */
     @java.lang.Override
@@ -1231,6 +1363,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
           com.google.dataflow.v1beta3.JobView.forNumber(view_);
       return result == null ? com.google.dataflow.v1beta3.JobView.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1242,7 +1375,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * <code>.google.dataflow.v1beta3.JobView view = 2 [deprecated = true];</code>
      *
      * @deprecated google.dataflow.v1beta3.ListJobsRequest.view is deprecated. See
-     *     google/dataflow/v1beta3/jobs.proto;l=849
+     *     google/dataflow/v1beta3/jobs.proto;l=976
      * @param value The view to set.
      * @return This builder for chaining.
      */
@@ -1256,6 +1389,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1267,7 +1401,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * <code>.google.dataflow.v1beta3.JobView view = 2 [deprecated = true];</code>
      *
      * @deprecated google.dataflow.v1beta3.ListJobsRequest.view is deprecated. See
-     *     google/dataflow/v1beta3/jobs.proto;l=849
+     *     google/dataflow/v1beta3/jobs.proto;l=976
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1279,6 +1413,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -1296,6 +1431,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -1317,6 +1453,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1338,6 +1475,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1361,6 +1499,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1384,6 +1523,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1406,6 +1546,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1424,6 +1565,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1449,6 +1591,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -1473,6 +1616,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1497,6 +1641,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1520,6 +1665,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1539,6 +1685,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1560,6 +1707,132 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       location_ = value;
       bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object name_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The job name.
+     * </pre>
+     *
+     * <code>optional string name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The job name.
+     * </pre>
+     *
+     * <code>optional string name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The job name.
+     * </pre>
+     *
+     * <code>optional string name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The job name.
+     * </pre>
+     *
+     * <code>optional string name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      name_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The job name.
+     * </pre>
+     *
+     * <code>optional string name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+      name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The job name.
+     * </pre>
+     *
+     * <code>optional string name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      name_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

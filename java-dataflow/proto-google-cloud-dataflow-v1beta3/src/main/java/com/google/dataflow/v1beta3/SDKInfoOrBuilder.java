@@ -36,6 +36,7 @@ public interface SDKInfoOrBuilder
    * @return The enum numeric value on the wire for language.
    */
   int getLanguageValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface SDKInfoOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

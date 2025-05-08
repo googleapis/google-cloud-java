@@ -36,6 +36,7 @@ public interface HttpsTriggerOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface HttpsTriggerOrBuilder
    * @return The enum numeric value on the wire for securityLevel.
    */
   int getSecurityLevelValue();
+
   /**
    *
    *

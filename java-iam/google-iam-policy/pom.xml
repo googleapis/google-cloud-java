@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-iam-policy</artifactId>
-  <version>1.59.0-SNAPSHOT</version><!-- {x-version-update:google-iam-policy:current} -->
+  <version>1.61.0-SNAPSHOT</version><!-- {x-version-update:google-iam-policy:current} -->
   <packaging>jar</packaging>
   <name>Google IAM Policy</name>
   <description>Eventarc lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-iam-policy-parent</artifactId>
-    <version>1.59.0-SNAPSHOT</version><!-- {x-version-update:google-iam-policy:current} -->
+    <version>1.61.0-SNAPSHOT</version><!-- {x-version-update:google-iam-policy:current} -->
   </parent>
   <properties>
     <site.installationModule>google-iam-policy</site.installationModule>
@@ -50,6 +50,15 @@
       <artifactId>proto-google-iam-v2</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-iam-v3</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-iam-v3beta</artifactId>
+      <version>1.51.0</version>
+    </dependency>
+    <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
     </dependency>
@@ -87,6 +96,17 @@
       <artifactId>grpc-google-iam-v2</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-iam-v3</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-iam-v3beta</artifactId>
+      <version>1.51.0</version>
+      <scope>test</scope>
+    </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>
@@ -104,6 +124,11 @@
       <groupId>com.google.api</groupId>
       <artifactId>gax-httpjson</artifactId>
       <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-common-protos</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>

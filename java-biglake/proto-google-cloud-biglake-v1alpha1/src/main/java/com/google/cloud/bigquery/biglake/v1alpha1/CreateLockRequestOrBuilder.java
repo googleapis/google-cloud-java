@@ -40,6 +40,7 @@ public interface CreateLockRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface CreateLockRequestOrBuilder
    * @return Whether the lock field is set.
    */
   boolean hasLock();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface CreateLockRequestOrBuilder
    * @return The lock.
    */
   com.google.cloud.bigquery.biglake.v1alpha1.Lock getLock();
+
   /**
    *
    *

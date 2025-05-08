@@ -33,6 +33,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InfoTypeDescription)
     InfoTypeDescriptionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InfoTypeDescription.newBuilder() to construct.
   private InfoTypeDescription(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -46,6 +47,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     example_ = "";
     versions_ = java.util.Collections.emptyList();
     categories_ = java.util.Collections.emptyList();
+    specificInfoTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -74,6 +76,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
                   : result;
             }
           };
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         java.lang.Integer, com.google.privacy.dlp.v2.InfoTypeSupportedBy>(
         supportedBy_, supportedBy_converter_);
   }
+
   /**
    *
    *
@@ -222,6 +230,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public int getSupportedByCount() {
     return supportedBy_.size();
   }
+
   /**
    *
    *
@@ -238,6 +247,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public com.google.privacy.dlp.v2.InfoTypeSupportedBy getSupportedBy(int index) {
     return supportedBy_converter_.convert(supportedBy_.get(index));
   }
+
   /**
    *
    *
@@ -253,6 +263,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public java.util.List<java.lang.Integer> getSupportedByValueList() {
     return supportedBy_;
   }
+
   /**
    *
    *
@@ -276,6 +287,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -300,6 +312,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -329,6 +342,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object example_ = "";
+
   /**
    *
    *
@@ -352,6 +366,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -380,6 +395,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.VersionDescription> versions_;
+
   /**
    *
    *
@@ -393,6 +409,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.privacy.dlp.v2.VersionDescription> getVersionsList() {
     return versions_;
   }
+
   /**
    *
    *
@@ -407,6 +424,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       getVersionsOrBuilderList() {
     return versions_;
   }
+
   /**
    *
    *
@@ -420,6 +438,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public int getVersionsCount() {
     return versions_.size();
   }
+
   /**
    *
    *
@@ -433,6 +452,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public com.google.privacy.dlp.v2.VersionDescription getVersions(int index) {
     return versions_.get(index);
   }
+
   /**
    *
    *
@@ -451,6 +471,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.InfoTypeCategory> categories_;
+
   /**
    *
    *
@@ -464,6 +485,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.privacy.dlp.v2.InfoTypeCategory> getCategoriesList() {
     return categories_;
   }
+
   /**
    *
    *
@@ -478,6 +500,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       getCategoriesOrBuilderList() {
     return categories_;
   }
+
   /**
    *
    *
@@ -491,6 +514,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public int getCategoriesCount() {
     return categories_.size();
   }
+
   /**
    *
    *
@@ -504,6 +528,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public com.google.privacy.dlp.v2.InfoTypeCategory getCategories(int index) {
     return categories_.get(index);
   }
+
   /**
    *
    *
@@ -520,6 +545,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
 
   public static final int SENSITIVITY_SCORE_FIELD_NUMBER = 11;
   private com.google.privacy.dlp.v2.SensitivityScore sensitivityScore_;
+
   /**
    *
    *
@@ -535,6 +561,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
   public boolean hasSensitivityScore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -552,6 +579,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         ? com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()
         : sensitivityScore_;
   }
+
   /**
    *
    *
@@ -566,6 +594,90 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     return sensitivityScore_ == null
         ? com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()
         : sensitivityScore_;
+  }
+
+  public static final int SPECIFIC_INFO_TYPES_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList specificInfoTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * If this field is set, this infoType is a general infoType and these
+   * specific infoTypes are contained within it.
+   * General infoTypes are infoTypes that encompass multiple specific infoTypes.
+   * For example, the "GEOGRAPHIC_DATA" general infoType would have set for this
+   * field "LOCATION", "LOCATION_COORDINATES", and "STREET_ADDRESS".
+   * </pre>
+   *
+   * <code>repeated string specific_info_types = 12;</code>
+   *
+   * @return A list containing the specificInfoTypes.
+   */
+  public com.google.protobuf.ProtocolStringList getSpecificInfoTypesList() {
+    return specificInfoTypes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If this field is set, this infoType is a general infoType and these
+   * specific infoTypes are contained within it.
+   * General infoTypes are infoTypes that encompass multiple specific infoTypes.
+   * For example, the "GEOGRAPHIC_DATA" general infoType would have set for this
+   * field "LOCATION", "LOCATION_COORDINATES", and "STREET_ADDRESS".
+   * </pre>
+   *
+   * <code>repeated string specific_info_types = 12;</code>
+   *
+   * @return The count of specificInfoTypes.
+   */
+  public int getSpecificInfoTypesCount() {
+    return specificInfoTypes_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If this field is set, this infoType is a general infoType and these
+   * specific infoTypes are contained within it.
+   * General infoTypes are infoTypes that encompass multiple specific infoTypes.
+   * For example, the "GEOGRAPHIC_DATA" general infoType would have set for this
+   * field "LOCATION", "LOCATION_COORDINATES", and "STREET_ADDRESS".
+   * </pre>
+   *
+   * <code>repeated string specific_info_types = 12;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The specificInfoTypes at the given index.
+   */
+  public java.lang.String getSpecificInfoTypes(int index) {
+    return specificInfoTypes_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If this field is set, this infoType is a general infoType and these
+   * specific infoTypes are contained within it.
+   * General infoTypes are infoTypes that encompass multiple specific infoTypes.
+   * For example, the "GEOGRAPHIC_DATA" general infoType would have set for this
+   * field "LOCATION", "LOCATION_COORDINATES", and "STREET_ADDRESS".
+   * </pre>
+   *
+   * <code>repeated string specific_info_types = 12;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the specificInfoTypes at the given index.
+   */
+  public com.google.protobuf.ByteString getSpecificInfoTypesBytes(int index) {
+    return specificInfoTypes_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -611,6 +723,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(11, getSensitivityScore());
     }
+    for (int i = 0; i < specificInfoTypes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, specificInfoTypes_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -653,6 +768,14 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getSensitivityScore());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < specificInfoTypes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(specificInfoTypes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getSpecificInfoTypesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -680,6 +803,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     if (hasSensitivityScore()) {
       if (!getSensitivityScore().equals(other.getSensitivityScore())) return false;
     }
+    if (!getSpecificInfoTypesList().equals(other.getSpecificInfoTypesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -714,6 +838,10 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     if (hasSensitivityScore()) {
       hash = (37 * hash) + SENSITIVITY_SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getSensitivityScore().hashCode();
+    }
+    if (getSpecificInfoTypesCount() > 0) {
+      hash = (37 * hash) + SPECIFIC_INFO_TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + getSpecificInfoTypesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -815,6 +943,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -890,6 +1019,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         sensitivityScoreBuilder_.dispose();
         sensitivityScoreBuilder_ = null;
       }
+      specificInfoTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -970,6 +1100,10 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         result.sensitivityScore_ =
             sensitivityScoreBuilder_ == null ? sensitivityScore_ : sensitivityScoreBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        specificInfoTypes_.makeImmutable();
+        result.specificInfoTypes_ = specificInfoTypes_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1106,6 +1240,16 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       if (other.hasSensitivityScore()) {
         mergeSensitivityScore(other.getSensitivityScore());
       }
+      if (!other.specificInfoTypes_.isEmpty()) {
+        if (specificInfoTypes_.isEmpty()) {
+          specificInfoTypes_ = other.specificInfoTypes_;
+          bitField0_ |= 0x00000100;
+        } else {
+          ensureSpecificInfoTypesIsMutable();
+          specificInfoTypes_.addAll(other.specificInfoTypes_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1208,6 +1352,13 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000080;
                 break;
               } // case 90
+            case 98:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSpecificInfoTypesIsMutable();
+                specificInfoTypes_.add(s);
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1228,6 +1379,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1250,6 +1402,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1272,6 +1425,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1293,6 +1447,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1310,6 +1465,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1334,6 +1490,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1356,6 +1513,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1378,6 +1536,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1399,6 +1558,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1416,6 +1576,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1447,6 +1608,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000004;
       }
     }
+
     /**
      *
      *
@@ -1463,6 +1625,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
           java.lang.Integer, com.google.privacy.dlp.v2.InfoTypeSupportedBy>(
           supportedBy_, supportedBy_converter_);
     }
+
     /**
      *
      *
@@ -1477,6 +1640,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public int getSupportedByCount() {
       return supportedBy_.size();
     }
+
     /**
      *
      *
@@ -1492,6 +1656,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.InfoTypeSupportedBy getSupportedBy(int index) {
       return supportedBy_converter_.convert(supportedBy_.get(index));
     }
+
     /**
      *
      *
@@ -1514,6 +1679,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1535,6 +1701,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1556,6 +1723,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1573,6 +1741,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1587,6 +1756,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public java.util.List<java.lang.Integer> getSupportedByValueList() {
       return java.util.Collections.unmodifiableList(supportedBy_);
     }
+
     /**
      *
      *
@@ -1602,6 +1772,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public int getSupportedByValue(int index) {
       return supportedBy_.get(index);
     }
+
     /**
      *
      *
@@ -1621,6 +1792,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1639,6 +1811,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1661,6 +1834,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1684,6 +1858,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1707,6 +1882,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1729,6 +1905,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1747,6 +1924,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1772,6 +1950,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object example_ = "";
+
     /**
      *
      *
@@ -1794,6 +1973,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1816,6 +1996,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1837,6 +2018,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1854,6 +2036,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1910,6 +2093,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return versionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1926,6 +2110,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return versionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1942,6 +2127,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return versionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1964,6 +2150,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1984,6 +2171,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2006,6 +2194,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2028,6 +2217,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2048,6 +2238,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2068,6 +2259,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2088,6 +2280,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2107,6 +2300,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2126,6 +2320,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2138,6 +2333,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.VersionDescription.Builder getVersionsBuilder(int index) {
       return getVersionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2154,6 +2350,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return versionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2171,6 +2368,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(versions_);
       }
     }
+
     /**
      *
      *
@@ -2184,6 +2382,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       return getVersionsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.VersionDescription.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2197,6 +2396,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       return getVersionsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.VersionDescription.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2261,6 +2461,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return categoriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2277,6 +2478,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return categoriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2293,6 +2495,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return categoriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2315,6 +2518,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2335,6 +2539,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2357,6 +2562,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2379,6 +2585,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2399,6 +2606,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2419,6 +2627,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2439,6 +2648,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2458,6 +2668,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2477,6 +2688,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2489,6 +2701,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.InfoTypeCategory.Builder getCategoriesBuilder(int index) {
       return getCategoriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2505,6 +2718,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return categoriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2522,6 +2736,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(categories_);
       }
     }
+
     /**
      *
      *
@@ -2535,6 +2750,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       return getCategoriesFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.InfoTypeCategory.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2548,6 +2764,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       return getCategoriesFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.InfoTypeCategory.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2585,6 +2802,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.SensitivityScore.Builder,
             com.google.privacy.dlp.v2.SensitivityScoreOrBuilder>
         sensitivityScoreBuilder_;
+
     /**
      *
      *
@@ -2599,6 +2817,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public boolean hasSensitivityScore() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2619,6 +2838,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         return sensitivityScoreBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2641,6 +2861,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2661,6 +2882,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2689,6 +2911,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2708,6 +2931,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2722,6 +2946,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSensitivityScoreFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2740,6 +2965,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
             : sensitivityScore_;
       }
     }
+
     /**
      *
      *
@@ -2764,6 +2990,225 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         sensitivityScore_ = null;
       }
       return sensitivityScoreBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList specificInfoTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureSpecificInfoTypesIsMutable() {
+      if (!specificInfoTypes_.isModifiable()) {
+        specificInfoTypes_ = new com.google.protobuf.LazyStringArrayList(specificInfoTypes_);
+      }
+      bitField0_ |= 0x00000100;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, this infoType is a general infoType and these
+     * specific infoTypes are contained within it.
+     * General infoTypes are infoTypes that encompass multiple specific infoTypes.
+     * For example, the "GEOGRAPHIC_DATA" general infoType would have set for this
+     * field "LOCATION", "LOCATION_COORDINATES", and "STREET_ADDRESS".
+     * </pre>
+     *
+     * <code>repeated string specific_info_types = 12;</code>
+     *
+     * @return A list containing the specificInfoTypes.
+     */
+    public com.google.protobuf.ProtocolStringList getSpecificInfoTypesList() {
+      specificInfoTypes_.makeImmutable();
+      return specificInfoTypes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, this infoType is a general infoType and these
+     * specific infoTypes are contained within it.
+     * General infoTypes are infoTypes that encompass multiple specific infoTypes.
+     * For example, the "GEOGRAPHIC_DATA" general infoType would have set for this
+     * field "LOCATION", "LOCATION_COORDINATES", and "STREET_ADDRESS".
+     * </pre>
+     *
+     * <code>repeated string specific_info_types = 12;</code>
+     *
+     * @return The count of specificInfoTypes.
+     */
+    public int getSpecificInfoTypesCount() {
+      return specificInfoTypes_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, this infoType is a general infoType and these
+     * specific infoTypes are contained within it.
+     * General infoTypes are infoTypes that encompass multiple specific infoTypes.
+     * For example, the "GEOGRAPHIC_DATA" general infoType would have set for this
+     * field "LOCATION", "LOCATION_COORDINATES", and "STREET_ADDRESS".
+     * </pre>
+     *
+     * <code>repeated string specific_info_types = 12;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The specificInfoTypes at the given index.
+     */
+    public java.lang.String getSpecificInfoTypes(int index) {
+      return specificInfoTypes_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, this infoType is a general infoType and these
+     * specific infoTypes are contained within it.
+     * General infoTypes are infoTypes that encompass multiple specific infoTypes.
+     * For example, the "GEOGRAPHIC_DATA" general infoType would have set for this
+     * field "LOCATION", "LOCATION_COORDINATES", and "STREET_ADDRESS".
+     * </pre>
+     *
+     * <code>repeated string specific_info_types = 12;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the specificInfoTypes at the given index.
+     */
+    public com.google.protobuf.ByteString getSpecificInfoTypesBytes(int index) {
+      return specificInfoTypes_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, this infoType is a general infoType and these
+     * specific infoTypes are contained within it.
+     * General infoTypes are infoTypes that encompass multiple specific infoTypes.
+     * For example, the "GEOGRAPHIC_DATA" general infoType would have set for this
+     * field "LOCATION", "LOCATION_COORDINATES", and "STREET_ADDRESS".
+     * </pre>
+     *
+     * <code>repeated string specific_info_types = 12;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The specificInfoTypes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpecificInfoTypes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSpecificInfoTypesIsMutable();
+      specificInfoTypes_.set(index, value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, this infoType is a general infoType and these
+     * specific infoTypes are contained within it.
+     * General infoTypes are infoTypes that encompass multiple specific infoTypes.
+     * For example, the "GEOGRAPHIC_DATA" general infoType would have set for this
+     * field "LOCATION", "LOCATION_COORDINATES", and "STREET_ADDRESS".
+     * </pre>
+     *
+     * <code>repeated string specific_info_types = 12;</code>
+     *
+     * @param value The specificInfoTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSpecificInfoTypes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSpecificInfoTypesIsMutable();
+      specificInfoTypes_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, this infoType is a general infoType and these
+     * specific infoTypes are contained within it.
+     * General infoTypes are infoTypes that encompass multiple specific infoTypes.
+     * For example, the "GEOGRAPHIC_DATA" general infoType would have set for this
+     * field "LOCATION", "LOCATION_COORDINATES", and "STREET_ADDRESS".
+     * </pre>
+     *
+     * <code>repeated string specific_info_types = 12;</code>
+     *
+     * @param values The specificInfoTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSpecificInfoTypes(java.lang.Iterable<java.lang.String> values) {
+      ensureSpecificInfoTypesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, specificInfoTypes_);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, this infoType is a general infoType and these
+     * specific infoTypes are contained within it.
+     * General infoTypes are infoTypes that encompass multiple specific infoTypes.
+     * For example, the "GEOGRAPHIC_DATA" general infoType would have set for this
+     * field "LOCATION", "LOCATION_COORDINATES", and "STREET_ADDRESS".
+     * </pre>
+     *
+     * <code>repeated string specific_info_types = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSpecificInfoTypes() {
+      specificInfoTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this field is set, this infoType is a general infoType and these
+     * specific infoTypes are contained within it.
+     * General infoTypes are infoTypes that encompass multiple specific infoTypes.
+     * For example, the "GEOGRAPHIC_DATA" general infoType would have set for this
+     * field "LOCATION", "LOCATION_COORDINATES", and "STREET_ADDRESS".
+     * </pre>
+     *
+     * <code>repeated string specific_info_types = 12;</code>
+     *
+     * @param value The bytes of the specificInfoTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSpecificInfoTypesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSpecificInfoTypesIsMutable();
+      specificInfoTypes_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

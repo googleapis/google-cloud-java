@@ -34,6 +34,7 @@ public final class ExportBacktestResultMetadataRequest
     // @@protoc_insertion_point(message_implements:google.cloud.financialservices.v1.ExportBacktestResultMetadataRequest)
     ExportBacktestResultMetadataRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExportBacktestResultMetadataRequest.newBuilder() to construct.
   private ExportBacktestResultMetadataRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class ExportBacktestResultMetadataRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backtestResult_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class ExportBacktestResultMetadataRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class ExportBacktestResultMetadataRequest
 
   public static final int STRUCTURED_METADATA_DESTINATION_FIELD_NUMBER = 2;
   private com.google.cloud.financialservices.v1.BigQueryDestination structuredMetadataDestination_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class ExportBacktestResultMetadataRequest
   public boolean hasStructuredMetadataDestination() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class ExportBacktestResultMetadataRequest
         ? com.google.cloud.financialservices.v1.BigQueryDestination.getDefaultInstance()
         : structuredMetadataDestination_;
   }
+
   /**
    *
    *
@@ -360,6 +366,7 @@ public final class ExportBacktestResultMetadataRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -588,6 +595,7 @@ public final class ExportBacktestResultMetadataRequest
     private int bitField0_;
 
     private java.lang.Object backtestResult_ = "";
+
     /**
      *
      *
@@ -612,6 +620,7 @@ public final class ExportBacktestResultMetadataRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -636,6 +645,7 @@ public final class ExportBacktestResultMetadataRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -659,6 +669,7 @@ public final class ExportBacktestResultMetadataRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +689,7 @@ public final class ExportBacktestResultMetadataRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +722,7 @@ public final class ExportBacktestResultMetadataRequest
             com.google.cloud.financialservices.v1.BigQueryDestination.Builder,
             com.google.cloud.financialservices.v1.BigQueryDestinationOrBuilder>
         structuredMetadataDestinationBuilder_;
+
     /**
      *
      *
@@ -726,6 +739,7 @@ public final class ExportBacktestResultMetadataRequest
     public boolean hasStructuredMetadataDestination() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -749,6 +763,7 @@ public final class ExportBacktestResultMetadataRequest
         return structuredMetadataDestinationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -774,6 +789,7 @@ public final class ExportBacktestResultMetadataRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +812,7 @@ public final class ExportBacktestResultMetadataRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +844,7 @@ public final class ExportBacktestResultMetadataRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +866,7 @@ public final class ExportBacktestResultMetadataRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +884,7 @@ public final class ExportBacktestResultMetadataRequest
       onChanged();
       return getStructuredMetadataDestinationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -886,6 +906,7 @@ public final class ExportBacktestResultMetadataRequest
             : structuredMetadataDestination_;
       }
     }
+
     /**
      *
      *

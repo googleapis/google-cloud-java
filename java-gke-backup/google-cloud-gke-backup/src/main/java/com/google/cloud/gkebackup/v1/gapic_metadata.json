@@ -13,11 +13,17 @@
             "CreateBackup": {
               "methods": ["createBackupAsync", "createBackupAsync", "createBackupAsync", "createBackupOperationCallable", "createBackupCallable"]
             },
+            "CreateBackupChannel": {
+              "methods": ["createBackupChannelAsync", "createBackupChannelAsync", "createBackupChannelAsync", "createBackupChannelOperationCallable", "createBackupChannelCallable"]
+            },
             "CreateBackupPlan": {
               "methods": ["createBackupPlanAsync", "createBackupPlanAsync", "createBackupPlanAsync", "createBackupPlanOperationCallable", "createBackupPlanCallable"]
             },
             "CreateRestore": {
               "methods": ["createRestoreAsync", "createRestoreAsync", "createRestoreAsync", "createRestoreOperationCallable", "createRestoreCallable"]
+            },
+            "CreateRestoreChannel": {
+              "methods": ["createRestoreChannelAsync", "createRestoreChannelAsync", "createRestoreChannelAsync", "createRestoreChannelOperationCallable", "createRestoreChannelCallable"]
             },
             "CreateRestorePlan": {
               "methods": ["createRestorePlanAsync", "createRestorePlanAsync", "createRestorePlanAsync", "createRestorePlanOperationCallable", "createRestorePlanCallable"]
@@ -25,11 +31,17 @@
             "DeleteBackup": {
               "methods": ["deleteBackupAsync", "deleteBackupAsync", "deleteBackupAsync", "deleteBackupOperationCallable", "deleteBackupCallable"]
             },
+            "DeleteBackupChannel": {
+              "methods": ["deleteBackupChannelAsync", "deleteBackupChannelAsync", "deleteBackupChannelAsync", "deleteBackupChannelOperationCallable", "deleteBackupChannelCallable"]
+            },
             "DeleteBackupPlan": {
               "methods": ["deleteBackupPlanAsync", "deleteBackupPlanAsync", "deleteBackupPlanAsync", "deleteBackupPlanOperationCallable", "deleteBackupPlanCallable"]
             },
             "DeleteRestore": {
               "methods": ["deleteRestoreAsync", "deleteRestoreAsync", "deleteRestoreAsync", "deleteRestoreOperationCallable", "deleteRestoreCallable"]
+            },
+            "DeleteRestoreChannel": {
+              "methods": ["deleteRestoreChannelAsync", "deleteRestoreChannelAsync", "deleteRestoreChannelAsync", "deleteRestoreChannelOperationCallable", "deleteRestoreChannelCallable"]
             },
             "DeleteRestorePlan": {
               "methods": ["deleteRestorePlanAsync", "deleteRestorePlanAsync", "deleteRestorePlanAsync", "deleteRestorePlanOperationCallable", "deleteRestorePlanCallable"]
@@ -37,11 +49,17 @@
             "GetBackup": {
               "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
             },
+            "GetBackupChannel": {
+              "methods": ["getBackupChannel", "getBackupChannel", "getBackupChannel", "getBackupChannelCallable"]
+            },
             "GetBackupIndexDownloadUrl": {
               "methods": ["getBackupIndexDownloadUrl", "getBackupIndexDownloadUrl", "getBackupIndexDownloadUrl", "getBackupIndexDownloadUrlCallable"]
             },
             "GetBackupPlan": {
               "methods": ["getBackupPlan", "getBackupPlan", "getBackupPlan", "getBackupPlanCallable"]
+            },
+            "GetBackupPlanBinding": {
+              "methods": ["getBackupPlanBinding", "getBackupPlanBinding", "getBackupPlanBinding", "getBackupPlanBindingCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
@@ -52,14 +70,26 @@
             "GetRestore": {
               "methods": ["getRestore", "getRestore", "getRestore", "getRestoreCallable"]
             },
+            "GetRestoreChannel": {
+              "methods": ["getRestoreChannel", "getRestoreChannel", "getRestoreChannel", "getRestoreChannelCallable"]
+            },
             "GetRestorePlan": {
               "methods": ["getRestorePlan", "getRestorePlan", "getRestorePlan", "getRestorePlanCallable"]
+            },
+            "GetRestorePlanBinding": {
+              "methods": ["getRestorePlanBinding", "getRestorePlanBinding", "getRestorePlanBinding", "getRestorePlanBindingCallable"]
             },
             "GetVolumeBackup": {
               "methods": ["getVolumeBackup", "getVolumeBackup", "getVolumeBackup", "getVolumeBackupCallable"]
             },
             "GetVolumeRestore": {
               "methods": ["getVolumeRestore", "getVolumeRestore", "getVolumeRestore", "getVolumeRestoreCallable"]
+            },
+            "ListBackupChannels": {
+              "methods": ["listBackupChannels", "listBackupChannels", "listBackupChannels", "listBackupChannelsPagedCallable", "listBackupChannelsCallable"]
+            },
+            "ListBackupPlanBindings": {
+              "methods": ["listBackupPlanBindings", "listBackupPlanBindings", "listBackupPlanBindings", "listBackupPlanBindingsPagedCallable", "listBackupPlanBindingsCallable"]
             },
             "ListBackupPlans": {
               "methods": ["listBackupPlans", "listBackupPlans", "listBackupPlans", "listBackupPlansPagedCallable", "listBackupPlansCallable"]
@@ -69,6 +99,12 @@
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListRestoreChannels": {
+              "methods": ["listRestoreChannels", "listRestoreChannels", "listRestoreChannels", "listRestoreChannelsPagedCallable", "listRestoreChannelsCallable"]
+            },
+            "ListRestorePlanBindings": {
+              "methods": ["listRestorePlanBindings", "listRestorePlanBindings", "listRestorePlanBindings", "listRestorePlanBindingsPagedCallable", "listRestorePlanBindingsCallable"]
             },
             "ListRestorePlans": {
               "methods": ["listRestorePlans", "listRestorePlans", "listRestorePlans", "listRestorePlansPagedCallable", "listRestorePlansCallable"]
@@ -91,11 +127,17 @@
             "UpdateBackup": {
               "methods": ["updateBackupAsync", "updateBackupAsync", "updateBackupOperationCallable", "updateBackupCallable"]
             },
+            "UpdateBackupChannel": {
+              "methods": ["updateBackupChannelAsync", "updateBackupChannelAsync", "updateBackupChannelOperationCallable", "updateBackupChannelCallable"]
+            },
             "UpdateBackupPlan": {
               "methods": ["updateBackupPlanAsync", "updateBackupPlanAsync", "updateBackupPlanOperationCallable", "updateBackupPlanCallable"]
             },
             "UpdateRestore": {
               "methods": ["updateRestoreAsync", "updateRestoreAsync", "updateRestoreOperationCallable", "updateRestoreCallable"]
+            },
+            "UpdateRestoreChannel": {
+              "methods": ["updateRestoreChannelAsync", "updateRestoreChannelAsync", "updateRestoreChannelOperationCallable", "updateRestoreChannelCallable"]
             },
             "UpdateRestorePlan": {
               "methods": ["updateRestorePlanAsync", "updateRestorePlanAsync", "updateRestorePlanOperationCallable", "updateRestorePlanCallable"]

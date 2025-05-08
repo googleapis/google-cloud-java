@@ -42,6 +42,7 @@ public interface BatchCreateAccessBindingsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface BatchCreateAccessBindingsRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.CreateAccessBindingRequest> getRequestsList();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface BatchCreateAccessBindingsRequestOrBuilder
    * </code>
    */
   com.google.analytics.admin.v1alpha.CreateAccessBindingRequest getRequests(int index);
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface BatchCreateAccessBindingsRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface BatchCreateAccessBindingsRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.CreateAccessBindingRequestOrBuilder>
       getRequestsOrBuilderList();
+
   /**
    *
    *

@@ -30,7 +30,7 @@ public interface JobOrBuilder
    * <pre>
    * The unique ID of this job.
    *
-   * This field is set by the Cloud Dataflow service when the Job is
+   * This field is set by the Dataflow service when the job is
    * created, and is immutable for the life of the job.
    * </pre>
    *
@@ -39,13 +39,14 @@ public interface JobOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
    * <pre>
    * The unique ID of this job.
    *
-   * This field is set by the Cloud Dataflow service when the Job is
+   * This field is set by the Dataflow service when the job is
    * created, and is immutable for the life of the job.
    * </pre>
    *
@@ -59,7 +60,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * The ID of the Cloud Platform project that the job belongs to.
+   * The ID of the Google Cloud project that the job belongs to.
    * </pre>
    *
    * <code>string project_id = 2;</code>
@@ -67,11 +68,12 @@ public interface JobOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
    * <pre>
-   * The ID of the Cloud Platform project that the job belongs to.
+   * The ID of the Google Cloud project that the job belongs to.
    * </pre>
    *
    * <code>string project_id = 2;</code>
@@ -84,38 +86,43 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * The user-specified Cloud Dataflow job name.
+   * Optional. The user-specified Dataflow job name.
    *
-   * Only one Job with a given name may exist in a project at any
-   * given time. If a caller attempts to create a Job with the same
-   * name as an already-existing Job, the attempt returns the
-   * existing Job.
+   * Only one active job with a given name can exist in a project within one
+   * region at
+   * any given time. Jobs in different regions can have the same name.
+   * If a caller attempts to create a job with the same
+   * name as an active job that already exists, the attempt returns the
+   * existing job.
    *
    * The name must match the regular expression
    * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>string name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
    * <pre>
-   * The user-specified Cloud Dataflow job name.
+   * Optional. The user-specified Dataflow job name.
    *
-   * Only one Job with a given name may exist in a project at any
-   * given time. If a caller attempts to create a Job with the same
-   * name as an already-existing Job, the attempt returns the
-   * existing Job.
+   * Only one active job with a given name can exist in a project within one
+   * region at
+   * any given time. Jobs in different regions can have the same name.
+   * If a caller attempts to create a job with the same
+   * name as an active job that already exists, the attempt returns the
+   * existing job.
    *
    * The name must match the regular expression
    * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>string name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -125,22 +132,25 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * The type of Cloud Dataflow job.
+   * Optional. The type of Dataflow job.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.JobType type = 4;</code>
+   * <code>.google.dataflow.v1beta3.JobType type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
    * <pre>
-   * The type of Cloud Dataflow job.
+   * Optional. The type of Dataflow job.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.JobType type = 4;</code>
+   * <code>.google.dataflow.v1beta3.JobType type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The type.
    */
@@ -150,34 +160,42 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * The environment for the job.
+   * Optional. The environment for the job.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.Environment environment = 5;</code>
+   * <code>
+   * .google.dataflow.v1beta3.Environment environment = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the environment field is set.
    */
   boolean hasEnvironment();
+
   /**
    *
    *
    * <pre>
-   * The environment for the job.
+   * Optional. The environment for the job.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.Environment environment = 5;</code>
+   * <code>
+   * .google.dataflow.v1beta3.Environment environment = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The environment.
    */
   com.google.dataflow.v1beta3.Environment getEnvironment();
+
   /**
    *
    *
    * <pre>
-   * The environment for the job.
+   * Optional. The environment for the job.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.Environment environment = 5;</code>
+   * <code>
+   * .google.dataflow.v1beta3.Environment environment = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.dataflow.v1beta3.EnvironmentOrBuilder getEnvironmentOrBuilder();
 
@@ -194,6 +212,7 @@ public interface JobOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Step steps = 6;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.Step> getStepsList();
+
   /**
    *
    *
@@ -207,6 +226,7 @@ public interface JobOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Step steps = 6;</code>
    */
   com.google.dataflow.v1beta3.Step getSteps(int index);
+
   /**
    *
    *
@@ -220,6 +240,7 @@ public interface JobOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Step steps = 6;</code>
    */
   int getStepsCount();
+
   /**
    *
    *
@@ -233,6 +254,7 @@ public interface JobOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Step steps = 6;</code>
    */
   java.util.List<? extends com.google.dataflow.v1beta3.StepOrBuilder> getStepsOrBuilderList();
+
   /**
    *
    *
@@ -259,6 +281,7 @@ public interface JobOrBuilder
    * @return The stepsLocation.
    */
   java.lang.String getStepsLocation();
+
   /**
    *
    *
@@ -285,7 +308,7 @@ public interface JobOrBuilder
    * terminal state. After a job has reached a terminal state, no
    * further state updates may be made.
    *
-   * This field may be mutated by the Cloud Dataflow service;
+   * This field might be mutated by the Dataflow service;
    * callers cannot mutate it.
    * </pre>
    *
@@ -294,6 +317,7 @@ public interface JobOrBuilder
    * @return The enum numeric value on the wire for currentState.
    */
   int getCurrentStateValue();
+
   /**
    *
    *
@@ -307,7 +331,7 @@ public interface JobOrBuilder
    * terminal state. After a job has reached a terminal state, no
    * further state updates may be made.
    *
-   * This field may be mutated by the Cloud Dataflow service;
+   * This field might be mutated by the Dataflow service;
    * callers cannot mutate it.
    * </pre>
    *
@@ -329,6 +353,7 @@ public interface JobOrBuilder
    * @return Whether the currentStateTime field is set.
    */
   boolean hasCurrentStateTime();
+
   /**
    *
    *
@@ -341,6 +366,7 @@ public interface JobOrBuilder
    * @return The currentStateTime.
    */
   com.google.protobuf.Timestamp getCurrentStateTime();
+
   /**
    *
    *
@@ -356,13 +382,16 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * The job's requested state.
+   * The job's requested state. Applies to `UpdateJob` requests.
    *
-   * `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and
-   * `JOB_STATE_RUNNING` states, by setting requested_state.  `UpdateJob` may
-   * also be used to directly set a job's requested state to
-   * `JOB_STATE_CANCELLED` or `JOB_STATE_DONE`, irrevocably terminating the
-   * job if it has not already reached a terminal state.
+   * Set `requested_state` with `UpdateJob` requests to switch between the
+   * states `JOB_STATE_STOPPED` and `JOB_STATE_RUNNING`. You can also use
+   * `UpdateJob` requests to change a job's
+   * state from `JOB_STATE_RUNNING` to `JOB_STATE_CANCELLED`,
+   * `JOB_STATE_DONE`,  or `JOB_STATE_DRAINED`. These states irrevocably
+   * terminate the job if it hasn't already reached a terminal state.
+   *
+   * This field has no effect on `CreateJob` requests.
    * </pre>
    *
    * <code>.google.dataflow.v1beta3.JobState requested_state = 9;</code>
@@ -370,17 +399,21 @@ public interface JobOrBuilder
    * @return The enum numeric value on the wire for requestedState.
    */
   int getRequestedStateValue();
+
   /**
    *
    *
    * <pre>
-   * The job's requested state.
+   * The job's requested state. Applies to `UpdateJob` requests.
    *
-   * `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and
-   * `JOB_STATE_RUNNING` states, by setting requested_state.  `UpdateJob` may
-   * also be used to directly set a job's requested state to
-   * `JOB_STATE_CANCELLED` or `JOB_STATE_DONE`, irrevocably terminating the
-   * job if it has not already reached a terminal state.
+   * Set `requested_state` with `UpdateJob` requests to switch between the
+   * states `JOB_STATE_STOPPED` and `JOB_STATE_RUNNING`. You can also use
+   * `UpdateJob` requests to change a job's
+   * state from `JOB_STATE_RUNNING` to `JOB_STATE_CANCELLED`,
+   * `JOB_STATE_DONE`,  or `JOB_STATE_DRAINED`. These states irrevocably
+   * terminate the job if it hasn't already reached a terminal state.
+   *
+   * This field has no effect on `CreateJob` requests.
    * </pre>
    *
    * <code>.google.dataflow.v1beta3.JobState requested_state = 9;</code>
@@ -401,6 +434,7 @@ public interface JobOrBuilder
    * @return Whether the executionInfo field is set.
    */
   boolean hasExecutionInfo();
+
   /**
    *
    *
@@ -413,6 +447,7 @@ public interface JobOrBuilder
    * @return The executionInfo.
    */
   com.google.dataflow.v1beta3.JobExecutionInfo getExecutionInfo();
+
   /**
    *
    *
@@ -437,6 +472,7 @@ public interface JobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -450,6 +486,7 @@ public interface JobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -479,6 +516,7 @@ public interface JobOrBuilder
    * @return The replaceJobId.
    */
   java.lang.String getReplaceJobId();
+
   /**
    *
    *
@@ -501,62 +539,77 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * The map of transform name prefixes of the job to be replaced to the
-   * corresponding name prefixes of the new job.
+   * Optional. The map of transform name prefixes of the job to be replaced to
+   * the corresponding name prefixes of the new job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
+   * <code>
+   * map&lt;string, string&gt; transform_name_mapping = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getTransformNameMappingCount();
+
   /**
    *
    *
    * <pre>
-   * The map of transform name prefixes of the job to be replaced to the
-   * corresponding name prefixes of the new job.
+   * Optional. The map of transform name prefixes of the job to be replaced to
+   * the corresponding name prefixes of the new job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
+   * <code>
+   * map&lt;string, string&gt; transform_name_mapping = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsTransformNameMapping(java.lang.String key);
+
   /** Use {@link #getTransformNameMappingMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getTransformNameMapping();
+
   /**
    *
    *
    * <pre>
-   * The map of transform name prefixes of the job to be replaced to the
-   * corresponding name prefixes of the new job.
+   * Optional. The map of transform name prefixes of the job to be replaced to
+   * the corresponding name prefixes of the new job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
+   * <code>
+   * map&lt;string, string&gt; transform_name_mapping = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getTransformNameMappingMap();
+
   /**
    *
    *
    * <pre>
-   * The map of transform name prefixes of the job to be replaced to the
-   * corresponding name prefixes of the new job.
+   * Optional. The map of transform name prefixes of the job to be replaced to
+   * the corresponding name prefixes of the new job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
+   * <code>
+   * map&lt;string, string&gt; transform_name_mapping = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   /* nullable */
   java.lang.String getTransformNameMappingOrDefault(
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
    * <pre>
-   * The map of transform name prefixes of the job to be replaced to the
-   * corresponding name prefixes of the new job.
+   * Optional. The map of transform name prefixes of the job to be replaced to
+   * the corresponding name prefixes of the new job.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
+   * <code>
+   * map&lt;string, string&gt; transform_name_mapping = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getTransformNameMappingOrThrow(java.lang.String key);
 
@@ -578,6 +631,7 @@ public interface JobOrBuilder
    * @return The clientRequestId.
    */
   java.lang.String getClientRequestId();
+
   /**
    *
    *
@@ -610,6 +664,7 @@ public interface JobOrBuilder
    * @return The replacedByJobId.
    */
   java.lang.String getReplacedByJobId();
+
   /**
    *
    *
@@ -647,6 +702,7 @@ public interface JobOrBuilder
    * @return A list containing the tempFiles.
    */
   java.util.List<java.lang.String> getTempFilesList();
+
   /**
    *
    *
@@ -670,6 +726,7 @@ public interface JobOrBuilder
    * @return The count of tempFiles.
    */
   int getTempFilesCount();
+
   /**
    *
    *
@@ -694,6 +751,7 @@ public interface JobOrBuilder
    * @return The tempFiles at the given index.
    */
   java.lang.String getTempFiles(int index);
+
   /**
    *
    *
@@ -737,6 +795,7 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; labels = 17;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -755,9 +814,11 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; labels = 17;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -776,6 +837,7 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; labels = 17;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -798,6 +860,7 @@ public interface JobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -821,26 +884,27 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * The [regional endpoint]
+   * Optional. The [regional endpoint]
    * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
    * contains this job.
    * </pre>
    *
-   * <code>string location = 18;</code>
+   * <code>string location = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
    * <pre>
-   * The [regional endpoint]
+   * Optional. The [regional endpoint]
    * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
    * contains this job.
    * </pre>
    *
-   * <code>string location = 18;</code>
+   * <code>string location = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for location.
    */
@@ -861,6 +925,7 @@ public interface JobOrBuilder
    * @return Whether the pipelineDescription field is set.
    */
   boolean hasPipelineDescription();
+
   /**
    *
    *
@@ -876,6 +941,7 @@ public interface JobOrBuilder
    * @return The pipelineDescription.
    */
   com.google.dataflow.v1beta3.PipelineDescription getPipelineDescription();
+
   /**
    *
    *
@@ -901,6 +967,7 @@ public interface JobOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ExecutionStageState stage_states = 20;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.ExecutionStageState> getStageStatesList();
+
   /**
    *
    *
@@ -912,6 +979,7 @@ public interface JobOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ExecutionStageState stage_states = 20;</code>
    */
   com.google.dataflow.v1beta3.ExecutionStageState getStageStates(int index);
+
   /**
    *
    *
@@ -923,6 +991,7 @@ public interface JobOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ExecutionStageState stage_states = 20;</code>
    */
   int getStageStatesCount();
+
   /**
    *
    *
@@ -935,6 +1004,7 @@ public interface JobOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.ExecutionStageStateOrBuilder>
       getStageStatesOrBuilderList();
+
   /**
    *
    *
@@ -961,6 +1031,7 @@ public interface JobOrBuilder
    * @return Whether the jobMetadata field is set.
    */
   boolean hasJobMetadata();
+
   /**
    *
    *
@@ -975,6 +1046,7 @@ public interface JobOrBuilder
    * @return The jobMetadata.
    */
   com.google.dataflow.v1beta3.JobMetadata getJobMetadata();
+
   /**
    *
    *
@@ -1005,6 +1077,7 @@ public interface JobOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -1022,6 +1095,7 @@ public interface JobOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -1051,6 +1125,7 @@ public interface JobOrBuilder
    * @return The createdFromSnapshotId.
    */
   java.lang.String getCreatedFromSnapshotId();
+
   /**
    *
    *
@@ -1078,4 +1153,121 @@ public interface JobOrBuilder
    * @return The satisfiesPzs.
    */
   boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * This field may ONLY be modified at runtime using the projects.jobs.update
+   * method to adjust job behavior. This field has no effect when specified at
+   * job creation.
+   * </pre>
+   *
+   * <code>optional .google.dataflow.v1beta3.RuntimeUpdatableParams runtime_updatable_params = 26;
+   * </code>
+   *
+   * @return Whether the runtimeUpdatableParams field is set.
+   */
+  boolean hasRuntimeUpdatableParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * This field may ONLY be modified at runtime using the projects.jobs.update
+   * method to adjust job behavior. This field has no effect when specified at
+   * job creation.
+   * </pre>
+   *
+   * <code>optional .google.dataflow.v1beta3.RuntimeUpdatableParams runtime_updatable_params = 26;
+   * </code>
+   *
+   * @return The runtimeUpdatableParams.
+   */
+  com.google.dataflow.v1beta3.RuntimeUpdatableParams getRuntimeUpdatableParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * This field may ONLY be modified at runtime using the projects.jobs.update
+   * method to adjust job behavior. This field has no effect when specified at
+   * job creation.
+   * </pre>
+   *
+   * <code>optional .google.dataflow.v1beta3.RuntimeUpdatableParams runtime_updatable_params = 26;
+   * </code>
+   */
+  com.google.dataflow.v1beta3.RuntimeUpdatableParamsOrBuilder getRuntimeUpdatableParamsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use. This field is set only in responses
+   * from the server; it is ignored if it is set in any requests.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  boolean hasSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use. This field is set only in responses
+   * from the server; it is ignored if it is set in any requests.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resources used by the Dataflow Service to run the job.
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.ServiceResources service_resources = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the serviceResources field is set.
+   */
+  boolean hasServiceResources();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resources used by the Dataflow Service to run the job.
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.ServiceResources service_resources = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The serviceResources.
+   */
+  com.google.dataflow.v1beta3.ServiceResources getServiceResources();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resources used by the Dataflow Service to run the job.
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.ServiceResources service_resources = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.dataflow.v1beta3.ServiceResourcesOrBuilder getServiceResourcesOrBuilder();
 }

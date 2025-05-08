@@ -40,6 +40,7 @@ public interface ToolCallOrBuilder
    * @return The tool.
    */
   java.lang.String getTool();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ToolCallOrBuilder
    * @return The action.
    */
   java.lang.String getAction();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface ToolCallOrBuilder
    * @return Whether the inputParameters field is set.
    */
   boolean hasInputParameters();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface ToolCallOrBuilder
    * @return The inputParameters.
    */
   com.google.protobuf.Struct getInputParameters();
+
   /**
    *
    *

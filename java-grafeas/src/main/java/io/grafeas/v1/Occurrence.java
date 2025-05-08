@@ -34,6 +34,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1.Occurrence)
     OccurrenceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Occurrence.newBuilder() to construct.
   private Occurrence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,12 +87,14 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     COMPLIANCE(16),
     DSSE_ATTESTATION(17),
     SBOM_REFERENCE(19),
+    SECRET(20),
     DETAILS_NOT_SET(0);
     private final int value;
 
     private DetailsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -126,6 +129,8 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
           return DSSE_ATTESTATION;
         case 19:
           return SBOM_REFERENCE;
+        case 20:
+          return SECRET;
         case 0:
           return DETAILS_NOT_SET;
         default:
@@ -146,6 +151,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceUri_ = "";
+
   /**
    *
    *
@@ -224,6 +232,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object noteName_ = "";
+
   /**
    *
    *
@@ -279,6 +289,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -307,6 +318,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
 
   public static final int KIND_FIELD_NUMBER = 4;
   private int kind_ = 0;
+
   /**
    *
    *
@@ -323,6 +335,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   public int getKindValue() {
     return kind_;
   }
+
   /**
    *
    *
@@ -345,6 +358,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object remediation_ = "";
+
   /**
    *
    *
@@ -368,6 +382,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -394,6 +409,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -409,6 +425,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -424,6 +441,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -440,6 +458,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -455,6 +474,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -470,6 +490,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -485,6 +506,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VULNERABILITY_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -500,6 +522,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVulnerability() {
     return detailsCase_ == 8;
   }
+
   /**
    *
    *
@@ -518,6 +541,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.VulnerabilityOccurrence.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -536,6 +560,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BUILD_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -551,6 +576,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBuild() {
     return detailsCase_ == 9;
   }
+
   /**
    *
    *
@@ -569,6 +595,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.BuildOccurrence.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -587,6 +614,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -603,6 +631,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImage() {
     return detailsCase_ == 10;
   }
+
   /**
    *
    *
@@ -622,6 +651,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.ImageOccurrence.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -641,6 +671,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PACKAGE_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -656,6 +687,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPackage() {
     return detailsCase_ == 11;
   }
+
   /**
    *
    *
@@ -674,6 +706,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.PackageOccurrence.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -692,6 +725,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEPLOYMENT_FIELD_NUMBER = 12;
+
   /**
    *
    *
@@ -707,6 +741,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeployment() {
     return detailsCase_ == 12;
   }
+
   /**
    *
    *
@@ -725,6 +760,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.DeploymentOccurrence.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -743,6 +779,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISCOVERY_FIELD_NUMBER = 13;
+
   /**
    *
    *
@@ -758,6 +795,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDiscovery() {
     return detailsCase_ == 13;
   }
+
   /**
    *
    *
@@ -776,6 +814,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.DiscoveryOccurrence.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -794,6 +833,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ATTESTATION_FIELD_NUMBER = 14;
+
   /**
    *
    *
@@ -809,6 +849,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAttestation() {
     return detailsCase_ == 14;
   }
+
   /**
    *
    *
@@ -827,6 +868,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.AttestationOccurrence.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -845,6 +887,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UPGRADE_FIELD_NUMBER = 15;
+
   /**
    *
    *
@@ -860,6 +903,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpgrade() {
     return detailsCase_ == 15;
   }
+
   /**
    *
    *
@@ -878,6 +922,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.UpgradeOccurrence.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -896,6 +941,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COMPLIANCE_FIELD_NUMBER = 16;
+
   /**
    *
    *
@@ -911,6 +957,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCompliance() {
     return detailsCase_ == 16;
   }
+
   /**
    *
    *
@@ -929,6 +976,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.ComplianceOccurrence.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -947,6 +995,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DSSE_ATTESTATION_FIELD_NUMBER = 17;
+
   /**
    *
    *
@@ -962,6 +1011,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDsseAttestation() {
     return detailsCase_ == 17;
   }
+
   /**
    *
    *
@@ -980,6 +1030,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.DSSEAttestationOccurrence.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -998,6 +1049,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SBOM_REFERENCE_FIELD_NUMBER = 19;
+
   /**
    *
    *
@@ -1013,6 +1065,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSbomReference() {
     return detailsCase_ == 19;
   }
+
   /**
    *
    *
@@ -1031,6 +1084,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.SBOMReferenceOccurrence.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1048,8 +1102,63 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     return io.grafeas.v1.SBOMReferenceOccurrence.getDefaultInstance();
   }
 
+  public static final int SECRET_FIELD_NUMBER = 20;
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes a secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+   *
+   * @return Whether the secret field is set.
+   */
+  @java.lang.Override
+  public boolean hasSecret() {
+    return detailsCase_ == 20;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes a secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+   *
+   * @return The secret.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.SecretOccurrence getSecret() {
+    if (detailsCase_ == 20) {
+      return (io.grafeas.v1.SecretOccurrence) details_;
+    }
+    return io.grafeas.v1.SecretOccurrence.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes a secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.SecretOccurrenceOrBuilder getSecretOrBuilder() {
+    if (detailsCase_ == 20) {
+      return (io.grafeas.v1.SecretOccurrence) details_;
+    }
+    return io.grafeas.v1.SecretOccurrence.getDefaultInstance();
+  }
+
   public static final int ENVELOPE_FIELD_NUMBER = 18;
   private io.grafeas.v1.Envelope envelope_;
+
   /**
    *
    *
@@ -1065,6 +1174,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEnvelope() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1080,6 +1190,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.Envelope getEnvelope() {
     return envelope_ == null ? io.grafeas.v1.Envelope.getDefaultInstance() : envelope_;
   }
+
   /**
    *
    *
@@ -1164,6 +1275,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
     if (detailsCase_ == 19) {
       output.writeMessage(19, (io.grafeas.v1.SBOMReferenceOccurrence) details_);
+    }
+    if (detailsCase_ == 20) {
+      output.writeMessage(20, (io.grafeas.v1.SecretOccurrence) details_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1253,6 +1367,11 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               19, (io.grafeas.v1.SBOMReferenceOccurrence) details_);
     }
+    if (detailsCase_ == 20) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              20, (io.grafeas.v1.SecretOccurrence) details_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1319,6 +1438,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         break;
       case 19:
         if (!getSbomReference().equals(other.getSbomReference())) return false;
+        break;
+      case 20:
+        if (!getSecret().equals(other.getSecret())) return false;
         break;
       case 0:
       default:
@@ -1400,6 +1522,10 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       case 19:
         hash = (37 * hash) + SBOM_REFERENCE_FIELD_NUMBER;
         hash = (53 * hash) + getSbomReference().hashCode();
+        break;
+      case 20:
+        hash = (37 * hash) + SECRET_FIELD_NUMBER;
+        hash = (53 * hash) + getSecret().hashCode();
         break;
       case 0:
       default:
@@ -1503,6 +1629,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1599,6 +1726,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       if (sbomReferenceBuilder_ != null) {
         sbomReferenceBuilder_.clear();
       }
+      if (secretBuilder_ != null) {
+        secretBuilder_.clear();
+      }
       envelope_ = null;
       if (envelopeBuilder_ != null) {
         envelopeBuilder_.dispose();
@@ -1665,7 +1795,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.envelope_ = envelopeBuilder_ == null ? envelope_ : envelopeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
@@ -1707,6 +1837,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       if (detailsCase_ == 19 && sbomReferenceBuilder_ != null) {
         result.details_ = sbomReferenceBuilder_.build();
+      }
+      if (detailsCase_ == 20 && secretBuilder_ != null) {
+        result.details_ = secretBuilder_.build();
       }
     }
 
@@ -1841,6 +1974,11 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         case SBOM_REFERENCE:
           {
             mergeSbomReference(other.getSbomReference());
+            break;
+          }
+        case SECRET:
+          {
+            mergeSecret(other.getSecret());
             break;
           }
         case DETAILS_NOT_SET:
@@ -1979,7 +2117,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             case 146:
               {
                 input.readMessage(getEnvelopeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 146
             case 154:
@@ -1988,6 +2126,12 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
                 detailsCase_ = 19;
                 break;
               } // case 154
+            case 162:
+              {
+                input.readMessage(getSecretFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 20;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2022,6 +2166,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2045,6 +2190,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2068,6 +2214,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2090,6 +2237,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2108,6 +2256,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2133,6 +2282,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object resourceUri_ = "";
+
     /**
      *
      *
@@ -2157,6 +2307,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2181,6 +2332,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2204,6 +2356,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2223,6 +2376,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2249,6 +2403,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object noteName_ = "";
+
     /**
      *
      *
@@ -2273,6 +2428,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2297,6 +2453,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2320,6 +2477,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2339,6 +2497,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2365,6 +2524,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int kind_ = 0;
+
     /**
      *
      *
@@ -2381,6 +2541,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public int getKindValue() {
       return kind_;
     }
+
     /**
      *
      *
@@ -2400,6 +2561,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2417,6 +2579,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       io.grafeas.v1.NoteKind result = io.grafeas.v1.NoteKind.forNumber(kind_);
       return result == null ? io.grafeas.v1.NoteKind.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2439,6 +2602,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2459,6 +2623,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object remediation_ = "";
+
     /**
      *
      *
@@ -2481,6 +2646,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2503,6 +2669,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2524,6 +2691,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2541,6 +2709,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2570,6 +2739,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2584,6 +2754,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2604,6 +2775,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2626,6 +2798,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2645,6 +2818,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2672,6 +2846,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2691,6 +2866,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2705,6 +2881,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2723,6 +2900,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2755,6 +2933,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2769,6 +2948,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2789,6 +2969,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2811,6 +2992,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2830,6 +3012,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2857,6 +3040,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2876,6 +3060,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2890,6 +3075,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2908,6 +3094,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2939,6 +3126,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.VulnerabilityOccurrence.Builder,
             io.grafeas.v1.VulnerabilityOccurrenceOrBuilder>
         vulnerabilityBuilder_;
+
     /**
      *
      *
@@ -2954,6 +3142,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVulnerability() {
       return detailsCase_ == 8;
     }
+
     /**
      *
      *
@@ -2979,6 +3168,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.VulnerabilityOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3001,6 +3191,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -3020,6 +3211,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -3052,6 +3244,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -3077,6 +3270,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3089,6 +3283,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.VulnerabilityOccurrence.Builder getVulnerabilityBuilder() {
       return getVulnerabilityFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3109,6 +3304,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.VulnerabilityOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3147,6 +3343,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.BuildOccurrence.Builder,
             io.grafeas.v1.BuildOccurrenceOrBuilder>
         buildBuilder_;
+
     /**
      *
      *
@@ -3162,6 +3359,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBuild() {
       return detailsCase_ == 9;
     }
+
     /**
      *
      *
@@ -3187,6 +3385,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.BuildOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3209,6 +3408,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -3228,6 +3428,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -3258,6 +3459,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -3283,6 +3485,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3295,6 +3498,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.BuildOccurrence.Builder getBuildBuilder() {
       return getBuildFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3315,6 +3519,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.BuildOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3351,6 +3556,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.ImageOccurrence.Builder,
             io.grafeas.v1.ImageOccurrenceOrBuilder>
         imageBuilder_;
+
     /**
      *
      *
@@ -3367,6 +3573,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImage() {
       return detailsCase_ == 10;
     }
+
     /**
      *
      *
@@ -3393,6 +3600,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.ImageOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3416,6 +3624,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -3436,6 +3645,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -3467,6 +3677,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -3493,6 +3704,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3506,6 +3718,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.ImageOccurrence.Builder getImageBuilder() {
       return getImageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3527,6 +3740,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.ImageOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3564,6 +3778,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.PackageOccurrence.Builder,
             io.grafeas.v1.PackageOccurrenceOrBuilder>
         packageBuilder_;
+
     /**
      *
      *
@@ -3579,6 +3794,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPackage() {
       return detailsCase_ == 11;
     }
+
     /**
      *
      *
@@ -3604,6 +3820,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.PackageOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3626,6 +3843,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -3645,6 +3863,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -3676,6 +3895,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -3701,6 +3921,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3713,6 +3934,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.PackageOccurrence.Builder getPackageBuilder() {
       return getPackageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3733,6 +3955,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.PackageOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3769,6 +3992,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.DeploymentOccurrence.Builder,
             io.grafeas.v1.DeploymentOccurrenceOrBuilder>
         deploymentBuilder_;
+
     /**
      *
      *
@@ -3784,6 +4008,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeployment() {
       return detailsCase_ == 12;
     }
+
     /**
      *
      *
@@ -3809,6 +4034,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.DeploymentOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3831,6 +4057,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -3850,6 +4077,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -3882,6 +4110,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -3907,6 +4136,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3919,6 +4149,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.DeploymentOccurrence.Builder getDeploymentBuilder() {
       return getDeploymentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3939,6 +4170,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.DeploymentOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3975,6 +4207,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.DiscoveryOccurrence.Builder,
             io.grafeas.v1.DiscoveryOccurrenceOrBuilder>
         discoveryBuilder_;
+
     /**
      *
      *
@@ -3990,6 +4223,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDiscovery() {
       return detailsCase_ == 13;
     }
+
     /**
      *
      *
@@ -4015,6 +4249,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.DiscoveryOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4037,6 +4272,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4056,6 +4292,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4088,6 +4325,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4113,6 +4351,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4125,6 +4364,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.DiscoveryOccurrence.Builder getDiscoveryBuilder() {
       return getDiscoveryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4145,6 +4385,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.DiscoveryOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4181,6 +4422,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.AttestationOccurrence.Builder,
             io.grafeas.v1.AttestationOccurrenceOrBuilder>
         attestationBuilder_;
+
     /**
      *
      *
@@ -4196,6 +4438,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAttestation() {
       return detailsCase_ == 14;
     }
+
     /**
      *
      *
@@ -4221,6 +4464,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.AttestationOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4243,6 +4487,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -4262,6 +4507,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -4294,6 +4540,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -4319,6 +4566,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4331,6 +4579,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.AttestationOccurrence.Builder getAttestationBuilder() {
       return getAttestationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4351,6 +4600,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.AttestationOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4387,6 +4637,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.UpgradeOccurrence.Builder,
             io.grafeas.v1.UpgradeOccurrenceOrBuilder>
         upgradeBuilder_;
+
     /**
      *
      *
@@ -4402,6 +4653,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpgrade() {
       return detailsCase_ == 15;
     }
+
     /**
      *
      *
@@ -4427,6 +4679,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.UpgradeOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4449,6 +4702,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -4468,6 +4722,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -4499,6 +4754,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -4524,6 +4780,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4536,6 +4793,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.UpgradeOccurrence.Builder getUpgradeBuilder() {
       return getUpgradeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4556,6 +4814,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.UpgradeOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4592,6 +4851,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.ComplianceOccurrence.Builder,
             io.grafeas.v1.ComplianceOccurrenceOrBuilder>
         complianceBuilder_;
+
     /**
      *
      *
@@ -4607,6 +4867,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCompliance() {
       return detailsCase_ == 16;
     }
+
     /**
      *
      *
@@ -4632,6 +4893,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.ComplianceOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4654,6 +4916,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 16;
       return this;
     }
+
     /**
      *
      *
@@ -4673,6 +4936,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 16;
       return this;
     }
+
     /**
      *
      *
@@ -4705,6 +4969,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 16;
       return this;
     }
+
     /**
      *
      *
@@ -4730,6 +4995,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4742,6 +5008,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.ComplianceOccurrence.Builder getComplianceBuilder() {
       return getComplianceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4762,6 +5029,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.ComplianceOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4798,6 +5066,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.DSSEAttestationOccurrence.Builder,
             io.grafeas.v1.DSSEAttestationOccurrenceOrBuilder>
         dsseAttestationBuilder_;
+
     /**
      *
      *
@@ -4813,6 +5082,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDsseAttestation() {
       return detailsCase_ == 17;
     }
+
     /**
      *
      *
@@ -4838,6 +5108,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.DSSEAttestationOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4860,6 +5131,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 17;
       return this;
     }
+
     /**
      *
      *
@@ -4880,6 +5152,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 17;
       return this;
     }
+
     /**
      *
      *
@@ -4912,6 +5185,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 17;
       return this;
     }
+
     /**
      *
      *
@@ -4937,6 +5211,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4949,6 +5224,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.DSSEAttestationOccurrence.Builder getDsseAttestationBuilder() {
       return getDsseAttestationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4969,6 +5245,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.DSSEAttestationOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5007,6 +5284,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.SBOMReferenceOccurrence.Builder,
             io.grafeas.v1.SBOMReferenceOccurrenceOrBuilder>
         sbomReferenceBuilder_;
+
     /**
      *
      *
@@ -5022,6 +5300,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSbomReference() {
       return detailsCase_ == 19;
     }
+
     /**
      *
      *
@@ -5047,6 +5326,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.SBOMReferenceOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5069,6 +5349,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 19;
       return this;
     }
+
     /**
      *
      *
@@ -5088,6 +5369,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 19;
       return this;
     }
+
     /**
      *
      *
@@ -5120,6 +5402,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 19;
       return this;
     }
+
     /**
      *
      *
@@ -5145,6 +5428,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5157,6 +5441,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.SBOMReferenceOccurrence.Builder getSbomReferenceBuilder() {
       return getSbomReferenceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5177,6 +5462,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.SBOMReferenceOccurrence.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5210,10 +5496,224 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       return sbomReferenceBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.SecretOccurrence,
+            io.grafeas.v1.SecretOccurrence.Builder,
+            io.grafeas.v1.SecretOccurrenceOrBuilder>
+        secretBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+     *
+     * @return Whether the secret field is set.
+     */
+    @java.lang.Override
+    public boolean hasSecret() {
+      return detailsCase_ == 20;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+     *
+     * @return The secret.
+     */
+    @java.lang.Override
+    public io.grafeas.v1.SecretOccurrence getSecret() {
+      if (secretBuilder_ == null) {
+        if (detailsCase_ == 20) {
+          return (io.grafeas.v1.SecretOccurrence) details_;
+        }
+        return io.grafeas.v1.SecretOccurrence.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 20) {
+          return secretBuilder_.getMessage();
+        }
+        return io.grafeas.v1.SecretOccurrence.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+     */
+    public Builder setSecret(io.grafeas.v1.SecretOccurrence value) {
+      if (secretBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        secretBuilder_.setMessage(value);
+      }
+      detailsCase_ = 20;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+     */
+    public Builder setSecret(io.grafeas.v1.SecretOccurrence.Builder builderForValue) {
+      if (secretBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        secretBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 20;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+     */
+    public Builder mergeSecret(io.grafeas.v1.SecretOccurrence value) {
+      if (secretBuilder_ == null) {
+        if (detailsCase_ == 20 && details_ != io.grafeas.v1.SecretOccurrence.getDefaultInstance()) {
+          details_ =
+              io.grafeas.v1.SecretOccurrence.newBuilder((io.grafeas.v1.SecretOccurrence) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 20) {
+          secretBuilder_.mergeFrom(value);
+        } else {
+          secretBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 20;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+     */
+    public Builder clearSecret() {
+      if (secretBuilder_ == null) {
+        if (detailsCase_ == 20) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 20) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        secretBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+     */
+    public io.grafeas.v1.SecretOccurrence.Builder getSecretBuilder() {
+      return getSecretFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+     */
+    @java.lang.Override
+    public io.grafeas.v1.SecretOccurrenceOrBuilder getSecretOrBuilder() {
+      if ((detailsCase_ == 20) && (secretBuilder_ != null)) {
+        return secretBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 20) {
+          return (io.grafeas.v1.SecretOccurrence) details_;
+        }
+        return io.grafeas.v1.SecretOccurrence.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretOccurrence secret = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.SecretOccurrence,
+            io.grafeas.v1.SecretOccurrence.Builder,
+            io.grafeas.v1.SecretOccurrenceOrBuilder>
+        getSecretFieldBuilder() {
+      if (secretBuilder_ == null) {
+        if (!(detailsCase_ == 20)) {
+          details_ = io.grafeas.v1.SecretOccurrence.getDefaultInstance();
+        }
+        secretBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.SecretOccurrence,
+                io.grafeas.v1.SecretOccurrence.Builder,
+                io.grafeas.v1.SecretOccurrenceOrBuilder>(
+                (io.grafeas.v1.SecretOccurrence) details_, getParentForChildren(), isClean());
+        details_ = null;
+      }
+      detailsCase_ = 20;
+      onChanged();
+      return secretBuilder_;
+    }
+
     private io.grafeas.v1.Envelope envelope_;
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.Envelope, io.grafeas.v1.Envelope.Builder, io.grafeas.v1.EnvelopeOrBuilder>
         envelopeBuilder_;
+
     /**
      *
      *
@@ -5226,8 +5726,9 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the envelope field is set.
      */
     public boolean hasEnvelope() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
+
     /**
      *
      *
@@ -5246,6 +5747,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return envelopeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5264,10 +5766,11 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       } else {
         envelopeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5283,10 +5786,11 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       } else {
         envelopeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5298,7 +5802,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEnvelope(io.grafeas.v1.Envelope value) {
       if (envelopeBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && envelope_ != null
             && envelope_ != io.grafeas.v1.Envelope.getDefaultInstance()) {
           getEnvelopeBuilder().mergeFrom(value);
@@ -5309,11 +5813,12 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         envelopeBuilder_.mergeFrom(value);
       }
       if (envelope_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
     }
+
     /**
      *
      *
@@ -5324,7 +5829,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.Envelope envelope = 18;</code>
      */
     public Builder clearEnvelope() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       envelope_ = null;
       if (envelopeBuilder_ != null) {
         envelopeBuilder_.dispose();
@@ -5333,6 +5838,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5343,10 +5849,11 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.Envelope envelope = 18;</code>
      */
     public io.grafeas.v1.Envelope.Builder getEnvelopeBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getEnvelopeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5363,6 +5870,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         return envelope_ == null ? io.grafeas.v1.Envelope.getDefaultInstance() : envelope_;
       }
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RebaseTunedModelRequest)
     RebaseTunedModelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RebaseTunedModelRequest.newBuilder() to construct.
   private RebaseTunedModelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
 
   public static final int TUNED_MODEL_REF_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.TunedModelRef tunedModelRef_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
   public boolean hasTunedModelRef() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
         ? com.google.cloud.aiplatform.v1.TunedModelRef.getDefaultInstance()
         : tunedModelRef_;
   }
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
 
   public static final int TUNING_JOB_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1.TuningJob tuningJob_;
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
   public boolean hasTuningJob() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
         ? com.google.cloud.aiplatform.v1.TuningJob.getDefaultInstance()
         : tuningJob_;
   }
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
 
   public static final int ARTIFACT_DESTINATION_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1.GcsDestination artifactDestination_;
+
   /**
    *
    *
@@ -256,6 +266,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
   public boolean hasArtifactDestination() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -275,6 +286,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
         ? com.google.cloud.aiplatform.v1.GcsDestination.getDefaultInstance()
         : artifactDestination_;
   }
+
   /**
    *
    *
@@ -295,6 +307,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
 
   public static final int DEPLOY_TO_SAME_ENDPOINT_FIELD_NUMBER = 5;
   private boolean deployToSameEndpoint_ = false;
+
   /**
    *
    *
@@ -524,6 +537,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -794,6 +808,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -819,6 +834,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -844,6 +860,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -868,6 +885,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -888,6 +906,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +939,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1.TunedModelRef.Builder,
             com.google.cloud.aiplatform.v1.TunedModelRefOrBuilder>
         tunedModelRefBuilder_;
+
     /**
      *
      *
@@ -936,6 +956,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
     public boolean hasTunedModelRef() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -958,6 +979,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
         return tunedModelRefBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -982,6 +1004,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1027,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1058,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1080,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1097,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       onChanged();
       return getTunedModelRefFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1091,6 +1118,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
             : tunedModelRef_;
       }
     }
+
     /**
      *
      *
@@ -1125,6 +1153,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1.TuningJob.Builder,
             com.google.cloud.aiplatform.v1.TuningJobOrBuilder>
         tuningJobBuilder_;
+
     /**
      *
      *
@@ -1142,6 +1171,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
     public boolean hasTuningJob() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1165,6 +1195,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
         return tuningJobBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1190,6 +1221,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1212,6 +1244,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1242,6 +1275,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1264,6 +1298,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1316,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       onChanged();
       return getTuningJobFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1302,6 +1338,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
             : tuningJob_;
       }
     }
+
     /**
      *
      *
@@ -1337,6 +1374,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1.GcsDestination.Builder,
             com.google.cloud.aiplatform.v1.GcsDestinationOrBuilder>
         artifactDestinationBuilder_;
+
     /**
      *
      *
@@ -1353,6 +1391,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
     public boolean hasArtifactDestination() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1375,6 +1414,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
         return artifactDestinationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1399,6 +1439,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1421,6 +1462,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1451,6 +1493,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1472,6 +1515,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1488,6 +1532,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       onChanged();
       return getArtifactDestinationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1509,6 +1554,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
             : artifactDestination_;
       }
     }
+
     /**
      *
      *
@@ -1538,6 +1584,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
     }
 
     private boolean deployToSameEndpoint_;
+
     /**
      *
      *
@@ -1555,6 +1602,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
     public boolean getDeployToSameEndpoint() {
       return deployToSameEndpoint_;
     }
+
     /**
      *
      *
@@ -1576,6 +1624,7 @@ public final class RebaseTunedModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

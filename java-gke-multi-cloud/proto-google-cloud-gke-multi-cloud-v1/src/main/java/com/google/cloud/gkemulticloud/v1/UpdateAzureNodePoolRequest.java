@@ -33,6 +33,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.UpdateAzureNodePoolRequest)
     UpdateAzureNodePoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateAzureNodePoolRequest.newBuilder() to construct.
   private UpdateAzureNodePoolRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int AZURE_NODE_POOL_FIELD_NUMBER = 1;
   private com.google.cloud.gkemulticloud.v1.AzureNodePool azureNodePool_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
   public boolean hasAzureNodePool() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
         ? com.google.cloud.gkemulticloud.v1.AzureNodePool.getDefaultInstance()
         : azureNodePool_;
   }
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -193,6 +200,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -406,6 +414,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -645,6 +654,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
             com.google.cloud.gkemulticloud.v1.AzureNodePool.Builder,
             com.google.cloud.gkemulticloud.v1.AzureNodePoolOrBuilder>
         azureNodePoolBuilder_;
+
     /**
      *
      *
@@ -662,6 +672,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
     public boolean hasAzureNodePool() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -685,6 +696,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
         return azureNodePoolBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -710,6 +722,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -733,6 +746,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -764,6 +778,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +801,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +819,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return getAzureNodePoolFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -824,6 +841,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
             : azureNodePool_;
       }
     }
+
     /**
      *
      *
@@ -854,6 +872,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -869,6 +888,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -888,6 +908,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +933,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -937,6 +959,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -968,6 +991,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1001,6 +1025,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1031,6 +1056,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1095,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1099,6 +1126,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1124,6 +1152,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1153,6 +1182,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
             : updateMask_;
       }
     }
+
     /**
      *
      *

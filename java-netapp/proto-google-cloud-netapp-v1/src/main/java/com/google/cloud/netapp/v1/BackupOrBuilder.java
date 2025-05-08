@@ -38,6 +38,7 @@ public interface BackupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface BackupOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface BackupOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -139,6 +142,7 @@ public interface BackupOrBuilder
    * @return The enum numeric value on the wire for backupType.
    */
   int getBackupTypeValue();
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public interface BackupOrBuilder
    * @return The sourceVolume.
    */
   java.lang.String getSourceVolume();
+
   /**
    *
    *
@@ -199,6 +204,7 @@ public interface BackupOrBuilder
    * @return Whether the sourceSnapshot field is set.
    */
   boolean hasSourceSnapshot();
+
   /**
    *
    *
@@ -214,6 +220,7 @@ public interface BackupOrBuilder
    * @return The sourceSnapshot.
    */
   java.lang.String getSourceSnapshot();
+
   /**
    *
    *
@@ -243,6 +250,7 @@ public interface BackupOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -256,6 +264,7 @@ public interface BackupOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -278,6 +287,7 @@ public interface BackupOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -288,9 +298,11 @@ public interface BackupOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -301,6 +313,7 @@ public interface BackupOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -315,6 +328,7 @@ public interface BackupOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -365,4 +379,68 @@ public interface BackupOrBuilder
    * @return The satisfiesPzi.
    */
   boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Region of the volume from which the backup was created.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string volume_region = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The volumeRegion.
+   */
+  java.lang.String getVolumeRegion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Region of the volume from which the backup was created.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string volume_region = 13 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for volumeRegion.
+   */
+  com.google.protobuf.ByteString getVolumeRegionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Region in which backup is stored.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string backup_region = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The backupRegion.
+   */
+  java.lang.String getBackupRegion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Region in which backup is stored.
+   * Format: `projects/{project_id}/locations/{location}`
+   * </pre>
+   *
+   * <code>
+   * string backup_region = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for backupRegion.
+   */
+  com.google.protobuf.ByteString getBackupRegionBytes();
 }

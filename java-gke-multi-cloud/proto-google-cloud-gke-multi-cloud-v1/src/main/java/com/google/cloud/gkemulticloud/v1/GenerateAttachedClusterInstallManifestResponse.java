@@ -36,6 +36,7 @@ public final class GenerateAttachedClusterInstallManifestResponse
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestResponse)
     GenerateAttachedClusterInstallManifestResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerateAttachedClusterInstallManifestResponse.newBuilder() to construct.
   private GenerateAttachedClusterInstallManifestResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class GenerateAttachedClusterInstallManifestResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object manifest_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class GenerateAttachedClusterInstallManifestResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -289,6 +292,7 @@ public final class GenerateAttachedClusterInstallManifestResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -491,6 +495,7 @@ public final class GenerateAttachedClusterInstallManifestResponse
     private int bitField0_;
 
     private java.lang.Object manifest_ = "";
+
     /**
      *
      *
@@ -514,6 +519,7 @@ public final class GenerateAttachedClusterInstallManifestResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -537,6 +543,7 @@ public final class GenerateAttachedClusterInstallManifestResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -559,6 +566,7 @@ public final class GenerateAttachedClusterInstallManifestResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -577,6 +585,7 @@ public final class GenerateAttachedClusterInstallManifestResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

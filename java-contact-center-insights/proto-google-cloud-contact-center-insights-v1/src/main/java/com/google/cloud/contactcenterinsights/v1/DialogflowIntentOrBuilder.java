@@ -36,6 +36,7 @@ public interface DialogflowIntentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *

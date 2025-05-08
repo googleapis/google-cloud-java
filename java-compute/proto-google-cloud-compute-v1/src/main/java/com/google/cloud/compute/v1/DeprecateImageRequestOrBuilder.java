@@ -38,6 +38,7 @@ public interface DeprecateImageRequestOrBuilder
    * @return Whether the deprecationStatusResource field is set.
    */
   boolean hasDeprecationStatusResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface DeprecateImageRequestOrBuilder
    * @return The deprecationStatusResource.
    */
   com.google.cloud.compute.v1.DeprecationStatus getDeprecationStatusResource();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface DeprecateImageRequestOrBuilder
    * @return The image.
    */
   java.lang.String getImage();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface DeprecateImageRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface DeprecateImageRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface DeprecateImageRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface GroundednessInstanceOrBuilder
    * @return Whether the prediction field is set.
    */
   boolean hasPrediction();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface GroundednessInstanceOrBuilder
    * @return The prediction.
    */
   java.lang.String getPrediction();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface GroundednessInstanceOrBuilder
    * @return Whether the context field is set.
    */
   boolean hasContext();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface GroundednessInstanceOrBuilder
    * @return The context.
    */
   java.lang.String getContext();
+
   /**
    *
    *

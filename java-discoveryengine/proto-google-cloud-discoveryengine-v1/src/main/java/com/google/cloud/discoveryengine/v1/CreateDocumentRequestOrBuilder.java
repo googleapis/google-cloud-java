@@ -39,6 +39,7 @@ public interface CreateDocumentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CreateDocumentRequestOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateDocumentRequestOrBuilder
    * @return The document.
    */
   com.google.cloud.discoveryengine.v1.Document getDocument();
+
   /**
    *
    *
@@ -118,7 +121,7 @@ public interface CreateDocumentRequestOrBuilder
    * Otherwise, an `ALREADY_EXISTS` error is returned.
    *
    * This field must conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-   * standard with a length limit of 63 characters. Otherwise, an
+   * standard with a length limit of 128 characters. Otherwise, an
    * `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
@@ -127,6 +130,7 @@ public interface CreateDocumentRequestOrBuilder
    * @return The documentId.
    */
   java.lang.String getDocumentId();
+
   /**
    *
    *
@@ -146,7 +150,7 @@ public interface CreateDocumentRequestOrBuilder
    * Otherwise, an `ALREADY_EXISTS` error is returned.
    *
    * This field must conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-   * standard with a length limit of 63 characters. Otherwise, an
+   * standard with a length limit of 128 characters. Otherwise, an
    * `INVALID_ARGUMENT` error is returned.
    * </pre>
    *

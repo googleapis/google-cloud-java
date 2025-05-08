@@ -33,6 +33,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.SpeechWordInfo)
     SpeechWordInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SpeechWordInfo.newBuilder() to construct.
   private SpeechWordInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object word_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_OFFSET_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration startOffset_;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartOffset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getStartOffset() {
     return startOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : startOffset_;
   }
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_OFFSET_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration endOffset_;
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndOffset() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -203,6 +211,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getEndOffset() {
     return endOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : endOffset_;
   }
+
   /**
    *
    *
@@ -221,6 +230,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIDENCE_FIELD_NUMBER = 4;
   private float confidence_ = 0F;
+
   /**
    *
    *
@@ -441,6 +451,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -687,6 +698,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object word_ = "";
+
     /**
      *
      *
@@ -709,6 +721,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -731,6 +744,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +784,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +814,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         startOffsetBuilder_;
+
     /**
      *
      *
@@ -814,6 +831,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartOffset() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -836,6 +854,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
         return startOffsetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -860,6 +879,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +901,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +931,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -931,6 +953,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +970,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartOffsetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -967,6 +991,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
             : startOffset_;
       }
     }
+
     /**
      *
      *
@@ -1001,6 +1026,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         endOffsetBuilder_;
+
     /**
      *
      *
@@ -1017,6 +1043,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndOffset() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1037,6 +1064,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
         return endOffsetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1061,6 +1089,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1082,6 +1111,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1111,6 +1141,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1132,6 +1163,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1148,6 +1180,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndOffsetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1166,6 +1199,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
         return endOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : endOffset_;
       }
     }
+
     /**
      *
      *
@@ -1195,6 +1229,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float confidence_;
+
     /**
      *
      *
@@ -1216,6 +1251,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
     public float getConfidence() {
       return confidence_;
     }
+
     /**
      *
      *
@@ -1241,6 +1277,7 @@ public final class SpeechWordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -41,6 +41,7 @@ public interface SearchCatalogRequestOrBuilder
    * @return Whether the scope field is set.
    */
   boolean hasScope();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface SearchCatalogRequestOrBuilder
    * @return The scope.
    */
   com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope getScope();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface SearchCatalogRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -152,6 +155,7 @@ public interface SearchCatalogRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -190,6 +194,7 @@ public interface SearchCatalogRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *

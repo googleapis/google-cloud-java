@@ -34,6 +34,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.ConnectionProfile)
     ConnectionProfileOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConnectionProfile.newBuilder() to construct.
   private ConnectionProfile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -93,12 +94,14 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     BIGQUERY_PROFILE(103),
     POSTGRESQL_PROFILE(104),
     SQL_SERVER_PROFILE(105),
+    SALESFORCE_PROFILE(107),
     PROFILE_NOT_SET(0);
     private final int value;
 
     private ProfileCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -123,6 +126,8 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
           return POSTGRESQL_PROFILE;
         case 105:
           return SQL_SERVER_PROFILE;
+        case 107:
+          return SALESFORCE_PROFILE;
         case 0:
           return PROFILE_NOT_SET;
         default:
@@ -157,6 +162,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     private ConnectivityCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -195,6 +201,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -248,6 +256,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -264,6 +273,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -280,6 +290,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -297,6 +308,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -313,6 +325,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -329,6 +342,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -370,6 +384,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -386,12 +401,14 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -405,6 +422,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -425,6 +443,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -450,6 +469,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -473,6 +493,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -497,7 +518,78 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 6;
+  private boolean satisfiesPzs_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzs() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 7;
+  private boolean satisfiesPzi_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzi() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   public static final int ORACLE_PROFILE_FIELD_NUMBER = 100;
+
   /**
    *
    *
@@ -513,6 +605,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   public boolean hasOracleProfile() {
     return profileCase_ == 100;
   }
+
   /**
    *
    *
@@ -531,6 +624,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datastream.v1.OracleProfile.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -549,6 +643,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int GCS_PROFILE_FIELD_NUMBER = 101;
+
   /**
    *
    *
@@ -564,6 +659,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   public boolean hasGcsProfile() {
     return profileCase_ == 101;
   }
+
   /**
    *
    *
@@ -582,6 +678,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datastream.v1.GcsProfile.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -600,6 +697,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MYSQL_PROFILE_FIELD_NUMBER = 102;
+
   /**
    *
    *
@@ -615,6 +713,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   public boolean hasMysqlProfile() {
     return profileCase_ == 102;
   }
+
   /**
    *
    *
@@ -633,6 +732,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datastream.v1.MysqlProfile.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -651,6 +751,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int BIGQUERY_PROFILE_FIELD_NUMBER = 103;
+
   /**
    *
    *
@@ -666,6 +767,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   public boolean hasBigqueryProfile() {
     return profileCase_ == 103;
   }
+
   /**
    *
    *
@@ -684,6 +786,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datastream.v1.BigQueryProfile.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -702,6 +805,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int POSTGRESQL_PROFILE_FIELD_NUMBER = 104;
+
   /**
    *
    *
@@ -717,6 +821,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   public boolean hasPostgresqlProfile() {
     return profileCase_ == 104;
   }
+
   /**
    *
    *
@@ -735,6 +840,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datastream.v1.PostgresqlProfile.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -753,6 +859,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SQL_SERVER_PROFILE_FIELD_NUMBER = 105;
+
   /**
    *
    *
@@ -768,6 +875,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   public boolean hasSqlServerProfile() {
     return profileCase_ == 105;
   }
+
   /**
    *
    *
@@ -786,6 +894,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datastream.v1.SqlServerProfile.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -803,7 +912,62 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.datastream.v1.SqlServerProfile.getDefaultInstance();
   }
 
+  public static final int SALESFORCE_PROFILE_FIELD_NUMBER = 107;
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
+   *
+   * @return Whether the salesforceProfile field is set.
+   */
+  @java.lang.Override
+  public boolean hasSalesforceProfile() {
+    return profileCase_ == 107;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
+   *
+   * @return The salesforceProfile.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SalesforceProfile getSalesforceProfile() {
+    if (profileCase_ == 107) {
+      return (com.google.cloud.datastream.v1.SalesforceProfile) profile_;
+    }
+    return com.google.cloud.datastream.v1.SalesforceProfile.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce Connection Profile configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SalesforceProfileOrBuilder getSalesforceProfileOrBuilder() {
+    if (profileCase_ == 107) {
+      return (com.google.cloud.datastream.v1.SalesforceProfile) profile_;
+    }
+    return com.google.cloud.datastream.v1.SalesforceProfile.getDefaultInstance();
+  }
+
   public static final int STATIC_SERVICE_IP_CONNECTIVITY_FIELD_NUMBER = 200;
+
   /**
    *
    *
@@ -821,6 +985,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   public boolean hasStaticServiceIpConnectivity() {
     return connectivityCase_ == 200;
   }
+
   /**
    *
    *
@@ -842,6 +1007,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datastream.v1.StaticServiceIpConnectivity.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -863,6 +1029,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FORWARD_SSH_CONNECTIVITY_FIELD_NUMBER = 201;
+
   /**
    *
    *
@@ -879,6 +1046,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   public boolean hasForwardSshConnectivity() {
     return connectivityCase_ == 201;
   }
+
   /**
    *
    *
@@ -898,6 +1066,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datastream.v1.ForwardSshTunnelConnectivity.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -918,6 +1087,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PRIVATE_CONNECTIVITY_FIELD_NUMBER = 202;
+
   /**
    *
    *
@@ -933,6 +1103,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
   public boolean hasPrivateConnectivity() {
     return connectivityCase_ == 202;
   }
+
   /**
    *
    *
@@ -951,6 +1122,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datastream.v1.PrivateConnectivity.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -997,6 +1169,12 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, displayName_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(6, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeBool(7, satisfiesPzi_);
+    }
     if (profileCase_ == 100) {
       output.writeMessage(100, (com.google.cloud.datastream.v1.OracleProfile) profile_);
     }
@@ -1014,6 +1192,9 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
     if (profileCase_ == 105) {
       output.writeMessage(105, (com.google.cloud.datastream.v1.SqlServerProfile) profile_);
+    }
+    if (profileCase_ == 107) {
+      output.writeMessage(107, (com.google.cloud.datastream.v1.SalesforceProfile) profile_);
     }
     if (connectivityCase_ == 200) {
       output.writeMessage(
@@ -1057,6 +1238,12 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, displayName_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, satisfiesPzi_);
+    }
     if (profileCase_ == 100) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1086,6 +1273,11 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               105, (com.google.cloud.datastream.v1.SqlServerProfile) profile_);
+    }
+    if (profileCase_ == 107) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              107, (com.google.cloud.datastream.v1.SalesforceProfile) profile_);
     }
     if (connectivityCase_ == 200) {
       size +=
@@ -1129,6 +1321,14 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (hasSatisfiesPzs() != other.hasSatisfiesPzs()) return false;
+    if (hasSatisfiesPzs()) {
+      if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    }
+    if (hasSatisfiesPzi() != other.hasSatisfiesPzi()) return false;
+    if (hasSatisfiesPzi()) {
+      if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
+    }
     if (!getProfileCase().equals(other.getProfileCase())) return false;
     switch (profileCase_) {
       case 100:
@@ -1148,6 +1348,9 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         break;
       case 105:
         if (!getSqlServerProfile().equals(other.getSqlServerProfile())) return false;
+        break;
+      case 107:
+        if (!getSalesforceProfile().equals(other.getSalesforceProfile())) return false;
         break;
       case 0:
       default:
@@ -1194,6 +1397,14 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
+    if (hasSatisfiesPzs()) {
+      hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    }
+    if (hasSatisfiesPzi()) {
+      hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
+    }
     switch (profileCase_) {
       case 100:
         hash = (37 * hash) + ORACLE_PROFILE_FIELD_NUMBER;
@@ -1218,6 +1429,10 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       case 105:
         hash = (37 * hash) + SQL_SERVER_PROFILE_FIELD_NUMBER;
         hash = (53 * hash) + getSqlServerProfile().hashCode();
+        break;
+      case 107:
+        hash = (37 * hash) + SALESFORCE_PROFILE_FIELD_NUMBER;
+        hash = (53 * hash) + getSalesforceProfile().hashCode();
         break;
       case 0:
       default:
@@ -1338,6 +1553,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1423,6 +1639,8 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       internalGetMutableLabels().clear();
       displayName_ = "";
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       if (oracleProfileBuilder_ != null) {
         oracleProfileBuilder_.clear();
       }
@@ -1440,6 +1658,9 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       if (sqlServerProfileBuilder_ != null) {
         sqlServerProfileBuilder_.clear();
+      }
+      if (salesforceProfileBuilder_ != null) {
+        salesforceProfileBuilder_.clear();
       }
       if (staticServiceIpConnectivityBuilder_ != null) {
         staticServiceIpConnectivityBuilder_.clear();
@@ -1510,6 +1731,14 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.displayName_ = displayName_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1533,6 +1762,9 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       if (profileCase_ == 105 && sqlServerProfileBuilder_ != null) {
         result.profile_ = sqlServerProfileBuilder_.build();
+      }
+      if (profileCase_ == 107 && salesforceProfileBuilder_ != null) {
+        result.profile_ = salesforceProfileBuilder_.build();
       }
       result.connectivityCase_ = connectivityCase_;
       result.connectivity_ = this.connectivity_;
@@ -1611,6 +1843,12 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.hasSatisfiesPzs()) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.hasSatisfiesPzi()) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
+      }
       switch (other.getProfileCase()) {
         case ORACLE_PROFILE:
           {
@@ -1640,6 +1878,11 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         case SQL_SERVER_PROFILE:
           {
             mergeSqlServerProfile(other.getSqlServerProfile());
+            break;
+          }
+        case SALESFORCE_PROFILE:
+          {
+            mergeSalesforceProfile(other.getSalesforceProfile());
             break;
           }
         case PROFILE_NOT_SET:
@@ -1730,6 +1973,18 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 48:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+            case 56:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
             case 802:
               {
                 input.readMessage(getOracleProfileFieldBuilder().getBuilder(), extensionRegistry);
@@ -1768,6 +2023,13 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
                 profileCase_ = 105;
                 break;
               } // case 842
+            case 858:
+              {
+                input.readMessage(
+                    getSalesforceProfileFieldBuilder().getBuilder(), extensionRegistry);
+                profileCase_ = 107;
+                break;
+              } // case 858
             case 1602:
               {
                 input.readMessage(
@@ -1837,6 +2099,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1861,6 +2124,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1885,6 +2149,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1908,6 +2173,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1927,6 +2193,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1958,6 +2225,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1974,6 +2242,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1996,6 +2265,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2020,6 +2290,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2041,6 +2312,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2070,6 +2342,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2091,6 +2364,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2107,6 +2381,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2127,6 +2402,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2161,6 +2437,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2177,6 +2454,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2199,6 +2477,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2223,6 +2502,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2244,6 +2524,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2273,6 +2554,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2294,6 +2576,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2310,6 +2593,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2330,6 +2614,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2383,6 +2668,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -2399,12 +2685,14 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -2418,6 +2706,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -2438,6 +2727,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -2464,6 +2754,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2480,12 +2771,14 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -2506,6 +2799,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -2522,6 +2816,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -2544,6 +2839,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2566,6 +2862,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2587,6 +2884,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2604,6 +2902,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2627,11 +2926,156 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private boolean satisfiesPzs_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the satisfiesPzs field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzs() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the satisfiesPzi field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzi() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datastream.v1.OracleProfile,
             com.google.cloud.datastream.v1.OracleProfile.Builder,
             com.google.cloud.datastream.v1.OracleProfileOrBuilder>
         oracleProfileBuilder_;
+
     /**
      *
      *
@@ -2647,6 +3091,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public boolean hasOracleProfile() {
       return profileCase_ == 100;
     }
+
     /**
      *
      *
@@ -2672,6 +3117,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.OracleProfile.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2694,6 +3140,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -2714,6 +3161,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -2746,6 +3194,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -2771,6 +3220,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2783,6 +3233,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datastream.v1.OracleProfile.Builder getOracleProfileBuilder() {
       return getOracleProfileFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2803,6 +3254,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.OracleProfile.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2841,6 +3293,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1.GcsProfile.Builder,
             com.google.cloud.datastream.v1.GcsProfileOrBuilder>
         gcsProfileBuilder_;
+
     /**
      *
      *
@@ -2856,6 +3309,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public boolean hasGcsProfile() {
       return profileCase_ == 101;
     }
+
     /**
      *
      *
@@ -2881,6 +3335,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.GcsProfile.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2903,6 +3358,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -2923,6 +3379,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -2955,6 +3412,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -2980,6 +3438,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2992,6 +3451,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datastream.v1.GcsProfile.Builder getGcsProfileBuilder() {
       return getGcsProfileFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3012,6 +3472,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.GcsProfile.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3050,6 +3511,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1.MysqlProfile.Builder,
             com.google.cloud.datastream.v1.MysqlProfileOrBuilder>
         mysqlProfileBuilder_;
+
     /**
      *
      *
@@ -3065,6 +3527,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public boolean hasMysqlProfile() {
       return profileCase_ == 102;
     }
+
     /**
      *
      *
@@ -3090,6 +3553,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.MysqlProfile.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3112,6 +3576,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 102;
       return this;
     }
+
     /**
      *
      *
@@ -3132,6 +3597,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 102;
       return this;
     }
+
     /**
      *
      *
@@ -3164,6 +3630,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 102;
       return this;
     }
+
     /**
      *
      *
@@ -3189,6 +3656,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3201,6 +3669,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datastream.v1.MysqlProfile.Builder getMysqlProfileBuilder() {
       return getMysqlProfileFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3221,6 +3690,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.MysqlProfile.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3259,6 +3729,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1.BigQueryProfile.Builder,
             com.google.cloud.datastream.v1.BigQueryProfileOrBuilder>
         bigqueryProfileBuilder_;
+
     /**
      *
      *
@@ -3274,6 +3745,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public boolean hasBigqueryProfile() {
       return profileCase_ == 103;
     }
+
     /**
      *
      *
@@ -3299,6 +3771,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.BigQueryProfile.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3321,6 +3794,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 103;
       return this;
     }
+
     /**
      *
      *
@@ -3341,6 +3815,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 103;
       return this;
     }
+
     /**
      *
      *
@@ -3373,6 +3848,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 103;
       return this;
     }
+
     /**
      *
      *
@@ -3398,6 +3874,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3410,6 +3887,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datastream.v1.BigQueryProfile.Builder getBigqueryProfileBuilder() {
       return getBigqueryProfileFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3430,6 +3908,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.BigQueryProfile.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3468,6 +3947,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1.PostgresqlProfile.Builder,
             com.google.cloud.datastream.v1.PostgresqlProfileOrBuilder>
         postgresqlProfileBuilder_;
+
     /**
      *
      *
@@ -3483,6 +3963,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public boolean hasPostgresqlProfile() {
       return profileCase_ == 104;
     }
+
     /**
      *
      *
@@ -3508,6 +3989,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.PostgresqlProfile.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3530,6 +4012,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 104;
       return this;
     }
+
     /**
      *
      *
@@ -3550,6 +4033,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 104;
       return this;
     }
+
     /**
      *
      *
@@ -3582,6 +4066,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 104;
       return this;
     }
+
     /**
      *
      *
@@ -3607,6 +4092,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3619,6 +4105,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datastream.v1.PostgresqlProfile.Builder getPostgresqlProfileBuilder() {
       return getPostgresqlProfileFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3640,6 +4127,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.PostgresqlProfile.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3678,6 +4166,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1.SqlServerProfile.Builder,
             com.google.cloud.datastream.v1.SqlServerProfileOrBuilder>
         sqlServerProfileBuilder_;
+
     /**
      *
      *
@@ -3693,6 +4182,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public boolean hasSqlServerProfile() {
       return profileCase_ == 105;
     }
+
     /**
      *
      *
@@ -3718,6 +4208,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.SqlServerProfile.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3740,6 +4231,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 105;
       return this;
     }
+
     /**
      *
      *
@@ -3760,6 +4252,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 105;
       return this;
     }
+
     /**
      *
      *
@@ -3792,6 +4285,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 105;
       return this;
     }
+
     /**
      *
      *
@@ -3817,6 +4311,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3829,6 +4324,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datastream.v1.SqlServerProfile.Builder getSqlServerProfileBuilder() {
       return getSqlServerProfileFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3849,6 +4345,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.SqlServerProfile.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3883,10 +4380,230 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.SalesforceProfile,
+            com.google.cloud.datastream.v1.SalesforceProfile.Builder,
+            com.google.cloud.datastream.v1.SalesforceProfileOrBuilder>
+        salesforceProfileBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
+     *
+     * @return Whether the salesforceProfile field is set.
+     */
+    @java.lang.Override
+    public boolean hasSalesforceProfile() {
+      return profileCase_ == 107;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
+     *
+     * @return The salesforceProfile.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SalesforceProfile getSalesforceProfile() {
+      if (salesforceProfileBuilder_ == null) {
+        if (profileCase_ == 107) {
+          return (com.google.cloud.datastream.v1.SalesforceProfile) profile_;
+        }
+        return com.google.cloud.datastream.v1.SalesforceProfile.getDefaultInstance();
+      } else {
+        if (profileCase_ == 107) {
+          return salesforceProfileBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.SalesforceProfile.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
+     */
+    public Builder setSalesforceProfile(com.google.cloud.datastream.v1.SalesforceProfile value) {
+      if (salesforceProfileBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        profile_ = value;
+        onChanged();
+      } else {
+        salesforceProfileBuilder_.setMessage(value);
+      }
+      profileCase_ = 107;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
+     */
+    public Builder setSalesforceProfile(
+        com.google.cloud.datastream.v1.SalesforceProfile.Builder builderForValue) {
+      if (salesforceProfileBuilder_ == null) {
+        profile_ = builderForValue.build();
+        onChanged();
+      } else {
+        salesforceProfileBuilder_.setMessage(builderForValue.build());
+      }
+      profileCase_ = 107;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
+     */
+    public Builder mergeSalesforceProfile(com.google.cloud.datastream.v1.SalesforceProfile value) {
+      if (salesforceProfileBuilder_ == null) {
+        if (profileCase_ == 107
+            && profile_ != com.google.cloud.datastream.v1.SalesforceProfile.getDefaultInstance()) {
+          profile_ =
+              com.google.cloud.datastream.v1.SalesforceProfile.newBuilder(
+                      (com.google.cloud.datastream.v1.SalesforceProfile) profile_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          profile_ = value;
+        }
+        onChanged();
+      } else {
+        if (profileCase_ == 107) {
+          salesforceProfileBuilder_.mergeFrom(value);
+        } else {
+          salesforceProfileBuilder_.setMessage(value);
+        }
+      }
+      profileCase_ = 107;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
+     */
+    public Builder clearSalesforceProfile() {
+      if (salesforceProfileBuilder_ == null) {
+        if (profileCase_ == 107) {
+          profileCase_ = 0;
+          profile_ = null;
+          onChanged();
+        }
+      } else {
+        if (profileCase_ == 107) {
+          profileCase_ = 0;
+          profile_ = null;
+        }
+        salesforceProfileBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
+     */
+    public com.google.cloud.datastream.v1.SalesforceProfile.Builder getSalesforceProfileBuilder() {
+      return getSalesforceProfileFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SalesforceProfileOrBuilder
+        getSalesforceProfileOrBuilder() {
+      if ((profileCase_ == 107) && (salesforceProfileBuilder_ != null)) {
+        return salesforceProfileBuilder_.getMessageOrBuilder();
+      } else {
+        if (profileCase_ == 107) {
+          return (com.google.cloud.datastream.v1.SalesforceProfile) profile_;
+        }
+        return com.google.cloud.datastream.v1.SalesforceProfile.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce Connection Profile configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.SalesforceProfile,
+            com.google.cloud.datastream.v1.SalesforceProfile.Builder,
+            com.google.cloud.datastream.v1.SalesforceProfileOrBuilder>
+        getSalesforceProfileFieldBuilder() {
+      if (salesforceProfileBuilder_ == null) {
+        if (!(profileCase_ == 107)) {
+          profile_ = com.google.cloud.datastream.v1.SalesforceProfile.getDefaultInstance();
+        }
+        salesforceProfileBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.SalesforceProfile,
+                com.google.cloud.datastream.v1.SalesforceProfile.Builder,
+                com.google.cloud.datastream.v1.SalesforceProfileOrBuilder>(
+                (com.google.cloud.datastream.v1.SalesforceProfile) profile_,
+                getParentForChildren(),
+                isClean());
+        profile_ = null;
+      }
+      profileCase_ = 107;
+      onChanged();
+      return salesforceProfileBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datastream.v1.StaticServiceIpConnectivity,
             com.google.cloud.datastream.v1.StaticServiceIpConnectivity.Builder,
             com.google.cloud.datastream.v1.StaticServiceIpConnectivityOrBuilder>
         staticServiceIpConnectivityBuilder_;
+
     /**
      *
      *
@@ -3904,6 +4621,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public boolean hasStaticServiceIpConnectivity() {
       return connectivityCase_ == 200;
     }
+
     /**
      *
      *
@@ -3932,6 +4650,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.StaticServiceIpConnectivity.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3957,6 +4676,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       connectivityCase_ = 200;
       return this;
     }
+
     /**
      *
      *
@@ -3979,6 +4699,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       connectivityCase_ = 200;
       return this;
     }
+
     /**
      *
      *
@@ -4016,6 +4737,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       connectivityCase_ = 200;
       return this;
     }
+
     /**
      *
      *
@@ -4043,6 +4765,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4058,6 +4781,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         getStaticServiceIpConnectivityBuilder() {
       return getStaticServiceIpConnectivityFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4081,6 +4805,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.StaticServiceIpConnectivity.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4122,6 +4847,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1.ForwardSshTunnelConnectivity.Builder,
             com.google.cloud.datastream.v1.ForwardSshTunnelConnectivityOrBuilder>
         forwardSshConnectivityBuilder_;
+
     /**
      *
      *
@@ -4139,6 +4865,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public boolean hasForwardSshConnectivity() {
       return connectivityCase_ == 201;
     }
+
     /**
      *
      *
@@ -4166,6 +4893,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.ForwardSshTunnelConnectivity.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4191,6 +4919,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       connectivityCase_ = 201;
       return this;
     }
+
     /**
      *
      *
@@ -4213,6 +4942,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       connectivityCase_ = 201;
       return this;
     }
+
     /**
      *
      *
@@ -4250,6 +4980,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       connectivityCase_ = 201;
       return this;
     }
+
     /**
      *
      *
@@ -4277,6 +5008,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4292,6 +5024,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         getForwardSshConnectivityBuilder() {
       return getForwardSshConnectivityFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4315,6 +5048,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.ForwardSshTunnelConnectivity.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4356,6 +5090,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1.PrivateConnectivity.Builder,
             com.google.cloud.datastream.v1.PrivateConnectivityOrBuilder>
         privateConnectivityBuilder_;
+
     /**
      *
      *
@@ -4371,6 +5106,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     public boolean hasPrivateConnectivity() {
       return connectivityCase_ == 202;
     }
+
     /**
      *
      *
@@ -4396,6 +5132,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.PrivateConnectivity.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4419,6 +5156,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       connectivityCase_ = 202;
       return this;
     }
+
     /**
      *
      *
@@ -4439,6 +5177,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       connectivityCase_ = 202;
       return this;
     }
+
     /**
      *
      *
@@ -4473,6 +5212,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       connectivityCase_ = 202;
       return this;
     }
+
     /**
      *
      *
@@ -4498,6 +5238,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4511,6 +5252,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         getPrivateConnectivityBuilder() {
       return getPrivateConnectivityFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4532,6 +5274,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datastream.v1.PrivateConnectivity.getDefaultInstance();
       }
     }
+
     /**
      *
      *

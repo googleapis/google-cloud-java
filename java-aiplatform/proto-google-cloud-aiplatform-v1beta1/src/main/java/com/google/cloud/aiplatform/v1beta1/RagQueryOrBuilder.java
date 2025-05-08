@@ -36,6 +36,7 @@ public interface RagQueryOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RagQueryOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *
@@ -72,7 +74,7 @@ public interface RagQueryOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.similarity_top_k is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=91
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=92
    * @return The similarityTopK.
    */
   @java.lang.Deprecated
@@ -90,11 +92,12 @@ public interface RagQueryOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.ranking is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=95
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=96
    * @return Whether the ranking field is set.
    */
   @java.lang.Deprecated
   boolean hasRanking();
+
   /**
    *
    *
@@ -107,11 +110,12 @@ public interface RagQueryOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagQuery.ranking is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=95
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_service.proto;l=96
    * @return The ranking.
    */
   @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.RagQuery.Ranking getRanking();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface RagQueryOrBuilder
    * @return Whether the ragRetrievalConfig field is set.
    */
   boolean hasRagRetrievalConfig();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface RagQueryOrBuilder
    * @return The ragRetrievalConfig.
    */
   com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig getRagRetrievalConfig();
+
   /**
    *
    *

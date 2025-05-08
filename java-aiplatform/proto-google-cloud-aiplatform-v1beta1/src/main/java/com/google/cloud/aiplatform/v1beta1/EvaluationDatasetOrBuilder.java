@@ -28,7 +28,8 @@ public interface EvaluationDatasetOrBuilder
    *
    *
    * <pre>
-   * Cloud storage source holds the dataset.
+   * Cloud storage source holds the dataset. Currently only one Cloud Storage
+   * file path is supported.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
@@ -36,11 +37,13 @@ public interface EvaluationDatasetOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
    * <pre>
-   * Cloud storage source holds the dataset.
+   * Cloud storage source holds the dataset. Currently only one Cloud Storage
+   * file path is supported.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
@@ -48,11 +51,13 @@ public interface EvaluationDatasetOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.aiplatform.v1beta1.GcsSource getGcsSource();
+
   /**
    *
    *
    * <pre>
-   * Cloud storage source holds the dataset.
+   * Cloud storage source holds the dataset. Currently only one Cloud Storage
+   * file path is supported.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
@@ -71,6 +76,7 @@ public interface EvaluationDatasetOrBuilder
    * @return Whether the bigquerySource field is set.
    */
   boolean hasBigquerySource();
+
   /**
    *
    *
@@ -83,6 +89,7 @@ public interface EvaluationDatasetOrBuilder
    * @return The bigquerySource.
    */
   com.google.cloud.aiplatform.v1beta1.BigQuerySource getBigquerySource();
+
   /**
    *
    *

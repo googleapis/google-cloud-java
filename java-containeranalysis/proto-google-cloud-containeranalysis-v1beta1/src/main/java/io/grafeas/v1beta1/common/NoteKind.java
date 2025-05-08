@@ -122,6 +122,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NOTE_KIND_UNSPECIFIED = 0;</code>
    */
   public static final int NOTE_KIND_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -132,6 +133,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VULNERABILITY = 1;</code>
    */
   public static final int VULNERABILITY_VALUE = 1;
+
   /**
    *
    *
@@ -142,6 +144,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BUILD = 2;</code>
    */
   public static final int BUILD_VALUE = 2;
+
   /**
    *
    *
@@ -152,6 +155,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMAGE = 3;</code>
    */
   public static final int IMAGE_VALUE = 3;
+
   /**
    *
    *
@@ -162,6 +166,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PACKAGE = 4;</code>
    */
   public static final int PACKAGE_VALUE = 4;
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DEPLOYMENT = 5;</code>
    */
   public static final int DEPLOYMENT_VALUE = 5;
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DISCOVERY = 6;</code>
    */
   public static final int DISCOVERY_VALUE = 6;
+
   /**
    *
    *

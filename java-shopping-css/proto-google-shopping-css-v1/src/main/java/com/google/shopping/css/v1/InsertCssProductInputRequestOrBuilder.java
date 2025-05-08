@@ -39,6 +39,7 @@ public interface InsertCssProductInputRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface InsertCssProductInputRequestOrBuilder
    * @return Whether the cssProductInput field is set.
    */
   boolean hasCssProductInput();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface InsertCssProductInputRequestOrBuilder
    * @return The cssProductInput.
    */
   com.google.shopping.css.v1.CssProductInput getCssProductInput();
+
   /**
    *
    *
@@ -112,7 +115,7 @@ public interface InsertCssProductInputRequestOrBuilder
    * <code>int64 feed_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.shopping.css.v1.InsertCssProductInputRequest.feed_id is deprecated. See
-   *     google/shopping/css/v1/css_product_inputs.proto;l=175
+   *     google/shopping/css/v1/css_product_inputs.proto;l=178
    * @return The feedId.
    */
   @java.lang.Deprecated

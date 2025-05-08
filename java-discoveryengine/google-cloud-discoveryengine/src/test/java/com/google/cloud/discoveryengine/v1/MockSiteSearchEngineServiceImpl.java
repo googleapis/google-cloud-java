@@ -115,7 +115,8 @@ public class MockSiteSearchEngineServiceImpl extends SiteSearchEngineServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchCreateTargetSites, expected %s or %s",
+                  "Unrecognized response type %s for method BatchCreateTargetSites, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -207,6 +208,69 @@ public class MockSiteSearchEngineServiceImpl extends SiteSearchEngineServiceImpl
   }
 
   @Override
+  public void createSitemap(
+      CreateSitemapRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateSitemap, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteSitemap(
+      DeleteSitemapRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSitemap, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchSitemaps(
+      FetchSitemapsRequest request, StreamObserver<FetchSitemapsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchSitemapsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchSitemapsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchSitemaps, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchSitemapsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void enableAdvancedSiteSearch(
       EnableAdvancedSiteSearchRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -220,7 +284,8 @@ public class MockSiteSearchEngineServiceImpl extends SiteSearchEngineServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method EnableAdvancedSiteSearch, expected %s or %s",
+                  "Unrecognized response type %s for method EnableAdvancedSiteSearch, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -241,7 +306,8 @@ public class MockSiteSearchEngineServiceImpl extends SiteSearchEngineServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DisableAdvancedSiteSearch, expected %s or %s",
+                  "Unrecognized response type %s for method DisableAdvancedSiteSearch, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -282,7 +348,8 @@ public class MockSiteSearchEngineServiceImpl extends SiteSearchEngineServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchVerifyTargetSites, expected %s or %s",
+                  "Unrecognized response type %s for method BatchVerifyTargetSites, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -304,7 +371,8 @@ public class MockSiteSearchEngineServiceImpl extends SiteSearchEngineServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method FetchDomainVerificationStatus, expected %s or %s",
+                  "Unrecognized response type %s for method FetchDomainVerificationStatus, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   FetchDomainVerificationStatusResponse.class.getName(),
                   Exception.class.getName())));

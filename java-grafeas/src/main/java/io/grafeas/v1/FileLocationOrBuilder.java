@@ -38,6 +38,7 @@ public interface FileLocationOrBuilder
    * @return The filePath.
    */
   java.lang.String getFilePath();
+
   /**
    *
    *
@@ -51,4 +52,44 @@ public interface FileLocationOrBuilder
    * @return The bytes for filePath.
    */
   com.google.protobuf.ByteString getFilePathBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Each package found in a file should have its own layer metadata (that is,
+   * information from the origin layer of the package).
+   * </pre>
+   *
+   * <code>.grafeas.v1.LayerDetails layer_details = 2;</code>
+   *
+   * @return Whether the layerDetails field is set.
+   */
+  boolean hasLayerDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Each package found in a file should have its own layer metadata (that is,
+   * information from the origin layer of the package).
+   * </pre>
+   *
+   * <code>.grafeas.v1.LayerDetails layer_details = 2;</code>
+   *
+   * @return The layerDetails.
+   */
+  io.grafeas.v1.LayerDetails getLayerDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Each package found in a file should have its own layer metadata (that is,
+   * information from the origin layer of the package).
+   * </pre>
+   *
+   * <code>.grafeas.v1.LayerDetails layer_details = 2;</code>
+   */
+  io.grafeas.v1.LayerDetailsOrBuilder getLayerDetailsOrBuilder();
 }

@@ -35,6 +35,7 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.CreateProjectRequest)
     CreateProjectRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateProjectRequest.newBuilder() to construct.
   private CreateProjectRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 1;
   private com.google.cloud.resourcemanager.v3.Project project_;
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
   public boolean hasProject() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.resourcemanager.v3.Project.getDefaultInstance()
         : project_;
   }
+
   /**
    *
    *
@@ -309,6 +313,7 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -514,6 +519,7 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.resourcemanager.v3.Project.Builder,
             com.google.cloud.resourcemanager.v3.ProjectOrBuilder>
         projectBuilder_;
+
     /**
      *
      *
@@ -538,6 +544,7 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
     public boolean hasProject() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -568,6 +575,7 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
         return projectBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -600,6 +608,7 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -629,6 +638,7 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -666,6 +676,7 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -695,6 +706,7 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +731,7 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getProjectFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -747,6 +760,7 @@ public final class CreateProjectRequest extends com.google.protobuf.GeneratedMes
             : project_;
       }
     }
+
     /**
      *
      *

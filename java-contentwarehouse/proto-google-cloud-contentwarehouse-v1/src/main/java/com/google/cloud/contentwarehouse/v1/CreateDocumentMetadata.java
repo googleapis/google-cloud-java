@@ -33,6 +33,7 @@ public final class CreateDocumentMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.CreateDocumentMetadata)
     CreateDocumentMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateDocumentMetadata.newBuilder() to construct.
   private CreateDocumentMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class CreateDocumentMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

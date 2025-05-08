@@ -36,6 +36,7 @@ public interface WorkItemDetailsOrBuilder
    * @return The taskId.
    */
   java.lang.String getTaskId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface WorkItemDetailsOrBuilder
    * @return The attemptId.
    */
   java.lang.String getAttemptId();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface WorkItemDetailsOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface WorkItemDetailsOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface WorkItemDetailsOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface WorkItemDetailsOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface WorkItemDetailsOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public interface WorkItemDetailsOrBuilder
    * @return Whether the progress field is set.
    */
   boolean hasProgress();
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public interface WorkItemDetailsOrBuilder
    * @return The progress.
    */
   com.google.dataflow.v1beta3.ProgressTimeseries getProgress();
+
   /**
    *
    *
@@ -223,6 +232,7 @@ public interface WorkItemDetailsOrBuilder
    * <code>repeated .google.dataflow.v1beta3.MetricUpdate metrics = 7;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.MetricUpdate> getMetricsList();
+
   /**
    *
    *
@@ -233,6 +243,7 @@ public interface WorkItemDetailsOrBuilder
    * <code>repeated .google.dataflow.v1beta3.MetricUpdate metrics = 7;</code>
    */
   com.google.dataflow.v1beta3.MetricUpdate getMetrics(int index);
+
   /**
    *
    *
@@ -243,6 +254,7 @@ public interface WorkItemDetailsOrBuilder
    * <code>repeated .google.dataflow.v1beta3.MetricUpdate metrics = 7;</code>
    */
   int getMetricsCount();
+
   /**
    *
    *
@@ -254,6 +266,7 @@ public interface WorkItemDetailsOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.MetricUpdateOrBuilder>
       getMetricsOrBuilderList();
+
   /**
    *
    *
@@ -264,4 +277,41 @@ public interface WorkItemDetailsOrBuilder
    * <code>repeated .google.dataflow.v1beta3.MetricUpdate metrics = 7;</code>
    */
   com.google.dataflow.v1beta3.MetricUpdateOrBuilder getMetricsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about straggler detections for this work item.
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.StragglerInfo straggler_info = 8;</code>
+   *
+   * @return Whether the stragglerInfo field is set.
+   */
+  boolean hasStragglerInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about straggler detections for this work item.
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.StragglerInfo straggler_info = 8;</code>
+   *
+   * @return The stragglerInfo.
+   */
+  com.google.dataflow.v1beta3.StragglerInfo getStragglerInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about straggler detections for this work item.
+   * </pre>
+   *
+   * <code>.google.dataflow.v1beta3.StragglerInfo straggler_info = 8;</code>
+   */
+  com.google.dataflow.v1beta3.StragglerInfoOrBuilder getStragglerInfoOrBuilder();
 }

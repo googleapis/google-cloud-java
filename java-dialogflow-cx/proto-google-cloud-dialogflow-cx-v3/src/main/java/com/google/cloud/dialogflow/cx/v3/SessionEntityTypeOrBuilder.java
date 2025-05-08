@@ -42,6 +42,7 @@ public interface SessionEntityTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface SessionEntityTypeOrBuilder
    * @return The enum numeric value on the wire for entityOverrideMode.
    */
   int getEntityOverrideModeValue();
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public interface SessionEntityTypeOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.EntityType.Entity> getEntitiesList();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface SessionEntityTypeOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3.EntityType.Entity getEntities(int index);
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface SessionEntityTypeOrBuilder
    * </code>
    */
   int getEntitiesCount();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface SessionEntityTypeOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.EntityType.EntityOrBuilder>
       getEntitiesOrBuilderList();
+
   /**
    *
    *

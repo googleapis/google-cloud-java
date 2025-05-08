@@ -37,6 +37,7 @@ public interface SchemaOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface SchemaOrBuilder
    * @return The format.
    */
   java.lang.String getFormat();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface SchemaOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface SchemaOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public interface SchemaOrBuilder
    * @return Whether the default field is set.
    */
   boolean hasDefault();
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public interface SchemaOrBuilder
    * @return The default.
    */
   com.google.protobuf.Value getDefault();
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public interface SchemaOrBuilder
    * @return Whether the items field is set.
    */
   boolean hasItems();
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public interface SchemaOrBuilder
    * @return The items.
    */
   com.google.cloud.aiplatform.v1beta1.Schema getItems();
+
   /**
    *
    *
@@ -266,6 +274,7 @@ public interface SchemaOrBuilder
    * @return A list containing the enum.
    */
   java.util.List<java.lang.String> getEnumList();
+
   /**
    *
    *
@@ -280,6 +289,7 @@ public interface SchemaOrBuilder
    * @return The count of enum.
    */
   int getEnumCount();
+
   /**
    *
    *
@@ -295,6 +305,7 @@ public interface SchemaOrBuilder
    * @return The enum at the given index.
    */
   java.lang.String getEnum(int index);
+
   /**
    *
    *
@@ -324,6 +335,7 @@ public interface SchemaOrBuilder
    * </code>
    */
   int getPropertiesCount();
+
   /**
    *
    *
@@ -337,9 +349,11 @@ public interface SchemaOrBuilder
    * </code>
    */
   boolean containsProperties(java.lang.String key);
+
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema> getProperties();
+
   /**
    *
    *
@@ -353,6 +367,7 @@ public interface SchemaOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema> getPropertiesMap();
+
   /**
    *
    *
@@ -370,6 +385,7 @@ public interface SchemaOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.aiplatform.v1beta1.Schema defaultValue);
+
   /**
    *
    *
@@ -398,6 +414,7 @@ public interface SchemaOrBuilder
    * @return A list containing the propertyOrdering.
    */
   java.util.List<java.lang.String> getPropertyOrderingList();
+
   /**
    *
    *
@@ -412,6 +429,7 @@ public interface SchemaOrBuilder
    * @return The count of propertyOrdering.
    */
   int getPropertyOrderingCount();
+
   /**
    *
    *
@@ -427,6 +445,7 @@ public interface SchemaOrBuilder
    * @return The propertyOrdering at the given index.
    */
   java.lang.String getPropertyOrdering(int index);
+
   /**
    *
    *
@@ -455,6 +474,7 @@ public interface SchemaOrBuilder
    * @return A list containing the required.
    */
   java.util.List<java.lang.String> getRequiredList();
+
   /**
    *
    *
@@ -467,6 +487,7 @@ public interface SchemaOrBuilder
    * @return The count of required.
    */
   int getRequiredCount();
+
   /**
    *
    *
@@ -480,6 +501,7 @@ public interface SchemaOrBuilder
    * @return The required at the given index.
    */
   java.lang.String getRequired(int index);
+
   /**
    *
    *
@@ -587,6 +609,7 @@ public interface SchemaOrBuilder
    * @return The pattern.
    */
   java.lang.String getPattern();
+
   /**
    *
    *
@@ -614,6 +637,7 @@ public interface SchemaOrBuilder
    * @return Whether the example field is set.
    */
   boolean hasExample();
+
   /**
    *
    *
@@ -627,6 +651,7 @@ public interface SchemaOrBuilder
    * @return The example.
    */
   com.google.protobuf.Value getExample();
+
   /**
    *
    *
@@ -652,6 +677,7 @@ public interface SchemaOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Schema> getAnyOfList();
+
   /**
    *
    *
@@ -665,6 +691,7 @@ public interface SchemaOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Schema getAnyOf(int index);
+
   /**
    *
    *
@@ -678,6 +705,7 @@ public interface SchemaOrBuilder
    * </code>
    */
   int getAnyOfCount();
+
   /**
    *
    *
@@ -692,6 +720,7 @@ public interface SchemaOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder>
       getAnyOfOrBuilderList();
+
   /**
    *
    *
@@ -705,4 +734,148 @@ public interface SchemaOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder getAnyOfOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Allows indirect references between schema nodes. The value should
+   * be a valid reference to a child of the root `defs`.
+   *
+   * For example, the following schema defines a reference to a schema node
+   * named "Pet":
+   *
+   * type: object
+   * properties:
+   *   pet:
+   *     ref: #/defs/Pet
+   * defs:
+   *   Pet:
+   *     type: object
+   *     properties:
+   *       name:
+   *         type: string
+   *
+   * The value of the "pet" property is a reference to the schema node
+   * named "Pet".
+   * See details in
+   * https://json-schema.org/understanding-json-schema/structuring
+   * </pre>
+   *
+   * <code>string ref = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ref.
+   */
+  java.lang.String getRef();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Allows indirect references between schema nodes. The value should
+   * be a valid reference to a child of the root `defs`.
+   *
+   * For example, the following schema defines a reference to a schema node
+   * named "Pet":
+   *
+   * type: object
+   * properties:
+   *   pet:
+   *     ref: #/defs/Pet
+   * defs:
+   *   Pet:
+   *     type: object
+   *     properties:
+   *       name:
+   *         type: string
+   *
+   * The value of the "pet" property is a reference to the schema node
+   * named "Pet".
+   * See details in
+   * https://json-schema.org/understanding-json-schema/structuring
+   * </pre>
+   *
+   * <code>string ref = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for ref.
+   */
+  com.google.protobuf.ByteString getRefBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A map of definitions for use by `ref`
+   * Only allowed at the root of the schema.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getDefsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A map of definitions for use by `ref`
+   * Only allowed at the root of the schema.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsDefs(java.lang.String key);
+
+  /** Use {@link #getDefsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema> getDefs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A map of definitions for use by `ref`
+   * Only allowed at the root of the schema.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema> getDefsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A map of definitions for use by `ref`
+   * Only allowed at the root of the schema.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.aiplatform.v1beta1.Schema getDefsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.aiplatform.v1beta1.Schema defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A map of definitions for use by `ref`
+   * Only allowed at the root of the schema.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.Schema&gt; defs = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Schema getDefsOrThrow(java.lang.String key);
 }

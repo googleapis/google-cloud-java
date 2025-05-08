@@ -34,6 +34,7 @@ public interface RuleEvaluatorOutputOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.Rule triggered_rules = 1;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.Rule> getTriggeredRulesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface RuleEvaluatorOutputOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.Rule triggered_rules = 1;</code>
    */
   com.google.cloud.contentwarehouse.v1.Rule getTriggeredRules(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface RuleEvaluatorOutputOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.Rule triggered_rules = 1;</code>
    */
   int getTriggeredRulesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface RuleEvaluatorOutputOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.RuleOrBuilder>
       getTriggeredRulesOrBuilderList();
+
   /**
    *
    *
@@ -86,6 +90,7 @@ public interface RuleEvaluatorOutputOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.Rule matched_rules = 2;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.Rule> getMatchedRulesList();
+
   /**
    *
    *
@@ -96,6 +101,7 @@ public interface RuleEvaluatorOutputOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.Rule matched_rules = 2;</code>
    */
   com.google.cloud.contentwarehouse.v1.Rule getMatchedRules(int index);
+
   /**
    *
    *
@@ -106,6 +112,7 @@ public interface RuleEvaluatorOutputOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.Rule matched_rules = 2;</code>
    */
   int getMatchedRulesCount();
+
   /**
    *
    *
@@ -117,6 +124,7 @@ public interface RuleEvaluatorOutputOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.RuleOrBuilder>
       getMatchedRulesOrBuilderList();
+
   /**
    *
    *
@@ -139,6 +147,7 @@ public interface RuleEvaluatorOutputOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.InvalidRule invalid_rules = 3;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.InvalidRule> getInvalidRulesList();
+
   /**
    *
    *
@@ -150,6 +159,7 @@ public interface RuleEvaluatorOutputOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.InvalidRule invalid_rules = 3;</code>
    */
   com.google.cloud.contentwarehouse.v1.InvalidRule getInvalidRules(int index);
+
   /**
    *
    *
@@ -161,6 +171,7 @@ public interface RuleEvaluatorOutputOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.InvalidRule invalid_rules = 3;</code>
    */
   int getInvalidRulesCount();
+
   /**
    *
    *
@@ -173,6 +184,7 @@ public interface RuleEvaluatorOutputOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.InvalidRuleOrBuilder>
       getInvalidRulesOrBuilderList();
+
   /**
    *
    *

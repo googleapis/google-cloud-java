@@ -36,6 +36,7 @@ public interface OtherCloudSingleResourceReferenceOrBuilder
    * @return Whether the amazonS3Bucket field is set.
    */
   boolean hasAmazonS3Bucket();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface OtherCloudSingleResourceReferenceOrBuilder
    * @return The amazonS3Bucket.
    */
   com.google.privacy.dlp.v2.AmazonS3Bucket getAmazonS3Bucket();
+
   /**
    *
    *

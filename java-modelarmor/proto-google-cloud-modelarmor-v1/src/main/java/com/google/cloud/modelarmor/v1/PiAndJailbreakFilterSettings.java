@@ -33,6 +33,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.PiAndJailbreakFilterSettings)
     PiAndJailbreakFilterSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PiAndJailbreakFilterSettings.newBuilder() to construct.
   private PiAndJailbreakFilterSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,6 +120,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
      * <code>PI_AND_JAILBREAK_FILTER_ENFORCEMENT_UNSPECIFIED = 0;</code>
      */
     public static final int PI_AND_JAILBREAK_FILTER_ENFORCEMENT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -129,6 +131,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
      * <code>ENABLED = 1;</code>
      */
     public static final int ENABLED_VALUE = 1;
+
     /**
      *
      *
@@ -230,6 +233,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
 
   public static final int FILTER_ENFORCEMENT_FIELD_NUMBER = 1;
   private int filterEnforcement_ = 0;
+
   /**
    *
    *
@@ -248,6 +252,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
   public int getFilterEnforcementValue() {
     return filterEnforcement_;
   }
+
   /**
    *
    *
@@ -277,6 +282,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
 
   public static final int CONFIDENCE_LEVEL_FIELD_NUMBER = 3;
   private int confidenceLevel_ = 0;
+
   /**
    *
    *
@@ -298,6 +304,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
   public int getConfidenceLevelValue() {
     return confidenceLevel_;
   }
+
   /**
    *
    *
@@ -505,6 +512,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -700,6 +708,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
     private int bitField0_;
 
     private int filterEnforcement_ = 0;
+
     /**
      *
      *
@@ -718,6 +727,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
     public int getFilterEnforcementValue() {
       return filterEnforcement_;
     }
+
     /**
      *
      *
@@ -739,6 +749,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +777,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
               .PiAndJailbreakFilterEnforcement.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -792,6 +804,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +827,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
     }
 
     private int confidenceLevel_ = 0;
+
     /**
      *
      *
@@ -835,6 +849,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
     public int getConfidenceLevelValue() {
       return confidenceLevel_;
     }
+
     /**
      *
      *
@@ -859,6 +874,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +900,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
           ? com.google.cloud.modelarmor.v1.DetectionConfidenceLevel.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -912,6 +929,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

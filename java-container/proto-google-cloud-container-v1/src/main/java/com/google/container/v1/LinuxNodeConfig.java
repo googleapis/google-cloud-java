@@ -33,6 +33,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.container.v1.LinuxNodeConfig)
     LinuxNodeConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LinuxNodeConfig.newBuilder() to construct.
   private LinuxNodeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -132,6 +133,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * <code>CGROUP_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int CGROUP_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -143,6 +145,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * <code>CGROUP_MODE_V1 = 1;</code>
      */
     public static final int CGROUP_MODE_V1_VALUE = 1;
+
     /**
      *
      *
@@ -255,6 +258,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * @return Whether the hugepageSize2m field is set.
      */
     boolean hasHugepageSize2M();
+
     /**
      *
      *
@@ -280,6 +284,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      * @return Whether the hugepageSize1g field is set.
      */
     boolean hasHugepageSize1G();
+
     /**
      *
      *
@@ -293,6 +298,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      */
     int getHugepageSize1G();
   }
+
   /**
    *
    *
@@ -307,6 +313,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.container.v1.LinuxNodeConfig.HugepagesConfig)
       HugepagesConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use HugepagesConfig.newBuilder() to construct.
     private HugepagesConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -338,6 +345,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
     public static final int HUGEPAGE_SIZE2M_FIELD_NUMBER = 1;
     private int hugepageSize2M_ = 0;
+
     /**
      *
      *
@@ -353,6 +361,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasHugepageSize2M() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -371,6 +380,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
 
     public static final int HUGEPAGE_SIZE1G_FIELD_NUMBER = 2;
     private int hugepageSize1G_ = 0;
+
     /**
      *
      *
@@ -386,6 +396,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasHugepageSize1G() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -582,6 +593,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -784,6 +796,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private int hugepageSize2M_;
+
       /**
        *
        *
@@ -799,6 +812,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       public boolean hasHugepageSize2M() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -814,6 +828,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       public int getHugepageSize2M() {
         return hugepageSize2M_;
       }
+
       /**
        *
        *
@@ -833,6 +848,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -852,6 +868,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
 
       private int hugepageSize1G_;
+
       /**
        *
        *
@@ -867,6 +884,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       public boolean hasHugepageSize1G() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -882,6 +900,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       public int getHugepageSize1G() {
         return hugepageSize1G_;
       }
+
       /**
        *
        *
@@ -901,6 +920,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1010,6 +1030,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
   public int getSysctlsCount() {
     return internalGetSysctls().getMap().size();
   }
+
   /**
    *
    *
@@ -1044,12 +1065,14 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetSysctls().getMap().containsKey(key);
   }
+
   /** Use {@link #getSysctlsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getSysctls() {
     return getSysctlsMap();
   }
+
   /**
    *
    *
@@ -1081,6 +1104,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
   public java.util.Map<java.lang.String, java.lang.String> getSysctlsMap() {
     return internalGetSysctls().getMap();
   }
+
   /**
    *
    *
@@ -1119,6 +1143,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     java.util.Map<java.lang.String, java.lang.String> map = internalGetSysctls().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1160,6 +1185,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int CGROUP_MODE_FIELD_NUMBER = 2;
   private int cgroupMode_ = 0;
+
   /**
    *
    *
@@ -1175,6 +1201,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
   public int getCgroupModeValue() {
     return cgroupMode_;
   }
+
   /**
    *
    *
@@ -1197,6 +1224,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int HUGEPAGES_FIELD_NUMBER = 3;
   private com.google.container.v1.LinuxNodeConfig.HugepagesConfig hugepages_;
+
   /**
    *
    *
@@ -1214,6 +1242,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasHugepages() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1233,6 +1262,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
         ? com.google.container.v1.LinuxNodeConfig.HugepagesConfig.getDefaultInstance()
         : hugepages_;
   }
+
   /**
    *
    *
@@ -1442,6 +1472,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1717,6 +1748,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     public int getSysctlsCount() {
       return internalGetSysctls().getMap().size();
     }
+
     /**
      *
      *
@@ -1751,12 +1783,14 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetSysctls().getMap().containsKey(key);
     }
+
     /** Use {@link #getSysctlsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getSysctls() {
       return getSysctlsMap();
     }
+
     /**
      *
      *
@@ -1788,6 +1822,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getSysctlsMap() {
       return internalGetSysctls().getMap();
     }
+
     /**
      *
      *
@@ -1826,6 +1861,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       java.util.Map<java.lang.String, java.lang.String> map = internalGetSysctls().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1870,6 +1906,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       internalGetMutableSysctls().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1904,12 +1941,14 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       internalGetMutableSysctls().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableSysctls() {
       bitField0_ |= 0x00000001;
       return internalGetMutableSysctls().getMutableMap();
     }
+
     /**
      *
      *
@@ -1948,6 +1987,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -1982,6 +2022,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private int cgroupMode_ = 0;
+
     /**
      *
      *
@@ -1997,6 +2038,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     public int getCgroupModeValue() {
       return cgroupMode_;
     }
+
     /**
      *
      *
@@ -2015,6 +2057,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2034,6 +2077,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
           ? com.google.container.v1.LinuxNodeConfig.CgroupMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2055,6 +2099,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2079,6 +2124,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
             com.google.container.v1.LinuxNodeConfig.HugepagesConfig.Builder,
             com.google.container.v1.LinuxNodeConfig.HugepagesConfigOrBuilder>
         hugepagesBuilder_;
+
     /**
      *
      *
@@ -2095,6 +2141,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasHugepages() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2117,6 +2164,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
         return hugepagesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2141,6 +2189,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2163,6 +2212,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2193,6 +2243,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2214,6 +2265,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2230,6 +2282,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getHugepagesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2251,6 +2304,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
             : hugepages_;
       }
     }
+
     /**
      *
      *

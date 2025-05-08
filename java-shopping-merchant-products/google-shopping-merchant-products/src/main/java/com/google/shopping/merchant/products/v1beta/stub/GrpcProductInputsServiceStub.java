@@ -29,6 +29,7 @@ import com.google.protobuf.Empty;
 import com.google.shopping.merchant.products.v1beta.DeleteProductInputRequest;
 import com.google.shopping.merchant.products.v1beta.InsertProductInputRequest;
 import com.google.shopping.merchant.products.v1beta.ProductInput;
+import com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -55,6 +56,17 @@ public class GrpcProductInputsServiceStub extends ProductInputsServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ProductInput.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdateProductInputRequest, ProductInput>
+      updateProductInputMethodDescriptor =
+          MethodDescriptor.<UpdateProductInputRequest, ProductInput>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.shopping.merchant.products.v1beta.ProductInputsService/UpdateProductInput")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateProductInputRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ProductInput.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<DeleteProductInputRequest, Empty>
       deleteProductInputMethodDescriptor =
           MethodDescriptor.<DeleteProductInputRequest, Empty>newBuilder()
@@ -67,6 +79,7 @@ public class GrpcProductInputsServiceStub extends ProductInputsServiceStub {
               .build();
 
   private final UnaryCallable<InsertProductInputRequest, ProductInput> insertProductInputCallable;
+  private final UnaryCallable<UpdateProductInputRequest, ProductInput> updateProductInputCallable;
   private final UnaryCallable<DeleteProductInputRequest, Empty> deleteProductInputCallable;
 
   private final BackgroundResource backgroundResources;
@@ -123,6 +136,17 @@ public class GrpcProductInputsServiceStub extends ProductInputsServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UpdateProductInputRequest, ProductInput> updateProductInputTransportSettings =
+        GrpcCallSettings.<UpdateProductInputRequest, ProductInput>newBuilder()
+            .setMethodDescriptor(updateProductInputMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "product_input.name", String.valueOf(request.getProductInput().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<DeleteProductInputRequest, Empty> deleteProductInputTransportSettings =
         GrpcCallSettings.<DeleteProductInputRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteProductInputMethodDescriptor)
@@ -138,6 +162,11 @@ public class GrpcProductInputsServiceStub extends ProductInputsServiceStub {
         callableFactory.createUnaryCallable(
             insertProductInputTransportSettings,
             settings.insertProductInputSettings(),
+            clientContext);
+    this.updateProductInputCallable =
+        callableFactory.createUnaryCallable(
+            updateProductInputTransportSettings,
+            settings.updateProductInputSettings(),
             clientContext);
     this.deleteProductInputCallable =
         callableFactory.createUnaryCallable(
@@ -156,6 +185,11 @@ public class GrpcProductInputsServiceStub extends ProductInputsServiceStub {
   @Override
   public UnaryCallable<InsertProductInputRequest, ProductInput> insertProductInputCallable() {
     return insertProductInputCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateProductInputRequest, ProductInput> updateProductInputCallable() {
+    return updateProductInputCallable;
   }
 
   @Override

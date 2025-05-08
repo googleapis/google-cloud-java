@@ -33,6 +33,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.parallelstore.v1beta.TransferOperationMetadata)
     TransferOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TransferOperationMetadata.newBuilder() to construct.
   private TransferOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -40,6 +41,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
 
   private TransferOperationMetadata() {
     transferType_ = 0;
+    errorSummary_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -81,6 +83,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -130,6 +133,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     private DestinationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -163,6 +167,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   }
 
   public static final int SOURCE_PARALLELSTORE_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   public boolean hasSourceParallelstore() {
     return sourceCase_ == 7;
   }
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     }
     return com.google.cloud.parallelstore.v1beta.SourceParallelstore.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -221,6 +228,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   }
 
   public static final int SOURCE_GCS_BUCKET_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -238,6 +246,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   public boolean hasSourceGcsBucket() {
     return sourceCase_ == 8;
   }
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     }
     return com.google.cloud.parallelstore.v1beta.SourceGcsBucket.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -279,6 +289,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   }
 
   public static final int DESTINATION_GCS_BUCKET_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -296,6 +307,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   public boolean hasDestinationGcsBucket() {
     return destinationCase_ == 9;
   }
+
   /**
    *
    *
@@ -316,6 +328,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     }
     return com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -337,6 +350,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   }
 
   public static final int DESTINATION_PARALLELSTORE_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -354,6 +368,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   public boolean hasDestinationParallelstore() {
     return destinationCase_ == 10;
   }
+
   /**
    *
    *
@@ -375,6 +390,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     }
     return com.google.cloud.parallelstore.v1beta.DestinationParallelstore.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -397,6 +413,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
 
   public static final int COUNTERS_FIELD_NUMBER = 3;
   private com.google.cloud.parallelstore.v1beta.TransferCounters counters_;
+
   /**
    *
    *
@@ -414,6 +431,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   public boolean hasCounters() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -433,6 +451,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         ? com.google.cloud.parallelstore.v1beta.TransferCounters.getDefaultInstance()
         : counters_;
   }
+
   /**
    *
    *
@@ -453,6 +472,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
 
   public static final int TRANSFER_TYPE_FIELD_NUMBER = 6;
   private int transferType_ = 0;
+
   /**
    *
    *
@@ -470,6 +490,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   public int getTransferTypeValue() {
     return transferType_;
   }
+
   /**
    *
    *
@@ -490,6 +511,100 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     return result == null
         ? com.google.cloud.parallelstore.v1beta.TransferType.UNRECOGNIZED
         : result;
+  }
+
+  public static final int ERROR_SUMMARY_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.parallelstore.v1beta.TransferErrorSummary> errorSummary_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of files that failed to be transferred. This list will
+   * have a maximum size of 5 elements.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.parallelstore.v1beta.TransferErrorSummary>
+      getErrorSummaryList() {
+    return errorSummary_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of files that failed to be transferred. This list will
+   * have a maximum size of 5 elements.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.parallelstore.v1beta.TransferErrorSummaryOrBuilder>
+      getErrorSummaryOrBuilderList() {
+    return errorSummary_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of files that failed to be transferred. This list will
+   * have a maximum size of 5 elements.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getErrorSummaryCount() {
+    return errorSummary_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of files that failed to be transferred. This list will
+   * have a maximum size of 5 elements.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.parallelstore.v1beta.TransferErrorSummary getErrorSummary(int index) {
+    return errorSummary_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of files that failed to be transferred. This list will
+   * have a maximum size of 5 elements.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.parallelstore.v1beta.TransferErrorSummaryOrBuilder
+      getErrorSummaryOrBuilder(int index) {
+    return errorSummary_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -528,6 +643,9 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       output.writeMessage(
           10, (com.google.cloud.parallelstore.v1beta.DestinationParallelstore) destination_);
     }
+    for (int i = 0; i < errorSummary_.size(); i++) {
+      output.writeMessage(13, errorSummary_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -565,6 +683,9 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, (com.google.cloud.parallelstore.v1beta.DestinationParallelstore) destination_);
     }
+    for (int i = 0; i < errorSummary_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, errorSummary_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -586,6 +707,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       if (!getCounters().equals(other.getCounters())) return false;
     }
     if (transferType_ != other.transferType_) return false;
+    if (!getErrorSummaryList().equals(other.getErrorSummaryList())) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 7:
@@ -626,6 +748,10 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     }
     hash = (37 * hash) + TRANSFER_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + transferType_;
+    if (getErrorSummaryCount() > 0) {
+      hash = (37 * hash) + ERROR_SUMMARY_FIELD_NUMBER;
+      hash = (53 * hash) + getErrorSummaryList().hashCode();
+    }
     switch (sourceCase_) {
       case 7:
         hash = (37 * hash) + SOURCE_PARALLELSTORE_FIELD_NUMBER;
@@ -751,6 +877,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -792,6 +919,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCountersFieldBuilder();
+        getErrorSummaryFieldBuilder();
       }
     }
 
@@ -817,6 +945,13 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         countersBuilder_ = null;
       }
       transferType_ = 0;
+      if (errorSummaryBuilder_ == null) {
+        errorSummary_ = java.util.Collections.emptyList();
+      } else {
+        errorSummary_ = null;
+        errorSummaryBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000040);
       sourceCase_ = 0;
       source_ = null;
       destinationCase_ = 0;
@@ -849,12 +984,26 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     public com.google.cloud.parallelstore.v1beta.TransferOperationMetadata buildPartial() {
       com.google.cloud.parallelstore.v1beta.TransferOperationMetadata result =
           new com.google.cloud.parallelstore.v1beta.TransferOperationMetadata(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.parallelstore.v1beta.TransferOperationMetadata result) {
+      if (errorSummaryBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          errorSummary_ = java.util.Collections.unmodifiableList(errorSummary_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.errorSummary_ = errorSummary_;
+      } else {
+        result.errorSummary_ = errorSummaryBuilder_.build();
+      }
     }
 
     private void buildPartial0(
@@ -944,6 +1093,33 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       if (other.transferType_ != 0) {
         setTransferTypeValue(other.getTransferTypeValue());
+      }
+      if (errorSummaryBuilder_ == null) {
+        if (!other.errorSummary_.isEmpty()) {
+          if (errorSummary_.isEmpty()) {
+            errorSummary_ = other.errorSummary_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureErrorSummaryIsMutable();
+            errorSummary_.addAll(other.errorSummary_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.errorSummary_.isEmpty()) {
+          if (errorSummaryBuilder_.isEmpty()) {
+            errorSummaryBuilder_.dispose();
+            errorSummaryBuilder_ = null;
+            errorSummary_ = other.errorSummary_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            errorSummaryBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getErrorSummaryFieldBuilder()
+                    : null;
+          } else {
+            errorSummaryBuilder_.addAllMessages(other.errorSummary_);
+          }
+        }
       }
       switch (other.getSourceCase()) {
         case SOURCE_PARALLELSTORE:
@@ -1042,6 +1218,20 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
                 destinationCase_ = 10;
                 break;
               } // case 82
+            case 106:
+              {
+                com.google.cloud.parallelstore.v1beta.TransferErrorSummary m =
+                    input.readMessage(
+                        com.google.cloud.parallelstore.v1beta.TransferErrorSummary.parser(),
+                        extensionRegistry);
+                if (errorSummaryBuilder_ == null) {
+                  ensureErrorSummaryIsMutable();
+                  errorSummary_.add(m);
+                } else {
+                  errorSummaryBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1094,6 +1284,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
             com.google.cloud.parallelstore.v1beta.SourceParallelstore.Builder,
             com.google.cloud.parallelstore.v1beta.SourceParallelstoreOrBuilder>
         sourceParallelstoreBuilder_;
+
     /**
      *
      *
@@ -1111,6 +1302,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     public boolean hasSourceParallelstore() {
       return sourceCase_ == 7;
     }
+
     /**
      *
      *
@@ -1138,6 +1330,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return com.google.cloud.parallelstore.v1beta.SourceParallelstore.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1163,6 +1356,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       sourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1185,6 +1379,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       sourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1221,6 +1416,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       sourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1248,6 +1444,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1263,6 +1460,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         getSourceParallelstoreBuilder() {
       return getSourceParallelstoreFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1286,6 +1484,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return com.google.cloud.parallelstore.v1beta.SourceParallelstore.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1326,6 +1525,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
             com.google.cloud.parallelstore.v1beta.SourceGcsBucket.Builder,
             com.google.cloud.parallelstore.v1beta.SourceGcsBucketOrBuilder>
         sourceGcsBucketBuilder_;
+
     /**
      *
      *
@@ -1343,6 +1543,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     public boolean hasSourceGcsBucket() {
       return sourceCase_ == 8;
     }
+
     /**
      *
      *
@@ -1370,6 +1571,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return com.google.cloud.parallelstore.v1beta.SourceGcsBucket.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1394,6 +1596,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       sourceCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1416,6 +1619,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       sourceCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1452,6 +1656,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       sourceCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1479,6 +1684,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1494,6 +1700,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         getSourceGcsBucketBuilder() {
       return getSourceGcsBucketFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1517,6 +1724,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return com.google.cloud.parallelstore.v1beta.SourceGcsBucket.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1557,6 +1765,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
             com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.Builder,
             com.google.cloud.parallelstore.v1beta.DestinationGcsBucketOrBuilder>
         destinationGcsBucketBuilder_;
+
     /**
      *
      *
@@ -1574,6 +1783,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     public boolean hasDestinationGcsBucket() {
       return destinationCase_ == 9;
     }
+
     /**
      *
      *
@@ -1601,6 +1811,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1626,6 +1837,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       destinationCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -1648,6 +1860,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       destinationCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -1685,6 +1898,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       destinationCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -1712,6 +1926,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1727,6 +1942,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         getDestinationGcsBucketBuilder() {
       return getDestinationGcsBucketFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1750,6 +1966,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return com.google.cloud.parallelstore.v1beta.DestinationGcsBucket.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1791,6 +2008,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
             com.google.cloud.parallelstore.v1beta.DestinationParallelstore.Builder,
             com.google.cloud.parallelstore.v1beta.DestinationParallelstoreOrBuilder>
         destinationParallelstoreBuilder_;
+
     /**
      *
      *
@@ -1808,6 +2026,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     public boolean hasDestinationParallelstore() {
       return destinationCase_ == 10;
     }
+
     /**
      *
      *
@@ -1836,6 +2055,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return com.google.cloud.parallelstore.v1beta.DestinationParallelstore.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1861,6 +2081,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       destinationCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -1883,6 +2104,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       destinationCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -1920,6 +2142,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       destinationCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -1947,6 +2170,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1962,6 +2186,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         getDestinationParallelstoreBuilder() {
       return getDestinationParallelstoreFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1985,6 +2210,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return com.google.cloud.parallelstore.v1beta.DestinationParallelstore.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2027,6 +2253,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
             com.google.cloud.parallelstore.v1beta.TransferCounters.Builder,
             com.google.cloud.parallelstore.v1beta.TransferCountersOrBuilder>
         countersBuilder_;
+
     /**
      *
      *
@@ -2043,6 +2270,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     public boolean hasCounters() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2065,6 +2293,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return countersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2089,6 +2318,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2111,6 +2341,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2141,6 +2372,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2162,6 +2394,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2178,6 +2411,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       onChanged();
       return getCountersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2198,6 +2432,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
             : counters_;
       }
     }
+
     /**
      *
      *
@@ -2227,6 +2462,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     }
 
     private int transferType_ = 0;
+
     /**
      *
      *
@@ -2244,6 +2480,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     public int getTransferTypeValue() {
       return transferType_;
     }
+
     /**
      *
      *
@@ -2264,6 +2501,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2285,6 +2523,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
           ? com.google.cloud.parallelstore.v1beta.TransferType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2308,6 +2547,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2326,6 +2566,444 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       transferType_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.parallelstore.v1beta.TransferErrorSummary>
+        errorSummary_ = java.util.Collections.emptyList();
+
+    private void ensureErrorSummaryIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        errorSummary_ =
+            new java.util.ArrayList<com.google.cloud.parallelstore.v1beta.TransferErrorSummary>(
+                errorSummary_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.parallelstore.v1beta.TransferErrorSummary,
+            com.google.cloud.parallelstore.v1beta.TransferErrorSummary.Builder,
+            com.google.cloud.parallelstore.v1beta.TransferErrorSummaryOrBuilder>
+        errorSummaryBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of files that failed to be transferred. This list will
+     * have a maximum size of 5 elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.parallelstore.v1beta.TransferErrorSummary>
+        getErrorSummaryList() {
+      if (errorSummaryBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(errorSummary_);
+      } else {
+        return errorSummaryBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of files that failed to be transferred. This list will
+     * have a maximum size of 5 elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getErrorSummaryCount() {
+      if (errorSummaryBuilder_ == null) {
+        return errorSummary_.size();
+      } else {
+        return errorSummaryBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of files that failed to be transferred. This list will
+     * have a maximum size of 5 elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.parallelstore.v1beta.TransferErrorSummary getErrorSummary(int index) {
+      if (errorSummaryBuilder_ == null) {
+        return errorSummary_.get(index);
+      } else {
+        return errorSummaryBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of files that failed to be transferred. This list will
+     * have a maximum size of 5 elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setErrorSummary(
+        int index, com.google.cloud.parallelstore.v1beta.TransferErrorSummary value) {
+      if (errorSummaryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureErrorSummaryIsMutable();
+        errorSummary_.set(index, value);
+        onChanged();
+      } else {
+        errorSummaryBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of files that failed to be transferred. This list will
+     * have a maximum size of 5 elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setErrorSummary(
+        int index,
+        com.google.cloud.parallelstore.v1beta.TransferErrorSummary.Builder builderForValue) {
+      if (errorSummaryBuilder_ == null) {
+        ensureErrorSummaryIsMutable();
+        errorSummary_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        errorSummaryBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of files that failed to be transferred. This list will
+     * have a maximum size of 5 elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addErrorSummary(
+        com.google.cloud.parallelstore.v1beta.TransferErrorSummary value) {
+      if (errorSummaryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureErrorSummaryIsMutable();
+        errorSummary_.add(value);
+        onChanged();
+      } else {
+        errorSummaryBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of files that failed to be transferred. This list will
+     * have a maximum size of 5 elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addErrorSummary(
+        int index, com.google.cloud.parallelstore.v1beta.TransferErrorSummary value) {
+      if (errorSummaryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureErrorSummaryIsMutable();
+        errorSummary_.add(index, value);
+        onChanged();
+      } else {
+        errorSummaryBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of files that failed to be transferred. This list will
+     * have a maximum size of 5 elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addErrorSummary(
+        com.google.cloud.parallelstore.v1beta.TransferErrorSummary.Builder builderForValue) {
+      if (errorSummaryBuilder_ == null) {
+        ensureErrorSummaryIsMutable();
+        errorSummary_.add(builderForValue.build());
+        onChanged();
+      } else {
+        errorSummaryBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of files that failed to be transferred. This list will
+     * have a maximum size of 5 elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addErrorSummary(
+        int index,
+        com.google.cloud.parallelstore.v1beta.TransferErrorSummary.Builder builderForValue) {
+      if (errorSummaryBuilder_ == null) {
+        ensureErrorSummaryIsMutable();
+        errorSummary_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        errorSummaryBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of files that failed to be transferred. This list will
+     * have a maximum size of 5 elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllErrorSummary(
+        java.lang.Iterable<? extends com.google.cloud.parallelstore.v1beta.TransferErrorSummary>
+            values) {
+      if (errorSummaryBuilder_ == null) {
+        ensureErrorSummaryIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, errorSummary_);
+        onChanged();
+      } else {
+        errorSummaryBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of files that failed to be transferred. This list will
+     * have a maximum size of 5 elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearErrorSummary() {
+      if (errorSummaryBuilder_ == null) {
+        errorSummary_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        errorSummaryBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of files that failed to be transferred. This list will
+     * have a maximum size of 5 elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeErrorSummary(int index) {
+      if (errorSummaryBuilder_ == null) {
+        ensureErrorSummaryIsMutable();
+        errorSummary_.remove(index);
+        onChanged();
+      } else {
+        errorSummaryBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of files that failed to be transferred. This list will
+     * have a maximum size of 5 elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.parallelstore.v1beta.TransferErrorSummary.Builder
+        getErrorSummaryBuilder(int index) {
+      return getErrorSummaryFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of files that failed to be transferred. This list will
+     * have a maximum size of 5 elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.parallelstore.v1beta.TransferErrorSummaryOrBuilder
+        getErrorSummaryOrBuilder(int index) {
+      if (errorSummaryBuilder_ == null) {
+        return errorSummary_.get(index);
+      } else {
+        return errorSummaryBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of files that failed to be transferred. This list will
+     * have a maximum size of 5 elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.parallelstore.v1beta.TransferErrorSummaryOrBuilder>
+        getErrorSummaryOrBuilderList() {
+      if (errorSummaryBuilder_ != null) {
+        return errorSummaryBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(errorSummary_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of files that failed to be transferred. This list will
+     * have a maximum size of 5 elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.parallelstore.v1beta.TransferErrorSummary.Builder
+        addErrorSummaryBuilder() {
+      return getErrorSummaryFieldBuilder()
+          .addBuilder(
+              com.google.cloud.parallelstore.v1beta.TransferErrorSummary.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of files that failed to be transferred. This list will
+     * have a maximum size of 5 elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.parallelstore.v1beta.TransferErrorSummary.Builder
+        addErrorSummaryBuilder(int index) {
+      return getErrorSummaryFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.parallelstore.v1beta.TransferErrorSummary.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of files that failed to be transferred. This list will
+     * have a maximum size of 5 elements.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.parallelstore.v1beta.TransferErrorSummary error_summary = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.parallelstore.v1beta.TransferErrorSummary.Builder>
+        getErrorSummaryBuilderList() {
+      return getErrorSummaryFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.parallelstore.v1beta.TransferErrorSummary,
+            com.google.cloud.parallelstore.v1beta.TransferErrorSummary.Builder,
+            com.google.cloud.parallelstore.v1beta.TransferErrorSummaryOrBuilder>
+        getErrorSummaryFieldBuilder() {
+      if (errorSummaryBuilder_ == null) {
+        errorSummaryBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.parallelstore.v1beta.TransferErrorSummary,
+                com.google.cloud.parallelstore.v1beta.TransferErrorSummary.Builder,
+                com.google.cloud.parallelstore.v1beta.TransferErrorSummaryOrBuilder>(
+                errorSummary_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+        errorSummary_ = null;
+      }
+      return errorSummaryBuilder_;
     }
 
     @java.lang.Override

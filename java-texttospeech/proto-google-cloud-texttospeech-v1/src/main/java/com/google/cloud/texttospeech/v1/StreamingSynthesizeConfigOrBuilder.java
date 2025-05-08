@@ -38,6 +38,7 @@ public interface StreamingSynthesizeConfigOrBuilder
    * @return Whether the voice field is set.
    */
   boolean hasVoice();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface StreamingSynthesizeConfigOrBuilder
    * @return The voice.
    */
   com.google.cloud.texttospeech.v1.VoiceSelectionParams getVoice();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface StreamingSynthesizeConfigOrBuilder
    * @return Whether the streamingAudioConfig field is set.
    */
   boolean hasStreamingAudioConfig();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface StreamingSynthesizeConfigOrBuilder
    * @return The streamingAudioConfig.
    */
   com.google.cloud.texttospeech.v1.StreamingAudioConfig getStreamingAudioConfig();
+
   /**
    *
    *
@@ -105,4 +109,74 @@ public interface StreamingSynthesizeConfigOrBuilder
    * </code>
    */
   com.google.cloud.texttospeech.v1.StreamingAudioConfigOrBuilder getStreamingAudioConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pronunciation customizations are applied to the input. If
+   * this is set, the input is synthesized using the given pronunciation
+   * customizations.
+   *
+   * The initial support is for en-us, with plans to expand to other locales in
+   * the future. Instant Clone voices aren't supported.
+   *
+   * In order to customize the pronunciation of a phrase, there must be an exact
+   * match of the phrase in the input types. If using SSML, the phrase must not
+   * be inside a phoneme tag.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customPronunciations field is set.
+   */
+  boolean hasCustomPronunciations();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pronunciation customizations are applied to the input. If
+   * this is set, the input is synthesized using the given pronunciation
+   * customizations.
+   *
+   * The initial support is for en-us, with plans to expand to other locales in
+   * the future. Instant Clone voices aren't supported.
+   *
+   * In order to customize the pronunciation of a phrase, there must be an exact
+   * match of the phrase in the input types. If using SSML, the phrase must not
+   * be inside a phoneme tag.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customPronunciations.
+   */
+  com.google.cloud.texttospeech.v1.CustomPronunciations getCustomPronunciations();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pronunciation customizations are applied to the input. If
+   * this is set, the input is synthesized using the given pronunciation
+   * customizations.
+   *
+   * The initial support is for en-us, with plans to expand to other locales in
+   * the future. Instant Clone voices aren't supported.
+   *
+   * In order to customize the pronunciation of a phrase, there must be an exact
+   * match of the phrase in the input types. If using SSML, the phrase must not
+   * be inside a phoneme tag.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.CustomPronunciations custom_pronunciations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.texttospeech.v1.CustomPronunciationsOrBuilder getCustomPronunciationsOrBuilder();
 }

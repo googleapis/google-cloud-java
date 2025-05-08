@@ -36,6 +36,7 @@ public interface DocumentationOrBuilder
    * @return The externalUri.
    */
   java.lang.String getExternalUri();
+
   /**
    *
    *

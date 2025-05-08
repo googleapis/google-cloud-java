@@ -33,6 +33,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.NotificationConfig)
     NotificationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NotificationConfig.newBuilder() to construct.
   private NotificationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * <code>MESSAGE_FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int MESSAGE_FORMAT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
      * <code>PROTO = 1;</code>
      */
     public static final int PROTO_VALUE = 1;
+
     /**
      *
      *
@@ -227,6 +230,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object topic_ = "";
+
   /**
    *
    *
@@ -265,6 +269,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -306,6 +311,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int MESSAGE_FORMAT_FIELD_NUMBER = 2;
   private int messageFormat_ = 0;
+
   /**
    *
    *
@@ -321,6 +327,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
   public int getMessageFormatValue() {
     return messageFormat_;
   }
+
   /**
    *
    *
@@ -515,6 +522,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -712,6 +720,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object topic_ = "";
+
     /**
      *
      *
@@ -749,6 +758,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -786,6 +796,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -822,6 +833,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +866,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +906,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private int messageFormat_ = 0;
+
     /**
      *
      *
@@ -908,6 +922,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     public int getMessageFormatValue() {
       return messageFormat_;
     }
+
     /**
      *
      *
@@ -926,6 +941,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +961,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.dialogflow.v2.NotificationConfig.MessageFormat.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -967,6 +984,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

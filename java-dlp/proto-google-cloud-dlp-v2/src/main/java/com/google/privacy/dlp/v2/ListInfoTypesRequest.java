@@ -33,6 +33,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ListInfoTypesRequest)
     ListInfoTypesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListInfoTypesRequest.newBuilder() to construct.
   private ListInfoTypesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -184,6 +189,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -208,6 +214,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -237,6 +244,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object locationId_ = "";
+
   /**
    *
    *
@@ -260,6 +268,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -470,6 +479,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -698,6 +708,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -724,6 +735,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -750,6 +762,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -775,6 +788,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +810,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +839,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object languageCode_ = "";
+
     /**
      *
      *
@@ -848,6 +864,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -872,6 +889,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -895,6 +913,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +933,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +960,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -963,6 +984,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -986,6 +1008,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1008,6 +1031,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1026,6 +1050,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1076,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object locationId_ = "";
+
     /**
      *
      *
@@ -1073,6 +1099,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1095,6 +1122,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1116,6 +1144,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1133,6 +1162,7 @@ public final class ListInfoTypesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

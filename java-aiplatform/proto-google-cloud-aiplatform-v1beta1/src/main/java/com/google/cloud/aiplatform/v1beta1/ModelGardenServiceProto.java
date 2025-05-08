@@ -57,6 +57,10 @@ public final class ModelGardenServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_DeployConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_DeployConfig_SystemLabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_DeployConfig_SystemLabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_DeployPublisherModelRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_DeployPublisherModelRequest_fieldAccessorTable;
@@ -76,6 +80,30 @@ public final class ModelGardenServiceProto {
       internal_static_google_cloud_aiplatform_v1beta1_DeployPublisherModelOperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_DeployPublisherModelOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ExportPublisherModelResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ExportPublisherModelResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ExportPublisherModelOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ExportPublisherModelOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ExportPublisherModelRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ExportPublisherModelRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_CheckPublisherModelEulaAcceptanceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_CheckPublisherModelEulaAcceptanceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_AcceptPublisherModelEulaRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_AcceptPublisherModelEulaRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_PublisherModelEulaAcceptance_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_PublisherModelEulaAcceptance_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -85,128 +113,181 @@ public final class ModelGardenServiceProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n:google/cloud/aiplatform/v1beta1/model_"
-          + "garden_service.proto\022\037google.cloud.aipla"
+      "\n"
+          + ":google/cloud/aiplatform/v1beta1/model_garden_service.proto\022\037google.cloud.aipla"
           + "tform.v1beta1\032\034google/api/annotations.pr"
           + "oto\032\027google/api/client.proto\032\037google/api"
           + "/field_behavior.proto\032\031google/api/resour"
-          + "ce.proto\0327google/cloud/aiplatform/v1beta"
-          + "1/machine_resources.proto\032+google/cloud/"
-          + "aiplatform/v1beta1/model.proto\032/google/c"
-          + "loud/aiplatform/v1beta1/operation.proto\032"
-          + "5google/cloud/aiplatform/v1beta1/publish"
-          + "er_model.proto\032#google/longrunning/opera"
-          + "tions.proto\"\312\002\n\030GetPublisherModelRequest"
-          + "\022>\n\004name\030\001 \001(\tB0\340A\002\372A*\n(aiplatform.googl"
-          + "eapis.com/PublisherModel\022\032\n\rlanguage_cod"
-          + "e\030\002 \001(\tB\003\340A\001\022F\n\004view\030\003 \001(\01623.google.clou"
-          + "d.aiplatform.v1beta1.PublisherModelViewB"
-          + "\003\340A\001\022\"\n\025is_hugging_face_model\030\005 \001(\010B\003\340A\001"
-          + "\022\037\n\022hugging_face_token\030\006 \001(\tB\003\340A\001\022E\n8inc"
-          + "lude_equivalent_model_garden_model_deplo"
-          + "yment_configs\030\007 \001(\010B\003\340A\001\"\222\002\n\032ListPublish"
-          + "erModelsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\023\n\006"
-          + "filter\030\002 \001(\tB\003\340A\001\022\026\n\tpage_size\030\003 \001(\005B\003\340A"
-          + "\001\022\027\n\npage_token\030\004 \001(\tB\003\340A\001\022F\n\004view\030\005 \001(\016"
-          + "23.google.cloud.aiplatform.v1beta1.Publi"
-          + "sherModelViewB\003\340A\001\022\025\n\010order_by\030\006 \001(\tB\003\340A"
-          + "\001\022\032\n\rlanguage_code\030\007 \001(\tB\003\340A\001\022\036\n\021list_al"
-          + "l_versions\030\010 \001(\010B\003\340A\001\"\201\001\n\033ListPublisherM"
-          + "odelsResponse\022I\n\020publisher_models\030\001 \003(\0132"
-          + "/.google.cloud.aiplatform.v1beta1.Publis"
-          + "herModel\022\027\n\017next_page_token\030\002 \001(\t\"\260\007\n\rDe"
-          + "ployRequest\022M\n\024publisher_model_name\030\001 \001("
-          + "\tB-\372A*\n(aiplatform.googleapis.com/Publis"
-          + "herModelH\000\022\037\n\025hugging_face_model_id\030\002 \001("
-          + "\tH\000\022>\n\013destination\030\004 \001(\tB)\340A\002\372A#\n!locati"
-          + "ons.googleapis.com/Location\022U\n\014model_con"
-          + "fig\030\005 \001(\0132:.google.cloud.aiplatform.v1be"
-          + "ta1.DeployRequest.ModelConfigB\003\340A\001\022[\n\017en"
-          + "dpoint_config\030\006 \001(\0132=.google.cloud.aipla"
-          + "tform.v1beta1.DeployRequest.EndpointConf"
-          + "igB\003\340A\001\022W\n\rdeploy_config\030\007 \001(\0132;.google."
-          + "cloud.aiplatform.v1beta1.DeployRequest.D"
-          + "eployConfigB\003\340A\001\032\353\001\n\013ModelConfig\022\030\n\013acce"
-          + "pt_eula\030\001 \001(\010B\003\340A\001\022&\n\031hugging_face_acces"
-          + "s_token\030\002 \001(\tB\003\340A\001\022\'\n\032hugging_face_cache"
-          + "_enabled\030\003 \001(\010B\003\340A\001\022\037\n\022model_display_nam"
-          + "e\030\004 \001(\tB\003\340A\001\022P\n\016container_spec\030\005 \001(\01323.g"
-          + "oogle.cloud.aiplatform.v1beta1.ModelCont"
-          + "ainerSpecB\003\340A\001\032]\n\016EndpointConfig\022\"\n\025endp"
-          + "oint_display_name\030\001 \001(\tB\003\340A\001\022\'\n\032dedicate"
-          + "d_endpoint_enabled\030\002 \001(\010B\003\340A\001\032\207\001\n\014Deploy"
-          + "Config\022U\n\023dedicated_resources\030\001 \001(\01323.go"
-          + "ogle.cloud.aiplatform.v1beta1.DedicatedR"
-          + "esourcesB\003\340A\001\022 \n\023fast_tryout_enabled\030\002 \001"
-          + "(\010B\003\340A\001B\013\n\tartifacts\"\323\002\n\033DeployPublisher"
-          + "ModelRequest\022\022\n\005model\030\001 \001(\tB\003\340A\002\022>\n\013dest"
-          + "ination\030\002 \001(\tB)\340A\002\372A#\n!locations.googlea"
-          + "pis.com/Location\022\"\n\025endpoint_display_nam"
-          + "e\030\003 \001(\tB\003\340A\001\022U\n\023dedicated_resources\030\004 \001("
-          + "\01323.google.cloud.aiplatform.v1beta1.Dedi"
-          + "catedResourcesB\003\340A\001\022\037\n\022model_display_nam"
-          + "e\030\005 \001(\tB\003\340A\001\022&\n\031hugging_face_access_toke"
-          + "n\030\006 \001(\tB\003\340A\001\022\030\n\013accept_eula\030\007 \001(\010B\003\340A\001:\002"
-          + "\030\001\"\321\001\n\016DeployResponse\022I\n\017publisher_model"
-          + "\030\001 \001(\tB0\340A\003\372A*\n(aiplatform.googleapis.co"
-          + "m/PublisherModel\022<\n\010endpoint\030\002 \001(\tB*\340A\003\372"
-          + "A$\n\"aiplatform.googleapis.com/Endpoint\0226"
-          + "\n\005model\030\003 \001(\tB\'\340A\003\372A!\n\037aiplatform.google"
-          + "apis.com/Model\"\343\001\n\034DeployPublisherModelR"
-          + "esponse\022I\n\017publisher_model\030\001 \001(\tB0\340A\003\372A*"
-          + "\n(aiplatform.googleapis.com/PublisherMod"
-          + "el\022<\n\010endpoint\030\002 \001(\tB*\340A\003\372A$\n\"aiplatform"
-          + ".googleapis.com/Endpoint\0226\n\005model\030\003 \001(\tB"
-          + "\'\340A\003\372A!\n\037aiplatform.googleapis.com/Model"
-          + ":\002\030\001\"\226\002\n\027DeployOperationMetadata\022S\n\020gene"
-          + "ric_metadata\030\001 \001(\01329.google.cloud.aiplat"
-          + "form.v1beta1.GenericOperationMetadata\022I\n"
-          + "\017publisher_model\030\002 \001(\tB0\340A\003\372A*\n(aiplatfo"
-          + "rm.googleapis.com/PublisherModel\022>\n\013dest"
-          + "ination\030\003 \001(\tB)\340A\003\372A#\n!locations.googlea"
-          + "pis.com/Location\022\033\n\016project_number\030\004 \001(\003"
-          + "B\003\340A\003\"\250\002\n%DeployPublisherModelOperationM"
-          + "etadata\022S\n\020generic_metadata\030\001 \001(\01329.goog"
-          + "le.cloud.aiplatform.v1beta1.GenericOpera"
-          + "tionMetadata\022I\n\017publisher_model\030\002 \001(\tB0\340"
-          + "A\003\372A*\n(aiplatform.googleapis.com/Publish"
-          + "erModel\022>\n\013destination\030\003 \001(\tB)\340A\003\372A#\n!lo"
-          + "cations.googleapis.com/Location\022\033\n\016proje"
-          + "ct_number\030\004 \001(\003B\003\340A\003:\002\030\001*\241\001\n\022PublisherMo"
-          + "delView\022$\n PUBLISHER_MODEL_VIEW_UNSPECIF"
-          + "IED\020\000\022\036\n\032PUBLISHER_MODEL_VIEW_BASIC\020\001\022\035\n"
-          + "\031PUBLISHER_MODEL_VIEW_FULL\020\002\022&\n\"PUBLISHE"
-          + "R_MODEL_VERSION_VIEW_BASIC\020\0032\276\007\n\022ModelGa"
-          + "rdenService\022\265\001\n\021GetPublisherModel\0229.goog"
-          + "le.cloud.aiplatform.v1beta1.GetPublisher"
-          + "ModelRequest\032/.google.cloud.aiplatform.v"
-          + "1beta1.PublisherModel\"4\332A\004name\202\323\344\223\002\'\022%/v"
-          + "1beta1/{name=publishers/*/models/*}\022\310\001\n\023"
-          + "ListPublisherModels\022;.google.cloud.aipla"
-          + "tform.v1beta1.ListPublisherModelsRequest"
-          + "\032<.google.cloud.aiplatform.v1beta1.ListP"
-          + "ublisherModelsResponse\"6\332A\006parent\202\323\344\223\002\'\022"
-          + "%/v1beta1/{parent=publishers/*}/models\022\304"
-          + "\001\n\006Deploy\022..google.cloud.aiplatform.v1be"
-          + "ta1.DeployRequest\032\035.google.longrunning.O"
-          + "peration\"k\312A)\n\016DeployResponse\022\027DeployOpe"
-          + "rationMetadata\202\323\344\223\0029\"4/v1beta1/{destinat"
-          + "ion=projects/*/locations/*}:deploy:\001*\022\216\002"
-          + "\n\024DeployPublisherModel\022<.google.cloud.ai"
-          + "platform.v1beta1.DeployPublisherModelReq"
-          + "uest\032\035.google.longrunning.Operation\"\230\001\210\002"
-          + "\001\312AE\n\034DeployPublisherModelResponse\022%Depl"
-          + "oyPublisherModelOperationMetadata\202\323\344\223\002G\""
-          + "B/v1beta1/{destination=projects/*/locati"
-          + "ons/*}:deployPublisherModel:\001*\032M\312A\031aipla"
-          + "tform.googleapis.com\322A.https://www.googl"
-          + "eapis.com/auth/cloud-platformB\356\001\n#com.go"
-          + "ogle.cloud.aiplatform.v1beta1B\027ModelGard"
-          + "enServiceProtoP\001ZCcloud.google.com/go/ai"
-          + "platform/apiv1beta1/aiplatformpb;aiplatf"
-          + "ormpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312"
-          + "\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Goog"
-          + "le::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "ce.proto\032(google/cloud/aiplatform/v1beta1/io.proto\0327google/cloud/aiplatform/v1be"
+          + "ta1/machine_resources.proto\032+google/cloud/aiplatform/v1beta1/model.proto\032/google"
+          + "/cloud/aiplatform/v1beta1/operation.proto\0325google/cloud/aiplatform/v1beta1/publi"
+          + "sher_model.proto\032#google/longrunning/operations.proto\"\312\002\n"
+          + "\030GetPublisherModelRequest\022>\n"
+          + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
+          + "(aiplatform.googleapis.com/PublisherModel\022\032\n\r"
+          + "language_code\030\002 \001(\tB\003\340A\001\022F\n"
+          + "\004view\030\003 \001(\01623.google.cl"
+          + "oud.aiplatform.v1beta1.PublisherModelViewB\003\340A\001\022\"\n"
+          + "\025is_hugging_face_model\030\005 \001(\010B\003\340A\001\022\037\n"
+          + "\022hugging_face_token\030\006 \001(\tB\003\340A\001\022E\n"
+          + "8include_equivalent_model_garden_model_deployment_configs\030\007"
+          + " \001(\010B\003\340A\001\"\222\002\n"
+          + "\032ListPublisherModelsRequest\022\023\n"
+          + "\006parent\030\001 \001(\tB\003\340A\002\022\023\n"
+          + "\006filter\030\002 \001(\tB\003\340A\001\022\026\n"
+          + "\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\004 \001(\tB\003\340A\001\022F\n"
+          + "\004view\030\005 \001"
+          + "(\01623.google.cloud.aiplatform.v1beta1.PublisherModelViewB\003\340A\001\022\025\n"
+          + "\010order_by\030\006 \001(\tB\003\340A\001\022\032\n\r"
+          + "language_code\030\007 \001(\tB\003\340A\001\022\036\n"
+          + "\021list_all_versions\030\010 \001(\010B\003\340A\001\"\201\001\n"
+          + "\033ListPublisherModelsResponse\022I\n"
+          + "\020publisher_models\030\001 \003("
+          + "\0132/.google.cloud.aiplatform.v1beta1.PublisherModel\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\320\010\n\r"
+          + "DeployRequest\022M\n"
+          + "\024publisher_model_name\030\001 \001(\tB-\372A*\n"
+          + "(aiplatform.googleapis.com/PublisherModelH\000\022\037\n"
+          + "\025hugging_face_model_id\030\002 \001(\tH\000\022>\n"
+          + "\013destination\030\004 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022U\n"
+          + "\014model_config\030\005"
+          + " \001(\0132:.google.cloud.aiplatform.v1beta1.DeployRequest.ModelConfigB\003\340A\001\022[\n"
+          + "\017endpoint_config\030\006 \001(\0132=.google.cloud.aip"
+          + "latform.v1beta1.DeployRequest.EndpointConfigB\003\340A\001\022W\n\r"
+          + "deploy_config\030\007 \001(\0132;.googl"
+          + "e.cloud.aiplatform.v1beta1.DeployRequest.DeployConfigB\003\340A\001\032\353\001\n"
+          + "\013ModelConfig\022\030\n"
+          + "\013accept_eula\030\001 \001(\010B\003\340A\001\022&\n"
+          + "\031hugging_face_access_token\030\002 \001(\tB\003\340A\001\022\'\n"
+          + "\032hugging_face_cache_enabled\030\003 \001(\010B\003\340A\001\022\037\n"
+          + "\022model_display_name\030\004 \001(\tB\003\340A\001\022P\n"
+          + "\016container_spec\030\005 \001(\01323"
+          + ".google.cloud.aiplatform.v1beta1.ModelContainerSpecB\003\340A\001\032]\n"
+          + "\016EndpointConfig\022\"\n"
+          + "\025endpoint_display_name\030\001 \001(\tB\003\340A\001\022\'\n"
+          + "\032dedicated_endpoint_enabled\030\002 \001(\010B\003\340A\001\032\247\002\n"
+          + "\014DeployConfig\022U\n"
+          + "\023dedicated_resources\030\001 \001(\01323."
+          + "google.cloud.aiplatform.v1beta1.DedicatedResourcesB\003\340A\001\022 \n"
+          + "\023fast_tryout_enabled\030\002 \001(\010B\003\340A\001\022i\n\r"
+          + "system_labels\030\003 \003(\0132M.googl"
+          + "e.cloud.aiplatform.v1beta1.DeployRequest.DeployConfig.SystemLabelsEntryB\003\340A\001\0323\n"
+          + "\021SystemLabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001B\013\n"
+          + "\tartifacts\"\323\002\n"
+          + "\033DeployPublisherModelRequest\022\022\n"
+          + "\005model\030\001 \001(\tB\003\340A\002\022>\n"
+          + "\013destination\030\002 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\"\n"
+          + "\025endpoint_display_name\030\003 \001(\tB\003\340A\001\022U\n"
+          + "\023dedicated_resources\030\004 "
+          + "\001(\01323.google.cloud.aiplatform.v1beta1.DedicatedResourcesB\003\340A\001\022\037\n"
+          + "\022model_display_name\030\005 \001(\tB\003\340A\001\022&\n"
+          + "\031hugging_face_access_token\030\006 \001(\tB\003\340A\001\022\030\n"
+          + "\013accept_eula\030\007 \001(\010B\003\340A\001:\002\030\001\"\321\001\n"
+          + "\016DeployResponse\022I\n"
+          + "\017publisher_model\030\001 \001(\tB0\340A\003\372A*\n"
+          + "(aiplatform.googleapis.com/PublisherModel\022<\n"
+          + "\010endpoint\030\002 \001(\tB*\340A\003\372A$\n"
+          + "\"aiplatform.googleapis.com/Endpoint\0226\n"
+          + "\005model\030\003 \001(\tB\'\340A\003\372A!\n"
+          + "\037aiplatform.googleapis.com/Model\"\343\001\n"
+          + "\034DeployPublisherModelResponse\022I\n"
+          + "\017publisher_model\030\001 \001(\tB0\340A\003\372A*\n"
+          + "(aiplatform.googleapis.com/PublisherModel\022<\n"
+          + "\010endpoint\030\002 \001(\tB*\340A\003\372A$\n"
+          + "\"aiplatform.googleapis.com/Endpoint\0226\n"
+          + "\005model\030\003 \001(\tB\'\340A\003\372A!\n"
+          + "\037aiplatform.googleapis.com/Model:\002\030\001\"\255\002\n"
+          + "\027DeployOperationMetadata\022S\n"
+          + "\020generic_metadata\030\001 \001(\01329.google.cloud.aipl"
+          + "atform.v1beta1.GenericOperationMetadata\022I\n"
+          + "\017publisher_model\030\002 \001(\tB0\340A\003\372A*\n"
+          + "(aiplatform.googleapis.com/PublisherModel\022>\n"
+          + "\013destination\030\003 \001(\tB)\340A\003\372A#\n"
+          + "!locations.googleapis.com/Location\022\033\n"
+          + "\016project_number\030\004 \001(\003B\003\340A\003\022\025\n"
+          + "\010model_id\030\005 \001(\tB\003\340A\003\"\250\002\n"
+          + "%DeployPublisherModelOperationMetadata\022S\n"
+          + "\020generic_metadata\030\001"
+          + " \001(\01329.google.cloud.aiplatform.v1beta1.GenericOperationMetadata\022I\n"
+          + "\017publisher_model\030\002 \001(\tB0\340A\003\372A*\n"
+          + "(aiplatform.googleapis.com/PublisherModel\022>\n"
+          + "\013destination\030\003 \001(\tB)\340A\003\372A#\n"
+          + "!locations.googleapis.com/Location\022\033\n"
+          + "\016project_number\030\004 \001(\003B\003\340A\003:\002\030\001\"P\n"
+          + "\034ExportPublisherModelResponse\022\027\n"
+          + "\017publisher_model\030\001 \001(\t\022\027\n"
+          + "\017destination_uri\030\002 \001(\t\"|\n"
+          + "%ExportPublisherModelOperationMetadata\022S\n"
+          + "\020generic_metadata\030\001 \001(\01329"
+          + ".google.cloud.aiplatform.v1beta1.GenericOperationMetadata\"\266\001\n"
+          + "\033ExportPublisherModelRequest\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\022I\n"
+          + "\013destination\030\002"
+          + " \001(\0132/.google.cloud.aiplatform.v1beta1.GcsDestinationB\003\340A\002\0229\n"
+          + "\006parent\030\003 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\"\272\001\n"
+          + "(CheckPublisherModelEulaAcceptanceRequest\022C\n"
+          + "\006parent\030\001 \001(\tB3\340A\002\372A-\n"
+          + "+cloudresourcemanager.googleapis.com/Project\022I\n"
+          + "\017publisher_model\030\002 \001(\tB0\340A\002\372A*\n"
+          + "(aiplatform.googleapis.com/PublisherModel\"\261\001\n"
+          + "\037AcceptPublisherModelEulaRequest\022C\n"
+          + "\006parent\030\001 \001(\tB3\340A\002\372A-\n"
+          + "+cloudresourcemanager.googleapis.com/Project\022I\n"
+          + "\017publisher_model\030\002 \001(\tB0\340A\002\372A*\n"
+          + "(aiplatform.googleapis.com/PublisherModel\"s\n"
+          + "\034PublisherModelEulaAcceptance\022\026\n"
+          + "\016project_number\030\001 \001(\003\022\027\n"
+          + "\017publisher_model\030\002 \001(\t\022\"\n"
+          + "\032publisher_model_eula_acked\030\003 \001(\010*\241\001\n"
+          + "\022PublisherModelView\022$\n"
+          + " PUBLISHER_MODEL_VIEW_UNSPECIFIED\020\000\022\036\n"
+          + "\032PUBLISHER_MODEL_VIEW_BASIC\020\001\022\035\n"
+          + "\031PUBLISHER_MODEL_VIEW_FULL\020\002\022&\n"
+          + "\"PUBLISHER_MODEL_VERSION_VIEW_BASIC\020\0032\325\r\n"
+          + "\022ModelGardenService\022\265\001\n"
+          + "\021GetPublisherModel\0229.google.cloud.aiplatf"
+          + "orm.v1beta1.GetPublisherModelRequest\032/.google.cloud.aiplatform.v1beta1.Publisher"
+          + "Model\"4\332A\004name\202\323\344\223\002\'\022%/v1beta1/{name=publishers/*/models/*}\022\310\001\n"
+          + "\023ListPublisherModels\022;.google.cloud.aiplatform.v1beta1.Li"
+          + "stPublisherModelsRequest\032<.google.cloud.aiplatform.v1beta1.ListPublisherModelsRe"
+          + "sponse\"6\332A\006parent\202\323\344\223\002\'\022%/v1beta1/{parent=publishers/*}/models\022\304\001\n"
+          + "\006Deploy\022..goog"
+          + "le.cloud.aiplatform.v1beta1.DeployRequest\032\035.google.longrunning.Operation\"k\312A)\n"
+          + "\016DeployResponse\022\027DeployOperationMetadata\202\323"
+          + "\344\223\0029\"4/v1beta1/{destination=projects/*/locations/*}:deploy:\001*\022\216\002\n"
+          + "\024DeployPublisherModel\022<.google.cloud.aiplatform.v1beta1"
+          + ".DeployPublisherModelRequest\032\035.google.longrunning.Operation\"\230\001\210\002\001\312AE\n"
+          + "\034DeployPublisherModelResponse\022%DeployPublisherModel"
+          + "OperationMetadata\202\323\344\223\002G\"B/v1beta1/{desti"
+          + "nation=projects/*/locations/*}:deployPublisherModel:\001*\022\225\002\n"
+          + "\024ExportPublisherModel\022<.google.cloud.aiplatform.v1beta1.Export"
+          + "PublisherModelRequest\032\035.google.longrunning.Operation\"\237\001\312AE\n"
+          + "\034ExportPublisherModelResponse\022%ExportPublisherModelOperationM"
+          + "etadata\202\323\344\223\002Q\"L/v1beta1/{parent=projects"
+          + "/*/locations/*}/{name=publishers/*/models/*}:export:\001*\022\205\002\n"
+          + "!CheckPublisherModelEulaAcceptance\022I.google.cloud.aiplatform.v"
+          + "1beta1.CheckPublisherModelEulaAcceptanceRequest\032=.google.cloud.aiplatform.v1beta"
+          + "1.PublisherModelEulaAcceptance\"V\332A\026paren"
+          + "t,publisher_model\202\323\344\223\0027\"2/v1beta1/{paren"
+          + "t=projects/*}/modelGardenEula:check:\001*\022\364\001\n"
+          + "\030AcceptPublisherModelEula\022@.google.cloud.aiplatform.v1beta1.AcceptPublisherMod"
+          + "elEulaRequest\032=.google.cloud.aiplatform."
+          + "v1beta1.PublisherModelEulaAcceptance\"W\332A"
+          + "\026parent,publisher_model\202\323\344\223\0028\"3/v1beta1/"
+          + "{parent=projects/*}/modelGardenEula:acce"
+          + "pt:\001*\032M\312A\031aiplatform.googleapis.com\322A.ht"
+          + "tps://www.googleapis.com/auth/cloud-platformB\356\001\n"
+          + "#com.google.cloud.aiplatform.v1beta1B\027ModelGardenServiceProtoP\001ZCcloud.g"
+          + "oogle.com/go/aiplatform/apiv1beta1/aipla"
+          + "tformpb;aiplatformpb\252\002\037Google.Cloud.AIPl"
+          + "atform.V1Beta1\312\002\037Google\\Cloud\\AIPlatform"
+          + "\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -216,6 +297,7 @@ public final class ModelGardenServiceProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.IoProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.MachineResourcesProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.ModelProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.OperationProto.getDescriptor(),
@@ -304,7 +386,17 @@ public final class ModelGardenServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_DeployConfig_descriptor,
             new java.lang.String[] {
-              "DedicatedResources", "FastTryoutEnabled",
+              "DedicatedResources", "FastTryoutEnabled", "SystemLabels",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_DeployConfig_SystemLabelsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_DeployConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_DeployConfig_SystemLabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_DeployConfig_SystemLabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DeployPublisherModelRequest_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -342,7 +434,7 @@ public final class ModelGardenServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DeployOperationMetadata_descriptor,
             new java.lang.String[] {
-              "GenericMetadata", "PublisherModel", "Destination", "ProjectNumber",
+              "GenericMetadata", "PublisherModel", "Destination", "ProjectNumber", "ModelId",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DeployPublisherModelOperationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(8);
@@ -351,6 +443,54 @@ public final class ModelGardenServiceProto {
             internal_static_google_cloud_aiplatform_v1beta1_DeployPublisherModelOperationMetadata_descriptor,
             new java.lang.String[] {
               "GenericMetadata", "PublisherModel", "Destination", "ProjectNumber",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ExportPublisherModelResponse_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_aiplatform_v1beta1_ExportPublisherModelResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ExportPublisherModelResponse_descriptor,
+            new java.lang.String[] {
+              "PublisherModel", "DestinationUri",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ExportPublisherModelOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_aiplatform_v1beta1_ExportPublisherModelOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ExportPublisherModelOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "GenericMetadata",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ExportPublisherModelRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_aiplatform_v1beta1_ExportPublisherModelRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ExportPublisherModelRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Destination", "Parent",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_CheckPublisherModelEulaAcceptanceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_aiplatform_v1beta1_CheckPublisherModelEulaAcceptanceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_CheckPublisherModelEulaAcceptanceRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PublisherModel",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_AcceptPublisherModelEulaRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_aiplatform_v1beta1_AcceptPublisherModelEulaRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_AcceptPublisherModelEulaRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PublisherModel",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_PublisherModelEulaAcceptance_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_aiplatform_v1beta1_PublisherModelEulaAcceptance_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_PublisherModelEulaAcceptance_descriptor,
+            new java.lang.String[] {
+              "ProjectNumber", "PublisherModel", "PublisherModelEulaAcked",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -367,6 +507,7 @@ public final class ModelGardenServiceProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.IoProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.MachineResourcesProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.ModelProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.OperationProto.getDescriptor();

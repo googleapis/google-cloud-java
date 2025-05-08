@@ -29,9 +29,8 @@ public interface StreamingSynthesisInputOrBuilder
    *
    * <pre>
    * The raw text to be synthesized. It is recommended that each input
-   * contains complete, terminating sentences, as this will likely result in
-   * better prosody in the output audio. That being said, users are free to
-   * input text however they please.
+   * contains complete, terminating sentences, which results in better prosody
+   * in the output audio.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -39,14 +38,14 @@ public interface StreamingSynthesisInputOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
+
   /**
    *
    *
    * <pre>
    * The raw text to be synthesized. It is recommended that each input
-   * contains complete, terminating sentences, as this will likely result in
-   * better prosody in the output audio. That being said, users are free to
-   * input text however they please.
+   * contains complete, terminating sentences, which results in better prosody
+   * in the output audio.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -54,14 +53,14 @@ public interface StreamingSynthesisInputOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *
    * <pre>
    * The raw text to be synthesized. It is recommended that each input
-   * contains complete, terminating sentences, as this will likely result in
-   * better prosody in the output audio. That being said, users are free to
-   * input text however they please.
+   * contains complete, terminating sentences, which results in better prosody
+   * in the output audio.
    * </pre>
    *
    * <code>string text = 1;</code>
@@ -69,6 +68,48 @@ public interface StreamingSynthesisInputOrBuilder
    * @return The bytes for text.
    */
   com.google.protobuf.ByteString getTextBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Markup for HD voices specifically. This field may not be used with any
+   * other voices.
+   * </pre>
+   *
+   * <code>string markup = 5;</code>
+   *
+   * @return Whether the markup field is set.
+   */
+  boolean hasMarkup();
+
+  /**
+   *
+   *
+   * <pre>
+   * Markup for HD voices specifically. This field may not be used with any
+   * other voices.
+   * </pre>
+   *
+   * <code>string markup = 5;</code>
+   *
+   * @return The markup.
+   */
+  java.lang.String getMarkup();
+
+  /**
+   *
+   *
+   * <pre>
+   * Markup for HD voices specifically. This field may not be used with any
+   * other voices.
+   * </pre>
+   *
+   * <code>string markup = 5;</code>
+   *
+   * @return The bytes for markup.
+   */
+  com.google.protobuf.ByteString getMarkupBytes();
 
   com.google.cloud.texttospeech.v1.StreamingSynthesisInput.InputSourceCase getInputSourceCase();
 }

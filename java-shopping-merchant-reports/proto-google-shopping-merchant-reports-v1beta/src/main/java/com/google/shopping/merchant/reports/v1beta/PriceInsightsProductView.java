@@ -39,6 +39,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.PriceInsightsProductView)
     PriceInsightsProductViewOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PriceInsightsProductView.newBuilder() to construct.
   private PriceInsightsProductView(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -153,6 +154,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
      * <code>EFFECTIVENESS_UNSPECIFIED = 0;</code>
      */
     public static final int EFFECTIVENESS_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -163,6 +165,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
      * <code>LOW = 1;</code>
      */
     public static final int LOW_VALUE = 1;
+
     /**
      *
      *
@@ -173,6 +176,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
      * <code>MEDIUM = 2;</code>
      */
     public static final int MEDIUM_VALUE = 2;
+
     /**
      *
      *
@@ -276,6 +280,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -295,6 +300,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -322,6 +328,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -354,6 +361,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object offerId_ = "";
+
   /**
    *
    *
@@ -369,6 +377,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasOfferId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -392,6 +401,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -420,6 +430,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
+
   /**
    *
    *
@@ -435,6 +446,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasTitle() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -458,6 +470,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -486,6 +499,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object brand_ = "";
+
   /**
    *
    *
@@ -501,6 +515,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasBrand() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -524,6 +539,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -552,6 +568,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL1_ = "";
+
   /**
    *
    *
@@ -568,6 +585,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasCategoryL1() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -592,6 +610,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -621,6 +640,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL2_ = "";
+
   /**
    *
    *
@@ -637,6 +657,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasCategoryL2() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -661,6 +682,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -690,6 +712,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL3_ = "";
+
   /**
    *
    *
@@ -706,6 +729,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasCategoryL3() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -730,6 +754,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -759,6 +784,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL4_ = "";
+
   /**
    *
    *
@@ -775,6 +801,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasCategoryL4() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -799,6 +826,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -828,6 +856,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object categoryL5_ = "";
+
   /**
    *
    *
@@ -844,6 +873,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasCategoryL5() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -868,6 +898,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -897,6 +928,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object productTypeL1_ = "";
+
   /**
    *
    *
@@ -913,6 +945,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasProductTypeL1() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -937,6 +970,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -966,6 +1000,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object productTypeL2_ = "";
+
   /**
    *
    *
@@ -982,6 +1017,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasProductTypeL2() {
     return ((bitField0_ & 0x00000400) != 0);
   }
+
   /**
    *
    *
@@ -1006,6 +1042,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -1035,6 +1072,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object productTypeL3_ = "";
+
   /**
    *
    *
@@ -1051,6 +1089,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasProductTypeL3() {
     return ((bitField0_ & 0x00000800) != 0);
   }
+
   /**
    *
    *
@@ -1075,6 +1114,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -1104,6 +1144,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object productTypeL4_ = "";
+
   /**
    *
    *
@@ -1120,6 +1161,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasProductTypeL4() {
     return ((bitField0_ & 0x00001000) != 0);
   }
+
   /**
    *
    *
@@ -1144,6 +1186,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -1173,6 +1216,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object productTypeL5_ = "";
+
   /**
    *
    *
@@ -1189,6 +1233,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasProductTypeL5() {
     return ((bitField0_ & 0x00002000) != 0);
   }
+
   /**
    *
    *
@@ -1213,6 +1258,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -1240,6 +1286,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   public static final int PRICE_FIELD_NUMBER = 15;
   private com.google.shopping.type.Price price_;
+
   /**
    *
    *
@@ -1255,6 +1302,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasPrice() {
     return ((bitField0_ & 0x00004000) != 0);
   }
+
   /**
    *
    *
@@ -1270,6 +1318,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public com.google.shopping.type.Price getPrice() {
     return price_ == null ? com.google.shopping.type.Price.getDefaultInstance() : price_;
   }
+
   /**
    *
    *
@@ -1286,6 +1335,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   public static final int SUGGESTED_PRICE_FIELD_NUMBER = 16;
   private com.google.shopping.type.Price suggestedPrice_;
+
   /**
    *
    *
@@ -1301,6 +1351,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasSuggestedPrice() {
     return ((bitField0_ & 0x00008000) != 0);
   }
+
   /**
    *
    *
@@ -1318,6 +1369,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         ? com.google.shopping.type.Price.getDefaultInstance()
         : suggestedPrice_;
   }
+
   /**
    *
    *
@@ -1336,6 +1388,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   public static final int PREDICTED_IMPRESSIONS_CHANGE_FRACTION_FIELD_NUMBER = 17;
   private double predictedImpressionsChangeFraction_ = 0D;
+
   /**
    *
    *
@@ -1353,6 +1406,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasPredictedImpressionsChangeFraction() {
     return ((bitField0_ & 0x00010000) != 0);
   }
+
   /**
    *
    *
@@ -1373,6 +1427,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   public static final int PREDICTED_CLICKS_CHANGE_FRACTION_FIELD_NUMBER = 18;
   private double predictedClicksChangeFraction_ = 0D;
+
   /**
    *
    *
@@ -1390,6 +1445,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasPredictedClicksChangeFraction() {
     return ((bitField0_ & 0x00020000) != 0);
   }
+
   /**
    *
    *
@@ -1410,6 +1466,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   public static final int PREDICTED_CONVERSIONS_CHANGE_FRACTION_FIELD_NUMBER = 19;
   private double predictedConversionsChangeFraction_ = 0D;
+
   /**
    *
    *
@@ -1427,6 +1484,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public boolean hasPredictedConversionsChangeFraction() {
     return ((bitField0_ & 0x00040000) != 0);
   }
+
   /**
    *
    *
@@ -1447,6 +1505,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
 
   public static final int EFFECTIVENESS_FIELD_NUMBER = 22;
   private int effectiveness_ = 0;
+
   /**
    *
    *
@@ -1464,6 +1523,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
   public int getEffectivenessValue() {
     return effectiveness_;
   }
+
   /**
    *
    *
@@ -1946,6 +2006,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2456,6 +2517,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -2474,6 +2536,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2500,6 +2563,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2526,6 +2590,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2551,6 +2616,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2572,6 +2638,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2600,6 +2667,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
 
     private java.lang.Object offerId_ = "";
+
     /**
      *
      *
@@ -2614,6 +2682,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasOfferId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2636,6 +2705,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2658,6 +2728,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2679,6 +2750,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2696,6 +2768,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2720,6 +2793,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
 
     private java.lang.Object title_ = "";
+
     /**
      *
      *
@@ -2734,6 +2808,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasTitle() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2756,6 +2831,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2778,6 +2854,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2799,6 +2876,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2816,6 +2894,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2840,6 +2919,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
 
     private java.lang.Object brand_ = "";
+
     /**
      *
      *
@@ -2854,6 +2934,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasBrand() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2876,6 +2957,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2898,6 +2980,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2919,6 +3002,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2936,6 +3020,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2960,6 +3045,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
 
     private java.lang.Object categoryL1_ = "";
+
     /**
      *
      *
@@ -2975,6 +3061,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasCategoryL1() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2998,6 +3085,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3021,6 +3109,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3043,6 +3132,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3061,6 +3151,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3086,6 +3177,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
 
     private java.lang.Object categoryL2_ = "";
+
     /**
      *
      *
@@ -3101,6 +3193,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasCategoryL2() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3124,6 +3217,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3147,6 +3241,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3169,6 +3264,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3187,6 +3283,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3212,6 +3309,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
 
     private java.lang.Object categoryL3_ = "";
+
     /**
      *
      *
@@ -3227,6 +3325,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasCategoryL3() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -3250,6 +3349,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3273,6 +3373,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3295,6 +3396,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3313,6 +3415,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3338,6 +3441,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
 
     private java.lang.Object categoryL4_ = "";
+
     /**
      *
      *
@@ -3353,6 +3457,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasCategoryL4() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3376,6 +3481,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3399,6 +3505,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3421,6 +3528,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3439,6 +3547,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3464,6 +3573,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
 
     private java.lang.Object categoryL5_ = "";
+
     /**
      *
      *
@@ -3479,6 +3589,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasCategoryL5() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3502,6 +3613,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3525,6 +3637,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3547,6 +3660,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3565,6 +3679,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3590,6 +3705,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
 
     private java.lang.Object productTypeL1_ = "";
+
     /**
      *
      *
@@ -3605,6 +3721,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasProductTypeL1() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -3628,6 +3745,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3651,6 +3769,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3673,6 +3792,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3691,6 +3811,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3716,6 +3837,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
 
     private java.lang.Object productTypeL2_ = "";
+
     /**
      *
      *
@@ -3731,6 +3853,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasProductTypeL2() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -3754,6 +3877,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3777,6 +3901,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3799,6 +3924,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3817,6 +3943,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3842,6 +3969,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
 
     private java.lang.Object productTypeL3_ = "";
+
     /**
      *
      *
@@ -3857,6 +3985,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasProductTypeL3() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -3880,6 +4009,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3903,6 +4033,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3925,6 +4056,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3943,6 +4075,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3968,6 +4101,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
 
     private java.lang.Object productTypeL4_ = "";
+
     /**
      *
      *
@@ -3983,6 +4117,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasProductTypeL4() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -4006,6 +4141,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4029,6 +4165,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4051,6 +4188,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4069,6 +4207,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4094,6 +4233,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
 
     private java.lang.Object productTypeL5_ = "";
+
     /**
      *
      *
@@ -4109,6 +4249,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasProductTypeL5() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -4132,6 +4273,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4155,6 +4297,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4177,6 +4320,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4195,6 +4339,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4225,6 +4370,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         priceBuilder_;
+
     /**
      *
      *
@@ -4239,6 +4385,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasPrice() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -4257,6 +4404,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return priceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4279,6 +4427,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4298,6 +4447,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4325,6 +4475,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -4344,6 +4495,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4358,6 +4510,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return getPriceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4374,6 +4527,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return price_ == null ? com.google.shopping.type.Price.getDefaultInstance() : price_;
       }
     }
+
     /**
      *
      *
@@ -4406,6 +4560,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         suggestedPriceBuilder_;
+
     /**
      *
      *
@@ -4420,6 +4575,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasSuggestedPrice() {
       return ((bitField0_ & 0x00008000) != 0);
     }
+
     /**
      *
      *
@@ -4440,6 +4596,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
         return suggestedPriceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4462,6 +4619,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4481,6 +4639,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4508,6 +4667,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -4527,6 +4687,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4541,6 +4702,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return getSuggestedPriceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4559,6 +4721,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
             : suggestedPrice_;
       }
     }
+
     /**
      *
      *
@@ -4586,6 +4749,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
 
     private double predictedImpressionsChangeFraction_;
+
     /**
      *
      *
@@ -4603,6 +4767,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasPredictedImpressionsChangeFraction() {
       return ((bitField0_ & 0x00010000) != 0);
     }
+
     /**
      *
      *
@@ -4620,6 +4785,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public double getPredictedImpressionsChangeFraction() {
       return predictedImpressionsChangeFraction_;
     }
+
     /**
      *
      *
@@ -4641,6 +4807,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4662,6 +4829,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
 
     private double predictedClicksChangeFraction_;
+
     /**
      *
      *
@@ -4679,6 +4847,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasPredictedClicksChangeFraction() {
       return ((bitField0_ & 0x00020000) != 0);
     }
+
     /**
      *
      *
@@ -4696,6 +4865,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public double getPredictedClicksChangeFraction() {
       return predictedClicksChangeFraction_;
     }
+
     /**
      *
      *
@@ -4717,6 +4887,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4738,6 +4909,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
 
     private double predictedConversionsChangeFraction_;
+
     /**
      *
      *
@@ -4755,6 +4927,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public boolean hasPredictedConversionsChangeFraction() {
       return ((bitField0_ & 0x00040000) != 0);
     }
+
     /**
      *
      *
@@ -4772,6 +4945,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public double getPredictedConversionsChangeFraction() {
       return predictedConversionsChangeFraction_;
     }
+
     /**
      *
      *
@@ -4793,6 +4967,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4814,6 +4989,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
 
     private int effectiveness_ = 0;
+
     /**
      *
      *
@@ -4831,6 +5007,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     public int getEffectivenessValue() {
       return effectiveness_;
     }
+
     /**
      *
      *
@@ -4851,6 +5028,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4875,6 +5053,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4899,6 +5078,7 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

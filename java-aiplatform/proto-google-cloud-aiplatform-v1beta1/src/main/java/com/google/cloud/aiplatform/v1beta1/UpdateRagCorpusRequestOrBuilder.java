@@ -38,6 +38,7 @@ public interface UpdateRagCorpusRequestOrBuilder
    * @return Whether the ragCorpus field is set.
    */
   boolean hasRagCorpus();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateRagCorpusRequestOrBuilder
    * @return The ragCorpus.
    */
   com.google.cloud.aiplatform.v1beta1.RagCorpus getRagCorpus();
+
   /**
    *
    *

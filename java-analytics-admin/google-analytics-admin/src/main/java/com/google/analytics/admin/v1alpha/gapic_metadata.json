@@ -103,6 +103,9 @@
             "CreateProperty": {
               "methods": ["createProperty", "createProperty", "createPropertyCallable"]
             },
+            "CreateReportingDataAnnotation": {
+              "methods": ["createReportingDataAnnotation", "createReportingDataAnnotation", "createReportingDataAnnotation", "createReportingDataAnnotationCallable"]
+            },
             "CreateRollupProperty": {
               "methods": ["createRollupProperty", "createRollupPropertyCallable"]
             },
@@ -174,6 +177,9 @@
             },
             "DeleteProperty": {
               "methods": ["deleteProperty", "deleteProperty", "deleteProperty", "deletePropertyCallable"]
+            },
+            "DeleteReportingDataAnnotation": {
+              "methods": ["deleteReportingDataAnnotation", "deleteReportingDataAnnotation", "deleteReportingDataAnnotation", "deleteReportingDataAnnotationCallable"]
             },
             "DeleteRollupPropertySourceLink": {
               "methods": ["deleteRollupPropertySourceLink", "deleteRollupPropertySourceLink", "deleteRollupPropertySourceLink", "deleteRollupPropertySourceLinkCallable"]
@@ -271,6 +277,9 @@
             "GetProperty": {
               "methods": ["getProperty", "getProperty", "getProperty", "getPropertyCallable"]
             },
+            "GetReportingDataAnnotation": {
+              "methods": ["getReportingDataAnnotation", "getReportingDataAnnotation", "getReportingDataAnnotation", "getReportingDataAnnotationCallable"]
+            },
             "GetRollupPropertySourceLink": {
               "methods": ["getRollupPropertySourceLink", "getRollupPropertySourceLink", "getRollupPropertySourceLink", "getRollupPropertySourceLinkCallable"]
             },
@@ -352,6 +361,9 @@
             "ListProperties": {
               "methods": ["listProperties", "listPropertiesPagedCallable", "listPropertiesCallable"]
             },
+            "ListReportingDataAnnotations": {
+              "methods": ["listReportingDataAnnotations", "listReportingDataAnnotations", "listReportingDataAnnotations", "listReportingDataAnnotationsPagedCallable", "listReportingDataAnnotationsCallable"]
+            },
             "ListRollupPropertySourceLinks": {
               "methods": ["listRollupPropertySourceLinks", "listRollupPropertySourceLinks", "listRollupPropertySourceLinks", "listRollupPropertySourceLinksPagedCallable", "listRollupPropertySourceLinksCallable"]
             },
@@ -381,6 +393,9 @@
             },
             "SetAutomatedGa4ConfigurationOptOut": {
               "methods": ["setAutomatedGa4ConfigurationOptOut", "setAutomatedGa4ConfigurationOptOutCallable"]
+            },
+            "SubmitUserDeletion": {
+              "methods": ["submitUserDeletion", "submitUserDeletion", "submitUserDeletion", "submitUserDeletionCallable"]
             },
             "UpdateAccessBinding": {
               "methods": ["updateAccessBinding", "updateAccessBinding", "updateAccessBindingCallable"]
@@ -450,6 +465,9 @@
             },
             "UpdateProperty": {
               "methods": ["updateProperty", "updateProperty", "updatePropertyCallable"]
+            },
+            "UpdateReportingDataAnnotation": {
+              "methods": ["updateReportingDataAnnotation", "updateReportingDataAnnotation", "updateReportingDataAnnotationCallable"]
             },
             "UpdateSKAdNetworkConversionValueSchema": {
               "methods": ["updateSKAdNetworkConversionValueSchema", "updateSKAdNetworkConversionValueSchema", "updateSKAdNetworkConversionValueSchemaCallable"]

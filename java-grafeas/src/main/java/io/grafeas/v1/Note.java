@@ -34,6 +34,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1.Note)
     NoteOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Note.newBuilder() to construct.
   private Note(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,12 +89,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     DSSE_ATTESTATION(19),
     VULNERABILITY_ASSESSMENT(20),
     SBOM_REFERENCE(21),
+    SECRET(22),
     TYPE_NOT_SET(0);
     private final int value;
 
     private TypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -130,6 +133,8 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
           return VULNERABILITY_ASSESSMENT;
         case 21:
           return SBOM_REFERENCE;
+        case 22:
+          return SECRET;
         case 0:
           return TYPE_NOT_SET;
         default:
@@ -150,6 +155,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object shortDescription_ = "";
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object longDescription_ = "";
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -303,6 +314,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
   public static final int KIND_FIELD_NUMBER = 4;
   private int kind_ = 0;
+
   /**
    *
    *
@@ -319,6 +331,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public int getKindValue() {
     return kind_;
   }
+
   /**
    *
    *
@@ -341,6 +354,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.RelatedUrl> relatedUrl_;
+
   /**
    *
    *
@@ -354,6 +368,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<io.grafeas.v1.RelatedUrl> getRelatedUrlList() {
     return relatedUrl_;
   }
+
   /**
    *
    *
@@ -367,6 +382,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<? extends io.grafeas.v1.RelatedUrlOrBuilder> getRelatedUrlOrBuilderList() {
     return relatedUrl_;
   }
+
   /**
    *
    *
@@ -380,6 +396,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public int getRelatedUrlCount() {
     return relatedUrl_.size();
   }
+
   /**
    *
    *
@@ -393,6 +410,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.RelatedUrl getRelatedUrl(int index) {
     return relatedUrl_.get(index);
   }
+
   /**
    *
    *
@@ -409,6 +427,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPIRATION_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp expirationTime_;
+
   /**
    *
    *
@@ -424,6 +443,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpirationTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -441,6 +461,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : expirationTime_;
   }
+
   /**
    *
    *
@@ -459,6 +480,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -475,6 +497,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -491,6 +514,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -508,6 +532,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -524,6 +549,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -540,6 +566,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -560,6 +587,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList relatedNoteNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -574,6 +602,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getRelatedNoteNamesList() {
     return relatedNoteNames_;
   }
+
   /**
    *
    *
@@ -588,6 +617,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public int getRelatedNoteNamesCount() {
     return relatedNoteNames_.size();
   }
+
   /**
    *
    *
@@ -603,6 +633,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getRelatedNoteNames(int index) {
     return relatedNoteNames_.get(index);
   }
+
   /**
    *
    *
@@ -620,6 +651,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VULNERABILITY_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -635,6 +667,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVulnerability() {
     return typeCase_ == 10;
   }
+
   /**
    *
    *
@@ -653,6 +686,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.VulnerabilityNote.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -671,6 +705,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BUILD_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -686,6 +721,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBuild() {
     return typeCase_ == 11;
   }
+
   /**
    *
    *
@@ -704,6 +740,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.BuildNote.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -722,6 +759,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_FIELD_NUMBER = 12;
+
   /**
    *
    *
@@ -737,6 +775,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImage() {
     return typeCase_ == 12;
   }
+
   /**
    *
    *
@@ -755,6 +794,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.ImageNote.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -773,6 +813,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PACKAGE_FIELD_NUMBER = 13;
+
   /**
    *
    *
@@ -788,6 +829,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPackage() {
     return typeCase_ == 13;
   }
+
   /**
    *
    *
@@ -806,6 +848,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.PackageNote.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -824,6 +867,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEPLOYMENT_FIELD_NUMBER = 14;
+
   /**
    *
    *
@@ -839,6 +883,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeployment() {
     return typeCase_ == 14;
   }
+
   /**
    *
    *
@@ -857,6 +902,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.DeploymentNote.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -875,6 +921,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISCOVERY_FIELD_NUMBER = 15;
+
   /**
    *
    *
@@ -890,6 +937,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDiscovery() {
     return typeCase_ == 15;
   }
+
   /**
    *
    *
@@ -908,6 +956,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.DiscoveryNote.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -926,6 +975,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ATTESTATION_FIELD_NUMBER = 16;
+
   /**
    *
    *
@@ -941,6 +991,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAttestation() {
     return typeCase_ == 16;
   }
+
   /**
    *
    *
@@ -959,6 +1010,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.AttestationNote.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -977,6 +1029,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UPGRADE_FIELD_NUMBER = 17;
+
   /**
    *
    *
@@ -992,6 +1045,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpgrade() {
     return typeCase_ == 17;
   }
+
   /**
    *
    *
@@ -1010,6 +1064,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.UpgradeNote.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1028,6 +1083,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COMPLIANCE_FIELD_NUMBER = 18;
+
   /**
    *
    *
@@ -1043,6 +1099,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCompliance() {
     return typeCase_ == 18;
   }
+
   /**
    *
    *
@@ -1061,6 +1118,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.ComplianceNote.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1079,6 +1137,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DSSE_ATTESTATION_FIELD_NUMBER = 19;
+
   /**
    *
    *
@@ -1094,6 +1153,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDsseAttestation() {
     return typeCase_ == 19;
   }
+
   /**
    *
    *
@@ -1112,6 +1172,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.DSSEAttestationNote.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1130,6 +1191,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VULNERABILITY_ASSESSMENT_FIELD_NUMBER = 20;
+
   /**
    *
    *
@@ -1145,6 +1207,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVulnerabilityAssessment() {
     return typeCase_ == 20;
   }
+
   /**
    *
    *
@@ -1163,6 +1226,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.VulnerabilityAssessmentNote.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1181,6 +1245,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SBOM_REFERENCE_FIELD_NUMBER = 21;
+
   /**
    *
    *
@@ -1196,6 +1261,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSbomReference() {
     return typeCase_ == 21;
   }
+
   /**
    *
    *
@@ -1214,6 +1280,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1.SBOMReferenceNote.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1229,6 +1296,60 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return (io.grafeas.v1.SBOMReferenceNote) type_;
     }
     return io.grafeas.v1.SBOMReferenceNote.getDefaultInstance();
+  }
+
+  public static final int SECRET_FIELD_NUMBER = 22;
+
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SecretNote secret = 22;</code>
+   *
+   * @return Whether the secret field is set.
+   */
+  @java.lang.Override
+  public boolean hasSecret() {
+    return typeCase_ == 22;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SecretNote secret = 22;</code>
+   *
+   * @return The secret.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.SecretNote getSecret() {
+    if (typeCase_ == 22) {
+      return (io.grafeas.v1.SecretNote) type_;
+    }
+    return io.grafeas.v1.SecretNote.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A note describing a secret.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SecretNote secret = 22;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.SecretNoteOrBuilder getSecretOrBuilder() {
+    if (typeCase_ == 22) {
+      return (io.grafeas.v1.SecretNote) type_;
+    }
+    return io.grafeas.v1.SecretNote.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1307,6 +1428,9 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
     if (typeCase_ == 21) {
       output.writeMessage(21, (io.grafeas.v1.SBOMReferenceNote) type_);
+    }
+    if (typeCase_ == 22) {
+      output.writeMessage(22, (io.grafeas.v1.SecretNote) type_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1409,6 +1533,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               21, (io.grafeas.v1.SBOMReferenceNote) type_);
     }
+    if (typeCase_ == 22) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              22, (io.grafeas.v1.SecretNote) type_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1479,6 +1608,9 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         break;
       case 21:
         if (!getSbomReference().equals(other.getSbomReference())) return false;
+        break;
+      case 22:
+        if (!getSecret().equals(other.getSecret())) return false;
         break;
       case 0:
       default:
@@ -1570,6 +1702,10 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       case 21:
         hash = (37 * hash) + SBOM_REFERENCE_FIELD_NUMBER;
         hash = (53 * hash) + getSbomReference().hashCode();
+        break;
+      case 22:
+        hash = (37 * hash) + SECRET_FIELD_NUMBER;
+        hash = (53 * hash) + getSecret().hashCode();
         break;
       case 0:
       default:
@@ -1672,6 +1808,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1782,6 +1919,9 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       if (sbomReferenceBuilder_ != null) {
         sbomReferenceBuilder_.clear();
+      }
+      if (secretBuilder_ != null) {
+        secretBuilder_.clear();
       }
       typeCase_ = 0;
       type_ = null;
@@ -1904,6 +2044,9 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       if (typeCase_ == 21 && sbomReferenceBuilder_ != null) {
         result.type_ = sbomReferenceBuilder_.build();
+      }
+      if (typeCase_ == 22 && secretBuilder_ != null) {
+        result.type_ = secretBuilder_.build();
       }
     }
 
@@ -2077,6 +2220,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             mergeSbomReference(other.getSbomReference());
             break;
           }
+        case SECRET:
+          {
+            mergeSecret(other.getSecret());
+            break;
+          }
         case TYPE_NOT_SET:
           {
             break;
@@ -2242,6 +2390,12 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
                 typeCase_ = 21;
                 break;
               } // case 170
+            case 178:
+              {
+                input.readMessage(getSecretFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 22;
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2276,6 +2430,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2299,6 +2454,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2322,6 +2478,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2344,6 +2501,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2362,6 +2520,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2387,6 +2546,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object shortDescription_ = "";
+
     /**
      *
      *
@@ -2409,6 +2569,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2431,6 +2592,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2452,6 +2614,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2469,6 +2632,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2493,6 +2657,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object longDescription_ = "";
+
     /**
      *
      *
@@ -2515,6 +2680,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2537,6 +2703,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2558,6 +2725,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2575,6 +2743,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2599,6 +2768,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int kind_ = 0;
+
     /**
      *
      *
@@ -2615,6 +2785,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public int getKindValue() {
       return kind_;
     }
+
     /**
      *
      *
@@ -2634,6 +2805,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2651,6 +2823,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       io.grafeas.v1.NoteKind result = io.grafeas.v1.NoteKind.forNumber(kind_);
       return result == null ? io.grafeas.v1.NoteKind.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2673,6 +2846,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2724,6 +2898,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return relatedUrlBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2740,6 +2915,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return relatedUrlBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2756,6 +2932,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return relatedUrlBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2778,6 +2955,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2797,6 +2975,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2819,6 +2998,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2841,6 +3021,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2860,6 +3041,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2879,6 +3061,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2898,6 +3081,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2917,6 +3101,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2936,6 +3121,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2948,6 +3134,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.RelatedUrl.Builder getRelatedUrlBuilder(int index) {
       return getRelatedUrlFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2964,6 +3151,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return relatedUrlBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2981,6 +3169,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(relatedUrl_);
       }
     }
+
     /**
      *
      *
@@ -2993,6 +3182,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.RelatedUrl.Builder addRelatedUrlBuilder() {
       return getRelatedUrlFieldBuilder().addBuilder(io.grafeas.v1.RelatedUrl.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3006,6 +3196,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return getRelatedUrlFieldBuilder()
           .addBuilder(index, io.grafeas.v1.RelatedUrl.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3042,6 +3233,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expirationTimeBuilder_;
+
     /**
      *
      *
@@ -3056,6 +3248,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpirationTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3076,6 +3269,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return expirationTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3098,6 +3292,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3117,6 +3312,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3144,6 +3340,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3163,6 +3360,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3177,6 +3375,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExpirationTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3195,6 +3394,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             : expirationTime_;
       }
     }
+
     /**
      *
      *
@@ -3227,6 +3427,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -3242,6 +3443,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -3263,6 +3465,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3286,6 +3489,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3306,6 +3510,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3334,6 +3539,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3354,6 +3560,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3369,6 +3576,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3388,6 +3596,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -3421,6 +3630,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -3436,6 +3646,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3457,6 +3668,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3480,6 +3692,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3500,6 +3713,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3528,6 +3742,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3548,6 +3763,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3563,6 +3779,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3582,6 +3799,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -3618,6 +3836,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000100;
     }
+
     /**
      *
      *
@@ -3633,6 +3852,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       relatedNoteNames_.makeImmutable();
       return relatedNoteNames_;
     }
+
     /**
      *
      *
@@ -3647,6 +3867,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public int getRelatedNoteNamesCount() {
       return relatedNoteNames_.size();
     }
+
     /**
      *
      *
@@ -3662,6 +3883,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRelatedNoteNames(int index) {
       return relatedNoteNames_.get(index);
     }
+
     /**
      *
      *
@@ -3677,6 +3899,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getRelatedNoteNamesBytes(int index) {
       return relatedNoteNames_.getByteString(index);
     }
+
     /**
      *
      *
@@ -3700,6 +3923,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3722,6 +3946,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3741,6 +3966,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3759,6 +3985,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3788,6 +4015,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.VulnerabilityNote.Builder,
             io.grafeas.v1.VulnerabilityNoteOrBuilder>
         vulnerabilityBuilder_;
+
     /**
      *
      *
@@ -3803,6 +4031,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVulnerability() {
       return typeCase_ == 10;
     }
+
     /**
      *
      *
@@ -3828,6 +4057,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.VulnerabilityNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3850,6 +4080,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -3869,6 +4100,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -3899,6 +4131,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -3924,6 +4157,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3936,6 +4170,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.VulnerabilityNote.Builder getVulnerabilityBuilder() {
       return getVulnerabilityFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3956,6 +4191,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.VulnerabilityNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3992,6 +4228,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.BuildNote.Builder,
             io.grafeas.v1.BuildNoteOrBuilder>
         buildBuilder_;
+
     /**
      *
      *
@@ -4007,6 +4244,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBuild() {
       return typeCase_ == 11;
     }
+
     /**
      *
      *
@@ -4032,6 +4270,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.BuildNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4054,6 +4293,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -4073,6 +4313,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -4103,6 +4344,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -4128,6 +4370,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4140,6 +4383,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.BuildNote.Builder getBuildBuilder() {
       return getBuildFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4160,6 +4404,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.BuildNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4196,6 +4441,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.ImageNote.Builder,
             io.grafeas.v1.ImageNoteOrBuilder>
         imageBuilder_;
+
     /**
      *
      *
@@ -4211,6 +4457,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImage() {
       return typeCase_ == 12;
     }
+
     /**
      *
      *
@@ -4236,6 +4483,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.ImageNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4258,6 +4506,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -4277,6 +4526,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -4307,6 +4557,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -4332,6 +4583,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4344,6 +4596,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.ImageNote.Builder getImageBuilder() {
       return getImageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4364,6 +4617,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.ImageNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4400,6 +4654,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.PackageNote.Builder,
             io.grafeas.v1.PackageNoteOrBuilder>
         packageBuilder_;
+
     /**
      *
      *
@@ -4415,6 +4670,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPackage() {
       return typeCase_ == 13;
     }
+
     /**
      *
      *
@@ -4440,6 +4696,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.PackageNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4462,6 +4719,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4481,6 +4739,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4511,6 +4770,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -4536,6 +4796,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4548,6 +4809,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.PackageNote.Builder getPackageBuilder() {
       return getPackageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4568,6 +4830,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.PackageNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4604,6 +4867,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.DeploymentNote.Builder,
             io.grafeas.v1.DeploymentNoteOrBuilder>
         deploymentBuilder_;
+
     /**
      *
      *
@@ -4619,6 +4883,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeployment() {
       return typeCase_ == 14;
     }
+
     /**
      *
      *
@@ -4644,6 +4909,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.DeploymentNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4666,6 +4932,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -4685,6 +4952,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -4715,6 +4983,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 14;
       return this;
     }
+
     /**
      *
      *
@@ -4740,6 +5009,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4752,6 +5022,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.DeploymentNote.Builder getDeploymentBuilder() {
       return getDeploymentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4772,6 +5043,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.DeploymentNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4808,6 +5080,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.DiscoveryNote.Builder,
             io.grafeas.v1.DiscoveryNoteOrBuilder>
         discoveryBuilder_;
+
     /**
      *
      *
@@ -4823,6 +5096,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDiscovery() {
       return typeCase_ == 15;
     }
+
     /**
      *
      *
@@ -4848,6 +5122,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.DiscoveryNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4870,6 +5145,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -4889,6 +5165,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -4919,6 +5196,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 15;
       return this;
     }
+
     /**
      *
      *
@@ -4944,6 +5222,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4956,6 +5235,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.DiscoveryNote.Builder getDiscoveryBuilder() {
       return getDiscoveryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4976,6 +5256,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.DiscoveryNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5012,6 +5293,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.AttestationNote.Builder,
             io.grafeas.v1.AttestationNoteOrBuilder>
         attestationBuilder_;
+
     /**
      *
      *
@@ -5027,6 +5309,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAttestation() {
       return typeCase_ == 16;
     }
+
     /**
      *
      *
@@ -5052,6 +5335,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.AttestationNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5074,6 +5358,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 16;
       return this;
     }
+
     /**
      *
      *
@@ -5093,6 +5378,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 16;
       return this;
     }
+
     /**
      *
      *
@@ -5123,6 +5409,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 16;
       return this;
     }
+
     /**
      *
      *
@@ -5148,6 +5435,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5160,6 +5448,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.AttestationNote.Builder getAttestationBuilder() {
       return getAttestationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5180,6 +5469,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.AttestationNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5216,6 +5506,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.UpgradeNote.Builder,
             io.grafeas.v1.UpgradeNoteOrBuilder>
         upgradeBuilder_;
+
     /**
      *
      *
@@ -5231,6 +5522,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpgrade() {
       return typeCase_ == 17;
     }
+
     /**
      *
      *
@@ -5256,6 +5548,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.UpgradeNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5278,6 +5571,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 17;
       return this;
     }
+
     /**
      *
      *
@@ -5297,6 +5591,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 17;
       return this;
     }
+
     /**
      *
      *
@@ -5327,6 +5622,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 17;
       return this;
     }
+
     /**
      *
      *
@@ -5352,6 +5648,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5364,6 +5661,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.UpgradeNote.Builder getUpgradeBuilder() {
       return getUpgradeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5384,6 +5682,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.UpgradeNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5420,6 +5719,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.ComplianceNote.Builder,
             io.grafeas.v1.ComplianceNoteOrBuilder>
         complianceBuilder_;
+
     /**
      *
      *
@@ -5435,6 +5735,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCompliance() {
       return typeCase_ == 18;
     }
+
     /**
      *
      *
@@ -5460,6 +5761,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.ComplianceNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5482,6 +5784,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 18;
       return this;
     }
+
     /**
      *
      *
@@ -5501,6 +5804,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 18;
       return this;
     }
+
     /**
      *
      *
@@ -5531,6 +5835,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 18;
       return this;
     }
+
     /**
      *
      *
@@ -5556,6 +5861,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5568,6 +5874,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.ComplianceNote.Builder getComplianceBuilder() {
       return getComplianceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5588,6 +5895,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.ComplianceNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5624,6 +5932,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.DSSEAttestationNote.Builder,
             io.grafeas.v1.DSSEAttestationNoteOrBuilder>
         dsseAttestationBuilder_;
+
     /**
      *
      *
@@ -5639,6 +5948,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDsseAttestation() {
       return typeCase_ == 19;
     }
+
     /**
      *
      *
@@ -5664,6 +5974,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.DSSEAttestationNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5686,6 +5997,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 19;
       return this;
     }
+
     /**
      *
      *
@@ -5705,6 +6017,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 19;
       return this;
     }
+
     /**
      *
      *
@@ -5736,6 +6049,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 19;
       return this;
     }
+
     /**
      *
      *
@@ -5761,6 +6075,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5773,6 +6088,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.DSSEAttestationNote.Builder getDsseAttestationBuilder() {
       return getDsseAttestationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5793,6 +6109,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.DSSEAttestationNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5829,6 +6146,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.VulnerabilityAssessmentNote.Builder,
             io.grafeas.v1.VulnerabilityAssessmentNoteOrBuilder>
         vulnerabilityAssessmentBuilder_;
+
     /**
      *
      *
@@ -5844,6 +6162,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVulnerabilityAssessment() {
       return typeCase_ == 20;
     }
+
     /**
      *
      *
@@ -5869,6 +6188,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.VulnerabilityAssessmentNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5891,6 +6211,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 20;
       return this;
     }
+
     /**
      *
      *
@@ -5911,6 +6232,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 20;
       return this;
     }
+
     /**
      *
      *
@@ -5943,6 +6265,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 20;
       return this;
     }
+
     /**
      *
      *
@@ -5968,6 +6291,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5980,6 +6304,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.VulnerabilityAssessmentNote.Builder getVulnerabilityAssessmentBuilder() {
       return getVulnerabilityAssessmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6001,6 +6326,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.VulnerabilityAssessmentNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6039,6 +6365,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.SBOMReferenceNote.Builder,
             io.grafeas.v1.SBOMReferenceNoteOrBuilder>
         sbomReferenceBuilder_;
+
     /**
      *
      *
@@ -6054,6 +6381,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSbomReference() {
       return typeCase_ == 21;
     }
+
     /**
      *
      *
@@ -6079,6 +6407,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.SBOMReferenceNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6101,6 +6430,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 21;
       return this;
     }
+
     /**
      *
      *
@@ -6120,6 +6450,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 21;
       return this;
     }
+
     /**
      *
      *
@@ -6150,6 +6481,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 21;
       return this;
     }
+
     /**
      *
      *
@@ -6175,6 +6507,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6187,6 +6520,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.SBOMReferenceNote.Builder getSbomReferenceBuilder() {
       return getSbomReferenceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6207,6 +6541,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1.SBOMReferenceNote.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6236,6 +6571,219 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 21;
       onChanged();
       return sbomReferenceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.SecretNote,
+            io.grafeas.v1.SecretNote.Builder,
+            io.grafeas.v1.SecretNoteOrBuilder>
+        secretBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretNote secret = 22;</code>
+     *
+     * @return Whether the secret field is set.
+     */
+    @java.lang.Override
+    public boolean hasSecret() {
+      return typeCase_ == 22;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretNote secret = 22;</code>
+     *
+     * @return The secret.
+     */
+    @java.lang.Override
+    public io.grafeas.v1.SecretNote getSecret() {
+      if (secretBuilder_ == null) {
+        if (typeCase_ == 22) {
+          return (io.grafeas.v1.SecretNote) type_;
+        }
+        return io.grafeas.v1.SecretNote.getDefaultInstance();
+      } else {
+        if (typeCase_ == 22) {
+          return secretBuilder_.getMessage();
+        }
+        return io.grafeas.v1.SecretNote.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretNote secret = 22;</code>
+     */
+    public Builder setSecret(io.grafeas.v1.SecretNote value) {
+      if (secretBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        secretBuilder_.setMessage(value);
+      }
+      typeCase_ = 22;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretNote secret = 22;</code>
+     */
+    public Builder setSecret(io.grafeas.v1.SecretNote.Builder builderForValue) {
+      if (secretBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        secretBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 22;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretNote secret = 22;</code>
+     */
+    public Builder mergeSecret(io.grafeas.v1.SecretNote value) {
+      if (secretBuilder_ == null) {
+        if (typeCase_ == 22 && type_ != io.grafeas.v1.SecretNote.getDefaultInstance()) {
+          type_ =
+              io.grafeas.v1.SecretNote.newBuilder((io.grafeas.v1.SecretNote) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 22) {
+          secretBuilder_.mergeFrom(value);
+        } else {
+          secretBuilder_.setMessage(value);
+        }
+      }
+      typeCase_ = 22;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretNote secret = 22;</code>
+     */
+    public Builder clearSecret() {
+      if (secretBuilder_ == null) {
+        if (typeCase_ == 22) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 22) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        secretBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretNote secret = 22;</code>
+     */
+    public io.grafeas.v1.SecretNote.Builder getSecretBuilder() {
+      return getSecretFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretNote secret = 22;</code>
+     */
+    @java.lang.Override
+    public io.grafeas.v1.SecretNoteOrBuilder getSecretOrBuilder() {
+      if ((typeCase_ == 22) && (secretBuilder_ != null)) {
+        return secretBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 22) {
+          return (io.grafeas.v1.SecretNote) type_;
+        }
+        return io.grafeas.v1.SecretNote.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A note describing a secret.
+     * </pre>
+     *
+     * <code>.grafeas.v1.SecretNote secret = 22;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.SecretNote,
+            io.grafeas.v1.SecretNote.Builder,
+            io.grafeas.v1.SecretNoteOrBuilder>
+        getSecretFieldBuilder() {
+      if (secretBuilder_ == null) {
+        if (!(typeCase_ == 22)) {
+          type_ = io.grafeas.v1.SecretNote.getDefaultInstance();
+        }
+        secretBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.SecretNote,
+                io.grafeas.v1.SecretNote.Builder,
+                io.grafeas.v1.SecretNoteOrBuilder>(
+                (io.grafeas.v1.SecretNote) type_, getParentForChildren(), isClean());
+        type_ = null;
+      }
+      typeCase_ = 22;
+      onChanged();
+      return secretBuilder_;
     }
 
     @java.lang.Override

@@ -302,6 +302,19 @@ public final class SpecialistPoolServiceGrpc {
     return SpecialistPoolServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SpecialistPoolServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SpecialistPoolServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SpecialistPoolServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public SpecialistPoolServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SpecialistPoolServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SpecialistPoolServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -547,6 +560,97 @@ public final class SpecialistPoolServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SpecialistPoolService.
+   *
+   * <pre>
+   * A service for creating and managing Customer SpecialistPools.
+   * When customers start Data Labeling jobs, they can reuse/create Specialist
+   * Pools to bring their own Specialists to label the data.
+   * Customers can add/remove Managers for the Specialist Pool on Cloud console,
+   * then Managers will get email notifications to manage Specialists and tasks on
+   * CrowdCompute console.
+   * </pre>
+   */
+  public static final class SpecialistPoolServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SpecialistPoolServiceBlockingV2Stub> {
+    private SpecialistPoolServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SpecialistPoolServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SpecialistPoolServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a SpecialistPool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSpecialistPool(
+        com.google.cloud.aiplatform.v1.CreateSpecialistPoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSpecialistPoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a SpecialistPool.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.SpecialistPool getSpecialistPool(
+        com.google.cloud.aiplatform.v1.GetSpecialistPoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSpecialistPoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists SpecialistPools in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListSpecialistPoolsResponse listSpecialistPools(
+        com.google.cloud.aiplatform.v1.ListSpecialistPoolsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSpecialistPoolsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a SpecialistPool as well as all Specialists in the pool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSpecialistPool(
+        com.google.cloud.aiplatform.v1.DeleteSpecialistPoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSpecialistPoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a SpecialistPool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateSpecialistPool(
+        com.google.cloud.aiplatform.v1.UpdateSpecialistPoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSpecialistPoolMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SpecialistPoolService.
    *
    * <pre>
    * A service for creating and managing Customer SpecialistPools.

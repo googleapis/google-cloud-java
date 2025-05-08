@@ -37,6 +37,10 @@ public final class SpeechResourceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_speech_v1p1beta1_CustomClass_ClassItem_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_speech_v1p1beta1_CustomClass_AnnotationsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_speech_v1p1beta1_CustomClass_AnnotationsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_speech_v1p1beta1_PhraseSet_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_speech_v1p1beta1_PhraseSet_fieldAccessorTable;
@@ -44,6 +48,10 @@ public final class SpeechResourceProto {
       internal_static_google_cloud_speech_v1p1beta1_PhraseSet_Phrase_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_speech_v1p1beta1_PhraseSet_Phrase_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_speech_v1p1beta1_PhraseSet_AnnotationsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_speech_v1p1beta1_PhraseSet_AnnotationsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_speech_v1p1beta1_SpeechAdaptation_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -69,44 +77,105 @@ public final class SpeechResourceProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n,google/cloud/speech/v1p1beta1/resource"
-          + ".proto\022\035google.cloud.speech.v1p1beta1\032\031g"
-          + "oogle/api/resource.proto\"\203\002\n\013CustomClass"
-          + "\022\014\n\004name\030\001 \001(\t\022\027\n\017custom_class_id\030\002 \001(\t\022"
-          + "C\n\005items\030\003 \003(\01324.google.cloud.speech.v1p"
-          + "1beta1.CustomClass.ClassItem\032\032\n\tClassIte"
-          + "m\022\r\n\005value\030\001 \001(\t:l\352Ai\n!speech.googleapis"
-          + ".com/CustomClass\022Dprojects/{project}/loc"
-          + "ations/{location}/customClasses/{custom_"
-          + "class}\"\371\001\n\tPhraseSet\022\014\n\004name\030\001 \001(\t\022@\n\007ph"
-          + "rases\030\002 \003(\0132/.google.cloud.speech.v1p1be"
-          + "ta1.PhraseSet.Phrase\022\r\n\005boost\030\004 \001(\002\032&\n\006P"
-          + "hrase\022\r\n\005value\030\001 \001(\t\022\r\n\005boost\030\002 \001(\002:e\352Ab"
-          + "\n\037speech.googleapis.com/PhraseSet\022?proje"
-          + "cts/{project}/locations/{location}/phras"
-          + "eSets/{phrase_set}\"\322\002\n\020SpeechAdaptation\022"
-          + "=\n\013phrase_sets\030\001 \003(\0132(.google.cloud.spee"
-          + "ch.v1p1beta1.PhraseSet\022C\n\025phrase_set_ref"
-          + "erences\030\002 \003(\tB$\372A!\n\037speech.googleapis.co"
-          + "m/PhraseSet\022B\n\016custom_classes\030\003 \003(\0132*.go"
-          + "ogle.cloud.speech.v1p1beta1.CustomClass\022"
-          + "Q\n\014abnf_grammar\030\004 \001(\0132;.google.cloud.spe"
-          + "ech.v1p1beta1.SpeechAdaptation.ABNFGramm"
-          + "ar\032#\n\013ABNFGrammar\022\024\n\014abnf_strings\030\001 \003(\t\""
-          + "\252\001\n\027TranscriptNormalization\022M\n\007entries\030\001"
-          + " \003(\0132<.google.cloud.speech.v1p1beta1.Tra"
-          + "nscriptNormalization.Entry\032@\n\005Entry\022\016\n\006s"
-          + "earch\030\001 \001(\t\022\017\n\007replace\030\002 \001(\t\022\026\n\016case_sen"
-          + "sitive\030\003 \001(\010B~\n!com.google.cloud.speech."
-          + "v1p1beta1B\023SpeechResourceProtoP\001Z9cloud."
-          + "google.com/go/speech/apiv1p1beta1/speech"
-          + "pb;speechpb\370\001\001\242\002\003GCSb\006proto3"
+      "\n"
+          + ",google/cloud/speech/v1p1beta1/resource"
+          + ".proto\022\035google.cloud.speech.v1p1beta1\032\037g"
+          + "oogle/api/field_behavior.proto\032\031google/a"
+          + "pi/resource.proto\032\037google/protobuf/timestamp.proto\"\344\006\n"
+          + "\013CustomClass\022\014\n"
+          + "\004name\030\001 \001(\t\022\027\n"
+          + "\017custom_class_id\030\002 \001(\t\022C\n"
+          + "\005items\030\003 \003(\013"
+          + "24.google.cloud.speech.v1p1beta1.CustomClass.ClassItem\022?\n"
+          + "\014kms_key_name\030\006 \001(\tB)\340A\003\372A#\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022N\n"
+          + "\024kms_key_version_name\030\007 \001(\tB0\340A\003\372A*\n"
+          + "(cloudkms.googleapis.com/CryptoKeyVersion\022\020\n"
+          + "\003uid\030\010 \001(\tB\003\340A\003\022\031\n"
+          + "\014display_name\030\t \001(\tB\003\340A\003\022D\n"
+          + "\005state\030\n"
+          + " \001(\01620.google.cloud.speech.v1p1beta1.CustomClass.StateB\003\340A\003\0224\n"
+          + "\013delete_time\030\013 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013expire_time\030\014 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022U\n"
+          + "\013annotations\030\r"
+          + " \003(\0132;.google.cloud.speech.v1p1beta1.CustomClass.AnnotationsEntryB\003\340A\003\022\021\n"
+          + "\004etag\030\016 \001(\tB\003\340A\003\022\030\n"
+          + "\013reconciling\030\017 \001(\010B\003\340A\003\032\032\n"
+          + "\tClassItem\022\r\n"
+          + "\005value\030\001 \001(\t\0322\n"
+          + "\020AnnotationsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"7\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\n\n"
+          + "\006ACTIVE\020\002\022\013\n"
+          + "\007DELETED\020\004:l\352Ai\n"
+          + "!speech.googleapis.com/CustomClass\022Dprojects/{project}/location"
+          + "s/{location}/customClasses/{custom_class}\"\326\006\n"
+          + "\tPhraseSet\022\014\n"
+          + "\004name\030\001 \001(\t\022@\n"
+          + "\007phrases\030\002 \003(\0132/.google.cloud.speech.v1p1beta1.PhraseSet.Phrase\022\r\n"
+          + "\005boost\030\004 \001(\002\022?\n"
+          + "\014kms_key_name\030\007 \001(\tB)\340A\003\372A#\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022N\n"
+          + "\024kms_key_version_name\030\010 \001(\tB0\340A\003\372A*\n"
+          + "(cloudkms.googleapis.com/CryptoKeyVersion\022\020\n"
+          + "\003uid\030\t \001(\tB\003\340A\003\022\031\n"
+          + "\014display_name\030\n"
+          + " \001(\tB\003\340A\003\022B\n"
+          + "\005state\030\013 \001(\0162..go"
+          + "ogle.cloud.speech.v1p1beta1.PhraseSet.StateB\003\340A\003\0224\n"
+          + "\013delete_time\030\014 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013expire_time\030\r"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022S\n"
+          + "\013annotations\030\016 \003(\01329.google.cloud.speech."
+          + "v1p1beta1.PhraseSet.AnnotationsEntryB\003\340A\003\022\021\n"
+          + "\004etag\030\017 \001(\tB\003\340A\003\022\030\n"
+          + "\013reconciling\030\020 \001(\010B\003\340A\003\032&\n"
+          + "\006Phrase\022\r\n"
+          + "\005value\030\001 \001(\t\022\r\n"
+          + "\005boost\030\002 \001(\002\0322\n"
+          + "\020AnnotationsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"7\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\n\n"
+          + "\006ACTIVE\020\002\022\013\n"
+          + "\007DELETED\020\004:e\352Ab\n"
+          + "\037speech.googleapis.com/PhraseSet\022?proje"
+          + "cts/{project}/locations/{location}/phraseSets/{phrase_set}\"\322\002\n"
+          + "\020SpeechAdaptation\022=\n"
+          + "\013phrase_sets\030\001 \003(\0132(.google.cloud.speech.v1p1beta1.PhraseSet\022C\n"
+          + "\025phrase_set_references\030\002 \003(\tB$\372A!\n"
+          + "\037speech.googleapis.com/PhraseSet\022B\n"
+          + "\016custom_classes\030\003 \003(\0132*.go"
+          + "ogle.cloud.speech.v1p1beta1.CustomClass\022Q\n"
+          + "\014abnf_grammar\030\004 \001(\0132;.google.cloud.spe"
+          + "ech.v1p1beta1.SpeechAdaptation.ABNFGrammar\032#\n"
+          + "\013ABNFGrammar\022\024\n"
+          + "\014abnf_strings\030\001 \003(\t\"\252\001\n"
+          + "\027TranscriptNormalization\022M\n"
+          + "\007entries\030\001"
+          + " \003(\0132<.google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry\032@\n"
+          + "\005Entry\022\016\n"
+          + "\006search\030\001 \001(\t\022\017\n"
+          + "\007replace\030\002 \001(\t\022\026\n"
+          + "\016case_sensitive\030\003 \001(\010B\240\003\n"
+          + "!com.google.cloud.speech.v1p1beta1B\023SpeechResourceProtoP\001Z9cloud"
+          + ".google.com/go/speech/apiv1p1beta1/speechpb;speechpb\242\002\003GCS\352Ax\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{project}/loc"
+          + "ations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}\352A\246\001\n"
+          + "(cloudkms.googleapis.com/CryptoKeyVersion\022zprojects/{p"
+          + "roject}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoK"
+          + "eyVersions/{crypto_key_version}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_speech_v1p1beta1_CustomClass_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -114,7 +183,19 @@ public final class SpeechResourceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v1p1beta1_CustomClass_descriptor,
             new java.lang.String[] {
-              "Name", "CustomClassId", "Items",
+              "Name",
+              "CustomClassId",
+              "Items",
+              "KmsKeyName",
+              "KmsKeyVersionName",
+              "Uid",
+              "DisplayName",
+              "State",
+              "DeleteTime",
+              "ExpireTime",
+              "Annotations",
+              "Etag",
+              "Reconciling",
             });
     internal_static_google_cloud_speech_v1p1beta1_CustomClass_ClassItem_descriptor =
         internal_static_google_cloud_speech_v1p1beta1_CustomClass_descriptor
@@ -126,13 +207,35 @@ public final class SpeechResourceProto {
             new java.lang.String[] {
               "Value",
             });
+    internal_static_google_cloud_speech_v1p1beta1_CustomClass_AnnotationsEntry_descriptor =
+        internal_static_google_cloud_speech_v1p1beta1_CustomClass_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_speech_v1p1beta1_CustomClass_AnnotationsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_speech_v1p1beta1_CustomClass_AnnotationsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
     internal_static_google_cloud_speech_v1p1beta1_PhraseSet_descriptor =
         getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_speech_v1p1beta1_PhraseSet_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v1p1beta1_PhraseSet_descriptor,
             new java.lang.String[] {
-              "Name", "Phrases", "Boost",
+              "Name",
+              "Phrases",
+              "Boost",
+              "KmsKeyName",
+              "KmsKeyVersionName",
+              "Uid",
+              "DisplayName",
+              "State",
+              "DeleteTime",
+              "ExpireTime",
+              "Annotations",
+              "Etag",
+              "Reconciling",
             });
     internal_static_google_cloud_speech_v1p1beta1_PhraseSet_Phrase_descriptor =
         internal_static_google_cloud_speech_v1p1beta1_PhraseSet_descriptor.getNestedTypes().get(0);
@@ -141,6 +244,14 @@ public final class SpeechResourceProto {
             internal_static_google_cloud_speech_v1p1beta1_PhraseSet_Phrase_descriptor,
             new java.lang.String[] {
               "Value", "Boost",
+            });
+    internal_static_google_cloud_speech_v1p1beta1_PhraseSet_AnnotationsEntry_descriptor =
+        internal_static_google_cloud_speech_v1p1beta1_PhraseSet_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_speech_v1p1beta1_PhraseSet_AnnotationsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_speech_v1p1beta1_PhraseSet_AnnotationsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_speech_v1p1beta1_SpeechAdaptation_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -180,11 +291,15 @@ public final class SpeechResourceProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

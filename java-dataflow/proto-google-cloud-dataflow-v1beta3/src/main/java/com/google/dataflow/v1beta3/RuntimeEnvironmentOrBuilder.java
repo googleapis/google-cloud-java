@@ -28,7 +28,8 @@ public interface RuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * The initial number of Google Compute Engine instnaces for the job.
+   * Optional. The initial number of Google Compute Engine instances for the
+   * job. The default value is 11.
    * </pre>
    *
    * <code>int32 num_workers = 11;</code>
@@ -41,8 +42,9 @@ public interface RuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * The maximum number of Google Compute Engine instances to be made
-   * available to your pipeline during execution, from 1 to 1000.
+   * Optional. The maximum number of Google Compute Engine instances to be made
+   * available to your pipeline during execution, from 1 to 1000. The default
+   * value is 1.
    * </pre>
    *
    * <code>int32 max_workers = 1;</code>
@@ -55,7 +57,7 @@ public interface RuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * The Compute Engine [availability
+   * Optional. The Compute Engine [availability
    * zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones)
    * for launching worker instances to run your pipeline.
    * In the future, worker_zone will take precedence.
@@ -66,11 +68,12 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *
    * <pre>
-   * The Compute Engine [availability
+   * Optional. The Compute Engine [availability
    * zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones)
    * for launching worker instances to run your pipeline.
    * In the future, worker_zone will take precedence.
@@ -86,7 +89,7 @@ public interface RuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * The email address of the service account to run the job as.
+   * Optional. The email address of the service account to run the job as.
    * </pre>
    *
    * <code>string service_account_email = 3;</code>
@@ -94,11 +97,12 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
+
   /**
    *
    *
    * <pre>
-   * The email address of the service account to run the job as.
+   * Optional. The email address of the service account to run the job as.
    * </pre>
    *
    * <code>string service_account_email = 3;</code>
@@ -111,7 +115,7 @@ public interface RuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * The Cloud Storage path to use for temporary files.
+   * Required. The Cloud Storage path to use for temporary files.
    * Must be a valid Cloud Storage URL, beginning with `gs://`.
    * </pre>
    *
@@ -120,11 +124,12 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The tempLocation.
    */
   java.lang.String getTempLocation();
+
   /**
    *
    *
    * <pre>
-   * The Cloud Storage path to use for temporary files.
+   * Required. The Cloud Storage path to use for temporary files.
    * Must be a valid Cloud Storage URL, beginning with `gs://`.
    * </pre>
    *
@@ -138,8 +143,8 @@ public interface RuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * Whether to bypass the safety checks for the job's temporary directory.
-   * Use with caution.
+   * Optional. Whether to bypass the safety checks for the job's temporary
+   * directory. Use with caution.
    * </pre>
    *
    * <code>bool bypass_temp_dir_validation = 5;</code>
@@ -152,8 +157,8 @@ public interface RuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * The machine type to use for the job. Defaults to the value from the
-   * template if not specified.
+   * Optional. The machine type to use for the job. Defaults to the value from
+   * the template if not specified.
    * </pre>
    *
    * <code>string machine_type = 6;</code>
@@ -161,12 +166,13 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
+
   /**
    *
    *
    * <pre>
-   * The machine type to use for the job. Defaults to the value from the
-   * template if not specified.
+   * Optional. The machine type to use for the job. Defaults to the value from
+   * the template if not specified.
    * </pre>
    *
    * <code>string machine_type = 6;</code>
@@ -179,7 +185,7 @@ public interface RuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * Additional experiment flags for the job, specified with the
+   * Optional. Additional experiment flags for the job, specified with the
    * `--experiments` option.
    * </pre>
    *
@@ -188,11 +194,12 @@ public interface RuntimeEnvironmentOrBuilder
    * @return A list containing the additionalExperiments.
    */
   java.util.List<java.lang.String> getAdditionalExperimentsList();
+
   /**
    *
    *
    * <pre>
-   * Additional experiment flags for the job, specified with the
+   * Optional. Additional experiment flags for the job, specified with the
    * `--experiments` option.
    * </pre>
    *
@@ -201,11 +208,12 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The count of additionalExperiments.
    */
   int getAdditionalExperimentsCount();
+
   /**
    *
    *
    * <pre>
-   * Additional experiment flags for the job, specified with the
+   * Optional. Additional experiment flags for the job, specified with the
    * `--experiments` option.
    * </pre>
    *
@@ -215,11 +223,12 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The additionalExperiments at the given index.
    */
   java.lang.String getAdditionalExperiments(int index);
+
   /**
    *
    *
    * <pre>
-   * Additional experiment flags for the job, specified with the
+   * Optional. Additional experiment flags for the job, specified with the
    * `--experiments` option.
    * </pre>
    *
@@ -234,7 +243,7 @@ public interface RuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * Network to which VMs will be assigned.  If empty or unspecified,
+   * Optional. Network to which VMs will be assigned.  If empty or unspecified,
    * the service will use the network "default".
    * </pre>
    *
@@ -243,11 +252,12 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
    * <pre>
-   * Network to which VMs will be assigned.  If empty or unspecified,
+   * Optional. Network to which VMs will be assigned.  If empty or unspecified,
    * the service will use the network "default".
    * </pre>
    *
@@ -261,9 +271,9 @@ public interface RuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * Subnetwork to which VMs will be assigned, if desired. You can specify a
-   * subnetwork using either a complete URL or an abbreviated path. Expected to
-   * be of the form
+   * Optional. Subnetwork to which VMs will be assigned, if desired. You can
+   * specify a subnetwork using either a complete URL or an abbreviated path.
+   *  Expected to be of the form
    * "https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK"
    * or "regions/REGION/subnetworks/SUBNETWORK". If the subnetwork is located in
    * a Shared VPC network, you must use the complete URL.
@@ -274,13 +284,14 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
+
   /**
    *
    *
    * <pre>
-   * Subnetwork to which VMs will be assigned, if desired. You can specify a
-   * subnetwork using either a complete URL or an abbreviated path. Expected to
-   * be of the form
+   * Optional. Subnetwork to which VMs will be assigned, if desired. You can
+   * specify a subnetwork using either a complete URL or an abbreviated path.
+   *  Expected to be of the form
    * "https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK"
    * or "regions/REGION/subnetworks/SUBNETWORK". If the subnetwork is located in
    * a Shared VPC network, you must use the complete URL.
@@ -296,7 +307,7 @@ public interface RuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * Additional user labels to be specified for the job.
+   * Optional. Additional user labels to be specified for the job.
    * Keys and values should follow the restrictions specified in the [labeling
    * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
    * page.
@@ -307,11 +318,12 @@ public interface RuntimeEnvironmentOrBuilder
    * <code>map&lt;string, string&gt; additional_user_labels = 10;</code>
    */
   int getAdditionalUserLabelsCount();
+
   /**
    *
    *
    * <pre>
-   * Additional user labels to be specified for the job.
+   * Optional. Additional user labels to be specified for the job.
    * Keys and values should follow the restrictions specified in the [labeling
    * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
    * page.
@@ -322,14 +334,16 @@ public interface RuntimeEnvironmentOrBuilder
    * <code>map&lt;string, string&gt; additional_user_labels = 10;</code>
    */
   boolean containsAdditionalUserLabels(java.lang.String key);
+
   /** Use {@link #getAdditionalUserLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAdditionalUserLabels();
+
   /**
    *
    *
    * <pre>
-   * Additional user labels to be specified for the job.
+   * Optional. Additional user labels to be specified for the job.
    * Keys and values should follow the restrictions specified in the [labeling
    * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
    * page.
@@ -340,11 +354,12 @@ public interface RuntimeEnvironmentOrBuilder
    * <code>map&lt;string, string&gt; additional_user_labels = 10;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAdditionalUserLabelsMap();
+
   /**
    *
    *
    * <pre>
-   * Additional user labels to be specified for the job.
+   * Optional. Additional user labels to be specified for the job.
    * Keys and values should follow the restrictions specified in the [labeling
    * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
    * page.
@@ -359,11 +374,12 @@ public interface RuntimeEnvironmentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
    * <pre>
-   * Additional user labels to be specified for the job.
+   * Optional. Additional user labels to be specified for the job.
    * Keys and values should follow the restrictions specified in the [labeling
    * restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions)
    * page.
@@ -379,7 +395,7 @@ public interface RuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * Name for the Cloud KMS key for the job.
+   * Optional. Name for the Cloud KMS key for the job.
    * Key format is:
    * projects/&lt;project&gt;/locations/&lt;location&gt;/keyRings/&lt;keyring&gt;/cryptoKeys/&lt;key&gt;
    * </pre>
@@ -389,11 +405,12 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
+
   /**
    *
    *
    * <pre>
-   * Name for the Cloud KMS key for the job.
+   * Optional. Name for the Cloud KMS key for the job.
    * Key format is:
    * projects/&lt;project&gt;/locations/&lt;location&gt;/keyRings/&lt;keyring&gt;/cryptoKeys/&lt;key&gt;
    * </pre>
@@ -408,7 +425,7 @@ public interface RuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * Configuration for VM IPs.
+   * Optional. Configuration for VM IPs.
    * </pre>
    *
    * <code>.google.dataflow.v1beta3.WorkerIPAddressConfiguration ip_configuration = 14;</code>
@@ -416,11 +433,12 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The enum numeric value on the wire for ipConfiguration.
    */
   int getIpConfigurationValue();
+
   /**
    *
    *
    * <pre>
-   * Configuration for VM IPs.
+   * Optional. Configuration for VM IPs.
    * </pre>
    *
    * <code>.google.dataflow.v1beta3.WorkerIPAddressConfiguration ip_configuration = 14;</code>
@@ -433,7 +451,7 @@ public interface RuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * The Compute Engine region
+   * Required. The Compute Engine region
    * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
    * which worker processing should occur, e.g. "us-west1". Mutually exclusive
    * with worker_zone. If neither worker_region nor worker_zone is specified,
@@ -445,11 +463,12 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The workerRegion.
    */
   java.lang.String getWorkerRegion();
+
   /**
    *
    *
    * <pre>
-   * The Compute Engine region
+   * Required. The Compute Engine region
    * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
    * which worker processing should occur, e.g. "us-west1". Mutually exclusive
    * with worker_zone. If neither worker_region nor worker_zone is specified,
@@ -466,7 +485,7 @@ public interface RuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * The Compute Engine zone
+   * Optional. The Compute Engine zone
    * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
    * which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
    * with worker_region. If neither worker_region nor worker_zone is specified,
@@ -479,11 +498,12 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The workerZone.
    */
   java.lang.String getWorkerZone();
+
   /**
    *
    *
    * <pre>
-   * The Compute Engine zone
+   * Optional. The Compute Engine zone
    * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
    * which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
    * with worker_region. If neither worker_region nor worker_zone is specified,
@@ -501,7 +521,7 @@ public interface RuntimeEnvironmentOrBuilder
    *
    *
    * <pre>
-   * Whether to enable Streaming Engine for the job.
+   * Optional. Whether to enable Streaming Engine for the job.
    * </pre>
    *
    * <code>bool enable_streaming_engine = 17;</code>
@@ -509,4 +529,81 @@ public interface RuntimeEnvironmentOrBuilder
    * @return The enableStreamingEngine.
    */
   boolean getEnableStreamingEngine();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The disk size, in gigabytes, to use on each remote Compute Engine
+   * worker instance.
+   * </pre>
+   *
+   * <code>int32 disk_size_gb = 18;</code>
+   *
+   * @return The diskSizeGb.
+   */
+  int getDiskSizeGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the streamingMode field is set.
+   */
+  boolean hasStreamingMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for streamingMode.
+   */
+  int getStreamingModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * optional .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The streamingMode.
+   */
+  com.google.dataflow.v1beta3.StreamingMode getStreamingMode();
 }

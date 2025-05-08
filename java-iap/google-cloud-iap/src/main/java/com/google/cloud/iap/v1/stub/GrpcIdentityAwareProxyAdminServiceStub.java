@@ -35,6 +35,8 @@ import com.google.cloud.iap.v1.ListTunnelDestGroupsResponse;
 import com.google.cloud.iap.v1.TunnelDestGroup;
 import com.google.cloud.iap.v1.UpdateIapSettingsRequest;
 import com.google.cloud.iap.v1.UpdateTunnelDestGroupRequest;
+import com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest;
+import com.google.cloud.iap.v1.ValidateIapAttributeExpressionResponse;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -106,6 +108,22 @@ public class GrpcIdentityAwareProxyAdminServiceStub extends IdentityAwareProxyAd
               .setResponseMarshaller(ProtoUtils.marshaller(IapSettings.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+      validateIapAttributeExpressionMethodDescriptor =
+          MethodDescriptor
+              .<ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.iap.v1.IdentityAwareProxyAdminService/ValidateIapAttributeExpression")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ValidateIapAttributeExpressionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ValidateIapAttributeExpressionResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListTunnelDestGroupsRequest, ListTunnelDestGroupsResponse>
       listTunnelDestGroupsMethodDescriptor =
           MethodDescriptor.<ListTunnelDestGroupsRequest, ListTunnelDestGroupsResponse>newBuilder()
@@ -168,6 +186,9 @@ public class GrpcIdentityAwareProxyAdminServiceStub extends IdentityAwareProxyAd
       testIamPermissionsCallable;
   private final UnaryCallable<GetIapSettingsRequest, IapSettings> getIapSettingsCallable;
   private final UnaryCallable<UpdateIapSettingsRequest, IapSettings> updateIapSettingsCallable;
+  private final UnaryCallable<
+          ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+      validateIapAttributeExpressionCallable;
   private final UnaryCallable<ListTunnelDestGroupsRequest, ListTunnelDestGroupsResponse>
       listTunnelDestGroupsCallable;
   private final UnaryCallable<ListTunnelDestGroupsRequest, ListTunnelDestGroupsPagedResponse>
@@ -279,6 +300,19 @@ public class GrpcIdentityAwareProxyAdminServiceStub extends IdentityAwareProxyAd
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+        validateIapAttributeExpressionTransportSettings =
+            GrpcCallSettings
+                .<ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+                    newBuilder()
+                .setMethodDescriptor(validateIapAttributeExpressionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListTunnelDestGroupsRequest, ListTunnelDestGroupsResponse>
         listTunnelDestGroupsTransportSettings =
             GrpcCallSettings.<ListTunnelDestGroupsRequest, ListTunnelDestGroupsResponse>newBuilder()
@@ -355,6 +389,11 @@ public class GrpcIdentityAwareProxyAdminServiceStub extends IdentityAwareProxyAd
             updateIapSettingsTransportSettings,
             settings.updateIapSettingsSettings(),
             clientContext);
+    this.validateIapAttributeExpressionCallable =
+        callableFactory.createUnaryCallable(
+            validateIapAttributeExpressionTransportSettings,
+            settings.validateIapAttributeExpressionSettings(),
+            clientContext);
     this.listTunnelDestGroupsCallable =
         callableFactory.createUnaryCallable(
             listTunnelDestGroupsTransportSettings,
@@ -418,6 +457,13 @@ public class GrpcIdentityAwareProxyAdminServiceStub extends IdentityAwareProxyAd
   @Override
   public UnaryCallable<UpdateIapSettingsRequest, IapSettings> updateIapSettingsCallable() {
     return updateIapSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+      validateIapAttributeExpressionCallable() {
+    return validateIapAttributeExpressionCallable;
   }
 
   @Override

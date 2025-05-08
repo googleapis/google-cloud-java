@@ -36,6 +36,7 @@ public interface ProcessorVersionAliasOrBuilder
    * @return The alias.
    */
   java.lang.String getAlias();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ProcessorVersionAliasOrBuilder
    * @return The processorVersion.
    */
   java.lang.String getProcessorVersion();
+
   /**
    *
    *

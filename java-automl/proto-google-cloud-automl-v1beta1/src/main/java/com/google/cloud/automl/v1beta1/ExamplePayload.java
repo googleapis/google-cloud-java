@@ -33,6 +33,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ExamplePayload)
     ExamplePayloadOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExamplePayload.newBuilder() to construct.
   private ExamplePayload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     private PayloadCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,6 +119,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImage() {
     return payloadCase_ == 1;
   }
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.Image.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_SNIPPET_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTextSnippet() {
     return payloadCase_ == 2;
   }
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.TextSnippet.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOCUMENT_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -234,6 +243,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDocument() {
     return payloadCase_ == 4;
   }
+
   /**
    *
    *
@@ -252,6 +262,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.Document.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -270,6 +281,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROW_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -285,6 +297,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRow() {
     return payloadCase_ == 3;
   }
+
   /**
    *
    *
@@ -303,6 +316,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.automl.v1beta1.Row.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -539,6 +553,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -807,6 +822,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.Image.Builder,
             com.google.cloud.automl.v1beta1.ImageOrBuilder>
         imageBuilder_;
+
     /**
      *
      *
@@ -822,6 +838,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImage() {
       return payloadCase_ == 1;
     }
+
     /**
      *
      *
@@ -847,6 +864,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.Image.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -869,6 +887,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -888,6 +907,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +940,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +966,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +979,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.Image.Builder getImageBuilder() {
       return getImageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -977,6 +1000,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.Image.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1015,6 +1039,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.TextSnippet.Builder,
             com.google.cloud.automl.v1beta1.TextSnippetOrBuilder>
         textSnippetBuilder_;
+
     /**
      *
      *
@@ -1030,6 +1055,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTextSnippet() {
       return payloadCase_ == 2;
     }
+
     /**
      *
      *
@@ -1055,6 +1081,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.TextSnippet.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1077,6 +1104,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1125,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1158,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1154,6 +1184,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1166,6 +1197,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.TextSnippet.Builder getTextSnippetBuilder() {
       return getTextSnippetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1186,6 +1218,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.TextSnippet.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1224,6 +1257,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.Document.Builder,
             com.google.cloud.automl.v1beta1.DocumentOrBuilder>
         documentBuilder_;
+
     /**
      *
      *
@@ -1239,6 +1273,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDocument() {
       return payloadCase_ == 4;
     }
+
     /**
      *
      *
@@ -1264,6 +1299,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.Document.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1286,6 +1322,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1305,6 +1342,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1337,6 +1375,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1362,6 +1401,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1374,6 +1414,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.Document.Builder getDocumentBuilder() {
       return getDocumentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1394,6 +1435,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.Document.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1432,6 +1474,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.Row.Builder,
             com.google.cloud.automl.v1beta1.RowOrBuilder>
         rowBuilder_;
+
     /**
      *
      *
@@ -1447,6 +1490,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRow() {
       return payloadCase_ == 3;
     }
+
     /**
      *
      *
@@ -1472,6 +1516,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.Row.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1494,6 +1539,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1513,6 +1559,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1545,6 +1592,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       payloadCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1570,6 +1618,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1582,6 +1631,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.Row.Builder getRowBuilder() {
       return getRowFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1602,6 +1652,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.automl.v1beta1.Row.getDefaultInstance();
       }
     }
+
     /**
      *
      *

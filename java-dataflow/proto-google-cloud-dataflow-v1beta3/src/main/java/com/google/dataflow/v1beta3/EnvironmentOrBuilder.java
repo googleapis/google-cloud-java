@@ -48,6 +48,7 @@ public interface EnvironmentOrBuilder
    * @return The tempStoragePrefix.
    */
   java.lang.String getTempStoragePrefix();
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public interface EnvironmentOrBuilder
    * @return The clusterManagerApiService.
    */
   java.lang.String getClusterManagerApiService();
+
   /**
    *
    *
@@ -118,6 +120,7 @@ public interface EnvironmentOrBuilder
    * @return A list containing the experiments.
    */
   java.util.List<java.lang.String> getExperimentsList();
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public interface EnvironmentOrBuilder
    * @return The count of experiments.
    */
   int getExperimentsCount();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface EnvironmentOrBuilder
    * @return The experiments at the given index.
    */
   java.lang.String getExperiments(int index);
+
   /**
    *
    *
@@ -167,55 +172,62 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * The list of service options to enable. This field should be used for
-   * service related experiments only. These experiments, when graduating to GA,
-   * should be replaced by dedicated fields or become default (i.e. always on).
+   * Optional. The list of service options to enable. This field should be used
+   * for service related experiments only. These experiments, when graduating to
+   * GA, should be replaced by dedicated fields or become default (i.e. always
+   * on).
    * </pre>
    *
-   * <code>repeated string service_options = 16;</code>
+   * <code>repeated string service_options = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the serviceOptions.
    */
   java.util.List<java.lang.String> getServiceOptionsList();
+
   /**
    *
    *
    * <pre>
-   * The list of service options to enable. This field should be used for
-   * service related experiments only. These experiments, when graduating to GA,
-   * should be replaced by dedicated fields or become default (i.e. always on).
+   * Optional. The list of service options to enable. This field should be used
+   * for service related experiments only. These experiments, when graduating to
+   * GA, should be replaced by dedicated fields or become default (i.e. always
+   * on).
    * </pre>
    *
-   * <code>repeated string service_options = 16;</code>
+   * <code>repeated string service_options = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of serviceOptions.
    */
   int getServiceOptionsCount();
+
   /**
    *
    *
    * <pre>
-   * The list of service options to enable. This field should be used for
-   * service related experiments only. These experiments, when graduating to GA,
-   * should be replaced by dedicated fields or become default (i.e. always on).
+   * Optional. The list of service options to enable. This field should be used
+   * for service related experiments only. These experiments, when graduating to
+   * GA, should be replaced by dedicated fields or become default (i.e. always
+   * on).
    * </pre>
    *
-   * <code>repeated string service_options = 16;</code>
+   * <code>repeated string service_options = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The serviceOptions at the given index.
    */
   java.lang.String getServiceOptions(int index);
+
   /**
    *
    *
    * <pre>
-   * The list of service options to enable. This field should be used for
-   * service related experiments only. These experiments, when graduating to GA,
-   * should be replaced by dedicated fields or become default (i.e. always on).
+   * Optional. The list of service options to enable. This field should be used
+   * for service related experiments only. These experiments, when graduating to
+   * GA, should be replaced by dedicated fields or become default (i.e. always
+   * on).
    * </pre>
    *
-   * <code>repeated string service_options = 16;</code>
+   * <code>repeated string service_options = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the serviceOptions at the given index.
@@ -226,30 +238,31 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * If set, contains the Cloud KMS key identifier used to encrypt data
-   * at rest, AKA a Customer Managed Encryption Key (CMEK).
+   * Optional. If set, contains the Cloud KMS key identifier used to encrypt
+   * data at rest, AKA a Customer Managed Encryption Key (CMEK).
    *
    * Format:
    *   projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
    * </pre>
    *
-   * <code>string service_kms_key_name = 12;</code>
+   * <code>string service_kms_key_name = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The serviceKmsKeyName.
    */
   java.lang.String getServiceKmsKeyName();
+
   /**
    *
    *
    * <pre>
-   * If set, contains the Cloud KMS key identifier used to encrypt data
-   * at rest, AKA a Customer Managed Encryption Key (CMEK).
+   * Optional. If set, contains the Cloud KMS key identifier used to encrypt
+   * data at rest, AKA a Customer Managed Encryption Key (CMEK).
    *
    * Format:
    *   projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
    * </pre>
    *
-   * <code>string service_kms_key_name = 12;</code>
+   * <code>string service_kms_key_name = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for serviceKmsKeyName.
    */
@@ -266,6 +279,7 @@ public interface EnvironmentOrBuilder
    * <code>repeated .google.dataflow.v1beta3.WorkerPool worker_pools = 4;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.WorkerPool> getWorkerPoolsList();
+
   /**
    *
    *
@@ -277,6 +291,7 @@ public interface EnvironmentOrBuilder
    * <code>repeated .google.dataflow.v1beta3.WorkerPool worker_pools = 4;</code>
    */
   com.google.dataflow.v1beta3.WorkerPool getWorkerPools(int index);
+
   /**
    *
    *
@@ -288,6 +303,7 @@ public interface EnvironmentOrBuilder
    * <code>repeated .google.dataflow.v1beta3.WorkerPool worker_pools = 4;</code>
    */
   int getWorkerPoolsCount();
+
   /**
    *
    *
@@ -300,6 +316,7 @@ public interface EnvironmentOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.WorkerPoolOrBuilder>
       getWorkerPoolsOrBuilderList();
+
   /**
    *
    *
@@ -324,6 +341,7 @@ public interface EnvironmentOrBuilder
    * @return Whether the userAgent field is set.
    */
   boolean hasUserAgent();
+
   /**
    *
    *
@@ -336,6 +354,7 @@ public interface EnvironmentOrBuilder
    * @return The userAgent.
    */
   com.google.protobuf.Struct getUserAgent();
+
   /**
    *
    *
@@ -360,6 +379,7 @@ public interface EnvironmentOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
+
   /**
    *
    *
@@ -373,6 +393,7 @@ public interface EnvironmentOrBuilder
    * @return The version.
    */
   com.google.protobuf.Struct getVersion();
+
   /**
    *
    *
@@ -389,7 +410,7 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * The dataset for the current project where various workflow
+   * Optional. The dataset for the current project where various workflow
    * related tables are stored.
    *
    * The supported resource type is:
@@ -398,16 +419,17 @@ public interface EnvironmentOrBuilder
    *   bigquery.googleapis.com/{dataset}
    * </pre>
    *
-   * <code>string dataset = 7;</code>
+   * <code>string dataset = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The dataset.
    */
   java.lang.String getDataset();
+
   /**
    *
    *
    * <pre>
-   * The dataset for the current project where various workflow
+   * Optional. The dataset for the current project where various workflow
    * related tables are stored.
    *
    * The supported resource type is:
@@ -416,7 +438,7 @@ public interface EnvironmentOrBuilder
    *   bigquery.googleapis.com/{dataset}
    * </pre>
    *
-   * <code>string dataset = 7;</code>
+   * <code>string dataset = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for dataset.
    */
@@ -437,6 +459,7 @@ public interface EnvironmentOrBuilder
    * @return Whether the sdkPipelineOptions field is set.
    */
   boolean hasSdkPipelineOptions();
+
   /**
    *
    *
@@ -452,6 +475,7 @@ public interface EnvironmentOrBuilder
    * @return The sdkPipelineOptions.
    */
   com.google.protobuf.Struct getSdkPipelineOptions();
+
   /**
    *
    *
@@ -478,6 +502,7 @@ public interface EnvironmentOrBuilder
    * @return Whether the internalExperiments field is set.
    */
   boolean hasInternalExperiments();
+
   /**
    *
    *
@@ -490,6 +515,7 @@ public interface EnvironmentOrBuilder
    * @return The internalExperiments.
    */
   com.google.protobuf.Any getInternalExperiments();
+
   /**
    *
    *
@@ -505,22 +531,25 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Identity to run virtual machines as. Defaults to the default account.
+   * Optional. Identity to run virtual machines as. Defaults to the default
+   * account.
    * </pre>
    *
-   * <code>string service_account_email = 10;</code>
+   * <code>string service_account_email = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
+
   /**
    *
    *
    * <pre>
-   * Identity to run virtual machines as. Defaults to the default account.
+   * Optional. Identity to run virtual machines as. Defaults to the default
+   * account.
    * </pre>
    *
-   * <code>string service_account_email = 10;</code>
+   * <code>string service_account_email = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for serviceAccountEmail.
    */
@@ -530,23 +559,26 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Which Flexible Resource Scheduling mode to run in.
+   * Optional. Which Flexible Resource Scheduling mode to run in.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.FlexResourceSchedulingGoal flex_resource_scheduling_goal = 11;
+   * <code>
+   * .google.dataflow.v1beta3.FlexResourceSchedulingGoal flex_resource_scheduling_goal = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for flexResourceSchedulingGoal.
    */
   int getFlexResourceSchedulingGoalValue();
+
   /**
    *
    *
    * <pre>
-   * Which Flexible Resource Scheduling mode to run in.
+   * Optional. Which Flexible Resource Scheduling mode to run in.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.FlexResourceSchedulingGoal flex_resource_scheduling_goal = 11;
+   * <code>
+   * .google.dataflow.v1beta3.FlexResourceSchedulingGoal flex_resource_scheduling_goal = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The flexResourceSchedulingGoal.
@@ -557,30 +589,31 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * The Compute Engine region
+   * Optional. The Compute Engine region
    * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
    * which worker processing should occur, e.g. "us-west1". Mutually exclusive
    * with worker_zone. If neither worker_region nor worker_zone is specified,
    * default to the control plane's region.
    * </pre>
    *
-   * <code>string worker_region = 13;</code>
+   * <code>string worker_region = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The workerRegion.
    */
   java.lang.String getWorkerRegion();
+
   /**
    *
    *
    * <pre>
-   * The Compute Engine region
+   * Optional. The Compute Engine region
    * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
    * which worker processing should occur, e.g. "us-west1". Mutually exclusive
    * with worker_zone. If neither worker_region nor worker_zone is specified,
    * default to the control plane's region.
    * </pre>
    *
-   * <code>string worker_region = 13;</code>
+   * <code>string worker_region = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for workerRegion.
    */
@@ -590,30 +623,31 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * The Compute Engine zone
+   * Optional. The Compute Engine zone
    * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
    * which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
    * with worker_region. If neither worker_region nor worker_zone is specified,
    * a zone in the control plane's region is chosen based on available capacity.
    * </pre>
    *
-   * <code>string worker_zone = 14;</code>
+   * <code>string worker_zone = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The workerZone.
    */
   java.lang.String getWorkerZone();
+
   /**
    *
    *
    * <pre>
-   * The Compute Engine zone
+   * Optional. The Compute Engine zone
    * (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in
    * which worker processing should occur, e.g. "us-west1-a". Mutually exclusive
    * with worker_region. If neither worker_region nor worker_zone is specified,
    * a zone in the control plane's region is chosen based on available capacity.
    * </pre>
    *
-   * <code>string worker_zone = 14;</code>
+   * <code>string worker_zone = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for workerZone.
    */
@@ -633,6 +667,7 @@ public interface EnvironmentOrBuilder
    * @return The enum numeric value on the wire for shuffleMode.
    */
   int getShuffleModeValue();
+
   /**
    *
    *
@@ -652,34 +687,100 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Any debugging options to be supplied to the job.
+   * Optional. Any debugging options to be supplied to the job.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.DebugOptions debug_options = 17;</code>
+   * <code>
+   * .google.dataflow.v1beta3.DebugOptions debug_options = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the debugOptions field is set.
    */
   boolean hasDebugOptions();
+
   /**
    *
    *
    * <pre>
-   * Any debugging options to be supplied to the job.
+   * Optional. Any debugging options to be supplied to the job.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.DebugOptions debug_options = 17;</code>
+   * <code>
+   * .google.dataflow.v1beta3.DebugOptions debug_options = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The debugOptions.
    */
   com.google.dataflow.v1beta3.DebugOptions getDebugOptions();
+
   /**
    *
    *
    * <pre>
-   * Any debugging options to be supplied to the job.
+   * Optional. Any debugging options to be supplied to the job.
    * </pre>
    *
-   * <code>.google.dataflow.v1beta3.DebugOptions debug_options = 17;</code>
+   * <code>
+   * .google.dataflow.v1beta3.DebugOptions debug_options = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.dataflow.v1beta3.DebugOptionsOrBuilder getDebugOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the job uses the Streaming Engine resource-based
+   * billing model.
+   * </pre>
+   *
+   * <code>
+   * bool use_streaming_engine_resource_based_billing = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The useStreamingEngineResourceBasedBilling.
+   */
+  boolean getUseStreamingEngineResourceBasedBilling();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for streamingMode.
+   */
+  int getStreamingModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the Streaming Engine message processing guarantees.
+   * Reduces cost and latency but might result in duplicate messages committed
+   * to storage. Designed to run simple mapping streaming ETL jobs at the lowest
+   * cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use
+   * case. For more information, see
+   * [Set the pipeline streaming
+   * mode](https://cloud.google.com/dataflow/docs/guides/streaming-modes).
+   * </pre>
+   *
+   * <code>
+   * .google.dataflow.v1beta3.StreamingMode streaming_mode = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The streamingMode.
+   */
+  com.google.dataflow.v1beta3.StreamingMode getStreamingMode();
 }

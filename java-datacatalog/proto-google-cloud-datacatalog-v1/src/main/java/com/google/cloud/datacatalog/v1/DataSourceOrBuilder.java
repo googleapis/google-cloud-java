@@ -36,6 +36,7 @@ public interface DataSourceOrBuilder
    * @return The enum numeric value on the wire for service.
    */
   int getServiceValue();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DataSourceOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface DataSourceOrBuilder
    * @return The sourceEntry.
    */
   java.lang.String getSourceEntry();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface DataSourceOrBuilder
    * @return Whether the storageProperties field is set.
    */
   boolean hasStorageProperties();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface DataSourceOrBuilder
    * @return The storageProperties.
    */
   com.google.cloud.datacatalog.v1.StorageProperties getStorageProperties();
+
   /**
    *
    *

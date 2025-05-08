@@ -372,6 +372,25 @@ message ProcessOptions {
 
     // Optional. Config for chunking in layout parser processor.
     ChunkingConfig chunking_config = 1 [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Whether to include images in layout parser processor response.
+    bool return_images = 2 [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Whether to include bounding boxes in layout parser processor
+    // response.
+    bool return_bounding_boxes = 3 [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Whether to include image annotations in layout parser response.
+    bool enable_image_annotation = 4 [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Whether to extract images in layout parser response.
+    bool enable_image_extraction = 7 [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Whether to refine PDF layout using LLM.
+    bool enable_llm_layout_parsing = 5 [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Whether to include table annotations in layout parser response.
+    bool enable_table_annotation = 6 [(google.api.field_behavior) = OPTIONAL];
   }
 
   // A list of individual page numbers.

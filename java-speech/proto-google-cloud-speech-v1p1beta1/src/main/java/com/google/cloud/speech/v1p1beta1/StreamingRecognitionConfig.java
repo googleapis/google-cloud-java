@@ -34,6 +34,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.StreamingRecognitionConfig)
     StreamingRecognitionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamingRecognitionConfig.newBuilder() to construct.
   private StreamingRecognitionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * @return Whether the speechStartTimeout field is set.
      */
     boolean hasSpeechStartTimeout();
+
     /**
      *
      *
@@ -91,6 +93,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * @return The speechStartTimeout.
      */
     com.google.protobuf.Duration getSpeechStartTimeout();
+
     /**
      *
      *
@@ -114,6 +117,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * @return Whether the speechEndTimeout field is set.
      */
     boolean hasSpeechEndTimeout();
+
     /**
      *
      *
@@ -126,6 +130,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * @return The speechEndTimeout.
      */
     com.google.protobuf.Duration getSpeechEndTimeout();
+
     /**
      *
      *
@@ -137,6 +142,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      */
     com.google.protobuf.DurationOrBuilder getSpeechEndTimeoutOrBuilder();
   }
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout)
       VoiceActivityTimeoutOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use VoiceActivityTimeout.newBuilder() to construct.
     private VoiceActivityTimeout(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -185,6 +192,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     private int bitField0_;
     public static final int SPEECH_START_TIMEOUT_FIELD_NUMBER = 1;
     private com.google.protobuf.Duration speechStartTimeout_;
+
     /**
      *
      *
@@ -200,6 +208,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     public boolean hasSpeechStartTimeout() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -217,6 +226,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
           ? com.google.protobuf.Duration.getDefaultInstance()
           : speechStartTimeout_;
     }
+
     /**
      *
      *
@@ -235,6 +245,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
 
     public static final int SPEECH_END_TIMEOUT_FIELD_NUMBER = 2;
     private com.google.protobuf.Duration speechEndTimeout_;
+
     /**
      *
      *
@@ -250,6 +261,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     public boolean hasSpeechEndTimeout() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -267,6 +279,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
           ? com.google.protobuf.Duration.getDefaultInstance()
           : speechEndTimeout_;
     }
+
     /**
      *
      *
@@ -473,6 +486,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -724,6 +738,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           speechStartTimeoutBuilder_;
+
       /**
        *
        *
@@ -738,6 +753,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       public boolean hasSpeechStartTimeout() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -758,6 +774,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
           return speechStartTimeoutBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -780,6 +797,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -799,6 +817,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -826,6 +845,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -845,6 +865,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -859,6 +880,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         onChanged();
         return getSpeechStartTimeoutFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -877,6 +899,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
               : speechStartTimeout_;
         }
       }
+
       /**
        *
        *
@@ -909,6 +932,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           speechEndTimeoutBuilder_;
+
       /**
        *
        *
@@ -923,6 +947,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       public boolean hasSpeechEndTimeout() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -943,6 +968,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
           return speechEndTimeoutBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -965,6 +991,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -984,6 +1011,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1011,6 +1039,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -1030,6 +1059,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1044,6 +1074,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         onChanged();
         return getSpeechEndTimeoutFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1062,6 +1093,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
               : speechEndTimeout_;
         }
       }
+
       /**
        *
        *
@@ -1160,6 +1192,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.speech.v1p1beta1.RecognitionConfig config_;
+
   /**
    *
    *
@@ -1178,6 +1211,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1198,6 +1232,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         ? com.google.cloud.speech.v1p1beta1.RecognitionConfig.getDefaultInstance()
         : config_;
   }
+
   /**
    *
    *
@@ -1219,6 +1254,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
 
   public static final int SINGLE_UTTERANCE_FIELD_NUMBER = 2;
   private boolean singleUtterance_ = false;
+
   /**
    *
    *
@@ -1236,8 +1272,9 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    * `true`.
    *
    * The `single_utterance` field can only be used with specified models,
-   * otherwise an error is thrown. The `model` field in [`RecognitionConfig`][]
-   * must be set to:
+   * otherwise an error is thrown. The `model` field in
+   * [RecognitionConfig][google.cloud.speech.v1p1beta1.RecognitionConfig] must
+   * be set to:
    *
    * * `command_and_search`
    * * `phone_call` AND additional field `useEnhanced`=`true`
@@ -1257,6 +1294,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
 
   public static final int INTERIM_RESULTS_FIELD_NUMBER = 3;
   private boolean interimResults_ = false;
+
   /**
    *
    *
@@ -1278,6 +1316,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
 
   public static final int ENABLE_VOICE_ACTIVITY_EVENTS_FIELD_NUMBER = 5;
   private boolean enableVoiceActivityEvents_ = false;
+
   /**
    *
    *
@@ -1298,6 +1337,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
   public static final int VOICE_ACTIVITY_TIMEOUT_FIELD_NUMBER = 6;
   private com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig.VoiceActivityTimeout
       voiceActivityTimeout_;
+
   /**
    *
    *
@@ -1317,6 +1357,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
   public boolean hasVoiceActivityTimeout() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1340,6 +1381,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
             .getDefaultInstance()
         : voiceActivityTimeout_;
   }
+
   /**
    *
    *
@@ -1569,6 +1611,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1838,6 +1881,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
             com.google.cloud.speech.v1p1beta1.RecognitionConfig.Builder,
             com.google.cloud.speech.v1p1beta1.RecognitionConfigOrBuilder>
         configBuilder_;
+
     /**
      *
      *
@@ -1855,6 +1899,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1878,6 +1923,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         return configBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1903,6 +1949,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1926,6 +1973,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1957,6 +2005,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1979,6 +2028,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1996,6 +2046,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2017,6 +2068,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
             : config_;
       }
     }
+
     /**
      *
      *
@@ -2047,6 +2099,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     }
 
     private boolean singleUtterance_;
+
     /**
      *
      *
@@ -2064,8 +2117,9 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * `true`.
      *
      * The `single_utterance` field can only be used with specified models,
-     * otherwise an error is thrown. The `model` field in [`RecognitionConfig`][]
-     * must be set to:
+     * otherwise an error is thrown. The `model` field in
+     * [RecognitionConfig][google.cloud.speech.v1p1beta1.RecognitionConfig] must
+     * be set to:
      *
      * * `command_and_search`
      * * `phone_call` AND additional field `useEnhanced`=`true`
@@ -2082,6 +2136,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     public boolean getSingleUtterance() {
       return singleUtterance_;
     }
+
     /**
      *
      *
@@ -2099,8 +2154,9 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * `true`.
      *
      * The `single_utterance` field can only be used with specified models,
-     * otherwise an error is thrown. The `model` field in [`RecognitionConfig`][]
-     * must be set to:
+     * otherwise an error is thrown. The `model` field in
+     * [RecognitionConfig][google.cloud.speech.v1p1beta1.RecognitionConfig] must
+     * be set to:
      *
      * * `command_and_search`
      * * `phone_call` AND additional field `useEnhanced`=`true`
@@ -2121,6 +2177,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2138,8 +2195,9 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * `true`.
      *
      * The `single_utterance` field can only be used with specified models,
-     * otherwise an error is thrown. The `model` field in [`RecognitionConfig`][]
-     * must be set to:
+     * otherwise an error is thrown. The `model` field in
+     * [RecognitionConfig][google.cloud.speech.v1p1beta1.RecognitionConfig] must
+     * be set to:
      *
      * * `command_and_search`
      * * `phone_call` AND additional field `useEnhanced`=`true`
@@ -2160,6 +2218,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     }
 
     private boolean interimResults_;
+
     /**
      *
      *
@@ -2178,6 +2237,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     public boolean getInterimResults() {
       return interimResults_;
     }
+
     /**
      *
      *
@@ -2200,6 +2260,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2222,6 +2283,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     }
 
     private boolean enableVoiceActivityEvents_;
+
     /**
      *
      *
@@ -2238,6 +2300,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     public boolean getEnableVoiceActivityEvents() {
       return enableVoiceActivityEvents_;
     }
+
     /**
      *
      *
@@ -2258,6 +2321,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2286,6 +2350,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
             com.google.cloud.speech.v1p1beta1.StreamingRecognitionConfig
                 .VoiceActivityTimeoutOrBuilder>
         voiceActivityTimeoutBuilder_;
+
     /**
      *
      *
@@ -2304,6 +2369,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     public boolean hasVoiceActivityTimeout() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2330,6 +2396,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         return voiceActivityTimeoutBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2357,6 +2424,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2382,6 +2450,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2416,6 +2485,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2439,6 +2509,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2458,6 +2529,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       onChanged();
       return getVoiceActivityTimeoutFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2483,6 +2555,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
             : voiceActivityTimeout_;
       }
     }
+
     /**
      *
      *

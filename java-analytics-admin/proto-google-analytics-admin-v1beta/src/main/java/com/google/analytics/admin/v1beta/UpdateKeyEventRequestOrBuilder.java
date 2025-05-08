@@ -39,6 +39,7 @@ public interface UpdateKeyEventRequestOrBuilder
    * @return Whether the keyEvent field is set.
    */
   boolean hasKeyEvent();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateKeyEventRequestOrBuilder
    * @return The keyEvent.
    */
   com.google.analytics.admin.v1beta.KeyEvent getKeyEvent();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface UpdateKeyEventRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface UpdateKeyEventRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

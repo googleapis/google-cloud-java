@@ -34,6 +34,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.LocalInventory)
     LocalInventoryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LocalInventory.newBuilder() to construct.
   private LocalInventory(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,14 +83,15 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object placeId_ = "";
+
   /**
    *
    *
    * <pre>
-   * The place ID for the current set of inventory information.
+   * Optional. The place ID for the current set of inventory information.
    * </pre>
    *
-   * <code>string place_id = 1;</code>
+   * <code>string place_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The placeId.
    */
@@ -105,14 +107,15 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * The place ID for the current set of inventory information.
+   * Optional. The place ID for the current set of inventory information.
    * </pre>
    *
-   * <code>string place_id = 1;</code>
+   * <code>string place_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for placeId.
    */
@@ -131,17 +134,20 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRICE_INFO_FIELD_NUMBER = 2;
   private com.google.cloud.retail.v2beta.PriceInfo priceInfo_;
+
   /**
    *
    *
    * <pre>
-   * Product price and cost information.
+   * Optional. Product price and cost information.
    *
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371).
    * </pre>
    *
-   * <code>.google.cloud.retail.v2beta.PriceInfo price_info = 2;</code>
+   * <code>
+   * .google.cloud.retail.v2beta.PriceInfo price_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the priceInfo field is set.
    */
@@ -149,17 +155,20 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPriceInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Product price and cost information.
+   * Optional. Product price and cost information.
    *
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371).
    * </pre>
    *
-   * <code>.google.cloud.retail.v2beta.PriceInfo price_info = 2;</code>
+   * <code>
+   * .google.cloud.retail.v2beta.PriceInfo price_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The priceInfo.
    */
@@ -169,17 +178,20 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.retail.v2beta.PriceInfo.getDefaultInstance()
         : priceInfo_;
   }
+
   /**
    *
    *
    * <pre>
-   * Product price and cost information.
+   * Optional. Product price and cost information.
    *
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371).
    * </pre>
    *
-   * <code>.google.cloud.retail.v2beta.PriceInfo price_info = 2;</code>
+   * <code>
+   * .google.cloud.retail.v2beta.PriceInfo price_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.retail.v2beta.PriceInfoOrBuilder getPriceInfoOrBuilder() {
@@ -222,12 +234,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
   public int getAttributesCount() {
     return internalGetAttributes().getMap().size();
   }
+
   /**
    *
    *
    * <pre>
-   * Additional local inventory attributes, for example, store name, promotion
-   * tags, etc.
+   * Optional. Additional local inventory attributes, for example, store name,
+   * promotion tags, etc.
    *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
@@ -246,7 +259,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    *   product is 5MiB.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3;</code>
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public boolean containsAttributes(java.lang.String key) {
@@ -255,6 +270,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetAttributes().getMap().containsKey(key);
   }
+
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -262,12 +278,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       getAttributes() {
     return getAttributesMap();
   }
+
   /**
    *
    *
    * <pre>
-   * Additional local inventory attributes, for example, store name, promotion
-   * tags, etc.
+   * Optional. Additional local inventory attributes, for example, store name,
+   * promotion tags, etc.
    *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
@@ -286,19 +303,22 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    *   product is 5MiB.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3;</code>
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, com.google.cloud.retail.v2beta.CustomAttribute>
       getAttributesMap() {
     return internalGetAttributes().getMap();
   }
+
   /**
    *
    *
    * <pre>
-   * Additional local inventory attributes, for example, store name, promotion
-   * tags, etc.
+   * Optional. Additional local inventory attributes, for example, store name,
+   * promotion tags, etc.
    *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
@@ -317,7 +337,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    *   product is 5MiB.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3;</code>
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ com.google.cloud.retail.v2beta.CustomAttribute getAttributesOrDefault(
@@ -331,12 +353,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         internalGetAttributes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
    * <pre>
-   * Additional local inventory attributes, for example, store name, promotion
-   * tags, etc.
+   * Optional. Additional local inventory attributes, for example, store name,
+   * promotion tags, etc.
    *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
@@ -355,7 +378,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    *   product is 5MiB.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3;</code>
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.retail.v2beta.CustomAttribute getAttributesOrThrow(java.lang.String key) {
@@ -375,11 +400,12 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList fulfillmentTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
    * <pre>
-   * Input only. Supported fulfillment types. Valid fulfillment type values
+   * Optional. Supported fulfillment types. Valid fulfillment type values
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
@@ -403,18 +429,19 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * returned.
    * </pre>
    *
-   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the fulfillmentTypes.
    */
   public com.google.protobuf.ProtocolStringList getFulfillmentTypesList() {
     return fulfillmentTypes_;
   }
+
   /**
    *
    *
    * <pre>
-   * Input only. Supported fulfillment types. Valid fulfillment type values
+   * Optional. Supported fulfillment types. Valid fulfillment type values
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
@@ -438,18 +465,19 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * returned.
    * </pre>
    *
-   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of fulfillmentTypes.
    */
   public int getFulfillmentTypesCount() {
     return fulfillmentTypes_.size();
   }
+
   /**
    *
    *
    * <pre>
-   * Input only. Supported fulfillment types. Valid fulfillment type values
+   * Optional. Supported fulfillment types. Valid fulfillment type values
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
@@ -473,7 +501,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * returned.
    * </pre>
    *
-   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The fulfillmentTypes at the given index.
@@ -481,11 +509,12 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getFulfillmentTypes(int index) {
     return fulfillmentTypes_.get(index);
   }
+
   /**
    *
    *
    * <pre>
-   * Input only. Supported fulfillment types. Valid fulfillment type values
+   * Optional. Supported fulfillment types. Valid fulfillment type values
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
@@ -509,7 +538,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * returned.
    * </pre>
    *
-   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the fulfillmentTypes at the given index.
@@ -725,6 +754,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1003,14 +1033,15 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object placeId_ = "";
+
     /**
      *
      *
      * <pre>
-     * The place ID for the current set of inventory information.
+     * Optional. The place ID for the current set of inventory information.
      * </pre>
      *
-     * <code>string place_id = 1;</code>
+     * <code>string place_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The placeId.
      */
@@ -1025,14 +1056,15 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The place ID for the current set of inventory information.
+     * Optional. The place ID for the current set of inventory information.
      * </pre>
      *
-     * <code>string place_id = 1;</code>
+     * <code>string place_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for placeId.
      */
@@ -1047,14 +1079,15 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The place ID for the current set of inventory information.
+     * Optional. The place ID for the current set of inventory information.
      * </pre>
      *
-     * <code>string place_id = 1;</code>
+     * <code>string place_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The placeId to set.
      * @return This builder for chaining.
@@ -1068,14 +1101,15 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The place ID for the current set of inventory information.
+     * Optional. The place ID for the current set of inventory information.
      * </pre>
      *
-     * <code>string place_id = 1;</code>
+     * <code>string place_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1085,14 +1119,15 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The place ID for the current set of inventory information.
+     * Optional. The place ID for the current set of inventory information.
      * </pre>
      *
-     * <code>string place_id = 1;</code>
+     * <code>string place_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for placeId to set.
      * @return This builder for chaining.
@@ -1114,34 +1149,40 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2beta.PriceInfo.Builder,
             com.google.cloud.retail.v2beta.PriceInfoOrBuilder>
         priceInfoBuilder_;
+
     /**
      *
      *
      * <pre>
-     * Product price and cost information.
+     * Optional. Product price and cost information.
      *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371).
      * </pre>
      *
-     * <code>.google.cloud.retail.v2beta.PriceInfo price_info = 2;</code>
+     * <code>
+     * .google.cloud.retail.v2beta.PriceInfo price_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the priceInfo field is set.
      */
     public boolean hasPriceInfo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Product price and cost information.
+     * Optional. Product price and cost information.
      *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371).
      * </pre>
      *
-     * <code>.google.cloud.retail.v2beta.PriceInfo price_info = 2;</code>
+     * <code>
+     * .google.cloud.retail.v2beta.PriceInfo price_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The priceInfo.
      */
@@ -1154,17 +1195,20 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         return priceInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Product price and cost information.
+     * Optional. Product price and cost information.
      *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371).
      * </pre>
      *
-     * <code>.google.cloud.retail.v2beta.PriceInfo price_info = 2;</code>
+     * <code>
+     * .google.cloud.retail.v2beta.PriceInfo price_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setPriceInfo(com.google.cloud.retail.v2beta.PriceInfo value) {
       if (priceInfoBuilder_ == null) {
@@ -1179,17 +1223,20 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Product price and cost information.
+     * Optional. Product price and cost information.
      *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371).
      * </pre>
      *
-     * <code>.google.cloud.retail.v2beta.PriceInfo price_info = 2;</code>
+     * <code>
+     * .google.cloud.retail.v2beta.PriceInfo price_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setPriceInfo(com.google.cloud.retail.v2beta.PriceInfo.Builder builderForValue) {
       if (priceInfoBuilder_ == null) {
@@ -1201,17 +1248,20 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Product price and cost information.
+     * Optional. Product price and cost information.
      *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371).
      * </pre>
      *
-     * <code>.google.cloud.retail.v2beta.PriceInfo price_info = 2;</code>
+     * <code>
+     * .google.cloud.retail.v2beta.PriceInfo price_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergePriceInfo(com.google.cloud.retail.v2beta.PriceInfo value) {
       if (priceInfoBuilder_ == null) {
@@ -1231,17 +1281,20 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Product price and cost information.
+     * Optional. Product price and cost information.
      *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371).
      * </pre>
      *
-     * <code>.google.cloud.retail.v2beta.PriceInfo price_info = 2;</code>
+     * <code>
+     * .google.cloud.retail.v2beta.PriceInfo price_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearPriceInfo() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1253,34 +1306,40 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Product price and cost information.
+     * Optional. Product price and cost information.
      *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371).
      * </pre>
      *
-     * <code>.google.cloud.retail.v2beta.PriceInfo price_info = 2;</code>
+     * <code>
+     * .google.cloud.retail.v2beta.PriceInfo price_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.retail.v2beta.PriceInfo.Builder getPriceInfoBuilder() {
       bitField0_ |= 0x00000002;
       onChanged();
       return getPriceInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * Product price and cost information.
+     * Optional. Product price and cost information.
      *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371).
      * </pre>
      *
-     * <code>.google.cloud.retail.v2beta.PriceInfo price_info = 2;</code>
+     * <code>
+     * .google.cloud.retail.v2beta.PriceInfo price_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.retail.v2beta.PriceInfoOrBuilder getPriceInfoOrBuilder() {
       if (priceInfoBuilder_ != null) {
@@ -1291,17 +1350,20 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
             : priceInfo_;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Product price and cost information.
+     * Optional. Product price and cost information.
      *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371).
      * </pre>
      *
-     * <code>.google.cloud.retail.v2beta.PriceInfo price_info = 2;</code>
+     * <code>
+     * .google.cloud.retail.v2beta.PriceInfo price_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.retail.v2beta.PriceInfo,
@@ -1340,7 +1402,8 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return AttributesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final AttributesConverter attributesConverter = new AttributesConverter();
 
@@ -1380,12 +1443,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     public int getAttributesCount() {
       return internalGetAttributes().ensureBuilderMap().size();
     }
+
     /**
      *
      *
      * <pre>
-     * Additional local inventory attributes, for example, store name, promotion
-     * tags, etc.
+     * Optional. Additional local inventory attributes, for example, store name,
+     * promotion tags, etc.
      *
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
@@ -1404,7 +1468,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *   product is 5MiB.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3;</code>
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsAttributes(java.lang.String key) {
@@ -1413,6 +1479,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetAttributes().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getAttributesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1420,12 +1487,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         getAttributes() {
       return getAttributesMap();
     }
+
     /**
      *
      *
      * <pre>
-     * Additional local inventory attributes, for example, store name, promotion
-     * tags, etc.
+     * Optional. Additional local inventory attributes, for example, store name,
+     * promotion tags, etc.
      *
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
@@ -1444,19 +1512,22 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *   product is 5MiB.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3;</code>
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, com.google.cloud.retail.v2beta.CustomAttribute>
         getAttributesMap() {
       return internalGetAttributes().getImmutableMap();
     }
+
     /**
      *
      *
      * <pre>
-     * Additional local inventory attributes, for example, store name, promotion
-     * tags, etc.
+     * Optional. Additional local inventory attributes, for example, store name,
+     * promotion tags, etc.
      *
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
@@ -1475,7 +1546,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *   product is 5MiB.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3;</code>
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ com.google.cloud.retail.v2beta.CustomAttribute getAttributesOrDefault(
@@ -1489,12 +1562,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableAttributes().ensureBuilderMap();
       return map.containsKey(key) ? attributesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
      * <pre>
-     * Additional local inventory attributes, for example, store name, promotion
-     * tags, etc.
+     * Optional. Additional local inventory attributes, for example, store name,
+     * promotion tags, etc.
      *
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
@@ -1513,7 +1587,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *   product is 5MiB.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3;</code>
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.retail.v2beta.CustomAttribute getAttributesOrThrow(
@@ -1534,12 +1610,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAttributes().clear();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Additional local inventory attributes, for example, store name, promotion
-     * tags, etc.
+     * Optional. Additional local inventory attributes, for example, store name,
+     * promotion tags, etc.
      *
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
@@ -1558,7 +1635,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *   product is 5MiB.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3;</code>
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeAttributes(java.lang.String key) {
       if (key == null) {
@@ -1567,6 +1646,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAttributes().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.retail.v2beta.CustomAttribute>
@@ -1574,12 +1654,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return internalGetMutableAttributes().ensureMessageMap();
     }
+
     /**
      *
      *
      * <pre>
-     * Additional local inventory attributes, for example, store name, promotion
-     * tags, etc.
+     * Optional. Additional local inventory attributes, for example, store name,
+     * promotion tags, etc.
      *
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
@@ -1598,7 +1679,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *   product is 5MiB.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3;</code>
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAttributes(
         java.lang.String key, com.google.cloud.retail.v2beta.CustomAttribute value) {
@@ -1612,12 +1695,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Additional local inventory attributes, for example, store name, promotion
-     * tags, etc.
+     * Optional. Additional local inventory attributes, for example, store name,
+     * promotion tags, etc.
      *
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
@@ -1636,7 +1720,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *   product is 5MiB.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3;</code>
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllAttributes(
         java.util.Map<java.lang.String, com.google.cloud.retail.v2beta.CustomAttribute> values) {
@@ -1650,12 +1736,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Additional local inventory attributes, for example, store name, promotion
-     * tags, etc.
+     * Optional. Additional local inventory attributes, for example, store name,
+     * promotion tags, etc.
      *
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
@@ -1674,7 +1761,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *   product is 5MiB.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3;</code>
+     * <code>
+     * map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.retail.v2beta.CustomAttribute.Builder putAttributesBuilderIfAbsent(
         java.lang.String key) {
@@ -1701,11 +1790,12 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
      * <pre>
-     * Input only. Supported fulfillment types. Valid fulfillment type values
+     * Optional. Supported fulfillment types. Valid fulfillment type values
      * include commonly used types (such as pickup in store and same day
      * delivery), and custom types. Customers have to map custom types to their
      * display names before rendering UI.
@@ -1729,8 +1819,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * returned.
      * </pre>
      *
-     * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];
-     * </code>
+     * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the fulfillmentTypes.
      */
@@ -1738,11 +1827,12 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       fulfillmentTypes_.makeImmutable();
       return fulfillmentTypes_;
     }
+
     /**
      *
      *
      * <pre>
-     * Input only. Supported fulfillment types. Valid fulfillment type values
+     * Optional. Supported fulfillment types. Valid fulfillment type values
      * include commonly used types (such as pickup in store and same day
      * delivery), and custom types. Customers have to map custom types to their
      * display names before rendering UI.
@@ -1766,19 +1856,19 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * returned.
      * </pre>
      *
-     * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];
-     * </code>
+     * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of fulfillmentTypes.
      */
     public int getFulfillmentTypesCount() {
       return fulfillmentTypes_.size();
     }
+
     /**
      *
      *
      * <pre>
-     * Input only. Supported fulfillment types. Valid fulfillment type values
+     * Optional. Supported fulfillment types. Valid fulfillment type values
      * include commonly used types (such as pickup in store and same day
      * delivery), and custom types. Customers have to map custom types to their
      * display names before rendering UI.
@@ -1802,8 +1892,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * returned.
      * </pre>
      *
-     * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];
-     * </code>
+     * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The fulfillmentTypes at the given index.
@@ -1811,11 +1900,12 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getFulfillmentTypes(int index) {
       return fulfillmentTypes_.get(index);
     }
+
     /**
      *
      *
      * <pre>
-     * Input only. Supported fulfillment types. Valid fulfillment type values
+     * Optional. Supported fulfillment types. Valid fulfillment type values
      * include commonly used types (such as pickup in store and same day
      * delivery), and custom types. Customers have to map custom types to their
      * display names before rendering UI.
@@ -1839,8 +1929,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * returned.
      * </pre>
      *
-     * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];
-     * </code>
+     * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the fulfillmentTypes at the given index.
@@ -1848,11 +1937,12 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getFulfillmentTypesBytes(int index) {
       return fulfillmentTypes_.getByteString(index);
     }
+
     /**
      *
      *
      * <pre>
-     * Input only. Supported fulfillment types. Valid fulfillment type values
+     * Optional. Supported fulfillment types. Valid fulfillment type values
      * include commonly used types (such as pickup in store and same day
      * delivery), and custom types. Customers have to map custom types to their
      * display names before rendering UI.
@@ -1876,8 +1966,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * returned.
      * </pre>
      *
-     * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];
-     * </code>
+     * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index to set the value at.
      * @param value The fulfillmentTypes to set.
@@ -1893,11 +1982,12 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Input only. Supported fulfillment types. Valid fulfillment type values
+     * Optional. Supported fulfillment types. Valid fulfillment type values
      * include commonly used types (such as pickup in store and same day
      * delivery), and custom types. Customers have to map custom types to their
      * display names before rendering UI.
@@ -1921,8 +2011,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * returned.
      * </pre>
      *
-     * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];
-     * </code>
+     * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The fulfillmentTypes to add.
      * @return This builder for chaining.
@@ -1937,11 +2026,12 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Input only. Supported fulfillment types. Valid fulfillment type values
+     * Optional. Supported fulfillment types. Valid fulfillment type values
      * include commonly used types (such as pickup in store and same day
      * delivery), and custom types. Customers have to map custom types to their
      * display names before rendering UI.
@@ -1965,8 +2055,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * returned.
      * </pre>
      *
-     * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];
-     * </code>
+     * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param values The fulfillmentTypes to add.
      * @return This builder for chaining.
@@ -1978,11 +2067,12 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Input only. Supported fulfillment types. Valid fulfillment type values
+     * Optional. Supported fulfillment types. Valid fulfillment type values
      * include commonly used types (such as pickup in store and same day
      * delivery), and custom types. Customers have to map custom types to their
      * display names before rendering UI.
@@ -2006,8 +2096,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * returned.
      * </pre>
      *
-     * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];
-     * </code>
+     * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2018,11 +2107,12 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Input only. Supported fulfillment types. Valid fulfillment type values
+     * Optional. Supported fulfillment types. Valid fulfillment type values
      * include commonly used types (such as pickup in store and same day
      * delivery), and custom types. Customers have to map custom types to their
      * display names before rendering UI.
@@ -2046,8 +2136,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * returned.
      * </pre>
      *
-     * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = INPUT_ONLY];
-     * </code>
+     * <code>repeated string fulfillment_types = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes of the fulfillmentTypes to add.
      * @return This builder for chaining.

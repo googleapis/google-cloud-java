@@ -31,14 +31,18 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocati
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.BetaApi;
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
-import com.google.api.gax.httpjson.ProtoOperationTransformers;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
@@ -104,7 +108,10 @@ import com.google.cloud.oracledatabase.v1.ListEntitlementsResponse;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsResponse;
 import com.google.cloud.oracledatabase.v1.OperationMetadata;
+import com.google.cloud.oracledatabase.v1.RestartAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RestoreAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.StartAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.StopAutonomousDatabaseRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -283,6 +290,21 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           ListAutonomousDatabaseBackupsResponse,
           ListAutonomousDatabaseBackupsPagedResponse>
       listAutonomousDatabaseBackupsSettings;
+  private final UnaryCallSettings<StopAutonomousDatabaseRequest, Operation>
+      stopAutonomousDatabaseSettings;
+  private final OperationCallSettings<
+          StopAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      stopAutonomousDatabaseOperationSettings;
+  private final UnaryCallSettings<StartAutonomousDatabaseRequest, Operation>
+      startAutonomousDatabaseSettings;
+  private final OperationCallSettings<
+          StartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      startAutonomousDatabaseOperationSettings;
+  private final UnaryCallSettings<RestartAutonomousDatabaseRequest, Operation>
+      restartAutonomousDatabaseSettings;
+  private final OperationCallSettings<
+          RestartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      restartAutonomousDatabaseOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -1244,6 +1266,44 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     return listAutonomousDatabaseBackupsSettings;
   }
 
+  /** Returns the object with the settings used for calls to stopAutonomousDatabase. */
+  public UnaryCallSettings<StopAutonomousDatabaseRequest, Operation>
+      stopAutonomousDatabaseSettings() {
+    return stopAutonomousDatabaseSettings;
+  }
+
+  /** Returns the object with the settings used for calls to stopAutonomousDatabase. */
+  public OperationCallSettings<StopAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      stopAutonomousDatabaseOperationSettings() {
+    return stopAutonomousDatabaseOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to startAutonomousDatabase. */
+  public UnaryCallSettings<StartAutonomousDatabaseRequest, Operation>
+      startAutonomousDatabaseSettings() {
+    return startAutonomousDatabaseSettings;
+  }
+
+  /** Returns the object with the settings used for calls to startAutonomousDatabase. */
+  public OperationCallSettings<
+          StartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      startAutonomousDatabaseOperationSettings() {
+    return startAutonomousDatabaseOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to restartAutonomousDatabase. */
+  public UnaryCallSettings<RestartAutonomousDatabaseRequest, Operation>
+      restartAutonomousDatabaseSettings() {
+    return restartAutonomousDatabaseSettings;
+  }
+
+  /** Returns the object with the settings used for calls to restartAutonomousDatabase. */
+  public OperationCallSettings<
+          RestartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      restartAutonomousDatabaseOperationSettings() {
+    return restartAutonomousDatabaseOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1256,6 +1316,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   }
 
   public OracleDatabaseStub createStub() throws IOException {
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
+      return GrpcOracleDatabaseStub.create(this);
+    }
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
@@ -1300,17 +1365,32 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
         .setUseJwtAccessWithScope(true);
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
+  /** Returns a builder for the default gRPC ChannelProvider for this service. */
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder()
+        .setMaxInboundMessageSize(Integer.MAX_VALUE);
+  }
+
+  /** Returns a builder for the default REST ChannelProvider for this service. */
+  @BetaApi
   public static InstantiatingHttpJsonChannelProvider.Builder
       defaultHttpJsonTransportProviderBuilder() {
     return InstantiatingHttpJsonChannelProvider.newBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
-    return defaultHttpJsonTransportProviderBuilder().build();
+    return defaultGrpcTransportProviderBuilder().build();
   }
 
-  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+  public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratedLibToken(
+            "gapic", GaxProperties.getLibraryVersion(OracleDatabaseStubSettings.class))
+        .setTransportToken(
+            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
+  }
+
+  public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
             "gapic", GaxProperties.getLibraryVersion(OracleDatabaseStubSettings.class))
@@ -1319,9 +1399,18 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             GaxHttpJsonProperties.getHttpJsonVersion());
   }
 
-  /** Returns a new builder for this class. */
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return OracleDatabaseStubSettings.defaultGrpcApiClientHeaderProviderBuilder();
+  }
+
+  /** Returns a new gRPC builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
+  }
+
+  /** Returns a new REST builder for this class. */
+  public static Builder newHttpJsonBuilder() {
+    return Builder.createHttpJsonDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -1380,6 +1469,15 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
         settingsBuilder.listAutonomousDatabaseCharacterSetsSettings().build();
     listAutonomousDatabaseBackupsSettings =
         settingsBuilder.listAutonomousDatabaseBackupsSettings().build();
+    stopAutonomousDatabaseSettings = settingsBuilder.stopAutonomousDatabaseSettings().build();
+    stopAutonomousDatabaseOperationSettings =
+        settingsBuilder.stopAutonomousDatabaseOperationSettings().build();
+    startAutonomousDatabaseSettings = settingsBuilder.startAutonomousDatabaseSettings().build();
+    startAutonomousDatabaseOperationSettings =
+        settingsBuilder.startAutonomousDatabaseOperationSettings().build();
+    restartAutonomousDatabaseSettings = settingsBuilder.restartAutonomousDatabaseSettings().build();
+    restartAutonomousDatabaseOperationSettings =
+        settingsBuilder.restartAutonomousDatabaseOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -1477,6 +1575,21 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             ListAutonomousDatabaseBackupsResponse,
             ListAutonomousDatabaseBackupsPagedResponse>
         listAutonomousDatabaseBackupsSettings;
+    private final UnaryCallSettings.Builder<StopAutonomousDatabaseRequest, Operation>
+        stopAutonomousDatabaseSettings;
+    private final OperationCallSettings.Builder<
+            StopAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        stopAutonomousDatabaseOperationSettings;
+    private final UnaryCallSettings.Builder<StartAutonomousDatabaseRequest, Operation>
+        startAutonomousDatabaseSettings;
+    private final OperationCallSettings.Builder<
+            StartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        startAutonomousDatabaseOperationSettings;
+    private final UnaryCallSettings.Builder<RestartAutonomousDatabaseRequest, Operation>
+        restartAutonomousDatabaseSettings;
+    private final OperationCallSettings.Builder<
+            RestartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        restartAutonomousDatabaseOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1570,6 +1683,12 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           PagedCallSettings.newBuilder(LIST_AUTONOMOUS_DATABASE_CHARACTER_SETS_PAGE_STR_FACT);
       listAutonomousDatabaseBackupsSettings =
           PagedCallSettings.newBuilder(LIST_AUTONOMOUS_DATABASE_BACKUPS_PAGE_STR_FACT);
+      stopAutonomousDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      stopAutonomousDatabaseOperationSettings = OperationCallSettings.newBuilder();
+      startAutonomousDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      startAutonomousDatabaseOperationSettings = OperationCallSettings.newBuilder();
+      restartAutonomousDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      restartAutonomousDatabaseOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1597,6 +1716,9 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               listAutonomousDbVersionsSettings,
               listAutonomousDatabaseCharacterSetsSettings,
               listAutonomousDatabaseBackupsSettings,
+              stopAutonomousDatabaseSettings,
+              startAutonomousDatabaseSettings,
+              restartAutonomousDatabaseSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1648,6 +1770,15 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           settings.listAutonomousDatabaseCharacterSetsSettings.toBuilder();
       listAutonomousDatabaseBackupsSettings =
           settings.listAutonomousDatabaseBackupsSettings.toBuilder();
+      stopAutonomousDatabaseSettings = settings.stopAutonomousDatabaseSettings.toBuilder();
+      stopAutonomousDatabaseOperationSettings =
+          settings.stopAutonomousDatabaseOperationSettings.toBuilder();
+      startAutonomousDatabaseSettings = settings.startAutonomousDatabaseSettings.toBuilder();
+      startAutonomousDatabaseOperationSettings =
+          settings.startAutonomousDatabaseOperationSettings.toBuilder();
+      restartAutonomousDatabaseSettings = settings.restartAutonomousDatabaseSettings.toBuilder();
+      restartAutonomousDatabaseOperationSettings =
+          settings.restartAutonomousDatabaseOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1675,6 +1806,9 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               listAutonomousDbVersionsSettings,
               listAutonomousDatabaseCharacterSetsSettings,
               listAutonomousDatabaseBackupsSettings,
+              stopAutonomousDatabaseSettings,
+              startAutonomousDatabaseSettings,
+              restartAutonomousDatabaseSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1685,6 +1819,18 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
+      return initDefaults(builder);
+    }
+
+    private static Builder createHttpJsonDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1801,6 +1947,21 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           .listAutonomousDatabaseBackupsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .stopAutonomousDatabaseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .startAutonomousDatabaseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .restartAutonomousDatabaseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listLocationsSettings()
@@ -1982,6 +2143,79 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeoutDuration(Duration.ZERO)
                       .setTotalTimeoutDuration(Duration.ofMillis(432000000L))
+                      .build()));
+
+      builder
+          .stopAutonomousDatabaseOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StopAutonomousDatabaseRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AutonomousDatabase.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .startAutonomousDatabaseOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StartAutonomousDatabaseRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AutonomousDatabase.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .restartAutonomousDatabaseOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RestartAutonomousDatabaseRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AutonomousDatabase.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -2206,6 +2440,45 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             ListAutonomousDatabaseBackupsPagedResponse>
         listAutonomousDatabaseBackupsSettings() {
       return listAutonomousDatabaseBackupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to stopAutonomousDatabase. */
+    public UnaryCallSettings.Builder<StopAutonomousDatabaseRequest, Operation>
+        stopAutonomousDatabaseSettings() {
+      return stopAutonomousDatabaseSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to stopAutonomousDatabase. */
+    public OperationCallSettings.Builder<
+            StopAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        stopAutonomousDatabaseOperationSettings() {
+      return stopAutonomousDatabaseOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startAutonomousDatabase. */
+    public UnaryCallSettings.Builder<StartAutonomousDatabaseRequest, Operation>
+        startAutonomousDatabaseSettings() {
+      return startAutonomousDatabaseSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startAutonomousDatabase. */
+    public OperationCallSettings.Builder<
+            StartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        startAutonomousDatabaseOperationSettings() {
+      return startAutonomousDatabaseOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restartAutonomousDatabase. */
+    public UnaryCallSettings.Builder<RestartAutonomousDatabaseRequest, Operation>
+        restartAutonomousDatabaseSettings() {
+      return restartAutonomousDatabaseSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restartAutonomousDatabase. */
+    public OperationCallSettings.Builder<
+            RestartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        restartAutonomousDatabaseOperationSettings() {
+      return restartAutonomousDatabaseOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

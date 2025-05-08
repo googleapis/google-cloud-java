@@ -34,11 +34,17 @@
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetSecret": {
               "methods": ["getSecret", "getSecret", "getSecret", "getSecretCallable"]
             },
             "GetSecretVersion": {
               "methods": ["getSecretVersion", "getSecretVersion", "getSecretVersion", "getSecretVersionCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListSecretVersions": {
               "methods": ["listSecretVersions", "listSecretVersions", "listSecretVersions", "listSecretVersionsPagedCallable", "listSecretVersionsCallable"]

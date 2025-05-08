@@ -41,6 +41,7 @@ public interface UpdateApiSpecRequestOrBuilder
    * @return Whether the apiSpec field is set.
    */
   boolean hasApiSpec();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateApiSpecRequestOrBuilder
    * @return The apiSpec.
    */
   com.google.cloud.apigeeregistry.v1.ApiSpec getApiSpec();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface UpdateApiSpecRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface UpdateApiSpecRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

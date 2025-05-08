@@ -36,6 +36,7 @@ public interface LaunchTemplateRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -67,9 +68,9 @@ public interface LaunchTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * A Cloud Storage path to the template from which to create
+   * A Cloud Storage path to the template to use to create
    * the job.
-   * Must be valid Cloud Storage URL, beginning with 'gs://'.
+   * Must be valid Cloud Storage URL, beginning with `gs://`.
    * </pre>
    *
    * <code>string gcs_path = 3;</code>
@@ -77,13 +78,14 @@ public interface LaunchTemplateRequestOrBuilder
    * @return Whether the gcsPath field is set.
    */
   boolean hasGcsPath();
+
   /**
    *
    *
    * <pre>
-   * A Cloud Storage path to the template from which to create
+   * A Cloud Storage path to the template to use to create
    * the job.
-   * Must be valid Cloud Storage URL, beginning with 'gs://'.
+   * Must be valid Cloud Storage URL, beginning with `gs://`.
    * </pre>
    *
    * <code>string gcs_path = 3;</code>
@@ -91,13 +93,14 @@ public interface LaunchTemplateRequestOrBuilder
    * @return The gcsPath.
    */
   java.lang.String getGcsPath();
+
   /**
    *
    *
    * <pre>
-   * A Cloud Storage path to the template from which to create
+   * A Cloud Storage path to the template to use to create
    * the job.
-   * Must be valid Cloud Storage URL, beginning with 'gs://'.
+   * Must be valid Cloud Storage URL, beginning with `gs://`.
    * </pre>
    *
    * <code>string gcs_path = 3;</code>
@@ -110,7 +113,7 @@ public interface LaunchTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Params for launching a dynamic template.
+   * Parameters for launching a dynamic template.
    * </pre>
    *
    * <code>.google.dataflow.v1beta3.DynamicTemplateLaunchParams dynamic_template = 6;</code>
@@ -118,11 +121,12 @@ public interface LaunchTemplateRequestOrBuilder
    * @return Whether the dynamicTemplate field is set.
    */
   boolean hasDynamicTemplate();
+
   /**
    *
    *
    * <pre>
-   * Params for launching a dynamic template.
+   * Parameters for launching a dynamic template.
    * </pre>
    *
    * <code>.google.dataflow.v1beta3.DynamicTemplateLaunchParams dynamic_template = 6;</code>
@@ -130,11 +134,12 @@ public interface LaunchTemplateRequestOrBuilder
    * @return The dynamicTemplate.
    */
   com.google.dataflow.v1beta3.DynamicTemplateLaunchParams getDynamicTemplate();
+
   /**
    *
    *
    * <pre>
-   * Params for launching a dynamic template.
+   * Parameters for launching a dynamic template.
    * </pre>
    *
    * <code>.google.dataflow.v1beta3.DynamicTemplateLaunchParams dynamic_template = 6;</code>
@@ -145,7 +150,7 @@ public interface LaunchTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * The parameters of the template to launch. This should be part of the
+   * The parameters of the template to launch. Part of the
    * body of the POST request.
    * </pre>
    *
@@ -154,11 +159,12 @@ public interface LaunchTemplateRequestOrBuilder
    * @return Whether the launchParameters field is set.
    */
   boolean hasLaunchParameters();
+
   /**
    *
    *
    * <pre>
-   * The parameters of the template to launch. This should be part of the
+   * The parameters of the template to launch. Part of the
    * body of the POST request.
    * </pre>
    *
@@ -167,11 +173,12 @@ public interface LaunchTemplateRequestOrBuilder
    * @return The launchParameters.
    */
   com.google.dataflow.v1beta3.LaunchTemplateParameters getLaunchParameters();
+
   /**
    *
    *
    * <pre>
-   * The parameters of the template to launch. This should be part of the
+   * The parameters of the template to launch. Part of the
    * body of the POST request.
    * </pre>
    *
@@ -193,6 +200,7 @@ public interface LaunchTemplateRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

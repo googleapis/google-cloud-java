@@ -37,6 +37,7 @@ public interface ConfigRefOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

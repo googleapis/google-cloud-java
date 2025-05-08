@@ -35,6 +35,7 @@ import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeleteRagCorpusRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteRagFileRequest;
 import com.google.cloud.aiplatform.v1beta1.GetRagCorpusRequest;
+import com.google.cloud.aiplatform.v1beta1.GetRagEngineConfigRequest;
 import com.google.cloud.aiplatform.v1beta1.GetRagFileRequest;
 import com.google.cloud.aiplatform.v1beta1.ImportRagFilesOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.ImportRagFilesRequest;
@@ -44,9 +45,12 @@ import com.google.cloud.aiplatform.v1beta1.ListRagCorporaResponse;
 import com.google.cloud.aiplatform.v1beta1.ListRagFilesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListRagFilesResponse;
 import com.google.cloud.aiplatform.v1beta1.RagCorpus;
+import com.google.cloud.aiplatform.v1beta1.RagEngineConfig;
 import com.google.cloud.aiplatform.v1beta1.RagFile;
 import com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest;
+import com.google.cloud.aiplatform.v1beta1.UpdateRagEngineConfigOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.UpdateRagEngineConfigRequest;
 import com.google.cloud.aiplatform.v1beta1.UploadRagFileRequest;
 import com.google.cloud.aiplatform.v1beta1.UploadRagFileResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -184,6 +188,28 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdateRagEngineConfigRequest, Operation>
+      updateRagEngineConfigMethodDescriptor =
+          MethodDescriptor.<UpdateRagEngineConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagDataService/UpdateRagEngineConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateRagEngineConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetRagEngineConfigRequest, RagEngineConfig>
+      getRagEngineConfigMethodDescriptor =
+          MethodDescriptor.<GetRagEngineConfigRequest, RagEngineConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.VertexRagDataService/GetRagEngineConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetRagEngineConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RagEngineConfig.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -257,6 +283,13 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
   private final UnaryCallable<DeleteRagFileRequest, Operation> deleteRagFileCallable;
   private final OperationCallable<DeleteRagFileRequest, Empty, DeleteOperationMetadata>
       deleteRagFileOperationCallable;
+  private final UnaryCallable<UpdateRagEngineConfigRequest, Operation>
+      updateRagEngineConfigCallable;
+  private final OperationCallable<
+          UpdateRagEngineConfigRequest, RagEngineConfig, UpdateRagEngineConfigOperationMetadata>
+      updateRagEngineConfigOperationCallable;
+  private final UnaryCallable<GetRagEngineConfigRequest, RagEngineConfig>
+      getRagEngineConfigCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -411,6 +444,30 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UpdateRagEngineConfigRequest, Operation>
+        updateRagEngineConfigTransportSettings =
+            GrpcCallSettings.<UpdateRagEngineConfigRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateRagEngineConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "rag_engine_config.name",
+                          String.valueOf(request.getRagEngineConfig().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetRagEngineConfigRequest, RagEngineConfig>
+        getRagEngineConfigTransportSettings =
+            GrpcCallSettings.<GetRagEngineConfigRequest, RagEngineConfig>newBuilder()
+                .setMethodDescriptor(getRagEngineConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -529,6 +586,22 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
             settings.deleteRagFileOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateRagEngineConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateRagEngineConfigTransportSettings,
+            settings.updateRagEngineConfigSettings(),
+            clientContext);
+    this.updateRagEngineConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            updateRagEngineConfigTransportSettings,
+            settings.updateRagEngineConfigOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getRagEngineConfigCallable =
+        callableFactory.createUnaryCallable(
+            getRagEngineConfigTransportSettings,
+            settings.getRagEngineConfigSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -648,6 +721,23 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
   public OperationCallable<DeleteRagFileRequest, Empty, DeleteOperationMetadata>
       deleteRagFileOperationCallable() {
     return deleteRagFileOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateRagEngineConfigRequest, Operation> updateRagEngineConfigCallable() {
+    return updateRagEngineConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateRagEngineConfigRequest, RagEngineConfig, UpdateRagEngineConfigOperationMetadata>
+      updateRagEngineConfigOperationCallable() {
+    return updateRagEngineConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRagEngineConfigRequest, RagEngineConfig> getRagEngineConfigCallable() {
+    return getRagEngineConfigCallable;
   }
 
   @Override

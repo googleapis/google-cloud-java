@@ -380,6 +380,426 @@ public class ModelGardenServiceClientTest {
   }
 
   @Test
+  public void exportPublisherModelTest() throws Exception {
+    ExportPublisherModelResponse expectedResponse =
+        ExportPublisherModelResponse.newBuilder()
+            .setPublisherModel("publisherModel999114381")
+            .setDestinationUri("destinationUri912975486")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportPublisherModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockModelGardenService.addResponse(resultOperation);
+
+    ExportPublisherModelRequest request =
+        ExportPublisherModelRequest.newBuilder()
+            .setName("name3373707")
+            .setDestination(GcsDestination.newBuilder().build())
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .build();
+
+    ExportPublisherModelResponse actualResponse = client.exportPublisherModelAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelGardenService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportPublisherModelRequest actualRequest =
+        ((ExportPublisherModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getDestination(), actualRequest.getDestination());
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportPublisherModelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelGardenService.addException(exception);
+
+    try {
+      ExportPublisherModelRequest request =
+          ExportPublisherModelRequest.newBuilder()
+              .setName("name3373707")
+              .setDestination(GcsDestination.newBuilder().build())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .build();
+      client.exportPublisherModelAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void checkPublisherModelEulaAcceptanceTest() throws Exception {
+    PublisherModelEulaAcceptance expectedResponse =
+        PublisherModelEulaAcceptance.newBuilder()
+            .setProjectNumber(828084015)
+            .setPublisherModel("publisherModel999114381")
+            .setPublisherModelEulaAcked(true)
+            .build();
+    mockModelGardenService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    PublisherModelName publisherModel = PublisherModelName.of("[PUBLISHER]", "[MODEL]");
+
+    PublisherModelEulaAcceptance actualResponse =
+        client.checkPublisherModelEulaAcceptance(parent, publisherModel);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelGardenService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CheckPublisherModelEulaAcceptanceRequest actualRequest =
+        ((CheckPublisherModelEulaAcceptanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(publisherModel.toString(), actualRequest.getPublisherModel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void checkPublisherModelEulaAcceptanceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelGardenService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      PublisherModelName publisherModel = PublisherModelName.of("[PUBLISHER]", "[MODEL]");
+      client.checkPublisherModelEulaAcceptance(parent, publisherModel);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void checkPublisherModelEulaAcceptanceTest2() throws Exception {
+    PublisherModelEulaAcceptance expectedResponse =
+        PublisherModelEulaAcceptance.newBuilder()
+            .setProjectNumber(828084015)
+            .setPublisherModel("publisherModel999114381")
+            .setPublisherModelEulaAcked(true)
+            .build();
+    mockModelGardenService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    String publisherModel = "publisherModel999114381";
+
+    PublisherModelEulaAcceptance actualResponse =
+        client.checkPublisherModelEulaAcceptance(parent, publisherModel);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelGardenService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CheckPublisherModelEulaAcceptanceRequest actualRequest =
+        ((CheckPublisherModelEulaAcceptanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(publisherModel, actualRequest.getPublisherModel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void checkPublisherModelEulaAcceptanceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelGardenService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      String publisherModel = "publisherModel999114381";
+      client.checkPublisherModelEulaAcceptance(parent, publisherModel);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void checkPublisherModelEulaAcceptanceTest3() throws Exception {
+    PublisherModelEulaAcceptance expectedResponse =
+        PublisherModelEulaAcceptance.newBuilder()
+            .setProjectNumber(828084015)
+            .setPublisherModel("publisherModel999114381")
+            .setPublisherModelEulaAcked(true)
+            .build();
+    mockModelGardenService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    PublisherModelName publisherModel = PublisherModelName.of("[PUBLISHER]", "[MODEL]");
+
+    PublisherModelEulaAcceptance actualResponse =
+        client.checkPublisherModelEulaAcceptance(parent, publisherModel);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelGardenService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CheckPublisherModelEulaAcceptanceRequest actualRequest =
+        ((CheckPublisherModelEulaAcceptanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(publisherModel.toString(), actualRequest.getPublisherModel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void checkPublisherModelEulaAcceptanceExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelGardenService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      PublisherModelName publisherModel = PublisherModelName.of("[PUBLISHER]", "[MODEL]");
+      client.checkPublisherModelEulaAcceptance(parent, publisherModel);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void checkPublisherModelEulaAcceptanceTest4() throws Exception {
+    PublisherModelEulaAcceptance expectedResponse =
+        PublisherModelEulaAcceptance.newBuilder()
+            .setProjectNumber(828084015)
+            .setPublisherModel("publisherModel999114381")
+            .setPublisherModelEulaAcked(true)
+            .build();
+    mockModelGardenService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String publisherModel = "publisherModel999114381";
+
+    PublisherModelEulaAcceptance actualResponse =
+        client.checkPublisherModelEulaAcceptance(parent, publisherModel);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelGardenService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CheckPublisherModelEulaAcceptanceRequest actualRequest =
+        ((CheckPublisherModelEulaAcceptanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(publisherModel, actualRequest.getPublisherModel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void checkPublisherModelEulaAcceptanceExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelGardenService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String publisherModel = "publisherModel999114381";
+      client.checkPublisherModelEulaAcceptance(parent, publisherModel);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void acceptPublisherModelEulaTest() throws Exception {
+    PublisherModelEulaAcceptance expectedResponse =
+        PublisherModelEulaAcceptance.newBuilder()
+            .setProjectNumber(828084015)
+            .setPublisherModel("publisherModel999114381")
+            .setPublisherModelEulaAcked(true)
+            .build();
+    mockModelGardenService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    PublisherModelName publisherModel = PublisherModelName.of("[PUBLISHER]", "[MODEL]");
+
+    PublisherModelEulaAcceptance actualResponse =
+        client.acceptPublisherModelEula(parent, publisherModel);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelGardenService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AcceptPublisherModelEulaRequest actualRequest =
+        ((AcceptPublisherModelEulaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(publisherModel.toString(), actualRequest.getPublisherModel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void acceptPublisherModelEulaExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelGardenService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      PublisherModelName publisherModel = PublisherModelName.of("[PUBLISHER]", "[MODEL]");
+      client.acceptPublisherModelEula(parent, publisherModel);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void acceptPublisherModelEulaTest2() throws Exception {
+    PublisherModelEulaAcceptance expectedResponse =
+        PublisherModelEulaAcceptance.newBuilder()
+            .setProjectNumber(828084015)
+            .setPublisherModel("publisherModel999114381")
+            .setPublisherModelEulaAcked(true)
+            .build();
+    mockModelGardenService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    String publisherModel = "publisherModel999114381";
+
+    PublisherModelEulaAcceptance actualResponse =
+        client.acceptPublisherModelEula(parent, publisherModel);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelGardenService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AcceptPublisherModelEulaRequest actualRequest =
+        ((AcceptPublisherModelEulaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(publisherModel, actualRequest.getPublisherModel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void acceptPublisherModelEulaExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelGardenService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      String publisherModel = "publisherModel999114381";
+      client.acceptPublisherModelEula(parent, publisherModel);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void acceptPublisherModelEulaTest3() throws Exception {
+    PublisherModelEulaAcceptance expectedResponse =
+        PublisherModelEulaAcceptance.newBuilder()
+            .setProjectNumber(828084015)
+            .setPublisherModel("publisherModel999114381")
+            .setPublisherModelEulaAcked(true)
+            .build();
+    mockModelGardenService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    PublisherModelName publisherModel = PublisherModelName.of("[PUBLISHER]", "[MODEL]");
+
+    PublisherModelEulaAcceptance actualResponse =
+        client.acceptPublisherModelEula(parent, publisherModel);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelGardenService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AcceptPublisherModelEulaRequest actualRequest =
+        ((AcceptPublisherModelEulaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(publisherModel.toString(), actualRequest.getPublisherModel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void acceptPublisherModelEulaExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelGardenService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      PublisherModelName publisherModel = PublisherModelName.of("[PUBLISHER]", "[MODEL]");
+      client.acceptPublisherModelEula(parent, publisherModel);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void acceptPublisherModelEulaTest4() throws Exception {
+    PublisherModelEulaAcceptance expectedResponse =
+        PublisherModelEulaAcceptance.newBuilder()
+            .setProjectNumber(828084015)
+            .setPublisherModel("publisherModel999114381")
+            .setPublisherModelEulaAcked(true)
+            .build();
+    mockModelGardenService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String publisherModel = "publisherModel999114381";
+
+    PublisherModelEulaAcceptance actualResponse =
+        client.acceptPublisherModelEula(parent, publisherModel);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelGardenService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AcceptPublisherModelEulaRequest actualRequest =
+        ((AcceptPublisherModelEulaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(publisherModel, actualRequest.getPublisherModel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void acceptPublisherModelEulaExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelGardenService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String publisherModel = "publisherModel999114381";
+      client.acceptPublisherModelEula(parent, publisherModel);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

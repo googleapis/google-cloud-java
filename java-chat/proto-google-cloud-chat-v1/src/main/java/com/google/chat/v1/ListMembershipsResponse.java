@@ -33,6 +33,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.chat.v1.ListMembershipsResponse)
     ListMembershipsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListMembershipsResponse.newBuilder() to construct.
   private ListMembershipsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.chat.v1.Membership> memberships_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.chat.v1.Membership> getMembershipsList() {
     return memberships_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
       getMembershipsOrBuilderList() {
     return memberships_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
   public int getMembershipsCount() {
     return memberships_.size();
   }
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
   public com.google.chat.v1.Membership getMemberships(int index) {
     return memberships_.get(index);
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -368,6 +376,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -643,6 +652,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
         return membershipsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -661,6 +671,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
         return membershipsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -679,6 +690,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
         return membershipsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -703,6 +715,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +738,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +763,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +788,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +810,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +833,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +856,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +878,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -880,6 +900,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +915,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
     public com.google.chat.v1.Membership.Builder getMembershipsBuilder(int index) {
       return getMembershipsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -912,6 +934,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
         return membershipsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -931,6 +954,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(memberships_);
       }
     }
+
     /**
      *
      *
@@ -946,6 +970,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
       return getMembershipsFieldBuilder()
           .addBuilder(com.google.chat.v1.Membership.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -961,6 +986,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
       return getMembershipsFieldBuilder()
           .addBuilder(index, com.google.chat.v1.Membership.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -994,6 +1020,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1017,6 +1044,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1040,6 +1068,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1062,6 +1091,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1110,7 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

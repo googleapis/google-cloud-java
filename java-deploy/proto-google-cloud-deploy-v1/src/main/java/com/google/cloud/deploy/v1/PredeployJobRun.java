@@ -33,6 +33,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.PredeployJobRun)
     PredeployJobRunOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PredeployJobRun.newBuilder() to construct.
   private PredeployJobRun(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -112,7 +113,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The predeploy job run did not complete within the alloted time.
+     * The predeploy job run did not complete within the allotted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>
@@ -142,6 +143,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
      * <code>FAILURE_CAUSE_UNSPECIFIED = 0;</code>
      */
     public static final int FAILURE_CAUSE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -154,6 +156,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
      * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
      */
     public static final int CLOUD_BUILD_UNAVAILABLE_VALUE = 1;
+
     /**
      *
      *
@@ -165,16 +168,18 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
      * <code>EXECUTION_FAILED = 2;</code>
      */
     public static final int EXECUTION_FAILED_VALUE = 2;
+
     /**
      *
      *
      * <pre>
-     * The predeploy job run did not complete within the alloted time.
+     * The predeploy job run did not complete within the allotted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>
      */
     public static final int DEADLINE_EXCEEDED_VALUE = 3;
+
     /**
      *
      *
@@ -278,6 +283,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object build_ = "";
+
   /**
    *
    *
@@ -305,6 +311,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -335,6 +342,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
 
   public static final int FAILURE_CAUSE_FIELD_NUMBER = 2;
   private int failureCause_ = 0;
+
   /**
    *
    *
@@ -353,6 +361,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
   public int getFailureCauseValue() {
     return failureCause_;
   }
+
   /**
    *
    *
@@ -380,6 +389,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object failureMessage_ = "";
+
   /**
    *
    *
@@ -404,6 +414,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -610,6 +621,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -821,6 +833,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object build_ = "";
+
     /**
      *
      *
@@ -847,6 +860,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -873,6 +887,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -898,6 +913,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +935,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +964,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
     }
 
     private int failureCause_ = 0;
+
     /**
      *
      *
@@ -965,6 +983,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
     public int getFailureCauseValue() {
       return failureCause_;
     }
+
     /**
      *
      *
@@ -986,6 +1005,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1028,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.deploy.v1.PredeployJobRun.FailureCause.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1032,6 +1053,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1076,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object failureMessage_ = "";
+
     /**
      *
      *
@@ -1077,6 +1100,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1100,6 +1124,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1122,6 +1147,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1140,6 +1166,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

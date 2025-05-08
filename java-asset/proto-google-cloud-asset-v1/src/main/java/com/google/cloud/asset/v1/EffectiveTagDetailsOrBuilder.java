@@ -30,8 +30,9 @@ public interface EffectiveTagDetailsOrBuilder
    * <pre>
    * The [full resource
    * name](https://cloud.google.com/asset-inventory/docs/resource-name-format)
-   * of the ancestor from which an [effective_tag][] is inherited, according to
-   * [tag
+   * of the ancestor from which
+   * [effective_tags][google.cloud.asset.v1.EffectiveTagDetails.effective_tags]
+   * are inherited, according to [tag
    * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
    * </pre>
    *
@@ -40,14 +41,16 @@ public interface EffectiveTagDetailsOrBuilder
    * @return Whether the attachedResource field is set.
    */
   boolean hasAttachedResource();
+
   /**
    *
    *
    * <pre>
    * The [full resource
    * name](https://cloud.google.com/asset-inventory/docs/resource-name-format)
-   * of the ancestor from which an [effective_tag][] is inherited, according to
-   * [tag
+   * of the ancestor from which
+   * [effective_tags][google.cloud.asset.v1.EffectiveTagDetails.effective_tags]
+   * are inherited, according to [tag
    * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
    * </pre>
    *
@@ -56,14 +59,16 @@ public interface EffectiveTagDetailsOrBuilder
    * @return The attachedResource.
    */
   java.lang.String getAttachedResource();
+
   /**
    *
    *
    * <pre>
    * The [full resource
    * name](https://cloud.google.com/asset-inventory/docs/resource-name-format)
-   * of the ancestor from which an [effective_tag][] is inherited, according to
-   * [tag
+   * of the ancestor from which
+   * [effective_tags][google.cloud.asset.v1.EffectiveTagDetails.effective_tags]
+   * are inherited, according to [tag
    * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
    * </pre>
    *
@@ -90,6 +95,7 @@ public interface EffectiveTagDetailsOrBuilder
    * <code>repeated .google.cloud.asset.v1.Tag effective_tags = 2;</code>
    */
   java.util.List<com.google.cloud.asset.v1.Tag> getEffectiveTagsList();
+
   /**
    *
    *
@@ -107,6 +113,7 @@ public interface EffectiveTagDetailsOrBuilder
    * <code>repeated .google.cloud.asset.v1.Tag effective_tags = 2;</code>
    */
   com.google.cloud.asset.v1.Tag getEffectiveTags(int index);
+
   /**
    *
    *
@@ -124,6 +131,7 @@ public interface EffectiveTagDetailsOrBuilder
    * <code>repeated .google.cloud.asset.v1.Tag effective_tags = 2;</code>
    */
   int getEffectiveTagsCount();
+
   /**
    *
    *
@@ -141,6 +149,7 @@ public interface EffectiveTagDetailsOrBuilder
    * <code>repeated .google.cloud.asset.v1.Tag effective_tags = 2;</code>
    */
   java.util.List<? extends com.google.cloud.asset.v1.TagOrBuilder> getEffectiveTagsOrBuilderList();
+
   /**
    *
    *

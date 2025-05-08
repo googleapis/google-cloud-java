@@ -28,24 +28,51 @@ public interface PscConnectionOrBuilder
    *
    *
    * <pre>
-   * Output only. The PSC connection id of the forwarding rule connected to the
-   * service attachment.
+   * Optional. port will only be set for Primary/Reader or Discovery endpoint.
    * </pre>
    *
-   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
-   * @return The pscConnectionId.
+   * @return Whether the port field is set.
    */
-  java.lang.String getPscConnectionId();
+  boolean hasPort();
+
   /**
    *
    *
    * <pre>
-   * Output only. The PSC connection id of the forwarding rule connected to the
+   * Optional. port will only be set for Primary/Reader or Discovery endpoint.
+   * </pre>
+   *
+   * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The port.
+   */
+  int getPort();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The PSC connection id of the forwarding rule connected to the
    * service attachment.
    * </pre>
    *
-   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The pscConnectionId.
+   */
+  java.lang.String getPscConnectionId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The PSC connection id of the forwarding rule connected to the
+   * service attachment.
+   * </pre>
+   *
+   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for pscConnectionId.
    */
@@ -66,6 +93,7 @@ public interface PscConnectionOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
+
   /**
    *
    *
@@ -98,6 +126,7 @@ public interface PscConnectionOrBuilder
    * @return The forwardingRule.
    */
   java.lang.String getForwardingRule();
+
   /**
    *
    *
@@ -128,6 +157,7 @@ public interface PscConnectionOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -157,6 +187,7 @@ public interface PscConnectionOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -189,6 +220,7 @@ public interface PscConnectionOrBuilder
    * @return The serviceAttachment.
    */
   java.lang.String getServiceAttachment();
+
   /**
    *
    *
@@ -223,6 +255,7 @@ public interface PscConnectionOrBuilder
    * @return The enum numeric value on the wire for pscConnectionStatus.
    */
   int getPscConnectionStatusValue();
+
   /**
    *
    *
@@ -255,6 +288,7 @@ public interface PscConnectionOrBuilder
    * @return The enum numeric value on the wire for connectionType.
    */
   int getConnectionTypeValue();
+
   /**
    *
    *
@@ -269,4 +303,6 @@ public interface PscConnectionOrBuilder
    * @return The connectionType.
    */
   com.google.cloud.memorystore.v1.ConnectionType getConnectionType();
+
+  com.google.cloud.memorystore.v1.PscConnection.PortsCase getPortsCase();
 }

@@ -37,6 +37,7 @@ public interface GetServiceRequestOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.DataRetentionDeletionEvent)
     DataRetentionDeletionEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataRetentionDeletionEvent.newBuilder() to construct.
   private DataRetentionDeletionEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -114,6 +115,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
      * <code>EVENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int EVENT_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -211,6 +213,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int EVENT_DETECTION_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp eventDetectionTime_;
+
   /**
    *
    *
@@ -226,6 +229,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
   public boolean hasEventDetectionTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -243,6 +247,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : eventDetectionTime_;
   }
+
   /**
    *
    *
@@ -261,6 +266,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
 
   public static final int DATA_OBJECT_COUNT_FIELD_NUMBER = 3;
   private long dataObjectCount_ = 0L;
+
   /**
    *
    *
@@ -282,6 +288,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
 
   public static final int MAX_RETENTION_ALLOWED_FIELD_NUMBER = 4;
   private com.google.protobuf.Duration maxRetentionAllowed_;
+
   /**
    *
    *
@@ -302,6 +309,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
   public boolean hasMaxRetentionAllowed() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -324,6 +332,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
         ? com.google.protobuf.Duration.getDefaultInstance()
         : maxRetentionAllowed_;
   }
+
   /**
    *
    *
@@ -347,6 +356,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
 
   public static final int EVENT_TYPE_FIELD_NUMBER = 5;
   private int eventType_ = 0;
+
   /**
    *
    *
@@ -363,6 +373,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
   public int getEventTypeValue() {
     return eventType_;
   }
+
   /**
    *
    *
@@ -588,6 +599,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -855,6 +867,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         eventDetectionTimeBuilder_;
+
     /**
      *
      *
@@ -869,6 +882,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
     public boolean hasEventDetectionTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -889,6 +903,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
         return eventDetectionTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -911,6 +926,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +946,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +974,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +994,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1009,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
       onChanged();
       return getEventDetectionTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1008,6 +1028,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
             : eventDetectionTime_;
       }
     }
+
     /**
      *
      *
@@ -1035,6 +1056,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
     }
 
     private long dataObjectCount_;
+
     /**
      *
      *
@@ -1053,6 +1075,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
     public long getDataObjectCount() {
       return dataObjectCount_;
     }
+
     /**
      *
      *
@@ -1075,6 +1098,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1126,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         maxRetentionAllowedBuilder_;
+
     /**
      *
      *
@@ -1121,6 +1146,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
     public boolean hasMaxRetentionAllowed() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1146,6 +1172,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
         return maxRetentionAllowedBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1173,6 +1200,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1197,6 +1225,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1229,6 +1258,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1253,6 +1283,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1272,6 +1303,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
       onChanged();
       return getMaxRetentionAllowedFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1295,6 +1327,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
             : maxRetentionAllowed_;
       }
     }
+
     /**
      *
      *
@@ -1327,6 +1360,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
     }
 
     private int eventType_ = 0;
+
     /**
      *
      *
@@ -1343,6 +1377,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
     public int getEventTypeValue() {
       return eventType_;
     }
+
     /**
      *
      *
@@ -1362,6 +1397,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1383,6 +1419,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
           ? com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent.EventType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1406,6 +1443,7 @@ public final class DataRetentionDeletionEvent extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

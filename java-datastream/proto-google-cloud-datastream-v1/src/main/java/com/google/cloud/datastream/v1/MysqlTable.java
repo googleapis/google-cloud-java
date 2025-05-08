@@ -33,6 +33,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.MysqlTable)
     MysqlTableOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MysqlTable.newBuilder() to construct.
   private MysqlTable(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object table_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.MysqlColumn> mysqlColumns_;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.datastream.v1.MysqlColumn> getMysqlColumnsList() {
     return mysqlColumns_;
   }
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
       getMysqlColumnsOrBuilderList() {
     return mysqlColumns_;
   }
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
   public int getMysqlColumnsCount() {
     return mysqlColumns_.size();
   }
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datastream.v1.MysqlColumn getMysqlColumns(int index) {
     return mysqlColumns_.get(index);
   }
+
   /**
    *
    *
@@ -366,6 +374,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -609,6 +618,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object table_ = "";
+
     /**
      *
      *
@@ -631,6 +641,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -653,6 +664,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -674,6 +686,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -691,6 +704,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +763,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
         return mysqlColumnsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -767,6 +782,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
         return mysqlColumnsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
         return mysqlColumnsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -809,6 +826,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +849,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +874,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +899,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +922,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +945,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +968,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +990,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -987,6 +1012,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1001,6 +1027,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1.MysqlColumn.Builder getMysqlColumnsBuilder(int index) {
       return getMysqlColumnsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1019,6 +1046,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
         return mysqlColumnsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1038,6 +1066,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(mysqlColumns_);
       }
     }
+
     /**
      *
      *
@@ -1053,6 +1082,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
       return getMysqlColumnsFieldBuilder()
           .addBuilder(com.google.cloud.datastream.v1.MysqlColumn.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1068,6 +1098,7 @@ public final class MysqlTable extends com.google.protobuf.GeneratedMessageV3
       return getMysqlColumnsFieldBuilder()
           .addBuilder(index, com.google.cloud.datastream.v1.MysqlColumn.getDefaultInstance());
     }
+
     /**
      *
      *

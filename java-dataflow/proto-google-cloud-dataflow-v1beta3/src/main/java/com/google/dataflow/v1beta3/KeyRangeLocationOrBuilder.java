@@ -36,6 +36,7 @@ public interface KeyRangeLocationOrBuilder
    * @return The start.
    */
   java.lang.String getStart();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface KeyRangeLocationOrBuilder
    * @return The end.
    */
   java.lang.String getEnd();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface KeyRangeLocationOrBuilder
    * @return The deliveryEndpoint.
    */
   java.lang.String getDeliveryEndpoint();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface KeyRangeLocationOrBuilder
    * @return The dataDisk.
    */
   java.lang.String getDataDisk();
+
   /**
    *
    *
@@ -143,11 +147,12 @@ public interface KeyRangeLocationOrBuilder
    * <code>string deprecated_persistent_directory = 4 [deprecated = true];</code>
    *
    * @deprecated google.dataflow.v1beta3.KeyRangeLocation.deprecated_persistent_directory is
-   *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=170
+   *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=173
    * @return The deprecatedPersistentDirectory.
    */
   @java.lang.Deprecated
   java.lang.String getDeprecatedPersistentDirectory();
+
   /**
    *
    *
@@ -159,7 +164,7 @@ public interface KeyRangeLocationOrBuilder
    * <code>string deprecated_persistent_directory = 4 [deprecated = true];</code>
    *
    * @deprecated google.dataflow.v1beta3.KeyRangeLocation.deprecated_persistent_directory is
-   *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=170
+   *     deprecated. See google/dataflow/v1beta3/streaming.proto;l=173
    * @return The bytes for deprecatedPersistentDirectory.
    */
   @java.lang.Deprecated

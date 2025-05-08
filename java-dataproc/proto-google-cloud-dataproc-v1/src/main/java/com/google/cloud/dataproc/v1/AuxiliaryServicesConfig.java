@@ -33,6 +33,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.AuxiliaryServicesConfig)
     AuxiliaryServicesConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AuxiliaryServicesConfig.newBuilder() to construct.
   private AuxiliaryServicesConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int METASTORE_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.dataproc.v1.MetastoreConfig metastoreConfig_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
   public boolean hasMetastoreConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
         ? com.google.cloud.dataproc.v1.MetastoreConfig.getDefaultInstance()
         : metastoreConfig_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
 
   public static final int SPARK_HISTORY_SERVER_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.dataproc.v1.SparkHistoryServerConfig sparkHistoryServerConfig_;
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
   public boolean hasSparkHistoryServerConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
         ? com.google.cloud.dataproc.v1.SparkHistoryServerConfig.getDefaultInstance()
         : sparkHistoryServerConfig_;
   }
+
   /**
    *
    *
@@ -355,6 +362,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -582,6 +590,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
             com.google.cloud.dataproc.v1.MetastoreConfig.Builder,
             com.google.cloud.dataproc.v1.MetastoreConfigOrBuilder>
         metastoreConfigBuilder_;
+
     /**
      *
      *
@@ -598,6 +607,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
     public boolean hasMetastoreConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -620,6 +630,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
         return metastoreConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -644,6 +655,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -666,6 +678,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +709,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -717,6 +731,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -733,6 +748,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
       onChanged();
       return getMetastoreConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -753,6 +769,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
             : metastoreConfig_;
       }
     }
+
     /**
      *
      *
@@ -787,6 +804,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
             com.google.cloud.dataproc.v1.SparkHistoryServerConfig.Builder,
             com.google.cloud.dataproc.v1.SparkHistoryServerConfigOrBuilder>
         sparkHistoryServerConfigBuilder_;
+
     /**
      *
      *
@@ -803,6 +821,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
     public boolean hasSparkHistoryServerConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -825,6 +844,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
         return sparkHistoryServerConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -850,6 +870,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +893,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +925,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +947,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +965,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
       onChanged();
       return getSparkHistoryServerConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -962,6 +987,7 @@ public final class AuxiliaryServicesConfig extends com.google.protobuf.Generated
             : sparkHistoryServerConfig_;
       }
     }
+
     /**
      *
      *

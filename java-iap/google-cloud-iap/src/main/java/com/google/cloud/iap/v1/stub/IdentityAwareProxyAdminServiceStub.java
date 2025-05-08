@@ -30,6 +30,8 @@ import com.google.cloud.iap.v1.ListTunnelDestGroupsResponse;
 import com.google.cloud.iap.v1.TunnelDestGroup;
 import com.google.cloud.iap.v1.UpdateIapSettingsRequest;
 import com.google.cloud.iap.v1.UpdateTunnelDestGroupRequest;
+import com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest;
+import com.google.cloud.iap.v1.ValidateIapAttributeExpressionResponse;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -66,6 +68,13 @@ public abstract class IdentityAwareProxyAdminServiceStub implements BackgroundRe
 
   public UnaryCallable<UpdateIapSettingsRequest, IapSettings> updateIapSettingsCallable() {
     throw new UnsupportedOperationException("Not implemented: updateIapSettingsCallable()");
+  }
+
+  public UnaryCallable<
+          ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+      validateIapAttributeExpressionCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: validateIapAttributeExpressionCallable()");
   }
 
   public UnaryCallable<ListTunnelDestGroupsRequest, ListTunnelDestGroupsPagedResponse>

@@ -36,6 +36,7 @@ public interface DlpJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DlpJobOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface DlpJobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface DlpJobOrBuilder
    * @return Whether the riskDetails field is set.
    */
   boolean hasRiskDetails();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface DlpJobOrBuilder
    * @return The riskDetails.
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails getRiskDetails();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface DlpJobOrBuilder
    * @return Whether the inspectDetails field is set.
    */
   boolean hasInspectDetails();
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public interface DlpJobOrBuilder
    * @return The inspectDetails.
    */
   com.google.privacy.dlp.v2.InspectDataSourceDetails getInspectDetails();
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public interface DlpJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -193,6 +201,7 @@ public interface DlpJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public interface DlpJobOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -228,6 +238,7 @@ public interface DlpJobOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -251,6 +262,7 @@ public interface DlpJobOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -263,6 +275,7 @@ public interface DlpJobOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -286,6 +299,7 @@ public interface DlpJobOrBuilder
    * @return Whether the lastModified field is set.
    */
   boolean hasLastModified();
+
   /**
    *
    *
@@ -298,6 +312,7 @@ public interface DlpJobOrBuilder
    * @return The lastModified.
    */
   com.google.protobuf.Timestamp getLastModified();
+
   /**
    *
    *
@@ -322,6 +337,7 @@ public interface DlpJobOrBuilder
    * @return The jobTriggerName.
    */
   java.lang.String getJobTriggerName();
+
   /**
    *
    *
@@ -346,6 +362,7 @@ public interface DlpJobOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Error errors = 11;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList();
+
   /**
    *
    *
@@ -356,6 +373,7 @@ public interface DlpJobOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Error errors = 11;</code>
    */
   com.google.privacy.dlp.v2.Error getErrors(int index);
+
   /**
    *
    *
@@ -366,6 +384,7 @@ public interface DlpJobOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Error errors = 11;</code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -376,6 +395,7 @@ public interface DlpJobOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Error errors = 11;</code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder> getErrorsOrBuilderList();
+
   /**
    *
    *
@@ -397,6 +417,7 @@ public interface DlpJobOrBuilder
    * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.ActionDetails> getActionDetailsList();
+
   /**
    *
    *
@@ -407,6 +428,7 @@ public interface DlpJobOrBuilder
    * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
    */
   com.google.privacy.dlp.v2.ActionDetails getActionDetails(int index);
+
   /**
    *
    *
@@ -417,6 +439,7 @@ public interface DlpJobOrBuilder
    * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
    */
   int getActionDetailsCount();
+
   /**
    *
    *
@@ -428,6 +451,7 @@ public interface DlpJobOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.ActionDetailsOrBuilder>
       getActionDetailsOrBuilderList();
+
   /**
    *
    *

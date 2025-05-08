@@ -36,6 +36,7 @@ public interface PostgresqlProfileOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface PostgresqlProfileOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface PostgresqlProfileOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface PostgresqlProfileOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
+
   /**
    *
    *
@@ -138,6 +142,38 @@ public interface PostgresqlProfileOrBuilder
    * @return The bytes for database.
    */
   com.google.protobuf.ByteString getDatabaseBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A reference to a Secret Manager resource name storing the
+   * PostgreSQL connection password. Mutually exclusive with the `password`
+   * field.
+   * </pre>
+   *
+   * <code>string secret_manager_stored_password = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The secretManagerStoredPassword.
+   */
+  java.lang.String getSecretManagerStoredPassword();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A reference to a Secret Manager resource name storing the
+   * PostgreSQL connection password. Mutually exclusive with the `password`
+   * field.
+   * </pre>
+   *
+   * <code>string secret_manager_stored_password = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for secretManagerStoredPassword.
+   */
+  com.google.protobuf.ByteString getSecretManagerStoredPasswordBytes();
 
   /**
    *
@@ -156,6 +192,7 @@ public interface PostgresqlProfileOrBuilder
    * @return Whether the sslConfig field is set.
    */
   boolean hasSslConfig();
+
   /**
    *
    *
@@ -173,6 +210,7 @@ public interface PostgresqlProfileOrBuilder
    * @return The sslConfig.
    */
   com.google.cloud.datastream.v1.PostgresqlSslConfig getSslConfig();
+
   /**
    *
    *

@@ -49,20 +49,24 @@ public final class GeometryProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n.google/cloud/documentai/v1beta3/geomet"
-          + "ry.proto\022\037google.cloud.documentai.v1beta"
-          + "3\"\036\n\006Vertex\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005\"(\n\020Nor"
-          + "malizedVertex\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\"\231\001\n\014"
-          + "BoundingPoly\0229\n\010vertices\030\001 \003(\0132\'.google."
-          + "cloud.documentai.v1beta3.Vertex\022N\n\023norma"
-          + "lized_vertices\030\002 \003(\01321.google.cloud.docu"
-          + "mentai.v1beta3.NormalizedVertexB\344\001\n#com."
-          + "google.cloud.documentai.v1beta3B\rGeometr"
-          + "yProtoP\001ZCcloud.google.com/go/documentai"
+      "\n"
+          + ".google/cloud/documentai/v1beta3/geomet"
+          + "ry.proto\022\037google.cloud.documentai.v1beta3\"\036\n"
+          + "\006Vertex\022\t\n"
+          + "\001x\030\001 \001(\005\022\t\n"
+          + "\001y\030\002 \001(\005\"(\n"
+          + "\020NormalizedVertex\022\t\n"
+          + "\001x\030\001 \001(\002\022\t\n"
+          + "\001y\030\002 \001(\002\"\231\001\n"
+          + "\014BoundingPoly\0229\n"
+          + "\010vertices\030\001 \003(\0132\'.google.cloud.documentai.v1beta3.Vertex\022N\n"
+          + "\023normalized_vertices\030\002"
+          + " \003(\01321.google.cloud.documentai.v1beta3.NormalizedVertexB\344\001\n"
+          + "#com.google.cloud.documentai.v1beta3B\r"
+          + "GeometryProtoP\001ZCcloud.google.com/go/documentai"
           + "/apiv1beta3/documentaipb;documentaipb\252\002\037"
           + "Google.Cloud.DocumentAI.V1Beta3\312\002\037Google"
-          + "\\Cloud\\DocumentAI\\V1beta3\352\002\"Google::Clou"
-          + "d::DocumentAI::V1beta3b\006proto3"
+          + "\\Cloud\\DocumentAI\\V1beta3\352\002\"Google::Cloud::DocumentAI::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

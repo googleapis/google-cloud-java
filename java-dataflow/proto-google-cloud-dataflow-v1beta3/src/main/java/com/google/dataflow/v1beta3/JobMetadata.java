@@ -34,6 +34,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.JobMetadata)
     JobMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use JobMetadata.newBuilder() to construct.
   private JobMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -59,6 +60,18 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_dataflow_v1beta3_JobMetadata_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 8:
+        return internalGetUserDisplayProperties();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -72,6 +85,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SDK_VERSION_FIELD_NUMBER = 1;
   private com.google.dataflow.v1beta3.SdkVersion sdkVersion_;
+
   /**
    *
    *
@@ -87,6 +101,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSdkVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +119,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         ? com.google.dataflow.v1beta3.SdkVersion.getDefaultInstance()
         : sdkVersion_;
   }
+
   /**
    *
    *
@@ -124,6 +140,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.SpannerIODetails> spannerDetails_;
+
   /**
    *
    *
@@ -137,6 +154,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.dataflow.v1beta3.SpannerIODetails> getSpannerDetailsList() {
     return spannerDetails_;
   }
+
   /**
    *
    *
@@ -151,6 +169,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       getSpannerDetailsOrBuilderList() {
     return spannerDetails_;
   }
+
   /**
    *
    *
@@ -164,6 +183,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getSpannerDetailsCount() {
     return spannerDetails_.size();
   }
+
   /**
    *
    *
@@ -177,6 +197,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.SpannerIODetails getSpannerDetails(int index) {
     return spannerDetails_.get(index);
   }
+
   /**
    *
    *
@@ -196,6 +217,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.BigQueryIODetails> bigqueryDetails_;
+
   /**
    *
    *
@@ -209,6 +231,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.dataflow.v1beta3.BigQueryIODetails> getBigqueryDetailsList() {
     return bigqueryDetails_;
   }
+
   /**
    *
    *
@@ -223,6 +246,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       getBigqueryDetailsOrBuilderList() {
     return bigqueryDetails_;
   }
+
   /**
    *
    *
@@ -236,6 +260,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getBigqueryDetailsCount() {
     return bigqueryDetails_.size();
   }
+
   /**
    *
    *
@@ -249,6 +274,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.BigQueryIODetails getBigqueryDetails(int index) {
     return bigqueryDetails_.get(index);
   }
+
   /**
    *
    *
@@ -268,6 +294,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.BigTableIODetails> bigTableDetails_;
+
   /**
    *
    *
@@ -281,6 +308,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.dataflow.v1beta3.BigTableIODetails> getBigTableDetailsList() {
     return bigTableDetails_;
   }
+
   /**
    *
    *
@@ -295,6 +323,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       getBigTableDetailsOrBuilderList() {
     return bigTableDetails_;
   }
+
   /**
    *
    *
@@ -308,6 +337,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getBigTableDetailsCount() {
     return bigTableDetails_.size();
   }
+
   /**
    *
    *
@@ -321,6 +351,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.BigTableIODetails getBigTableDetails(int index) {
     return bigTableDetails_.get(index);
   }
+
   /**
    *
    *
@@ -340,6 +371,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.PubSubIODetails> pubsubDetails_;
+
   /**
    *
    *
@@ -353,6 +385,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.dataflow.v1beta3.PubSubIODetails> getPubsubDetailsList() {
     return pubsubDetails_;
   }
+
   /**
    *
    *
@@ -367,6 +400,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       getPubsubDetailsOrBuilderList() {
     return pubsubDetails_;
   }
+
   /**
    *
    *
@@ -380,6 +414,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getPubsubDetailsCount() {
     return pubsubDetails_.size();
   }
+
   /**
    *
    *
@@ -393,6 +428,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.PubSubIODetails getPubsubDetails(int index) {
     return pubsubDetails_.get(index);
   }
+
   /**
    *
    *
@@ -411,6 +447,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.FileIODetails> fileDetails_;
+
   /**
    *
    *
@@ -424,6 +461,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.dataflow.v1beta3.FileIODetails> getFileDetailsList() {
     return fileDetails_;
   }
+
   /**
    *
    *
@@ -438,6 +476,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       getFileDetailsOrBuilderList() {
     return fileDetails_;
   }
+
   /**
    *
    *
@@ -451,6 +490,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getFileDetailsCount() {
     return fileDetails_.size();
   }
+
   /**
    *
    *
@@ -464,6 +504,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.FileIODetails getFileDetails(int index) {
     return fileDetails_.get(index);
   }
+
   /**
    *
    *
@@ -482,6 +523,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.DatastoreIODetails> datastoreDetails_;
+
   /**
    *
    *
@@ -495,6 +537,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.dataflow.v1beta3.DatastoreIODetails> getDatastoreDetailsList() {
     return datastoreDetails_;
   }
+
   /**
    *
    *
@@ -509,6 +552,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       getDatastoreDetailsOrBuilderList() {
     return datastoreDetails_;
   }
+
   /**
    *
    *
@@ -522,6 +566,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getDatastoreDetailsCount() {
     return datastoreDetails_.size();
   }
+
   /**
    *
    *
@@ -535,6 +580,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.DatastoreIODetails getDatastoreDetails(int index) {
     return datastoreDetails_.get(index);
   }
+
   /**
    *
    *
@@ -548,6 +594,117 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.DatastoreIODetailsOrBuilder getDatastoreDetailsOrBuilder(
       int index) {
     return datastoreDetails_.get(index);
+  }
+
+  public static final int USER_DISPLAY_PROPERTIES_FIELD_NUMBER = 8;
+
+  private static final class UserDisplayPropertiesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.dataflow.v1beta3.JobsProto
+                .internal_static_google_dataflow_v1beta3_JobMetadata_UserDisplayPropertiesEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> userDisplayProperties_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetUserDisplayProperties() {
+    if (userDisplayProperties_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          UserDisplayPropertiesDefaultEntryHolder.defaultEntry);
+    }
+    return userDisplayProperties_;
+  }
+
+  public int getUserDisplayPropertiesCount() {
+    return internalGetUserDisplayProperties().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * List of display properties to help UI filter jobs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_display_properties = 8;</code>
+   */
+  @java.lang.Override
+  public boolean containsUserDisplayProperties(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetUserDisplayProperties().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getUserDisplayPropertiesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getUserDisplayProperties() {
+    return getUserDisplayPropertiesMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * List of display properties to help UI filter jobs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_display_properties = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getUserDisplayPropertiesMap() {
+    return internalGetUserDisplayProperties().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * List of display properties to help UI filter jobs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_display_properties = 8;</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getUserDisplayPropertiesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetUserDisplayProperties().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * List of display properties to help UI filter jobs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_display_properties = 8;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getUserDisplayPropertiesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetUserDisplayProperties().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -585,6 +742,11 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < datastoreDetails_.size(); i++) {
       output.writeMessage(7, datastoreDetails_.get(i));
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetUserDisplayProperties(),
+        UserDisplayPropertiesDefaultEntryHolder.defaultEntry,
+        8);
     getUnknownFields().writeTo(output);
   }
 
@@ -615,6 +777,16 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < datastoreDetails_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, datastoreDetails_.get(i));
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetUserDisplayProperties().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userDisplayProperties__ =
+          UserDisplayPropertiesDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, userDisplayProperties__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -640,6 +812,8 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     if (!getPubsubDetailsList().equals(other.getPubsubDetailsList())) return false;
     if (!getFileDetailsList().equals(other.getFileDetailsList())) return false;
     if (!getDatastoreDetailsList().equals(other.getDatastoreDetailsList())) return false;
+    if (!internalGetUserDisplayProperties().equals(other.internalGetUserDisplayProperties()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -678,6 +852,10 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     if (getDatastoreDetailsCount() > 0) {
       hash = (37 * hash) + DATASTORE_DETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getDatastoreDetailsList().hashCode();
+    }
+    if (!internalGetUserDisplayProperties().getMap().isEmpty()) {
+      hash = (37 * hash) + USER_DISPLAY_PROPERTIES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetUserDisplayProperties().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -779,6 +957,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -796,6 +975,28 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.dataflow.v1beta3.JobsProto
           .internal_static_google_dataflow_v1beta3_JobMetadata_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 8:
+          return internalGetUserDisplayProperties();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 8:
+          return internalGetMutableUserDisplayProperties();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
     }
 
     @java.lang.Override
@@ -881,6 +1082,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         datastoreDetailsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000040);
+      internalGetMutableUserDisplayProperties().clear();
       return this;
     }
 
@@ -979,6 +1181,10 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.sdkVersion_ = sdkVersionBuilder_ == null ? sdkVersion_ : sdkVersionBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.userDisplayProperties_ = internalGetUserDisplayProperties();
+        result.userDisplayProperties_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1193,6 +1399,8 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      internalGetMutableUserDisplayProperties().mergeFrom(other.internalGetUserDisplayProperties());
+      bitField0_ |= 0x00000080;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1303,6 +1511,19 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 58
+            case 66:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    userDisplayProperties__ =
+                        input.readMessage(
+                            UserDisplayPropertiesDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableUserDisplayProperties()
+                    .getMutableMap()
+                    .put(userDisplayProperties__.getKey(), userDisplayProperties__.getValue());
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1328,6 +1549,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
             com.google.dataflow.v1beta3.SdkVersion.Builder,
             com.google.dataflow.v1beta3.SdkVersionOrBuilder>
         sdkVersionBuilder_;
+
     /**
      *
      *
@@ -1342,6 +1564,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSdkVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1362,6 +1585,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return sdkVersionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1384,6 +1608,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1403,6 +1628,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1430,6 +1656,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1449,6 +1676,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1463,6 +1691,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSdkVersionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1481,6 +1710,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
             : sdkVersion_;
       }
     }
+
     /**
      *
      *
@@ -1540,6 +1770,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return spannerDetailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1556,6 +1787,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return spannerDetailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1572,6 +1804,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return spannerDetailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1595,6 +1828,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1615,6 +1849,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1637,6 +1872,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1660,6 +1896,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1680,6 +1917,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1700,6 +1938,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1720,6 +1959,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1739,6 +1979,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1758,6 +1999,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1771,6 +2013,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getSpannerDetailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1788,6 +2031,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return spannerDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1805,6 +2049,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(spannerDetails_);
       }
     }
+
     /**
      *
      *
@@ -1818,6 +2063,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getSpannerDetailsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.SpannerIODetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1832,6 +2078,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getSpannerDetailsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.SpannerIODetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1900,6 +2147,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return bigqueryDetailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1916,6 +2164,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return bigqueryDetailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1932,6 +2181,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return bigqueryDetailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1955,6 +2205,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1975,6 +2226,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1997,6 +2249,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2020,6 +2273,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2040,6 +2294,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2060,6 +2315,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2080,6 +2336,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2099,6 +2356,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2118,6 +2376,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2131,6 +2390,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getBigqueryDetailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2148,6 +2408,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return bigqueryDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2165,6 +2426,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(bigqueryDetails_);
       }
     }
+
     /**
      *
      *
@@ -2178,6 +2440,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getBigqueryDetailsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.BigQueryIODetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2192,6 +2455,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getBigqueryDetailsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.BigQueryIODetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2260,6 +2524,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return bigTableDetailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2276,6 +2541,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return bigTableDetailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2292,6 +2558,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return bigTableDetailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2315,6 +2582,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2335,6 +2603,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2357,6 +2626,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2380,6 +2650,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2400,6 +2671,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2420,6 +2692,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2440,6 +2713,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2459,6 +2733,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2478,6 +2753,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2491,6 +2767,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getBigTableDetailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2508,6 +2785,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return bigTableDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2525,6 +2803,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(bigTableDetails_);
       }
     }
+
     /**
      *
      *
@@ -2538,6 +2817,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getBigTableDetailsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.BigTableIODetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2552,6 +2832,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getBigTableDetailsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.BigTableIODetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2619,6 +2900,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return pubsubDetailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2635,6 +2917,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return pubsubDetailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2651,6 +2934,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return pubsubDetailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2673,6 +2957,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2693,6 +2978,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2715,6 +3001,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2737,6 +3024,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2757,6 +3045,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2777,6 +3066,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2797,6 +3087,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2816,6 +3107,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2835,6 +3127,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2847,6 +3140,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.PubSubIODetails.Builder getPubsubDetailsBuilder(int index) {
       return getPubsubDetailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2864,6 +3158,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return pubsubDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2881,6 +3176,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(pubsubDetails_);
       }
     }
+
     /**
      *
      *
@@ -2894,6 +3190,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getPubsubDetailsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.PubSubIODetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2907,6 +3204,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getPubsubDetailsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.PubSubIODetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2974,6 +3272,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return fileDetailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2990,6 +3289,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return fileDetailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3006,6 +3306,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return fileDetailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3028,6 +3329,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3048,6 +3350,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3070,6 +3373,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3092,6 +3396,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3112,6 +3417,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3132,6 +3438,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3152,6 +3459,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3171,6 +3479,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3190,6 +3499,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3202,6 +3512,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.FileIODetails.Builder getFileDetailsBuilder(int index) {
       return getFileDetailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3218,6 +3529,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return fileDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3235,6 +3547,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(fileDetails_);
       }
     }
+
     /**
      *
      *
@@ -3248,6 +3561,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getFileDetailsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.FileIODetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3261,6 +3575,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getFileDetailsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.FileIODetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3327,6 +3642,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return datastoreDetailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3343,6 +3659,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return datastoreDetailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3359,6 +3676,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return datastoreDetailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3382,6 +3700,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3402,6 +3721,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3424,6 +3744,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3447,6 +3768,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3467,6 +3789,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3487,6 +3810,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3507,6 +3831,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3526,6 +3851,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3545,6 +3871,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3558,6 +3885,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getDatastoreDetailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3575,6 +3903,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return datastoreDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3592,6 +3921,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(datastoreDetails_);
       }
     }
+
     /**
      *
      *
@@ -3605,6 +3935,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getDatastoreDetailsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.DatastoreIODetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3619,6 +3950,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getDatastoreDetailsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.DatastoreIODetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3651,6 +3983,185 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         datastoreDetails_ = null;
       }
       return datastoreDetailsBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> userDisplayProperties_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetUserDisplayProperties() {
+      if (userDisplayProperties_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            UserDisplayPropertiesDefaultEntryHolder.defaultEntry);
+      }
+      return userDisplayProperties_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableUserDisplayProperties() {
+      if (userDisplayProperties_ == null) {
+        userDisplayProperties_ =
+            com.google.protobuf.MapField.newMapField(
+                UserDisplayPropertiesDefaultEntryHolder.defaultEntry);
+      }
+      if (!userDisplayProperties_.isMutable()) {
+        userDisplayProperties_ = userDisplayProperties_.copy();
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return userDisplayProperties_;
+    }
+
+    public int getUserDisplayPropertiesCount() {
+      return internalGetUserDisplayProperties().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of display properties to help UI filter jobs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_display_properties = 8;</code>
+     */
+    @java.lang.Override
+    public boolean containsUserDisplayProperties(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetUserDisplayProperties().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getUserDisplayPropertiesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getUserDisplayProperties() {
+      return getUserDisplayPropertiesMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of display properties to help UI filter jobs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_display_properties = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getUserDisplayPropertiesMap() {
+      return internalGetUserDisplayProperties().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of display properties to help UI filter jobs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_display_properties = 8;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getUserDisplayPropertiesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetUserDisplayProperties().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of display properties to help UI filter jobs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_display_properties = 8;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getUserDisplayPropertiesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetUserDisplayProperties().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearUserDisplayProperties() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      internalGetMutableUserDisplayProperties().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of display properties to help UI filter jobs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_display_properties = 8;</code>
+     */
+    public Builder removeUserDisplayProperties(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableUserDisplayProperties().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableUserDisplayProperties() {
+      bitField0_ |= 0x00000080;
+      return internalGetMutableUserDisplayProperties().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of display properties to help UI filter jobs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_display_properties = 8;</code>
+     */
+    public Builder putUserDisplayProperties(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableUserDisplayProperties().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000080;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of display properties to help UI filter jobs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_display_properties = 8;</code>
+     */
+    public Builder putAllUserDisplayProperties(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableUserDisplayProperties().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000080;
+      return this;
     }
 
     @java.lang.Override

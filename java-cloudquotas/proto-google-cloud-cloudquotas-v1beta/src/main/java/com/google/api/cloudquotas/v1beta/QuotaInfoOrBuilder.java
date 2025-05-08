@@ -39,6 +39,7 @@ public interface QuotaInfoOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface QuotaInfoOrBuilder
    * @return The quotaId.
    */
   java.lang.String getQuotaId();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface QuotaInfoOrBuilder
    * @return The metric.
    */
   java.lang.String getMetric();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface QuotaInfoOrBuilder
    * @return The service.
    */
   java.lang.String getService();
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public interface QuotaInfoOrBuilder
    * @return The refreshInterval.
    */
   java.lang.String getRefreshInterval();
+
   /**
    *
    *
@@ -195,6 +200,7 @@ public interface QuotaInfoOrBuilder
    * @return The enum numeric value on the wire for containerType.
    */
   int getContainerTypeValue();
+
   /**
    *
    *
@@ -220,6 +226,7 @@ public interface QuotaInfoOrBuilder
    * @return A list containing the dimensions.
    */
   java.util.List<java.lang.String> getDimensionsList();
+
   /**
    *
    *
@@ -232,6 +239,7 @@ public interface QuotaInfoOrBuilder
    * @return The count of dimensions.
    */
   int getDimensionsCount();
+
   /**
    *
    *
@@ -245,6 +253,7 @@ public interface QuotaInfoOrBuilder
    * @return The dimensions at the given index.
    */
   java.lang.String getDimensions(int index);
+
   /**
    *
    *
@@ -271,6 +280,7 @@ public interface QuotaInfoOrBuilder
    * @return The metricDisplayName.
    */
   java.lang.String getMetricDisplayName();
+
   /**
    *
    *
@@ -296,6 +306,7 @@ public interface QuotaInfoOrBuilder
    * @return The quotaDisplayName.
    */
   java.lang.String getQuotaDisplayName();
+
   /**
    *
    *
@@ -321,6 +332,7 @@ public interface QuotaInfoOrBuilder
    * @return The metricUnit.
    */
   java.lang.String getMetricUnit();
+
   /**
    *
    *
@@ -347,6 +359,7 @@ public interface QuotaInfoOrBuilder
    * @return Whether the quotaIncreaseEligibility field is set.
    */
   boolean hasQuotaIncreaseEligibility();
+
   /**
    *
    *
@@ -360,6 +373,7 @@ public interface QuotaInfoOrBuilder
    * @return The quotaIncreaseEligibility.
    */
   com.google.api.cloudquotas.v1beta.QuotaIncreaseEligibility getQuotaIncreaseEligibility();
+
   /**
    *
    *
@@ -397,6 +411,7 @@ public interface QuotaInfoOrBuilder
    * <code>repeated .google.api.cloudquotas.v1beta.DimensionsInfo dimensions_infos = 14;</code>
    */
   java.util.List<com.google.api.cloudquotas.v1beta.DimensionsInfo> getDimensionsInfosList();
+
   /**
    *
    *
@@ -408,6 +423,7 @@ public interface QuotaInfoOrBuilder
    * <code>repeated .google.api.cloudquotas.v1beta.DimensionsInfo dimensions_infos = 14;</code>
    */
   com.google.api.cloudquotas.v1beta.DimensionsInfo getDimensionsInfos(int index);
+
   /**
    *
    *
@@ -419,6 +435,7 @@ public interface QuotaInfoOrBuilder
    * <code>repeated .google.api.cloudquotas.v1beta.DimensionsInfo dimensions_infos = 14;</code>
    */
   int getDimensionsInfosCount();
+
   /**
    *
    *
@@ -431,6 +448,7 @@ public interface QuotaInfoOrBuilder
    */
   java.util.List<? extends com.google.api.cloudquotas.v1beta.DimensionsInfoOrBuilder>
       getDimensionsInfosOrBuilderList();
+
   /**
    *
    *
@@ -471,6 +489,7 @@ public interface QuotaInfoOrBuilder
    * @return The serviceRequestQuotaUri.
    */
   java.lang.String getServiceRequestQuotaUri();
+
   /**
    *
    *

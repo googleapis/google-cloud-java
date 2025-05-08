@@ -347,7 +347,8 @@ public class ProtectedResourcesSummaryName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               protectedResourcesSummaryName.pathTemplate, PROJECT_LOCATION_KEY_RING_CRYPTO_KEY),
-          "toBuilder is only supported when ProtectedResourcesSummaryName has the pattern of projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/protectedResourcesSummary");
+          "toBuilder is only supported when ProtectedResourcesSummaryName has the pattern of"
+              + " projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/protectedResourcesSummary");
       this.project = protectedResourcesSummaryName.project;
       this.location = protectedResourcesSummaryName.location;
       this.keyRing = protectedResourcesSummaryName.keyRing;

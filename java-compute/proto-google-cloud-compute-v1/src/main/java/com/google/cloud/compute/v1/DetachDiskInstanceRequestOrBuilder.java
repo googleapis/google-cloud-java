@@ -36,6 +36,7 @@ public interface DetachDiskInstanceRequestOrBuilder
    * @return The deviceName.
    */
   java.lang.String getDeviceName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DetachDiskInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface DetachDiskInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface DetachDiskInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface DetachDiskInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface DetachDiskInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

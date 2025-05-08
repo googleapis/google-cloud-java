@@ -45,6 +45,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The assetType.
    */
   java.lang.String getAssetType();
+
   /**
    *
    *
@@ -120,6 +122,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -161,6 +164,7 @@ public interface ResourceSearchResultOrBuilder
    * @return A list containing the folders.
    */
   java.util.List<java.lang.String> getFoldersList();
+
   /**
    *
    *
@@ -181,6 +185,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The count of folders.
    */
   int getFoldersCount();
+
   /**
    *
    *
@@ -202,6 +207,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The folders at the given index.
    */
   java.lang.String getFolders(int index);
+
   /**
    *
    *
@@ -244,6 +250,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The organization.
    */
   java.lang.String getOrganization();
+
   /**
    *
    *
@@ -283,6 +290,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -321,6 +329,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -360,6 +369,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -402,6 +412,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -424,9 +435,11 @@ public interface ResourceSearchResultOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -449,6 +462,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -475,6 +489,7 @@ public interface ResourceSearchResultOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -520,6 +535,7 @@ public interface ResourceSearchResultOrBuilder
    * @return A list containing the networkTags.
    */
   java.util.List<java.lang.String> getNetworkTagsList();
+
   /**
    *
    *
@@ -542,6 +558,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The count of networkTags.
    */
   int getNetworkTagsCount();
+
   /**
    *
    *
@@ -565,6 +582,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The networkTags at the given index.
    */
   java.lang.String getNetworkTags(int index);
+
   /**
    *
    *
@@ -615,11 +633,12 @@ public interface ResourceSearchResultOrBuilder
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=470
+   *     google/cloud/asset/v1/assets.proto;l=482
    * @return The kmsKey.
    */
   @java.lang.Deprecated
   java.lang.String getKmsKey();
+
   /**
    *
    *
@@ -646,7 +665,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=470
+   *     google/cloud/asset/v1/assets.proto;l=482
    * @return The bytes for kmsKey.
    */
   @java.lang.Deprecated
@@ -674,6 +693,7 @@ public interface ResourceSearchResultOrBuilder
    * @return A list containing the kmsKeys.
    */
   java.util.List<java.lang.String> getKmsKeysList();
+
   /**
    *
    *
@@ -696,6 +716,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The count of kmsKeys.
    */
   int getKmsKeysCount();
+
   /**
    *
    *
@@ -719,6 +740,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The kmsKeys at the given index.
    */
   java.lang.String getKmsKeys(int index);
+
   /**
    *
    *
@@ -765,6 +787,7 @@ public interface ResourceSearchResultOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -787,6 +810,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -831,6 +855,7 @@ public interface ResourceSearchResultOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -854,6 +879,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -907,6 +933,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The state.
    */
   java.lang.String getState();
+
   /**
    *
    *
@@ -969,6 +996,7 @@ public interface ResourceSearchResultOrBuilder
    * @return Whether the additionalAttributes field is set.
    */
   boolean hasAdditionalAttributes();
+
   /**
    *
    *
@@ -999,6 +1027,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The additionalAttributes.
    */
   com.google.protobuf.Struct getAdditionalAttributes();
+
   /**
    *
    *
@@ -1046,6 +1075,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The parentFullResourceName.
    */
   java.lang.String getParentFullResourceName();
+
   /**
    *
    *
@@ -1081,6 +1111,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
    */
   java.util.List<com.google.cloud.asset.v1.VersionedResource> getVersionedResourcesList();
+
   /**
    *
    *
@@ -1097,6 +1128,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
    */
   com.google.cloud.asset.v1.VersionedResource getVersionedResources(int index);
+
   /**
    *
    *
@@ -1113,6 +1145,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.VersionedResource versioned_resources = 16;</code>
    */
   int getVersionedResourcesCount();
+
   /**
    *
    *
@@ -1130,6 +1163,7 @@ public interface ResourceSearchResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.asset.v1.VersionedResourceOrBuilder>
       getVersionedResourcesOrBuilderList();
+
   /**
    *
    *
@@ -1163,6 +1197,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
    */
   java.util.List<com.google.cloud.asset.v1.AttachedResource> getAttachedResourcesList();
+
   /**
    *
    *
@@ -1179,6 +1214,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
    */
   com.google.cloud.asset.v1.AttachedResource getAttachedResources(int index);
+
   /**
    *
    *
@@ -1195,6 +1231,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.AttachedResource attached_resources = 20;</code>
    */
   int getAttachedResourcesCount();
+
   /**
    *
    *
@@ -1212,6 +1249,7 @@ public interface ResourceSearchResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.asset.v1.AttachedResourceOrBuilder>
       getAttachedResourcesOrBuilderList();
+
   /**
    *
    *
@@ -1244,6 +1282,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
    */
   int getRelationshipsCount();
+
   /**
    *
    *
@@ -1259,9 +1298,11 @@ public interface ResourceSearchResultOrBuilder
    * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
    */
   boolean containsRelationships(java.lang.String key);
+
   /** Use {@link #getRelationshipsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources> getRelationships();
+
   /**
    *
    *
@@ -1277,6 +1318,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources> getRelationshipsMap();
+
   /**
    *
    *
@@ -1296,6 +1338,7 @@ public interface ResourceSearchResultOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.asset.v1.RelatedResources defaultValue);
+
   /**
    *
    *
@@ -1334,11 +1377,12 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=603
+   *     google/cloud/asset/v1/assets.proto;l=615
    * @return A list containing the tagKeys.
    */
   @java.lang.Deprecated
   java.util.List<java.lang.String> getTagKeysList();
+
   /**
    *
    *
@@ -1361,11 +1405,12 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=603
+   *     google/cloud/asset/v1/assets.proto;l=615
    * @return The count of tagKeys.
    */
   @java.lang.Deprecated
   int getTagKeysCount();
+
   /**
    *
    *
@@ -1388,12 +1433,13 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=603
+   *     google/cloud/asset/v1/assets.proto;l=615
    * @param index The index of the element to return.
    * @return The tagKeys at the given index.
    */
   @java.lang.Deprecated
   java.lang.String getTagKeys(int index);
+
   /**
    *
    *
@@ -1416,7 +1462,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=603
+   *     google/cloud/asset/v1/assets.proto;l=615
    * @param index The index of the value to return.
    * @return The bytes of the tagKeys at the given index.
    */
@@ -1447,11 +1493,12 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=620
+   *     google/cloud/asset/v1/assets.proto;l=632
    * @return A list containing the tagValues.
    */
   @java.lang.Deprecated
   java.util.List<java.lang.String> getTagValuesList();
+
   /**
    *
    *
@@ -1476,11 +1523,12 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=620
+   *     google/cloud/asset/v1/assets.proto;l=632
    * @return The count of tagValues.
    */
   @java.lang.Deprecated
   int getTagValuesCount();
+
   /**
    *
    *
@@ -1505,12 +1553,13 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=620
+   *     google/cloud/asset/v1/assets.proto;l=632
    * @param index The index of the element to return.
    * @return The tagValues at the given index.
    */
   @java.lang.Deprecated
   java.lang.String getTagValues(int index);
+
   /**
    *
    *
@@ -1535,7 +1584,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=620
+   *     google/cloud/asset/v1/assets.proto;l=632
    * @param index The index of the value to return.
    * @return The bytes of the tagValues at the given index.
    */
@@ -1562,11 +1611,12 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=633
+   *     google/cloud/asset/v1/assets.proto;l=645
    * @return A list containing the tagValueIds.
    */
   @java.lang.Deprecated
   java.util.List<java.lang.String> getTagValueIdsList();
+
   /**
    *
    *
@@ -1587,11 +1637,12 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=633
+   *     google/cloud/asset/v1/assets.proto;l=645
    * @return The count of tagValueIds.
    */
   @java.lang.Deprecated
   int getTagValueIdsCount();
+
   /**
    *
    *
@@ -1612,12 +1663,13 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=633
+   *     google/cloud/asset/v1/assets.proto;l=645
    * @param index The index of the element to return.
    * @return The tagValueIds at the given index.
    */
   @java.lang.Deprecated
   java.lang.String getTagValueIds(int index);
+
   /**
    *
    *
@@ -1638,7 +1690,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=633
+   *     google/cloud/asset/v1/assets.proto;l=645
    * @param index The index of the value to return.
    * @return The bytes of the tagValueIds at the given index.
    */
@@ -1671,6 +1723,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
    */
   java.util.List<com.google.cloud.asset.v1.Tag> getTagsList();
+
   /**
    *
    *
@@ -1697,6 +1750,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
    */
   com.google.cloud.asset.v1.Tag getTags(int index);
+
   /**
    *
    *
@@ -1723,6 +1777,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
    */
   int getTagsCount();
+
   /**
    *
    *
@@ -1749,6 +1804,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
    */
   java.util.List<? extends com.google.cloud.asset.v1.TagOrBuilder> getTagsOrBuilderList();
+
   /**
    *
    *
@@ -1802,6 +1858,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
    */
   java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> getEffectiveTagsList();
+
   /**
    *
    *
@@ -1828,6 +1885,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
    */
   com.google.cloud.asset.v1.EffectiveTagDetails getEffectiveTags(int index);
+
   /**
    *
    *
@@ -1854,6 +1912,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
    */
   int getEffectiveTagsCount();
+
   /**
    *
    *
@@ -1881,6 +1940,7 @@ public interface ResourceSearchResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder>
       getEffectiveTagsOrBuilderList();
+
   /**
    *
    *
@@ -1912,6 +1972,177 @@ public interface ResourceSearchResultOrBuilder
    *
    *
    * <pre>
+   * Enrichments of the asset. Currently supported enrichment types with
+   * SearchAllResources API:
+   *
+   * * RESOURCE_OWNERS
+   *
+   * The corresponding read masks in order to get the enrichment:
+   *
+   * * enrichments.resource_owners
+   *
+   * The corresponding required permissions:
+   *
+   * * cloudasset.assets.searchEnrichmentResourceOwners
+   *
+   * Example query to get resource owner enrichment:
+   * ```
+   *   scope: "projects/my-project"
+   *   query: "name: my-project"
+   *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+   *   readMask: {
+   *      paths: "asset_type"
+   *      paths: "name"
+   *      paths: "enrichments.resource_owners"
+   *   }
+   * ```
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+   */
+  java.util.List<com.google.cloud.asset.v1.AssetEnrichment> getEnrichmentsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enrichments of the asset. Currently supported enrichment types with
+   * SearchAllResources API:
+   *
+   * * RESOURCE_OWNERS
+   *
+   * The corresponding read masks in order to get the enrichment:
+   *
+   * * enrichments.resource_owners
+   *
+   * The corresponding required permissions:
+   *
+   * * cloudasset.assets.searchEnrichmentResourceOwners
+   *
+   * Example query to get resource owner enrichment:
+   * ```
+   *   scope: "projects/my-project"
+   *   query: "name: my-project"
+   *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+   *   readMask: {
+   *      paths: "asset_type"
+   *      paths: "name"
+   *      paths: "enrichments.resource_owners"
+   *   }
+   * ```
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+   */
+  com.google.cloud.asset.v1.AssetEnrichment getEnrichments(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Enrichments of the asset. Currently supported enrichment types with
+   * SearchAllResources API:
+   *
+   * * RESOURCE_OWNERS
+   *
+   * The corresponding read masks in order to get the enrichment:
+   *
+   * * enrichments.resource_owners
+   *
+   * The corresponding required permissions:
+   *
+   * * cloudasset.assets.searchEnrichmentResourceOwners
+   *
+   * Example query to get resource owner enrichment:
+   * ```
+   *   scope: "projects/my-project"
+   *   query: "name: my-project"
+   *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+   *   readMask: {
+   *      paths: "asset_type"
+   *      paths: "name"
+   *      paths: "enrichments.resource_owners"
+   *   }
+   * ```
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+   */
+  int getEnrichmentsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enrichments of the asset. Currently supported enrichment types with
+   * SearchAllResources API:
+   *
+   * * RESOURCE_OWNERS
+   *
+   * The corresponding read masks in order to get the enrichment:
+   *
+   * * enrichments.resource_owners
+   *
+   * The corresponding required permissions:
+   *
+   * * cloudasset.assets.searchEnrichmentResourceOwners
+   *
+   * Example query to get resource owner enrichment:
+   * ```
+   *   scope: "projects/my-project"
+   *   query: "name: my-project"
+   *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+   *   readMask: {
+   *      paths: "asset_type"
+   *      paths: "name"
+   *      paths: "enrichments.resource_owners"
+   *   }
+   * ```
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+   */
+  java.util.List<? extends com.google.cloud.asset.v1.AssetEnrichmentOrBuilder>
+      getEnrichmentsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enrichments of the asset. Currently supported enrichment types with
+   * SearchAllResources API:
+   *
+   * * RESOURCE_OWNERS
+   *
+   * The corresponding read masks in order to get the enrichment:
+   *
+   * * enrichments.resource_owners
+   *
+   * The corresponding required permissions:
+   *
+   * * cloudasset.assets.searchEnrichmentResourceOwners
+   *
+   * Example query to get resource owner enrichment:
+   * ```
+   *   scope: "projects/my-project"
+   *   query: "name: my-project"
+   *   assetTypes: "cloudresourcemanager.googleapis.com/Project"
+   *   readMask: {
+   *      paths: "asset_type"
+   *      paths: "name"
+   *      paths: "enrichments.resource_owners"
+   *   }
+   * ```
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.AssetEnrichment enrichments = 31;</code>
+   */
+  com.google.cloud.asset.v1.AssetEnrichmentOrBuilder getEnrichmentsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * The type of this resource's immediate parent, if there is one.
    *
    * To search against the `parent_asset_type`:
@@ -1927,6 +2158,7 @@ public interface ResourceSearchResultOrBuilder
    * @return The parentAssetType.
    */
   java.lang.String getParentAssetType();
+
   /**
    *
    *
@@ -1965,6 +2197,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
    */
   int getSccSecurityMarksCount();
+
   /**
    *
    *
@@ -1983,9 +2216,11 @@ public interface ResourceSearchResultOrBuilder
    * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
    */
   boolean containsSccSecurityMarks(java.lang.String key);
+
   /** Use {@link #getSccSecurityMarksMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getSccSecurityMarks();
+
   /**
    *
    *
@@ -2004,6 +2239,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getSccSecurityMarksMap();
+
   /**
    *
    *
@@ -2026,6 +2262,7 @@ public interface ResourceSearchResultOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

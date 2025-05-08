@@ -38,6 +38,7 @@ public interface DataQualityDimensionResultOrBuilder
    * @return Whether the dimension field is set.
    */
   boolean hasDimension();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface DataQualityDimensionResultOrBuilder
    * @return The dimension.
    */
   com.google.cloud.dataplex.v1.DataQualityDimension getDimension();
+
   /**
    *
    *
@@ -69,10 +71,10 @@ public interface DataQualityDimensionResultOrBuilder
    *
    *
    * <pre>
-   * Whether the dimension passed or failed.
+   * Output only. Whether the dimension passed or failed.
    * </pre>
    *
-   * <code>bool passed = 3;</code>
+   * <code>bool passed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The passed.
    */
@@ -94,6 +96,7 @@ public interface DataQualityDimensionResultOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
+
   /**
    *
    *

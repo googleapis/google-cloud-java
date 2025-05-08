@@ -33,6 +33,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.MessageItem)
     MessageItemOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MessageItem.newBuilder() to construct.
   private MessageItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,6 +128,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
      * <code>MESSAGE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int MESSAGE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -137,6 +139,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
      * <code>INFO = 1;</code>
      */
     public static final int INFO_VALUE = 1;
+
     /**
      *
      *
@@ -147,6 +150,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
      * <code>WARNING = 2;</code>
      */
     public static final int WARNING_VALUE = 2;
+
     /**
      *
      *
@@ -245,6 +249,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MESSAGE_TYPE_FIELD_NUMBER = 1;
   private int messageType_ = 0;
+
   /**
    *
    *
@@ -260,6 +265,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
   public int getMessageTypeValue() {
     return messageType_;
   }
+
   /**
    *
    *
@@ -284,6 +290,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
+
   /**
    *
    *
@@ -307,6 +314,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -503,6 +511,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -699,6 +708,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int messageType_ = 0;
+
     /**
      *
      *
@@ -714,6 +724,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
     public int getMessageTypeValue() {
       return messageType_;
     }
+
     /**
      *
      *
@@ -732,6 +743,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +763,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.modelarmor.v1.MessageItem.MessageType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -772,6 +785,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +805,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object message_ = "";
+
     /**
      *
      *
@@ -813,6 +828,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -835,6 +851,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -856,6 +873,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +891,7 @@ public final class MessageItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

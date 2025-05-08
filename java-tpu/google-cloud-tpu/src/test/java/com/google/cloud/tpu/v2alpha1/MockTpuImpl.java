@@ -278,7 +278,8 @@ public class MockTpuImpl extends TpuImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateQueuedResource, expected %s or %s",
+                  "Unrecognized response type %s for method CreateQueuedResource, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -299,7 +300,8 @@ public class MockTpuImpl extends TpuImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteQueuedResource, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteQueuedResource, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -341,7 +343,8 @@ public class MockTpuImpl extends TpuImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method PerformMaintenanceQueuedResource, expected %s or %s",
+                  "Unrecognized response type %s for method PerformMaintenanceQueuedResource,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -363,7 +366,8 @@ public class MockTpuImpl extends TpuImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateServiceIdentity, expected %s or %s",
+                  "Unrecognized response type %s for method GenerateServiceIdentity, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateServiceIdentityResponse.class.getName(),
                   Exception.class.getName())));
@@ -385,7 +389,8 @@ public class MockTpuImpl extends TpuImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListAcceleratorTypes, expected %s or %s",
+                  "Unrecognized response type %s for method ListAcceleratorTypes, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListAcceleratorTypesResponse.class.getName(),
                   Exception.class.getName())));
@@ -513,7 +518,8 @@ public class MockTpuImpl extends TpuImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SimulateMaintenanceEvent, expected %s or %s",
+                  "Unrecognized response type %s for method SimulateMaintenanceEvent, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

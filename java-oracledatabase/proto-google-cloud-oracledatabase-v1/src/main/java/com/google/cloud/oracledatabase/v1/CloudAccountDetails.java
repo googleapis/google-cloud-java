@@ -33,6 +33,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.CloudAccountDetails)
     CloudAccountDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CloudAccountDetails.newBuilder() to construct.
   private CloudAccountDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cloudAccount_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cloudAccountHomeRegion_ = "";
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object linkExistingAccountUri_ = "";
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
   public boolean hasLinkExistingAccountUri() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -245,6 +253,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object accountCreationUri_ = "";
+
   /**
    *
    *
@@ -261,6 +270,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
   public boolean hasAccountCreationUri() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -285,6 +295,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -507,6 +518,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -740,6 +752,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object cloudAccount_ = "";
+
     /**
      *
      *
@@ -762,6 +775,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -784,6 +798,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -805,6 +820,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +838,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +863,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object cloudAccountHomeRegion_ = "";
+
     /**
      *
      *
@@ -869,6 +887,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -892,6 +911,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -914,6 +934,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +953,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +979,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object linkExistingAccountUri_ = "";
+
     /**
      *
      *
@@ -973,6 +996,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
     public boolean hasLinkExistingAccountUri() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -997,6 +1021,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1021,6 +1046,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1044,6 +1070,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1090,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1117,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object accountCreationUri_ = "";
+
     /**
      *
      *
@@ -1104,6 +1133,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
     public boolean hasAccountCreationUri() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1127,6 +1157,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1150,6 +1181,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1172,6 +1204,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1190,6 +1223,7 @@ public final class CloudAccountDetails extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

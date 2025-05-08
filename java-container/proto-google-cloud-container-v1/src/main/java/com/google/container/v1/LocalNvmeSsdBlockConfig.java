@@ -34,6 +34,7 @@ public final class LocalNvmeSsdBlockConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.container.v1.LocalNvmeSsdBlockConfig)
     LocalNvmeSsdBlockConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LocalNvmeSsdBlockConfig.newBuilder() to construct.
   private LocalNvmeSsdBlockConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class LocalNvmeSsdBlockConfig extends com.google.protobuf.Generated
 
   public static final int LOCAL_SSD_COUNT_FIELD_NUMBER = 1;
   private int localSsdCount_ = 0;
+
   /**
    *
    *
@@ -254,6 +256,7 @@ public final class LocalNvmeSsdBlockConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -437,6 +440,7 @@ public final class LocalNvmeSsdBlockConfig extends com.google.protobuf.Generated
     private int bitField0_;
 
     private int localSsdCount_;
+
     /**
      *
      *
@@ -467,6 +471,7 @@ public final class LocalNvmeSsdBlockConfig extends com.google.protobuf.Generated
     public int getLocalSsdCount() {
       return localSsdCount_;
     }
+
     /**
      *
      *
@@ -501,6 +506,7 @@ public final class LocalNvmeSsdBlockConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

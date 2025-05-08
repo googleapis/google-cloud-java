@@ -34,6 +34,7 @@ public interface StoragePoolsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.StoragePool storage_pools = 437258515;</code>
    */
   java.util.List<com.google.cloud.compute.v1.StoragePool> getStoragePoolsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface StoragePoolsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.StoragePool storage_pools = 437258515;</code>
    */
   com.google.cloud.compute.v1.StoragePool getStoragePools(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface StoragePoolsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.StoragePool storage_pools = 437258515;</code>
    */
   int getStoragePoolsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface StoragePoolsScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.StoragePoolOrBuilder>
       getStoragePoolsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface StoragePoolsScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface StoragePoolsScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class SummarizationVerbositySpec extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SummarizationVerbositySpec)
     SummarizationVerbositySpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SummarizationVerbositySpec.newBuilder() to construct.
   private SummarizationVerbositySpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class SummarizationVerbositySpec extends com.google.protobuf.Genera
 
   public static final int USE_REFERENCE_FIELD_NUMBER = 1;
   private boolean useReference_ = false;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class SummarizationVerbositySpec extends com.google.protobuf.Genera
 
   public static final int VERSION_FIELD_NUMBER = 2;
   private int version_ = 0;
+
   /**
    *
    *
@@ -267,6 +270,7 @@ public final class SummarizationVerbositySpec extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -465,6 +469,7 @@ public final class SummarizationVerbositySpec extends com.google.protobuf.Genera
     private int bitField0_;
 
     private boolean useReference_;
+
     /**
      *
      *
@@ -481,6 +486,7 @@ public final class SummarizationVerbositySpec extends com.google.protobuf.Genera
     public boolean getUseReference() {
       return useReference_;
     }
+
     /**
      *
      *
@@ -501,6 +507,7 @@ public final class SummarizationVerbositySpec extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -521,6 +528,7 @@ public final class SummarizationVerbositySpec extends com.google.protobuf.Genera
     }
 
     private int version_;
+
     /**
      *
      *
@@ -536,6 +544,7 @@ public final class SummarizationVerbositySpec extends com.google.protobuf.Genera
     public int getVersion() {
       return version_;
     }
+
     /**
      *
      *
@@ -555,6 +564,7 @@ public final class SummarizationVerbositySpec extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

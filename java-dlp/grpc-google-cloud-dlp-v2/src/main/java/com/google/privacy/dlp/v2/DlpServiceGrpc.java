@@ -2577,6 +2577,19 @@ public final class DlpServiceGrpc {
     return DlpServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DlpServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DlpServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DlpServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public DlpServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DlpServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DlpServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2653,6 +2666,8 @@ public final class DlpServiceGrpc {
      * When no InfoTypes or CustomInfoTypes are specified in this request, the
      * system will automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     * Only the first frame of each multiframe image is redacted. Metadata and
+     * other frames are omitted in the response.
      * </pre>
      */
     default void redactImage(
@@ -3622,6 +3637,8 @@ public final class DlpServiceGrpc {
      * When no InfoTypes or CustomInfoTypes are specified in this request, the
      * system will automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     * Only the first frame of each multiframe image is redacted. Metadata and
+     * other frames are omitted in the response.
      * </pre>
      */
     public void redactImage(
@@ -4632,6 +4649,880 @@ public final class DlpServiceGrpc {
    * https://cloud.google.com/sensitive-data-protection/docs/.
    * </pre>
    */
+  public static final class DlpServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DlpServiceBlockingV2Stub> {
+    private DlpServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DlpServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DlpServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finds potentially sensitive info in content.
+     * This method has limits on input size, processing time, and output size.
+     * When no InfoTypes or CustomInfoTypes are specified in this request, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
+     * For how to guides, see
+     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-images
+     * and
+     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text,
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.InspectContentResponse inspectContent(
+        com.google.privacy.dlp.v2.InspectContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getInspectContentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Redacts potentially sensitive info from an image.
+     * This method has limits on input size, processing time, and output size.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/redacting-sensitive-data-images
+     * to learn more.
+     * When no InfoTypes or CustomInfoTypes are specified in this request, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
+     * Only the first frame of each multiframe image is redacted. Metadata and
+     * other frames are omitted in the response.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.RedactImageResponse redactImage(
+        com.google.privacy.dlp.v2.RedactImageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRedactImageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * De-identifies potentially sensitive info from a ContentItem.
+     * This method has limits on input size and output size.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data
+     * to learn more.
+     * When no InfoTypes or CustomInfoTypes are specified in this request, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.DeidentifyContentResponse deidentifyContent(
+        com.google.privacy.dlp.v2.DeidentifyContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeidentifyContentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Re-identifies content that has been de-identified.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/pseudonymization#re-identification_in_free_text_code_example
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ReidentifyContentResponse reidentifyContent(
+        com.google.privacy.dlp.v2.ReidentifyContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReidentifyContentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of the sensitive information types that the DLP API
+     * supports. See
+     * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ListInfoTypesResponse listInfoTypes(
+        com.google.privacy.dlp.v2.ListInfoTypesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListInfoTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an InspectTemplate for reusing frequently used configuration
+     * for inspecting content, images, and storage.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-templates
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.InspectTemplate createInspectTemplate(
+        com.google.privacy.dlp.v2.CreateInspectTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateInspectTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the InspectTemplate.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-templates
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.InspectTemplate updateInspectTemplate(
+        com.google.privacy.dlp.v2.UpdateInspectTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateInspectTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an InspectTemplate.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-templates
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.InspectTemplate getInspectTemplate(
+        com.google.privacy.dlp.v2.GetInspectTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetInspectTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists InspectTemplates.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-templates
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ListInspectTemplatesResponse listInspectTemplates(
+        com.google.privacy.dlp.v2.ListInspectTemplatesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListInspectTemplatesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an InspectTemplate.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-templates
+     * to learn more.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteInspectTemplate(
+        com.google.privacy.dlp.v2.DeleteInspectTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteInspectTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DeidentifyTemplate for reusing frequently used configuration
+     * for de-identifying content, images, and storage.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.DeidentifyTemplate createDeidentifyTemplate(
+        com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDeidentifyTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the DeidentifyTemplate.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.DeidentifyTemplate updateDeidentifyTemplate(
+        com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDeidentifyTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a DeidentifyTemplate.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.DeidentifyTemplate getDeidentifyTemplate(
+        com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDeidentifyTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DeidentifyTemplates.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse listDeidentifyTemplates(
+        com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDeidentifyTemplatesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DeidentifyTemplate.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid
+     * to learn more.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDeidentifyTemplate(
+        com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDeidentifyTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a job trigger to run DLP actions such as scanning storage for
+     * sensitive information on a set schedule.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.JobTrigger createJobTrigger(
+        com.google.privacy.dlp.v2.CreateJobTriggerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateJobTriggerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a job trigger.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.JobTrigger updateJobTrigger(
+        com.google.privacy.dlp.v2.UpdateJobTriggerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateJobTriggerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Inspect hybrid content and store findings to a trigger. The inspection
+     * will be processed asynchronously. To review the findings monitor the
+     * jobs within the trigger.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.HybridInspectResponse hybridInspectJobTrigger(
+        com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getHybridInspectJobTriggerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a job trigger.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.JobTrigger getJobTrigger(
+        com.google.privacy.dlp.v2.GetJobTriggerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetJobTriggerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists job triggers.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ListJobTriggersResponse listJobTriggers(
+        com.google.privacy.dlp.v2.ListJobTriggersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListJobTriggersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a job trigger.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers
+     * to learn more.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteJobTrigger(
+        com.google.privacy.dlp.v2.DeleteJobTriggerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteJobTriggerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Activate a job trigger. Causes the immediate execute of a trigger
+     * instead of waiting on the trigger event to occur.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.DlpJob activateJobTrigger(
+        com.google.privacy.dlp.v2.ActivateJobTriggerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getActivateJobTriggerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a config for discovery to scan and profile storage.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.DiscoveryConfig createDiscoveryConfig(
+        com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDiscoveryConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a discovery configuration.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.DiscoveryConfig updateDiscoveryConfig(
+        com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDiscoveryConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a discovery configuration.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.DiscoveryConfig getDiscoveryConfig(
+        com.google.privacy.dlp.v2.GetDiscoveryConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDiscoveryConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists discovery configurations.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse listDiscoveryConfigs(
+        com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDiscoveryConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a discovery configuration.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDiscoveryConfig(
+        com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDiscoveryConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new job to inspect storage or calculate risk metrics.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage
+     * and
+     * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis
+     * to learn more.
+     * When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the
+     * system will automatically choose what detectors to run. By default this may
+     * be all types, but may change over time as detectors are updated.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.DlpJob createDlpJob(
+        com.google.privacy.dlp.v2.CreateDlpJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDlpJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DlpJobs that match the specified filter in the request.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage
+     * and
+     * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ListDlpJobsResponse listDlpJobs(
+        com.google.privacy.dlp.v2.ListDlpJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDlpJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the latest state of a long-running DlpJob.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage
+     * and
+     * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.DlpJob getDlpJob(
+        com.google.privacy.dlp.v2.GetDlpJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDlpJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a long-running DlpJob. This method indicates that the client is
+     * no longer interested in the DlpJob result. The job will be canceled if
+     * possible.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage
+     * and
+     * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis
+     * to learn more.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDlpJob(
+        com.google.privacy.dlp.v2.DeleteDlpJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDlpJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts asynchronous cancellation on a long-running DlpJob. The server
+     * makes a best effort to cancel the DlpJob, but success is not
+     * guaranteed.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage
+     * and
+     * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis
+     * to learn more.
+     * </pre>
+     */
+    public com.google.protobuf.Empty cancelDlpJob(
+        com.google.privacy.dlp.v2.CancelDlpJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelDlpJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a pre-built stored infoType to be used for inspection.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.StoredInfoType createStoredInfoType(
+        com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateStoredInfoTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the stored infoType by creating a new version. The existing version
+     * will continue to be used until the new version is ready.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.StoredInfoType updateStoredInfoType(
+        com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateStoredInfoTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a stored infoType.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.StoredInfoType getStoredInfoType(
+        com.google.privacy.dlp.v2.GetStoredInfoTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetStoredInfoTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists stored infoTypes.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes
+     * to learn more.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ListStoredInfoTypesResponse listStoredInfoTypes(
+        com.google.privacy.dlp.v2.ListStoredInfoTypesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListStoredInfoTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a stored infoType.
+     * See
+     * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes
+     * to learn more.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteStoredInfoType(
+        com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteStoredInfoTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists project data profiles for an organization.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ListProjectDataProfilesResponse listProjectDataProfiles(
+        com.google.privacy.dlp.v2.ListProjectDataProfilesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListProjectDataProfilesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists table data profiles for an organization.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ListTableDataProfilesResponse listTableDataProfiles(
+        com.google.privacy.dlp.v2.ListTableDataProfilesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTableDataProfilesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists column data profiles for an organization.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ListColumnDataProfilesResponse listColumnDataProfiles(
+        com.google.privacy.dlp.v2.ListColumnDataProfilesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListColumnDataProfilesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a project data profile.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ProjectDataProfile getProjectDataProfile(
+        com.google.privacy.dlp.v2.GetProjectDataProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProjectDataProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists file store data profiles for an organization.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse listFileStoreDataProfiles(
+        com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFileStoreDataProfilesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a file store data profile.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.FileStoreDataProfile getFileStoreDataProfile(
+        com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetFileStoreDataProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a FileStoreDataProfile. Will not prevent the profile from being
+     * regenerated if the resource is still included in a discovery configuration.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteFileStoreDataProfile(
+        com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteFileStoreDataProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a table data profile.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.TableDataProfile getTableDataProfile(
+        com.google.privacy.dlp.v2.GetTableDataProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTableDataProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a column data profile.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ColumnDataProfile getColumnDataProfile(
+        com.google.privacy.dlp.v2.GetColumnDataProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetColumnDataProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a TableDataProfile. Will not prevent the profile from being
+     * regenerated if the table is still included in a discovery configuration.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTableDataProfile(
+        com.google.privacy.dlp.v2.DeleteTableDataProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTableDataProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Inspect hybrid content and store findings to a job.
+     * To review the findings, inspect the job. Inspection will occur
+     * asynchronously.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.HybridInspectResponse hybridInspectDlpJob(
+        com.google.privacy.dlp.v2.HybridInspectDlpJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getHybridInspectDlpJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finish a running hybrid DlpJob. Triggers the finalization steps and running
+     * of any enabled actions that have not yet run.
+     * </pre>
+     */
+    public com.google.protobuf.Empty finishDlpJob(
+        com.google.privacy.dlp.v2.FinishDlpJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFinishDlpJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a Connection to an external data source.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.Connection createConnection(
+        com.google.privacy.dlp.v2.CreateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a Connection by name.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.Connection getConnection(
+        com.google.privacy.dlp.v2.GetConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Connections in a parent. Use SearchConnections to see all connections
+     * within an organization.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.ListConnectionsResponse listConnections(
+        com.google.privacy.dlp.v2.ListConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches for Connections in a parent.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.SearchConnectionsResponse searchConnections(
+        com.google.privacy.dlp.v2.SearchConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a Connection.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteConnection(
+        com.google.privacy.dlp.v2.DeleteConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a Connection.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.Connection updateConnection(
+        com.google.privacy.dlp.v2.UpdateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateConnectionMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DlpService.
+   *
+   * <pre>
+   * Sensitive Data Protection provides access to a powerful sensitive data
+   * inspection, classification, and de-identification platform that works
+   * on text, images, and Google Cloud storage repositories.
+   * To learn more about concepts and find how-to guides see
+   * https://cloud.google.com/sensitive-data-protection/docs/.
+   * </pre>
+   */
   public static final class DlpServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<DlpServiceBlockingStub> {
     private DlpServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -4677,6 +5568,8 @@ public final class DlpServiceGrpc {
      * When no InfoTypes or CustomInfoTypes are specified in this request, the
      * system will automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     * Only the first frame of each multiframe image is redacted. Metadata and
+     * other frames are omitted in the response.
      * </pre>
      */
     public com.google.privacy.dlp.v2.RedactImageResponse redactImage(
@@ -5549,6 +6442,8 @@ public final class DlpServiceGrpc {
      * When no InfoTypes or CustomInfoTypes are specified in this request, the
      * system will automatically choose what detectors to run. By default this may
      * be all types, but may change over time as detectors are updated.
+     * Only the first frame of each multiframe image is redacted. Metadata and
+     * other frames are omitted in the response.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

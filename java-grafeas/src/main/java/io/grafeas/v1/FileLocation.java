@@ -34,6 +34,7 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1.FileLocation)
     FileLocationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FileLocation.newBuilder() to construct.
   private FileLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -61,10 +62,12 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.FileLocation.class, io.grafeas.v1.FileLocation.Builder.class);
   }
 
+  private int bitField0_;
   public static final int FILE_PATH_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filePath_ = "";
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -114,6 +118,58 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int LAYER_DETAILS_FIELD_NUMBER = 2;
+  private io.grafeas.v1.LayerDetails layerDetails_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Each package found in a file should have its own layer metadata (that is,
+   * information from the origin layer of the package).
+   * </pre>
+   *
+   * <code>.grafeas.v1.LayerDetails layer_details = 2;</code>
+   *
+   * @return Whether the layerDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasLayerDetails() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Each package found in a file should have its own layer metadata (that is,
+   * information from the origin layer of the package).
+   * </pre>
+   *
+   * <code>.grafeas.v1.LayerDetails layer_details = 2;</code>
+   *
+   * @return The layerDetails.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.LayerDetails getLayerDetails() {
+    return layerDetails_ == null ? io.grafeas.v1.LayerDetails.getDefaultInstance() : layerDetails_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Each package found in a file should have its own layer metadata (that is,
+   * information from the origin layer of the package).
+   * </pre>
+   *
+   * <code>.grafeas.v1.LayerDetails layer_details = 2;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.LayerDetailsOrBuilder getLayerDetailsOrBuilder() {
+    return layerDetails_ == null ? io.grafeas.v1.LayerDetails.getDefaultInstance() : layerDetails_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -131,6 +187,9 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filePath_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, filePath_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(2, getLayerDetails());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -142,6 +201,9 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filePath_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, filePath_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getLayerDetails());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -159,6 +221,10 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
     io.grafeas.v1.FileLocation other = (io.grafeas.v1.FileLocation) obj;
 
     if (!getFilePath().equals(other.getFilePath())) return false;
+    if (hasLayerDetails() != other.hasLayerDetails()) return false;
+    if (hasLayerDetails()) {
+      if (!getLayerDetails().equals(other.getLayerDetails())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -172,6 +238,10 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + FILE_PATH_FIELD_NUMBER;
     hash = (53 * hash) + getFilePath().hashCode();
+    if (hasLayerDetails()) {
+      hash = (37 * hash) + LAYER_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getLayerDetails().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -271,6 +341,7 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -297,10 +368,19 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using io.grafeas.v1.FileLocation.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getLayerDetailsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -308,6 +388,11 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       filePath_ = "";
+      layerDetails_ = null;
+      if (layerDetailsBuilder_ != null) {
+        layerDetailsBuilder_.dispose();
+        layerDetailsBuilder_ = null;
+      }
       return this;
     }
 
@@ -345,6 +430,13 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.filePath_ = filePath_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.layerDetails_ =
+            layerDetailsBuilder_ == null ? layerDetails_ : layerDetailsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -397,6 +489,9 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasLayerDetails()) {
+        mergeLayerDetails(other.getLayerDetails());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -429,6 +524,12 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(getLayerDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -449,6 +550,7 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object filePath_ = "";
+
     /**
      *
      *
@@ -472,6 +574,7 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -495,6 +598,7 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -517,6 +621,7 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -535,6 +640,7 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -557,6 +663,209 @@ public final class FileLocation extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
+    }
+
+    private io.grafeas.v1.LayerDetails layerDetails_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.LayerDetails,
+            io.grafeas.v1.LayerDetails.Builder,
+            io.grafeas.v1.LayerDetailsOrBuilder>
+        layerDetailsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Each package found in a file should have its own layer metadata (that is,
+     * information from the origin layer of the package).
+     * </pre>
+     *
+     * <code>.grafeas.v1.LayerDetails layer_details = 2;</code>
+     *
+     * @return Whether the layerDetails field is set.
+     */
+    public boolean hasLayerDetails() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Each package found in a file should have its own layer metadata (that is,
+     * information from the origin layer of the package).
+     * </pre>
+     *
+     * <code>.grafeas.v1.LayerDetails layer_details = 2;</code>
+     *
+     * @return The layerDetails.
+     */
+    public io.grafeas.v1.LayerDetails getLayerDetails() {
+      if (layerDetailsBuilder_ == null) {
+        return layerDetails_ == null
+            ? io.grafeas.v1.LayerDetails.getDefaultInstance()
+            : layerDetails_;
+      } else {
+        return layerDetailsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Each package found in a file should have its own layer metadata (that is,
+     * information from the origin layer of the package).
+     * </pre>
+     *
+     * <code>.grafeas.v1.LayerDetails layer_details = 2;</code>
+     */
+    public Builder setLayerDetails(io.grafeas.v1.LayerDetails value) {
+      if (layerDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        layerDetails_ = value;
+      } else {
+        layerDetailsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Each package found in a file should have its own layer metadata (that is,
+     * information from the origin layer of the package).
+     * </pre>
+     *
+     * <code>.grafeas.v1.LayerDetails layer_details = 2;</code>
+     */
+    public Builder setLayerDetails(io.grafeas.v1.LayerDetails.Builder builderForValue) {
+      if (layerDetailsBuilder_ == null) {
+        layerDetails_ = builderForValue.build();
+      } else {
+        layerDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Each package found in a file should have its own layer metadata (that is,
+     * information from the origin layer of the package).
+     * </pre>
+     *
+     * <code>.grafeas.v1.LayerDetails layer_details = 2;</code>
+     */
+    public Builder mergeLayerDetails(io.grafeas.v1.LayerDetails value) {
+      if (layerDetailsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && layerDetails_ != null
+            && layerDetails_ != io.grafeas.v1.LayerDetails.getDefaultInstance()) {
+          getLayerDetailsBuilder().mergeFrom(value);
+        } else {
+          layerDetails_ = value;
+        }
+      } else {
+        layerDetailsBuilder_.mergeFrom(value);
+      }
+      if (layerDetails_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Each package found in a file should have its own layer metadata (that is,
+     * information from the origin layer of the package).
+     * </pre>
+     *
+     * <code>.grafeas.v1.LayerDetails layer_details = 2;</code>
+     */
+    public Builder clearLayerDetails() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      layerDetails_ = null;
+      if (layerDetailsBuilder_ != null) {
+        layerDetailsBuilder_.dispose();
+        layerDetailsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Each package found in a file should have its own layer metadata (that is,
+     * information from the origin layer of the package).
+     * </pre>
+     *
+     * <code>.grafeas.v1.LayerDetails layer_details = 2;</code>
+     */
+    public io.grafeas.v1.LayerDetails.Builder getLayerDetailsBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getLayerDetailsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Each package found in a file should have its own layer metadata (that is,
+     * information from the origin layer of the package).
+     * </pre>
+     *
+     * <code>.grafeas.v1.LayerDetails layer_details = 2;</code>
+     */
+    public io.grafeas.v1.LayerDetailsOrBuilder getLayerDetailsOrBuilder() {
+      if (layerDetailsBuilder_ != null) {
+        return layerDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        return layerDetails_ == null
+            ? io.grafeas.v1.LayerDetails.getDefaultInstance()
+            : layerDetails_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Each package found in a file should have its own layer metadata (that is,
+     * information from the origin layer of the package).
+     * </pre>
+     *
+     * <code>.grafeas.v1.LayerDetails layer_details = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.LayerDetails,
+            io.grafeas.v1.LayerDetails.Builder,
+            io.grafeas.v1.LayerDetailsOrBuilder>
+        getLayerDetailsFieldBuilder() {
+      if (layerDetailsBuilder_ == null) {
+        layerDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.LayerDetails,
+                io.grafeas.v1.LayerDetails.Builder,
+                io.grafeas.v1.LayerDetailsOrBuilder>(
+                getLayerDetails(), getParentForChildren(), isClean());
+        layerDetails_ = null;
+      }
+      return layerDetailsBuilder_;
     }
 
     @java.lang.Override

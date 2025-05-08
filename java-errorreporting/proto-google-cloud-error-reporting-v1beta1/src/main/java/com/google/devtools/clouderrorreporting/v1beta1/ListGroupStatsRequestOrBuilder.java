@@ -53,6 +53,7 @@ public interface ListGroupStatsRequestOrBuilder
    * @return The projectName.
    */
   java.lang.String getProjectName();
+
   /**
    *
    *
@@ -101,6 +102,7 @@ public interface ListGroupStatsRequestOrBuilder
    * @return A list containing the groupId.
    */
   java.util.List<java.lang.String> getGroupIdList();
+
   /**
    *
    *
@@ -119,6 +121,7 @@ public interface ListGroupStatsRequestOrBuilder
    * @return The count of groupId.
    */
   int getGroupIdCount();
+
   /**
    *
    *
@@ -138,6 +141,7 @@ public interface ListGroupStatsRequestOrBuilder
    * @return The groupId at the given index.
    */
   java.lang.String getGroupId(int index);
+
   /**
    *
    *
@@ -175,6 +179,7 @@ public interface ListGroupStatsRequestOrBuilder
    * @return Whether the serviceFilter field is set.
    */
   boolean hasServiceFilter();
+
   /**
    *
    *
@@ -192,6 +197,7 @@ public interface ListGroupStatsRequestOrBuilder
    * @return The serviceFilter.
    */
   com.google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter getServiceFilter();
+
   /**
    *
    *
@@ -237,6 +243,7 @@ public interface ListGroupStatsRequestOrBuilder
    * @return Whether the timeRange field is set.
    */
   boolean hasTimeRange();
+
   /**
    *
    *
@@ -265,6 +272,7 @@ public interface ListGroupStatsRequestOrBuilder
    * @return The timeRange.
    */
   com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange getTimeRange();
+
   /**
    *
    *
@@ -308,6 +316,7 @@ public interface ListGroupStatsRequestOrBuilder
    * @return Whether the timedCountDuration field is set.
    */
   boolean hasTimedCountDuration();
+
   /**
    *
    *
@@ -324,6 +333,7 @@ public interface ListGroupStatsRequestOrBuilder
    * @return The timedCountDuration.
    */
   com.google.protobuf.Duration getTimedCountDuration();
+
   /**
    *
    *
@@ -354,6 +364,7 @@ public interface ListGroupStatsRequestOrBuilder
    * @return The enum numeric value on the wire for alignment.
    */
   int getAlignmentValue();
+
   /**
    *
    *
@@ -384,6 +395,7 @@ public interface ListGroupStatsRequestOrBuilder
    * @return Whether the alignmentTime field is set.
    */
   boolean hasAlignmentTime();
+
   /**
    *
    *
@@ -398,6 +410,7 @@ public interface ListGroupStatsRequestOrBuilder
    * @return The alignmentTime.
    */
   com.google.protobuf.Timestamp getAlignmentTime();
+
   /**
    *
    *
@@ -426,6 +439,7 @@ public interface ListGroupStatsRequestOrBuilder
    * @return The enum numeric value on the wire for order.
    */
   int getOrderValue();
+
   /**
    *
    *
@@ -471,6 +485,7 @@ public interface ListGroupStatsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

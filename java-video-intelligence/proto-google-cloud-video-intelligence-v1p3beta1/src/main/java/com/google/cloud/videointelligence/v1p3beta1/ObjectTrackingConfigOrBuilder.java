@@ -38,6 +38,7 @@ public interface ObjectTrackingConfigOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *

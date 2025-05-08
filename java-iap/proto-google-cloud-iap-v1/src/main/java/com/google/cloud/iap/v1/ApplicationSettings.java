@@ -33,6 +33,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.ApplicationSettings)
     ApplicationSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ApplicationSettings.newBuilder() to construct.
   private ApplicationSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,14 +65,17 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int CSM_SETTINGS_FIELD_NUMBER = 1;
   private com.google.cloud.iap.v1.CsmSettings csmSettings_;
+
   /**
    *
    *
    * <pre>
-   * Settings to configure IAP's behavior for a service mesh.
+   * Optional. Settings to configure IAP's behavior for a service mesh.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.CsmSettings csm_settings = 1;</code>
+   * <code>
+   * .google.cloud.iap.v1.CsmSettings csm_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the csmSettings field is set.
    */
@@ -79,14 +83,17 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
   public boolean hasCsmSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Settings to configure IAP's behavior for a service mesh.
+   * Optional. Settings to configure IAP's behavior for a service mesh.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.CsmSettings csm_settings = 1;</code>
+   * <code>
+   * .google.cloud.iap.v1.CsmSettings csm_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The csmSettings.
    */
@@ -96,14 +103,17 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.iap.v1.CsmSettings.getDefaultInstance()
         : csmSettings_;
   }
+
   /**
    *
    *
    * <pre>
-   * Settings to configure IAP's behavior for a service mesh.
+   * Optional. Settings to configure IAP's behavior for a service mesh.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.CsmSettings csm_settings = 1;</code>
+   * <code>
+   * .google.cloud.iap.v1.CsmSettings csm_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.iap.v1.CsmSettingsOrBuilder getCsmSettingsOrBuilder() {
@@ -114,14 +124,17 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
 
   public static final int ACCESS_DENIED_PAGE_SETTINGS_FIELD_NUMBER = 2;
   private com.google.cloud.iap.v1.AccessDeniedPageSettings accessDeniedPageSettings_;
+
   /**
    *
    *
    * <pre>
-   * Customization for Access Denied page.
+   * Optional. Customization for Access Denied page.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2;</code>
+   * <code>
+   * .google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the accessDeniedPageSettings field is set.
    */
@@ -129,14 +142,17 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
   public boolean hasAccessDeniedPageSettings() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Customization for Access Denied page.
+   * Optional. Customization for Access Denied page.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2;</code>
+   * <code>
+   * .google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The accessDeniedPageSettings.
    */
@@ -146,14 +162,17 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.iap.v1.AccessDeniedPageSettings.getDefaultInstance()
         : accessDeniedPageSettings_;
   }
+
   /**
    *
    *
    * <pre>
-   * Customization for Access Denied page.
+   * Optional. Customization for Access Denied page.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2;</code>
+   * <code>
+   * .google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.iap.v1.AccessDeniedPageSettingsOrBuilder
@@ -165,6 +184,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
 
   public static final int COOKIE_DOMAIN_FIELD_NUMBER = 3;
   private com.google.protobuf.StringValue cookieDomain_;
+
   /**
    *
    *
@@ -181,6 +201,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
   public boolean hasCookieDomain() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -199,6 +220,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
         ? com.google.protobuf.StringValue.getDefaultInstance()
         : cookieDomain_;
   }
+
   /**
    *
    *
@@ -218,14 +240,16 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
 
   public static final int ATTRIBUTE_PROPAGATION_SETTINGS_FIELD_NUMBER = 4;
   private com.google.cloud.iap.v1.AttributePropagationSettings attributePropagationSettings_;
+
   /**
    *
    *
    * <pre>
-   * Settings to configure attribute propagation.
+   * Optional. Settings to configure attribute propagation.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4;
+   * <code>
+   * .google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the attributePropagationSettings field is set.
@@ -234,14 +258,16 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
   public boolean hasAttributePropagationSettings() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Settings to configure attribute propagation.
+   * Optional. Settings to configure attribute propagation.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4;
+   * <code>
+   * .google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The attributePropagationSettings.
@@ -252,14 +278,16 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.iap.v1.AttributePropagationSettings.getDefaultInstance()
         : attributePropagationSettings_;
   }
+
   /**
    *
    *
    * <pre>
-   * Settings to configure attribute propagation.
+   * Optional. Settings to configure attribute propagation.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4;
+   * <code>
+   * .google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -481,6 +509,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -750,28 +779,34 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
             com.google.cloud.iap.v1.CsmSettings.Builder,
             com.google.cloud.iap.v1.CsmSettingsOrBuilder>
         csmSettingsBuilder_;
+
     /**
      *
      *
      * <pre>
-     * Settings to configure IAP's behavior for a service mesh.
+     * Optional. Settings to configure IAP's behavior for a service mesh.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.CsmSettings csm_settings = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.CsmSettings csm_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the csmSettings field is set.
      */
     public boolean hasCsmSettings() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure IAP's behavior for a service mesh.
+     * Optional. Settings to configure IAP's behavior for a service mesh.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.CsmSettings csm_settings = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.CsmSettings csm_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The csmSettings.
      */
@@ -784,14 +819,17 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
         return csmSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure IAP's behavior for a service mesh.
+     * Optional. Settings to configure IAP's behavior for a service mesh.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.CsmSettings csm_settings = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.CsmSettings csm_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setCsmSettings(com.google.cloud.iap.v1.CsmSettings value) {
       if (csmSettingsBuilder_ == null) {
@@ -806,14 +844,17 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure IAP's behavior for a service mesh.
+     * Optional. Settings to configure IAP's behavior for a service mesh.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.CsmSettings csm_settings = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.CsmSettings csm_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setCsmSettings(com.google.cloud.iap.v1.CsmSettings.Builder builderForValue) {
       if (csmSettingsBuilder_ == null) {
@@ -825,14 +866,17 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure IAP's behavior for a service mesh.
+     * Optional. Settings to configure IAP's behavior for a service mesh.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.CsmSettings csm_settings = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.CsmSettings csm_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeCsmSettings(com.google.cloud.iap.v1.CsmSettings value) {
       if (csmSettingsBuilder_ == null) {
@@ -852,14 +896,17 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure IAP's behavior for a service mesh.
+     * Optional. Settings to configure IAP's behavior for a service mesh.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.CsmSettings csm_settings = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.CsmSettings csm_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearCsmSettings() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -871,28 +918,34 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure IAP's behavior for a service mesh.
+     * Optional. Settings to configure IAP's behavior for a service mesh.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.CsmSettings csm_settings = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.CsmSettings csm_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.iap.v1.CsmSettings.Builder getCsmSettingsBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return getCsmSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure IAP's behavior for a service mesh.
+     * Optional. Settings to configure IAP's behavior for a service mesh.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.CsmSettings csm_settings = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.CsmSettings csm_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.iap.v1.CsmSettingsOrBuilder getCsmSettingsOrBuilder() {
       if (csmSettingsBuilder_ != null) {
@@ -903,14 +956,17 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
             : csmSettings_;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure IAP's behavior for a service mesh.
+     * Optional. Settings to configure IAP's behavior for a service mesh.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.CsmSettings csm_settings = 1;</code>
+     * <code>
+     * .google.cloud.iap.v1.CsmSettings csm_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.iap.v1.CsmSettings,
@@ -935,28 +991,34 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
             com.google.cloud.iap.v1.AccessDeniedPageSettings.Builder,
             com.google.cloud.iap.v1.AccessDeniedPageSettingsOrBuilder>
         accessDeniedPageSettingsBuilder_;
+
     /**
      *
      *
      * <pre>
-     * Customization for Access Denied page.
+     * Optional. Customization for Access Denied page.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2;</code>
+     * <code>
+     * .google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the accessDeniedPageSettings field is set.
      */
     public boolean hasAccessDeniedPageSettings() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Customization for Access Denied page.
+     * Optional. Customization for Access Denied page.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2;</code>
+     * <code>
+     * .google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The accessDeniedPageSettings.
      */
@@ -969,14 +1031,17 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
         return accessDeniedPageSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Customization for Access Denied page.
+     * Optional. Customization for Access Denied page.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2;</code>
+     * <code>
+     * .google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAccessDeniedPageSettings(
         com.google.cloud.iap.v1.AccessDeniedPageSettings value) {
@@ -992,14 +1057,17 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Customization for Access Denied page.
+     * Optional. Customization for Access Denied page.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2;</code>
+     * <code>
+     * .google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAccessDeniedPageSettings(
         com.google.cloud.iap.v1.AccessDeniedPageSettings.Builder builderForValue) {
@@ -1012,14 +1080,17 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Customization for Access Denied page.
+     * Optional. Customization for Access Denied page.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2;</code>
+     * <code>
+     * .google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeAccessDeniedPageSettings(
         com.google.cloud.iap.v1.AccessDeniedPageSettings value) {
@@ -1041,14 +1112,17 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Customization for Access Denied page.
+     * Optional. Customization for Access Denied page.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2;</code>
+     * <code>
+     * .google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearAccessDeniedPageSettings() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1060,14 +1134,17 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Customization for Access Denied page.
+     * Optional. Customization for Access Denied page.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2;</code>
+     * <code>
+     * .google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.iap.v1.AccessDeniedPageSettings.Builder
         getAccessDeniedPageSettingsBuilder() {
@@ -1075,14 +1152,17 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return getAccessDeniedPageSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * Customization for Access Denied page.
+     * Optional. Customization for Access Denied page.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2;</code>
+     * <code>
+     * .google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.iap.v1.AccessDeniedPageSettingsOrBuilder
         getAccessDeniedPageSettingsOrBuilder() {
@@ -1094,14 +1174,17 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
             : accessDeniedPageSettings_;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Customization for Access Denied page.
+     * Optional. Customization for Access Denied page.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2;</code>
+     * <code>
+     * .google.cloud.iap.v1.AccessDeniedPageSettings access_denied_page_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.iap.v1.AccessDeniedPageSettings,
@@ -1126,6 +1209,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
             com.google.protobuf.StringValue.Builder,
             com.google.protobuf.StringValueOrBuilder>
         cookieDomainBuilder_;
+
     /**
      *
      *
@@ -1141,6 +1225,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
     public boolean hasCookieDomain() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1162,6 +1247,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
         return cookieDomainBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1185,6 +1271,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1292,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1233,6 +1321,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1253,6 +1342,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1268,6 +1358,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCookieDomainFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1287,6 +1378,7 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
             : cookieDomain_;
       }
     }
+
     /**
      *
      *
@@ -1320,14 +1412,16 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
             com.google.cloud.iap.v1.AttributePropagationSettings.Builder,
             com.google.cloud.iap.v1.AttributePropagationSettingsOrBuilder>
         attributePropagationSettingsBuilder_;
+
     /**
      *
      *
      * <pre>
-     * Settings to configure attribute propagation.
+     * Optional. Settings to configure attribute propagation.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4;
+     * <code>
+     * .google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the attributePropagationSettings field is set.
@@ -1335,14 +1429,16 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
     public boolean hasAttributePropagationSettings() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure attribute propagation.
+     * Optional. Settings to configure attribute propagation.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4;
+     * <code>
+     * .google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The attributePropagationSettings.
@@ -1356,14 +1452,16 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
         return attributePropagationSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure attribute propagation.
+     * Optional. Settings to configure attribute propagation.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4;
+     * <code>
+     * .google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setAttributePropagationSettings(
@@ -1380,14 +1478,16 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure attribute propagation.
+     * Optional. Settings to configure attribute propagation.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4;
+     * <code>
+     * .google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setAttributePropagationSettings(
@@ -1401,14 +1501,16 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure attribute propagation.
+     * Optional. Settings to configure attribute propagation.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4;
+     * <code>
+     * .google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeAttributePropagationSettings(
@@ -1431,14 +1533,16 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure attribute propagation.
+     * Optional. Settings to configure attribute propagation.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4;
+     * <code>
+     * .google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearAttributePropagationSettings() {
@@ -1451,14 +1555,16 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure attribute propagation.
+     * Optional. Settings to configure attribute propagation.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4;
+     * <code>
+     * .google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.iap.v1.AttributePropagationSettings.Builder
@@ -1467,14 +1573,16 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return getAttributePropagationSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure attribute propagation.
+     * Optional. Settings to configure attribute propagation.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4;
+     * <code>
+     * .google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.iap.v1.AttributePropagationSettingsOrBuilder
@@ -1487,14 +1595,16 @@ public final class ApplicationSettings extends com.google.protobuf.GeneratedMess
             : attributePropagationSettings_;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Settings to configure attribute propagation.
+     * Optional. Settings to configure attribute propagation.
      * </pre>
      *
-     * <code>.google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4;
+     * <code>
+     * .google.cloud.iap.v1.AttributePropagationSettings attribute_propagation_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

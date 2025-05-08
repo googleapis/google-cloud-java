@@ -33,6 +33,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.WordInfo)
     WordInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WordInfo.newBuilder() to construct.
   private WordInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -40,6 +41,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
 
   private WordInfo() {
     word_ = "";
+    speakerLabel_ = "";
   }
 
   @java.lang.Override
@@ -66,6 +68,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int START_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration startTime_;
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getStartTime() {
     return startTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration endTime_;
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getEndTime() {
     return endTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -190,6 +198,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object word_ = "";
+
   /**
    *
    *
@@ -213,6 +222,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -239,6 +249,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIDENCE_FIELD_NUMBER = 4;
   private float confidence_ = 0F;
+
   /**
    *
    *
@@ -263,6 +274,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPEAKER_TAG_FIELD_NUMBER = 5;
   private int speakerTag_ = 0;
+
   /**
    *
    *
@@ -270,17 +282,85 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    * Output only. A distinct integer value is assigned for every speaker within
    * the audio. This field specifies which one of those speakers was detected to
    * have spoken this word. Value ranges from '1' to diarization_speaker_count.
-   * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
+   * speaker_tag is set if enable_speaker_diarization = 'true' and only for the
    * top alternative.
+   * Note: Use speaker_label instead.
    * </pre>
    *
-   * <code>int32 speaker_tag = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.speech.v1p1beta1.WordInfo.speaker_tag is deprecated. See
+   *     google/cloud/speech/v1p1beta1/cloud_speech.proto;l=1001
    * @return The speakerTag.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getSpeakerTag() {
     return speakerTag_;
+  }
+
+  public static final int SPEAKER_LABEL_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object speakerLabel_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A label value assigned for every unique speaker within the
+   * audio. This field specifies which speaker was detected to have spoken this
+   * word. For some models, like medical_conversation this can be actual speaker
+   * role, for example "patient" or "provider", but generally this would be a
+   * number identifying a speaker. This field is only set if
+   * enable_speaker_diarization = 'true' and only for the top alternative.
+   * </pre>
+   *
+   * <code>string speaker_label = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The speakerLabel.
+   */
+  @java.lang.Override
+  public java.lang.String getSpeakerLabel() {
+    java.lang.Object ref = speakerLabel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      speakerLabel_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A label value assigned for every unique speaker within the
+   * audio. This field specifies which speaker was detected to have spoken this
+   * word. For some models, like medical_conversation this can be actual speaker
+   * role, for example "patient" or "provider", but generally this would be a
+   * number identifying a speaker. This field is only set if
+   * enable_speaker_diarization = 'true' and only for the top alternative.
+   * </pre>
+   *
+   * <code>string speaker_label = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for speakerLabel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSpeakerLabelBytes() {
+    java.lang.Object ref = speakerLabel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      speakerLabel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -312,6 +392,9 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     if (speakerTag_ != 0) {
       output.writeInt32(5, speakerTag_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(speakerLabel_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, speakerLabel_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -335,6 +418,9 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     }
     if (speakerTag_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, speakerTag_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(speakerLabel_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, speakerLabel_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -364,6 +450,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     if (java.lang.Float.floatToIntBits(getConfidence())
         != java.lang.Float.floatToIntBits(other.getConfidence())) return false;
     if (getSpeakerTag() != other.getSpeakerTag()) return false;
+    if (!getSpeakerLabel().equals(other.getSpeakerLabel())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -389,6 +476,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + java.lang.Float.floatToIntBits(getConfidence());
     hash = (37 * hash) + SPEAKER_TAG_FIELD_NUMBER;
     hash = (53 * hash) + getSpeakerTag();
+    hash = (37 * hash) + SPEAKER_LABEL_FIELD_NUMBER;
+    hash = (53 * hash) + getSpeakerLabel().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -489,6 +578,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -551,6 +641,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       word_ = "";
       confidence_ = 0F;
       speakerTag_ = 0;
+      speakerLabel_ = "";
       return this;
     }
 
@@ -604,6 +695,9 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.speakerTag_ = speakerTag_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.speakerLabel_ = speakerLabel_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -670,6 +764,11 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       if (other.getSpeakerTag() != 0) {
         setSpeakerTag(other.getSpeakerTag());
       }
+      if (!other.getSpeakerLabel().isEmpty()) {
+        speakerLabel_ = other.speakerLabel_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -726,6 +825,12 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
+            case 50:
+              {
+                speakerLabel_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -751,6 +856,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -770,6 +876,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -793,6 +900,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -820,6 +928,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +953,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +986,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +1011,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +1031,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -940,6 +1053,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -977,6 +1091,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -996,6 +1111,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1019,6 +1135,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1046,6 +1163,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1188,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1221,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1246,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1266,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1166,6 +1288,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -1198,6 +1321,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object word_ = "";
+
     /**
      *
      *
@@ -1220,6 +1344,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1242,6 +1367,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1263,6 +1389,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1280,6 +1407,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1304,6 +1432,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float confidence_;
+
     /**
      *
      *
@@ -1325,6 +1454,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     public float getConfidence() {
       return confidence_;
     }
+
     /**
      *
      *
@@ -1350,6 +1480,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1375,6 +1506,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int speakerTag_;
+
     /**
      *
      *
@@ -1382,18 +1514,24 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * Output only. A distinct integer value is assigned for every speaker within
      * the audio. This field specifies which one of those speakers was detected to
      * have spoken this word. Value ranges from '1' to diarization_speaker_count.
-     * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
+     * speaker_tag is set if enable_speaker_diarization = 'true' and only for the
      * top alternative.
+     * Note: Use speaker_label instead.
      * </pre>
      *
-     * <code>int32 speaker_tag = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.speech.v1p1beta1.WordInfo.speaker_tag is deprecated. See
+     *     google/cloud/speech/v1p1beta1/cloud_speech.proto;l=1001
      * @return The speakerTag.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getSpeakerTag() {
       return speakerTag_;
     }
+
     /**
      *
      *
@@ -1401,15 +1539,20 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * Output only. A distinct integer value is assigned for every speaker within
      * the audio. This field specifies which one of those speakers was detected to
      * have spoken this word. Value ranges from '1' to diarization_speaker_count.
-     * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
+     * speaker_tag is set if enable_speaker_diarization = 'true' and only for the
      * top alternative.
+     * Note: Use speaker_label instead.
      * </pre>
      *
-     * <code>int32 speaker_tag = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.speech.v1p1beta1.WordInfo.speaker_tag is deprecated. See
+     *     google/cloud/speech/v1p1beta1/cloud_speech.proto;l=1001
      * @param value The speakerTag to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setSpeakerTag(int value) {
 
       speakerTag_ = value;
@@ -1417,6 +1560,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1424,17 +1568,158 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * Output only. A distinct integer value is assigned for every speaker within
      * the audio. This field specifies which one of those speakers was detected to
      * have spoken this word. Value ranges from '1' to diarization_speaker_count.
-     * speaker_tag is set if enable_speaker_diarization = 'true' and only in the
+     * speaker_tag is set if enable_speaker_diarization = 'true' and only for the
      * top alternative.
+     * Note: Use speaker_label instead.
      * </pre>
      *
-     * <code>int32 speaker_tag = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.speech.v1p1beta1.WordInfo.speaker_tag is deprecated. See
+     *     google/cloud/speech/v1p1beta1/cloud_speech.proto;l=1001
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearSpeakerTag() {
       bitField0_ = (bitField0_ & ~0x00000010);
       speakerTag_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object speakerLabel_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A label value assigned for every unique speaker within the
+     * audio. This field specifies which speaker was detected to have spoken this
+     * word. For some models, like medical_conversation this can be actual speaker
+     * role, for example "patient" or "provider", but generally this would be a
+     * number identifying a speaker. This field is only set if
+     * enable_speaker_diarization = 'true' and only for the top alternative.
+     * </pre>
+     *
+     * <code>string speaker_label = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The speakerLabel.
+     */
+    public java.lang.String getSpeakerLabel() {
+      java.lang.Object ref = speakerLabel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        speakerLabel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A label value assigned for every unique speaker within the
+     * audio. This field specifies which speaker was detected to have spoken this
+     * word. For some models, like medical_conversation this can be actual speaker
+     * role, for example "patient" or "provider", but generally this would be a
+     * number identifying a speaker. This field is only set if
+     * enable_speaker_diarization = 'true' and only for the top alternative.
+     * </pre>
+     *
+     * <code>string speaker_label = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for speakerLabel.
+     */
+    public com.google.protobuf.ByteString getSpeakerLabelBytes() {
+      java.lang.Object ref = speakerLabel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        speakerLabel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A label value assigned for every unique speaker within the
+     * audio. This field specifies which speaker was detected to have spoken this
+     * word. For some models, like medical_conversation this can be actual speaker
+     * role, for example "patient" or "provider", but generally this would be a
+     * number identifying a speaker. This field is only set if
+     * enable_speaker_diarization = 'true' and only for the top alternative.
+     * </pre>
+     *
+     * <code>string speaker_label = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The speakerLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpeakerLabel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      speakerLabel_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A label value assigned for every unique speaker within the
+     * audio. This field specifies which speaker was detected to have spoken this
+     * word. For some models, like medical_conversation this can be actual speaker
+     * role, for example "patient" or "provider", but generally this would be a
+     * number identifying a speaker. This field is only set if
+     * enable_speaker_diarization = 'true' and only for the top alternative.
+     * </pre>
+     *
+     * <code>string speaker_label = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSpeakerLabel() {
+      speakerLabel_ = getDefaultInstance().getSpeakerLabel();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A label value assigned for every unique speaker within the
+     * audio. This field specifies which speaker was detected to have spoken this
+     * word. For some models, like medical_conversation this can be actual speaker
+     * role, for example "patient" or "provider", but generally this would be a
+     * number identifying a speaker. This field is only set if
+     * enable_speaker_diarization = 'true' and only for the top alternative.
+     * </pre>
+     *
+     * <code>string speaker_label = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for speakerLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpeakerLabelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      speakerLabel_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

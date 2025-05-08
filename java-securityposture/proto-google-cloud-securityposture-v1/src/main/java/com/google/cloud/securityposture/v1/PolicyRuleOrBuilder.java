@@ -37,6 +37,7 @@ public interface PolicyRuleOrBuilder
    * @return Whether the values field is set.
    */
   boolean hasValues();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface PolicyRuleOrBuilder
    * @return The values.
    */
   com.google.cloud.securityposture.v1.PolicyRule.StringValues getValues();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface PolicyRuleOrBuilder
    * @return Whether the allowAll field is set.
    */
   boolean hasAllowAll();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface PolicyRuleOrBuilder
    * @return Whether the denyAll field is set.
    */
   boolean hasDenyAll();
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public interface PolicyRuleOrBuilder
    * @return Whether the enforce field is set.
    */
   boolean hasEnforce();
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public interface PolicyRuleOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public interface PolicyRuleOrBuilder
    * @return The condition.
    */
   com.google.type.Expr getCondition();
+
   /**
    *
    *

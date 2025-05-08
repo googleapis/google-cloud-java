@@ -36,6 +36,7 @@ public interface ListUtilizationReportsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.UtilizationReport> getUtilizationReportsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListUtilizationReportsResponseOrBuilder
    * </code>
    */
   com.google.cloud.vmmigration.v1.UtilizationReport getUtilizationReports(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ListUtilizationReportsResponseOrBuilder
    * </code>
    */
   int getUtilizationReportsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface ListUtilizationReportsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.UtilizationReportOrBuilder>
       getUtilizationReportsOrBuilderList();
+
   /**
    *
    *
@@ -100,6 +104,7 @@ public interface ListUtilizationReportsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface ListUtilizationReportsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public interface ListUtilizationReportsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -151,6 +158,7 @@ public interface ListUtilizationReportsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

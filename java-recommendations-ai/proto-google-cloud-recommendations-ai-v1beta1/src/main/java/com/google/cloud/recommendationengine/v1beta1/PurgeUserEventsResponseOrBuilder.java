@@ -49,6 +49,7 @@ public interface PurgeUserEventsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.recommendationengine.v1beta1.UserEvent> getUserEventsSampleList();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PurgeUserEventsResponseOrBuilder
    * </code>
    */
   com.google.cloud.recommendationengine.v1beta1.UserEvent getUserEventsSample(int index);
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface PurgeUserEventsResponseOrBuilder
    * </code>
    */
   int getUserEventsSampleCount();
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface PurgeUserEventsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.recommendationengine.v1beta1.UserEventOrBuilder>
       getUserEventsSampleOrBuilderList();
+
   /**
    *
    *

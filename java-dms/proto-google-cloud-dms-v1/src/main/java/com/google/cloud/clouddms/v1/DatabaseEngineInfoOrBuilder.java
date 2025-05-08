@@ -38,6 +38,7 @@ public interface DatabaseEngineInfoOrBuilder
    * @return The enum numeric value on the wire for engine.
    */
   int getEngineValue();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface DatabaseEngineInfoOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

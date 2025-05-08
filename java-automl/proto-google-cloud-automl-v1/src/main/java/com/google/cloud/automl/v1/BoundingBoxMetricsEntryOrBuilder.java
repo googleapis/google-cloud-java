@@ -66,6 +66,7 @@ public interface BoundingBoxMetricsEntryOrBuilder
    */
   java.util.List<com.google.cloud.automl.v1.BoundingBoxMetricsEntry.ConfidenceMetricsEntry>
       getConfidenceMetricsEntriesList();
+
   /**
    *
    *
@@ -81,6 +82,7 @@ public interface BoundingBoxMetricsEntryOrBuilder
    */
   com.google.cloud.automl.v1.BoundingBoxMetricsEntry.ConfidenceMetricsEntry
       getConfidenceMetricsEntries(int index);
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface BoundingBoxMetricsEntryOrBuilder
    * </code>
    */
   int getConfidenceMetricsEntriesCount();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface BoundingBoxMetricsEntryOrBuilder
           ? extends
               com.google.cloud.automl.v1.BoundingBoxMetricsEntry.ConfidenceMetricsEntryOrBuilder>
       getConfidenceMetricsEntriesOrBuilderList();
+
   /**
    *
    *

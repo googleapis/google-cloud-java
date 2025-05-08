@@ -33,6 +33,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.MetadataFilter)
     MetadataFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MetadataFilter.newBuilder() to construct.
   private MetadataFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,6 +128,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_FILTER_MATCH_CRITERIA = 0;</code>
      */
     public static final int UNDEFINED_FILTER_MATCH_CRITERIA_VALUE = 0;
+
     /**
      *
      *
@@ -137,6 +139,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>MATCH_ALL = 180663271;</code>
      */
     public static final int MATCH_ALL_VALUE = 180663271;
+
     /**
      *
      *
@@ -147,6 +150,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>MATCH_ANY = 180663346;</code>
      */
     public static final int MATCH_ANY_VALUE = 180663346;
+
     /**
      *
      *
@@ -251,6 +255,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.MetadataFilterLabelMatch> filterLabels_;
+
   /**
    *
    *
@@ -266,6 +271,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       getFilterLabelsList() {
     return filterLabels_;
   }
+
   /**
    *
    *
@@ -281,6 +287,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       getFilterLabelsOrBuilderList() {
     return filterLabels_;
   }
+
   /**
    *
    *
@@ -295,6 +302,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
   public int getFilterLabelsCount() {
     return filterLabels_.size();
   }
+
   /**
    *
    *
@@ -309,6 +317,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.MetadataFilterLabelMatch getFilterLabels(int index) {
     return filterLabels_.get(index);
   }
+
   /**
    *
    *
@@ -329,6 +338,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filterMatchCriteria_ = "";
+
   /**
    *
    *
@@ -345,6 +355,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFilterMatchCriteria() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -369,6 +380,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -571,6 +583,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -853,6 +866,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
         return filterLabelsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -870,6 +884,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
         return filterLabelsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -887,6 +902,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
         return filterLabelsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -911,6 +927,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +949,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -955,6 +973,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -979,6 +998,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1000,6 +1020,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1042,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1042,6 +1064,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1062,6 +1085,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1082,6 +1106,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1121,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getFilterLabelsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1114,6 +1140,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
         return filterLabelsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1132,6 +1159,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(filterLabels_);
       }
     }
+
     /**
      *
      *
@@ -1146,6 +1174,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       return getFilterLabelsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.MetadataFilterLabelMatch.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1162,6 +1191,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.compute.v1.MetadataFilterLabelMatch.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1195,6 +1225,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object filterMatchCriteria_ = "";
+
     /**
      *
      *
@@ -1210,6 +1241,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFilterMatchCriteria() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1233,6 +1265,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1256,6 +1289,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1278,6 +1312,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1296,6 +1331,7 @@ public final class MetadataFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

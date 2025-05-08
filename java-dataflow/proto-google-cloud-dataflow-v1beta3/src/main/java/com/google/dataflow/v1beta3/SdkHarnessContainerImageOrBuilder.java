@@ -36,6 +36,7 @@ public interface SdkHarnessContainerImageOrBuilder
    * @return The containerImage.
    */
   java.lang.String getContainerImage();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface SdkHarnessContainerImageOrBuilder
    * @return The environmentId.
    */
   java.lang.String getEnvironmentId();
+
   /**
    *
    *
@@ -98,7 +100,7 @@ public interface SdkHarnessContainerImageOrBuilder
    *
    * <pre>
    * The set of capabilities enumerated in the above Environment proto. See also
-   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
    * </pre>
    *
    * <code>repeated string capabilities = 4;</code>
@@ -106,12 +108,13 @@ public interface SdkHarnessContainerImageOrBuilder
    * @return A list containing the capabilities.
    */
   java.util.List<java.lang.String> getCapabilitiesList();
+
   /**
    *
    *
    * <pre>
    * The set of capabilities enumerated in the above Environment proto. See also
-   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
    * </pre>
    *
    * <code>repeated string capabilities = 4;</code>
@@ -119,12 +122,13 @@ public interface SdkHarnessContainerImageOrBuilder
    * @return The count of capabilities.
    */
   int getCapabilitiesCount();
+
   /**
    *
    *
    * <pre>
    * The set of capabilities enumerated in the above Environment proto. See also
-   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
    * </pre>
    *
    * <code>repeated string capabilities = 4;</code>
@@ -133,12 +137,13 @@ public interface SdkHarnessContainerImageOrBuilder
    * @return The capabilities at the given index.
    */
   java.lang.String getCapabilities(int index);
+
   /**
    *
    *
    * <pre>
    * The set of capabilities enumerated in the above Environment proto. See also
-   * https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/beam_runner_api.proto
+   * [beam_runner_api.proto](https://github.com/apache/beam/blob/master/model/pipeline/src/main/proto/org/apache/beam/model/pipeline/v1/beam_runner_api.proto)
    * </pre>
    *
    * <code>repeated string capabilities = 4;</code>

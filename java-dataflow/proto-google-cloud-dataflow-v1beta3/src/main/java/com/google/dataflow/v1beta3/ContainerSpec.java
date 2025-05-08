@@ -33,6 +33,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.ContainerSpec)
     ContainerSpecOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ContainerSpec.newBuilder() to construct.
   private ContainerSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -40,6 +41,9 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
 
   private ContainerSpec() {
     image_ = "";
+    imageRepositoryUsernameSecretId_ = "";
+    imageRepositoryPasswordSecretId_ = "";
+    imageRepositoryCertPath_ = "";
   }
 
   @java.lang.Override
@@ -68,6 +72,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object image_ = "";
+
   /**
    *
    *
@@ -91,6 +96,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +123,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int METADATA_FIELD_NUMBER = 2;
   private com.google.dataflow.v1beta3.TemplateMetadata metadata_;
+
   /**
    *
    *
@@ -132,6 +139,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -149,6 +157,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.dataflow.v1beta3.TemplateMetadata.getDefaultInstance()
         : metadata_;
   }
+
   /**
    *
    *
@@ -167,6 +176,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SDK_INFO_FIELD_NUMBER = 3;
   private com.google.dataflow.v1beta3.SDKInfo sdkInfo_;
+
   /**
    *
    *
@@ -182,6 +192,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSdkInfo() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -197,6 +208,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.SDKInfo getSdkInfo() {
     return sdkInfo_ == null ? com.google.dataflow.v1beta3.SDKInfo.getDefaultInstance() : sdkInfo_;
   }
+
   /**
    *
    *
@@ -213,6 +225,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEFAULT_ENVIRONMENT_FIELD_NUMBER = 4;
   private com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment defaultEnvironment_;
+
   /**
    *
    *
@@ -228,6 +241,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDefaultEnvironment() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -245,6 +259,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment.getDefaultInstance()
         : defaultEnvironment_;
   }
+
   /**
    *
    *
@@ -260,6 +275,165 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     return defaultEnvironment_ == null
         ? com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment.getDefaultInstance()
         : defaultEnvironment_;
+  }
+
+  public static final int IMAGE_REPOSITORY_USERNAME_SECRET_ID_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageRepositoryUsernameSecretId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Secret Manager secret id for username to authenticate to private registry.
+   * </pre>
+   *
+   * <code>string image_repository_username_secret_id = 5;</code>
+   *
+   * @return The imageRepositoryUsernameSecretId.
+   */
+  @java.lang.Override
+  public java.lang.String getImageRepositoryUsernameSecretId() {
+    java.lang.Object ref = imageRepositoryUsernameSecretId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      imageRepositoryUsernameSecretId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Secret Manager secret id for username to authenticate to private registry.
+   * </pre>
+   *
+   * <code>string image_repository_username_secret_id = 5;</code>
+   *
+   * @return The bytes for imageRepositoryUsernameSecretId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getImageRepositoryUsernameSecretIdBytes() {
+    java.lang.Object ref = imageRepositoryUsernameSecretId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      imageRepositoryUsernameSecretId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IMAGE_REPOSITORY_PASSWORD_SECRET_ID_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageRepositoryPasswordSecretId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Secret Manager secret id for password to authenticate to private registry.
+   * </pre>
+   *
+   * <code>string image_repository_password_secret_id = 6;</code>
+   *
+   * @return The imageRepositoryPasswordSecretId.
+   */
+  @java.lang.Override
+  public java.lang.String getImageRepositoryPasswordSecretId() {
+    java.lang.Object ref = imageRepositoryPasswordSecretId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      imageRepositoryPasswordSecretId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Secret Manager secret id for password to authenticate to private registry.
+   * </pre>
+   *
+   * <code>string image_repository_password_secret_id = 6;</code>
+   *
+   * @return The bytes for imageRepositoryPasswordSecretId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getImageRepositoryPasswordSecretIdBytes() {
+    java.lang.Object ref = imageRepositoryPasswordSecretId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      imageRepositoryPasswordSecretId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IMAGE_REPOSITORY_CERT_PATH_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageRepositoryCertPath_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage path to self-signed certificate of private registry.
+   * </pre>
+   *
+   * <code>string image_repository_cert_path = 7;</code>
+   *
+   * @return The imageRepositoryCertPath.
+   */
+  @java.lang.Override
+  public java.lang.String getImageRepositoryCertPath() {
+    java.lang.Object ref = imageRepositoryCertPath_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      imageRepositoryCertPath_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage path to self-signed certificate of private registry.
+   * </pre>
+   *
+   * <code>string image_repository_cert_path = 7;</code>
+   *
+   * @return The bytes for imageRepositoryCertPath.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getImageRepositoryCertPathBytes() {
+    java.lang.Object ref = imageRepositoryCertPath_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      imageRepositoryCertPath_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -288,6 +462,17 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getDefaultEnvironment());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageRepositoryUsernameSecretId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 5, imageRepositoryUsernameSecretId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageRepositoryPasswordSecretId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 6, imageRepositoryPasswordSecretId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageRepositoryCertPath_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, imageRepositoryCertPath_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -308,6 +493,19 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDefaultEnvironment());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageRepositoryUsernameSecretId_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              5, imageRepositoryUsernameSecretId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageRepositoryPasswordSecretId_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              6, imageRepositoryPasswordSecretId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageRepositoryCertPath_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, imageRepositoryCertPath_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -338,6 +536,11 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     if (hasDefaultEnvironment()) {
       if (!getDefaultEnvironment().equals(other.getDefaultEnvironment())) return false;
     }
+    if (!getImageRepositoryUsernameSecretId().equals(other.getImageRepositoryUsernameSecretId()))
+      return false;
+    if (!getImageRepositoryPasswordSecretId().equals(other.getImageRepositoryPasswordSecretId()))
+      return false;
+    if (!getImageRepositoryCertPath().equals(other.getImageRepositoryCertPath())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -363,6 +566,12 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DEFAULT_ENVIRONMENT_FIELD_NUMBER;
       hash = (53 * hash) + getDefaultEnvironment().hashCode();
     }
+    hash = (37 * hash) + IMAGE_REPOSITORY_USERNAME_SECRET_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getImageRepositoryUsernameSecretId().hashCode();
+    hash = (37 * hash) + IMAGE_REPOSITORY_PASSWORD_SECRET_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getImageRepositoryPasswordSecretId().hashCode();
+    hash = (37 * hash) + IMAGE_REPOSITORY_CERT_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getImageRepositoryCertPath().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -463,6 +672,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -529,6 +739,9 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         defaultEnvironmentBuilder_.dispose();
         defaultEnvironmentBuilder_ = null;
       }
+      imageRepositoryUsernameSecretId_ = "";
+      imageRepositoryPasswordSecretId_ = "";
+      imageRepositoryCertPath_ = "";
       return this;
     }
 
@@ -583,6 +796,15 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
                 ? defaultEnvironment_
                 : defaultEnvironmentBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.imageRepositoryUsernameSecretId_ = imageRepositoryUsernameSecretId_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.imageRepositoryPasswordSecretId_ = imageRepositoryPasswordSecretId_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.imageRepositoryCertPath_ = imageRepositoryCertPath_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -646,6 +868,21 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDefaultEnvironment()) {
         mergeDefaultEnvironment(other.getDefaultEnvironment());
       }
+      if (!other.getImageRepositoryUsernameSecretId().isEmpty()) {
+        imageRepositoryUsernameSecretId_ = other.imageRepositoryUsernameSecretId_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (!other.getImageRepositoryPasswordSecretId().isEmpty()) {
+        imageRepositoryPasswordSecretId_ = other.imageRepositoryPasswordSecretId_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (!other.getImageRepositoryCertPath().isEmpty()) {
+        imageRepositoryCertPath_ = other.imageRepositoryCertPath_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -697,6 +934,24 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                imageRepositoryUsernameSecretId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+            case 50:
+              {
+                imageRepositoryPasswordSecretId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+            case 58:
+              {
+                imageRepositoryCertPath_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -717,6 +972,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object image_ = "";
+
     /**
      *
      *
@@ -739,6 +995,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -761,6 +1018,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -782,6 +1040,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +1058,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +1088,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.dataflow.v1beta3.TemplateMetadata.Builder,
             com.google.dataflow.v1beta3.TemplateMetadataOrBuilder>
         metadataBuilder_;
+
     /**
      *
      *
@@ -842,6 +1103,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -862,6 +1124,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         return metadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -884,6 +1147,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +1168,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -931,6 +1196,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +1216,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +1231,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -982,6 +1250,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
             : metadata_;
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1283,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.dataflow.v1beta3.SDKInfo.Builder,
             com.google.dataflow.v1beta3.SDKInfoOrBuilder>
         sdkInfoBuilder_;
+
     /**
      *
      *
@@ -1028,6 +1298,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSdkInfo() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1048,6 +1319,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         return sdkInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1070,6 +1342,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1362,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1116,6 +1390,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1135,6 +1410,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1149,6 +1425,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSdkInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1167,6 +1444,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
             : sdkInfo_;
       }
     }
+
     /**
      *
      *
@@ -1199,6 +1477,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment.Builder,
             com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironmentOrBuilder>
         defaultEnvironmentBuilder_;
+
     /**
      *
      *
@@ -1213,6 +1492,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDefaultEnvironment() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1233,6 +1513,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         return defaultEnvironmentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1256,6 +1537,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1276,6 +1558,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1306,6 +1589,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1325,6 +1609,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1340,6 +1625,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDefaultEnvironmentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1359,6 +1645,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
             : defaultEnvironment_;
       }
     }
+
     /**
      *
      *
@@ -1383,6 +1670,339 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
         defaultEnvironment_ = null;
       }
       return defaultEnvironmentBuilder_;
+    }
+
+    private java.lang.Object imageRepositoryUsernameSecretId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Secret Manager secret id for username to authenticate to private registry.
+     * </pre>
+     *
+     * <code>string image_repository_username_secret_id = 5;</code>
+     *
+     * @return The imageRepositoryUsernameSecretId.
+     */
+    public java.lang.String getImageRepositoryUsernameSecretId() {
+      java.lang.Object ref = imageRepositoryUsernameSecretId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        imageRepositoryUsernameSecretId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secret Manager secret id for username to authenticate to private registry.
+     * </pre>
+     *
+     * <code>string image_repository_username_secret_id = 5;</code>
+     *
+     * @return The bytes for imageRepositoryUsernameSecretId.
+     */
+    public com.google.protobuf.ByteString getImageRepositoryUsernameSecretIdBytes() {
+      java.lang.Object ref = imageRepositoryUsernameSecretId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        imageRepositoryUsernameSecretId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secret Manager secret id for username to authenticate to private registry.
+     * </pre>
+     *
+     * <code>string image_repository_username_secret_id = 5;</code>
+     *
+     * @param value The imageRepositoryUsernameSecretId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImageRepositoryUsernameSecretId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      imageRepositoryUsernameSecretId_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secret Manager secret id for username to authenticate to private registry.
+     * </pre>
+     *
+     * <code>string image_repository_username_secret_id = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearImageRepositoryUsernameSecretId() {
+      imageRepositoryUsernameSecretId_ = getDefaultInstance().getImageRepositoryUsernameSecretId();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secret Manager secret id for username to authenticate to private registry.
+     * </pre>
+     *
+     * <code>string image_repository_username_secret_id = 5;</code>
+     *
+     * @param value The bytes for imageRepositoryUsernameSecretId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImageRepositoryUsernameSecretIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      imageRepositoryUsernameSecretId_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object imageRepositoryPasswordSecretId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Secret Manager secret id for password to authenticate to private registry.
+     * </pre>
+     *
+     * <code>string image_repository_password_secret_id = 6;</code>
+     *
+     * @return The imageRepositoryPasswordSecretId.
+     */
+    public java.lang.String getImageRepositoryPasswordSecretId() {
+      java.lang.Object ref = imageRepositoryPasswordSecretId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        imageRepositoryPasswordSecretId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secret Manager secret id for password to authenticate to private registry.
+     * </pre>
+     *
+     * <code>string image_repository_password_secret_id = 6;</code>
+     *
+     * @return The bytes for imageRepositoryPasswordSecretId.
+     */
+    public com.google.protobuf.ByteString getImageRepositoryPasswordSecretIdBytes() {
+      java.lang.Object ref = imageRepositoryPasswordSecretId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        imageRepositoryPasswordSecretId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secret Manager secret id for password to authenticate to private registry.
+     * </pre>
+     *
+     * <code>string image_repository_password_secret_id = 6;</code>
+     *
+     * @param value The imageRepositoryPasswordSecretId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImageRepositoryPasswordSecretId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      imageRepositoryPasswordSecretId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secret Manager secret id for password to authenticate to private registry.
+     * </pre>
+     *
+     * <code>string image_repository_password_secret_id = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearImageRepositoryPasswordSecretId() {
+      imageRepositoryPasswordSecretId_ = getDefaultInstance().getImageRepositoryPasswordSecretId();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secret Manager secret id for password to authenticate to private registry.
+     * </pre>
+     *
+     * <code>string image_repository_password_secret_id = 6;</code>
+     *
+     * @param value The bytes for imageRepositoryPasswordSecretId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImageRepositoryPasswordSecretIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      imageRepositoryPasswordSecretId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object imageRepositoryCertPath_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage path to self-signed certificate of private registry.
+     * </pre>
+     *
+     * <code>string image_repository_cert_path = 7;</code>
+     *
+     * @return The imageRepositoryCertPath.
+     */
+    public java.lang.String getImageRepositoryCertPath() {
+      java.lang.Object ref = imageRepositoryCertPath_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        imageRepositoryCertPath_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage path to self-signed certificate of private registry.
+     * </pre>
+     *
+     * <code>string image_repository_cert_path = 7;</code>
+     *
+     * @return The bytes for imageRepositoryCertPath.
+     */
+    public com.google.protobuf.ByteString getImageRepositoryCertPathBytes() {
+      java.lang.Object ref = imageRepositoryCertPath_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        imageRepositoryCertPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage path to self-signed certificate of private registry.
+     * </pre>
+     *
+     * <code>string image_repository_cert_path = 7;</code>
+     *
+     * @param value The imageRepositoryCertPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImageRepositoryCertPath(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      imageRepositoryCertPath_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage path to self-signed certificate of private registry.
+     * </pre>
+     *
+     * <code>string image_repository_cert_path = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearImageRepositoryCertPath() {
+      imageRepositoryCertPath_ = getDefaultInstance().getImageRepositoryCertPath();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Storage path to self-signed certificate of private registry.
+     * </pre>
+     *
+     * <code>string image_repository_cert_path = 7;</code>
+     *
+     * @param value The bytes for imageRepositoryCertPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImageRepositoryCertPathBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      imageRepositoryCertPath_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

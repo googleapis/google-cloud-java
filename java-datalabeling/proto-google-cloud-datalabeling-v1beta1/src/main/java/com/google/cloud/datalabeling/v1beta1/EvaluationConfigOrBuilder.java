@@ -40,6 +40,7 @@ public interface EvaluationConfigOrBuilder
    * @return Whether the boundingBoxEvaluationOptions field is set.
    */
   boolean hasBoundingBoxEvaluationOptions();
+
   /**
    *
    *
@@ -57,6 +58,7 @@ public interface EvaluationConfigOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions
       getBoundingBoxEvaluationOptions();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1.NodeManagement)
     NodeManagementOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NodeManagement.newBuilder() to construct.
   private NodeManagement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int AUTO_UPGRADE_FIELD_NUMBER = 1;
   private boolean autoUpgrade_ = false;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTO_REPAIR_FIELD_NUMBER = 2;
   private boolean autoRepair_ = false;
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPGRADE_OPTIONS_FIELD_NUMBER = 10;
   private com.google.container.v1.AutoUpgradeOptions upgradeOptions_;
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpgradeOptions() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1.AutoUpgradeOptions.getDefaultInstance()
         : upgradeOptions_;
   }
+
   /**
    *
    *
@@ -335,6 +341,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -560,6 +567,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean autoUpgrade_;
+
     /**
      *
      *
@@ -577,6 +585,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
     public boolean getAutoUpgrade() {
       return autoUpgrade_;
     }
+
     /**
      *
      *
@@ -598,6 +607,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -619,6 +629,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean autoRepair_;
+
     /**
      *
      *
@@ -637,6 +648,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
     public boolean getAutoRepair() {
       return autoRepair_;
     }
+
     /**
      *
      *
@@ -659,6 +671,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -686,6 +699,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1.AutoUpgradeOptions.Builder,
             com.google.container.v1.AutoUpgradeOptionsOrBuilder>
         upgradeOptionsBuilder_;
+
     /**
      *
      *
@@ -700,6 +714,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpgradeOptions() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -720,6 +735,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
         return upgradeOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -742,6 +758,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +779,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +807,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +827,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +842,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpgradeOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -840,6 +861,7 @@ public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
             : upgradeOptions_;
       }
     }
+
     /**
      *
      *

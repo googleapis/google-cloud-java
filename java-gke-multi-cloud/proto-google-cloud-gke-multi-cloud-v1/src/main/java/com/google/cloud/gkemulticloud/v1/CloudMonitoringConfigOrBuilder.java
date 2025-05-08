@@ -37,6 +37,7 @@ public interface CloudMonitoringConfigOrBuilder
    * @return Whether the enabled field is set.
    */
   boolean hasEnabled();
+
   /**
    *
    *

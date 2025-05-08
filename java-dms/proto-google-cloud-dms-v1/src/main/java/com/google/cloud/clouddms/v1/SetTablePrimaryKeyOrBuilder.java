@@ -36,6 +36,7 @@ public interface SetTablePrimaryKeyOrBuilder
    * @return A list containing the primaryKeyColumns.
    */
   java.util.List<java.lang.String> getPrimaryKeyColumnsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SetTablePrimaryKeyOrBuilder
    * @return The count of primaryKeyColumns.
    */
   int getPrimaryKeyColumnsCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface SetTablePrimaryKeyOrBuilder
    * @return The primaryKeyColumns at the given index.
    */
   java.lang.String getPrimaryKeyColumns(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface SetTablePrimaryKeyOrBuilder
    * @return The primaryKey.
    */
   java.lang.String getPrimaryKey();
+
   /**
    *
    *

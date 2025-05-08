@@ -29,7 +29,7 @@ public interface ApplicationOrBuilder
    *
    * <pre>
    * Identifier. The resource name of an Application. Format:
-   * "projects/{host-project-id}/locations/{location}/applications/{application-id}"
+   * `"projects/{host-project-id}/locations/{location}/applications/{application-id}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -37,12 +37,13 @@ public interface ApplicationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
    * <pre>
    * Identifier. The resource name of an Application. Format:
-   * "projects/{host-project-id}/locations/{location}/applications/{application-id}"
+   * `"projects/{host-project-id}/locations/{location}/applications/{application-id}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -64,6 +65,7 @@ public interface ApplicationOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface ApplicationOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface ApplicationOrBuilder
    * @return Whether the attributes field is set.
    */
   boolean hasAttributes();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface ApplicationOrBuilder
    * @return The attributes.
    */
   com.google.cloud.apphub.v1.Attributes getAttributes();
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public interface ApplicationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface ApplicationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public interface ApplicationOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -210,6 +218,7 @@ public interface ApplicationOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -237,6 +246,7 @@ public interface ApplicationOrBuilder
    * @return Whether the scope field is set.
    */
   boolean hasScope();
+
   /**
    *
    *
@@ -252,6 +262,7 @@ public interface ApplicationOrBuilder
    * @return The scope.
    */
   com.google.cloud.apphub.v1.Scope getScope();
+
   /**
    *
    *
@@ -281,6 +292,7 @@ public interface ApplicationOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -311,6 +323,7 @@ public interface ApplicationOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

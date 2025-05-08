@@ -34,6 +34,7 @@ public final class ListCloudExadataInfrastructuresRequest
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.ListCloudExadataInfrastructuresRequest)
     ListCloudExadataInfrastructuresRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListCloudExadataInfrastructuresRequest.newBuilder() to construct.
   private ListCloudExadataInfrastructuresRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class ListCloudExadataInfrastructuresRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class ListCloudExadataInfrastructuresRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class ListCloudExadataInfrastructuresRequest
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class ListCloudExadataInfrastructuresRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class ListCloudExadataInfrastructuresRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -375,6 +381,7 @@ public final class ListCloudExadataInfrastructuresRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -598,6 +605,7 @@ public final class ListCloudExadataInfrastructuresRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -623,6 +631,7 @@ public final class ListCloudExadataInfrastructuresRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -648,6 +657,7 @@ public final class ListCloudExadataInfrastructuresRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -672,6 +682,7 @@ public final class ListCloudExadataInfrastructuresRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +703,7 @@ public final class ListCloudExadataInfrastructuresRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +731,7 @@ public final class ListCloudExadataInfrastructuresRequest
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -736,6 +749,7 @@ public final class ListCloudExadataInfrastructuresRequest
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -757,6 +771,7 @@ public final class ListCloudExadataInfrastructuresRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +793,7 @@ public final class ListCloudExadataInfrastructuresRequest
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -800,6 +816,7 @@ public final class ListCloudExadataInfrastructuresRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -822,6 +839,7 @@ public final class ListCloudExadataInfrastructuresRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -843,6 +861,7 @@ public final class ListCloudExadataInfrastructuresRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +879,7 @@ public final class ListCloudExadataInfrastructuresRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

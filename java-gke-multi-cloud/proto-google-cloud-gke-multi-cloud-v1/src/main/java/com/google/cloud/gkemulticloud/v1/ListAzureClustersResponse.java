@@ -33,6 +33,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.ListAzureClustersResponse)
     ListAzureClustersResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListAzureClustersResponse.newBuilder() to construct.
   private ListAzureClustersResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AzureCluster> azureClusters_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.gkemulticloud.v1.AzureCluster> getAzureClustersList() {
     return azureClusters_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
       getAzureClustersOrBuilderList() {
     return azureClusters_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
   public int getAzureClustersCount() {
     return azureClusters_.size();
   }
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
   public com.google.cloud.gkemulticloud.v1.AzureCluster getAzureClusters(int index) {
     return azureClusters_.get(index);
   }
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -365,6 +373,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -643,6 +652,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
         return azureClustersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -660,6 +670,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
         return azureClustersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -677,6 +688,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
         return azureClustersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -701,6 +713,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +735,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -745,6 +759,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +784,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +806,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +828,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +850,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +871,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +892,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +907,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
         int index) {
       return getAzureClustersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -904,6 +926,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
         return azureClustersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -922,6 +945,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(azureClusters_);
       }
     }
+
     /**
      *
      *
@@ -936,6 +960,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
       return getAzureClustersFieldBuilder()
           .addBuilder(com.google.cloud.gkemulticloud.v1.AzureCluster.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -951,6 +976,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
       return getAzureClustersFieldBuilder()
           .addBuilder(index, com.google.cloud.gkemulticloud.v1.AzureCluster.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -987,6 +1013,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1010,6 +1037,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1061,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1055,6 +1084,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1103,7 @@ public final class ListAzureClustersResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

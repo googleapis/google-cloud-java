@@ -34,6 +34,7 @@ public final class UpdateApplicationStreamInputRequest
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.UpdateApplicationStreamInputRequest)
     UpdateApplicationStreamInputRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateApplicationStreamInputRequest.newBuilder() to construct.
   private UpdateApplicationStreamInputRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class UpdateApplicationStreamInputRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class UpdateApplicationStreamInputRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class UpdateApplicationStreamInputRequest
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.ApplicationStreamInput>
       applicationStreamInputs_;
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class UpdateApplicationStreamInputRequest
       getApplicationStreamInputsList() {
     return applicationStreamInputs_;
   }
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public final class UpdateApplicationStreamInputRequest
       getApplicationStreamInputsOrBuilderList() {
     return applicationStreamInputs_;
   }
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class UpdateApplicationStreamInputRequest
   public int getApplicationStreamInputsCount() {
     return applicationStreamInputs_.size();
   }
+
   /**
    *
    *
@@ -193,6 +200,7 @@ public final class UpdateApplicationStreamInputRequest
   public com.google.cloud.visionai.v1.ApplicationStreamInput getApplicationStreamInputs(int index) {
     return applicationStreamInputs_.get(index);
   }
+
   /**
    *
    *
@@ -214,6 +222,7 @@ public final class UpdateApplicationStreamInputRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -249,6 +258,7 @@ public final class UpdateApplicationStreamInputRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -287,6 +297,7 @@ public final class UpdateApplicationStreamInputRequest
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 4;
   private boolean allowMissing_ = false;
+
   /**
    *
    *
@@ -496,6 +507,7 @@ public final class UpdateApplicationStreamInputRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -775,6 +787,7 @@ public final class UpdateApplicationStreamInputRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -801,6 +814,7 @@ public final class UpdateApplicationStreamInputRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -827,6 +841,7 @@ public final class UpdateApplicationStreamInputRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -852,6 +867,7 @@ public final class UpdateApplicationStreamInputRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +889,7 @@ public final class UpdateApplicationStreamInputRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +955,7 @@ public final class UpdateApplicationStreamInputRequest
         return applicationStreamInputsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -957,6 +975,7 @@ public final class UpdateApplicationStreamInputRequest
         return applicationStreamInputsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -977,6 +996,7 @@ public final class UpdateApplicationStreamInputRequest
         return applicationStreamInputsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1003,6 +1023,7 @@ public final class UpdateApplicationStreamInputRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1026,6 +1047,7 @@ public final class UpdateApplicationStreamInputRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1074,7 @@ public final class UpdateApplicationStreamInputRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1078,6 +1101,7 @@ public final class UpdateApplicationStreamInputRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1125,7 @@ public final class UpdateApplicationStreamInputRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1124,6 +1149,7 @@ public final class UpdateApplicationStreamInputRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1147,6 +1173,7 @@ public final class UpdateApplicationStreamInputRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1169,6 +1196,7 @@ public final class UpdateApplicationStreamInputRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1191,6 +1219,7 @@ public final class UpdateApplicationStreamInputRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1207,6 +1236,7 @@ public final class UpdateApplicationStreamInputRequest
         getApplicationStreamInputsBuilder(int index) {
       return getApplicationStreamInputsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1227,6 +1257,7 @@ public final class UpdateApplicationStreamInputRequest
         return applicationStreamInputsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1247,6 +1278,7 @@ public final class UpdateApplicationStreamInputRequest
         return java.util.Collections.unmodifiableList(applicationStreamInputs_);
       }
     }
+
     /**
      *
      *
@@ -1264,6 +1296,7 @@ public final class UpdateApplicationStreamInputRequest
       return getApplicationStreamInputsFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.ApplicationStreamInput.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1282,6 +1315,7 @@ public final class UpdateApplicationStreamInputRequest
           .addBuilder(
               index, com.google.cloud.visionai.v1.ApplicationStreamInput.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1320,6 +1354,7 @@ public final class UpdateApplicationStreamInputRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1354,6 +1389,7 @@ public final class UpdateApplicationStreamInputRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1388,6 +1424,7 @@ public final class UpdateApplicationStreamInputRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1421,6 +1458,7 @@ public final class UpdateApplicationStreamInputRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1450,6 +1488,7 @@ public final class UpdateApplicationStreamInputRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1486,6 +1525,7 @@ public final class UpdateApplicationStreamInputRequest
     }
 
     private boolean allowMissing_;
+
     /**
      *
      *
@@ -1502,6 +1542,7 @@ public final class UpdateApplicationStreamInputRequest
     public boolean getAllowMissing() {
       return allowMissing_;
     }
+
     /**
      *
      *
@@ -1522,6 +1563,7 @@ public final class UpdateApplicationStreamInputRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

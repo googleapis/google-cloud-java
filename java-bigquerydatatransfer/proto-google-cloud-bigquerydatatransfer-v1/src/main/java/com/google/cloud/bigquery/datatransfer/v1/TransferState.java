@@ -103,6 +103,7 @@ public enum TransferState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TRANSFER_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int TRANSFER_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -114,6 +115,7 @@ public enum TransferState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PENDING = 2;</code>
    */
   public static final int PENDING_VALUE = 2;
+
   /**
    *
    *
@@ -124,6 +126,7 @@ public enum TransferState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RUNNING = 3;</code>
    */
   public static final int RUNNING_VALUE = 3;
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public enum TransferState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SUCCEEDED = 4;</code>
    */
   public static final int SUCCEEDED_VALUE = 4;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public enum TransferState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FAILED = 5;</code>
    */
   public static final int FAILED_VALUE = 5;
+
   /**
    *
    *

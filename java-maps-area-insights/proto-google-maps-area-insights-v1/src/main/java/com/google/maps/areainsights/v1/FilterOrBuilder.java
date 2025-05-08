@@ -39,6 +39,7 @@ public interface FilterOrBuilder
    * @return Whether the locationFilter field is set.
    */
   boolean hasLocationFilter();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface FilterOrBuilder
    * @return The locationFilter.
    */
   com.google.maps.areainsights.v1.LocationFilter getLocationFilter();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface FilterOrBuilder
    * @return Whether the typeFilter field is set.
    */
   boolean hasTypeFilter();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface FilterOrBuilder
    * @return The typeFilter.
    */
   com.google.maps.areainsights.v1.TypeFilter getTypeFilter();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface FilterOrBuilder
    * @return A list containing the operatingStatus.
    */
   java.util.List<com.google.maps.areainsights.v1.OperatingStatus> getOperatingStatusList();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface FilterOrBuilder
    * @return The count of operatingStatus.
    */
   int getOperatingStatusCount();
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public interface FilterOrBuilder
    * @return The operatingStatus at the given index.
    */
   com.google.maps.areainsights.v1.OperatingStatus getOperatingStatus(int index);
+
   /**
    *
    *
@@ -174,6 +181,7 @@ public interface FilterOrBuilder
    * @return A list containing the enum numeric values on the wire for operatingStatus.
    */
   java.util.List<java.lang.Integer> getOperatingStatusValueList();
+
   /**
    *
    *
@@ -197,7 +205,7 @@ public interface FilterOrBuilder
    *
    * <pre>
    * Optional. Restricts results to places whose price level is included on this
-   * list. If price_level is not set, all price levels are included in the
+   * list. If `price_levels` is not set, all price levels are included in the
    * results.
    * </pre>
    *
@@ -208,12 +216,13 @@ public interface FilterOrBuilder
    * @return A list containing the priceLevels.
    */
   java.util.List<com.google.maps.areainsights.v1.PriceLevel> getPriceLevelsList();
+
   /**
    *
    *
    * <pre>
    * Optional. Restricts results to places whose price level is included on this
-   * list. If price_level is not set, all price levels are included in the
+   * list. If `price_levels` is not set, all price levels are included in the
    * results.
    * </pre>
    *
@@ -224,12 +233,13 @@ public interface FilterOrBuilder
    * @return The count of priceLevels.
    */
   int getPriceLevelsCount();
+
   /**
    *
    *
    * <pre>
    * Optional. Restricts results to places whose price level is included on this
-   * list. If price_level is not set, all price levels are included in the
+   * list. If `price_levels` is not set, all price levels are included in the
    * results.
    * </pre>
    *
@@ -241,12 +251,13 @@ public interface FilterOrBuilder
    * @return The priceLevels at the given index.
    */
   com.google.maps.areainsights.v1.PriceLevel getPriceLevels(int index);
+
   /**
    *
    *
    * <pre>
    * Optional. Restricts results to places whose price level is included on this
-   * list. If price_level is not set, all price levels are included in the
+   * list. If `price_levels` is not set, all price levels are included in the
    * results.
    * </pre>
    *
@@ -257,12 +268,13 @@ public interface FilterOrBuilder
    * @return A list containing the enum numeric values on the wire for priceLevels.
    */
   java.util.List<java.lang.Integer> getPriceLevelsValueList();
+
   /**
    *
    *
    * <pre>
    * Optional. Restricts results to places whose price level is included on this
-   * list. If price_level is not set, all price levels are included in the
+   * list. If `price_levels` is not set, all price levels are included in the
    * results.
    * </pre>
    *
@@ -291,6 +303,7 @@ public interface FilterOrBuilder
    * @return Whether the ratingFilter field is set.
    */
   boolean hasRatingFilter();
+
   /**
    *
    *
@@ -307,6 +320,7 @@ public interface FilterOrBuilder
    * @return The ratingFilter.
    */
   com.google.maps.areainsights.v1.RatingFilter getRatingFilter();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.LaunchTemplateRequest)
     LaunchTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LaunchTemplateRequest.newBuilder() to construct.
   private LaunchTemplateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     private TemplateCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,6 +120,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -185,13 +190,14 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int GCS_PATH_FIELD_NUMBER = 3;
+
   /**
    *
    *
    * <pre>
-   * A Cloud Storage path to the template from which to create
+   * A Cloud Storage path to the template to use to create
    * the job.
-   * Must be valid Cloud Storage URL, beginning with 'gs://'.
+   * Must be valid Cloud Storage URL, beginning with `gs://`.
    * </pre>
    *
    * <code>string gcs_path = 3;</code>
@@ -201,13 +207,14 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
   public boolean hasGcsPath() {
     return templateCase_ == 3;
   }
+
   /**
    *
    *
    * <pre>
-   * A Cloud Storage path to the template from which to create
+   * A Cloud Storage path to the template to use to create
    * the job.
-   * Must be valid Cloud Storage URL, beginning with 'gs://'.
+   * Must be valid Cloud Storage URL, beginning with `gs://`.
    * </pre>
    *
    * <code>string gcs_path = 3;</code>
@@ -230,13 +237,14 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * A Cloud Storage path to the template from which to create
+   * A Cloud Storage path to the template to use to create
    * the job.
-   * Must be valid Cloud Storage URL, beginning with 'gs://'.
+   * Must be valid Cloud Storage URL, beginning with `gs://`.
    * </pre>
    *
    * <code>string gcs_path = 3;</code>
@@ -261,11 +269,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DYNAMIC_TEMPLATE_FIELD_NUMBER = 6;
+
   /**
    *
    *
    * <pre>
-   * Params for launching a dynamic template.
+   * Parameters for launching a dynamic template.
    * </pre>
    *
    * <code>.google.dataflow.v1beta3.DynamicTemplateLaunchParams dynamic_template = 6;</code>
@@ -276,11 +285,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
   public boolean hasDynamicTemplate() {
     return templateCase_ == 6;
   }
+
   /**
    *
    *
    * <pre>
-   * Params for launching a dynamic template.
+   * Parameters for launching a dynamic template.
    * </pre>
    *
    * <code>.google.dataflow.v1beta3.DynamicTemplateLaunchParams dynamic_template = 6;</code>
@@ -294,11 +304,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     }
     return com.google.dataflow.v1beta3.DynamicTemplateLaunchParams.getDefaultInstance();
   }
+
   /**
    *
    *
    * <pre>
-   * Params for launching a dynamic template.
+   * Parameters for launching a dynamic template.
    * </pre>
    *
    * <code>.google.dataflow.v1beta3.DynamicTemplateLaunchParams dynamic_template = 6;</code>
@@ -314,11 +325,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
 
   public static final int LAUNCH_PARAMETERS_FIELD_NUMBER = 4;
   private com.google.dataflow.v1beta3.LaunchTemplateParameters launchParameters_;
+
   /**
    *
    *
    * <pre>
-   * The parameters of the template to launch. This should be part of the
+   * The parameters of the template to launch. Part of the
    * body of the POST request.
    * </pre>
    *
@@ -330,11 +342,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
   public boolean hasLaunchParameters() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * The parameters of the template to launch. This should be part of the
+   * The parameters of the template to launch. Part of the
    * body of the POST request.
    * </pre>
    *
@@ -348,11 +361,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         ? com.google.dataflow.v1beta3.LaunchTemplateParameters.getDefaultInstance()
         : launchParameters_;
   }
+
   /**
    *
    *
    * <pre>
-   * The parameters of the template to launch. This should be part of the
+   * The parameters of the template to launch. Part of the
    * body of the POST request.
    * </pre>
    *
@@ -370,6 +384,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
+
   /**
    *
    *
@@ -395,6 +410,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -649,6 +665,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -951,6 +968,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -973,6 +991,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -995,6 +1014,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1016,6 +1036,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1033,6 +1054,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1079,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1073,6 +1096,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1093,6 +1117,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1116,9 +1141,9 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A Cloud Storage path to the template from which to create
+     * A Cloud Storage path to the template to use to create
      * the job.
-     * Must be valid Cloud Storage URL, beginning with 'gs://'.
+     * Must be valid Cloud Storage URL, beginning with `gs://`.
      * </pre>
      *
      * <code>string gcs_path = 3;</code>
@@ -1129,13 +1154,14 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     public boolean hasGcsPath() {
       return templateCase_ == 3;
     }
+
     /**
      *
      *
      * <pre>
-     * A Cloud Storage path to the template from which to create
+     * A Cloud Storage path to the template to use to create
      * the job.
-     * Must be valid Cloud Storage URL, beginning with 'gs://'.
+     * Must be valid Cloud Storage URL, beginning with `gs://`.
      * </pre>
      *
      * <code>string gcs_path = 3;</code>
@@ -1159,13 +1185,14 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * A Cloud Storage path to the template from which to create
+     * A Cloud Storage path to the template to use to create
      * the job.
-     * Must be valid Cloud Storage URL, beginning with 'gs://'.
+     * Must be valid Cloud Storage URL, beginning with `gs://`.
      * </pre>
      *
      * <code>string gcs_path = 3;</code>
@@ -1189,13 +1216,14 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * A Cloud Storage path to the template from which to create
+     * A Cloud Storage path to the template to use to create
      * the job.
-     * Must be valid Cloud Storage URL, beginning with 'gs://'.
+     * Must be valid Cloud Storage URL, beginning with `gs://`.
      * </pre>
      *
      * <code>string gcs_path = 3;</code>
@@ -1212,13 +1240,14 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * A Cloud Storage path to the template from which to create
+     * A Cloud Storage path to the template to use to create
      * the job.
-     * Must be valid Cloud Storage URL, beginning with 'gs://'.
+     * Must be valid Cloud Storage URL, beginning with `gs://`.
      * </pre>
      *
      * <code>string gcs_path = 3;</code>
@@ -1233,13 +1262,14 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * A Cloud Storage path to the template from which to create
+     * A Cloud Storage path to the template to use to create
      * the job.
-     * Must be valid Cloud Storage URL, beginning with 'gs://'.
+     * Must be valid Cloud Storage URL, beginning with `gs://`.
      * </pre>
      *
      * <code>string gcs_path = 3;</code>
@@ -1263,11 +1293,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
             com.google.dataflow.v1beta3.DynamicTemplateLaunchParams.Builder,
             com.google.dataflow.v1beta3.DynamicTemplateLaunchParamsOrBuilder>
         dynamicTemplateBuilder_;
+
     /**
      *
      *
      * <pre>
-     * Params for launching a dynamic template.
+     * Parameters for launching a dynamic template.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.DynamicTemplateLaunchParams dynamic_template = 6;</code>
@@ -1278,11 +1309,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     public boolean hasDynamicTemplate() {
       return templateCase_ == 6;
     }
+
     /**
      *
      *
      * <pre>
-     * Params for launching a dynamic template.
+     * Parameters for launching a dynamic template.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.DynamicTemplateLaunchParams dynamic_template = 6;</code>
@@ -1303,11 +1335,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         return com.google.dataflow.v1beta3.DynamicTemplateLaunchParams.getDefaultInstance();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Params for launching a dynamic template.
+     * Parameters for launching a dynamic template.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.DynamicTemplateLaunchParams dynamic_template = 6;</code>
@@ -1326,11 +1359,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       templateCase_ = 6;
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Params for launching a dynamic template.
+     * Parameters for launching a dynamic template.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.DynamicTemplateLaunchParams dynamic_template = 6;</code>
@@ -1346,11 +1380,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       templateCase_ = 6;
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Params for launching a dynamic template.
+     * Parameters for launching a dynamic template.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.DynamicTemplateLaunchParams dynamic_template = 6;</code>
@@ -1380,11 +1415,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       templateCase_ = 6;
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Params for launching a dynamic template.
+     * Parameters for launching a dynamic template.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.DynamicTemplateLaunchParams dynamic_template = 6;</code>
@@ -1405,11 +1441,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Params for launching a dynamic template.
+     * Parameters for launching a dynamic template.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.DynamicTemplateLaunchParams dynamic_template = 6;</code>
@@ -1418,11 +1455,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         getDynamicTemplateBuilder() {
       return getDynamicTemplateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * Params for launching a dynamic template.
+     * Parameters for launching a dynamic template.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.DynamicTemplateLaunchParams dynamic_template = 6;</code>
@@ -1439,11 +1477,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         return com.google.dataflow.v1beta3.DynamicTemplateLaunchParams.getDefaultInstance();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Params for launching a dynamic template.
+     * Parameters for launching a dynamic template.
      * </pre>
      *
      * <code>.google.dataflow.v1beta3.DynamicTemplateLaunchParams dynamic_template = 6;</code>
@@ -1478,11 +1517,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
             com.google.dataflow.v1beta3.LaunchTemplateParameters.Builder,
             com.google.dataflow.v1beta3.LaunchTemplateParametersOrBuilder>
         launchParametersBuilder_;
+
     /**
      *
      *
      * <pre>
-     * The parameters of the template to launch. This should be part of the
+     * The parameters of the template to launch. Part of the
      * body of the POST request.
      * </pre>
      *
@@ -1493,11 +1533,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     public boolean hasLaunchParameters() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * The parameters of the template to launch. This should be part of the
+     * The parameters of the template to launch. Part of the
      * body of the POST request.
      * </pre>
      *
@@ -1514,11 +1555,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         return launchParametersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The parameters of the template to launch. This should be part of the
+     * The parameters of the template to launch. Part of the
      * body of the POST request.
      * </pre>
      *
@@ -1537,11 +1579,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The parameters of the template to launch. This should be part of the
+     * The parameters of the template to launch. Part of the
      * body of the POST request.
      * </pre>
      *
@@ -1558,11 +1601,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The parameters of the template to launch. This should be part of the
+     * The parameters of the template to launch. Part of the
      * body of the POST request.
      * </pre>
      *
@@ -1588,11 +1632,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The parameters of the template to launch. This should be part of the
+     * The parameters of the template to launch. Part of the
      * body of the POST request.
      * </pre>
      *
@@ -1608,11 +1653,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The parameters of the template to launch. This should be part of the
+     * The parameters of the template to launch. Part of the
      * body of the POST request.
      * </pre>
      *
@@ -1624,11 +1670,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getLaunchParametersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * The parameters of the template to launch. This should be part of the
+     * The parameters of the template to launch. Part of the
      * body of the POST request.
      * </pre>
      *
@@ -1644,11 +1691,12 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
             : launchParameters_;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The parameters of the template to launch. This should be part of the
+     * The parameters of the template to launch. Part of the
      * body of the POST request.
      * </pre>
      *
@@ -1672,6 +1720,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -1696,6 +1745,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1720,6 +1770,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1743,6 +1794,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1762,6 +1814,7 @@ public final class LaunchTemplateRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

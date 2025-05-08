@@ -38,6 +38,7 @@ public interface SpeculativeDecodingSpecOrBuilder
    * @return Whether the draftModelSpeculation field is set.
    */
   boolean hasDraftModelSpeculation();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface SpeculativeDecodingSpecOrBuilder
    */
   com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.DraftModelSpeculation
       getDraftModelSpeculation();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface SpeculativeDecodingSpecOrBuilder
    * @return Whether the ngramSpeculation field is set.
    */
   boolean hasNgramSpeculation();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface SpeculativeDecodingSpecOrBuilder
    * @return The ngramSpeculation.
    */
   com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.NgramSpeculation getNgramSpeculation();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1.CustomPronunciationParams)
     CustomPronunciationParamsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomPronunciationParams.newBuilder() to construct.
   private CustomPronunciationParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -89,7 +90,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * IPA. (e.g. apple -&gt; ˈæpəl )
+     * IPA, such as apple -&gt; ˈæpəl.
      * https://en.wikipedia.org/wiki/International_Phonetic_Alphabet
      * </pre>
      *
@@ -100,13 +101,50 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * X-SAMPA (e.g. apple -&gt; "{p&#64;l" )
+     * X-SAMPA, such as apple -&gt; "{p&#64;l".
      * https://en.wikipedia.org/wiki/X-SAMPA
      * </pre>
      *
      * <code>PHONETIC_ENCODING_X_SAMPA = 2;</code>
      */
     PHONETIC_ENCODING_X_SAMPA(2),
+    /**
+     *
+     *
+     * <pre>
+     * For reading-to-pron conversion to work well, the `pronunciation` field
+     *  should only contain Kanji, Hiragana, and Katakana.
+     *
+     * The pronunciation can also contain pitch accents.
+     * The start of a pitch phrase is specified with `^` and the down-pitch
+     * position is specified with `!`, for example:
+     *
+     *     phrase:端  pronunciation:^はし
+     *     phrase:箸  pronunciation:^は!し
+     *     phrase:橋  pronunciation:^はし!
+     *
+     * We currently only support the Tokyo dialect, which allows at most one
+     * down-pitch per phrase (i.e. at most one `!` between `^`).
+     * </pre>
+     *
+     * <code>PHONETIC_ENCODING_JAPANESE_YOMIGANA = 3;</code>
+     */
+    PHONETIC_ENCODING_JAPANESE_YOMIGANA(3),
+    /**
+     *
+     *
+     * <pre>
+     * Used to specify pronunciations for Mandarin words. See
+     * https://en.wikipedia.org/wiki/Pinyin.
+     *
+     * For example: 朝阳, the pronunciation is "chao2 yang2". The number
+     * represents the tone, and there is a space between syllables. Neutral
+     * tones are represented by 5, for example 孩子 "hai2 zi5".
+     * </pre>
+     *
+     * <code>PHONETIC_ENCODING_PINYIN = 4;</code>
+     */
+    PHONETIC_ENCODING_PINYIN(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -120,28 +158,69 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
      * <code>PHONETIC_ENCODING_UNSPECIFIED = 0;</code>
      */
     public static final int PHONETIC_ENCODING_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
      * <pre>
-     * IPA. (e.g. apple -&gt; ˈæpəl )
+     * IPA, such as apple -&gt; ˈæpəl.
      * https://en.wikipedia.org/wiki/International_Phonetic_Alphabet
      * </pre>
      *
      * <code>PHONETIC_ENCODING_IPA = 1;</code>
      */
     public static final int PHONETIC_ENCODING_IPA_VALUE = 1;
+
     /**
      *
      *
      * <pre>
-     * X-SAMPA (e.g. apple -&gt; "{p&#64;l" )
+     * X-SAMPA, such as apple -&gt; "{p&#64;l".
      * https://en.wikipedia.org/wiki/X-SAMPA
      * </pre>
      *
      * <code>PHONETIC_ENCODING_X_SAMPA = 2;</code>
      */
     public static final int PHONETIC_ENCODING_X_SAMPA_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * For reading-to-pron conversion to work well, the `pronunciation` field
+     *  should only contain Kanji, Hiragana, and Katakana.
+     *
+     * The pronunciation can also contain pitch accents.
+     * The start of a pitch phrase is specified with `^` and the down-pitch
+     * position is specified with `!`, for example:
+     *
+     *     phrase:端  pronunciation:^はし
+     *     phrase:箸  pronunciation:^は!し
+     *     phrase:橋  pronunciation:^はし!
+     *
+     * We currently only support the Tokyo dialect, which allows at most one
+     * down-pitch per phrase (i.e. at most one `!` between `^`).
+     * </pre>
+     *
+     * <code>PHONETIC_ENCODING_JAPANESE_YOMIGANA = 3;</code>
+     */
+    public static final int PHONETIC_ENCODING_JAPANESE_YOMIGANA_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Used to specify pronunciations for Mandarin words. See
+     * https://en.wikipedia.org/wiki/Pinyin.
+     *
+     * For example: 朝阳, the pronunciation is "chao2 yang2". The number
+     * represents the tone, and there is a space between syllables. Neutral
+     * tones are represented by 5, for example 孩子 "hai2 zi5".
+     * </pre>
+     *
+     * <code>PHONETIC_ENCODING_PINYIN = 4;</code>
+     */
+    public static final int PHONETIC_ENCODING_PINYIN_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -173,6 +252,10 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
           return PHONETIC_ENCODING_IPA;
         case 2:
           return PHONETIC_ENCODING_X_SAMPA;
+        case 3:
+          return PHONETIC_ENCODING_JAPANESE_YOMIGANA;
+        case 4:
+          return PHONETIC_ENCODING_PINYIN;
         default:
           return null;
       }
@@ -235,13 +318,14 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object phrase_ = "";
+
   /**
    *
    *
    * <pre>
-   * The phrase to which the customization will be applied.
-   * The phrase can be multiple words (in the case of proper nouns etc), but
-   * should not span to a whole sentence.
+   * The phrase to which the customization is applied.
+   * The phrase can be multiple words, such as proper nouns, but shouldn't span
+   * the length of the sentence.
    * </pre>
    *
    * <code>optional string phrase = 1;</code>
@@ -252,13 +336,14 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
   public boolean hasPhrase() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * The phrase to which the customization will be applied.
-   * The phrase can be multiple words (in the case of proper nouns etc), but
-   * should not span to a whole sentence.
+   * The phrase to which the customization is applied.
+   * The phrase can be multiple words, such as proper nouns, but shouldn't span
+   * the length of the sentence.
    * </pre>
    *
    * <code>optional string phrase = 1;</code>
@@ -277,13 +362,14 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * The phrase to which the customization will be applied.
-   * The phrase can be multiple words (in the case of proper nouns etc), but
-   * should not span to a whole sentence.
+   * The phrase to which the customization is applied.
+   * The phrase can be multiple words, such as proper nouns, but shouldn't span
+   * the length of the sentence.
    * </pre>
    *
    * <code>optional string phrase = 1;</code>
@@ -305,6 +391,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
 
   public static final int PHONETIC_ENCODING_FIELD_NUMBER = 2;
   private int phoneticEncoding_ = 0;
+
   /**
    *
    *
@@ -322,6 +409,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
   public boolean hasPhoneticEncoding() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -339,6 +427,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
   public int getPhoneticEncodingValue() {
     return phoneticEncoding_;
   }
+
   /**
    *
    *
@@ -367,6 +456,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pronunciation_ = "";
+
   /**
    *
    *
@@ -383,6 +473,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
   public boolean hasPronunciation() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -407,6 +498,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -625,6 +717,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -842,13 +935,14 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object phrase_ = "";
+
     /**
      *
      *
      * <pre>
-     * The phrase to which the customization will be applied.
-     * The phrase can be multiple words (in the case of proper nouns etc), but
-     * should not span to a whole sentence.
+     * The phrase to which the customization is applied.
+     * The phrase can be multiple words, such as proper nouns, but shouldn't span
+     * the length of the sentence.
      * </pre>
      *
      * <code>optional string phrase = 1;</code>
@@ -858,13 +952,14 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
     public boolean hasPhrase() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * The phrase to which the customization will be applied.
-     * The phrase can be multiple words (in the case of proper nouns etc), but
-     * should not span to a whole sentence.
+     * The phrase to which the customization is applied.
+     * The phrase can be multiple words, such as proper nouns, but shouldn't span
+     * the length of the sentence.
      * </pre>
      *
      * <code>optional string phrase = 1;</code>
@@ -882,13 +977,14 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The phrase to which the customization will be applied.
-     * The phrase can be multiple words (in the case of proper nouns etc), but
-     * should not span to a whole sentence.
+     * The phrase to which the customization is applied.
+     * The phrase can be multiple words, such as proper nouns, but shouldn't span
+     * the length of the sentence.
      * </pre>
      *
      * <code>optional string phrase = 1;</code>
@@ -906,13 +1002,14 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The phrase to which the customization will be applied.
-     * The phrase can be multiple words (in the case of proper nouns etc), but
-     * should not span to a whole sentence.
+     * The phrase to which the customization is applied.
+     * The phrase can be multiple words, such as proper nouns, but shouldn't span
+     * the length of the sentence.
      * </pre>
      *
      * <code>optional string phrase = 1;</code>
@@ -929,13 +1026,14 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The phrase to which the customization will be applied.
-     * The phrase can be multiple words (in the case of proper nouns etc), but
-     * should not span to a whole sentence.
+     * The phrase to which the customization is applied.
+     * The phrase can be multiple words, such as proper nouns, but shouldn't span
+     * the length of the sentence.
      * </pre>
      *
      * <code>optional string phrase = 1;</code>
@@ -948,13 +1046,14 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The phrase to which the customization will be applied.
-     * The phrase can be multiple words (in the case of proper nouns etc), but
-     * should not span to a whole sentence.
+     * The phrase to which the customization is applied.
+     * The phrase can be multiple words, such as proper nouns, but shouldn't span
+     * the length of the sentence.
      * </pre>
      *
      * <code>optional string phrase = 1;</code>
@@ -974,6 +1073,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
     }
 
     private int phoneticEncoding_ = 0;
+
     /**
      *
      *
@@ -991,6 +1091,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
     public boolean hasPhoneticEncoding() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1008,6 +1109,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
     public int getPhoneticEncodingValue() {
       return phoneticEncoding_;
     }
+
     /**
      *
      *
@@ -1028,6 +1130,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1154,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
           ? com.google.cloud.texttospeech.v1.CustomPronunciationParams.PhoneticEncoding.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1075,6 +1179,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1096,6 +1201,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
     }
 
     private java.lang.Object pronunciation_ = "";
+
     /**
      *
      *
@@ -1111,6 +1217,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
     public boolean hasPronunciation() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1134,6 +1241,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1157,6 +1265,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1179,6 +1288,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1197,6 +1307,7 @@ public final class CustomPronunciationParams extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -633,6 +633,19 @@ public final class BatchServiceGrpc {
     return BatchServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static BatchServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<BatchServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BatchServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public BatchServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BatchServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return BatchServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1092,6 +1105,197 @@ public final class BatchServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service BatchService.
+   *
+   * <pre>
+   * Google Batch Service.
+   * The service manages user submitted batch jobs and allocates Google Compute
+   * Engine VM instances to run the jobs.
+   * </pre>
+   */
+  public static final class BatchServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<BatchServiceBlockingV2Stub> {
+    private BatchServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected BatchServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new BatchServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a Job.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.Job createJob(
+        com.google.cloud.batch.v1alpha.CreateJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a Job specified by its resource name.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.Job getJob(
+        com.google.cloud.batch.v1alpha.GetJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a Job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteJob(
+        com.google.cloud.batch.v1alpha.DeleteJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancel a Job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation cancelJob(
+        com.google.cloud.batch.v1alpha.CancelJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a Job.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.Job updateJob(
+        com.google.cloud.batch.v1alpha.UpdateJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Jobs for a project within a region.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.ListJobsResponse listJobs(
+        com.google.cloud.batch.v1alpha.ListJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Return a single Task.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.Task getTask(
+        com.google.cloud.batch.v1alpha.GetTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List Tasks associated with a job.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.ListTasksResponse listTasks(
+        com.google.cloud.batch.v1alpha.ListTasksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTasksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a Resource Allowance.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.ResourceAllowance createResourceAllowance(
+        com.google.cloud.batch.v1alpha.CreateResourceAllowanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateResourceAllowanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a ResourceAllowance specified by its resource name.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.ResourceAllowance getResourceAllowance(
+        com.google.cloud.batch.v1alpha.GetResourceAllowanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetResourceAllowanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a ResourceAllowance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteResourceAllowance(
+        com.google.cloud.batch.v1alpha.DeleteResourceAllowanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteResourceAllowanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all ResourceAllowances for a project within a region.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.ListResourceAllowancesResponse listResourceAllowances(
+        com.google.cloud.batch.v1alpha.ListResourceAllowancesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListResourceAllowancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a Resource Allowance.
+     * </pre>
+     */
+    public com.google.cloud.batch.v1alpha.ResourceAllowance updateResourceAllowance(
+        com.google.cloud.batch.v1alpha.UpdateResourceAllowanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateResourceAllowanceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service BatchService.
    *
    * <pre>
    * Google Batch Service.

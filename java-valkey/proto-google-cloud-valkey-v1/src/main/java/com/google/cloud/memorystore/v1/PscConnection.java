@@ -33,6 +33,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.memorystore.v1.PscConnection)
     PscConnectionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PscConnection.newBuilder() to construct.
   private PscConnection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,19 +71,104 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.memorystore.v1.PscConnection.Builder.class);
   }
 
-  public static final int PSC_CONNECTION_ID_FIELD_NUMBER = 1;
+  private int portsCase_ = 0;
 
   @SuppressWarnings("serial")
-  private volatile java.lang.Object pscConnectionId_ = "";
+  private java.lang.Object ports_;
+
+  public enum PortsCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    PORT(9),
+    PORTS_NOT_SET(0);
+    private final int value;
+
+    private PortsCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PortsCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static PortsCase forNumber(int value) {
+      switch (value) {
+        case 9:
+          return PORT;
+        case 0:
+          return PORTS_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public PortsCase getPortsCase() {
+    return PortsCase.forNumber(portsCase_);
+  }
+
+  public static final int PORT_FIELD_NUMBER = 9;
+
   /**
    *
    *
    * <pre>
-   * Output only. The PSC connection id of the forwarding rule connected to the
+   * Optional. port will only be set for Primary/Reader or Discovery endpoint.
+   * </pre>
+   *
+   * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the port field is set.
+   */
+  @java.lang.Override
+  public boolean hasPort() {
+    return portsCase_ == 9;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. port will only be set for Primary/Reader or Discovery endpoint.
+   * </pre>
+   *
+   * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The port.
+   */
+  @java.lang.Override
+  public int getPort() {
+    if (portsCase_ == 9) {
+      return (java.lang.Integer) ports_;
+    }
+    return 0;
+  }
+
+  public static final int PSC_CONNECTION_ID_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pscConnectionId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The PSC connection id of the forwarding rule connected to the
    * service attachment.
    * </pre>
    *
-   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The pscConnectionId.
    */
@@ -98,15 +184,16 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Output only. The PSC connection id of the forwarding rule connected to the
+   * Required. The PSC connection id of the forwarding rule connected to the
    * service attachment.
    * </pre>
    *
-   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for pscConnectionId.
    */
@@ -127,6 +214,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipAddress_ = "";
+
   /**
    *
    *
@@ -153,6 +241,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -184,6 +273,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object forwardingRule_ = "";
+
   /**
    *
    *
@@ -211,6 +301,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -243,6 +334,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -267,6 +359,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -296,6 +389,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
+
   /**
    *
    *
@@ -322,6 +416,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -353,6 +448,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAttachment_ = "";
+
   /**
    *
    *
@@ -380,6 +476,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -410,6 +507,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PSC_CONNECTION_STATUS_FIELD_NUMBER = 7;
   private int pscConnectionStatus_ = 0;
+
   /**
    *
    *
@@ -430,6 +528,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
   public int getPscConnectionStatusValue() {
     return pscConnectionStatus_;
   }
+
   /**
    *
    *
@@ -457,6 +556,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONNECTION_TYPE_FIELD_NUMBER = 8;
   private int connectionType_ = 0;
+
   /**
    *
    *
@@ -474,6 +574,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
   public int getConnectionTypeValue() {
     return connectionType_;
   }
+
   /**
    *
    *
@@ -535,6 +636,9 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.memorystore.v1.ConnectionType.CONNECTION_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(8, connectionType_);
     }
+    if (portsCase_ == 9) {
+      output.writeInt32(9, (int) ((java.lang.Integer) ports_));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -571,6 +675,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.memorystore.v1.ConnectionType.CONNECTION_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, connectionType_);
     }
+    if (portsCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              9, (int) ((java.lang.Integer) ports_));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -595,6 +704,14 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
     if (!getServiceAttachment().equals(other.getServiceAttachment())) return false;
     if (pscConnectionStatus_ != other.pscConnectionStatus_) return false;
     if (connectionType_ != other.connectionType_) return false;
+    if (!getPortsCase().equals(other.getPortsCase())) return false;
+    switch (portsCase_) {
+      case 9:
+        if (getPort() != other.getPort()) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -622,6 +739,14 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + pscConnectionStatus_;
     hash = (37 * hash) + CONNECTION_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + connectionType_;
+    switch (portsCase_) {
+      case 9:
+        hash = (37 * hash) + PORT_FIELD_NUMBER;
+        hash = (53 * hash) + getPort();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -722,6 +847,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -769,6 +895,8 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       serviceAttachment_ = "";
       pscConnectionStatus_ = 0;
       connectionType_ = 0;
+      portsCase_ = 0;
+      ports_ = null;
       return this;
     }
 
@@ -799,36 +927,42 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
 
     private void buildPartial0(com.google.cloud.memorystore.v1.PscConnection result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.pscConnectionId_ = pscConnectionId_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.ipAddress_ = ipAddress_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.forwardingRule_ = forwardingRule_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.projectId_ = projectId_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.network_ = network_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.serviceAttachment_ = serviceAttachment_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.pscConnectionStatus_ = pscConnectionStatus_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.connectionType_ = connectionType_;
       }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.memorystore.v1.PscConnection result) {
+      result.portsCase_ = portsCase_;
+      result.ports_ = this.ports_;
     }
 
     @java.lang.Override
@@ -878,32 +1012,32 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.memorystore.v1.PscConnection.getDefaultInstance()) return this;
       if (!other.getPscConnectionId().isEmpty()) {
         pscConnectionId_ = other.pscConnectionId_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getIpAddress().isEmpty()) {
         ipAddress_ = other.ipAddress_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getForwardingRule().isEmpty()) {
         forwardingRule_ = other.forwardingRule_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getServiceAttachment().isEmpty()) {
         serviceAttachment_ = other.serviceAttachment_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.pscConnectionStatus_ != 0) {
@@ -911,6 +1045,17 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.connectionType_ != 0) {
         setConnectionTypeValue(other.getConnectionTypeValue());
+      }
+      switch (other.getPortsCase()) {
+        case PORT:
+          {
+            setPort(other.getPort());
+            break;
+          }
+        case PORTS_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -941,51 +1086,57 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 pscConnectionId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 ipAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 forwardingRule_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 projectId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 serviceAttachment_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 56:
               {
                 pscConnectionStatus_ = input.readEnum();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 56
             case 64:
               {
                 connectionType_ = input.readEnum();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 64
+            case 72:
+              {
+                ports_ = input.readInt32();
+                portsCase_ = 9;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1003,18 +1154,106 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int portsCase_ = 0;
+    private java.lang.Object ports_;
+
+    public PortsCase getPortsCase() {
+      return PortsCase.forNumber(portsCase_);
+    }
+
+    public Builder clearPorts() {
+      portsCase_ = 0;
+      ports_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
-    private java.lang.Object pscConnectionId_ = "";
     /**
      *
      *
      * <pre>
-     * Output only. The PSC connection id of the forwarding rule connected to the
+     * Optional. port will only be set for Primary/Reader or Discovery endpoint.
+     * </pre>
+     *
+     * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the port field is set.
+     */
+    public boolean hasPort() {
+      return portsCase_ == 9;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. port will only be set for Primary/Reader or Discovery endpoint.
+     * </pre>
+     *
+     * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The port.
+     */
+    public int getPort() {
+      if (portsCase_ == 9) {
+        return (java.lang.Integer) ports_;
+      }
+      return 0;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. port will only be set for Primary/Reader or Discovery endpoint.
+     * </pre>
+     *
+     * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The port to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPort(int value) {
+
+      portsCase_ = 9;
+      ports_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. port will only be set for Primary/Reader or Discovery endpoint.
+     * </pre>
+     *
+     * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPort() {
+      if (portsCase_ == 9) {
+        portsCase_ = 0;
+        ports_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    private java.lang.Object pscConnectionId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The PSC connection id of the forwarding rule connected to the
      * service attachment.
      * </pre>
      *
-     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The pscConnectionId.
      */
@@ -1029,15 +1268,16 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. The PSC connection id of the forwarding rule connected to the
+     * Required. The PSC connection id of the forwarding rule connected to the
      * service attachment.
      * </pre>
      *
-     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for pscConnectionId.
      */
@@ -1052,15 +1292,16 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. The PSC connection id of the forwarding rule connected to the
+     * Required. The PSC connection id of the forwarding rule connected to the
      * service attachment.
      * </pre>
      *
-     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The pscConnectionId to set.
      * @return This builder for chaining.
@@ -1070,37 +1311,39 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       pscConnectionId_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. The PSC connection id of the forwarding rule connected to the
+     * Required. The PSC connection id of the forwarding rule connected to the
      * service attachment.
      * </pre>
      *
-     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPscConnectionId() {
       pscConnectionId_ = getDefaultInstance().getPscConnectionId();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Output only. The PSC connection id of the forwarding rule connected to the
+     * Required. The PSC connection id of the forwarding rule connected to the
      * service attachment.
      * </pre>
      *
-     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for pscConnectionId to set.
      * @return This builder for chaining.
@@ -1111,12 +1354,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       pscConnectionId_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
     private java.lang.Object ipAddress_ = "";
+
     /**
      *
      *
@@ -1142,6 +1386,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1167,6 +1412,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1187,10 +1433,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       ipAddress_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1207,10 +1454,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearIpAddress() {
       ipAddress_ = getDefaultInstance().getIpAddress();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1232,12 +1480,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       ipAddress_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
     private java.lang.Object forwardingRule_ = "";
+
     /**
      *
      *
@@ -1264,6 +1513,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1290,6 +1540,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1311,10 +1562,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       forwardingRule_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1332,10 +1584,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearForwardingRule() {
       forwardingRule_ = getDefaultInstance().getForwardingRule();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1358,12 +1611,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       forwardingRule_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -1387,6 +1641,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1410,6 +1665,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1428,10 +1684,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       projectId_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1446,10 +1703,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProjectId() {
       projectId_ = getDefaultInstance().getProjectId();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1469,12 +1727,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       projectId_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
 
     private java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -1500,6 +1759,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1525,6 +1785,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1545,10 +1806,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       network_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1565,10 +1827,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNetwork() {
       network_ = getDefaultInstance().getNetwork();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1590,12 +1853,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       network_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
 
     private java.lang.Object serviceAttachment_ = "";
+
     /**
      *
      *
@@ -1622,6 +1886,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1648,6 +1913,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1669,10 +1935,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       serviceAttachment_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1690,10 +1957,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServiceAttachment() {
       serviceAttachment_ = getDefaultInstance().getServiceAttachment();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1716,12 +1984,13 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       serviceAttachment_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
 
     private int pscConnectionStatus_ = 0;
+
     /**
      *
      *
@@ -1742,6 +2011,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
     public int getPscConnectionStatusValue() {
       return pscConnectionStatus_;
     }
+
     /**
      *
      *
@@ -1761,10 +2031,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setPscConnectionStatusValue(int value) {
       pscConnectionStatus_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1789,6 +2060,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.memorystore.v1.PscConnectionStatus.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1811,11 +2083,12 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       pscConnectionStatus_ = value.getNumber();
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1833,13 +2106,14 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPscConnectionStatus() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       pscConnectionStatus_ = 0;
       onChanged();
       return this;
     }
 
     private int connectionType_ = 0;
+
     /**
      *
      *
@@ -1857,6 +2131,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
     public int getConnectionTypeValue() {
       return connectionType_;
     }
+
     /**
      *
      *
@@ -1873,10 +2148,11 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setConnectionTypeValue(int value) {
       connectionType_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1896,6 +2172,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.memorystore.v1.ConnectionType.forNumber(connectionType_);
       return result == null ? com.google.cloud.memorystore.v1.ConnectionType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1914,11 +2191,12 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       connectionType_ = value.getNumber();
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1933,7 +2211,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConnectionType() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       connectionType_ = 0;
       onChanged();
       return this;

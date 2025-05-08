@@ -28,28 +28,23 @@ public interface PscAutoConnectionOrBuilder
    *
    *
    * <pre>
-   * Optional. Output only. port will only be set for Primary/Reader or
-   * Discovery endpoint.
+   * Optional. port will only be set for Primary/Reader or Discovery endpoint.
    * </pre>
    *
-   * <code>
-   * int32 port = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the port field is set.
    */
   boolean hasPort();
+
   /**
    *
    *
    * <pre>
-   * Optional. Output only. port will only be set for Primary/Reader or
-   * Discovery endpoint.
+   * Optional. port will only be set for Primary/Reader or Discovery endpoint.
    * </pre>
    *
-   * <code>
-   * int32 port = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The port.
    */
@@ -68,6 +63,7 @@ public interface PscAutoConnectionOrBuilder
    * @return The pscConnectionId.
    */
   java.lang.String getPscConnectionId();
+
   /**
    *
    *
@@ -97,6 +93,7 @@ public interface PscAutoConnectionOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
+
   /**
    *
    *
@@ -129,6 +126,7 @@ public interface PscAutoConnectionOrBuilder
    * @return The forwardingRule.
    */
   java.lang.String getForwardingRule();
+
   /**
    *
    *
@@ -159,6 +157,7 @@ public interface PscAutoConnectionOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -188,6 +187,7 @@ public interface PscAutoConnectionOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -220,6 +220,7 @@ public interface PscAutoConnectionOrBuilder
    * @return The serviceAttachment.
    */
   java.lang.String getServiceAttachment();
+
   /**
    *
    *
@@ -254,6 +255,7 @@ public interface PscAutoConnectionOrBuilder
    * @return The enum numeric value on the wire for pscConnectionStatus.
    */
   int getPscConnectionStatusValue();
+
   /**
    *
    *
@@ -286,6 +288,7 @@ public interface PscAutoConnectionOrBuilder
    * @return The enum numeric value on the wire for connectionType.
    */
   int getConnectionTypeValue();
+
   /**
    *
    *
